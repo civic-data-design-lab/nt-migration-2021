@@ -12,9 +12,9 @@
 
 /* SCROLLBAR */
 
-/*
+
 ::-webkit-scrollbar {
-    width: 0.75em;
+    /* width: 0.75em; */
     display: none;
 }
 
@@ -54,7 +54,7 @@ h2 {
     text-align: right;
 }
 
-.handwriting{
+.handwriting {
     font-family: 'Caveat', cursive;
 }
 
@@ -71,37 +71,71 @@ h2 {
     mix-blend-mode: difference;
 }
 
-/* PAGES */
+/* LANDING STYLES */
+.splash-screen {
+    height: 100vh;
+    width: auto;
+    position: fixed;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+    filter: blur(1em) grayscale(50%);
+    /* display: none; */
+}
 
-main{
+.splash-screen:hover {
+    mix-blend-mode: multiply;
+    filter: blur(0em) grayscale(0%);
+    transition: 0.5s;
+}
+
+#landing-trigger{
+
+}
+    
+
+/* PAGES */
+main {
     position: absolute;
-    height: 100vh;    
+    height: 100vh;
     width: 100%;
     overflow-y: scroll;
 }
 
-
 /* ABOUT LANDING */
-
-.about{
+.about {
     position: absolute;
     display: inline-block;
     width: 10%;
     height: auto;
 }
 
-.about-landing{ /*about is unique because it is always open*/
+.about-landing {
+    /*about is unique because it is always open*/
     position: absolute;
     height: 100vh;
     width: 85vw;
     overflow-y: scroll;
-    padding: 5em;
-
+    overflow-x: visible;
+    /* padding: 5em; */
 }
 
-.fullscreen-text{
-margin: 0 0 3em 0;
-height: auto;
+.about-landing>img {
+    width: 100vw;
+    height: auto;
+}
+
+.fullscreen-text {
+    padding: 100vh 0 0 0;
+
+    display: inline-block;
+    height: auto;
+   /* display: none; */
+}
+
+.fullscreen-text:hover {
+    display: fixed;
 }
 
 /* CHAPTER PAGES */
@@ -111,22 +145,23 @@ height: auto;
     height: 100vh;
     width: 3vw;
     overflow-x: hidden;
-    box-shadow: -0.5em 0em 0.75em rgb(49, 49, 49);
+    box-shadow: -0.5em 0em 0.75em rgba(41, 41, 41, 0.719);
     overflow-y: scroll;
-    float:right;
+    float: right;
 }
 
-.chapter > h2 {
+.chapter>h2 {
     color: rgba(255, 255, 255, 0);
     visibility: hidden;
 }
+
 .chapter:hover {
     width: 30vw;
     transition: 0.5s ease-in-out;
 }
 
-.chapter:hover > h2{
-    color:white;
+.chapter:hover>h2 {
+    color: white;
     width: 29vw;
     height: 100%;
     display: flex;
@@ -135,80 +170,80 @@ height: auto;
     visibility: visible;
 }
 
-.chapter:not(:hover){
+.chapter:not(:hover) {
     transition: 0.5s ease-in-out;
     background: white;
-    
+
 }
 
 /* PAGES - Z-INDEX */
-.z0{
+.z0 {
     z-index: 0;
 }
 
-.z1{
+.z1 {
     z-index: 1;
 }
 
-.z2{
+.z2 {
     z-index: 2;
 }
 
-.z3{
+.z3 {
     z-index: 3;
 }
 
-.z4{
+.z4 {
     z-index: 4;
 }
 
-.z5{
+.z5 {
     z-index: 5;
 }
 
 
 /* BACKGROUNDS */
-.about-gradient{
+.about-gradient {
     background-image: linear-gradient(black, white);
 }
 
-.origins-gradient{
+.origins-gradient {
+    background-image: linear-gradient(white, black) !important;
+}
+
+.origins-gradient:hover {
+    background-image: linear-gradient(#EB4927, white) !important;
+}
+
+.motivations-gradient {
     background-image: white;
 }
 
-.origins-gradient:hover{
-    background-image: linear-gradient(#EB4927, white);
-}
-
-.motivations-gradient{
-    background-image: white;
-}
-
-.motivations-gradient:hover{
+.motivations-gradient:hover {
     background-image: linear-gradient(#1540C4, white);
 }
 
-.profiles-gradient{
+.profiles-gradient {
     background-image: white;
 }
 
-.profiles-gradient:hover{
+.profiles-gradient:hover {
     background-image: linear-gradient(#3BA7C9, white);
 }
 
-.outcomes-gradient{
+.outcomes-gradient {
     background-image: white;
 }
 
-.outcomes-gradient:hover{
+.outcomes-gradient:hover {
     background-image: linear-gradient(#E23CAD, white);
 }
 
-.cost-gradient{
+.cost-gradient {
     background-image: white;
 }
 
-.cost-gradient:hover{
+.cost-gradient:hover {
     background-image: linear-gradient(#662D91, white);
 }
 
