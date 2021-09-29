@@ -3,10 +3,10 @@ var landingFont = document.getElementById("landing-trigger")
 
 var backgroundImage = document.getElementById("image-carousel")
 
-// document.getElementById("image-carousel").style.border = "1em solid red"
-// document.getElementById("landing-trigger").style.border = "1em solid red"
+landingFont.addEventListener('mouseover', function() {
+    backgroundImage.style.filter = "blur(0.5em) grayscale(25%) brightness(50%)"
+  });
 
-// landingFont.onmouseover(landingFont.style.border)
-
-console.log(landingFont)
-console.log(backgroundImage)
+landingFont.addEventListener('mouseout', function() {
+    backgroundImage.style.filter = "blur(0em) grayscale(0%) brightness(100%)"
+  });

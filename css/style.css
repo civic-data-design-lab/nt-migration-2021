@@ -10,7 +10,13 @@
     src: url();
 }
 
+/*GENERAL HTML */
+html{
+    scroll-behavior: smooth;
+}
+
 /* SCROLLBAR */
+
 
 
 ::-webkit-scrollbar {
@@ -42,8 +48,9 @@ h1 {
     font-family: neue-haas-grotesk-text, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 10em;
+    font-size: 9.5em;
     text-align: right;
+    line-height: 1em;
 }
 
 h2 {
@@ -64,36 +71,24 @@ h2 {
 }
 
 .white {
-    color: white;
+    color: rgba(255, 255, 255,1);
 }
 
 .blend {
     mix-blend-mode: difference;
+    
 }
 
 /* LANDING STYLES */
-.splash-screen {
-    height: 100vh;
-    width: auto;
+.splash-screen-img {
+    height: auto;
+    width: 100%;
     position: fixed;
     z-index: -1;
     mix-blend-mode: multiply;
-    -webkit-filter: grayscale(100%);
-    /* Safari 6.0 - 9.0 */
-    filter: blur(1em) grayscale(50%);
-    /* display: none; */
+    transition: 1s;
 }
 
-.splash-screen:hover {
-    mix-blend-mode: multiply;
-    filter: blur(0em) grayscale(0%);
-    transition: 0.5s;
-}
-
-#landing-trigger{
-
-}
-    
 
 /* PAGES */
 main {
@@ -101,6 +96,7 @@ main {
     height: 100vh;
     width: 100%;
     overflow-y: scroll;
+    overflow-x: auto;
 }
 
 /* ABOUT LANDING */
@@ -121,48 +117,71 @@ main {
     /* padding: 5em; */
 }
 
+.about-landing>h1{
+    color: rgba(255, 255, 255, 0.5);
+}
+
 .about-landing>img {
     width: 100vw;
     height: auto;
 }
 
 .fullscreen-text {
-    padding: 100vh 0 0 0;
-
+    margin: 90vh 0 0 0;
     display: inline-block;
     height: auto;
+
    /* display: none; */
 }
 
 .fullscreen-text:hover {
     display: fixed;
+    mix-blend-mode: multiply;
 }
 
 /* CHAPTER PAGES */
 
 .chapter {
+    transition: 0.5s;
+    width: 3%;
+    box-shadow: -0.5em 0em 0.75em rgba(41, 41, 41, 1);
     position: relative;
     height: 100vh;
-    width: 3vw;
     overflow-x: hidden;
-    box-shadow: -0.5em 0em 0.75em rgba(41, 41, 41, 0.719);
     overflow-y: scroll;
     float: right;
+
+}
+
+.chapter .splash-screen-img{
+    filter: blur(0.5em) grayscale(75%);
+}
+
+.chapter:hover .splash-screen-img{
+    filter: blur(0em) grayscale(0%);
+}
+
+.chapter>h1 {
+    visibility: hidden;
+    color: rgba(255, 255, 255, 0.589);
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    align-items: center;
+    padding: 0.25em;
+}
+
+.chapter:hover>h1 {
+    visibility: visible;
 }
 
 .chapter>h2 {
-    color: rgba(255, 255, 255, 0);
     visibility: hidden;
 }
 
-.chapter:hover {
-    width: 30vw;
-    transition: 0.5s ease-in-out;
-}
-
 .chapter:hover>h2 {
-    color: white;
-    width: 29vw;
+    color: rgba(255, 255, 255, 0.589);
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -170,10 +189,22 @@ main {
     visibility: visible;
 }
 
-.chapter:not(:hover) {
-    transition: 0.5s ease-in-out;
-    background: white;
+.closed{
+    width: 3% !important;
+}
 
+#hover{
+    width: 30%;
+}
+
+#open{
+    width: 88%;
+
+}
+
+#partial-open{
+    /* width: calc(100% - (30 + (5*3))); */
+    width: 61%;
 }
 
 /* PAGES - Z-INDEX */
@@ -204,47 +235,53 @@ main {
 
 /* BACKGROUNDS */
 .about-gradient {
-    background-image: linear-gradient(black, white);
+    background-image: linear-gradient(white, black);
+    transition: 0.5s ease-in-out;
 }
 
 .origins-gradient {
-    background-image: linear-gradient(white, black) !important;
+    background-image: linear-gradient(white, black);
+    transition: 0.5s ease-in-out;
 }
 
 .origins-gradient:hover {
-    background-image: linear-gradient(#EB4927, white) !important;
+    background-image: linear-gradient(white, #EB4927);
 }
 
 .motivations-gradient {
-    background-image: white;
+    background-image: linear-gradient(white,black);
+    transition: 0.5s ease-in-out;
 }
 
 .motivations-gradient:hover {
-    background-image: linear-gradient(#1540C4, white);
+    background-image: linear-gradient(white,#1540C4);
 }
 
 .profiles-gradient {
-    background-image: white;
+    background-image: linear-gradient(white, black);
+    transition: 0.5s ease-in-out;
 }
 
 .profiles-gradient:hover {
-    background-image: linear-gradient(#3BA7C9, white);
+    background-image: linear-gradient(white, #3BA7C9);
 }
 
 .outcomes-gradient {
-    background-image: white;
+    background-image: linear-gradient(white, black);
+    transition: 0.5s ease-in-out;
 }
 
 .outcomes-gradient:hover {
-    background-image: linear-gradient(#E23CAD, white);
+    background-image: linear-gradient(white, #E23CAD);
 }
 
 .cost-gradient {
-    background-image: white;
+    background-image: linear-gradient(white, black);
+    transition: 0.5s ease-in-out;
 }
 
 .cost-gradient:hover {
-    background-image: linear-gradient(#662D91, white);
+    background-image: linear-gradient(white,#662D91);
 }
 
 
