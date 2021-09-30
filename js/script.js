@@ -8,6 +8,15 @@ function titleCase(string) {
 	return string.join(' ');
 };
 
+// sentence case
+function sentenceCase(string) {
+	string = string.toLowerCase();
+	string = string.split(' ');
+	
+    string[0] = string[0].charAt(0).toUpperCase() + string[0].slice(1);
+	return string.join(' ');
+};
+
 // round accurately function
 function roundAccurately(number, decimalPlaces) {
 	return Number(Math.round(number + "e" + decimalPlaces) + "e-" + decimalPlaces);	

@@ -60,7 +60,27 @@ h2 {
     font-size: 5em;
     text-align: right;
 }
-
+.text-orange {
+    color: #EB4927;
+}
+.text-blue {
+    color: #1540C4;
+}
+.text-teal {
+    color: #3BA7C9;
+}
+.text-pink {
+    color: #E23CAD;
+}
+.text-purple {
+    color: #662D91;
+}
+.text-white {
+    color: #fff;
+}
+.text-black {
+    color: #000;
+}
 .handwriting {
     font-family: 'Caveat', cursive;
 }
@@ -307,12 +327,17 @@ main {
 }
 .tooltip h3 {
     margin-bottom: 0;
+    font-weight: 700;
 }
 .tooltip p {
     margin-bottom: 0;
-    font-size: 0.8em;
+    font-size: 0.7em;
 }
-
+.tooltip .text-label {
+    font-weight: 600;
+    font-size: 1.2em;
+    line-height: 1em;
+}
 
 
 /* Small devices (landscape phones, 576px and up) */
