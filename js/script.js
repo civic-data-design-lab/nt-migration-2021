@@ -55,6 +55,15 @@ function wrapText(text, width) {
 	})
 };
 
+// window resize
+var winHeight = $(window).height();
+var winWidth = $(window).width();
+
+$(window).resize(function() {
+	winHeight = $(window).height();
+	winWidth = $(window).width();
+});
+
 $(document).ready(function () {
     
 })
