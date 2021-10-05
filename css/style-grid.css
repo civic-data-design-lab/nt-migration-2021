@@ -1,0 +1,478 @@
+/* LOAD FONTS */
+
+@font-face {
+    font-family: fa;
+    src: url();
+}
+
+@font-face {
+    font-family: '';
+    src: url();
+}
+
+/*GENERAL HTML */
+html{
+    scroll-behavior: smooth;
+}
+
+/* SCROLLBAR */
+
+
+
+::-webkit-scrollbar {
+    /* width: 0.75em; */
+    display: none;
+}
+
+/* Handle */
+/*
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+/* Handle on hover */
+/*
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+/* TEXT STYLES */
+
+body {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 10em;
+    text-align: right;
+    line-height: 1em;
+}
+
+h2 {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 5em;
+    text-align: right;
+}
+.text-orange {
+    color: #EB4927;
+}
+.text-blue {
+    color: #1540C4;
+}
+.text-teal {
+    color: #3BA7C9;
+}
+.text-pink {
+    color: #E23CAD;
+}
+.text-purple {
+    color: #662D91;
+}
+.text-white {
+    color: #fff;
+}
+.text-black {
+    color: #000;
+}
+.handwriting {
+    font-family: 'Caveat', cursive;
+}
+
+/* DECORATION, COLOR, CASE */
+.upper {
+    text-transform: uppercase;
+}
+
+.white {
+    color: rgba(255, 255, 255,1);
+}
+
+.blend {
+    mix-blend-mode: difference;
+    
+}
+
+/* LANDING STYLES */
+.splash-screen-img {
+    height: auto;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transition: 1s;
+}
+
+.grid-splash-img {
+    position: relative;
+    height: auto;
+    width: 100vw;
+    transition: 1s;
+    z-index: 1;
+}
+
+
+
+/* PAGES */
+main {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+/* GRID */
+
+.wrapper{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-auto-rows: 100vh;
+    transition: 1s ease-in-out;
+}
+
+.wrapper > div{
+    border: 1px solid white;
+
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    transition: 1s ease-in-out;
+
+}
+
+/* .wrapper > div:hover{
+    grid-column: 3fr;
+    transition: 1s ease-in-out;
+} */
+
+/* .test{
+    grid-column: span 3;
+} */
+
+/* ABOUT LANDING */
+.about {
+    position: absolute;
+    display: inline-block;
+    width: 10%;
+    height: auto;
+}
+
+.about-landing {
+    /*about is unique because it is always open*/
+    position: absolute;
+    height: 100vh;
+    width: 85vw;
+    overflow-y: scroll;
+    overflow-x: visible;
+    /* padding: 5em; */
+}
+
+.about-landing>h1{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.about-landing>img {
+    width: 100vw;
+    height: auto;
+}
+
+.fullscreen-text {
+    margin: 90vh 0 0 0;
+    display: inline-block;
+    height: auto;
+
+   /* display: none; */
+}
+
+.fullscreen-text:hover {
+    display: fixed;
+    mix-blend-mode: multiply;
+}
+
+/* CHAPTER PAGES */
+
+.page{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.page h1{
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.589);
+    width: 90vw;
+    display: inline-block;
+    padding: 0.25em;
+}
+
+.page h2{
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.589);
+    width: 90vw;
+    display: inline-block;
+    padding: 0.25em;
+    visibility: hidden;
+}
+
+
+.chapter {
+    transition: 1s;
+    width: 3%;
+    /* box-shadow: -0.5em 0em 0.75em rgba(41, 41, 41, 1); */
+    /* border: 0.2em solid white; */
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    float: right;
+
+}
+
+.chapter .splash-screen-img{
+    filter: blur(0.5em) grayscale(75%);
+}
+
+.chapter:hover .splash-screen-img{
+    filter: blur(0em) grayscale(0%);
+}
+
+.chapter>h1 {
+    visibility: hidden;
+    color: rgba(255, 255, 255, 0.589);
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    align-items: center;
+    padding: 0.25em;
+}
+
+.chapter:hover>h1 {
+    visibility: visible;
+}
+
+.chapter>h1 {
+    visibility: hidden;
+}
+
+.chapter:hover>h2 {
+    color: rgba(255, 255, 255, 0.589);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+}
+
+.closed{
+    width: 3% !important;
+}
+
+#hover{
+    width: 30%;
+}
+
+#opened{
+    width: 85%;
+
+}
+
+/* grid style */
+#open{
+    /* box-shadow: -0.5em 0em 0.75em rgba(41, 41, 41, 1) !important; */
+    width: 90vw;
+    box-shadow: -0.5em 0em 0.75em rgba(41, 41, 41, 1), 0.5em 0em 0.75em rgba(41, 41, 41, 1);
+    z-index: 6;
+}
+
+#close{
+    width: 2vw;
+}
+
+#hover{
+    width: 25vw;
+}
+
+#hover h1{
+    visibility: hidden;
+}
+
+#partial{
+    width: 67vw;
+}
+
+#close > h1{
+    display: none;
+
+}
+
+#partial-open{
+    /* width: calc(100% - (30 + (5*3))); */
+    width: 58%;
+}
+
+/* PAGES - Z-INDEX */
+.z-1 {
+    z-index: -1;
+}
+
+.z0 {
+    z-index: 0;
+}
+
+.z1 {
+    z-index: 1;
+}
+
+.z2 {
+    z-index: 2;
+}
+
+.z3 {
+    z-index: 3;
+}
+
+.z4 {
+    z-index: 4;
+}
+
+.z5 {
+    z-index: 5;
+}
+
+
+/* BACKGROUNDS */
+
+.website-background{
+    background-image: linear-gradient(black,white);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -5;
+}
+
+
+.about-gradient {
+    /* background-image: linear-gradient(black, white), url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/crops.png"); */
+    background-image: linear-gradient(black, white);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    transition: 1s ease-in-out;
+}
+
+.about-gradient:hover {
+}
+
+
+.origins-gradient {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), black);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s ease-in-out;
+}
+
+.origins-gradient:hover {
+    /* background-image: linear-gradient(#EB4927, rgba(255, 255, 255, 0.3)), url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/transit.png"); */
+}
+
+.motivations-gradient {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), black),url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/transit.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s ease-in-out;}
+
+.motivations-gradient:hover {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3),#1540C4), url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/crops.png");
+}
+
+.profiles-gradient {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), black), url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/crops.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s ease-in-out;
+}
+
+.profiles-gradient:hover {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), #3BA7C9), url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/transit.png");
+}
+
+.outcomes-gradient {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), black), url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/transit.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s ease-in-out;
+}
+
+.outcomes-gradient:hover {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), #E23CAD), url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/crops.png");
+}
+
+.cost-gradient {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), black),url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/crops.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s ease-in-out;
+}
+
+.cost-gradient:hover {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.726),#662D91), url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/transit.png");
+}
+
+/* TOOLTIPS */
+.template {
+    display: none;
+}
+
+.tooltip {
+    position: absolute;
+    margin: 0;
+    padding: 10px 10px 10px 20px;
+    background: #fff;
+    border: solid 1px #ccc;
+    box-shadow: 2px 2px 6px rgb(0 0 0 / 50%);
+    opacity: 1;
+}
+.side-color {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #ccc;
+    height: 100%;
+    width: 10px;
+}
+.tooltip h3 {
+    margin-bottom: 0;
+    font-weight: 700;
+}
+.tooltip p {
+    margin-bottom: 0;
+    font-size: 0.7em;
+}
+.tooltip .text-label {
+    font-weight: 600;
+    font-size: 1.2em;
+    line-height: 1em;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}

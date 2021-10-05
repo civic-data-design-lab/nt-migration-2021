@@ -24,18 +24,6 @@ html{
     display: none;
 }
 
-/* Handle */
-/*
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-  
-/* Handle on hover */
-/*
-::-webkit-scrollbar-thumb:hover {
-background: #555;
-}
-
 /* TEXT STYLES */
 
 body {
@@ -60,6 +48,14 @@ h2 {
     font-size: 5em;
     text-align: right;
 }
+
+h3 {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 2em;
+}
+
 .text-orange {
     color: #EB4927;
 }
@@ -94,6 +90,7 @@ h2 {
     color: rgba(255, 255, 255,1);
 }
 
+
 .blend {
     mix-blend-mode: difference;
     
@@ -105,8 +102,8 @@ h2 {
     width: 100%;
     position: fixed;
     z-index: -1;
-    mix-blend-mode: multiply;
-    transition: 1s;
+    /* mix-blend-mode: multiply; */
+    transition: 1s ease-in-out;
 }
 
 
@@ -162,7 +159,7 @@ main {
 /* CHAPTER PAGES */
 
 .chapter {
-    transition: 0.5s;
+    transition: 1s;
     width: 3%;
     box-shadow: -0.5em 0em 0.75em rgba(41, 41, 41, 1);
     position: relative;
@@ -173,61 +170,121 @@ main {
 
 }
 
-.chapter .splash-screen-img{
-    filter: blur(0.5em) grayscale(75%);
-}
-
-.chapter:hover .splash-screen-img{
-    filter: blur(0em) grayscale(0%);
-}
-
-.chapter>h1 {
-    visibility: hidden;
-    color: rgba(255, 255, 255, 0.589);
-    width: 100%;
+.chapter h1 {
+    width: 85vw;
     height: 100%;
     display: inline-block;
-    align-items: center;
-    padding: 0.25em;
+    align-items: right;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    transition:1s ease-in-out;
 }
 
-.chapter:hover>h1 {
-    visibility: visible;
-}
-
-.chapter>h2 {
-    visibility: hidden;
-}
-
-.chapter:hover>h2 {
-    color: rgba(255, 255, 255, 0.589);
+.chapter:hover h2 {
+    color: rgba(255, 255, 255, 1);
     width: 100%;
-    height: 100%;
-    display: flex;
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    visibility: visible;
+    display: flex !important;
 }
 
-.closed{
-    width: 3% !important;
+.chapter-title{
+    position: absolute;
 }
+
+#closed .chapter-title{
+    color: rgba(255, 255, 255, 0);
+
+}
+
+#hover .chapter-title{
+    color: white;
+}
+
+#closed{
+    width: 3%;
+}
+
+#closed > *{
+    backdrop-filter: blur(0.25em);
+}
+
+
+
+#closed h2{
+    color: rgba(255, 255, 255, 0);
+}
+
+#closed h1,h3{
+    color: rgba(255, 255, 255, 0);
+    }
 
 #hover{
     width: 30%;
 }
 
-#open{
-    width: 88%;
+#hover > *{
+    backdrop-filter: blur(0.125em);
+}
 
+#hover h1{
+    color: #0000;
+}
+
+#hover h2{
+}
+
+#open{
+    width: 85%;
+}
+
+#open h1,h3{
+    display:inline-block !important;
+}
+
+#open h3{
+    color: black;
+    width: 80vw;
+}
+
+
+#open h2{
+    color: rgba(255, 255, 255, 0);
+    transition: 1s ease-in-out;
 }
 
 #partial-open{
-    /* width: calc(100% - (30 + (5*3))); */
-    width: 61%;
+    width: 58%;
+}
+
+#partial-open h2{
+    color: white;
+    transition: 1s ease-in-out;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#partial-open h1{
+    color: #0000;
+}
+
+#partial-open > *{
+    backdrop-filter: blur(0.25em);
+}
+
+#partial-open h1:first-of-type{
+    /* display: none; */
 }
 
 /* PAGES - Z-INDEX */
+.z-1{
+    z-index: -1;
+}
+
 .z0 {
     z-index: 0;
 }
@@ -254,54 +311,109 @@ main {
 
 
 /* BACKGROUNDS */
-.about-gradient {
-    background-image: linear-gradient(white, black);
-    transition: 0.5s ease-in-out;
+.website-background{
+    background: black;
+    position: absolute;
+    width: 100%;
+    height:100%
 }
 
-.origins-gradient {
-    background-image: linear-gradient(white, black);
-    transition: 0.5s ease-in-out;
+.solid-white{
+    background: white;
+    padding: 1em;
 }
 
-.origins-gradient:hover {
-    background-image: linear-gradient(white, #EB4927);
+/* BACKGROUND COVER IMAGES */
+
+.bk{
+    background-repeat: no-repeat;
+    background-size: cover; 
+    transition: 1s ease-in-out;
 }
 
-.motivations-gradient {
-    background-image: linear-gradient(white,black);
-    transition: 0.5s ease-in-out;
+.about-img {
+    background-image: url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/crops.png");
+
 }
 
-.motivations-gradient:hover {
-    background-image: linear-gradient(white,#1540C4);
+.origins-img{
+    background-image: url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/transit.png");
 }
 
-.profiles-gradient {
-    background-image: linear-gradient(white, black);
-    transition: 0.5s ease-in-out;
+.motivations-img {
+    background-image: url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/crops.png");
 }
 
-.profiles-gradient:hover {
-    background-image: linear-gradient(white, #3BA7C9);
+.profiles-img{
+    background-image: url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/transit.png");
 }
 
-.outcomes-gradient {
-    background-image: linear-gradient(white, black);
-    transition: 0.5s ease-in-out;
+.outcomes-img {
+    background-image: url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/crops.png");
 }
 
-.outcomes-gradient:hover {
-    background-image: linear-gradient(white, #E23CAD);
+.cost-img{
+    background-image: url("https://raw.githubusercontent.com/civic-data-design-lab/nt-migration-2021/main/img/transit.png");
 }
 
-.cost-gradient {
-    background-image: linear-gradient(white, black);
-    transition: 0.5s ease-in-out;
+/* BACKGROUND GRADIENTS */
+
+.gradient{
+    transition: 1s ease-in-out;
+    min-height: 125%;
+    max-height: auto; 
 }
 
-.cost-gradient:hover {
-    background-image: linear-gradient(white,#662D91);
+.about-g {
+    background-image: linear-gradient(#0000,#0000, white);
+    
+}
+
+.about-gradient:hover{
+    background-image: linear-gradient(#0000,#0000, white);
+    transition: 1s ease-in-out;
+}
+
+.origins-g {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), white);
+    transition: 1s ease-in-out;
+}
+
+.origins-g:hover {
+    background-image: linear-gradient(#eb482762,#eb482762, white);
+}
+
+.motivations-g {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), white);
+}
+
+.motivations-g:hover {
+    background-image: linear-gradient(#1541c469,#1541c462, white);
+}
+
+.profiles-g {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), white);
+}
+
+.profiles-g:hover {
+    background-image: linear-gradient(#3ba8c977,#3ba8c977, white);
+}
+
+.outcomes-g {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), white);
+}
+
+.outcomes-g:hover {
+    background-image: linear-gradient(#e23cad80,#e23cad75, white);
+
+}
+
+.cost-g {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), white);
+}
+
+.cost-g:hover {
+    background-image: linear-gradient(#662d9183,#662d9180, white);
 }
 
 /* TOOLTIPS */

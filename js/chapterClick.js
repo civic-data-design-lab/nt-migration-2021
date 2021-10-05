@@ -1,12 +1,11 @@
-var chapters = document.getElementById("test")
 var allChapters = document.getElementsByClassName("chapter")
-let startWidth = chapters.style.width
 
 
 for (let i = 0; i < allChapters.length; i++) {
 
     let startClass = allChapters[i].className
 
+    if (allChapters[i].id == "")
     allChapters[i].id = "closed"
 
     //mouseHoverIn
@@ -43,12 +42,11 @@ for (let i = 0; i < allChapters.length; i++) {
         console.log(partialChapters)
 
         if ((partialChapters != null) & allChapters[i].id != "open"){
-            partialChapters.id = ""
+            partialChapters.id = "closed"
          }
         
-        if ((allChapters[i].id != null) & (allChapters[i].id == "open")){
-            //shrink the chapter
-             allChapters[i].id = ""
+        if ((allChapters[i].id == "open")){
+
         
         } else {
             //expand the chapter
@@ -57,4 +55,3 @@ for (let i = 0; i < allChapters.length; i++) {
     }
     
 }
-
