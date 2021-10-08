@@ -22,6 +22,12 @@
     src: url();
 }
 
+
+/* GLOBAL CUSTOM VARIABLES */
+:root{
+    --gradeient-falloff: 70%
+}
+
 /*GENERAL HTML */
 html {
     scroll-behavior: smooth;
@@ -499,31 +505,33 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
     max-height: 100%;
 }
 
+
+
 .about-g {
-    background-image: linear-gradient(#0000, #0000, white);
+    background-image: linear-gradient(#0000 var(--gradeient-falloff),  white);
 
 }
 
 .origins-g {
-    background-image: linear-gradient(#eb4827e5, #eb482760, white);
+    background-image: linear-gradient(#eb4827e5 var(--gradeient-falloff), white);
 }
 
 .motivations-g {
-    background-image: linear-gradient(#1541c469, #1541c462, white);
+    background-image: linear-gradient(#1541c469 var(--gradeient-falloff), white);
 }
 
 .profiles-g {
-    background-image: linear-gradient(#3ba8c977, #3ba8c977, white);
+    background-image: linear-gradient(#3ba8c977 var(--gradeient-falloff),  white);
 }
 
 
 .outcomes-g {
-    background-image: linear-gradient(#e23cad80, #e23cad75, white);
+    background-image: linear-gradient(#e23cad80 var(--gradeient-falloff),  white);
 
 }
 
 .cost-g {
-    background-image: linear-gradient(#662d9183, #662d9180, white);
+    background-image: linear-gradient(#662d9183 var(--gradeient-falloff), white);
 }
 
 /* TOOLTIPS */
