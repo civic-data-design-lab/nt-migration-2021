@@ -24,8 +24,9 @@
 
 
 /* GLOBAL CUSTOM VARIABLES */
-:root{
-    --gradeient-falloff: 70%
+:root {
+    --gradeient-falloff: 70%;
+    --start-padding: 10px;
 }
 
 /*GENERAL HTML */
@@ -71,13 +72,6 @@ h3 {
     font-style: normal;
     font-size: 2em;
     color: black;
-}
-
-h1,
-h2,
-h3,
-a {
-    padding: 10px;
 }
 
 /* a, a:link, a:hover, a:active {
@@ -163,7 +157,8 @@ main {
     float: right;
 }
 
-.chapter h1, .chapter h3 {
+.chapter h1,
+.chapter h3 {
     width: 86vw;
     height: 100%;
     display: inline-block;
@@ -192,6 +187,7 @@ main {
 .chapter-summary {
     color: rgba(255, 255, 255, 0);
     pointer-events: none;
+    padding:var(--start-padding);
 }
 
 .inner-chapter {
@@ -219,7 +215,7 @@ main {
 
 }
 
-#closed *{
+#closed * {
     filter: grayscale(1);
 }
 
@@ -230,7 +226,7 @@ h3 {
     transition: 1s ease-in-out;
 }
 
-#closed h2{
+#closed h2 {
     color: rgba(255, 255, 255, 0);
     transition: 1s ease-in-out;
     width: 100%;
@@ -251,7 +247,7 @@ h3 {
 
 }
 
-#open .chapter-summary{
+#open .chapter-summary {
     color: white;
 
 }
@@ -268,6 +264,7 @@ h3 {
 
 #open .chapter-title {
     pointer-events: none;
+    padding:var(--start-padding);
 }
 
 #open h2 {
@@ -456,12 +453,10 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
     background-size: cover;
     background-position: center;
     transition: 1s ease-in-out;
-    mix-blend-mode:normal;
+    mix-blend-mode: normal;
 }
 
-.bk #closed{
-    
-}
+.bk #closed {}
 
 
 
@@ -508,12 +503,12 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 
 
 .about-g {
-    background-image: linear-gradient(#0000 var(--gradeient-falloff),  white);
+    background-image: linear-gradient(#0000 var(--gradeient-falloff), white);
 
 }
 
 .origins-g {
-    background-image: linear-gradient(#eb4827e5 var(--gradeient-falloff), white);
+    background-image: linear-gradient(#eb48279f var(--gradeient-falloff), white);
 }
 
 .motivations-g {
@@ -521,12 +516,12 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 }
 
 .profiles-g {
-    background-image: linear-gradient(#3ba8c977 var(--gradeient-falloff),  white);
+    background-image: linear-gradient(#3ba8c977 var(--gradeient-falloff), white);
 }
 
 
 .outcomes-g {
-    background-image: linear-gradient(#e23cad80 var(--gradeient-falloff),  white);
+    background-image: linear-gradient(#e23cad80 var(--gradeient-falloff), white);
 
 }
 
@@ -601,6 +596,7 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 
     .inner-chapter>img {
         width: 85vw;
+        padding:var(--start-padding);
     }
 
 }
@@ -624,18 +620,18 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
         font-size: 1em;
     }
 
-    
-    .chapter{
+
+    .chapter {
         height: 5vh !important;
         width: 100vw !important;
         transition: 1s ease-in-out !important;
     }
 
-    #closed h2{
+    #closed h2 {
         color: white;
     }
 
-    #open{
+    #open {
         height: 75vh !important;
     }
 

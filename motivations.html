@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Ashley Louie">
-    <title>Motivations</title>
+    <title>Title</title>
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/eqc7jzl.css">
+
+    <!-- CAVEAT FONT REGULAR 400 and 600 SEMIBOLD-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/motivations.css">
@@ -18,55 +23,118 @@
 </head>
 
 <body>
-    <main class="container">
-        <section class="container-fluid section">
-            <!-- div for buttons -->
-            <div class="row mt-5 mb-3">
-                <div class="col-5">
-                    <p class="text-blue">Click to sort household characteristics:</p>
-                </div>
-                <div class="col-7 row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-sm text-uppercase text-blue">Motivations</button>
-                    </div>
-                    <div class="col-3">
-                        <button type="button" class="btn btn-sm text-uppercase text-blue">Income</button>
-                    </div>
-                    <div class="col-5">
-                        <button type="button" class="btn btn-sm text-uppercase text-blue">Food Security</button>
-                    </div>
-                </div>
-            </div>
-            <!-- frame for d3 visualization -->
-            <div id="frame-motivations"></div>
-        </section>
-        <!-- motivations tooltiip template -->
-        <div class="tooltip template">
-            <div class="side-color"></div>
-            <p>Motivation for Migrating</p>
-            <h3 class="text-color">
-                <span class="label-motiv-pct">90</span>%  
-                <span class="label-motiv text-uppercase">Economic</span>
-            </h3>
-            <span class="text-color">of 
-                <span class="label-hh">surveyed</span> households
-            </span>
-            <div class="row mt-1">
-                <div class="col-left">
-                    <p>Reason for Migrating</p>
-                    <span class="label-motiv-detail text-label">Search for a better job, salary or working conditions, lack of money to buy food, lack of money to cover basic needs</span>
-                </div>
-                <div class="col-right">
-                    <p>Origin Country</p>
-                    <span class="label-country text-label">El Salvador</span>
-                </div>
-            </div>
-        </div>
-    </main><!-- /.container -->
+    <main>
+       
+        <!-- NAVIGATION --><!-- NAVIGATION --><!-- NAVIGATION -->
 
+        <section class="chapter bk cost-img z5" id="closed">
+            <div class="gradient cost-g">
+                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"cost.html")'>COST</h2>
+                <h1 class="upper white chapter-summary">MIGRATION<br>COSTS ADD TO<br>FINANCIAL<br>BURDEN</h1>
+            </div>
+        </section>
+
+        <section class="chapter bk outcomes-img z4" id="closed">
+            <div class="gradient outcomes-g">
+                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"outcomes.html")'>OUTCOMES
+                </h2>
+                <h1 class="upper white chapter-summary">ONLY 57%<br>OF MIGRANTS<br>REACH
+                    THEIR<br>INTENDED<br>DESTINATION</h1>
+            </div>
+
+        </section>
+
+        <section class="chapter bk profiles-img z3" id="closed">
+            <div class="gradient profiles-g">
+                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"profiles.html")'>PROFILES
+                </h2>
+                <h1 class="upper white chapter-summary">HALF OF MIGRANTS<br>WORK IN THE<br>SAME OCCUPATION<br>AFTER
+                    RELOCATION</h1>
+            </div>
+        </section>
+
+        <section class="chapter bk motivations-img z2" id="open">
+            <div class="gradient motivations-g">
+                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"motivations.html")'>
+                    MOTIVATIONS</h2>
+                <h1 class="upper white chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
+            </div>
+
+            <!-- PAGE CONTENT --><!-- PAGE CONTENT --><!-- PAGE CONTENT -->
+
+            <div class="solid-white">
+                <!-- div for buttons -->
+                <div class="row mb-3"> <!--REMOVED! mt-5--> 
+                    <div class="col-5">
+                        <p class="text-blue">Click to sort household characteristics:</p>
+                    </div>
+                    <div class="col-7 row">
+                        <div class="col-4">
+                            <button type="button" class="btn btn-sm text-uppercase text-blue">Motivations</button>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-sm text-uppercase text-blue">Income</button>
+                        </div>
+                        <div class="col-5">
+                            <button type="button" class="btn btn-sm text-uppercase text-blue">Food Security</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- frame for d3 visualization -->
+                <div id="frame-motivations"></div>
+                <div class="tooltip template">
+                    <div class="side-color"></div>
+                    <p>Motivation for Migrating</p>
+                    <h3 class="text-color">
+                        <span class="label-motiv-pct">90</span>%
+                        <span class="label-motiv text-uppercase">Economic</span>
+                    </h3>
+                    <span class="text-color">of
+                        <span class="label-hh">surveyed</span> households
+                    </span>
+                    <div class="row mt-1">
+                        <div class="col-left">
+                            <p>Reason for Migrating</p>
+                            <span class="label-motiv-detail text-label">Search for a better job, salary or working
+                                conditions, lack of money to buy food, lack of money to cover basic needs</span>
+                        </div>
+                        <div class="col-right">
+                            <p>Origin Country</p>
+                            <span class="label-country text-label">El Salvador</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION --><!-- NAVIGATION --><!-- NAVIGATION -->
+        <section class="chapter bk origins-img z1" id="closed">
+            <div class="gradient origins-g">
+                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"origins.html")'>ORIGINS
+                </h2>
+                <h1 class="upper white chapter-summary">VIOLENCE, CLIMATE,<br>ECONOMICS,<br>AND POLICY<br>HISTORICALLY
+                    DRIVE EMIGRATION
+                </h1>
+            </div>
+        </section>
+
+        <section class="chapter bk about-img z0" id="closed">
+            <div class="gradient about-g">
+                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"index.html")'>ABOUT</h2>
+                <h1 class="upper white chapter-summary">Charting A New Regional Course of Action</h1><br><br><br><br>
+            </div>
+        </section>
+        
+        <!-- BACKGROUND --><!-- BACKGROUND --><!-- BACKGROUND -->
+        <section class="website-background z-1"></section>
+
+    </main>
+
+    <script type="text/javascript" src="./js/chapterClick.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
     <script type="text/javascript" src="./js/motivations.js"></script>
+
 </body>
 
 </html>
