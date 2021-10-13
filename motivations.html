@@ -62,48 +62,50 @@
 
             <!-- PAGE CONTENT --><!-- PAGE CONTENT --><!-- PAGE CONTENT -->
 
-            <div class="container solid-white px-5 pb-5">
-                <!-- div for buttons -->
-                <div class="row mb-3"> 
-                    <div class="col-5">
-                        <p class="text-blue">Click to sort household characteristics:</p>
-                    </div>
-                    <div class="col-7 row">
-                        <div class="col-4">
-                            <button type="button" class="btn btn-sm text-uppercase text-blue">Motivations</button>
-                        </div>
-                        <div class="col-3">
-                            <button type="button" class="btn btn-sm text-uppercase text-blue">Income</button>
-                        </div>
+            <div class="solid-white">
+                <div class="container px-5 pb-5">
+                    <!-- div for buttons -->
+                    <div class="row mb-3">
                         <div class="col-5">
-                            <button type="button" class="btn btn-sm text-uppercase text-blue">Food Security</button>
+                            <p class="text-blue">Click to sort household characteristics:</p>
+                        </div>
+                        <div class="col-7 row">
+                            <div class="col-4">
+                                <button type="button" class="btn btn-sm text-uppercase text-blue">Motivations</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-sm text-uppercase text-blue">Income</button>
+                            </div>
+                            <div class="col-5">
+                                <button type="button" class="btn btn-sm text-uppercase text-blue">Food Security</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- frame for d3 visualization -->
-                <div id="frame-motivations"></div>
-                <div class="tooltip template">
-                    <div class="side-color"></div>
-                    <p>Motivation for Migrating</p>
-                    <h3 class="text-color">
-                        <span class="label-motiv-pct">90</span>%
-                        <span class="label-motiv text-uppercase">Economic</span>
-                    </h3>
-                    <span class="text-color">of
-                        <span class="label-hh">surveyed</span> households
-                    </span>
-                    <div class="row mt-1">
-                        <div class="col-left">
-                            <p>Reason for Migrating</p>
-                            <span class="label-motiv-detail text-label">Search for a better job, salary or working
-                                conditions, lack of money to buy food, lack of money to cover basic needs</span>
-                        </div>
-                        <div class="col-right">
-                            <p>Origin Country</p>
-                            <span class="label-country text-label">El Salvador</span>
+                    <!-- frame for d3 visualization -->
+                    <div id="frame-motivations"></div>
+                    <div class="tooltip template">
+                        <div class="side-color"></div>
+                        <p>Motivation for Migrating</p>
+                        <h3 class="text-color">
+                            <span class="label-motiv-pct">90</span>%
+                            <span class="label-motiv text-uppercase">Economic</span>
+                        </h3>
+                        <span class="text-color">of
+                            <span class="label-hh">surveyed</span> households
+                        </span>
+                        <div class="row mt-1">
+                            <div class="col-left">
+                                <p>Reason for Migrating</p>
+                                <span class="label-motiv-detail text-label">Search for a better job, salary or working
+                                    conditions, lack of money to buy food, lack of money to cover basic needs</span>
+                            </div>
+                            <div class="col-right">
+                                <p>Origin Country</p>
+                                <span class="label-country text-label">El Salvador</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div><!-- close container -->
             </div>
         </section>
 
