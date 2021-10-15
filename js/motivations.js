@@ -19,8 +19,8 @@ const motivDetailOrder = {
     "3": 3, "4": 3, "5": 3,
     "9": 4, "13": 4, "14": 4, "15": 4, "16": 4
 };
-let motivationsData = [];
-let motivsIndex = {};
+var motivationsData = [];
+var motivsIndex = {};
 
 // define svg
 const svg = d3.select("#frame-motivations")
