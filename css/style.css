@@ -529,6 +529,11 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
     background-image: linear-gradient(#662d9183 var(--gradeient-falloff), white);
 }
 
+/* BUTTONS */
+.btn:focus {
+    box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 25%);
+}
+
 /* TOOLTIPS */
 .template {
     display: none;
