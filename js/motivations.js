@@ -5,6 +5,9 @@ const height = 860;
 
 // data variables
 let keys = [];
+let motivationsData = [];
+const motivsIndex = {};
+let motivSort = "initial";
 const motivOrder = {
     "econ": 0,
     "reun": 1,
@@ -19,14 +22,67 @@ const motivDetailOrder = {
     "3": 3, "4": 3, "5": 3,
     "9": 4, "13": 4, "14": 4, "15": 4, "16": 4
 };
-var motivationsData = [];
-const motivsIndex = {};
+const motivsList = ["econ", "reun", "sec", "clim", "oth"];
+let motivsSummaryData = [],
+    incomeSummaryData = [],
+    cariSummaryData = [];
+
+// look up labels
+const incomeText = {
+    1: "extremely low income",
+    2: "low income",
+    3: "mid-low income",
+    4: "mid income",
+    5: "mid-high income",
+    6: "high income"
+};
+const cariText = {
+    1: "food secure",
+    2: "marginally food secure",
+    3: "moderately food insecure",
+    4: "severely food insecure"
+};
+const countryText = {
+    "GT": "Guatemala",
+    "HND": "Honduras",
+    "SLV": "El Salvador"
+};
+const motivAttr = {
+    "econ": {"label": "Economics", "color": "#1540c4"},
+    "reun":  {"label": "Reunification", "color": "#eb4927"},
+    "sec": {"label": "Security", "color": "#93278f"},
+    "clim": {"label": "Climate", "color": "#00a99d"},
+    "oth":  {"label": "Other", "color": "#f1a650"}
+};
+const motivDetailAttr = {
+    "1": {"label": "search for a better job", "category": "econ", "color": "#1540c4"},
+    "2": {"label": "unemployment", "category": "econ", "color": "#1540c4"},
+    "3": {"label": "deteriorated livelihood due to natural hazards", "category": "clim", "color": "#00a99d"},
+    "4": {"label": "direct impact from a natural hazard", "category": "clim", "color": "#00a99d"},
+    "5": {"label": "loss of land due to land use change", "category": "clim", "color": "#00a99d"},
+    "6": {"label": "lack of money for food", "category": "econ", "color": "#1540c4"},
+    "7": {"label": "lack of money for basic needs", "category": "econ", "color": "#1540c4"},
+    "8": {"label": "to send remittances", "category": "econ", "color": "#1540c4"},
+    "9": {"label": "education", "category": "oth", "color": "#f1a650"},
+    "10": {"label": "domestic violence", "category": "sec", "color": "#93278f"},
+    "11": {"label": "unsafety", "category": "sec", "color": "#93278f"},
+    "12": {"label": "family reunification", "category": "reun", "color": "#eb4927"},
+    "13": {"label": "cultural reasons", "category": "oth", "color": "#f1a650"},
+    "14": {"label": "health needs", "category": "oth", "color": "#f1a650"},
+    "15": {"label": "adventure or tourism", "category": "oth", "color": "#f1a650"},
+    "16": {"label": "other", "category": "oth", "color": "#f1a650"}
+};
+
+// square dimensions
+const sqLen = 24;
+const gap = 4;
+const numPerRow = 56;
 
 // define svg
 const svg = d3.select("#frame-motivations")
     .append("svg")
         .attr("id", "viz-motivations")
-        .attr("viewBox", [0, 0, width, height])
+        .attr("viewBox", [0, -sqLen, width, height + sqLen]);
 
 // tooltip
 const divMotivs = d3.select("body").append("div")
@@ -36,11 +92,7 @@ const divMotivs = d3.select("body").append("div")
     .style("z-index", "10")
     .text("info");
 
-// square dimensions
-const sqLen = 24;
-const gap = 4;
-const numPerRow = 56;
-
+// scale grid
 const scale = d3.scaleLinear()
     .domain([0, numPerRow - 1])
     .range([0, sqLen * numPerRow]);
@@ -63,7 +115,6 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
                 motivsIndex[rspId] = {};
                 motivsIndex[rspId]['initial'] = i;
             }
-        // }
 
             // sort by motivations
             if (!motivsIndex.rsp12.motivs) {
@@ -153,6 +204,40 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
             }
         }
 
+        // data for summary labels
+        if (!motivsSummaryData.length) {
+            for (var m = 0; m < motivsList.length; m++) {
+                let motiv = motivsList[m];
+                
+                item = {};
+
+                item.rsp = data.filter(d => d.motiv_cat.includes(motiv)).length;
+                item.pct = roundAccurately(item.rsp / data.length, 2) * 100;
+
+                motivsSummaryData.push(item);
+                // for (var i = 0; i < data.length; i++) {
+
+                // }
+            }
+        }
+
+        distinctIncome = [];
+        incomeList = data.map(d => d.income_per_capita_tier).filter((value, index, self) => self.indexOf(value) === index);
+
+        if (!incomeSummaryData.length) {
+            for (var n = 0; n < incomeList.length; n++) {
+                let incomeTier = incomeList[n];
+                
+                item = {};
+
+                item.rsp = data.filter(d => d.income_per_capita_tier == incomeTier).length;
+                item.pct = roundAccurately(item.rsp / data.length, 2) * 100;
+
+                console.log("income tier " + incomeTier + ": " + item.pct);
+                incomeSummaryData.push(item);
+            }
+        }
+
         data.sort((a, z) => sortCompare(a.rsp_id2 > z.rsp_id2));
 
         plotInitialGrid(motivationsData);
@@ -176,69 +261,7 @@ function findIndex(rspId, sortBy) {
     : (sortBy == "cari") ? motivsIndex[rspId].cari
     : motivsIndex[rspId].initial;
 };
-// look up country
-function lookUpCountry(country) {
-    return country == "GT" ? "Guatemala"
-    : country == "HND" ? "Honduras"
-    : country == "SLV" ? "El Salvador"
-    : "unknown"
-}
 // motivations lookup for colors and label text
-function lookUpMotiv(motivCode, attr) {
-    if (attr == "color") {
-        return motivCode == "econ" ? "#1540c4" // economics
-        : motivCode == "clim" ? "#00a99d" // climate
-        : motivCode == "sec" ? "#93278f" // security
-        : motivCode == "reun" ?  "#eb4927" // reunification
-        : motivCode == "oth" ?  "#f1a650" // other
-        : "#CCCCCC";
-    }
-    else if (attr == "label") {
-        return motivCode == "econ" ? "Economics"
-        : motivCode == "clim" ? "Climate"
-        : motivCode == "sec" ? "Security"
-        : motivCode == "reun" ?  "Reunification"
-        : motivCode == "oth" ?  "Other"
-        : "unknown";
-    }
-};
-function lookUpMotivDetail(motivRsp, attr) {
-    if (attr == "color") {
-        return (motivRsp == "1" || motivRsp == "2" || motivRsp == "6" || motivRsp == "7" || motivRsp == "8") ? "#1540c4" // economics
-        : (motivRsp == "3" || motivRsp == "4" || motivRsp == "5") ? "#00a99d" // climate
-        : (motivRsp == "10" || motivRsp == "11") ? "#93278f" // security
-        : motivRsp == "12" ?  "#eb4927" // reunification
-        : (motivRsp == "9" || motivRsp == "13" || motivRsp == "14" || motivRsp == "15" || motivRsp == "16") ?  "#f1a650" // other
-        : "#333";
-    }
-    else if (attr == "category") {
-        return (motivRsp == "1" || motivRsp == "2" || motivRsp == "6" || motivRsp == "7" || motivRsp == "8") ? "econ"
-        : (motivRsp == "3" || motivRsp == "4" || motivRsp == "5") ? "clim"
-        : (motivRsp == "10" || motivRsp == "11") ? "sec"
-        : motivRsp == "12" ?  "reun"
-        : (motivRsp == "9" || motivRsp == "13" || motivRsp == "14" || motivRsp == "15" || motivRsp == "16") ?  "oth"
-        : "unknown";
-    }
-    else if (attr == "label") {
-        return motivRsp == "1" ? "search for a better job"
-        : motivRsp == "2" ? "unemployment"
-        : motivRsp == "3" ? "deteriorated livelihood due to natural hazards"
-        : motivRsp == "4" ?  "direct impact from a natural hazard"
-        : motivRsp == "5" ?  "loss of land due to land use change"
-        : motivRsp == "6" ? "lack of money for food"
-        : motivRsp == "7" ? "lack of money for basic needs"
-        : motivRsp == "8" ?  "to send remittances"
-        : motivRsp == "9" ?  "education"
-        : motivRsp == "10" ? "domestic violence"
-        : motivRsp == "11" ? "unsafety"
-        : motivRsp == "12" ?  "family reunification"
-        : motivRsp == "13" ?  "cultural reasons"
-        : motivRsp == "14" ? "health needs"
-        : motivRsp == "15" ?  "adventure or tourism"
-        : motivRsp == "16" ?  "other"
-        : "no response";
-    }
-}
 function motivDetailText(motivRsp) {
     let motivDetailStr = "";
 
@@ -247,15 +270,15 @@ function motivDetailText(motivRsp) {
 
         for (let i = 0; i < motivList.length; i++) {
             if (!motivDetailStr) {
-                motivDetailStr += "<span style='color:" + lookUpMotivDetail(motivList[i], 'color') + "'>" + sentenceCase(lookUpMotivDetail(motivList[i], "label")) + "</span>";
+                motivDetailStr += "<span style='color:" + motivDetailAttr[motivList[i]].color + "'>" + sentenceCase(motivDetailAttr[motivList[i]].label) + "</span>";
             }
             else {
-                motivDetailStr += ", <span style='color:" + lookUpMotivDetail(motivList[i], 'color') + "'>" + lookUpMotivDetail(motivList[i], "label") + "</span>";
+                motivDetailStr += ", <span style='color:" + motivDetailAttr[motivList[i]].color + "'>" + motivDetailAttr[motivList[i]].label + "</span>";
             }
         }
     }
     else {
-        motivDetailStr += "<span style='color:" + lookUpMotivDetail(motivRsp, 'color') + "'>" + sentenceCase(lookUpMotivDetail(motivRsp, "label")) + "</span>";
+        motivDetailStr += "<span style='color:" + motivDetailAttr[motivRsp].color + "'>" + sentenceCase(motivDetailAttr[motivRsp].label) + "</span>";
     }
     return motivDetailStr;
 }
@@ -276,16 +299,26 @@ function tooltipHtml(d, shape) {
         motivCat = d.motiv_cat.split('-')[2];
     }
 
+    if (motivSort == "income") {
+        surveyedLabel = incomeText[d.income_per_capita_tier];
+    }
+    else if (motivSort == "cari") {
+        surveyedLabel = cariText[d.CARI];
+    }
+    else {
+        surveyedLabel = "surveyed";
+    }
+
     let motivPct = roundAccurately(motivationsData.filter((item) => item.motiv_cat.includes(motivCat)).length / motivationsData.length * 100, 0);
-    let motivColor = lookUpMotiv(motivCat, "color");
-    let motivLabel = lookUpMotiv(motivCat, "label");
-    let countryLabel = lookUpCountry(d.country);
+    let motivColor = motivAttr[motivCat].color;
+    let motivLabel = motivAttr[motivCat].label;
+    let countryLabel = countryText[d.country];
 
     tooltip.find(".side-color").css("background", motivColor);
     tooltip.find(".text-color").css("color", motivColor);
     tooltip.find(".label-motiv-pct").html(motivPct);
     tooltip.find(".label-motiv").html(motivLabel);
-    tooltip.find(".label-hh").html("surveyed");
+    tooltip.find(".label-hh").html(surveyedLabel);
     tooltip.find(".label-motiv-detail").html(motivDetailText(d.mig_ext_motivo));
     tooltip.find(".label-country").html(countryLabel);
 
@@ -616,7 +649,7 @@ function plotInitialGrid(data) {
             .attr("height", sqLen)
             .attr("fill", d => {
                 let motiv = d.motiv_cat.split('-')[0];
-                return lookUpMotiv(motiv, "color");
+                return motivAttr[motiv].color;
             })
             .attr("stroke", "#fff")
             .attr("stroke-width", gap)
@@ -643,7 +676,7 @@ function plotInitialGrid(data) {
             .attr("d", d => trianglePath(d, "initial", "botLeft"))
             .attr("fill", d => {
                 let motiv = d.mig_ext_motivo.split(' ')[0];
-                return lookUpMotivDetail(motiv, "color");
+                return motivDetailAttr[motiv].color;
             })
             .attr("stroke", "#fff")
             .attr("stroke-width", gap)
@@ -672,11 +705,11 @@ function plotInitialGrid(data) {
                     let motiv1 = d.mig_ext_motivo.split(' ')[0];
                     let motivCat1 = d.motiv_cat.split('-')[0];
                     let motivCat2 = d.motiv_cat.split('-')[1];
-                    if (lookUpMotivDetail(motiv1, "category") == motivCat1) {
-                        return lookUpMotiv(motivCat2, "color");
+                    if (motivDetailAttr[motiv1].category == motivCat1) {
+                        return motivAttr[motivCat2].color;
                     }
                     else {
-                        return lookUpMotiv(motivCat1, "color");
+                        return motivAttr[motivCat1].color;
                     }
                 })
                 .attr("stroke", "#fff")
@@ -704,7 +737,7 @@ function plotInitialGrid(data) {
                 .attr("d", d => trianglePath(d, "initial", "top"))
                 .attr("fill", d => {
                     let motiv2 = d.mig_ext_motivo.split(' ')[1];
-                    return lookUpMotivDetail(motiv2, "color");
+                    return motivDetailAttr[motiv2].color;
                 })
                 .attr("stroke", "#fff")
                 .attr("stroke-width", gap)
@@ -731,7 +764,7 @@ function plotInitialGrid(data) {
                 .attr("d", d => trianglePath(d, "initial", "right"))
                 .attr("fill", d => {
                     let motiv3 = d.mig_ext_motivo.split(' ')[2];
-                    return lookUpMotivDetail(motiv3, "color");
+                    return motivDetailAttr[motiv3].color;
                 })
                 .attr("stroke", "#fff")
                 .attr("stroke-width", gap)
@@ -749,6 +782,8 @@ function plotInitialGrid(data) {
 
 // plot initial squares grid
 function updatePlotSort(sortBy) {
+    motivSort = sortBy;
+    console.log(motivSort);
     const time = 1000;
     // squares
     svg.select(".g-sq")
