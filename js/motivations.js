@@ -20,7 +20,7 @@ const motivDetailOrder = {
     "9": 4, "13": 4, "14": 4, "15": 4, "16": 4
 };
 var motivationsData = [];
-var motivsIndex = {};
+const motivsIndex = {};
 
 // define svg
 const svg = d3.select("#frame-motivations")
@@ -65,37 +65,9 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
             }
         // }
 
-        // sort by motivations
-        // if (!motivsIndex.rsp12.motivs) {
-            motivsSortData = data.sort((a, z) => {
-                let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
-                // if same first motivation listed compare number of categories per response
-                if (motivCatIndex1 == 0) {
-                    let catRspIndex = sortCompare(a.motiv_cat.substr(-1), z.motiv_cat.substr(-1));
-                    // if same number of categories per response compare 2nd motivation
-                    if (catRspIndex == 0) {
-                        let motivCatIndex2 = sortCompare(motivOrder[a.motiv_cat.split('-')[1]], motivOrder[z.motiv_cat.split('-')[1]]);
-                        // if same 2nd motivation compare detailed response
-                        if (motivCatIndex2 == 0 && (typeof(a.mig_ext_motivo == 'string' && 1 < z.mig_ext_motivo == 'string'))) {
-                            return sortCompare(motivDetailOrder[a.mig_ext_motivo.toString().split(' ')[0]], motivDetailOrder[z.mig_ext_motivo.toString().split(' ')[0]]);
-                        }
-                        return motivCatIndex2
-                    }
-                    return catRspIndex;
-                }
-                return motivCatIndex1;
-            });
-            // add motivations index to index dictionary
-            for (let i = 0; i < motivsSortData.length; i++) {
-                let rspId = motivsSortData[i].rsp_id2;
-                motivsIndex[rspId]['motivs'] = i;
-            }
-        // }
-
-        // sort by income per capita tier
-        // if (!motivsIndex.rsp12.income) {
-            incomeSortData = data.sort((a, z) => {
-                if (a.income_per_capita_tier == z.income_per_capita_tier) {
+            // sort by motivations
+            if (!motivsIndex.rsp12.motivs) {
+                motivsSortData = data.sort((a, z) => {
                     let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
                     // if same first motivation listed compare number of categories per response
                     if (motivCatIndex1 == 0) {
@@ -112,43 +84,72 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
                         return catRspIndex;
                     }
                     return motivCatIndex1;
+                });
+                // add motivations index to index dictionary
+                for (let i = 0; i < motivsSortData.length; i++) {
+                    let rspId = motivsSortData[i].rsp_id2;
+                    motivsIndex[rspId]['motivs'] = i;
                 }
-                return sortCompare(a.income_per_capita_tier, z.income_per_capita_tier);
-            });
-            // add income index to index dictionary
-            for (let i = 0; i < incomeSortData.length; i++) {
-                let rspId = incomeSortData[i].rsp_id2;
-                motivsIndex[rspId]['income'] = i;
             }
-        // }
 
-        // sort by cari classification
-        // if (!motivsIndex.rsp12.cari) {
-            cariSortData = data.sort((a, z) => {
-                if (a.CARI == z.CARI) {
-                    let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
-                    // if same first motivation listed compare number of categories per response
-                    if (motivCatIndex1 == 0) {
-                        let catRspIndex = sortCompare(a.motiv_cat.substr(-1), z.motiv_cat.substr(-1));
-                        // if same number of categories per response compare 2nd motivation
-                        if (catRspIndex == 0) {
-                            let motivCatIndex2 = sortCompare(motivOrder[a.motiv_cat.split('-')[1]], motivOrder[z.motiv_cat.split('-')[1]]);
-                            // if same 2nd motivation compare detailed response
-                            if (motivCatIndex2 == 0 && (typeof(a.mig_ext_motivo == 'string' && 1 < z.mig_ext_motivo == 'string'))) {
-                                return sortCompare(motivDetailOrder[a.mig_ext_motivo.toString().split(' ')[0]], motivDetailOrder[z.mig_ext_motivo.toString().split(' ')[0]]);
+            // sort by income per capita tier
+            if (!motivsIndex.rsp12.income) {
+                incomeSortData = data.sort((a, z) => {
+                    if (a.income_per_capita_tier == z.income_per_capita_tier) {
+                        let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
+                        // if same first motivation listed compare number of categories per response
+                        if (motivCatIndex1 == 0) {
+                            let catRspIndex = sortCompare(a.motiv_cat.substr(-1), z.motiv_cat.substr(-1));
+                            // if same number of categories per response compare 2nd motivation
+                            if (catRspIndex == 0) {
+                                let motivCatIndex2 = sortCompare(motivOrder[a.motiv_cat.split('-')[1]], motivOrder[z.motiv_cat.split('-')[1]]);
+                                // if same 2nd motivation compare detailed response
+                                if (motivCatIndex2 == 0 && (typeof(a.mig_ext_motivo == 'string' && 1 < z.mig_ext_motivo == 'string'))) {
+                                    return sortCompare(motivDetailOrder[a.mig_ext_motivo.toString().split(' ')[0]], motivDetailOrder[z.mig_ext_motivo.toString().split(' ')[0]]);
+                                }
+                                return motivCatIndex2
                             }
-                            return motivCatIndex2
+                            return catRspIndex;
                         }
-                        return catRspIndex;
+                        return motivCatIndex1;
                     }
-                    return motivCatIndex1;
+                    return sortCompare(a.income_per_capita_tier, z.income_per_capita_tier);
+                });
+                // add income index to index dictionary
+                for (let i = 0; i < incomeSortData.length; i++) {
+                    let rspId = incomeSortData[i].rsp_id2;
+                    motivsIndex[rspId]['income'] = i;
                 }
-                return sortCompare(a.CARI, z.CARI);
-            });
-            // add cari index to index dictionary
-            for (let i = 0; i < cariSortData.length; i++) {
-                let rspId = cariSortData[i].rsp_id2;
-                motivsIndex[rspId]['cari'] = i;
+            }
+
+            // sort by cari classification
+            if (!motivsIndex.rsp12.cari) {
+                cariSortData = data.sort((a, z) => {
+                    if (a.CARI == z.CARI) {
+                        let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
+                        // if same first motivation listed compare number of categories per response
+                        if (motivCatIndex1 == 0) {
+                            let catRspIndex = sortCompare(a.motiv_cat.substr(-1), z.motiv_cat.substr(-1));
+                            // if same number of categories per response compare 2nd motivation
+                            if (catRspIndex == 0) {
+                                let motivCatIndex2 = sortCompare(motivOrder[a.motiv_cat.split('-')[1]], motivOrder[z.motiv_cat.split('-')[1]]);
+                                // if same 2nd motivation compare detailed response
+                                if (motivCatIndex2 == 0 && (typeof(a.mig_ext_motivo == 'string' && 1 < z.mig_ext_motivo == 'string'))) {
+                                    return sortCompare(motivDetailOrder[a.mig_ext_motivo.toString().split(' ')[0]], motivDetailOrder[z.mig_ext_motivo.toString().split(' ')[0]]);
+                                }
+                                return motivCatIndex2
+                            }
+                            return catRspIndex;
+                        }
+                        return motivCatIndex1;
+                    }
+                    return sortCompare(a.CARI, z.CARI);
+                });
+                // add cari index to index dictionary
+                for (let i = 0; i < cariSortData.length; i++) {
+                    let rspId = cariSortData[i].rsp_id2;
+                    motivsIndex[rspId]['cari'] = i;
+                }
             }
         }
 
@@ -570,7 +571,7 @@ function trianglePath(d, sortBy, triPos) {
         }
     }
     else if (triPos == "top") {
-        if (d.rsp_id2 == "rsp1358-5") {
+        if (sortBy == "motivs" && d.rsp_id2 == "rsp1358-5") {
             // flip to right
             triPath = "M " + (scale(nx) + sqLen/2) + " " + (scale(ny) + sqLen/2) + " L " + (scale(nx) + sqLen) + " " + (scale(ny)) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
         }
@@ -579,7 +580,7 @@ function trianglePath(d, sortBy, triPos) {
         }
     }
     else if (triPos == "right") {
-        if (d.rsp_id2 == 'rsp1364' || d.rsp_id2 == 'rsp1450') {
+        if (sortBy == "motivs" && (d.rsp_id2 == 'rsp1364' || d.rsp_id2 == 'rsp1450')) {
             // flip to top
             triPath = "M " + (scale(nx)) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + scale(ny) + " L " + (scale(nx) + sqLen/2) + " " + (scale(ny) + sqLen/2) + " Z";
         }
