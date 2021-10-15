@@ -63,10 +63,10 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
                 motivsIndex[rspId] = {};
                 motivsIndex[rspId]['initial'] = i;
             }
-        }
+        // }
 
         // sort by motivations
-        if (!motivsIndex.rsp12.motivs) {
+        // if (!motivsIndex.rsp12.motivs) {
             motivsSortData = data.sort((a, z) => {
                 let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
                 // if same first motivation listed compare number of categories per response
@@ -90,10 +90,10 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
                 let rspId = motivsSortData[i].rsp_id2;
                 motivsIndex[rspId]['motivs'] = i;
             }
-        }
+        // }
 
         // sort by income per capita tier
-        if (!motivsIndex.rsp12.income) {
+        // if (!motivsIndex.rsp12.income) {
             incomeSortData = data.sort((a, z) => {
                 if (a.income_per_capita_tier == z.income_per_capita_tier) {
                     let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
@@ -120,10 +120,10 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
                 let rspId = incomeSortData[i].rsp_id2;
                 motivsIndex[rspId]['income'] = i;
             }
-        }
+        // }
 
         // sort by cari classification
-        if (!motivsIndex.rsp12.cari) {
+        // if (!motivsIndex.rsp12.cari) {
             cariSortData = data.sort((a, z) => {
                 if (a.CARI == z.CARI) {
                     let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
