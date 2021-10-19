@@ -531,7 +531,7 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 
 /* BUTTONS */
 .btn:focus {
-    box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 25%);
+    box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 0%);
 }
 
 /* TOOLTIPS */
