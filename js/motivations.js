@@ -1,12 +1,11 @@
 // VARIABLES
 // D3 CHART VARIABLES
 const width = 1370;
-const height = 860;
+const height = 952;
 
 // data variables
 let keys = [];
 let motivationsData = [];
-const motivsIndex = {};
 let motivSort = "initial";
 const motivOrder = {
     "econ": 0,
@@ -26,6 +25,9 @@ const motivsList = ["econ", "reun", "sec", "clim", "oth"];
 let motivsSummaryData = [],
     incomeSummaryData = [],
     cariSummaryData = [];
+
+// look up index
+const motivsIndex = {};
 
 // look up labels
 const incomeText = {
@@ -73,10 +75,25 @@ const motivDetailAttr = {
     "16": {"label": "other", "category": "oth", "color": "#f1a650"}
 };
 
-// square dimensions
+// square and grid dimensions
 const sqLen = 24;
 const gap = 4;
 const numPerRow = 56;
+const numPerCol = {
+    "income": {
+        1: 6,
+        2: 6,
+        3: 6,
+        4: 10,
+        5: 3,
+        6: 1
+    },
+    "cari": {
+        1: 14,
+        2: 13,
+        3: 3
+    }
+}
 
 // define svg
 const svg = d3.select("#frame-motivations")
@@ -94,7 +111,7 @@ const divMotivs = d3.select("body").append("div")
 
 // scale grid
 const scale = d3.scaleLinear()
-    .domain([0, numPerRow - 1])
+    .domain([0, numPerRow])
     .range([0, sqLen * numPerRow]);
 
 // load csv data and callback function
@@ -254,13 +271,6 @@ function sortCompare(a, z) {
     : 1;
 }
 
-// index lookup
-function findIndex(rspId, sortBy) {
-    return (sortBy == "motivs") ? motivsIndex[rspId].motivs
-    : (sortBy == "income") ? motivsIndex[rspId].income
-    : (sortBy == "cari") ? motivsIndex[rspId].cari
-    : motivsIndex[rspId].initial;
-};
 // motivations lookup for colors and label text
 function motivDetailText(motivRsp) {
     let motivDetailStr = "";
@@ -289,14 +299,29 @@ function tooltipHtml(d, shape) {
     var tooltipTemplate = $(".tooltip.template");
     var tooltip = tooltipTemplate.clone();
 
-    if (shape == "sq" || shape == "tri-bl") {
+    if (shape == "sq") {
         motivCat = d.motiv_cat.split('-')[0];
     }
-    else if (shape == "tri-tr" || shape == "tri-t") {
-        motivCat = d.motiv_cat.split('-')[1];
+    else if (shape == "tri-bl") {
+        let motiv = d.mig_ext_motivo.split(' ')[0];
+        motivCat = motivDetailAttr[motiv].category;
     }
-    else {
-        motivCat = d.motiv_cat.split('-')[2];
+    else if (shape == "tri-tr" || shape == "tri-t") {
+        let motiv1 = d.mig_ext_motivo.split(' ')[0];
+        let motivCat1 = d.motiv_cat.split('-')[0];
+        let motivCat2 = d.motiv_cat.split('-')[1];
+        if (motivDetailAttr[motiv1].category == motivCat1) {
+            motivCat = motivAttr[motivCat2].category;
+        }
+        else {
+            motivCat = motivAttr[motivCat1].category;
+        }
+        // motivCat = d.motiv_cat.split('-')[1];
+    }
+    else if (shape == "tri-r") {
+        let motiv3 = d.mig_ext_motivo.split(' ')[2];
+        motivCat = motivDetailAttr[motiv3].category;
+        // motivCat = d.motiv_cat.split('-')[2];
     }
 
     if (motivSort == "income") {
@@ -350,7 +375,7 @@ function divMotivsOnMousemove(event) {
 }
 // update sort index position
 function indexPos(d, sortBy, triPos) {
-    let sortIndex = findIndex(d.rsp_id2, sortBy);
+    let sortIndex = motivsIndex[d.rsp_id2][sortBy];
 
     // motivations layout rearange index
     if (sortBy == "motivs") {
@@ -551,76 +576,182 @@ function indexPos(d, sortBy, triPos) {
         }
     }
     else if (sortBy == "income") {
-        
+        // income tier 6
+        if (1610 <= sortIndex) {
+            sortIndex += (7 * numPerRow) + 14;
+        }
+        // income tier 5
+        else if (1463 <= sortIndex && sortIndex < 1610) {
+            sortIndex += (5 * numPerRow) + 49;
+        }
+        // income tier 4
+        else if (942 <= sortIndex && sortIndex < 1463) {
+            sortIndex += (4 * numPerRow) + 10;
+        }
+        // income tier 3
+        else if (626 <= sortIndex && sortIndex < 942) {
+            sortIndex += (2 * numPerRow) + 46;
+        }
+        // income tier 2
+        else if (316 <= sortIndex && sortIndex < 626) {
+            // if (143 < sortIndex) {
+            //     sortIndex += numPerRow + 20 + ((sortIndex - 143) / numPerRow.income[2]);
+            // }
+            // else {
+                sortIndex += numPerRow + 20;
+            // }
+        }
+        // income tier 1
+        // else {
+        //     if (215 < sortIndex) {
+        //         sortIndex += numPerRow + Math.floor((sortIndex - 216) / (numPerCol.income[1] - 1)) - (9 * numPerCol.income[1] + 2);
+        //     }
+        // }
     }
     else if (sortBy == "cari") {
-        
+        // cari score 4
+        if (1619 <= sortIndex) {
+            sortIndex += 5;
+        }
+        // cari score 3
+        else if (1474 <= sortIndex && sortIndex < 1619) {
+            sortIndex += (2 * numPerRow) + 43;
+        }
+        // cari score 2
+        if (749 <= sortIndex && sortIndex < 1474) {
+            sortIndex += numPerRow + 35;
+        }
     }
     return sortIndex;
+}
+// select scale
+function selectScale(d, nPos, sortBy) {
+    const sortIndex = indexPos(d, sortBy);
+    if (nPos == "nx") {
+        // if (sortBy == "income" || sortBy == "cari") {
+        // if (sortBy == "income" && d.income_per_capita_tier == 2) {
+        //     if (sortBy == "income") {
+        //         numPerColValue = numPerCol.income[d.income_per_capita_tier];
+        //     }
+        //     else if (sortBy == "cari") {
+        //         numPerColValue = numPerCol.cari[d.cari];
+        //     }
+        //     const nx = Math.floor(sortIndex / numPerColValue);
+        //     const scaleVertical = d3.scaleLinear()
+        //         .domain([0, numPerColValue])
+        //         .range([0, sqLen * numPerColValue]);
+        //     return scaleVertical(nx);
+        // }
+        // else {
+            const nx = sortIndex % numPerRow;
+            return scale(nx);
+        // }
+    }
+    else if (nPos == "ny") {
+        // if (sortBy == "income" || sortBy == "cari") {
+        // if (sortBy == "income" && d.income_per_capita_tier == 2) {
+        //     if (sortBy == "income") {
+        //         numPerColValue = numPerCol.income[d.income_per_capita_tier];
+        //     }
+        //     else if (sortBy == "cari") {
+        //         numPerColValue = numPerCol.cari[d.cari];
+        //     }
+        //     const ny = sortIndex % numPerColValue;
+        //     const scaleVertical = d3.scaleLinear()
+        //         .domain([0, numPerColValue])
+        //         .range([0, sqLen * numPerColValue]);
+        //     return scaleVertical(ny);
+        // }
+        // else {
+            const ny = Math.floor(sortIndex / numPerRow);
+            return scale(ny);
+        // }
+    }
 }
 
 // triangle path
 function trianglePath(d, sortBy, triPos) {
-    let sortIndex = indexPos(d, sortBy, triPos);
     
-    const nx = sortIndex % numPerRow;
-    const ny = Math.floor(sortIndex / numPerRow);
 
-    if (triPos == "botLeft") {
-        if (sortBy == "motivs" && (
-            (d.motiv_cat.includes("reun") && 1155 <= sortIndex && sortIndex <= 1174) || 
-            (d.motiv_cat.includes("clim") && 1253 - 53 <= sortIndex && sortIndex <= 1301 - 53) || 
-            (d.rsp_id2 == "rsp1039-2") || 
-            (d.rsp_id2 == "rsp1418-1")
-        )) {
-            // flip to top right
-            triPath = "M " + (scale(nx)) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+    // if (sortBy == "income" && d.income_per_capita_tier == 2) {
+    //     const nx = selectScale(d, "nx", sortBy);
+    //     const ny = selectScale(d, "ny", sortBy);
+
+    //     if (triPos == "botLeft") {
+    //         triPath = "M " + nx + " " + (ny) + " L " + nx + " " + (ny + sqLen) + " L " + (nx + sqLen) + " " + (ny + sqLen) + " Z";
+    //     }
+    //     else if (triPos == "topRight") {
+    //         triPath = "M " + nx + " " + ny + " L " + (nx + sqLen) + " " + ny + " L " + (nx + sqLen) + " " + (ny + sqLen) + " Z";
+    //     }
+    //     else if (triPos == "top") {
+    //         triPath = "M " + nx + " " + ny + " L " + (nx + sqLen) + " " + ny + " L " + (nx + sqLen/2) + " " + (ny + sqLen/2) + " Z";
+    //     }
+    //     else if (triPos == "right") {
+    //         triPath = "M " + (nx + sqLen/2) + " " + (ny + sqLen/2) + " L " + (nx + sqLen) + " " + (ny) + " L " + (nx + sqLen) + " " + (ny + sqLen) + " Z";
+    //     }
+    // }
+    // else {
+        let sortIndex = indexPos(d, sortBy, triPos);
+    
+        const nx = sortIndex % numPerRow;
+        const ny = Math.floor(sortIndex / numPerRow);
+
+        if (triPos == "botLeft") {
+            if (sortBy == "motivs" && (
+                (d.motiv_cat.includes("reun") && 1155 <= sortIndex && sortIndex <= 1174) || 
+                (d.motiv_cat.includes("clim") && 1253 - 53 <= sortIndex && sortIndex <= 1301 - 53) || 
+                (d.rsp_id2 == "rsp1039-2") || 
+                (d.rsp_id2 == "rsp1418-1")
+            )) {
+                // flip to top right
+                triPath = "M " + scale(nx) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+            }
+            else {
+                triPath = "M " + scale(nx) + " " + scale(ny) + " L " + scale(nx) + " " + (scale(ny) + sqLen) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+            }
         }
-        else {
-            triPath = "M " + scale(nx) + " " + (scale(ny)) + " L " + scale(nx) + " " + (scale(ny) + sqLen) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+        else if (triPos == "topRight") {
+            if (sortBy == "motivs" && (
+                (d.motiv_cat == "sec-oth-2" && (1521 + (7 * numPerRow) - 3) <= sortIndex && sortIndex <= (1529 + (7 * numPerRow) - 3)) || 
+                (d.motiv_cat == "reun-oth-2" && (1463 + (8 * numPerRow) + 8) <= sortIndex && sortIndex <= (1476 + (8 * numPerRow) + 8)) || 
+                (d.rsp_id2 == 'rsp4864' || d.rsp_id2 == 'rsp4867' || d.rsp_id2 == 'rsp4957-2') || 
+                (d.motiv_cat == "sec-oth-2" && (1529 + 25 <= sortIndex && sortIndex < 1538 + 25)) || 
+                (d.rsp_id2 == 'rsp4510' || d.rsp_id2 == 'rsp4515' || d.rsp_id2 == 'rsp4560-1' || d.rsp_id2 == 'rsp4703-1' || d.rsp_id2 == 'rsp4703-2' || d.rsp_id2 == 'rsp4723' || d.rsp_id2 == 'rsp4738' || d.rsp_id2 == 'rsp4805' || d.rsp_id2 == 'rsp4959' || d.rsp_id2 == 'rsp4489-2') || 
+                (d.rsp_id2 == 'rsp1418-2') || 
+                (d.rsp_id2 == 'rsp4718-4' || d.rsp_id2 == 'rsp4957-1')
+            )) {
+                // flip to bottom left
+                triPath = "M " + scale(nx) + " " + scale(ny) + " L " + scale(nx) + " " + (scale(ny) + sqLen) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+            }
+            else if (sortBy == "motivs" && d.motiv_cat.includes("clim") && (1279 + (7 * numPerRow) + 35) <= sortIndex && sortIndex <= (1301 + (7 * numPerRow) + 35)) {
+                // flip to bottom left and shift left 22
+                const nx = (sortIndex - 22) % numPerRow;
+                const ny = Math.floor((sortIndex - 22) / numPerRow);
+                triPath = "M " + scale(nx) + " " + scale(ny) + " L " + scale(nx) + " " + (scale(ny) + sqLen) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+            }
+            else {
+                triPath = "M " + scale(nx) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+            }
         }
-    }
-    else if (triPos == "topRight") {
-        if (sortBy == "motivs" && (
-            (d.motiv_cat == "sec-oth-2" && (1521 + (7 * numPerRow) - 3) <= sortIndex && sortIndex <= (1529 + (7 * numPerRow) - 3)) || 
-            (d.motiv_cat == "reun-oth-2" && (1463 + (8 * numPerRow) + 8) <= sortIndex && sortIndex <= (1476 + (8 * numPerRow) + 8)) || 
-            (d.rsp_id2 == 'rsp4864' || d.rsp_id2 == 'rsp4867' || d.rsp_id2 == 'rsp4957-2') || 
-            (d.motiv_cat == "sec-oth-2" && (1529 + 25 <= sortIndex && sortIndex < 1538 + 25)) || 
-            (d.rsp_id2 == 'rsp4510' || d.rsp_id2 == 'rsp4515' || d.rsp_id2 == 'rsp4560-1' || d.rsp_id2 == 'rsp4703-1' || d.rsp_id2 == 'rsp4703-2' || d.rsp_id2 == 'rsp4723' || d.rsp_id2 == 'rsp4738' || d.rsp_id2 == 'rsp4805' || d.rsp_id2 == 'rsp4959' || d.rsp_id2 == 'rsp4489-2') || 
-            (d.rsp_id2 == 'rsp1418-2') || 
-            (d.rsp_id2 == 'rsp4718-4' || d.rsp_id2 == 'rsp4957-1')
-        )) {
-            // flip to bottom left
-            triPath = "M " + scale(nx) + " " + (scale(ny)) + " L " + scale(nx) + " " + (scale(ny) + sqLen) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+        else if (triPos == "top") {
+            if (sortBy == "motivs" && d.rsp_id2 == "rsp1358-5") {
+                // flip to right
+                triPath = "M " + (scale(nx) + sqLen/2) + " " + (scale(ny) + sqLen/2) + " L " + (scale(nx) + sqLen) + " " + (scale(ny)) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+            }
+            else {
+                triPath = "M " + scale(nx) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + scale(ny) + " L " + (scale(nx) + sqLen/2) + " " + (scale(ny) + sqLen/2) + " Z";
+            }
         }
-        else if (sortBy == "motivs" && d.motiv_cat.includes("clim") && (1279 + (7 * numPerRow) + 35) <= sortIndex && sortIndex <= (1301 + (7 * numPerRow) + 35)) {
-            // flip to bottom left and shift left 22
-            const nx = (sortIndex - 22) % numPerRow;
-            const ny = Math.floor((sortIndex - 22) / numPerRow);
-            triPath = "M " + scale(nx) + " " + (scale(ny)) + " L " + scale(nx) + " " + (scale(ny) + sqLen) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+        else if (triPos == "right") {
+            if (sortBy == "motivs" && (d.rsp_id2 == 'rsp1364' || d.rsp_id2 == 'rsp1450')) {
+                // flip to top
+                triPath = "M " + scale(nx) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + scale(ny) + " L " + (scale(nx) + sqLen/2) + " " + (scale(ny) + sqLen/2) + " Z";
+            }
+            else {
+                triPath = "M " + (scale(nx) + sqLen/2) + " " + (scale(ny) + sqLen/2) + " L " + (scale(nx) + sqLen) + " " + (scale(ny)) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
+            }
         }
-        else {
-            triPath = "M " + (scale(nx)) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
-        }
-    }
-    else if (triPos == "top") {
-        if (sortBy == "motivs" && d.rsp_id2 == "rsp1358-5") {
-            // flip to right
-            triPath = "M " + (scale(nx) + sqLen/2) + " " + (scale(ny) + sqLen/2) + " L " + (scale(nx) + sqLen) + " " + (scale(ny)) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
-        }
-        else {
-            triPath = "M " + (scale(nx)) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + scale(ny) + " L " + (scale(nx) + sqLen/2) + " " + (scale(ny) + sqLen/2) + " Z";
-        }
-    }
-    else if (triPos == "right") {
-        if (sortBy == "motivs" && (d.rsp_id2 == 'rsp1364' || d.rsp_id2 == 'rsp1450')) {
-            // flip to top
-            triPath = "M " + (scale(nx)) + " " + scale(ny) + " L " + (scale(nx) + sqLen) + " " + scale(ny) + " L " + (scale(nx) + sqLen/2) + " " + (scale(ny) + sqLen/2) + " Z";
-        }
-        else {
-            triPath = "M " + (scale(nx) + sqLen/2) + " " + (scale(ny) + sqLen/2) + " L " + (scale(nx) + sqLen) + " " + (scale(ny)) + " L " + (scale(nx) + sqLen) + " " + (scale(ny) + sqLen) + " Z";
-        }
-    }
+    // }
     return triPath;
 }
 
@@ -634,14 +765,14 @@ function plotInitialGrid(data) {
         .enter()
         .append("rect")
             .attr("id", d => "sq-" + d.rsp_id2)
-            .attr("class", "square")
+            .attr("class", d => "square income-" + d.income_per_capita_tier)
             .attr("x", d => {
-                const iInitial = findIndex(d.rsp_id2, 'initial');
+                const iInitial = motivsIndex[d.rsp_id2].initial;
                 const nx = iInitial % numPerRow;
                 return scale(nx);
             })
             .attr("y", d => {
-                const iInitial = findIndex(d.rsp_id2, 'initial');
+                const iInitial = motivsIndex[d.rsp_id2].initial;
                 const ny = Math.floor(iInitial / numPerRow);
                 return scale(ny);
             })
@@ -790,21 +921,8 @@ function updatePlotSort(sortBy) {
         .selectAll("rect")
         .transition()
             .duration(time)
-            .attr("x", d => {
-                const sortIndex = indexPos(d, sortBy);
-                // let sortIndex = findIndex(d.rsp_id2, sortBy);
-                // if (sortBy == "motivs" && sortIndex > 1387) {
-                //     sortIndex += 12 + numPerRow;
-                // }
-                const nx = sortIndex % numPerRow;
-                return scale(nx);
-            })
-            .attr("y", d => {
-                const sortIndex = indexPos(d, sortBy);
-                // let sortIndex = findIndex(d.rsp_id2, sortBy);
-                const ny = Math.floor(sortIndex / numPerRow);
-                return scale(ny);
-            });
+            .attr("x", d => selectScale(d, "nx", sortBy))
+            .attr("y", d => selectScale(d, "ny", sortBy));
     
     // triangle bottom-left
     svg.select(".g-tri-bl")
