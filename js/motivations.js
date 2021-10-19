@@ -1,7 +1,11 @@
 // VARIABLES
 // D3 CHART VARIABLES
-const width = 1370;
-const height = 952;
+const width = 1346;
+const height = 940;
+const sideWidth = 200;
+
+// animation time
+const time = 1000;
 
 // data variables
 let keys = [];
@@ -22,6 +26,8 @@ const motivDetailOrder = {
     "9": 4, "13": 4, "14": 4, "15": 4, "16": 4
 };
 const motivsList = ["econ", "reun", "sec", "clim", "oth"];
+let incomeList = [],
+    cariList = [];
 let motivsSummaryData = [],
     incomeSummaryData = [],
     cariSummaryData = [];
@@ -30,19 +36,19 @@ let motivsSummaryData = [],
 const motivsIndex = {};
 
 // look up labels
-const incomeText = {
-    1: "extremely low income",
-    2: "low income",
-    3: "mid-low income",
-    4: "mid income",
-    5: "mid-high income",
-    6: "high income"
+const incomeAttr = {
+    1: {"label": "extremely low income", "range": "Less than $2.50", "yPos": 1},
+    2: {"label": "low income", "range": "$2.50&ndash;10.40", "yPos": 8},
+    3: {"label": "mid-low income", "range": "$10.40&ndash;37.40", "yPos": 15},
+    4: {"label": "mid income", "range": "$37.40&ndash;128.70", "yPos": 22},
+    5: {"label": "mid-high income", "range": "$128.70&ndash;436.50", "yPos": 33},
+    6: {"label": "high income", "range": "Greater than $436.50", "yPos": 37}
 };
-const cariText = {
-    1: "food secure",
-    2: "marginally food secure",
-    3: "moderately food insecure",
-    4: "severely food insecure"
+const cariAttr = {
+    1: {"label": "food secure", "sideLabel": "food secure", "yPos": 1},
+    2: {"label": "marginally food secure", "sideLabel": "marginally food secure", "yPos": 16},
+    3: {"label": "moderately food insecure", "sideLabel": "moderately or severely food insecure", "yPos": 30},
+    4: {"label": "severely food insecure"}
 };
 const countryText = {
     "GT": "Guatemala",
@@ -50,11 +56,11 @@ const countryText = {
     "SLV": "El Salvador"
 };
 const motivAttr = {
-    "econ": {"label": "Economics", "color": "#1540c4"},
-    "reun":  {"label": "Reunification", "color": "#eb4927"},
-    "sec": {"label": "Security", "color": "#93278f"},
-    "clim": {"label": "Climate", "color": "#00a99d"},
-    "oth":  {"label": "Other", "color": "#f1a650"}
+    "econ": {"label": "Economics", "color": "#1540c4", "responses": ['1', '2', '6', '7', '8'], "yPos": 1},
+    "reun":  {"label": "Reunification", "color": "#eb4927", "responses": ['12'], "yPos": 25},
+    "sec": {"label": "Security", "color": "#93278f", "responses": ['10', '11'], "yPos": 28},
+    "clim": {"label": "Climate", "color": "#00a99d", "responses": ['3', '4', '5'], "yPos": 31},
+    "oth":  {"label": "Other", "color": "#f1a650", "responses": ['9', '13', '14', '15', '16'], "yPos": 33}
 };
 const motivDetailAttr = {
     "1": {"label": "search for a better job", "category": "econ", "color": "#1540c4"},
@@ -99,7 +105,7 @@ const numPerCol = {
 const svg = d3.select("#frame-motivations")
     .append("svg")
         .attr("id", "viz-motivations")
-        .attr("viewBox", [0, -sqLen, width, height + sqLen]);
+        .attr("viewBox", [-(sideWidth + sqLen), 0, width + (sideWidth + sqLen), height]);
 
 // tooltip
 const divMotivs = d3.select("body").append("div")
@@ -225,39 +231,49 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
         if (!motivsSummaryData.length) {
             for (var m = 0; m < motivsList.length; m++) {
                 let motiv = motivsList[m];
-                
                 item = {};
 
                 item.rsp = data.filter(d => d.motiv_cat.includes(motiv)).length;
                 item.pct = roundAccurately(item.rsp / data.length, 2) * 100;
 
                 motivsSummaryData.push(item);
-                // for (var i = 0; i < data.length; i++) {
-
-                // }
             }
         }
 
-        distinctIncome = [];
         incomeList = data.map(d => d.income_per_capita_tier).filter((value, index, self) => self.indexOf(value) === index);
 
         if (!incomeSummaryData.length) {
             for (var n = 0; n < incomeList.length; n++) {
                 let incomeTier = incomeList[n];
-                
                 item = {};
 
                 item.rsp = data.filter(d => d.income_per_capita_tier == incomeTier).length;
                 item.pct = roundAccurately(item.rsp / data.length, 2) * 100;
 
-                console.log("income tier " + incomeTier + ": " + item.pct);
                 incomeSummaryData.push(item);
+            }
+        }
+
+        cariList = data.map(d => d.CARI).filter((value, index, self) => self.indexOf(value) === index);
+
+        if (!incomeSummaryData.length) {
+            for (var n = 0; n < cariList.length; n++) {
+                let cariClass = cariList[n];                
+                item = {};
+
+                item.rsp = data.filter(d => d.CARI == cariClass).length;
+                item.pct = roundAccurately(item.rsp / data.length, 2) * 100;
+
+                cariSummaryData.push(item);
             }
         }
 
         data.sort((a, z) => sortCompare(a.rsp_id2 > z.rsp_id2));
 
         plotInitialGrid(motivationsData);
+        plotLabels(motivsList, "motivs");
+        plotLabels(incomeList, "income");
+        plotLabels(cariList.slice(0,-1), "cari");
 
         console.log(keys);
         console.log(motivationsData);
@@ -272,12 +288,15 @@ function sortCompare(a, z) {
 }
 
 // motivations lookup for colors and label text
-function motivDetailText(motivRsp) {
+function motivDetailText(motivRsp, sortBy, motivCat) {
     let motivDetailStr = "";
 
     if (typeof(motivRsp) == "string") {
         let motivList = motivRsp.split(' ');
-
+        if (sortBy == "motivs") {
+            motivList = motivList.filter(item => motivAttr[motivCat].responses.includes(item));
+        }
+        
         for (let i = 0; i < motivList.length; i++) {
             if (!motivDetailStr) {
                 motivDetailStr += "<span style='color:" + motivDetailAttr[motivList[i]].color + "'>" + sentenceCase(motivDetailAttr[motivList[i]].label) + "</span>";
@@ -294,7 +313,7 @@ function motivDetailText(motivRsp) {
 }
 
 // create tooltip
-function tooltipHtml(d, shape) {
+function tooltipHtml(d, shape, sortBy) {
     $("#tt-motivs").empty();
     var tooltipTemplate = $(".tooltip.template");
     var tooltip = tooltipTemplate.clone();
@@ -306,29 +325,31 @@ function tooltipHtml(d, shape) {
         let motiv = d.mig_ext_motivo.split(' ')[0];
         motivCat = motivDetailAttr[motiv].category;
     }
-    else if (shape == "tri-tr" || shape == "tri-t") {
+    else if (shape == "tri-tr") {
         let motiv1 = d.mig_ext_motivo.split(' ')[0];
         let motivCat1 = d.motiv_cat.split('-')[0];
         let motivCat2 = d.motiv_cat.split('-')[1];
         if (motivDetailAttr[motiv1].category == motivCat1) {
-            motivCat = motivAttr[motivCat2].category;
+            motivCat = motivCat2;
         }
         else {
-            motivCat = motivAttr[motivCat1].category;
+            motivCat = motivCat1;
         }
-        // motivCat = d.motiv_cat.split('-')[1];
+    }
+    else if (shape == "tri-t") {
+        let motiv2 = d.mig_ext_motivo.split(' ')[1];
+        motivCat = motivDetailAttr[motiv2].category;
     }
     else if (shape == "tri-r") {
         let motiv3 = d.mig_ext_motivo.split(' ')[2];
         motivCat = motivDetailAttr[motiv3].category;
-        // motivCat = d.motiv_cat.split('-')[2];
     }
 
     if (motivSort == "income") {
-        surveyedLabel = incomeText[d.income_per_capita_tier];
+        surveyedLabel = incomeAttr[d.income_per_capita_tier].label;
     }
     else if (motivSort == "cari") {
-        surveyedLabel = cariText[d.CARI];
+        surveyedLabel = cariAttr[d.CARI].label;
     }
     else {
         surveyedLabel = "surveyed";
@@ -344,7 +365,7 @@ function tooltipHtml(d, shape) {
     tooltip.find(".label-motiv-pct").html(motivPct);
     tooltip.find(".label-motiv").html(motivLabel);
     tooltip.find(".label-hh").html(surveyedLabel);
-    tooltip.find(".label-motiv-detail").html(motivDetailText(d.mig_ext_motivo));
+    tooltip.find(".label-motiv-detail").html(motivDetailText(d.mig_ext_motivo, sortBy, motivCat));
     tooltip.find(".label-country").html(countryLabel);
 
     tooltip.children().appendTo("#tt-motivs");
@@ -634,7 +655,7 @@ function selectScale(d, nPos, sortBy) {
         //         numPerColValue = numPerCol.income[d.income_per_capita_tier];
         //     }
         //     else if (sortBy == "cari") {
-        //         numPerColValue = numPerCol.cari[d.cari];
+        //         numPerColValue = numPerCol.cari[d.CARI];
         //     }
         //     const nx = Math.floor(sortIndex / numPerColValue);
         //     const scaleVertical = d3.scaleLinear()
@@ -654,7 +675,7 @@ function selectScale(d, nPos, sortBy) {
         //         numPerColValue = numPerCol.income[d.income_per_capita_tier];
         //     }
         //     else if (sortBy == "cari") {
-        //         numPerColValue = numPerCol.cari[d.cari];
+        //         numPerColValue = numPerCol.cari[d.CARI];
         //     }
         //     const ny = sortIndex % numPerColValue;
         //     const scaleVertical = d3.scaleLinear()
@@ -785,7 +806,7 @@ function plotInitialGrid(data) {
             .attr("stroke", "#fff")
             .attr("stroke-width", gap)
         .on("mouseover", function(event, d) {
-            tooltipHtml(d, "sq");
+            tooltipHtml(d, "sq", motivSort);
             divMotivs.style("display", "block");
         })
         .on("mousemove", function(event) {
@@ -812,7 +833,7 @@ function plotInitialGrid(data) {
             .attr("stroke", "#fff")
             .attr("stroke-width", gap)
         .on("mouseover", function(event, d) {
-            tooltipHtml(d, "tri-bl");
+            tooltipHtml(d, "tri-bl", motivSort);
             divMotivs.style("display", "block");
         })
         .on("mousemove", function(event) {
@@ -846,7 +867,7 @@ function plotInitialGrid(data) {
                 .attr("stroke", "#fff")
                 .attr("stroke-width", gap)
             .on("mouseover", function(event, d) {
-                tooltipHtml(d, "tri-tr");
+                tooltipHtml(d, "tri-tr", motivSort);
                 divMotivs.style("display", "block");
             })
             .on("mousemove", function(event) {
@@ -873,7 +894,7 @@ function plotInitialGrid(data) {
                 .attr("stroke", "#fff")
                 .attr("stroke-width", gap)
             .on("mouseover", function(event, d) {
-                tooltipHtml(d, "tri-t");
+                tooltipHtml(d, "tri-t", motivSort);
                 divMotivs.style("display", "block");
             })
             .on("mousemove", function(event) {
@@ -900,7 +921,7 @@ function plotInitialGrid(data) {
                 .attr("stroke", "#fff")
                 .attr("stroke-width", gap)
             .on("mouseover", function(event, d) {
-                tooltipHtml(d, "tri-r");
+                tooltipHtml(d, "tri-r", motivSort);
                 divMotivs.style("display", "block");
             })
             .on("mousemove", function(event) {
@@ -914,8 +935,6 @@ function plotInitialGrid(data) {
 // plot initial squares grid
 function updatePlotSort(sortBy) {
     motivSort = sortBy;
-    console.log(motivSort);
-    const time = 1000;
     // squares
     svg.select(".g-sq")
         .selectAll("rect")
@@ -953,17 +972,77 @@ function updatePlotSort(sortBy) {
                 .attr("d", d => trianglePath(d, sortBy, "right"));
 }
 
+// plot labels
+function plotLabels(labelList, sortBy) {
+    // labels
+    labelGroup = svg.append("g")
+            .attr("id", "labels-" + sortBy)
+            .attr("class", "chart-labels")
+    
+    labelGroup.append("g")
+            .attr("class", "chart-text")
+        .selectAll("text")
+        .data(labelList)
+        .enter()
+        .append("text")
+            .attr("id", d => "text-" + d)
+            .attr("x", d => -sqLen)
+            .attr("y", d => {
+                return (labelList.length == 5) ? scale(motivAttr[d].yPos)
+                : (labelList.length == 6) ? scale(incomeAttr[d].yPos)
+                : (labelList.length == 3) ? scale(cariAttr[d].yPos)
+                : null;
+            })
+            .attr("dy", "-0.125em")
+            .attr("text-anchor", "end")
+            .text(d => {
+                return (labelList.length == 5) ? motivAttr[d].label.toUpperCase()
+                : (labelList.length == 6) ? incomeAttr[d].label.toUpperCase()
+                : (labelList.length == 3) ? cariAttr[d].sideLabel.toUpperCase()
+                : null;
+            })
+            .call(wrapText, sideWidth);
+
+    // lines
+    labelGroup.append("g")
+            .attr("class", "chart-lines")
+        .selectAll("path")
+        .data(labelList)
+        .enter()
+        .append("line")
+            .attr("x1", -sideWidth)
+            .attr("x2", -sqLen)
+            .attr("y1", d => {
+                return (labelList.length == 5) ? scale(motivAttr[d].yPos) - 1.5 * sqLen
+                : (labelList.length == 6) ? scale(incomeAttr[d].yPos) - 1.5 * sqLen
+                : (labelList.length == 3) ? scale(cariAttr[d].yPos) - 1.5 * sqLen
+                : null;
+            })
+            .attr("y2", d => {
+                return (labelList.length == 5) ? scale(motivAttr[d].yPos) - 1.5 * sqLen
+                : (labelList.length == 6) ? scale(incomeAttr[d].yPos) - 1.5 * sqLen
+                : (labelList.length == 3) ? scale(cariAttr[d].yPos) - 1.5 * sqLen
+                : null;
+            })
+            .attr("stroke", "#1540C4")
+            .attr("stroke-width", 2)
+}
+
 $(".btn").on("click", function() {
     btnId = "#" + $(this).attr("id");
     sortBy = $(this).attr("id").slice(4);
+    labelsId = "#frame-motivations #labels-" + sortBy;
 
     if ($(btnId).hasClass("active")) {
         $(btnId).removeClass("active");
+        $(labelsId).fadeOut(time/2);
         updatePlotSort("initial");
     }
     else {
         $(".btn").removeClass("active");
+        $(".chart-labels").fadeOut(time/2);
         $(btnId).addClass("active");
+        $(labelsId).delay(time/2).fadeIn(time/2);
         updatePlotSort(sortBy);
     }
 })

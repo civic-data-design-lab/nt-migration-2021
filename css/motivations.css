@@ -1,14 +1,34 @@
 /* BUTTON */
+#buttons-motivations {
+    padding-left: 14.375%;
+    padding-right: 2px;
+}
+#buttons-motivations .btn {
+    width: 100%;
+}
 .btn {
     font-weight: 500;
     background-color: #fff;
     border: solid 2px #1540C4;
     border-radius: 0px;
-    box-shadow: 2px 2px 6px rgb(0 0 0 / 50%);
+    /* box-shadow: 2px 2px 6px rgb(0 0 0 / 50%); */
 }
 .btn.active, .btn:hover {
     color: #fff;
     background-color: #1540C4;
+}
+#btn-income {
+    border-right: none;
+    border-left: none;
+}
+
+/* LABELS */
+.chart-labels {
+    display: none;
+}
+#viz-motivations text {
+    font-size: 1.4em;
+    fill: #1540C4;
 }
 
 /* TOOLTIP */

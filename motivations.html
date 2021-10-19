@@ -65,24 +65,20 @@
             <div class="solid-white">
                 <div class="container px-5 pb-5">
                     <!-- div for buttons -->
-                    <div class="row mb-3">
-                        <div class="col-5">
-                            <p class="text-blue">Click to sort household characteristics:</p>
+                    <div id="buttons-motivations" class="row mb-3">
+                        <div class="col-6 pe-0">
+                            <button type="button" id="btn-motivs" class="btn btn-sm text-uppercase text-blue">Motivations</button>
                         </div>
-                        <div class="col-7 row">
-                            <div class="col-4">
-                                <button type="button" id="btn-motivs" class="btn btn-sm text-uppercase text-blue">Motivations</button>
-                            </div>
-                            <div class="col-3">
-                                <button type="button" id="btn-income" class="btn btn-sm text-uppercase text-blue">Income</button>
-                            </div>
-                            <div class="col-5">
-                                <button type="button" id="btn-cari" class="btn btn-sm text-uppercase text-blue">Food Security</button>
-                            </div>
+                        <div id="btn-center" class="col-3 px-0">
+                            <button type="button" id="btn-income" class="btn btn-sm text-uppercase text-blue">Income Level</button>
+                        </div>
+                        <div class="col-3 ps-0">
+                            <button type="button" id="btn-cari" class="btn btn-sm text-uppercase text-blue">Food Security</button>
                         </div>
                     </div>
                     <!-- frame for d3 visualization -->
                     <div id="frame-motivations"></div>
+                    <!-- tooltip template -->
                     <div class="tooltip template">
                         <div class="side-color"></div>
                         <p>Motivation for Migrating</p>
