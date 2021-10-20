@@ -220,7 +220,9 @@ main {
 }
 
 
-#closed h1,
+/* MAKE THIS MORE SPECIFIC! VVVVV */
+
+#closed h1, 
 h3 {
     color: rgba(255, 255, 255, 0);
     transition: 1s ease-in-out;
@@ -456,7 +458,7 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
     mix-blend-mode: normal;
 }
 
-.bk #closed {}
+/* .bk #closed {} */
 
 
 
@@ -574,6 +576,31 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
     line-height: 1em;
 }
 
+
+/* MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX */
+/* MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX */
+/* MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX */
+
+#map-motivations{
+
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    /* pointer-events: none; */
+
+}
+
+
+#map-outcomes{
+
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    /* pointer-events: none; */
+
+}
 
 
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+    }
+
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+
+    }
+</style>
+
+<body>
+    <div id='map'></div>
+
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWl0Y2l2aWNkYXRhIiwiYSI6ImNpbDQ0aGR0djN3MGl1bWtzaDZrajdzb28ifQ.quOF41LsLB5FdjnGLwbrrg';
+        // Initialize the basemap
+        var map = new mapboxgl.Map({
+            container: 'map', // container element id
+            style: 'mapbox://styles/mitcivicdata/ckuslqqrj0r7718mu0lg5pyuz',
+            center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+            zoom: 4
+        });
+    </script>
+
+</body>
+
+</html>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Ashley Louie">
+    <meta name="author" content="Ashley Louie & Niko McGlashan">
     <title>Motivations</title>
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -20,12 +20,18 @@
     <link rel="stylesheet" type="text/css" href="./css/motivations.css">
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/d3.v7.min.js"></script>
+
+    <!-- MAPBOX -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
     <main>
-       
-        <!-- NAVIGATION --><!-- NAVIGATION --><!-- NAVIGATION -->
+
+        <!-- NAVIGATION -->
+        <!-- NAVIGATION -->
+        <!-- NAVIGATION -->
 
         <section class="chapter bk cost-img z5" id="closed">
             <div class="gradient cost-g">
@@ -60,9 +66,12 @@
                 <h1 class="upper white chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
             </div>
 
-            <!-- PAGE CONTENT --><!-- PAGE CONTENT --><!-- PAGE CONTENT -->
+            <!-- PAGE CONTENT -->
+            <!-- PAGE CONTENT -->
+            <!-- PAGE CONTENT -->
 
             <div class="solid-white">
+                <div id="map-motivations"></div>
                 <div class="container px-5 pb-5">
                     <!-- div for buttons -->
                     <div id="buttons-motivations" class="row mb-3">
@@ -105,7 +114,9 @@
             </div>
         </section>
 
-        <!-- NAVIGATION --><!-- NAVIGATION --><!-- NAVIGATION -->
+        <!-- NAVIGATION -->
+        <!-- NAVIGATION -->
+        <!-- NAVIGATION -->
         <section class="chapter bk origins-img z1" id="closed">
             <div class="gradient origins-g">
                 <h2 class="upper white chapter-title" onclick='redirect_Page(this,"origins")'>ORIGINS
@@ -122,8 +133,10 @@
                 <h1 class="upper white chapter-summary">Charting A New Regional Course of Action</h1><br><br><br><br>
             </div>
         </section>
-        
-        <!-- BACKGROUND --><!-- BACKGROUND --><!-- BACKGROUND -->
+
+        <!-- BACKGROUND -->
+        <!-- BACKGROUND -->
+        <!-- BACKGROUND -->
         <section class="website-background z-1"></section>
 
     </main>
@@ -132,6 +145,7 @@
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
     <script type="text/javascript" src="./js/motivations.js"></script>
+    <script type="text/javascript" src="./js/motivationsmap.js"></script>
 
 </body>
 

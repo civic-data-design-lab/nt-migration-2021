@@ -1,0 +1,1373 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "OBJECTID" : "OBJECTID",
+    "Metro" : "Metro",
+    "label___RANK_Immigrants_Share" : "label - RANK Immigrants Share",
+    "label___RANK_Immigrants" : "label - RANK Immigrants",
+    "Rank_immigrants_share" : "Rank immigrants share",
+    "Rank_Immigrants" : "Rank Immigrants",
+    "Origin__tooltip_" : "Origin (tooltip)",
+    "Latitude__generated_" : "Latitude (generated)",
+    "Longitude__generated_" : "Longitude (generated)",
+    "Imm__tot_pop" : "Imm% tot pop",
+    "Metro_N_Imm" : "Metro N Imm",
+    "Round_immigrants" : "Round immigrants",
+    "Round_total_MSA_population" : "Round total MSA population",
+    "Point_X" : "Point_X",
+    "Point_Y" : "Point_Y"
+  },
+  "geometryType" : "esriGeometryPoint",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326
+  },
+  "fields" : [
+    {
+      "name" : "OBJECTID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "OBJECTID"
+    },
+    {
+      "name" : "Metro",
+      "type" : "esriFieldTypeString",
+      "alias" : "Metro",
+      "length" : 8000
+    },
+    {
+      "name" : "label___RANK_Immigrants_Share",
+      "type" : "esriFieldTypeString",
+      "alias" : "label - RANK Immigrants Share",
+      "length" : 8000
+    },
+    {
+      "name" : "label___RANK_Immigrants",
+      "type" : "esriFieldTypeString",
+      "alias" : "label - RANK Immigrants",
+      "length" : 8000
+    },
+    {
+      "name" : "Rank_immigrants_share",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Rank immigrants share"
+    },
+    {
+      "name" : "Rank_Immigrants",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Rank Immigrants"
+    },
+    {
+      "name" : "Origin__tooltip_",
+      "type" : "esriFieldTypeString",
+      "alias" : "Origin (tooltip)",
+      "length" : 8000
+    },
+    {
+      "name" : "Latitude__generated_",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Latitude (generated)"
+    },
+    {
+      "name" : "Longitude__generated_",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Longitude (generated)"
+    },
+    {
+      "name" : "Imm__tot_pop",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Imm% tot pop"
+    },
+    {
+      "name" : "Metro_N_Imm",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Metro N Imm"
+    },
+    {
+      "name" : "Round_immigrants",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Round immigrants"
+    },
+    {
+      "name" : "Round_total_MSA_population",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Round total MSA population"
+    },
+    {
+      "name" : "Point_X",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Point_X"
+    },
+    {
+      "name" : "Point_Y",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Point_Y"
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "OBJECTID" : 1,
+        "Metro" : "Washington-Arlington-Alexandria, DC-VA-MD-WV",
+        "label___RANK_Immigrants_Share" : "st",
+        "label___RANK_Immigrants" : "nd",
+        "Rank_immigrants_share" : 1,
+        "Rank_Immigrants" : 2,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 38.855200000000004,
+        "Longitude__generated_" : -77.526899999999998,
+        "Imm__tot_pop" : 3.1400000000000001,
+        "Metro_N_Imm" : 194468,
+        "Round_immigrants" : 194000,
+        "Round_total_MSA_population" : 6197000,
+        "Point_X" : -89.118264909999994,
+        "Point_Y" : 13.76413206
+      },
+      "geometry" : {
+        "x" : -77.526899999999955,
+        "y" : 38.855200000000025
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 2,
+        "Metro" : "Los Angeles-Long Beach-Anaheim, CA",
+        "label___RANK_Immigrants_Share" : "nd",
+        "label___RANK_Immigrants" : "st",
+        "Rank_immigrants_share" : 2,
+        "Rank_Immigrants" : 1,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 34.078600000000002,
+        "Longitude__generated_" : -118.3232,
+        "Imm__tot_pop" : 2.1699999999999999,
+        "Metro_N_Imm" : 287828,
+        "Round_immigrants" : 288000,
+        "Round_total_MSA_population" : 13250000,
+        "Point_X" : -89.10114317,
+        "Point_Y" : 13.785118110000001
+      },
+      "geometry" : {
+        "x" : -118.32319999999999,
+        "y" : 34.078600000000051
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 3,
+        "Metro" : "Houston-The Woodlands-Sugar Land, TX",
+        "label___RANK_Immigrants_Share" : "rd",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 3,
+        "Rank_Immigrants" : 4,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 29.697600000000001,
+        "Longitude__generated_" : -95.314700000000002,
+        "Imm__tot_pop" : 1.79,
+        "Metro_N_Imm" : 123387,
+        "Round_immigrants" : 123000,
+        "Round_total_MSA_population" : 6884000,
+        "Point_X" : -89.182404910000002,
+        "Point_Y" : 13.806243070000001
+      },
+      "geometry" : {
+        "x" : -95.314699999999959,
+        "y" : 29.697600000000079
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 4,
+        "Metro" : "Fayetteville-Springdale-Rogers, AR",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 4,
+        "Rank_Immigrants" : 17,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 36.258499999999998,
+        "Longitude__generated_" : -94.098699999999994,
+        "Imm__tot_pop" : 1.55,
+        "Metro_N_Imm" : 7949,
+        "Round_immigrants" : 8000,
+        "Round_total_MSA_population" : 514000,
+        "Point_X" : -89.247199350000002,
+        "Point_Y" : 14.03809287
+      },
+      "geometry" : {
+        "x" : -94.098699999999951,
+        "y" : 36.258500000000026
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 5,
+        "Metro" : "Winchester, VA-WV",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 5,
+        "Rank_Immigrants" : 55,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 39.273800000000001,
+        "Longitude__generated_" : -78.491299999999995,
+        "Imm__tot_pop" : 1.46,
+        "Metro_N_Imm" : 2004,
+        "Round_immigrants" : 2000,
+        "Round_total_MSA_population" : 138000,
+        "Point_X" : -89.227606890000004,
+        "Point_Y" : 13.858020160000001
+      },
+      "geometry" : {
+        "x" : -78.491299999999967,
+        "y" : 39.273800000000051
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 6,
+        "Metro" : "San Francisco-Oakland-Berkeley, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 6,
+        "Rank_Immigrants" : 6,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 37.688800000000001,
+        "Longitude__generated_" : -122.0651,
+        "Imm__tot_pop" : 1.2,
+        "Metro_N_Imm" : 56375,
+        "Round_immigrants" : 56000,
+        "Round_total_MSA_population" : 4701000,
+        "Point_X" : -89.134159159999996,
+        "Point_Y" : 13.638850639999999
+      },
+      "geometry" : {
+        "x" : -122.06509999999997,
+        "y" : 37.688800000000072
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 7,
+        "Metro" : "Gainesville, GA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "nd",
+        "Rank_immigrants_share" : 7,
+        "Rank_Immigrants" : 52,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 34.3063,
+        "Longitude__generated_" : -83.7851,
+        "Imm__tot_pop" : 1.1799999999999999,
+        "Metro_N_Imm" : 2337,
+        "Round_immigrants" : 2000,
+        "Round_total_MSA_population" : 199000,
+        "Point_X" : -89.174018309999994,
+        "Point_Y" : 13.71828485
+      },
+      "geometry" : {
+        "x" : -83.785099999999943,
+        "y" : 34.306300000000078
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 8,
+        "Metro" : "Salinas, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "rd",
+        "Rank_immigrants_share" : 8,
+        "Rank_Immigrants" : 33,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 36.354500000000002,
+        "Longitude__generated_" : -121.5249,
+        "Imm__tot_pop" : 1.03,
+        "Metro_N_Imm" : 4455,
+        "Round_immigrants" : 4000,
+        "Round_total_MSA_population" : 433000,
+        "Point_X" : -89.188970929999996,
+        "Point_Y" : 13.772873929999999
+      },
+      "geometry" : {
+        "x" : -121.52489999999995,
+        "y" : 36.35450000000003
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 9,
+        "Metro" : "Fort Smith, AR-OK",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "st",
+        "Rank_immigrants_share" : 9,
+        "Rank_Immigrants" : 51,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 35.133400000000002,
+        "Longitude__generated_" : -94.533699999999996,
+        "Imm__tot_pop" : 1.02,
+        "Metro_N_Imm" : 2556,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 250000,
+        "Point_X" : -90.064690780000006,
+        "Point_Y" : 13.74141646
+      },
+      "geometry" : {
+        "x" : -94.533699999999953,
+        "y" : 35.133400000000051
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 10,
+        "Metro" : "Las Vegas-Henderson-Paradise, NV",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 10,
+        "Rank_Immigrants" : 10,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 35.927100000000003,
+        "Longitude__generated_" : -115.25320000000001,
+        "Imm__tot_pop" : 1.02,
+        "Metro_N_Imm" : 22177,
+        "Round_immigrants" : 22000,
+        "Round_total_MSA_population" : 2182000,
+        "Point_X" : -90.046052149999994,
+        "Point_Y" : 13.77005889
+      },
+      "geometry" : {
+        "x" : -115.25319999999999,
+        "y" : 35.927100000000053
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 11,
+        "Metro" : "Dallas-Fort Worth-Arlington, TX",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 11,
+        "Rank_Immigrants" : 5,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 32.744,
+        "Longitude__generated_" : -97.068899999999999,
+        "Imm__tot_pop" : 0.84999999999999998,
+        "Metro_N_Imm" : 62454,
+        "Round_immigrants" : 62000,
+        "Round_total_MSA_population" : 7321000,
+        "Point_X" : -89.9138631,
+        "Point_Y" : 13.90383928
+      },
+      "geometry" : {
+        "x" : -97.068899999999985,
+        "y" : 32.744000000000028
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 12,
+        "Metro" : "Reno, NV",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 12,
+        "Rank_Immigrants" : 37,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 40.582000000000001,
+        "Longitude__generated_" : -119.6546,
+        "Imm__tot_pop" : 0.79000000000000004,
+        "Metro_N_Imm" : 3661,
+        "Round_immigrants" : 4000,
+        "Round_total_MSA_population" : 461000,
+        "Point_X" : -90.010574079999998,
+        "Point_Y" : 13.735712639999999
+      },
+      "geometry" : {
+        "x" : -119.65459999999996,
+        "y" : 40.58200000000005
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 13,
+        "Metro" : "Bakersfield, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 13,
+        "Rank_Immigrants" : 20,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 35.294899999999998,
+        "Longitude__generated_" : -118.7204,
+        "Imm__tot_pop" : 0.78000000000000003,
+        "Metro_N_Imm" : 6960,
+        "Round_immigrants" : 7000,
+        "Round_total_MSA_population" : 888000,
+        "Point_X" : -89.873016820000004,
+        "Point_Y" : 13.80551503
+      },
+      "geometry" : {
+        "x" : -118.72039999999998,
+        "y" : 35.294900000000041
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 14,
+        "Metro" : "New York-Newark-Jersey City, NY-NJ-PA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "rd",
+        "Rank_immigrants_share" : 14,
+        "Rank_Immigrants" : 3,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 40.777999999999999,
+        "Longitude__generated_" : -73.708699999999993,
+        "Imm__tot_pop" : 0.76000000000000001,
+        "Metro_N_Imm" : 147506,
+        "Round_immigrants" : 148000,
+        "Round_total_MSA_population" : 19294000,
+        "Point_X" : -89.795099590000007,
+        "Point_Y" : 13.83234998
+      },
+      "geometry" : {
+        "x" : -73.708699999999965,
+        "y" : 40.778000000000077
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 15,
+        "Metro" : "Boston-Cambridge-Newton, MA-NH",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 15,
+        "Rank_Immigrants" : 7,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 42.568399999999997,
+        "Longitude__generated_" : -71.110900000000001,
+        "Imm__tot_pop" : 0.76000000000000001,
+        "Metro_N_Imm" : 36616,
+        "Round_immigrants" : 37000,
+        "Round_total_MSA_population" : 4832000,
+        "Point_X" : -89.935642270000002,
+        "Point_Y" : 13.92640922
+      },
+      "geometry" : {
+        "x" : -71.110899999999958,
+        "y" : 42.568400000000054
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 16,
+        "Metro" : "Riverside-San Bernardino-Ontario, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 16,
+        "Rank_Immigrants" : 8,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 34.617699999999999,
+        "Longitude__generated_" : -116.0501,
+        "Imm__tot_pop" : 0.70999999999999996,
+        "Metro_N_Imm" : 32355,
+        "Round_immigrants" : 32000,
+        "Round_total_MSA_population" : 4560000,
+        "Point_X" : -89.840843340000006,
+        "Point_Y" : 13.82616322
+      },
+      "geometry" : {
+        "x" : -116.05009999999999,
+        "y" : 34.61770000000007
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 17,
+        "Metro" : "Vallejo, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 17,
+        "Rank_Immigrants" : 46,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 38.285499999999999,
+        "Longitude__generated_" : -121.90179999999999,
+        "Imm__tot_pop" : 0.69999999999999996,
+        "Metro_N_Imm" : 3080,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 442000,
+        "Point_X" : -89.85145086,
+        "Point_Y" : 13.82607166
+      },
+      "geometry" : {
+        "x" : -121.90179999999998,
+        "y" : 38.28550000000007
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 18,
+        "Metro" : "Fresno, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 18,
+        "Rank_Immigrants" : 24,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 36.746299999999998,
+        "Longitude__generated_" : -119.63630000000001,
+        "Imm__tot_pop" : 0.67000000000000004,
+        "Metro_N_Imm" : 6595,
+        "Round_immigrants" : 7000,
+        "Round_total_MSA_population" : 985000,
+        "Point_X" : -88.971972039999997,
+        "Point_Y" : 13.904250340000001
+      },
+      "geometry" : {
+        "x" : -119.63629999999995,
+        "y" : 36.746300000000076
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 19,
+        "Metro" : "Durham-Chapel Hill, NC",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 19,
+        "Rank_Immigrants" : 36,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 36.028799999999997,
+        "Longitude__generated_" : -79.005700000000004,
+        "Imm__tot_pop" : 0.64000000000000001,
+        "Metro_N_Imm" : 4008,
+        "Round_immigrants" : 4000,
+        "Round_total_MSA_population" : 627000,
+        "Point_X" : -88.679799979999999,
+        "Point_Y" : 13.884566469999999
+      },
+      "geometry" : {
+        "x" : -79.005699999999933,
+        "y" : 36.028800000000047
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 20,
+        "Metro" : "Richmond, VA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 20,
+        "Rank_Immigrants" : 18,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 37.479999999999997,
+        "Longitude__generated_" : -77.436999999999998,
+        "Imm__tot_pop" : 0.62,
+        "Metro_N_Imm" : 7846,
+        "Round_immigrants" : 8000,
+        "Round_total_MSA_population" : 1270000,
+        "Point_X" : -88.630550319999998,
+        "Point_Y" : 13.940589210000001
+      },
+      "geometry" : {
+        "x" : -77.436999999999955,
+        "y" : 37.480000000000075
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 21,
+        "Metro" : "Baltimore-Columbia-Towson, MD",
+        "label___RANK_Immigrants_Share" : "st",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 21,
+        "Rank_Immigrants" : 12,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 39.216000000000001,
+        "Longitude__generated_" : -76.674700000000001,
+        "Imm__tot_pop" : 0.60999999999999999,
+        "Metro_N_Imm" : 17024,
+        "Round_immigrants" : 17000,
+        "Round_total_MSA_population" : 2797000,
+        "Point_X" : -88.868738800000003,
+        "Point_Y" : 13.913434929999999
+      },
+      "geometry" : {
+        "x" : -76.674699999999973,
+        "y" : 39.216000000000065
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 22,
+        "Metro" : "Santa Rosa-Petaluma, CA",
+        "label___RANK_Immigrants_Share" : "nd",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 22,
+        "Rank_Immigrants" : 50,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 38.462899999999998,
+        "Longitude__generated_" : -122.8943,
+        "Imm__tot_pop" : 0.52000000000000002,
+        "Metro_N_Imm" : 2580,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 500000,
+        "Point_X" : -88.757987689999993,
+        "Point_Y" : 13.82590244
+      },
+      "geometry" : {
+        "x" : -122.89429999999999,
+        "y" : 38.462900000000047
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 23,
+        "Metro" : "Winston-Salem, NC",
+        "label___RANK_Immigrants_Share" : "rd",
+        "label___RANK_Immigrants" : "st",
+        "Rank_immigrants_share" : 23,
+        "Rank_Immigrants" : 41,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 36.027500000000003,
+        "Longitude__generated_" : -80.368799999999993,
+        "Imm__tot_pop" : 0.51000000000000001,
+        "Metro_N_Imm" : 3368,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 666000,
+        "Point_X" : -88.977126780000006,
+        "Point_Y" : 13.86289811
+      },
+      "geometry" : {
+        "x" : -80.368799999999965,
+        "y" : 36.027500000000032
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 24,
+        "Metro" : "Oxnard-Thousand Oaks-Ventura, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 24,
+        "Rank_Immigrants" : 35,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 34.447000000000003,
+        "Longitude__generated_" : -119.0772,
+        "Imm__tot_pop" : 0.47999999999999998,
+        "Metro_N_Imm" : 4094,
+        "Round_immigrants" : 4000,
+        "Round_total_MSA_population" : 847000,
+        "Point_X" : -88.645287019999998,
+        "Point_Y" : 13.80837446
+      },
+      "geometry" : {
+        "x" : -119.07719999999995,
+        "y" : 34.44700000000006
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 25,
+        "Metro" : "Miami-Fort Lauderdale-Pompano Beach, FL",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 25,
+        "Rank_Immigrants" : 9,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 26.055099999999999,
+        "Longitude__generated_" : -80.459599999999995,
+        "Imm__tot_pop" : 0.47999999999999998,
+        "Metro_N_Imm" : 29020,
+        "Round_immigrants" : 29000,
+        "Round_total_MSA_population" : 6091000,
+        "Point_X" : -88.811153050000001,
+        "Point_Y" : 13.849612649999999
+      },
+      "geometry" : {
+        "x" : -80.459599999999966,
+        "y" : 26.055100000000039
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 26,
+        "Metro" : "Charlotte-Concord-Gastonia, NC-SC",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 26,
+        "Rank_Immigrants" : 13,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 35.258800000000001,
+        "Longitude__generated_" : -80.888999999999996,
+        "Imm__tot_pop" : 0.45000000000000001,
+        "Metro_N_Imm" : 11480,
+        "Round_immigrants" : 11000,
+        "Round_total_MSA_population" : 2546000,
+        "Point_X" : -88.623917129999995,
+        "Point_Y" : 13.94838176
+      },
+      "geometry" : {
+        "x" : -80.888999999999953,
+        "y" : 35.258800000000065
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 27,
+        "Metro" : "Raleigh-Cary, NC",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 27,
+        "Rank_Immigrants" : 28,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 35.760399999999997,
+        "Longitude__generated_" : -78.587800000000001,
+        "Imm__tot_pop" : 0.40999999999999998,
+        "Metro_N_Imm" : 5515,
+        "Round_immigrants" : 6000,
+        "Round_total_MSA_population" : 1332000,
+        "Point_X" : -88.562445969999999,
+        "Point_Y" : 13.884178390000001
+      },
+      "geometry" : {
+        "x" : -78.587799999999959,
+        "y" : 35.760400000000061
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 28,
+        "Metro" : "San Jose-Sunnyvale-Santa Clara, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 28,
+        "Rank_Immigrants" : 15,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 36.840699999999998,
+        "Longitude__generated_" : -121.3746,
+        "Imm__tot_pop" : 0.40999999999999998,
+        "Metro_N_Imm" : 8119,
+        "Round_immigrants" : 8000,
+        "Round_total_MSA_population" : 1988000,
+        "Point_X" : -88.556974150000002,
+        "Point_Y" : 13.823971139999999
+      },
+      "geometry" : {
+        "x" : -121.37459999999999,
+        "y" : 36.840700000000027
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 29,
+        "Metro" : "Stockton, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 29,
+        "Rank_Immigrants" : 47,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 37.891100000000002,
+        "Longitude__generated_" : -121.2479,
+        "Imm__tot_pop" : 0.40000000000000002,
+        "Metro_N_Imm" : 2988,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 743000,
+        "Point_X" : -88.586774640000002,
+        "Point_Y" : 13.82927061
+      },
+      "geometry" : {
+        "x" : -121.24789999999996,
+        "y" : 37.891100000000051
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 30,
+        "Metro" : "Modesto, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 30,
+        "Rank_Immigrants" : 54,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 37.605699999999999,
+        "Longitude__generated_" : -120.8871,
+        "Imm__tot_pop" : 0.39000000000000001,
+        "Metro_N_Imm" : 2096,
+        "Round_immigrants" : 2000,
+        "Round_total_MSA_population" : 543000,
+        "Point_X" : -88.728126459999999,
+        "Point_Y" : 13.895915649999999
+      },
+      "geometry" : {
+        "x" : -120.88709999999998,
+        "y" : 37.60570000000007
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 31,
+        "Metro" : "Bridgeport-Stamford-Norwalk, CT",
+        "label___RANK_Immigrants_Share" : "st",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 31,
+        "Rank_Immigrants" : 38,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 41.308399999999999,
+        "Longitude__generated_" : -73.313699999999997,
+        "Imm__tot_pop" : 0.39000000000000001,
+        "Metro_N_Imm" : 3638,
+        "Round_immigrants" : 4000,
+        "Round_total_MSA_population" : 944000,
+        "Point_X" : -88.429595129999996,
+        "Point_Y" : 13.58003501
+      },
+      "geometry" : {
+        "x" : -73.313699999999983,
+        "y" : 41.308400000000063
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 32,
+        "Metro" : "Nashville-Davidson-Murfreesboro-Franklin, TN",
+        "label___RANK_Immigrants_Share" : "nd",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 32,
+        "Rank_Immigrants" : 26,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 36.030299999999997,
+        "Longitude__generated_" : -86.792500000000004,
+        "Imm__tot_pop" : 0.34999999999999998,
+        "Metro_N_Imm" : 6505,
+        "Round_immigrants" : 7000,
+        "Round_total_MSA_population" : 1872000,
+        "Point_X" : -88.351409399999994,
+        "Point_Y" : 13.223985280000001
+      },
+      "geometry" : {
+        "x" : -86.792499999999961,
+        "y" : 36.030300000000068
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 33,
+        "Metro" : "Atlanta-Sandy Springs-Alpharetta, GA",
+        "label___RANK_Immigrants_Share" : "rd",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 33,
+        "Rank_Immigrants" : 11,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 33.731099999999998,
+        "Longitude__generated_" : -84.400199999999998,
+        "Imm__tot_pop" : 0.33000000000000002,
+        "Metro_N_Imm" : 19510,
+        "Round_immigrants" : 20000,
+        "Round_total_MSA_population" : 5862000,
+        "Point_X" : -88.518069409999995,
+        "Point_Y" : 13.401084429999999
+      },
+      "geometry" : {
+        "x" : -84.400199999999984,
+        "y" : 33.731100000000026
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 34,
+        "Metro" : "Austin-Round Rock-Georgetown, TX",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "nd",
+        "Rank_immigrants_share" : 34,
+        "Rank_Immigrants" : 22,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 30.2683,
+        "Longitude__generated_" : -97.651499999999999,
+        "Imm__tot_pop" : 0.32000000000000001,
+        "Metro_N_Imm" : 6712,
+        "Round_immigrants" : 7000,
+        "Round_total_MSA_population" : 2114000,
+        "Point_X" : -88.596856889999998,
+        "Point_Y" : 13.4233701
+      },
+      "geometry" : {
+        "x" : -97.651499999999942,
+        "y" : 30.268300000000067
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 35,
+        "Metro" : "Omaha-Council Bluffs, NE-IA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 35,
+        "Rank_Immigrants" : 48,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 41.3245,
+        "Longitude__generated_" : -96.031700000000001,
+        "Imm__tot_pop" : 0.31,
+        "Metro_N_Imm" : 2907,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 932000,
+        "Point_X" : -88.714950259999995,
+        "Point_Y" : 13.402831369999999
+      },
+      "geometry" : {
+        "x" : -96.031699999999944,
+        "y" : 41.324500000000057
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 36,
+        "Metro" : "Sacramento-Roseville-Folsom, CA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "st",
+        "Rank_immigrants_share" : 36,
+        "Rank_Immigrants" : 21,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 38.667299999999997,
+        "Longitude__generated_" : -121.1593,
+        "Imm__tot_pop" : 0.29999999999999999,
+        "Metro_N_Imm" : 6913,
+        "Round_immigrants" : 7000,
+        "Round_total_MSA_population" : 2316000,
+        "Point_X" : -88.521107860000001,
+        "Point_Y" : 13.455515780000001
+      },
+      "geometry" : {
+        "x" : -121.15929999999997,
+        "y" : 38.667300000000068
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 37,
+        "Metro" : "Salt Lake City, UT",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 37,
+        "Rank_Immigrants" : 39,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 40.490299999999998,
+        "Longitude__generated_" : -112.926,
+        "Imm__tot_pop" : 0.28999999999999998,
+        "Metro_N_Imm" : 3445,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 1201000,
+        "Point_X" : -88.354001089999997,
+        "Point_Y" : 13.35828416
+      },
+      "geometry" : {
+        "x" : -112.92599999999999,
+        "y" : 40.490300000000047
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 38,
+        "Metro" : "Virginia Beach-Norfolk-Newport News, VA-NC",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 38,
+        "Rank_Immigrants" : 30,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 36.816099999999999,
+        "Longitude__generated_" : -76.3797,
+        "Imm__tot_pop" : 0.28000000000000003,
+        "Metro_N_Imm" : 4902,
+        "Round_immigrants" : 5000,
+        "Round_total_MSA_population" : 1762000,
+        "Point_X" : -88.481082720000003,
+        "Point_Y" : 13.4941856
+      },
+      "geometry" : {
+        "x" : -76.379699999999957,
+        "y" : 36.816100000000063
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 39,
+        "Metro" : "Providence-Warwick, RI-MA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 39,
+        "Rank_Immigrants" : 34,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 41.639699999999998,
+        "Longitude__generated_" : -71.316100000000006,
+        "Imm__tot_pop" : 0.26000000000000001,
+        "Metro_N_Imm" : 4240,
+        "Round_immigrants" : 4000,
+        "Round_total_MSA_population" : 1618000,
+        "Point_X" : -88.599547509999994,
+        "Point_Y" : 13.2879576
+      },
+      "geometry" : {
+        "x" : -71.316099999999949,
+        "y" : 41.639700000000062
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 40,
+        "Metro" : "New Orleans-Metairie, LA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "rd",
+        "Rank_immigrants_share" : 40,
+        "Rank_Immigrants" : 43,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 29.783899999999999,
+        "Longitude__generated_" : -89.613500000000002,
+        "Imm__tot_pop" : 0.25,
+        "Metro_N_Imm" : 3230,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 1268000,
+        "Point_X" : -88.415796330000006,
+        "Point_Y" : 13.3929452
+      },
+      "geometry" : {
+        "x" : -89.613499999999988,
+        "y" : 29.783900000000074
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 41,
+        "Metro" : "Worcester, MA-CT",
+        "label___RANK_Immigrants_Share" : "st",
+        "label___RANK_Immigrants" : "rd",
+        "Rank_immigrants_share" : 41,
+        "Rank_Immigrants" : 53,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 42.177999999999997,
+        "Longitude__generated_" : -71.873599999999996,
+        "Imm__tot_pop" : 0.25,
+        "Metro_N_Imm" : 2313,
+        "Round_immigrants" : 2000,
+        "Round_total_MSA_population" : 941000,
+        "Point_X" : -88.59826468,
+        "Point_Y" : 13.380143650000001
+      },
+      "geometry" : {
+        "x" : -71.873599999999954,
+        "y" : 42.178000000000054
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 42,
+        "Metro" : "Denver-Aurora-Lakewood, CO",
+        "label___RANK_Immigrants_Share" : "nd",
+        "label___RANK_Immigrants" : "rd",
+        "Rank_immigrants_share" : 42,
+        "Rank_Immigrants" : 23,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 39.368600000000001,
+        "Longitude__generated_" : -104.86620000000001,
+        "Imm__tot_pop" : 0.23000000000000001,
+        "Metro_N_Imm" : 6688,
+        "Round_immigrants" : 7000,
+        "Round_total_MSA_population" : 2892000,
+        "Point_X" : -88.654310679999995,
+        "Point_Y" : 13.23178564
+      },
+      "geometry" : {
+        "x" : -104.86619999999999,
+        "y" : 39.368600000000072
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 43,
+        "Metro" : "Seattle-Tacoma-Bellevue, WA",
+        "label___RANK_Immigrants_Share" : "rd",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 43,
+        "Rank_Immigrants" : 16,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 47.5137,
+        "Longitude__generated_" : -121.88500000000001,
+        "Imm__tot_pop" : 0.20999999999999999,
+        "Metro_N_Imm" : 8028,
+        "Round_immigrants" : 8000,
+        "Round_total_MSA_population" : 3871000,
+        "Point_X" : -88.473476640000001,
+        "Point_Y" : 13.68927248
+      },
+      "geometry" : {
+        "x" : -121.88499999999999,
+        "y" : 47.513700000000028
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 44,
+        "Metro" : "San Antonio-New Braunfels, TX",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 44,
+        "Rank_Immigrants" : 29,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 29.376000000000001,
+        "Longitude__generated_" : -98.6267,
+        "Imm__tot_pop" : 0.20000000000000001,
+        "Metro_N_Imm" : 5021,
+        "Round_immigrants" : 5000,
+        "Round_total_MSA_population" : 2468000,
+        "Point_X" : -88.407359360000001,
+        "Point_Y" : 13.30415717
+      },
+      "geometry" : {
+        "x" : -98.626699999999971,
+        "y" : 29.376000000000033
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 45,
+        "Metro" : "Orlando-Kissimmee-Sanford, FL",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "st",
+        "Rank_immigrants_share" : 45,
+        "Rank_Immigrants" : 31,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 28.459299999999999,
+        "Longitude__generated_" : -81.424700000000001,
+        "Imm__tot_pop" : 0.19,
+        "Metro_N_Imm" : 4645,
+        "Round_immigrants" : 5000,
+        "Round_total_MSA_population" : 2509000,
+        "Point_X" : -88.315797939999996,
+        "Point_Y" : 13.203941990000001
+      },
+      "geometry" : {
+        "x" : -81.424699999999973,
+        "y" : 28.459300000000042
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 46,
+        "Metro" : "Minneapolis-St. Paul-Bloomington, MN-WI",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 46,
+        "Rank_Immigrants" : 25,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 45.221400000000003,
+        "Longitude__generated_" : -93.504300000000001,
+        "Imm__tot_pop" : 0.17999999999999999,
+        "Metro_N_Imm" : 6559,
+        "Round_immigrants" : 7000,
+        "Round_total_MSA_population" : 3574000,
+        "Point_X" : -88.507016800000002,
+        "Point_Y" : 13.202154419999999
+      },
+      "geometry" : {
+        "x" : -93.504299999999944,
+        "y" : 45.221400000000074
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 47,
+        "Metro" : "Phoenix-Mesa-Chandler, AZ",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 47,
+        "Rank_Immigrants" : 19,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 33.268099999999997,
+        "Longitude__generated_" : -112.14319999999999,
+        "Imm__tot_pop" : 0.16,
+        "Metro_N_Imm" : 7443,
+        "Round_immigrants" : 7000,
+        "Round_total_MSA_population" : 4762000,
+        "Point_X" : -88.452493259999997,
+        "Point_Y" : 13.514220979999999
+      },
+      "geometry" : {
+        "x" : -112.14319999999998,
+        "y" : 33.268100000000061
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 48,
+        "Metro" : "Indianapolis-Carmel-Anderson, IN",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 48,
+        "Rank_Immigrants" : 45,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 39.714100000000002,
+        "Longitude__generated_" : -86.322299999999998,
+        "Imm__tot_pop" : 0.14999999999999999,
+        "Metro_N_Imm" : 3140,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 2029000,
+        "Point_X" : -88.412430779999994,
+        "Point_Y" : 13.44443568
+      },
+      "geometry" : {
+        "x" : -86.322299999999984,
+        "y" : 39.71410000000003
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 49,
+        "Metro" : "Columbus, OH",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 49,
+        "Rank_Immigrants" : 44,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 40.037100000000002,
+        "Longitude__generated_" : -82.853300000000004,
+        "Imm__tot_pop" : 0.14999999999999999,
+        "Metro_N_Imm" : 3147,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 2078000,
+        "Point_X" : -88.353765170000003,
+        "Point_Y" : 13.29094559
+      },
+      "geometry" : {
+        "x" : -82.85329999999999,
+        "y" : 40.037100000000066
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 50,
+        "Metro" : "Portland-Vancouver-Hillsboro, OR-WA",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 50,
+        "Rank_Immigrants" : 40,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 45.637099999999997,
+        "Longitude__generated_" : -122.67270000000001,
+        "Imm__tot_pop" : 0.14000000000000001,
+        "Metro_N_Imm" : 3386,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 2446000,
+        "Point_X" : -88.227468779999995,
+        "Point_Y" : 13.251462439999999
+      },
+      "geometry" : {
+        "x" : -122.67269999999996,
+        "y" : 45.637100000000032
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 51,
+        "Metro" : "San Diego-Chula Vista-Carlsbad, CA",
+        "label___RANK_Immigrants_Share" : "st",
+        "label___RANK_Immigrants" : "nd",
+        "Rank_immigrants_share" : 51,
+        "Rank_Immigrants" : 32,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 33.016399999999997,
+        "Longitude__generated_" : -116.73050000000001,
+        "Imm__tot_pop" : 0.14000000000000001,
+        "Metro_N_Imm" : 4563,
+        "Round_immigrants" : 5000,
+        "Round_total_MSA_population" : 3316000,
+        "Point_X" : -88.208776009999994,
+        "Point_Y" : 13.21369434
+      },
+      "geometry" : {
+        "x" : -116.73049999999995,
+        "y" : 33.016400000000033
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 52,
+        "Metro" : "Kansas City, MO-KS",
+        "label___RANK_Immigrants_Share" : "nd",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 52,
+        "Rank_Immigrants" : 49,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 38.9071,
+        "Longitude__generated_" : -94.584999999999994,
+        "Imm__tot_pop" : 0.13,
+        "Metro_N_Imm" : 2760,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 2125000,
+        "Point_X" : -88.474254959999996,
+        "Point_Y" : 13.541738280000001
+      },
+      "geometry" : {
+        "x" : -94.58499999999998,
+        "y" : 38.907100000000071
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 53,
+        "Metro" : "Chicago-Naperville-Elgin, IL-IN-WI",
+        "label___RANK_Immigrants_Share" : "rd",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 53,
+        "Rank_Immigrants" : 14,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 41.703000000000003,
+        "Longitude__generated_" : -87.936300000000003,
+        "Imm__tot_pop" : 0.11,
+        "Metro_N_Imm" : 10830,
+        "Round_immigrants" : 11000,
+        "Round_total_MSA_population" : 9509000,
+        "Point_X" : -88.64574829,
+        "Point_Y" : 13.482458729999999
+      },
+      "geometry" : {
+        "x" : -87.93629999999996,
+        "y" : 41.703000000000031
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 54,
+        "Metro" : "Tampa-St. Petersburg-Clearwater, FL",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "nd",
+        "Rank_immigrants_share" : 54,
+        "Rank_Immigrants" : 42,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 28.1327,
+        "Longitude__generated_" : -82.4803,
+        "Imm__tot_pop" : 0.11,
+        "Metro_N_Imm" : 3273,
+        "Round_immigrants" : 3000,
+        "Round_total_MSA_population" : 3098000,
+        "Point_X" : -88.592604440000002,
+        "Point_Y" : 13.20573475
+      },
+      "geometry" : {
+        "x" : -82.480299999999943,
+        "y" : 28.132700000000057
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 55,
+        "Metro" : "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",
+        "label___RANK_Immigrants_Share" : "th",
+        "label___RANK_Immigrants" : "th",
+        "Rank_immigrants_share" : 55,
+        "Rank_Immigrants" : 27,
+        "Origin__tooltip_" : "El Salvador",
+        "Latitude__generated_" : 39.949399999999997,
+        "Longitude__generated_" : -75.238299999999995,
+        "Imm__tot_pop" : 0.10000000000000001,
+        "Metro_N_Imm" : 5969,
+        "Round_immigrants" : 6000,
+        "Round_total_MSA_population" : 6079000,
+        "Point_X" : -88.365922999999995,
+        "Point_Y" : 13.3473089
+      },
+      "geometry" : {
+        "x" : -75.238299999999981,
+        "y" : 39.949400000000026
+      }
+    }
+  ]
+}

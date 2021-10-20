@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Ashley Louie">
+    <meta name="author" content="Ashley Louie + Niko McGlashan">
     <title>Outcomes</title>
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -18,6 +18,12 @@
 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+
+    <!-- MAPBOX -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+
 </head>
 
 <body>
@@ -35,25 +41,11 @@
             <div class="gradient outcomes-g">
                 <h2 class="upper white chapter-title" onclick='redirect_Page(this,"outcomes")'>OUTCOMES
                 </h2>
-                <h1 class="upper white chapter-summary">ONLY 57%<br>OF MIGRANTS<br>REACH THEIR<br>INTENDED<br>DESTINATION</h1>
+                <h1 class="upper white chapter-summary">ONLY 57%<br>OF MIGRANTS<br>REACH
+                    THEIR<br>INTENDED<br>DESTINATION</h1>
             </div>
             <div class="solid-white">
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea blanditiis molestias
-                    sit cupiditate, possimus doloremque quae perferendis beatae praesentium quia suscipit?
-                    Aspernatur,
-                    consectetur praesentium blanditiis distinctio nam eaque cumque animi ipsa eos quibusdam odit
-                    voluptatibus ipsum provident similique perspiciatis laborum minus iste ipsam assumenda ea
-                    corrupti?
-                    Omnis expedita temporibus, numquam atque perspiciatis corrupti iusto suscipit ratione placeat
-                    tempora
-                    libero laboriosam at, cumque exercitationem vitae blanditiis id explicabo qui odit reprehenderit
-                    dolorem
-                    quos. Voluptatum, officia cupiditate sint impedit amet recusandae saepe, numquam officiis, natus
-                    quasi
-                    veritatis dolorum? A, cupiditate magnam natus similique vel dolores ipsam excepturi tenetur
-                    veritatis
-                    modi tempore nihil.
-                </h3>
+                <div id="map-outcomes"></div>
             </div>
 
         </section>
@@ -62,7 +54,8 @@
             <div class="gradient profiles-g">
                 <h2 class="upper white chapter-title" onclick='redirect_Page(this,"profiles")'>PROFILES
                 </h2>
-                <h1 class="upper white chapter-summary">HALF OF MIGRANTS<br>WORK IN THE<br>SAME OCCUPATION<br>AFTER RELOCATION</h1>
+                <h1 class="upper white chapter-summary">HALF OF MIGRANTS<br>WORK IN THE<br>SAME OCCUPATION<br>AFTER
+                    RELOCATION</h1>
             </div>
         </section>
 
@@ -79,7 +72,8 @@
             <div class="gradient origins-g">
                 <h2 class="upper white chapter-title" onclick='redirect_Page(this,"origins")'>ORIGINS
                 </h2>
-                <h1 class="upper white chapter-summary">VIOLENCE, CLIMATE,<br>ECONOMICS,<br>AND POLICY<br>HISTORICALLY DRIVE EMIGRATION
+                <h1 class="upper white chapter-summary">VIOLENCE, CLIMATE,<br>ECONOMICS,<br>AND POLICY<br>HISTORICALLY
+                    DRIVE EMIGRATION
                 </h1>
             </div>
 
@@ -108,6 +102,11 @@
     <!-- <script type="text/javascript" src="./js/lightbox.js"></script> -->
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/outcomesmap.js"></script>
+
+
+
+
 </body>
 
 </html>
