@@ -26,6 +26,9 @@
 .chart-labels {
     display: none;
 }
+.chart-labels:hover {
+    cursor: default;
+}
 #viz-motivations text {
     font-size: 1.4em;
     fill: #1540C4;
@@ -41,4 +44,19 @@
 }
 .tooltip .col-left {
     width: calc(100% - 115px);
+}
+.tooltip-side {
+    position: absolute;
+    max-width: 325px;
+    color: #1540C4;
+    background-color: #fff;
+    border: solid 2px #1540C4;
+    box-shadow: 2px 2px 6px rgb(0 0 0 / 50%);
+}
+.tooltip-side p {
+    font-size: 0.8em;
+}
+.tooltip-side .label-group {
+    display: inline-block;
+    background-color: #1540C4;
 }
