@@ -77,17 +77,20 @@
                     <div id="buttons-motivations" class="row mb-3">
                         <div class="col-6 pe-0">
                             <button type="button" id="btn-motivs" class="btn btn-sm text-uppercase text-blue">Motivations</button>
+                            <div id="popup-motivs"></div>
                         </div>
                         <div id="btn-center" class="col-3 px-0">
                             <button type="button" id="btn-income" class="btn btn-sm text-uppercase text-blue">Income Level</button>
+                            <div id="popup-income"></div>
                         </div>
                         <div class="col-3 ps-0">
                             <button type="button" id="btn-cari" class="btn btn-sm text-uppercase text-blue">Food Security</button>
+                            <div id="popup-cari"></div>
                         </div>
                     </div>
                     <!-- frame for d3 visualization -->
-                    <div id="frame-motivations"></div>
-                    <!-- tooltip template -->
+                    <div id="frame-motivations" class="position-relative"></div>
+                    <!-- motivs tooltip template -->
                     <div class="tooltip template">
                         <div class="side-color"></div>
                         <p>Motivation for Migrating</p>
@@ -109,6 +112,19 @@
                                 <span class="label-country text-label">El Salvador</span>
                             </div>
                         </div>
+                    </div>
+                    <!-- side tooltip template -->
+                    <div class="tooltip-side p-2 template">
+                        <p class="text-uppercase text-white mb-1">
+                            <span class="label-group px-1">Low Income</span>
+                        </p>
+                        <p class="text-range text-uppercase mb-0">
+                            <span class="label-range">$128.70&ndash;436.50</span> per capita per month
+                        </p>
+                        <p class="text-uppercase">
+                            <span class="label-group-pct">42</span>% of households
+                        </p>
+                        <p class="label-descr mb-0">Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum saepe in asperiores tenetur, explicabo provident non nam dicta officiis odio?</p>
                     </div>
                 </div><!-- close container -->
             </div>

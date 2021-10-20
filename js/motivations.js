@@ -1,16 +1,17 @@
 // VARIABLES
-// D3 CHART VARIABLES
-const width = 1346;
-const height = 940;
-const sideWidth = 200;
-
-// animation time
-const time = 1000;
-
 // data variables
 let keys = [];
 let motivationsData = [];
 let motivSort = "initial";
+
+const motivsList = ["econ", "reun", "sec", "clim", "oth"];
+let incomeList = [],
+    cariList = [];
+let motivsSummaryData = [],
+    incomeSummaryData = [],
+    cariSummaryData = [];
+
+// data sort order
 const motivOrder = {
     "econ": 0,
     "reun": 1,
@@ -25,42 +26,27 @@ const motivDetailOrder = {
     "3": 3, "4": 3, "5": 3,
     "9": 4, "13": 4, "14": 4, "15": 4, "16": 4
 };
-const motivsList = ["econ", "reun", "sec", "clim", "oth"];
-let incomeList = [],
-    cariList = [];
-let motivsSummaryData = [],
-    incomeSummaryData = [],
-    cariSummaryData = [];
 
 // look up index
 const motivsIndex = {};
 
-// look up labels
-const incomeAttr = {
-    1: {"label": "extremely low income", "range": "Less than $2.50", "yPos": 1},
-    2: {"label": "low income", "range": "$2.50&ndash;10.40", "yPos": 8},
-    3: {"label": "mid-low income", "range": "$10.40&ndash;37.40", "yPos": 15},
-    4: {"label": "mid income", "range": "$37.40&ndash;128.70", "yPos": 22},
-    5: {"label": "mid-high income", "range": "$128.70&ndash;436.50", "yPos": 33},
-    6: {"label": "high income", "range": "Greater than $436.50", "yPos": 37}
-};
-const cariAttr = {
-    1: {"label": "food secure", "sideLabel": "food secure", "yPos": 1},
-    2: {"label": "marginally food secure", "sideLabel": "marginally food secure", "yPos": 16},
-    3: {"label": "moderately food insecure", "sideLabel": "moderately or severely food insecure", "yPos": 30},
-    4: {"label": "severely food insecure"}
-};
+// look up attributes
 const countryText = {
     "GT": "Guatemala",
     "HND": "Honduras",
     "SLV": "El Salvador"
 };
 const motivAttr = {
-    "econ": {"label": "Economics", "color": "#1540c4", "responses": ['1', '2', '6', '7', '8'], "yPos": 1},
-    "reun":  {"label": "Reunification", "color": "#eb4927", "responses": ['12'], "yPos": 25},
-    "sec": {"label": "Security", "color": "#93278f", "responses": ['10', '11'], "yPos": 28},
-    "clim": {"label": "Climate", "color": "#00a99d", "responses": ['3', '4', '5'], "yPos": 31},
-    "oth":  {"label": "Other", "color": "#f1a650", "responses": ['9', '13', '14', '15', '16'], "yPos": 33}
+    "econ": {"label": "Economics", "color": "#1540c4", "responses": ['1', '2', '6', '7', '8'], 
+        "descr": "Livelihood-related factors, such as low wages, unemployment, and insufficient income to cover necessities were the primary motivation why migrants emigrated in the last five years.", "yPos": 1},
+    "reun":  {"label": "Reunification", "color": "#eb4927", "responses": ['12'], 
+        "descr": "Family reunification was the second most common reason that people sought to migrate. With males representing the majority of migrants, families face long-term separation as a repercussion of migration.", "yPos": 25},
+    "sec": {"label": "Security", "color": "#93278f", "responses": ['10', '11'], 
+        "descr": "Violence, crime, and corruption are also key drivers of migration. Homicide rates in El Salvador and Honduras remain among the highest in the world.", "yPos": 28},
+    "clim": {"label": "Climate", "color": "#00a99d", "responses": ['3', '4', '5'], 
+        "descr": "Worsening impacts of climate-related shocks, such as natural disasters and environmental degredation, affect people's livelihoods and compel them to leave their countries of origin.", "yPos": 31},
+    "oth":  {"label": "Other", "color": "#f1a650", "responses": ['9', '13', '14', '15', '16'], 
+        "descr": "Additional motivations for migrating include seeking healthcare or pursuing a better education.", "yPos": 33}
 };
 const motivDetailAttr = {
     "1": {"label": "search for a better job", "category": "econ", "color": "#1540c4"},
@@ -78,8 +64,34 @@ const motivDetailAttr = {
     "13": {"label": "cultural reasons", "category": "oth", "color": "#f1a650"},
     "14": {"label": "health needs", "category": "oth", "color": "#f1a650"},
     "15": {"label": "adventure or tourism", "category": "oth", "color": "#f1a650"},
-    "16": {"label": "other", "category": "oth", "color": "#f1a650"}
+    "16": {"label": "other", "category": "oth", "color": "#f1a650"},
+    "99": {"label": "no response", "category": "oth", "color": "#777"}
 };
+const incomeAttr = {
+    1: {"label": "extremely low income", "range": "Less than $2.50", "yPos": 1},
+    2: {"label": "low income", "range": "$2.50&ndash;10.40", "yPos": 8},
+    3: {"label": "mid-low income", "range": "$10.40&ndash;37.40", "yPos": 15},
+    4: {"label": "mid income", "range": "$37.40&ndash;128.70", "yPos": 22},
+    5: {"label": "mid-high income", "range": "$128.70&ndash;436.50", "yPos": 33},
+    6: {"label": "high income", "range": "Greater than $436.50", "yPos": 37}
+};
+const cariAttr = {
+    1: {"label": "food secure", "sideLabel": "food secure", 
+        "descr": "CARI classificaiton description", "yPos": 1},
+    2: {"label": "marginally food secure", "sideLabel": "marginally food secure", 
+        "descr": "CARI classificaiton description", "yPos": 16},
+    3: {"label": "moderately food insecure", "sideLabel": "moderately or severely food insecure", 
+        "descr": "CARI classificaiton description", "yPos": 30},
+    4: {"label": "severely food insecure"}
+};
+
+// D3 CHART VARIABLES
+const width = 1346;
+const height = 900;
+const sideWidth = 200;
+
+// animation time
+const time = 1000;
 
 // square and grid dimensions
 const sqLen = 24;
@@ -107,10 +119,16 @@ const svg = d3.select("#frame-motivations")
         .attr("id", "viz-motivations")
         .attr("viewBox", [-(sideWidth + sqLen), 0, width + (sideWidth + sqLen), height]);
 
-// tooltip
+// define tooltip
 const divMotivs = d3.select("body").append("div")
     .attr("id", "tt-motivs")
     .attr("class", "tooltip")
+    .style("display", "none")
+    .style("z-index", "10")
+    .text("info");
+const divSide = d3.select("#frame-motivations").append("div")
+    .attr("id", "tt-side")
+    .attr("class", "tooltip-side p-2")
     .style("display", "none")
     .style("z-index", "10")
     .text("info");
@@ -233,6 +251,7 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
                 let motiv = motivsList[m];
                 item = {};
 
+                item.group = motiv;
                 item.rsp = data.filter(d => d.motiv_cat.includes(motiv)).length;
                 item.pct = roundAccurately(item.rsp / data.length, 2) * 100;
 
@@ -247,6 +266,7 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
                 let incomeTier = incomeList[n];
                 item = {};
 
+                item.group = incomeTier;
                 item.rsp = data.filter(d => d.income_per_capita_tier == incomeTier).length;
                 item.pct = roundAccurately(item.rsp / data.length, 2) * 100;
 
@@ -256,11 +276,12 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
 
         cariList = data.map(d => d.CARI).filter((value, index, self) => self.indexOf(value) === index);
 
-        if (!incomeSummaryData.length) {
-            for (var n = 0; n < cariList.length; n++) {
-                let cariClass = cariList[n];                
+        if (!cariSummaryData.length) {
+            for (var c = 0; c < cariList.length; c++) {
+                let cariClass = cariList[c];                
                 item = {};
 
+                item.group = cariClass;
                 item.rsp = data.filter(d => d.CARI == cariClass).length;
                 item.pct = roundAccurately(item.rsp / data.length, 2) * 100;
 
@@ -271,9 +292,9 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
         data.sort((a, z) => sortCompare(a.rsp_id2 > z.rsp_id2));
 
         plotInitialGrid(motivationsData);
-        plotLabels(motivsList, "motivs");
-        plotLabels(incomeList, "income");
-        plotLabels(cariList.slice(0,-1), "cari");
+        plotLabels(motivsSummaryData, "motivs");
+        plotLabels(incomeSummaryData, "income");
+        plotLabels(cariSummaryData.slice(0,-1), "cari");
 
         console.log(keys);
         console.log(motivationsData);
@@ -313,7 +334,7 @@ function motivDetailText(motivRsp, sortBy, motivCat) {
 }
 
 // create tooltip
-function tooltipHtml(d, shape, sortBy) {
+function tooltipHtml(d, shape) {
     $("#tt-motivs").empty();
     var tooltipTemplate = $(".tooltip.template");
     var tooltip = tooltipTemplate.clone();
@@ -347,15 +368,17 @@ function tooltipHtml(d, shape, sortBy) {
 
     if (motivSort == "income") {
         surveyedLabel = incomeAttr[d.income_per_capita_tier].label;
+        motivPct = roundAccurately(motivationsData.filter((item) => item.motiv_cat.includes(motivCat) && item.income_per_capita_tier == d.income_per_capita_tier).length / motivationsData.filter((item) => item.income_per_capita_tier == d.income_per_capita_tier).length * 100, 0);
     }
     else if (motivSort == "cari") {
         surveyedLabel = cariAttr[d.CARI].label;
+        motivPct = roundAccurately(motivationsData.filter((item) => item.motiv_cat.includes(motivCat) && item.CARI == d.CARI).length / motivationsData.filter((item) => item.CARI == d.CARI).length * 100, 0);
     }
     else {
         surveyedLabel = "surveyed";
+        motivPct = roundAccurately(motivationsData.filter((item) => item.motiv_cat.includes(motivCat)).length / motivationsData.length * 100, 0);
     }
 
-    let motivPct = roundAccurately(motivationsData.filter((item) => item.motiv_cat.includes(motivCat)).length / motivationsData.length * 100, 0);
     let motivColor = motivAttr[motivCat].color;
     let motivLabel = motivAttr[motivCat].label;
     let countryLabel = countryText[d.country];
@@ -365,7 +388,7 @@ function tooltipHtml(d, shape, sortBy) {
     tooltip.find(".label-motiv-pct").html(motivPct);
     tooltip.find(".label-motiv").html(motivLabel);
     tooltip.find(".label-hh").html(surveyedLabel);
-    tooltip.find(".label-motiv-detail").html(motivDetailText(d.mig_ext_motivo, sortBy, motivCat));
+    tooltip.find(".label-motiv-detail").html(motivDetailText(d.mig_ext_motivo, motivSort, motivCat));
     tooltip.find(".label-country").html(countryLabel);
 
     tooltip.children().appendTo("#tt-motivs");
@@ -379,7 +402,7 @@ function divMotivsOnMousemove(event) {
         var divHeight = $("#viz-motivations").height();
 
         if ((divY + ttHeight + 60) > winHeight) {
-            divY = divY - ttHeight - 10;
+            divY = divY - ttHeight - 15;
         };
         return (divY + 10) + "px"
     })
@@ -389,10 +412,38 @@ function divMotivsOnMousemove(event) {
         var divWidth = $("#viz-motivations").width();
 
         if ((divX + ttWidth + 60) > winWidth) {
-            divX = divX - ttWidth - 10;
+            divX = divX - ttWidth - 15;
         };
         return (divX + 10) + "px"
     })
+}
+// side tooltip
+function sideTooltipHtml(d) {
+    $("#tt-side").empty();
+    var tooltipTemplate = $(".tooltip-side.template");
+    var tooltip = tooltipTemplate.clone();
+
+    if (motivSort == "income") {
+        tooltip.find(".text-range").css("display", "inline");
+        tooltip.find(".label-descr").css("display", "none");
+        tooltip.find(".label-group").html(incomeAttr[d.group].label);
+        tooltip.find(".label-range").html(incomeAttr[d.group].range);
+    }
+    else {
+        tooltip.find(".text-range").css("display", "none");
+        tooltip.find(".label-descr").css("display", "block");
+        if (motivSort == "motivs") {
+            tooltip.find(".label-group").html(motivAttr[d.group].label);
+            tooltip.find(".label-descr").html(motivAttr[d.group].descr);
+        }
+        else if (motivSort == "cari") {
+            tooltip.find(".label-group").html(cariAttr[d.group].sideLabel);
+            tooltip.find(".label-descr").html(cariAttr[d.group].descr);
+        }
+    }
+    tooltip.find(".label-group-pct").html(d.pct);
+
+    tooltip.children().appendTo("#tt-side");
 }
 // update sort index position
 function indexPos(d, sortBy, triPos) {
@@ -806,7 +857,7 @@ function plotInitialGrid(data) {
             .attr("stroke", "#fff")
             .attr("stroke-width", gap)
         .on("mouseover", function(event, d) {
-            tooltipHtml(d, "sq", motivSort);
+            tooltipHtml(d, "sq");
             divMotivs.style("display", "block");
         })
         .on("mousemove", function(event) {
@@ -833,7 +884,7 @@ function plotInitialGrid(data) {
             .attr("stroke", "#fff")
             .attr("stroke-width", gap)
         .on("mouseover", function(event, d) {
-            tooltipHtml(d, "tri-bl", motivSort);
+            tooltipHtml(d, "tri-bl");
             divMotivs.style("display", "block");
         })
         .on("mousemove", function(event) {
@@ -867,7 +918,7 @@ function plotInitialGrid(data) {
                 .attr("stroke", "#fff")
                 .attr("stroke-width", gap)
             .on("mouseover", function(event, d) {
-                tooltipHtml(d, "tri-tr", motivSort);
+                tooltipHtml(d, "tri-tr");
                 divMotivs.style("display", "block");
             })
             .on("mousemove", function(event) {
@@ -894,7 +945,7 @@ function plotInitialGrid(data) {
                 .attr("stroke", "#fff")
                 .attr("stroke-width", gap)
             .on("mouseover", function(event, d) {
-                tooltipHtml(d, "tri-t", motivSort);
+                tooltipHtml(d, "tri-t");
                 divMotivs.style("display", "block");
             })
             .on("mousemove", function(event) {
@@ -921,7 +972,7 @@ function plotInitialGrid(data) {
                 .attr("stroke", "#fff")
                 .attr("stroke-width", gap)
             .on("mouseover", function(event, d) {
-                tooltipHtml(d, "tri-r", motivSort);
+                tooltipHtml(d, "tri-r");
                 divMotivs.style("display", "block");
             })
             .on("mousemove", function(event) {
@@ -985,24 +1036,37 @@ function plotLabels(labelList, sortBy) {
         .data(labelList)
         .enter()
         .append("text")
-            .attr("id", d => "text-" + d)
+            .attr("id", d => "text-" + d.group)
             .attr("x", d => -sqLen)
             .attr("y", d => {
-                return (labelList.length == 5) ? scale(motivAttr[d].yPos)
-                : (labelList.length == 6) ? scale(incomeAttr[d].yPos)
-                : (labelList.length == 3) ? scale(cariAttr[d].yPos)
+                return (labelList.length == 5) ? scale(motivAttr[d.group].yPos)
+                : (labelList.length == 6) ? scale(incomeAttr[d.group].yPos)
+                : (labelList.length == 3) ? scale(cariAttr[d.group].yPos)
                 : null;
             })
             .attr("dy", "-0.125em")
             .attr("text-anchor", "end")
             .text(d => {
-                return (labelList.length == 5) ? motivAttr[d].label.toUpperCase()
-                : (labelList.length == 6) ? incomeAttr[d].label.toUpperCase()
-                : (labelList.length == 3) ? cariAttr[d].sideLabel.toUpperCase()
+                return (labelList.length == 5) ? motivAttr[d.group].label.toUpperCase()
+                : (labelList.length == 6) ? incomeAttr[d.group].label.toUpperCase()
+                : (labelList.length == 3) ? cariAttr[d.group].sideLabel.toUpperCase()
                 : null;
             })
-            .call(wrapText, sideWidth);
-
+            .call(wrapText, sideWidth)
+            .on("mouseover", function(event, d) {
+                sideTooltipHtml(d);
+                divSide.style("top", (divHtml) => {
+                    return (labelList.length == 5) ? ((scale(motivAttr[d.group].yPos) - sqLen/2)/height * 100) + "%"
+                    : (labelList.length == 6) ? ((scale(incomeAttr[d.group].yPos) - sqLen/2)/height * 100) + "%"
+                    : (labelList.length == 3) ? ((scale(cariAttr[d.group].yPos) - sqLen/2)/height * 100) + "%"
+                    : null;
+                    })
+                    .style("left", (sideWidth/width * 100) + "%")
+                    .style("display", "block");
+            })
+            .on("mouseout", function() {
+                divSide.style("display", "none");
+            });
     // lines
     labelGroup.append("g")
             .attr("class", "chart-lines")
@@ -1010,18 +1074,18 @@ function plotLabels(labelList, sortBy) {
         .data(labelList)
         .enter()
         .append("line")
-            .attr("x1", -sideWidth)
+            .attr("x1", -(sideWidth + sqLen))
             .attr("x2", -sqLen)
             .attr("y1", d => {
-                return (labelList.length == 5) ? scale(motivAttr[d].yPos) - 1.5 * sqLen
-                : (labelList.length == 6) ? scale(incomeAttr[d].yPos) - 1.5 * sqLen
-                : (labelList.length == 3) ? scale(cariAttr[d].yPos) - 1.5 * sqLen
+                return (labelList.length == 5) ? scale(motivAttr[d.group].yPos) - 1.5 * sqLen
+                : (labelList.length == 6) ? scale(incomeAttr[d.group].yPos) - 1.5 * sqLen
+                : (labelList.length == 3) ? scale(cariAttr[d.group].yPos) - 1.5 * sqLen
                 : null;
             })
             .attr("y2", d => {
-                return (labelList.length == 5) ? scale(motivAttr[d].yPos) - 1.5 * sqLen
-                : (labelList.length == 6) ? scale(incomeAttr[d].yPos) - 1.5 * sqLen
-                : (labelList.length == 3) ? scale(cariAttr[d].yPos) - 1.5 * sqLen
+                return (labelList.length == 5) ? scale(motivAttr[d.group].yPos) - 1.5 * sqLen
+                : (labelList.length == 6) ? scale(incomeAttr[d.group].yPos) - 1.5 * sqLen
+                : (labelList.length == 3) ? scale(cariAttr[d.group].yPos) - 1.5 * sqLen
                 : null;
             })
             .attr("stroke", "#1540C4")
