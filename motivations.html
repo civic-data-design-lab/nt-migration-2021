@@ -22,12 +22,19 @@
     <script type="text/javascript" src="./js/d3.v7.min.js"></script>
 
     <!-- MAPBOX -->
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- MAPBOX CONFIG + SCROLLAMA -->
+    <script src="./js/motivationsMapConfig.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
 </head>
 
 <body>
     <main>
+
 
         <!-- NAVIGATION -->
         <!-- NAVIGATION -->
@@ -59,32 +66,39 @@
             </div>
         </section>
 
-        <section class="chapter bk motivations-img z2" id="open">
-            <div class="gradient motivations-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"motivations")'>
-                    MOTIVATIONS</h2>
-                <h1 class="upper white chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
+        <section class="chapter z2" id="open">
+            <div class="bk motivations-img">
+                <div class="gradient motivations-g">
+                    <h2 class="upper white chapter-title" onclick='redirect_Page(this,"motivations")'>
+                        MOTIVATIONS</h2>
+                    <h1 class="upper white chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
+                </div>
             </div>
-
             <!-- PAGE CONTENT -->
             <!-- PAGE CONTENT -->
             <!-- PAGE CONTENT -->
 
-            <div class="solid-white">
-                <div id="map-motivations"></div>
+            <div class="section">
+                <div id="map"></div>
+                <div id="story"></div>
+            </div>
+            <div class="section solid-white">
                 <div class="container px-5 pb-5">
                     <!-- div for buttons -->
                     <div id="buttons-motivations" class="row mb-3">
                         <div class="col-6 pe-0">
-                            <button type="button" id="btn-motivs" class="btn btn-sm text-uppercase text-blue">Motivations</button>
+                            <button type="button" id="btn-motivs"
+                                class="btn btn-sm text-uppercase text-blue">Motivations</button>
                             <div id="popup-motivs"></div>
                         </div>
                         <div id="btn-center" class="col-3 px-0">
-                            <button type="button" id="btn-income" class="btn btn-sm text-uppercase text-blue">Income Level</button>
+                            <button type="button" id="btn-income" class="btn btn-sm text-uppercase text-blue">Income
+                                Level</button>
                             <div id="popup-income"></div>
                         </div>
                         <div class="col-3 ps-0">
-                            <button type="button" id="btn-cari" class="btn btn-sm text-uppercase text-blue">Food Security</button>
+                            <button type="button" id="btn-cari" class="btn btn-sm text-uppercase text-blue">Food
+                                Security</button>
                             <div id="popup-cari"></div>
                         </div>
                     </div>
@@ -124,7 +138,8 @@
                         <p class="text-uppercase">
                             <span class="label-group-pct">42</span>% of households
                         </p>
-                        <p class="label-descr mb-0">Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum saepe in asperiores tenetur, explicabo provident non nam dicta officiis odio?</p>
+                        <p class="label-descr mb-0">Description Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptatum saepe in asperiores tenetur, explicabo provident non nam dicta officiis odio?</p>
                     </div>
                 </div><!-- close container -->
             </div>
@@ -162,7 +177,6 @@
     <script type="text/javascript" src="./js/script.js"></script>
     <script type="text/javascript" src="./js/motivations.js"></script>
     <script type="text/javascript" src="./js/motivationsmap.js"></script>
-
 </body>
 
 </html>

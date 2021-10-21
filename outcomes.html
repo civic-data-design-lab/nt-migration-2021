@@ -20,89 +20,97 @@
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
 
     <!-- MAPBOX -->
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- MAPBOX CONFIG + SCROLLAMA -->
+    <script src="./js/outcomesMapConfig.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
 
 
 </head>
 
 <body>
-    <!-- container -->
-    <main class="">
-        <!-- container-fluid section  -->
-        <section class="chapter bk cost-img z5" id="closed">
-            <div class="gradient cost-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"cost")'>COST</h2>
-                <h1 class="upper white chapter-summary">MIGRATION<br>COSTS ADD TO<br>FINANCIAL<br>BURDEN</h1>
-            </div>
-        </section>
 
-        <section class="chapter bk outcomes-img z4" id="open">
+
+    <!-- container -->
+
+    <!-- <main class=""> -->
+    <!-- container-fluid section -->
+
+    <section class="chapter bk cost-img z5" id="closed">
+        <div class="gradient cost-g">
+            <h2 class="chapter-title" onclick='redirect_Page(this,"cost")'>COST</h2>
+            <h1 class="chapter-summary">MIGRATION<br>COSTS ADD TO<br>FINANCIAL<br>BURDEN</h1>
+        </div>
+    </section>
+
+    <section class="chapter z4" id="open">
+        <div class="bk outcomes-img">
             <div class="gradient outcomes-g">
                 <h2 class="upper white chapter-title" onclick='redirect_Page(this,"outcomes")'>OUTCOMES
                 </h2>
                 <h1 class="upper white chapter-summary">ONLY 57%<br>OF MIGRANTS<br>REACH
                     THEIR<br>INTENDED<br>DESTINATION</h1>
             </div>
-            <div class="solid-white">
-                <div id="map-outcomes"></div>
-            </div>
+        </div>
+        <div class="section">
+            <div id="map"></div>
+            <div id="story"></div>
+        </div>
 
-        </section>
+    </section>
 
-        <section class="chapter bk profiles-img z3" id="closed">
-            <div class="gradient profiles-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"profiles")'>PROFILES
-                </h2>
-                <h1 class="upper white chapter-summary">HALF OF MIGRANTS<br>WORK IN THE<br>SAME OCCUPATION<br>AFTER
-                    RELOCATION</h1>
-            </div>
-        </section>
+    <section class="chapter bk profiles-img z3" id="closed">
+        <div class="gradient profiles-g">
+            <h2 class="upper white chapter-title" onclick='redirect_Page(this,"profiles")'>PROFILES
+            </h2>
+            <h1 class="upper white chapter-summary">HALF OF MIGRANTS<br>WORK IN THE<br>SAME OCCUPATION<br>AFTER
+                RELOCATION</h1>
+        </div>
+    </section>
 
-        <section class="chapter bk motivations-img z2" id="closed">
-            <div class="gradient motivations-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"motivations")'>
-                    MOTIVATIONS</h2>
-                <h1 class="upper white chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
-            </div>
+    <section class="chapter bk motivations-img z2" id="closed">
+        <div class="gradient motivations-g">
+            <h2 class="upper white chapter-title" onclick='redirect_Page(this,"motivations")'>
+                MOTIVATIONS</h2>
+            <h1 class="upper white chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
+        </div>
 
-        </section>
+    </section>
 
-        <section class="chapter bk origins-img z1" id="closed">
-            <div class="gradient origins-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"origins")'>ORIGINS
-                </h2>
-                <h1 class="upper white chapter-summary">VIOLENCE, CLIMATE,<br>ECONOMICS,<br>AND POLICY<br>HISTORICALLY
-                    DRIVE EMIGRATION
-                </h1>
-            </div>
+    <section class="chapter bk origins-img z1" id="closed">
+        <div class="gradient origins-g">
+            <h2 class="upper white chapter-title" onclick='redirect_Page(this,"origins")'>ORIGINS
+            </h2>
+            <h1 class="upper white chapter-summary">VIOLENCE, CLIMATE,<br>ECONOMICS,<br>AND POLICY<br>HISTORICALLY
+                DRIVE EMIGRATION
+            </h1>
+        </div>
 
-            <!-- PAGE CONTENT -->
-            <div class="solid-white inner-chapter">
-                <div><img src="./img/tmp/origins/timeline-full.png"></div>
+    </section>
 
-            </div>
-        </section>
-
-        <section class="chapter bk about-img z0" id="closed">
-            <div class="gradient about-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"index")'>ABOUT</h2>
-                <h1 class="upper white chapter-summary">Charting A New Regional Course of Action</h1><br><br><br><br>
-            </div>
+    <section class="chapter bk about-img z0" id="closed">
+        <div class="gradient about-g">
+            <h2 class="upper white chapter-title" onclick='redirect_Page(this,"index")'>ABOUT</h2>
+            <h1 class="upper white chapter-summary">Charting A New Regional Course of Action</h1><br><br><br><br>
+        </div>
 
 
-        </section>
+    </section>
 
-        <section class="website-background z-1">
-        </section>
+    <section class="website-background z-1">
+    </section>
 
-    </main>
+    <!-- </main> -->
 
     <script type="text/javascript" src="./js/chapterClick.js"></script>
     <!-- <script type="text/javascript" src="./js/lightbox.js"></script> -->
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
     <script type="text/javascript" src="./js/outcomesmap.js"></script>
+
 
 
 

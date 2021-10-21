@@ -1,3 +1,173 @@
+var layerTypes = {
+    'fill': ['fill-opacity'],
+    'line': ['line-opacity'],
+    'circle': ['circle-opacity', 'circle-stroke-opacity'],
+    'symbol': ['icon-opacity', 'text-opacity'],
+    'raster': ['raster-opacity'],
+    'fill-extrusion': ['fill-extrusion-opacity'],
+    'heatmap': ['heatmap-opacity']
+}
+
+var alignments = {
+    'left': 'lefty',
+    'center': 'centered',
+    'right': 'righty',
+    'full': 'fully'
+}
+
+function getLayerPaintType(layer) {
+    var layerType = map.getLayer(layer).type;
+    return layerTypes[layerType];
+}
+
+function setLayerOpacity(layer) {
+    var paintProps = getLayerPaintType(layer.layer);
+    paintProps.forEach(function (prop) {
+        var options = {};
+        if (layer.duration) {
+            var transitionProp = prop + "-transition";
+            options = { "duration": layer.duration };
+            map.setPaintProperty(layer.layer, transitionProp, options);
+        }
+        map.setPaintProperty(layer.layer, prop, layer.opacity, options);
+    });
+}
+
+var story = document.getElementById('story');
+var features = document.createElement('div');
+features.setAttribute('id', 'features');
+
+var header = document.createElement('div');
+
+outcomesConfig.chapters.forEach((record, idx) => {
+    var container = document.createElement('div');
+    var mapChapter = document.createElement('div');
+
+    if (record.title) {
+        var title = document.createElement('h3');
+        title.innerText = record.title;
+        mapChapter.appendChild(title);
+    }
+
+    if (record.image) {
+        var image = new Image();
+        image.src = record.image;
+        mapChapter.appendChild(image);
+    }
+
+    if (record.description) {
+        var story = document.createElement('h3');
+        story.className = "scrollytelling"
+        story.innerHTML = record.description;
+        mapChapter.appendChild(story);
+    }
+
+    container.setAttribute('id', record.id);
+    container.classList.add('step');
+    if (idx === 0) {
+        container.classList.add('active');
+    }
+
+    mapChapter.classList.add(outcomesConfig.theme);
+    container.appendChild(mapChapter);
+    container.classList.add(alignments[record.alignment] || 'centered');
+    if (record.hidden) {
+        container.classList.add('hidden');
+    }
+    features.appendChild(container);
+});
+
+story.appendChild(features);
+
+var footer = document.createElement('div');
+
+if (outcomesConfig.footer) {
+    var footerText = document.createElement('p');
+    footerText.innerHTML = outcomesConfig.footer;
+    footer.appendChild(footerText);
+}
+
+if (footer.innerText.length > 0) {
+    footer.classList.add(outcomesConfig.theme);
+    footer.setAttribute('id', 'footer');
+    story.appendChild(footer);
+}
+
+mapboxgl.accessToken = outcomesConfig.accessToken;
+
+const transformRequest = (url) => {
+    const hasQuery = url.indexOf("?") !== -1;
+    const suffix = hasQuery ? "&pluginName=scrollytellingV2" : "?pluginName=scrollytellingV2";
+    return {
+        url: url //+ suffix
+    }
+}
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: outcomesConfig.style,
+    center: outcomesConfig.chapters[0].location.center,
+    zoom: outcomesConfig.chapters[0].location.zoom,
+    bearing: outcomesConfig.chapters[0].location.bearing,
+    pitch: outcomesConfig.chapters[0].location.pitch,
+    interactive: false,
+    transformRequest: transformRequest
+});
+
+
+// instantiate the scrollama
+var scroller = scrollama();
+
+map.on("load", function () {
+
+    // setup the instance, pass callback functions
+    scroller
+        .setup({
+            step: '.step',
+            offset: 0.5,
+            progress: true
+        })
+
+        .onStepEnter(response => {
+            var mapChapter = outcomesConfig.chapters.find(chap => chap.id === response.element.id);
+            response.element.classList.add('active');
+            map[mapChapter.mapAnimation || 'flyTo'](mapChapter.location);
+
+            if (mapChapter.onChapterEnter.length > 0) {
+                mapChapter.onChapterEnter.forEach(setLayerOpacity);
+            }
+            if (mapChapter.callback) {
+                window[mapChapter.callback]();
+            }
+            if (mapChapter.rotateAnimation) {
+                map.once('moveend', function () {
+                    const rotateNumber = map.getBearing();
+                    const rotationAmount = 45
+                    var newRotation = map.getBearing();
+                    map.rotateTo(rotateNumber + rotationAmount, {
+                        duration: 34000, easing: function (t) {
+                            return t;
+                        }
+                    });
+                });
+            }
+
+        })
+
+        .onStepExit(response => {
+            var mapChapter = outcomesConfig.chapters.find(chap => chap.id === response.element.id);
+            response.element.classList.remove('active');
+            if (mapChapter.onChapterExit.length > 0) {
+                mapChapter.onChapterExit.forEach(setLayerOpacity);
+            }
+        });
+
+
+});
+
+// setup resize event
+window.addEventListener('resize', scroller.resize);
+
 //MAP COLORS
 var countryFillColor = "#e778c2" 
 var partialFillColor = "rgba(231,120,194,0.5)"
@@ -14,14 +184,6 @@ var outcomeCircleMax = 40
 
 
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibWl0Y2l2aWNkYXRhIiwiYSI6ImNpbDQ0aGR0djN3MGl1bWtzaDZrajdzb28ifQ.quOF41LsLB5FdjnGLwbrrg';
-// Initialize the basemap
-var map = new mapboxgl.Map({
-    container: 'map-outcomes', // container element id
-    style: 'mapbox://styles/mitcivicdata/ckuslqqrj0r7718mu0lg5pyuz',
-    center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
-    zoom: 4,
-});
 
 
 // Load COUNTRY BOUNDARIES
@@ -314,5 +476,3 @@ map.on('load', function () {
     });
 
 });
-
-
