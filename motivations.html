@@ -22,12 +22,19 @@
     <script type="text/javascript" src="./js/d3.v7.min.js"></script>
 
     <!-- MAPBOX -->
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- MAPBOX CONFIG + SCROLLAMA -->
+    <script src="./js/motivationsMapConfig.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
 </head>
 
 <body>
     <main>
+
 
         <!-- NAVIGATION -->
         <!-- NAVIGATION -->
@@ -59,19 +66,23 @@
             </div>
         </section>
 
-        <section class="chapter bk motivations-img z2" id="open">
-            <div class="gradient motivations-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"motivations")'>
-                    MOTIVATIONS</h2>
-                <h1 class="upper white chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
+        <section class="chapter z2" id="open">
+            <div class="bk motivations-img">
+                <div class="gradient motivations-g">
+                    <h2 class="upper white chapter-title" onclick='redirect_Page(this,"motivations")'>
+                        MOTIVATIONS</h2>
+                    <h1 class="upper white chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
+                </div>
             </div>
-
             <!-- PAGE CONTENT -->
             <!-- PAGE CONTENT -->
             <!-- PAGE CONTENT -->
 
-            <div class="solid-white">
-                <div id="map-motivations"></div>
+            <div class="section">
+                <div id="map"></div>
+                <div id="story"></div>
+            </div>
+            <div class="section solid-white">
                 <div class="container vh-100 row align-items-center p-5">
                     <div class="row">
                         <!-- div for buttons -->
