@@ -83,64 +83,65 @@
                 <div id="story"></div>
             </div>
             <div class="section solid-white">
-                <div class="container px-5 pb-5">
-                    <!-- div for buttons -->
-                    <div id="buttons-motivations" class="row mb-3">
-                        <div class="col-6 pe-0">
-                            <button type="button" id="btn-motivs"
-                                class="btn btn-sm text-uppercase text-blue">Motivations</button>
-                            <div id="popup-motivs"></div>
-                        </div>
-                        <div id="btn-center" class="col-3 px-0">
-                            <button type="button" id="btn-income" class="btn btn-sm text-uppercase text-blue">Income
-                                Level</button>
-                            <div id="popup-income"></div>
-                        </div>
-                        <div class="col-3 ps-0">
-                            <button type="button" id="btn-cari" class="btn btn-sm text-uppercase text-blue">Food
-                                Security</button>
-                            <div id="popup-cari"></div>
-                        </div>
-                    </div>
-                    <!-- frame for d3 visualization -->
-                    <div id="frame-motivations" class="position-relative"></div>
-                    <!-- motivs tooltip template -->
-                    <div class="tooltip template">
-                        <div class="side-color"></div>
-                        <p>Motivation for Migrating</p>
-                        <h3 class="text-color">
-                            <span class="label-motiv-pct">90</span>%
-                            <span class="label-motiv text-uppercase">Economic</span>
-                        </h3><br>
-                        <span class="text-color">of
-                            <span class="label-hh">surveyed</span> households
-                        </span>
-                        <div class="row mt-1">
-                            <div class="col-left">
-                                <p>Reason for Migrating</p>
-                                <span class="label-motiv-detail text-label">Search for a better job, salary or working
-                                    conditions, lack of money to buy food, lack of money to cover basic needs</span>
+                <div class="container vh-100 row align-items-center p-5">
+                    <div class="row">
+                        <!-- div for buttons -->
+                        <div id="buttons-motivations" class="row mb-3">
+                            <div class="col-6 px-0">
+                                <span data-bs-toggle="tooltip" data-bs-placement="top" title="Sort surveyed migrant households by their motivations for why a household member migrated or attempted to migrate in the last five years.">
+                                    <button type="button" id="btn-motivs" class="btn btn-sm text-uppercase text-blue" data-bs-toggle="modal" data-bs-target="#modal-motivs">Motivations</button>
+                                </span>
                             </div>
-                            <div class="col-right">
-                                <p>Origin Country</p>
-                                <span class="label-country text-label">El Salvador</span>
+                            <div id="btn-center" class="col-3 px-0">
+                                <span data-bs-toggle="tooltip" data-bs-placement="top" title="Sort surveyed migrant households by their monthly income per capita tier.">
+                                    <button type="button" id="btn-income" class="btn btn-sm text-uppercase text-blue" data-bs-toggle="modal" data-bs-target="#modal-income">Income Level</button>
+                                </span>
+                            </div>
+                            <div class="col-3 px-0">
+                                <span data-bs-toggle="tooltip" data-bs-placement="top" title="Sort surveyed migrant households by their food security classification.">
+                                    <button type="button" id="btn-cari" class="btn btn-sm text-uppercase text-blue" data-bs-toggle="modal" data-bs-target="#modal-cari">Food Security</button>
+                                </span>
                             </div>
                         </div>
-                    </div>
-                    <!-- side tooltip template -->
-                    <div class="tooltip-side p-2 template">
-                        <p class="text-uppercase text-white mb-1">
-                            <span class="label-group px-1">Low Income</span>
-                        </p>
-                        <p class="text-range text-uppercase mb-0">
-                            <span class="label-range">$128.70&ndash;436.50</span> per capita per month
-                        </p>
-                        <p class="text-uppercase">
-                            <span class="label-group-pct">42</span>% of households
-                        </p>
-                        <p class="label-descr mb-0">Description Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Voluptatum saepe in asperiores tenetur, explicabo provident non nam dicta officiis odio?</p>
-                    </div>
+                        <!-- frame for d3 visualization -->
+                        <div id="frame-motivations" class="position-relative"></div>
+                        <!-- motivs tooltip template -->
+                        <div class="tooltip template">
+                            <div class="side-color"></div>
+                            <p>Motivation for Migrating</p>
+                            <h3 class="text-color">
+                                <span class="label-motiv-pct">90</span>%
+                                <span class="label-motiv text-uppercase">Economic</span>
+                            </h3><br>
+                            <span class="text-hh text-color">of
+                                <span class="label-hh">surveyed</span> households
+                            </span>
+                            <div class="row mt-1">
+                                <div class="col-left">
+                                    <p>Reason for Migrating</p>
+                                    <span class="label-motiv-detail text-label">Search for a better job, salary or working
+                                        conditions, lack of money to buy food, lack of money to cover basic needs</span>
+                                </div>
+                                <div class="col-right">
+                                    <p>Origin Country</p>
+                                    <span class="label-country text-label">El Salvador</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- side tooltip template -->
+                        <div class="tooltip-side p-2 template">
+                            <p class="text-uppercase text-white mb-1">
+                                <span class="label-group px-1">Low Income</span>
+                            </p>
+                            <p class="text-range text-uppercase mb-0">
+                                <span class="label-range">$128.70&ndash;436.50</span> per capita per month
+                            </p>
+                            <p class="text-uppercase">
+                                <span class="label-group-pct">42</span>% of surveyed households
+                            </p>
+                            <p class="label-descr mb-0">Description lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum saepe in asperiores tenetur, explicabo provident non nam dicta officiis odio?</p>
+                        </div>
+                    </div><!-- close row -->
                 </div><!-- close container -->
             </div>
         </section>
@@ -171,8 +172,24 @@
         <section class="website-background z-1"></section>
 
     </main>
+    <!-- narrative modal template -->
+    <div id="" class="modal modal-fullscreen modal-narrative template" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body display-6 text-uppercase">
+                    <p>Motivations range from violence to climate, but the primary motivation for migration is </p>
+                    <p class="display-1"><strong>economics</strong></p>
+                    <p>to provide for basic needs</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="modal-motivs" class="modal modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true"> -->
+
+    </div>
 
     <script type="text/javascript" src="./js/chapterClick.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
     <script type="text/javascript" src="./js/motivations.js"></script>
