@@ -85,6 +85,18 @@ const cariAttr = {
     4: {"label": "severely food insecure"}
 };
 
+const modalData = [
+    {"id": "modal-motivs", "html": "<p>Motivations range from violence to climate, but the primary motivation for migration is</p><p class='display-1'><strong>economics</strong></p>"},
+    {"id": "modal-income", "html": "<p>In contrast to other studies, household surveys showed that migrants come from</p><p class='display-1'>all income groups</p>"},
+    {"id": "modal-cari", "html": "<p>Households with migrants showed that</p><p class='display-1'>providing for basic needs</p><p>was a key motivation for migration</p>"}
+];
+
+// bootstrap tooltip popover
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+});
+
 // D3 CHART VARIABLES
 const width = 1346;
 const height = 900;
@@ -152,7 +164,7 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
         // store index values for each sort
         if (!motivsIndex.length) {
             for (let i = 0; i < data.length; i++) {
-                let rspId = data[i].rsp_id2;
+                const rspId = data[i].rsp_id2;
                 motivsIndex[rspId] = {};
                 motivsIndex[rspId]['initial'] = i;
             }
@@ -160,13 +172,13 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
             // sort by motivations
             if (!motivsIndex.rsp12.motivs) {
                 motivsSortData = data.sort((a, z) => {
-                    let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
+                    const motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
                     // if same first motivation listed compare number of categories per response
                     if (motivCatIndex1 == 0) {
-                        let catRspIndex = sortCompare(a.motiv_cat.substr(-1), z.motiv_cat.substr(-1));
+                        const catRspIndex = sortCompare(a.motiv_cat.substr(-1), z.motiv_cat.substr(-1));
                         // if same number of categories per response compare 2nd motivation
                         if (catRspIndex == 0) {
-                            let motivCatIndex2 = sortCompare(motivOrder[a.motiv_cat.split('-')[1]], motivOrder[z.motiv_cat.split('-')[1]]);
+                            const motivCatIndex2 = sortCompare(motivOrder[a.motiv_cat.split('-')[1]], motivOrder[z.motiv_cat.split('-')[1]]);
                             // if same 2nd motivation compare detailed response
                             if (motivCatIndex2 == 0 && (typeof(a.mig_ext_motivo == 'string' && 1 < z.mig_ext_motivo == 'string'))) {
                                 return sortCompare(motivDetailOrder[a.mig_ext_motivo.toString().split(' ')[0]], motivDetailOrder[z.mig_ext_motivo.toString().split(' ')[0]]);
@@ -179,7 +191,7 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
                 });
                 // add motivations index to index dictionary
                 for (let i = 0; i < motivsSortData.length; i++) {
-                    let rspId = motivsSortData[i].rsp_id2;
+                    const rspId = motivsSortData[i].rsp_id2;
                     motivsIndex[rspId]['motivs'] = i;
                 }
             }
@@ -188,13 +200,13 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
             if (!motivsIndex.rsp12.income) {
                 incomeSortData = data.sort((a, z) => {
                     if (a.income_per_capita_tier == z.income_per_capita_tier) {
-                        let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
+                        const motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
                         // if same first motivation listed compare number of categories per response
                         if (motivCatIndex1 == 0) {
-                            let catRspIndex = sortCompare(a.motiv_cat.substr(-1), z.motiv_cat.substr(-1));
+                            const catRspIndex = sortCompare(a.motiv_cat.substr(-1), z.motiv_cat.substr(-1));
                             // if same number of categories per response compare 2nd motivation
                             if (catRspIndex == 0) {
-                                let motivCatIndex2 = sortCompare(motivOrder[a.motiv_cat.split('-')[1]], motivOrder[z.motiv_cat.split('-')[1]]);
+                                const motivCatIndex2 = sortCompare(motivOrder[a.motiv_cat.split('-')[1]], motivOrder[z.motiv_cat.split('-')[1]]);
                                 // if same 2nd motivation compare detailed response
                                 if (motivCatIndex2 == 0 && (typeof(a.mig_ext_motivo == 'string' && 1 < z.mig_ext_motivo == 'string'))) {
                                     return sortCompare(motivDetailOrder[a.mig_ext_motivo.toString().split(' ')[0]], motivDetailOrder[z.mig_ext_motivo.toString().split(' ')[0]]);
@@ -209,7 +221,7 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
                 });
                 // add income index to index dictionary
                 for (let i = 0; i < incomeSortData.length; i++) {
-                    let rspId = incomeSortData[i].rsp_id2;
+                    const rspId = incomeSortData[i].rsp_id2;
                     motivsIndex[rspId]['income'] = i;
                 }
             }
@@ -218,13 +230,13 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
             if (!motivsIndex.rsp12.cari) {
                 cariSortData = data.sort((a, z) => {
                     if (a.CARI == z.CARI) {
-                        let motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
+                        const motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat.split('-')[0]], motivOrder[z.motiv_cat.split('-')[0]]);
                         // if same first motivation listed compare number of categories per response
                         if (motivCatIndex1 == 0) {
-                            let catRspIndex = sortCompare(a.motiv_cat.substr(-1), z.motiv_cat.substr(-1));
+                            const catRspIndex = sortCompare(a.motiv_cat.substr(-1), z.motiv_cat.substr(-1));
                             // if same number of categories per response compare 2nd motivation
                             if (catRspIndex == 0) {
-                                let motivCatIndex2 = sortCompare(motivOrder[a.motiv_cat.split('-')[1]], motivOrder[z.motiv_cat.split('-')[1]]);
+                                const motivCatIndex2 = sortCompare(motivOrder[a.motiv_cat.split('-')[1]], motivOrder[z.motiv_cat.split('-')[1]]);
                                 // if same 2nd motivation compare detailed response
                                 if (motivCatIndex2 == 0 && (typeof(a.mig_ext_motivo == 'string' && 1 < z.mig_ext_motivo == 'string'))) {
                                     return sortCompare(motivDetailOrder[a.mig_ext_motivo.toString().split(' ')[0]], motivDetailOrder[z.mig_ext_motivo.toString().split(' ')[0]]);
@@ -239,7 +251,7 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
                 });
                 // add cari index to index dictionary
                 for (let i = 0; i < cariSortData.length; i++) {
-                    let rspId = cariSortData[i].rsp_id2;
+                    const rspId = cariSortData[i].rsp_id2;
                     motivsIndex[rspId]['cari'] = i;
                 }
             }
@@ -247,8 +259,8 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
 
         // data for summary labels
         if (!motivsSummaryData.length) {
-            for (var m = 0; m < motivsList.length; m++) {
-                let motiv = motivsList[m];
+            for (let m = 0; m < motivsList.length; m++) {
+                const motiv = motivsList[m];
                 item = {};
 
                 item.group = motiv;
@@ -262,8 +274,8 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
         incomeList = data.map(d => d.income_per_capita_tier).filter((value, index, self) => self.indexOf(value) === index);
 
         if (!incomeSummaryData.length) {
-            for (var n = 0; n < incomeList.length; n++) {
-                let incomeTier = incomeList[n];
+            for (let n = 0; n < incomeList.length; n++) {
+                const incomeTier = incomeList[n];
                 item = {};
 
                 item.group = incomeTier;
@@ -277,8 +289,8 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
         cariList = data.map(d => d.CARI).filter((value, index, self) => self.indexOf(value) === index);
 
         if (!cariSummaryData.length) {
-            for (var c = 0; c < cariList.length; c++) {
-                let cariClass = cariList[c];                
+            for (let c = 0; c < cariList.length; c++) {
+                const cariClass = cariList[c];                
                 item = {};
 
                 item.group = cariClass;
@@ -333,23 +345,38 @@ function motivDetailText(motivRsp, sortBy, motivCat) {
     return motivDetailStr;
 }
 
+// create modals
+function createModals() {
+    const modalTemplate = $(".modal.template");
+    modalData.forEach((item) => {
+        const modal = modalTemplate.clone();
+        const sortBy = item.id.split('-')[-1],
+            modalId = item.id,
+            modalHtml = item.html;
+
+        modal.attr("id", modalId).attr("aria-labelledby", sortBy);
+        modal.find(".modal-body").html(modalHtml);
+        modal.removeClass("template").appendTo(modalTemplate.parent());
+    })
+};
+
 // create tooltip
 function tooltipHtml(d, shape) {
     $("#tt-motivs").empty();
-    var tooltipTemplate = $(".tooltip.template");
-    var tooltip = tooltipTemplate.clone();
+    const tooltipTemplate = $(".tooltip.template");
+    const tooltip = tooltipTemplate.clone();
 
     if (shape == "sq") {
         motivCat = d.motiv_cat.split('-')[0];
     }
     else if (shape == "tri-bl") {
-        let motiv = d.mig_ext_motivo.split(' ')[0];
+        const motiv = d.mig_ext_motivo.split(' ')[0];
         motivCat = motivDetailAttr[motiv].category;
     }
     else if (shape == "tri-tr") {
-        let motiv1 = d.mig_ext_motivo.split(' ')[0];
-        let motivCat1 = d.motiv_cat.split('-')[0];
-        let motivCat2 = d.motiv_cat.split('-')[1];
+        const motiv1 = d.mig_ext_motivo.split(' ')[0];
+        const motivCat1 = d.motiv_cat.split('-')[0];
+        const motivCat2 = d.motiv_cat.split('-')[1];
         if (motivDetailAttr[motiv1].category == motivCat1) {
             motivCat = motivCat2;
         }
@@ -358,11 +385,11 @@ function tooltipHtml(d, shape) {
         }
     }
     else if (shape == "tri-t") {
-        let motiv2 = d.mig_ext_motivo.split(' ')[1];
+        const motiv2 = d.mig_ext_motivo.split(' ')[1];
         motivCat = motivDetailAttr[motiv2].category;
     }
     else if (shape == "tri-r") {
-        let motiv3 = d.mig_ext_motivo.split(' ')[2];
+        const motiv3 = d.mig_ext_motivo.split(' ')[2];
         motivCat = motivDetailAttr[motiv3].category;
     }
 
@@ -379,9 +406,9 @@ function tooltipHtml(d, shape) {
         motivPct = roundAccurately(motivationsData.filter((item) => item.motiv_cat.includes(motivCat)).length / motivationsData.length * 100, 0);
     }
 
-    let motivColor = motivAttr[motivCat].color;
-    let motivLabel = motivAttr[motivCat].label;
-    let countryLabel = countryText[d.country];
+    const motivColor = motivAttr[motivCat].color;
+    const motivLabel = motivAttr[motivCat].label;
+    const countryLabel = countryText[d.country];
 
     tooltip.find(".side-color").css("background", motivColor);
     tooltip.find(".text-color").css("color", motivColor);
@@ -763,7 +790,7 @@ function trianglePath(d, sortBy, triPos) {
     //     }
     // }
     // else {
-        let sortIndex = indexPos(d, sortBy, triPos);
+        const sortIndex = indexPos(d, sortBy, triPos);
     
         const nx = sortIndex % numPerRow;
         const ny = Math.floor(sortIndex / numPerRow);
@@ -851,7 +878,7 @@ function plotInitialGrid(data) {
             .attr("width", sqLen)
             .attr("height", sqLen)
             .attr("fill", d => {
-                let motiv = d.motiv_cat.split('-')[0];
+                const motiv = d.motiv_cat.split('-')[0];
                 return motivAttr[motiv].color;
             })
             .attr("stroke", "#fff")
@@ -878,7 +905,7 @@ function plotInitialGrid(data) {
             .attr("class", "tri-bl")
             .attr("d", d => trianglePath(d, "initial", "botLeft"))
             .attr("fill", d => {
-                let motiv = d.mig_ext_motivo.split(' ')[0];
+                const motiv = d.mig_ext_motivo.split(' ')[0];
                 return motivDetailAttr[motiv].color;
             })
             .attr("stroke", "#fff")
@@ -905,9 +932,9 @@ function plotInitialGrid(data) {
                 .attr("class", "tri-tr")
                 .attr("d", d => trianglePath(d, "initial", "topRight"))
                 .attr("fill", d => {
-                    let motiv1 = d.mig_ext_motivo.split(' ')[0];
-                    let motivCat1 = d.motiv_cat.split('-')[0];
-                    let motivCat2 = d.motiv_cat.split('-')[1];
+                    const motiv1 = d.mig_ext_motivo.split(' ')[0];
+                    const motivCat1 = d.motiv_cat.split('-')[0];
+                    const motivCat2 = d.motiv_cat.split('-')[1];
                     if (motivDetailAttr[motiv1].category == motivCat1) {
                         return motivAttr[motivCat2].color;
                     }
@@ -939,7 +966,7 @@ function plotInitialGrid(data) {
                 .attr("class", "tri-t")
                 .attr("d", d => trianglePath(d, "initial", "top"))
                 .attr("fill", d => {
-                    let motiv2 = d.mig_ext_motivo.split(' ')[1];
+                    const motiv2 = d.mig_ext_motivo.split(' ')[1];
                     return motivDetailAttr[motiv2].color;
                 })
                 .attr("stroke", "#fff")
@@ -966,7 +993,7 @@ function plotInitialGrid(data) {
                 .attr("class", "tri-r")
                 .attr("d", d => trianglePath(d, "initial", "right"))
                 .attr("fill", d => {
-                    let motiv3 = d.mig_ext_motivo.split(' ')[2];
+                    const motiv3 = d.mig_ext_motivo.split(' ')[2];
                     return motivDetailAttr[motiv3].color;
                 })
                 .attr("stroke", "#fff")
@@ -1061,7 +1088,7 @@ function plotLabels(labelList, sortBy) {
                     : (labelList.length == 3) ? ((scale(cariAttr[d.group].yPos) - sqLen/2)/height * 100) + "%"
                     : null;
                     })
-                    .style("left", (sideWidth/width * 100) + "%")
+                    .style("left", ((sideWidth + sqLen/2)/width * 100) + "%")
                     .style("display", "block");
             })
             .on("mouseout", function() {
@@ -1109,4 +1136,27 @@ $(".btn").on("click", function() {
         $(labelsId).delay(time/2).fadeIn(time/2);
         updatePlotSort(sortBy);
     }
+});
+
+$(document).ready(function() {
+    // bootstrap modal
+    createModals();
+    const modalMotivs = new bootstrap.Modal(document.getElementById('modal-motivs')),
+        modalIncome = new bootstrap.Modal(document.getElementById('modal-income')),
+        modalCari = new bootstrap.Modal(document.getElementById('modal-cari'));
+
+    $(".btn").on("click", function() {
+        if (!$(btnId).hasClass("visited")) {
+        if (sortBy == "motivs") {
+            modalMotivs.show();
+        }
+        else if (sortBy == "income") {
+            modalIncome.show();
+        }
+        else if (sortBy == "cari") {
+            modalCari.show();
+        }
+        $(this).addClass("visited");
+    }
+    })
 })
