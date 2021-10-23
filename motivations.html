@@ -21,7 +21,7 @@
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/d3.v7.min.js"></script>
 
-    <!-- MAPBOX -->
+    <!-- MAPBOX & DECKGL -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -88,18 +88,24 @@
                         <!-- div for buttons -->
                         <div id="buttons-motivations" class="row mb-3">
                             <div class="col-6 px-0">
-                                <span data-bs-toggle="tooltip" data-bs-placement="top" title="Sort surveyed migrant households by their motivations for why a household member migrated or attempted to migrate in the last five years.">
-                                    <button type="button" id="btn-motivs" class="btn btn-sm text-uppercase text-blue" data-bs-toggle="modal" data-bs-target="#modal-motivs">Motivations</button>
+                                <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Sort surveyed migrant households by their motivations for why a household member migrated or attempted to migrate in the last five years.">
+                                    <button type="button" id="btn-motivs" class="btn btn-sm text-uppercase text-blue"
+                                        data-bs-toggle="modal" data-bs-target="#modal-motivs">Motivations</button>
                                 </span>
                             </div>
                             <div id="btn-center" class="col-3 px-0">
-                                <span data-bs-toggle="tooltip" data-bs-placement="top" title="Sort surveyed migrant households by their monthly income per capita tier.">
-                                    <button type="button" id="btn-income" class="btn btn-sm text-uppercase text-blue" data-bs-toggle="modal" data-bs-target="#modal-income">Income Level</button>
+                                <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Sort surveyed migrant households by their monthly income per capita tier.">
+                                    <button type="button" id="btn-income" class="btn btn-sm text-uppercase text-blue"
+                                        data-bs-toggle="modal" data-bs-target="#modal-income">Income Level</button>
                                 </span>
                             </div>
                             <div class="col-3 px-0">
-                                <span data-bs-toggle="tooltip" data-bs-placement="top" title="Sort surveyed migrant households by their food security classification.">
-                                    <button type="button" id="btn-cari" class="btn btn-sm text-uppercase text-blue" data-bs-toggle="modal" data-bs-target="#modal-cari">Food Security</button>
+                                <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Sort surveyed migrant households by their food security classification.">
+                                    <button type="button" id="btn-cari" class="btn btn-sm text-uppercase text-blue"
+                                        data-bs-toggle="modal" data-bs-target="#modal-cari">Food Security</button>
                                 </span>
                             </div>
                         </div>
@@ -119,7 +125,8 @@
                             <div class="row mt-1">
                                 <div class="col-left">
                                     <p>Reason for Migrating</p>
-                                    <span class="label-motiv-detail text-label">Search for a better job, salary or working
+                                    <span class="label-motiv-detail text-label">Search for a better job, salary or
+                                        working
                                         conditions, lack of money to buy food, lack of money to cover basic needs</span>
                                 </div>
                                 <div class="col-right">
@@ -139,7 +146,9 @@
                             <p class="text-uppercase">
                                 <span class="label-group-pct">42</span>% of surveyed households
                             </p>
-                            <p class="label-descr mb-0">Description lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum saepe in asperiores tenetur, explicabo provident non nam dicta officiis odio?</p>
+                            <p class="label-descr mb-0">Description lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Voluptatum saepe in asperiores tenetur, explicabo provident non nam dicta officiis
+                                odio?</p>
                         </div>
                     </div><!-- close row -->
                 </div><!-- close container -->
@@ -149,6 +158,7 @@
         <!-- NAVIGATION -->
         <!-- NAVIGATION -->
         <!-- NAVIGATION -->
+
         <section class="chapter bk origins-img z1" id="closed">
             <div class="gradient origins-g">
                 <h2 class="upper white chapter-title" onclick='redirect_Page(this,"origins")'>ORIGINS
@@ -169,11 +179,11 @@
         <!-- BACKGROUND -->
         <!-- BACKGROUND -->
         <!-- BACKGROUND -->
-        <section class="website-background z-1"></section>
 
     </main>
     <!-- narrative modal template -->
-    <div id="" class="modal modal-fullscreen modal-narrative template" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div id="" class="modal modal-fullscreen modal-narrative template" tabindex="-1" role="dialog" aria-labelledby=""
+        aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body display-6 text-uppercase">

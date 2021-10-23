@@ -111,7 +111,8 @@ var map = new mapboxgl.Map({
     bearing: outcomesConfig.chapters[0].location.bearing,
     pitch: outcomesConfig.chapters[0].location.pitch,
     interactive: false,
-    transformRequest: transformRequest
+    transformRequest: transformRequest,
+    // antialias: true // Mapbox disables WebGL's antialiasing by default
 });
 
 
@@ -254,7 +255,4 @@ map.on('load', function () {
     });
 
 });
-
-
-
 
