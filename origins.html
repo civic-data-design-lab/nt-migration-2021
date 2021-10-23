@@ -17,7 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/origins.css">
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/d3.v7.min.js"></script>
 </head>
 
 <body>
@@ -67,23 +69,12 @@
 
             <!-- PAGE CONTENT -->
             <div class="solid-white inner-chapter">
+                <!-- placeholder img for timeline -->
                 <div><img src="./img/tmp/origins/timeline-full.png"></div>
-
-
-                <!-- <img id="myImg" src="./img/tmp/origins/02.png" alt="Snow" style="width:100%;max-width:300px"> -->
-
-                <!-- The Modal -->
-                <!-- <div id="myModal" class="modal">
-                    <span class="close">&times;</span>
-                    <img class="modal-content" id="img01">
-                    <div id="caption"></div>
-                </div>
-
-                <div><img src="./img/tmp/origins/03.png"></div>
-                <div><img src="./img/tmp/origins/04.png"></div>
-                <div><img src="./img/tmp/origins/05.png"></div>
-                <div><img src="./img/tmp/origins/06.png"></div>
-                <div><img src="./img/tmp/origins/07.png"></div> -->
+                <div class="container p-5">
+                    <!-- frame for d3 visualization -->
+                    <div id="frame-origins" class="position-relative"></div>
+                </div><!-- close container -->
             </div>
         </section>
 
@@ -105,6 +96,7 @@
     <!-- <script type="text/javascript" src="./js/lightbox.js"></script> -->
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/origins.js"></script>
 </body>
 
 </html>
