@@ -1,4 +1,6 @@
 [Ss]torytelling/
+*!tmp
+scrollytelling_demo_answers.html
 
 
 ## Ignore Visual Studio temporary files, build results, and
