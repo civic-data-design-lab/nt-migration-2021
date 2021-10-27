@@ -17,12 +17,14 @@ var circleBorderWidth = 0
 var arcSourceColor = [255, 200, 245, 255]
 var arcTargetColor = [255, 200, 245, 255 * 0.2]
 var arcWidth = 0.000003
-var arcHeight = 1
-var arcTilt = -45
+var arcHeight = 0.5
+var arcTilt = -0
 arcFilterMin = 21
 
+let surveyPtsJson = {};
+let coordArray = [];
 
-
+new deck.FlyToInterpolator({speed: 2});
 
 const deckgl = new deck.DeckGL({
     container: 'container',
@@ -82,8 +84,8 @@ const deckgl = new deck.DeckGL({
 
         // US-SALV CIRCLES
         new deck.GeoJsonLayer({
-            id: 'salv-destinations.json',
-            data: 'data/mapbox/outcomes/salv-circles.json',
+            id: 'salv-circles',
+            data: 'data/mapbox/outcomes/salv-destinations.json',
             // Styles
             pointType: 'circle',
             filled: true,
@@ -153,10 +155,10 @@ const deckgl = new deck.DeckGL({
             getTargetPosition: d => [d.properties.END_X, d.properties.END_Y],
             getSourceColor: arcSourceColor,
             getTargetColor: arcTargetColor,
-            getWidth:  w =>  Math.sqrt(w.properties.Round_total_MSA_population*arcWidth),
+            getWidth: w => Math.sqrt(w.properties.Round_total_MSA_population * arcWidth),
             getHeight: arcHeight,
-            pickable: true,
-            autoHighlight: true,
+            pickable: false,
+            autoHighlight: false,
             highlightColor: SelectHighlightColor,
             getTilt: arcTilt,
             onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
@@ -173,10 +175,10 @@ const deckgl = new deck.DeckGL({
             getTargetPosition: d => [d.properties.END_X, d.properties.END_Y],
             getSourceColor: arcSourceColor,
             getTargetColor: arcTargetColor,
-            getWidth:  w =>  Math.sqrt(w.properties.Round_total_MSA_population*arcWidth),
+            getWidth: w => Math.sqrt(w.properties.Round_total_MSA_population * arcWidth),
             getHeight: arcHeight,
-            pickable: true,
-            autoHighlight: true,
+            pickable: false,
+            autoHighlight: false,
             highlightColor: SelectHighlightColor,
             getTilt: arcTilt,
             onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
@@ -193,14 +195,27 @@ const deckgl = new deck.DeckGL({
             getTargetPosition: d => [d.properties.END_X, d.properties.END_Y],
             getSourceColor: arcSourceColor,
             getTargetColor: arcTargetColor,
-            getWidth: w =>  Math.sqrt(w.properties.Round_total_MSA_population*arcWidth),
+            getWidth: w => Math.sqrt(w.properties.Round_total_MSA_population * arcWidth),
             getHeight: arcHeight,
-            pickable: true,
-            autoHighlight: true,
+            pickable: false,
+            autoHighlight: false,
             highlightColor: SelectHighlightColor,
             getTilt: arcTilt,
             onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
         }),
+
+    new deck.ScreenGridLayer({
+        id: 'grid',
+        data: 'data/mapbox/motivations/COORDS-ONLY.json', //{COORDINATES: [-122.42177834, 37.78346622]},
+        opacity: 0.8,
+        getPosition: d => d,
+        // getWeight: d => d[2],    
+        cellSizePixels: 8,
+        // cellMarginPixels: 0.1,
+        colorRange: [255,255,255,255],
+    }),
+
+
 
     ]
 });

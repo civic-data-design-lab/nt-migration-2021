@@ -423,6 +423,7 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
     width: 100%;
     padding-top: 10vh;
     margin-bottom: 50vh;
+    pointer-events: none;
 
 }
 
@@ -651,10 +652,11 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
     height: 110%;
     z-index: -1;
     transition: 1s;
+    pointer-events: auto;
 }
 
 #story {
-
+ pointer-events: none !important;
 }
 
 
