@@ -1,14 +1,74 @@
+#frame-origins, #frame-pre1960 {
+    width: 80%;
+    left: 10%;
+}
+#frame-origins {
+    top: -50vh;
+}
+
 /* BUTTON */
 
 
 /* bootstrap tooltip */
 
 
-/* LABELS */
-
-
 /* TOOLTIP */
+.sticky {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    height: 50vh;
+    top: calc(50vh - 4px);
+    z-index: 1;
+}
+#tt-year, #tt-migrants {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+#tt-year {
+    display: inline-block;
+}
+#tt-year::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 3rem;
+    top: calc(2rem - 1px);
+    left: 8rem;
+    background-color: #000;
+}
+#tt-migrants {
+    position: sticky;
+    width: 300px;
+    top: calc(50vh + 2rem);
+}
+#tt-migrants div {
+    border-top: solid 1px #777;
+}
+#tt-migrants p {
+    margin-bottom: 0;
+}
+#tt-migrants .text-label {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+#tt-migrants .text-sublabel {
+    font-size: 0.7rem;
+}
+.label-gtm {
+    color: #d11f63;
+}
+.label-hnd {
+    color: #eb4927;
+}
+.label-slv {
+    color: #ea8928;
+}
 
+/* LABELS */
 
 /* MODALS */
 .modal-backdrop {
