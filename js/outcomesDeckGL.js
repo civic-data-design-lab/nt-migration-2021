@@ -31,7 +31,7 @@ const deckgl = new deck.DeckGL({
     // Set your Mapbox access token here
     //   mapboxApiAccessToken: 'pk.eyJ1IjoibWl0Y2l2aWNkYXRhIiwiYSI6ImNpbDQ0aGR0djN3MGl1bWtzaDZrajdzb28ifQ.quOF41LsLB5FdjnGLwbrrg',
     //   style: outcomesConfig.style,
-
+    views: new deck._GlobeView(),
     initialViewState: {
         latitude: 15.0000000,
         longitude: -87.0000000,

@@ -429,6 +429,7 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 
 .solid-white {
     background: white;
+    pointer-events: auto;
 
     
     /* border: 3px solid greenyellow; */
@@ -656,7 +657,7 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 }
 
 #story {
- pointer-events: none !important;
+ /* pointer-events: auto; */
 }
 
 

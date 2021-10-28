@@ -13,8 +13,8 @@ var outcomesConfig = {
             title: 'Second Title',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat enim commodi quia asperiores consequuntur minus laborum? Officiis ullam doloribus tempore necessitatibus aliquam voluptates consectetur reprehenderit nisi, recusandae, cupiditate, expedita perspiciatis earum totam itaque nemo fugiat? Ea, accusantium excepturi quia provident perspiciatis debitis vitae cupiditate molestiae cumque voluptate eligendi laudantium nulla aliquam modi corporis. Architecto, illo deserunt eveniet sequi ad dolorum delectus, necessitatibus corrupti libero tempore nobis accusantium ab consectetur perspiciatis ullam laborum sint consequatur praesentium tenetur, ipsam velit? Saepe esse, illo expedita rerum beatae ipsam architecto cum aliquid, qui repellat magnam culpa suscipit! Consectetur dolor iusto earum quisquam in corporis!',
             location: {
-                center: [-90.0000000, 32.0000000], // initial map center in [lon, lat]
-                zoom: 3.75,
+                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: 3.5,
                 pitch: 0,
                 bearing: 0
             },
@@ -93,7 +93,7 @@ var outcomesConfig = {
             description: 'Copy these sections to add to your story.',
             location: {
                 center: [-90.0000000, 28.0000000], // initial map center in [lon, lat]
-                zoom: 4,
+                zoom: 3.75,
                 pitch: 20,
                 bearing: 0
             },

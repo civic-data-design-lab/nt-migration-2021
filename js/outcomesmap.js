@@ -21,7 +21,7 @@ var alignments = {
 var landColor = [219, 109, 183] //GEOGRAPHIC LAND COLOR
 var countriesFillColor = [231, 120, 194, 255] //FILL COLOR OF NOTHERN TRIANGLE COUNTRIES
 var countriesBorderColor = [255, 255, 255, 255]
-var countriesLineWidth = 30000
+var countriesLineWidth = 20000
 var SelectHighlightColor = [255, 255, 255] //HIGHLIGHT ON HOVER OR CLICK
 
 //CIRCLES
@@ -35,7 +35,7 @@ var arcSourceColor = [255, 200, 245, 255]
 var arcTargetColor = [255, 200, 245, 255 * 0.2]
 var arcWidth = 0.000003
 var arcHeight = 0.5
-var arcTilt = -35
+var arcTilt = -45
 arcFilterMin = 21
 
 function getLayerPaintType(layer) {
@@ -205,10 +205,7 @@ var outcomeLineWidth = 3
 var outcomeCircleMin = 3
 var outcomeCircleMax = 40
 
-
-
-
-
+// STANDARD MAPBOX
 // Load COUNTRY BOUNDARIES
 map.on('load', function () {
 
@@ -291,219 +288,57 @@ map.on('load', function () {
 });
 
 
-// Load OUTCOMES - EL SALVADOR CIRCLES
-map.on('load', function () {
-
-    map.addSource('SalvCircles', {
-        'type': 'geojson',
-        'data': 'data/mapbox/outcomes/salv-destinations.json',
-        'generateId': true // This ensures that all features have unique IDs
-    });
-
-    map.addLayer({
-        id: 'SalvCirclesViz',
-        type: 'circle',
-        source: 'SalvCircles',
-        paint: {
-            'circle-radius': [
-                'interpolate',
-                ['linear'],
-                ['number', ['get', 'Imm__tot_pop']],
-                0, outcomeCircleMin,
-                1.5, outcomeCircleMax
-            ],
-            'circle-color': outcomeColor,
-        },
-    });
-
-});
-
-// Load OUTCOMES - EL SALVADOR ORIGIN CIRCLES
-map.on('load', function () {
-
-    // map.addSource('SalvOriginCircles', {
-    //     'type': 'geojson',
-    //     'data': 'data/mapbox/outcomes/salv-origins.json',
-    //     'generateId': true // This ensures that all features have unique IDs
-    // });
-
-    // map.addLayer({
-    //     id: 'SalvOriginCirclesViz',
-    //     type: 'circle',
-    //     source: 'SalvOriginCircles',
-    //     paint: {
-    //         'circle-radius': 5,
-    //         'circle-color': outcomeColorSolid,
-    //     },
-    // });
-
-});
-
-// // Load OUTCOMES - EL SALVADOR LINES
-// map.on('load', function () {
-
-//     map.addSource('SalvLines', {
-//         'type': 'geojson',
-//         'data': 'data/mapbox/outcomes/!tmp/salv-multiline.json',
-//         'generateId': true // This ensures that all features have unique IDs
-//     });
-
-//     map.addLayer({
-//         id: 'SalvLinesViz',
-//         type: 'line',
-//         source: 'SalvLines',
-//         paint: {
-//             'line-width': outcomeLineWidth,
-//             'line-color': outcomeColor,
-//         },
-//     });
-
-// });
-
-// Load OUTCOMES - GUATEMALA CIRCLES
-map.on('load', function () {
-
-    // map.addSource('guatCircles', {
-    //     'type': 'geojson',
-    //     'data': 'data/mapbox/outcomes/guat-destinations.json',
-    //     'generateId': true // This ensures that all features have unique IDs
-    // });
-
-    // map.addLayer({
-    //     id: 'guatCirclesViz',
-    //     type: 'circle',
-    //     source: 'guatCircles',
-    //     paint: {
-    //         'circle-radius': [
-    //             'interpolate',
-    //             ['linear'],
-    //             ['number', ['get', 'Imm__tot_pop']],
-    //             0, outcomeCircleMin,
-    //             1.5, outcomeCircleMax
-    //         ],
-    //         'circle-color': outcomeColor,
-    //     },
-    // });
-
-});
-
-// Load OUTCOMES - GUAT ORIGIN CIRCLES
-map.on('load', function () {
-
-    // map.addSource('guatOriginCircles', {
-    //     'type': 'geojson',
-    //     'data': 'data/mapbox/outcomes/guat-origins.json',
-    //     'generateId': true // This ensures that all features have unique IDs
-    // });
-
-    // map.addLayer({
-    //     id: 'guatOriginCirclesViz',
-    //     type: 'circle',
-    //     source: 'guatOriginCircles',
-    //     paint: {
-    //         'circle-radius': 5,
-    //         'circle-color': outcomeColorSolid,
-    //     },
-    // });
-
-});
-
-
-// // Load OUTCOMES - GUATEMALA LINES
-// map.on('load', function () {
-
-//     map.addSource('guatLines', {
-//         'type': 'geojson',
-//         'data': 'data/mapbox/outcomes/!tmp/guat-multiline.json',
-//         'generateId': true // This ensures that all features have unique IDs
-//     });
-
-//     map.addLayer({
-//         id: 'guatLinesViz',
-//         type: 'line',
-//         source: 'guatLines',
-//         paint: {
-//             'line-width': outcomeLineWidth,
-//             'line-color': outcomeColor,
-//         },
-//     });
-
-// });
-
-// Load OUTCOMES - HOND CIRCLES
-map.on('load', function () {
-
-    map.addSource('hondCircles', {
-        'type': 'geojson',
-        'data': 'data/mapbox/outcomes/hond-destinations.json',
-        'generateId': true // This ensures that all features have unique IDs
-    });
-
-    map.addLayer({
-        id: 'hondCirclesViz',
-        type: 'circle',
-        source: 'hondCircles',
-        paint: {
-            'circle-radius':[
-                'interpolate',
-                ['linear'],
-                ['number', ['get', 'Imm__tot_pop']],
-                0, outcomeCircleMin,
-                1.5, outcomeCircleMax
-            ],
-            'circle-color': outcomeColor,
-        },
-    });
-
-});
-
-// // Load OUTCOMES - HOND ORIGIN CIRCLES
-// map.on('load', function () {
-
-//     map.addSource('hondOriginCircles', {
-//         'type': 'geojson',
-//         'data': 'data/mapbox/outcomes/hond-origins.json',
-//         'generateId': true // This ensures that all features have unique IDs
-//     });
-
-//     map.addLayer({
-//         id: 'hondOriginCirclesViz',
-//         type: 'circle',
-//         source: 'hondOriginCircles',
-//         paint: {
-//             'circle-radius':5,
-//             'circle-color': outcomeColorSolid,
-//         },
-//     });
-
-// });
-
-
-// // Load OUTCOMES - HOND LINES
-// map.on('load', function () {
-
-//     map.addSource('hondLines', {
-//         'type': 'geojson',
-//         'data': 'data/mapbox/outcomes/!tmp/hond-multiline.json',
-//         'generateId': true // This ensures that all features have unique IDs
-//     });
-
-//     map.addLayer({
-//         id: 'hondLinesViz',
-//         type: 'line',
-//         source: 'hondLines',
-//         paint: {
-//             'line-width': outcomeLineWidth,
-//             'line-color': outcomeColor,
-//         },
-//     });
-
-// });
-
 
 //   MY DECK DATA
+
+const worldMap = new deck.MapboxLayer({
+    id: 'world-map',
+    type: deck.GeoJsonLayer,
+    data: 'data/mapbox/basemaps/far/world-far.json',
+    // Styles
+    filled: true,
+    getFillColor: landColor,
+    depthTest: false,
+})
+
+
+// STATES
+const statesMap = new deck.MapboxLayer({
+    type: deck.GeoJsonLayer,
+    id: 'us-states',
+    data: 'data/mapbox/basemaps/far/states-far.geojson',
+    // Styles
+    filled: true,
+    getFillColor: countriesFillColor,
+    getLineColor: countriesBorderColor,
+    getLineWidth: countriesLineWidth,
+    depthTest: false,
+
+})
+
+
+// NT COUNTRIES
+const ntCountries = new deck.MapboxLayer({
+    type: deck.GeoJsonLayer,
+    id: 'nt-countries',
+    data: 'data/mapbox/basemaps/far/nt-countries-far.json',
+    // Styles
+    filled: true,
+    getFillColor: countriesFillColor,
+    getLineColor: countriesBorderColor,
+    getLineWidth: countriesLineWidth,
+
+    // Interactive props
+    pickable: true,
+    autoHighlight: true,
+    highlightColor: SelectHighlightColor,
+    onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
+
+})
+
+// NT SCREEN GRID
 const ntSurvey = new deck.MapboxLayer({
-    id: 'nt-Grid',
+    id: 'nt-grid',
     type: deck.ScreenGridLayer,
     data: 'data/mapbox/motivations/COORDS-ONLY.json',
     getPosition: d => d,
@@ -513,11 +348,75 @@ const ntSurvey = new deck.MapboxLayer({
     colorRange: [255, 255, 255, 255],
 });
 
-// GUATEMALA ARCLAYER
-const guatArc = new deck.MapboxLayer({
-    id: 'guatArc',
+// US-SALV CIRCLES
+const salvDestinations = new deck.MapboxLayer({
+    id: 'salv-Circles',
+    type: deck.GeoJsonLayer,
+    data: 'data/mapbox/outcomes/salv-destinations.json',
+    // Styles
+    pointType: 'circle',
+    filled: true,
+    pointRadiusMinPixels: 2,
+    pointRadiusScale: pointScale,
+    getPointRadius: r => r.properties.Imm__tot_pop * 100,
+    getFillColor: pointColor,
+    // Interactive props
+    pickable: true,
+    autoHighlight: true,
+    highlightColor: SelectHighlightColor,
+    getLineColor: circleBorder,
+    getLineWidth: circleBorderWidth,
+    onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
+})
+
+// US-GUAT CIRCLES
+const guatDestinations = new deck.MapboxLayer({
+    id: 'guat-Circles',
+    type: deck.GeoJsonLayer,
+    data: 'data/mapbox/outcomes/guat-destinations.json',
+    // Styles
+    pointType: 'circle',
+    filled: true,
+    pointRadiusMinPixels: 2,
+    pointRadiusScale: pointScale,
+    getPointRadius: r => r.properties.Imm__tot_pop * 100,
+    getFillColor: pointColor,
+    // Interactive props
+    pickable: true,
+    autoHighlight: true,
+    highlightColor: SelectHighlightColor,
+    getLineColor: circleBorder,
+    getLineWidth: circleBorderWidth,
+    onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
+})
+
+// US-GUAT CIRCLES
+const hondDestinations = new deck.MapboxLayer({
+    id: 'hond-Circles',
+    type: deck.GeoJsonLayer,
+    data: 'data/mapbox/outcomes/hond-destinations.json',
+    // Styles
+    pointType: 'circle',
+    filled: true,
+    pointRadiusMinPixels: 2,
+    pointRadiusScale: pointScale,
+    getPointRadius: r => r.properties.Imm__tot_pop * 100,
+    getFillColor: pointColor,
+    // Interactive props
+    pickable: true,
+    autoHighlight: true,
+    highlightColor: SelectHighlightColor,
+    getLineColor: circleBorder,
+    getLineWidth: circleBorderWidth,
+    onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
+})
+
+
+// SALV ARCLAYER
+const salvArc = new deck.MapboxLayer({
+    id: 'salvArc',
     type: deck.ArcLayer,
-    data: 'data/mapbox/outcomes/guat-multiline-coords.json',
+    data: 'data/mapbox/outcomes/salv-multiline-coords.json',
     dataTransform: d => d.features.filter(f => f.properties.Rank_Immigrants < arcFilterMin),
     // Styles
     getSourcePosition: d => [d.properties.START_X, d.properties.START_Y],
@@ -533,11 +432,11 @@ const guatArc = new deck.MapboxLayer({
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 });
 
-// SALV ARCLAYER
-const salvArc = new deck.MapboxLayer({
-    id: 'salvArc',
+// GUATEMALA ARCLAYER
+const guatArc = new deck.MapboxLayer({
+    id: 'guatArc',
     type: deck.ArcLayer,
-    data: 'data/mapbox/outcomes/salv-multiline-coords.json',
+    data: 'data/mapbox/outcomes/guat-multiline-coords.json',
     dataTransform: d => d.features.filter(f => f.properties.Rank_Immigrants < arcFilterMin),
     // Styles
     getSourcePosition: d => [d.properties.START_X, d.properties.START_Y],
@@ -566,8 +465,8 @@ const hondArc = new deck.MapboxLayer({
     getTargetColor: arcTargetColor,
     getWidth: w => Math.sqrt(w.properties.Round_total_MSA_population * arcWidth),
     getHeight: arcHeight,
-    pickable: true,
-    autoHighlight: true,
+    pickable: false,
+    autoHighlight: false,
     highlightColor: SelectHighlightColor,
     getTilt: arcTilt,
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
@@ -575,9 +474,16 @@ const hondArc = new deck.MapboxLayer({
 
 
 map.on('load', () => {
-    map.addLayer(ntSurvey);
+    // map.addLayer(worldMap);
+    // map.addLayer(statesMap);
+    // map.addLayer(ntCountries);
+    // map.addLayer(ntSurvey);
     map.addLayer(guatArc);
     map.addLayer(salvArc);
     map.addLayer(hondArc);
+    map.addLayer(salvDestinations);
+    map.addLayer(guatDestinations);
+    map.addLayer(hondDestinations);
+
 });
 
