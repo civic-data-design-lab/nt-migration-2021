@@ -28,7 +28,7 @@
     --gradeient-falloff: 70%;
     --start-padding: 10px;
     --open-width: 90%;
-    --partial-width:62%;
+    --partial-width: 62%;
 }
 
 /*GENERAL HTML */
@@ -129,9 +129,9 @@ h3 {
 
 /* PAGES */
 /* main { */
-    /* position: absolute; */
-    /* height: 100vh; */
-    /* width: 100vw;
+/* position: absolute; */
+/* height: 100vh; */
+/* width: 100vw;
     overflow-y: scroll;
     overflow-x: scroll; */
 /* } */
@@ -205,14 +205,15 @@ h3 {
     width: 2%;
     height: 100vh;
     overflow: hidden;
-    
+
 
 
 }
 
 /* MAKE THIS MORE SPECIFIC! VVVVV */
 
-#closed .chapter-title, .chapter-summary{
+#closed .chapter-title,
+.chapter-summary {
     color: rgba(255, 255, 255, 0);
     transition: 1s ease-in-out;
 }
@@ -244,7 +245,7 @@ h3 {
 
 }
 
-#open h1{
+#open h1 {
     display: inline-block;
 }
 
@@ -255,7 +256,7 @@ h3 {
 }
 
 #open h2 {
-    
+
     transition: 1s ease-in-out;
 }
 
@@ -273,8 +274,7 @@ h3 {
     display: flex;
 }
 
-#partial-open h1 {
-}
+#partial-open h1 {}
 
 
 /* PAGES - Z-INDEX */
@@ -420,7 +420,7 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 } */
 
 
-.section{
+.section {
     width: 100%;
     padding-top: 10vh;
     margin-bottom: 50vh;
@@ -440,15 +440,15 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
     background-position: center;
     height: 100vh;
     width: 100vw;
-    
+
 }
 
-.bk>*{
+.bk>* {
     backdrop-filter: grayscale(1);
     transition: filter 1s ease-in-out;
 }
 
-#closed>*{
+#closed>* {
     filter: grayscale(1);
     backdrop-filter: grayscale(1) blur(5px);
 }
@@ -489,35 +489,35 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 
 
 .about-g {
-    background:#0000;
+    background: #0000;
     /* background-image: linear-gradient(#0000 var(--gradeient-falloff), white); */
 
 }
 
 .origins-g {
-    background:#eb48279f;
+    background: #eb48279f;
     /* background-image: linear-gradient(#eb48279f var(--gradeient-falloff), white); */
 }
 
 .motivations-g {
-    background:#1541c469;
+    background: #1541c469;
     /* background-image: linear-gradient(#1541c469 var(--gradeient-falloff), white); */
 }
 
 .profiles-g {
-    background:#3ba8c977;
+    background: #3ba8c977;
     /* background-image: linear-gradient(#3ba8c977 var(--gradeient-falloff), white); */
 }
 
 
 .outcomes-g {
-    background:#e23cad80;
+    background: #e23cad80;
     /* background-image: linear-gradient(#e23cad80 var(--gradeient-falloff), white); */
 
 }
 
 .cost-g {
-    background:#662d9183;
+    background: #662d9183;
     /* background-image: linear-gradient(#662d9183 var(--gradeient-falloff), white); */
 }
 
@@ -570,19 +570,18 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 /* MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX */
 /* MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX */
 /* MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX MAPBOX */
-.scrollytelling{
-}
+.scrollytelling {}
 
 .outcomes-map-theme {
-   color: #fafafa;
-   background-color: rgb(224, 135, 220);
+    color: #fafafa;
+    background-color: rgb(224, 135, 220);
 
 }
 
 .motivations-map-theme {
     color: #fafafa;
     background-color: rgb(135, 156, 224);
- }
+}
 
 
 .centered {
@@ -654,7 +653,7 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 }
 
 #story {
- /* pointer-events: auto; */
+    /* pointer-events: auto; */
 }
 
 
@@ -739,3 +738,50 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {}
+
+
+
+
+
+/* NEW LAYOUT STYLE */
+/* 
+#wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    transition: 1s ease-in-out;
+}
+
+#wrapper>* {
+    flex: 0 0 2vw;
+    transition: flex-basis 0.3s linear;
+    border: 1px solid black;
+}
+
+#wrapper>div:hover {
+    flex: 1 1 33vw;
+    transition: 1s ease-in-out;
+}
+
+#wrapper>#open {
+    flex: 1 1 5vw;
+    transition: 1s ease-in-out;
+}
+
+#wrapper>#closed {
+    transition: 1s ease-in-out;
+}
+
+#wrapper>div[tabindex]:focus {
+    flex: 1 1 250px;
+
+}
+
+.closed{
+}
+
+.partial-closed{
+    width: 10vw;
+}
+
+ */

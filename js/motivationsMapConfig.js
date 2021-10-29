@@ -1,4 +1,4 @@
-var outcomesConfig = {
+var motivationsConfig = {
     style: 'mapbox://styles/mitcivicdata/ckuyzlxi10cgf14mw6ht4qbgp',
     accessToken: 'pk.eyJ1IjoibWl0Y2l2aWNkYXRhIiwiYSI6ImNpbDQ0aGR0djN3MGl1bWtzaDZrajdzb28ifQ.quOF41LsLB5FdjnGLwbrrg',
     theme: 'motivations-map-theme',
@@ -54,7 +54,11 @@ var outcomesConfig = {
                 //     layer: 'layer-name',
                 //     opacity: 0
                 // }
+
+                console.log("2!!")
             ]
+
+
 
 
         },

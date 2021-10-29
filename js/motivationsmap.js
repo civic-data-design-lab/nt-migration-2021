@@ -39,7 +39,7 @@ features.setAttribute('id', 'features');
 
 var header = document.createElement('div');
 
-outcomesConfig.chapters.forEach((record, idx) => {
+motivationsConfig.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
     var mapChapter = document.createElement('div');
 
@@ -68,7 +68,7 @@ outcomesConfig.chapters.forEach((record, idx) => {
         container.classList.add('active');
     }
 
-    mapChapter.classList.add(outcomesConfig.theme);
+    mapChapter.classList.add(motivationsConfig.theme);
     container.appendChild(mapChapter);
     container.classList.add(alignments[record.alignment] || 'centered');
     if (record.hidden) {
@@ -81,19 +81,19 @@ story.appendChild(features);
 
 var footer = document.createElement('div');
 
-if (outcomesConfig.footer) {
+if (motivationsConfig.footer) {
     var footerText = document.createElement('p');
-    footerText.innerHTML = outcomesConfig.footer;
+    footerText.innerHTML = motivationsConfig.footer;
     footer.appendChild(footerText);
 }
 
 if (footer.innerText.length > 0) {
-    footer.classList.add(outcomesConfig.theme);
+    footer.classList.add(motivationsConfig.theme);
     footer.setAttribute('id', 'footer');
     story.appendChild(footer);
 }
 
-mapboxgl.accessToken = outcomesConfig.accessToken;
+mapboxgl.accessToken = motivationsConfig.accessToken;
 
 const transformRequest = (url) => {
     const hasQuery = url.indexOf("?") !== -1;
@@ -105,11 +105,11 @@ const transformRequest = (url) => {
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: outcomesConfig.style,
-    center: outcomesConfig.chapters[0].location.center,
-    zoom: outcomesConfig.chapters[0].location.zoom,
-    bearing: outcomesConfig.chapters[0].location.bearing,
-    pitch: outcomesConfig.chapters[0].location.pitch,
+    style: motivationsConfig.style,
+    center: motivationsConfig.chapters[0].location.center,
+    zoom: motivationsConfig.chapters[0].location.zoom,
+    bearing: motivationsConfig.chapters[0].location.bearing,
+    pitch: motivationsConfig.chapters[0].location.pitch,
     interactive: false,
     transformRequest: transformRequest,
     // antialias: true // Mapbox disables WebGL's antialiasing by default
@@ -130,7 +130,7 @@ map.on("load", function () {
         })
 
         .onStepEnter(response => {
-            var mapChapter = outcomesConfig.chapters.find(chap => chap.id === response.element.id);
+            var mapChapter = motivationsConfig.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.add('active');
             map[mapChapter.mapAnimation || 'flyTo'](mapChapter.location);
 
@@ -156,7 +156,7 @@ map.on("load", function () {
         })
 
         .onStepExit(response => {
-            var mapChapter = outcomesConfig.chapters.find(chap => chap.id === response.element.id);
+            var mapChapter = motivationsConfig.chapters.find(chap => chap.id === response.element.id);
             response.element.classList.remove('active');
             if (mapChapter.onChapterExit.length > 0) {
                 mapChapter.onChapterExit.forEach(setLayerOpacity);
@@ -168,7 +168,7 @@ map.on("load", function () {
 
 
 //MAP COLORS
-var countryFillColor = "#322DCD" 
+var countryFillColor = "#322DCD"
 var partialFillColor = "rgba(120,141,231,0.5)"
 var countryBoundaryColor = "rgba(255,255,255,0.3)"
 var borderWidth = 5
@@ -250,7 +250,7 @@ map.on('load', function () {
 //         paint: {
 //             'circle-color': outcomeColorSolid,
 //             'circle-radius' : outcomeCircleMin
-            
+
 //         },
 //     });
 
@@ -274,6 +274,7 @@ const ntSurvey = new deck.MapboxLayer({
     data: 'data/mapbox/motivations/nt-survey-points.geojson',
     getPosition: p => p.geometry.coordinates,
     // getWeight: d => d[2],    
+    // cellSizePixels: 13,
     cellSizePixels: 13,
     // cellMarginPixels: 0.1,
     colorRange: [255, 255, 255, 255],
