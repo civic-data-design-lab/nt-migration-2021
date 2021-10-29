@@ -257,19 +257,28 @@ map.on('load', function () {
 // });
 
 // NT SCREEN GRID
+// const ntSurvey = new deck.MapboxLayer({
+//     id: 'nt-grid',
+//     type: deck.ScreenGridLayer,
+//     data: 'data/mapbox/motivations/COORDS-ONLY.json',
+//     getPosition: d => d,
+//     // getWeight: d => d[2],    
+//     cellSizePixels: 8,
+//     // cellMarginPixels: 0.1,
+//     colorRange: [255, 255, 255, 255],
+// });
+
 const ntSurvey = new deck.MapboxLayer({
     id: 'nt-grid',
     type: deck.ScreenGridLayer,
-    data: 'data/mapbox/motivations/COORDS-ONLY.json',
-    getPosition: d => d,
+    data: 'data/mapbox/motivations/nt-survey-points.geojson',
+    getPosition: p => p.geometry.coordinates,
     // getWeight: d => d[2],    
-    cellSizePixels: 8,
+    cellSizePixels: 13,
     // cellMarginPixels: 0.1,
     colorRange: [255, 255, 255, 255],
 });
 
 map.on('load', () => {
     map.addLayer(ntSurvey);
-
-
 });

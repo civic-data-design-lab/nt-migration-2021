@@ -36,11 +36,11 @@ var outcomesConfig = {
             location: {
                 center: [-87.0000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: 6,
-                pitch: 60,
-                bearing: -15
+                pitch: 65,
+                bearing: -35
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [
                 // {
@@ -70,13 +70,13 @@ var outcomesConfig = {
             image: './img/zebra.jpg',
             description: 'Copy these sections to add to your story.',
             location: {
-                center: [-87.0000000, 15.0000000], // initial map center in [lon, lat]
-                zoom: 5,
+                center: [-85.0000000, 35.0000000], // initial map center in [lon, lat]
+                zoom: 4.7,
                 pitch: 45,
-                bearing: 10
+                bearing: -35
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [],
             onChapterExit: []
@@ -86,6 +86,29 @@ var outcomesConfig = {
         //DESTINATION 3
         {
             id: 'map-state-3',
+            alignment: 'right',
+            hidden: false,
+            title: 'Second Title',
+            image: './img/zebra.jpg',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [-115.0000000, 35.0000000], // initial map center in [lon, lat]
+                zoom: 4.7,
+                pitch: 45,
+                bearing: 25
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: true,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+
+
+        
+        //DESTINATION 4
+        {
+            id: 'map-state-4',
             alignment: 'right',
             hidden: false,
             title: 'Second Title',

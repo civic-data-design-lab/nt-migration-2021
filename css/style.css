@@ -419,6 +419,7 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
     height: 100%
 } */
 
+
 .section{
     width: 100%;
     padding-top: 10vh;
@@ -430,10 +431,6 @@ LIGHTBOX IMAGES WIP LIGHTBOX IMAGES WIP */
 .solid-white {
     background: white;
     pointer-events: auto;
-
-    
-    /* border: 3px solid greenyellow; */
-
 }
 
 /* BACKGROUND COVER IMAGES */

@@ -298,7 +298,6 @@ const worldMap = new deck.MapboxLayer({
     // Styles
     filled: true,
     getFillColor: landColor,
-    depthTest: false,
 })
 
 
@@ -312,7 +311,7 @@ const statesMap = new deck.MapboxLayer({
     getFillColor: countriesFillColor,
     getLineColor: countriesBorderColor,
     getLineWidth: countriesLineWidth,
-    depthTest: false,
+
 
 })
 
@@ -336,18 +335,6 @@ const ntCountries = new deck.MapboxLayer({
 
 })
 
-// NT SCREEN GRID
-const ntSurvey = new deck.MapboxLayer({
-    id: 'nt-grid',
-    type: deck.ScreenGridLayer,
-    data: 'data/mapbox/motivations/COORDS-ONLY.json',
-    getPosition: d => d,
-    // getWeight: d => d[2],    
-    cellSizePixels: 8,
-    // cellMarginPixels: 0.1,
-    colorRange: [255, 255, 255, 255],
-});
-
 // US-SALV CIRCLES
 const salvDestinations = new deck.MapboxLayer({
     id: 'salv-Circles',
@@ -366,6 +353,10 @@ const salvDestinations = new deck.MapboxLayer({
     highlightColor: SelectHighlightColor,
     getLineColor: circleBorder,
     getLineWidth: circleBorderWidth,
+    polygonOffset: 10,
+    parameters: {
+        depthTest: false
+    },
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 })
 
@@ -387,6 +378,9 @@ const guatDestinations = new deck.MapboxLayer({
     highlightColor: SelectHighlightColor,
     getLineColor: circleBorder,
     getLineWidth: circleBorderWidth,
+    parameters: {
+        depthTest: false
+    },
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 })
 
@@ -408,6 +402,9 @@ const hondDestinations = new deck.MapboxLayer({
     highlightColor: SelectHighlightColor,
     getLineColor: circleBorder,
     getLineWidth: circleBorderWidth,
+    parameters: {
+        depthTest: false
+    },
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 })
 
@@ -473,11 +470,12 @@ const hondArc = new deck.MapboxLayer({
 });
 
 
+
+
 map.on('load', () => {
     // map.addLayer(worldMap);
     // map.addLayer(statesMap);
     // map.addLayer(ntCountries);
-    // map.addLayer(ntSurvey);
     map.addLayer(guatArc);
     map.addLayer(salvArc);
     map.addLayer(hondArc);

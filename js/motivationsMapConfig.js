@@ -40,7 +40,7 @@ var outcomesConfig = {
                 bearing: -15
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
             onChapterEnter: [
                 // {
