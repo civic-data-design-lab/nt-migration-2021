@@ -1,0 +1,43 @@
+/* NEW LAYOUT STYLE */
+
+#wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    transition: 1s ease-in-out;
+}
+
+#wrapper>* {
+    flex: 0 1 2vw;
+    transition: 1s ease-in-out;
+    border: 1px solid black;
+}
+
+#wrapper>div:hover {
+
+    flex-grow: 1;
+    transition: 1s ease-in-out;
+}
+
+#wrapper>#open {
+
+    flex-grow: 2;
+    transition: 1s ease-in-out;
+}
+
+#wrapper>#closed {
+    transition: 1s ease-in-out;
+}
+
+#wrapper>div[tabindex]:focus {
+    flex: 1 1 250px;
+
+}
+
+.closed{
+
+}
+
+.partial-closed{
+    width: 10vw;
+}
