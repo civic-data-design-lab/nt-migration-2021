@@ -24,7 +24,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
     <!-- MAPBOX CONFIG + SCROLLAMA -->
-    <script src="./js/outcomesMapConfig.js"></script>
+    <script src="./js/motivationsMapConfig.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
 
@@ -34,16 +34,11 @@
 
 <body>
     <div id="wrapper">
-        <section class="chapter" id="open">
+        <section class="chapter">
             <div class="bk about-img">
                 <div class="gradient about-g">
-                    <h2 class="chapter-title">ABOUT</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>ABOUT</h2>
                     <h1 class="chapter-summary">Charting A New Regional Course of Action</h1>
-                    <br><br><br><br>
-                    <div class="section solid-white">
-                        <h1 class="chapter-summary" style="color: black;">World Food Program <br>MIT<br>
-                            Migration Policy Institute</h1>
-                    </div>
                 </div>
             </div>
         </section>
@@ -55,11 +50,16 @@
             </div>
         </section>
 
-        <section class='chapter'>
+        <section class='chapter' id="open">
             <div class="bk motivations-img">
                 <div class="gradient motivations-g">
-                    <h2 class="chapter-title" onclick='redirect_Page(this,"motivations2.html")'>MOTIVATIONS</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>MOTIVATIONS</h2>
+                    <h1 class="chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
                 </div>
+            </div>
+            <div class="section">
+                <div id="map"></div>
+                <div id="story"></div>
             </div>
         </section>
 
@@ -89,10 +89,11 @@
     </div>
 
     <script type="text/javascript" src="./js/chapterClick2.js"></script>
-    <!-- <script type="text/javascript" src="./js/lightbox.js"></script> -->
-    <!-- <script type="text/javascript" src="./js/bootstrap.min.js"></script> -->
-    <!-- <script type="text/javascript" src="./js/script.js"></script> -->
-    <!-- <script type="text/javascript" src="./js/outcomesmap.js"></script> -->
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <!-- <script type="text/javascript" src="./js/motivations.js"></script> -->
+    <script type="text/javascript" src="./js/motivationsmap.js"></script>
 
 </body>
 

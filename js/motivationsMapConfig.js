@@ -54,8 +54,6 @@ var motivationsConfig = {
                 //     layer: 'layer-name',
                 //     opacity: 0
                 // }
-
-                console.log("2!!")
             ]
 
 
