@@ -2,6 +2,7 @@ var allChapters = document.getElementsByClassName("chapter")
 var chapterClass = document.getElementById("open").className
 var chapterTitles = document.getElementsByClassName("chapter-title")
 
+
 for (let i = 0; i < allChapters.length; i++) {
     // console.log(allChapters[i].className)
 
@@ -9,6 +10,7 @@ for (let i = 0; i < allChapters.length; i++) {
 
     if (allChapters[i].id != "open") {
         // allChapters[i].className = startClass + " closed"
+        allChapters[i].id = "closed"
     }
 
 }
@@ -37,7 +39,7 @@ for (let i = 0; i < allChapters.length; i++) {
 
         if (allChapters[i].id != "open") {
 
-            openChapters.id = ""
+            openChapters.id = "closed"
             openChapters.scrollTo({ top: 0, behavior: "smooth" });
 
             allChapters[i].id = "open"
@@ -60,4 +62,3 @@ document.addEventListener('scroll', function (e) {
 
     }
 });
-

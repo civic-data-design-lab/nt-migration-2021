@@ -20,9 +20,14 @@
 :root {
     --gradeient-falloff: 70%;
     --start-padding: 10px;
-    --open-width: 90%;
-    --partial-width: 62%;
     --transition-speed: 1s ease-in-out;
+    --open: 85vw;
+    --closed: 2vw;
+    --partial-open: 50vw;
+    --partial-closed: 30vw;
+    --blur-on: grayscale(1) blur(10px);
+    --blur-off: grayscale(1) blur(0px);
+    --filters-off: grayscale(0) blur(0px);
 }
 
 /*GENERAL HTML */
@@ -67,6 +72,49 @@ h3 {
 }
 
 
+.text-orange {
+    color: #EB4927;
+}
+
+.text-blue {
+    color: #1540C4;
+}
+
+.text-teal {
+    color: #3BA7C9;
+}
+
+.text-pink {
+    color: #E23CAD;
+}
+
+.text-purple {
+    color: #662D91;
+}
+
+.text-white {
+    color: #fff;
+}
+
+
+.text-black {
+    color: #000;
+}
+
+/* ADDED THESE BECAUSE THE OTHERS HAVE SOME !iMPORTANT THING HAPPENING ON LOAD? */
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+
+
+.handwriting {
+    font-family: 'Caveat', cursive;
+}
 
 /* NEW LAYOUT STYLE */
 
@@ -78,68 +126,119 @@ h3 {
 }
 
 #wrapper>* {
-    flex: 1 1 2vw;
+    flex: 1 1 var(--closed);
     transition: var(--transition-speed);
-    border: 1px solid black;
+    border: 2px solid white;
+    /* overflow-x: hidden; */
 }
 
 #wrapper>section:hover {
-    flex-grow: 3;
+    /* flex-grow: 8; */
+    flex: 0 0 var(--partial-closed);
     transition: var(--transition-speed);
 }
 
 
-#wrapper>#open { 
-    flex-grow: 3;
+#wrapper>#open {
+    /* flex-grow: 3; */
+    flex: 0 0 var(--partial-open);
+    transition: var(--transition-speed);
+    filter: var(--filters-off);
+
+}
+
+#wrapper>#open:hover {
+    flex: 0 0 var(--open);
     transition: var(--transition-speed);
 
 }
 
-#wrapper>#open:hover { 
-    flex: 5 5 85vw;
+#wrapper>#closed>* {
     transition: var(--transition-speed);
+    filter: var(--blur-on);
+}
 
+#wrapper>#closed:hover>* {
+    transition: var(--transition-speed);
+    filter: var(--blur-off);
+}
+
+#wrapper>#open>*{
 }
 
 /* DECORATION, COLOR, CASE */
 .chapter {
-height: 300vh;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 .chapter-title {
     color: white;
+    position: absolute;
     justify-content: center;
     align-items: center;
     text-align: center;
     display: flex;
-    height: 100vh; 
-    /* width: inh; */
+    height: 100vh;
     text-transform: uppercase;
     pointer-events: none;
     transition: var(--transition-speed);
-    border: 3px solid red;
+    /* background: rgba(0, 0, 0, 0.3); */
 
 }
 
-section:hover .chapter{
+.chapter#closed .chapter-title{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.chapter#open .chapter-title {
+    width: var(--partial-open);
+}
+
+.chapter#open:hover .chapter-title {
+    /* border: 3px solid white; */
+    /* background: rgba(238, 130, 238, 0.705); */
+}
+
+.chapter#closed .chapter-title {
+    width: var(--partial-closed);
+    color: rgba(255, 255, 255, 0);
+}
+
+.chapter#closed:hover .chapter-title {
+    color: white;
+}
+
+
+section:hover .chapter {
     height: auto;
 }
 
-section:hover .chapter-title {
-    color: rgba(0,0,0,0);
+section#open:not(hover) .chapter-title {
+    transition: var(--transition-speed);
+}
 
+section#open:hover .chapter-title {
+    color: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+    transition: var(--transition-speed);
+    width: var(--open);
 }
 
 .chapter-summary {
     color: rgba(255, 255, 255, 0);
     width: 50vw;
+    height: 100vh;
     pointer-events: none;
     padding: var(--start-padding);
     text-transform: uppercase;
     transition: var(--transition-speed);
 }
 
-section:hover .chapter-summary{
+
+section:hover .chapter-summary {
     color: white;
 }
 
@@ -151,27 +250,19 @@ section:hover .chapter-summary{
     /* position: fixed; */
     height: 100vh;
     width: 100%;
-    border: 5px solid purple;
-    
-}
-
-.bk img{
-    backdrop-filter: grayscale(1) blur(50px);
 }
 
 .about-img {
     background-image: url("../img/Headers/about.jpg");
-    
+
 }
 
 .origins-img {
     background-image: url("../img/Headers/origins.jpg");
-    backdrop-filter: grayscale(1) blur(50px);
 }
 
 .motivations-img {
     background-image: url("../img/Headers/motivations.jpg");
-
 }
 
 .profiles-img {
@@ -189,39 +280,40 @@ section:hover .chapter-summary{
 /* BACKGROUND GRADIENTS */
 
 .gradient {
-    min-height: 100%;
-    max-height: 100%;
+    width: var(--open);
+    height: 100vh;
+    backdrop-filter: var(--blur-on);
+    pointer-events: none;
+    transition: var(--transition-speed);
+}
+
+.chapter:hover .gradient{
+    backdrop-filter: var(--filters-off);
 }
 
 .about-g {
     background: #0000;
-    /* background-image: linear-gradient(#0000 var(--gradeient-falloff), white); */
 
 }
 
 .origins-g {
     background: #eb48279f;
-    /* background-image: linear-gradient(#eb48279f var(--gradeient-falloff), white); */
 }
 
 .motivations-g {
     background: #1541c469;
-    /* background-image: linear-gradient(#1541c469 var(--gradeient-falloff), white); */
 }
 
 .profiles-g {
     background: #3ba8c977;
-    /* background-image: linear-gradient(#3ba8c977 var(--gradeient-falloff), white); */
 }
 
 
 .outcomes-g {
     background: #e23cad80;
-    /* background-image: linear-gradient(#e23cad80 var(--gradeient-falloff), white); */
 
 }
 
 .cost-g {
     background: #662d9183;
-    /* background-image: linear-gradient(#662d9183 var(--gradeient-falloff), white); */
 }
