@@ -16,8 +16,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+<!--   <link rel="stylesheet" href="css/reset.css"> -->
+
+  <link rel="stylesheet" href="css/bubble_chart.css">
+      <script src="//d3js.org/d3.v4.min.js"></script>
+  <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+      <script type="text/javascript" src="./js/tooltip.js"></script>
 </head>
 
 <body>
@@ -30,23 +37,81 @@
                 <h1 class="upper white chapter-summary">MIGRATION<br>COSTS ADD TO<br>FINANCIAL<br>BURDEN</h1>
             </div>
             <div class="solid-white">
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea blanditiis molestias
-                    sit cupiditate, possimus doloremque quae perferendis beatae praesentium quia suscipit?
-                    Aspernatur,
-                    consectetur praesentium blanditiis distinctio nam eaque cumque animi ipsa eos quibusdam odit
-                    voluptatibus ipsum provident similique perspiciatis laborum minus iste ipsam assumenda ea
-                    corrupti?
-                    Omnis expedita temporibus, numquam atque perspiciatis corrupti iusto suscipit ratione placeat
-                    tempora
-                    libero laboriosam at, cumque exercitationem vitae blanditiis id explicabo qui odit reprehenderit
-                    dolorem
-                    quos. Voluptatum, officia cupiditate sint impedit amet recusandae saepe, numquam officiis, natus
-                    quasi
-                    veritatis dolorum? A, cupiditate magnam natus similique vel dolores ipsam excepturi tenetur
-                    veritatis
-                    modi tempore nihil.
-                </h3>
+            
+                  <div id="toolbar">
+
+                <div class="container vh-100 row align-items-center p-5">
+                    <div class="row">
+     <div id="buttons-motivations" class="row mb-3">
+                            <div class="col-3 px-0">
+                                    <button type="button" id="all" class="button active btn btn-sm text-uppercase text-blue"
+                                        data-bs-toggle="modal" data-bs-target="#modal-motivs">Combined</button>
+                                </span>
+                                 </div>
+                                 <div class="col-3 px-0">
+                                    <button type="button" id="year" class="button btn btn-sm text-uppercase text-blue"
+                                        >Split by Means</button>
+                                </span>
+                            </div>
+                            <div class="col-3 px-0">
+                                    <button type="button" id="country" class="button btn btn-sm text-uppercase text-blue"
+                                        >Split by Country</button>
+                                </span>
+                            </div>
+                             <div class="col-3 px-0">
+                                    <button type="bee" id="bee" class="button btn btn-sm text-uppercase text-blue"
+                                       >Split by Finance Method</button>
+                                </span>
+                            </div>
+                               <div class="col-6 px-0">
+                                    <button type="uncolor" id="uncolor" class="label-pathway text-color button btn btn-sm text-uppercase text-blue"
+                                       >Uniform Color</button>
+                                </span>
+                            </div>
+                              <div class="col-6 px-0">
+                                    <button type="button" id="colorb" class="button btn btn-sm text-uppercase text-blue"
+                                     >Color by Means</button>
+                                </span>
+                          
+                               </div>
+                                <div id="frame-motivations" class="position-relative"></div>
+                                  </div>
+                                     
+                            
+      <!-- <a href="#" id="all" class="button active">Combined</a> -->
+<!--       <a href="#" id="year" class="button"> Split by Means </a> -->
+<!--       <a href="#" id="country" class="button" >Split by Country</a> -->
+<!--       <a href="#" id="bee" class="button" >Split by Finance Method</a>    -->  
+<!--       <a href="#" id="uncolor" class="button" >Uncolor</a> -->
+<!--       <a href="#" id="colorb" class="button" >Color by Means</a> -->
+  
+    
+     <!-- frame for d3 visualization -->
+                       
+
+    <!-- tooltip template -->
+    <div class="tooltip template">
+        <div class="side-color"></div>
+        <div class="row mb-3">
+            <div class="col">
+                <p>Cost to Migrate</p>
+                <h3 class="label-cost text-color">$8,500</h3>
             </div>
+            <div class="col">
+                <p>Origin Country</p>
+                <span class="label-country text-label">El Salvador</span>
+            </div>
+        </div>
+        <p class="label-pathway text-color">Irregular Pathway on their Own or with a Caravan</p>
+    </div>
+    <div class="footer">
+      <p></p>
+      <strong></strong>
+    </div>
+  </div>
+            </div>
+    <h2> </h2>
+  
         </section>
 
         <section class="chapter bk outcomes-img z4" id="closed">
@@ -106,7 +171,10 @@
 
     <script type="text/javascript" src="./js/chapterClick.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/bubble_chart.js"></script>
+
+
+
 </body>
 
 </html>
