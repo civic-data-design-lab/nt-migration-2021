@@ -1,7 +1,19 @@
 var allChapters = document.getElementsByClassName("chapter")
 var chapterClass = document.getElementById("open").className
 var chapterTitles = document.getElementsByClassName("chapter-title")
+var openChapter = document.getElementById("open")
+var mapContainer = document.getElementById("map")
+var story = document.getElementById("story")
+var docHeight = document.getElementById("wrapper").offsetHeight
 
+
+
+getComputedStyle(document.documentElement)
+    .getPropertyValue('--blur-on'); // #999999
+
+// var openWidth = document.querySelector(':root')
+
+// getComputedStyle((':root'))
 
 for (let i = 0; i < allChapters.length; i++) {
     // console.log(allChapters[i].className)
@@ -30,12 +42,47 @@ let redirect_Page = (ele, link) => {
 }
 
 
+
 //hover stuff
 for (let i = 0; i < allChapters.length; i++) {
 
+    //mouseHoverIn
+    allChapters[i].addEventListener('mouseenter', function () {
+        var openChapters = document.getElementById("open")
+
+        if ((allChapters[i].id != "open") & (allChapters[i].id != "partial-open")) {
+
+            if (openChapters != null) {
+                openChapters.id = "partial-open" //change opened pane to partially open
+
+            }
+
+            if (map != null) {
+                map.style.filter = "grayscale(1) blur(10px)"
+            }
+
+            if (story != null) {
+                story.style.filter = "grayscale(1) blur(10px)"
+            }
+        }
+
+        if ((allChapters[i].id == 'partial-open') || (allChapters[i].id == 'open')) {
+            allChapters[i].id = 'open'
+
+            if (map != null) {
+                map.style.filter = ""
+            }
+
+            if (story != null) {
+                story.style.filter = ""
+            }
+        }
+    });
+
+
     //Toggle Clicked Chapter
     allChapters[i].onclick = function (event) {
-        var openChapters = document.getElementById("open")
+        var openChapters = document.getElementById("partial-open")
 
         if (allChapters[i].id != "open") {
 
@@ -53,11 +100,26 @@ for (let i = 0; i < allChapters.length; i++) {
 
 //scroll position to move chapter bars
 document.addEventListener('scroll', function (e) {
-    lastKnownScrollPosition = window.scrollY;
+
     for (let i = 0; i < chapterTitles.length; i++) {
 
-        if (chapterTitles[i].id != "open") {
+        // console.log(window.scrollY)
+
+        if ((allChapters[i].id != "open") & (allChapters[i].id != "partial-open")) {
+            allChapters[i].style.transform = "translateY(" + window.scrollY + "px)"
+        }
+
+        if ((allChapters[i].id == "open") || (allChapters[i].id == "partial-open")) {
             chapterTitles[i].style.transform = "translateY(" + window.scrollY + "px)"
+        }
+
+
+        if (window.scrollY) { // < docHeight
+
+            if ((map != null)) { //& (window.scrollY > window.innerHeight)
+                mapContainer.style.transform = "translateY(" + window.scrollY + "px)"
+            }
+
         }
 
     }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Ashley Louie + Niko McGlashan">
-    <title>Charting A New Regional Course of Action</title>
+    <title>Outcomes</title>
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/eqc7jzl.css">
@@ -30,20 +30,17 @@
 
     <!-- DECK GL -->
     <script src="https://unpkg.com/deck.gl@8.6.0/dist.min.js"></script>
+
+
 </head>
 
 <body>
     <div id="wrapper">
-        <section class="chapter" id="open">
-            <div class="bk about-img">
+        <section class="chapter">
+            <div class="bk about-img" onclick='redirect_Page(this,"indexv2.html")'>
                 <div class="gradient about-g">
                     <h2 class="chapter-title">ABOUT</h2>
                     <h1 class="chapter-summary">Charting A New Regional Course of Action</h1>
-                    <br><br><br><br>
-                    <div class="section solid-white">
-                        <h1 class="chapter-summary" style="color: black;">World Food Program <br>MIT<br>
-                            Migration Policy Institute</h1>
-                    </div>
                 </div>
             </div>
         </section>
@@ -60,7 +57,7 @@
         <section class='chapter'>
             <div class="bk motivations-img" onclick='redirect_Page(this,"motivations2.html")'>
                 <div class="gradient motivations-g">
-                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>MOTIVATIONS</h2>
+                    <h2 class="chapter-title">MOTIVATIONS</h2>
                     <h1 class="chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
                 </div>
             </div>
@@ -76,12 +73,16 @@
             </div>
         </section>
 
-        <section class='chapter'>
+        <section class='chapter' id="open">
             <div class="bk outcomes-img" onclick='redirect_Page(this,"outcomes2.html")'>
                 <div class="gradient outcomes-g">
                     <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>OUTCOMES</h2>
                     <h1 class="chapter-summary">ONLY 57%<br>OF MIGRANTS<br>REACH THEIR<br>INTENDED<br>DESTINATION</h1>
                 </div>
+            </div>
+            <div class="section" id="thisSection">
+                <div id="map"></div>
+                <div id="story"></div>
             </div>
         </section>
 
@@ -97,9 +98,13 @@
 
     <script type="text/javascript" src="./js/chapterClick2.js"></script>
     <!-- <script type="text/javascript" src="./js/lightbox.js"></script> -->
-    <!-- <script type="text/javascript" src="./js/bootstrap.min.js"></script> -->
-    <!-- <script type="text/javascript" src="./js/script.js"></script> -->
-    <!-- <script type="text/javascript" src="./js/outcomesmap.js"></script> -->
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/outcomesmap.js"></script>
+
+
+
+
 
 </body>
 
