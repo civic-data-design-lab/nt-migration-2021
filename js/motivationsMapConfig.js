@@ -95,6 +95,76 @@ var motivationsConfig = {
 
         },
 
+        //DESTINATION 3
+        {
+            id: 'map-state-3',
+            alignment: 'right',
+            hidden: false,
+            // title: 'Display Title',
+            // image: './images/zebra.jpg',
+            description: 'AAAAAAAAA.',
+            location: {
+                center: [-87.70000000, 15.0000000], // initial map center in [lon, lat]
+                zoom: 6.8,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                // {
+                //     layer: 'layer-name',
+                //     opacity: 1,
+                //     duration: 5000
+                // }
+            ],
+            onChapterExit: [
+                // {
+                //     layer: 'layer-name',
+                //     opacity: 0
+                // }
+            ]
+
+
+        },
+
+        //DESTINATION 4
+        {
+            id: 'map-state-4',
+            alignment: 'right',
+            hidden: false,
+            // title: 'Display Title',
+            // image: './images/zebra.jpg',
+            description: 'BBBBBBBBB.',
+            location: {
+                center: [-87.70000000, 15.0000000], // initial map center in [lon, lat]
+                zoom: 6.8,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                // {
+                //     layer: 'layer-name',
+                //     opacity: 1,
+                //     duration: 5000
+                // }
+            ],
+            onChapterExit: [
+                // {
+                //     layer: 'layer-name',
+                //     opacity: 0
+                // }
+            ]
+
+
+        },
+
+
+
     ]
 };
 

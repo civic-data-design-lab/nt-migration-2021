@@ -31,8 +31,8 @@ var outcomesConfig = {
             alignment: 'right',
             hidden: false,
             // title: 'Display Title',
-            // image: './images/zebra.jpg',
-            description: 'ssssss.',
+            image: './img/outcomes/climbing.jpg',
+            description: '57% of migrants reach their destination',
             location: {
                 center: [-87.0000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: 6,
@@ -67,8 +67,8 @@ var outcomesConfig = {
             alignment: 'right',
             hidden: false,
             title: 'Second Title',
-            image: './img/zebra.jpg',
-            description: 'Copy these sections to add to your story.',
+            image: './img/outcomes/climbing.jpg',
+            description: '57% of migrants reach their destination',
             location: {
                 center: [-85.0000000, 35.0000000], // initial map center in [lon, lat]
                 zoom: 4.7,
@@ -88,9 +88,9 @@ var outcomesConfig = {
             id: 'map-state-3',
             alignment: 'right',
             hidden: false,
-            title: 'Second Title',
-            image: './img/zebra.jpg',
-            description: 'Copy these sections to add to your story.',
+            title: '',
+            image: './img/outcomes/climbing.jpg',
+            description: '57% of migrants reach their destination',
             location: {
                 center: [-115.0000000, 35.0000000], // initial map center in [lon, lat]
                 zoom: 4.7,
@@ -109,11 +109,11 @@ var outcomesConfig = {
         //DESTINATION 4
         {
             id: 'map-state-4',
-            alignment: 'right',
+            alignment: 'fully',
             hidden: false,
             title: 'Second Title',
-            image: './img/zebra.jpg',
-            description: 'Copy these sections to add to your story.',
+            image: './img/outcomes/military.jpg',
+            description: '57% of migrants reach their destination',
             location: {
                 center: [-90.0000000, 28.0000000], // initial map center in [lon, lat]
                 zoom: 3.75,
