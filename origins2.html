@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Ashley Louie + Niko McGlashan">
-    <title>Charting A New Regional Course of Action</title>
+    <meta name="author" content="Ashley Louie">
+    <title>Origins</title>
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/eqc7jzl.css">
@@ -17,14 +17,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="./css/style2.css">
+    <link rel="stylesheet" type="text/css" href="./css/origins.css">
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
-
+    <script type="text/javascript" src="./js/d3.v7.min.js"></script>
+    <script type="text/javascript" src="./js/ScrollMagic.min.js"></script>
 </head>
 
 <body>
+
     <div id="wrapper">
-        <section class="chapter" id="open">
-            <div class="bk about-img">
+        <section class="chapter" id="closed">
+            <div class="bk about-img" onclick='redirect_Page(this,"indexv2.html")'>
                 <div class="gradient about-g">
                     <h2 class="chapter-title">ABOUT</h2>
                     <h1 class="chapter-summary">Charting A New Regional Course of Action</h1>
@@ -36,13 +39,56 @@
                 </div>
             </div>
         </section>
-        <section class='chapter' id="closed">
+        <section class='chapter' id="open">
             <div class="bk origins-img" onclick='redirect_Page(this,"origins2.html")'>
                 <div class="gradient origins-g">
-                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>ORIGINS</h2>
+                    <h2 class="chapter-title">ORIGINS</h2>
                     <h1 class="chapter-summary">VIOLENCE, CLIMATE,<br>ECONOMICS,<br>AND
                         POLICY<br>HISTORICALLY DRIVE EMIGRATION</h1>
                 </div>
+            </div>
+            <!-- PAGE CONTENT -->
+            <div class="content-block">
+                <div class="container p-5">
+                    <!-- frame for d3 timeline context -->
+                    <div id="frame-pre1960" class="position-relative"></div>
+                    <div class="sticky">
+                        <div id="tt-year" class="p-2 mb-5 fw-bold display-6">1960</div>
+                        <div id="tt-migrants" class="p-2">
+                            <p class="label-yearspan pt-2 pb-4 px-1 text-label">1960</p>
+                            <p class="label-total px-1 text-label">
+                                <span class="label-mig">145,312</span> total migrants
+                            </p>
+                            <p class="pb-2 px-1 pt-1 text-sublabel">outside of Guatemala, Honduras, and El Salvador</p>
+                            <div class="label-gtm p-2 px-1">
+                                <p class="text-label">
+                                    <span class="label-mig">33,173</span> Guatemalan migrants
+                                </p>
+                                <p class="pt-1 text-sublabel">
+                                    <span class="label-pct">0.8</span>% of the population in Guatemala
+                                </p>
+                            </div>
+                            <div class="label-hnd p-2 px-1">
+                                <p class="text-label">
+                                    <span class="label-mig">47,559</span> Honduran migrants
+                                </p>
+                                <p class="pt-1 text-sublabel">
+                                    <span class="label-pct">2.3</span>% of the population in Honduras
+                                </p>
+                            </div>
+                            <div class="label-slv p-2 px-1">
+                                <p class="text-label">
+                                    <span class="label-mig">64,580</span> Salvadoran migrants
+                                </p>
+                                <p class="pt-1 text-sublabel">
+                                    <span class="label-pct">2.3</span>% of the population in El Salvador
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- frame for d3 visualization -->
+                    <div id="frame-origins" class="position-relative"></div>
+                </div><!-- close container -->
             </div>
         </section>
 
@@ -84,10 +130,12 @@
         </section>
     </div>
 
+
     <script type="text/javascript" src="./js/chapterClick2.js"></script>
+    <!-- <script type="text/javascript" src="./js/lightbox.js"></script> -->
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
-
+    <script type="text/javascript" src="./js/origins.js"></script>
 </body>
 
 </html>

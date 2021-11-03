@@ -275,6 +275,10 @@ section#open:hover .chapter-title {
     /* border: 3px solid red; */
 }
 
+.content-block *{
+    pointer-events: auto;
+}
+
 .chapter#partial-open .content-block {
     filter: var(--blur-on);
 }
@@ -569,5 +573,6 @@ section#open:hover .chapter-title {
 #story {
     margin-bottom: 125vh;
     /* background: tomato; */
+    /* overflow: visible; */
    /* border: 3px solid tomato; */
 }
