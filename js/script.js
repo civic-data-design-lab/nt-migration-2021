@@ -65,8 +65,8 @@ function wrapText(text, width) {
 };
 
 // window resize
-var winHeight = $(window).height();
-var winWidth = $(window).width();
+let winHeight = $(window).height();
+let winWidth = $(window).width();
 
 $(window).resize(function() {
 	winHeight = $(window).height();
