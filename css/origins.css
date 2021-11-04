@@ -6,11 +6,20 @@
     top: -50vh;
 }
 
-/* BUTTON */
-
-
 /* bootstrap tooltip */
 
+/* EVENTS DIV STYLING */
+.event-img {
+    background: rgba(235, 72, 39, 0.7);
+}
+.event-img img {
+    filter: grayscale(1);
+    -webkit-mix-blend-mode: hard-light;
+    -moz-mix-blend-mode: hard-light;
+    -ms-mix-blend-mode: hard-light;
+    -o-mix-blend-mode: hard-light;
+    mix-blend-mode: hard-light;
+}
 
 /* TOOLTIP */
 .sticky {
@@ -28,6 +37,11 @@
 }
 #tt-year {
     display: inline-block;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 #tt-year::after {
     content: "";
