@@ -18,6 +18,15 @@
 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./css/pyramid.css" />
+        <link rel="stylesheet" href="./css/sankey.css" />
+
+
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script 
+    src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js">
+</script>
+       <script src="./js/tooltip.js"></script>
 
 </head>
 
@@ -78,6 +87,74 @@
                     </h1>
                 </div>
             </div>
+            
+       <div class="content-block">
+    <h2> </h2>
+                <div class="container vh-500 row align-items-center p-5">
+                    <div class="row">
+                    
+     <div id="buttons-motivations" class="row mb-3">
+  
+                            <div class="col-2 px-0">
+                                    <button type="button" id="all" class="button  btn btn-sm text-uppercase text-blue"
+                                        data-bs-toggle="modal" data-bs-target="#modal-motivs" onclick="showDetaila()">All Ages</button>
+                                </span>
+                                 </div>
+                                 <div class="col-2 px-0">
+                                    <button type="button" id="year" class="button  btn btn-sm text-uppercase text-blue"
+                                      onclick="showDetail()" onclick=active  >0-17</button>
+                                </span>
+                            </div>
+                            <div class="col-2 px-0">
+                                    <button type="button" id="country" class="button  btn btn-sm text-uppercase text-blue"
+                                       onclick="showDetailb()" >18-34</button>
+                                </span>
+                            </div>
+                            
+                      <div id="chart" class="position-relative"></div>
+                                  <script type="text/javascript" src="./js/pyramidscript.js"></script>
+                                  </div>
+                                  </div>
+                                    <div class="container vh-1000 row align-items-center p-5">
+                    <div class="row">
+
+                      <div id="chartsank" class="position-relative"></div>
+                               </div>
+                                
+                                  </div>
+                                  
+                                      
+                                  <script src="./js/sankeychart.js"></script>
+
+ 
+               <!-- tooltip template -->
+    <div class="tooltip template">
+        <div class="side-color"></div>
+        <div class="row">
+            <div class="col">
+                <p>Occupation Before Migration</p>
+                <span class="label-before text-color-before text-label">Agriculture</span>
+            </div>
+            <div class="col">
+                <p>Origin Country</p>
+                <span class="label-origin text-label">El Salvador</span>
+            </div>
+        </div>
+        <div class="line-divide mt-2 mb-2"></div>
+        <div class="row">
+            <div class="col">
+                <p>Occupation After Migration</p>
+                <span class="label-after text-color-after text-label">Informal Work</span>
+            </div>
+            <div class="col">
+                <p>Destination Country</p>
+                <span class="label-dest text-label">United States</span>
+            </div>
+        </div>
+    </div>
+          
+             </div>
+            
         </section>
 
         <section class='chapter' id="closed">
