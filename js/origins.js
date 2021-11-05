@@ -178,10 +178,10 @@ function plotStreamgraph(data, svg, {
         });
 
         // axis
-        svg.append("g")
-            .attr("transform", `translate(${margin * 2}, 0)`)
-            .call(yAxis)
-            .call(g => g.select(".domain").remove());
+        // svg.append("g")
+        //     .attr("transform", `translate(${margin * 2}, 0)`)
+        //     .call(yAxis)
+        //     .call(g => g.select(".domain").remove());
     }
     else {
         const yScale = d3.scaleLinear()
@@ -362,7 +362,6 @@ d3.csv("./data/origins_events.csv", d3.autoType)
     });
 
 $(document).ready(function() {
-    // let timelineHeight = $("#div-timeline").height();
     let vizHeight = $("#viz-origins").height();
 
     function getDivHeight(id) {
@@ -370,21 +369,10 @@ $(document).ready(function() {
             vizHeight = $("#viz-origins").height();
             return vizHeight;
         }
-        // else if (id == "div-timeline") {
-        //     timelineHeight = $("#div-timeline").height();
-        //     return timelineHeight;
-        // }
     }
 
     // ScrollMagic
     const controller = new ScrollMagic.Controller();
-
-    // sceneEvent = new ScrollMagic.Scene({
-    //     triggerElement: "#trigger-event",
-    //     duration: getDivHeight("div-timeline")
-    // })
-    //     .setPin("#tt-event")
-    //     .addTo(controller);
 
     sceneTimeline = new ScrollMagic.Scene({
         triggerElement: "#frame-origins",
