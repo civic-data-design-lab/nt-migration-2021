@@ -111,6 +111,11 @@ h3 {
     font-family: 'Caveat', cursive;
 }
 
+/* GENERAL */
+.vh-50 {
+    height: 50vh!important;
+}
+
 /* NEW LAYOUT STYLE */
 
 .mobile-menu {
