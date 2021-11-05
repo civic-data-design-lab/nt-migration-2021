@@ -98,7 +98,7 @@ var outcomesConfig = {
             image: '',
             filter: '',
             paddedImage: false,
-            description: 'a staggering xxxx miles away.',
+            description: 'a staggering 3,000 miles away.',
             location: {
                 center: [-85.0000000, 35.0000000], // initial map center in [lon, lat]
                 zoom: 4.7,
@@ -122,7 +122,7 @@ var outcomesConfig = {
             image: './img/outcomes/climbing.jpg',
             filter: '',
             paddedImage: false,
-            description: '57% of migrants reach their destination.',
+            description: 'The rest are either caught, detained, or return home. Some are lost and never return.',
             location: {
                 center: [-115.0000000, 35.0000000], // initial map center in [lon, lat]
                 zoom: 4.7,

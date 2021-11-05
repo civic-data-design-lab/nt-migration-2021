@@ -519,7 +519,7 @@ section#open:hover .chapter-title {
 }
 
 .outcomes-map-theme{
-    border-radius: 1em;
+    /* border-radius: 1em; */
     box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35);
     overflow: hidden;
     /* color: #fafafa; */
@@ -530,11 +530,11 @@ section#open:hover .chapter-title {
 
 .motivations-map-theme {
     /* color: #fafafa; */
-    border-radius: 1em;
-    box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35);
+    /* border-radius: 1em; */
+    /* box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35); */
     overflow: hidden;
     /* color: #fafafa; */
-    background-color: rgba(135, 156, 224, 0.5);
+    background-color: rgba(33, 83, 245, 0.5);
     backdrop-filter: var(--blur-on);
 
 }
