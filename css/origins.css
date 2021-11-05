@@ -2,35 +2,28 @@
     width: 80%;
     left: 10%;
 }
-#frame-origins {
+/* #frame-origins {
     top: -50vh;
+} */
+
+/* TOOLTIP */
+/* timeline tooltip */
+#tt-timeline {
+    top: calc(50vh - 4px);
+    max-height: 0px;
+    z-index: 1;
 }
-
-/* bootstrap tooltip */
-
-/* EVENTS DIV STYLING */
-.event-img {
+/* events tooltip */
+#tt-event .event-img {
     background: rgba(235, 72, 39, 0.7);
 }
-.event-img img {
+#tt-event .event-img img {
     filter: grayscale(1);
     -webkit-mix-blend-mode: hard-light;
     -moz-mix-blend-mode: hard-light;
     -ms-mix-blend-mode: hard-light;
     -o-mix-blend-mode: hard-light;
     mix-blend-mode: hard-light;
-}
-
-/* TOOLTIP */
-.sticky {
-    position: -webkit-sticky;
-    position: -moz-sticky;
-    position: -ms-sticky;
-    position: -o-sticky;
-    position: sticky;
-    height: 50vh;
-    top: calc(50vh - 4px);
-    z-index: 1;
 }
 #tt-year, #tt-migrants {
     background-color: rgba(255, 255, 255, 0.6);
@@ -54,9 +47,8 @@
     background-color: #000;
 }
 #tt-migrants {
-    position: sticky;
+    /* top: calc(50vh + 2rem); */
     width: 300px;
-    top: calc(50vh + 2rem);
 }
 #tt-migrants div {
     border-top: solid 1px #777;
@@ -69,7 +61,7 @@
     font-size: 1rem;
     line-height: 1rem;
 }
-#tt-migrants .text-sublabel {
+#tt-migrants .text-sublabel, #tt-event .event-date {
     font-size: 0.7rem;
 }
 .label-gtm {

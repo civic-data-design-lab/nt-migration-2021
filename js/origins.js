@@ -362,19 +362,33 @@ d3.csv("./data/origins_events.csv", d3.autoType)
     });
 
 $(document).ready(function() {
+    // let timelineHeight = $("#div-timeline").height();
     let vizHeight = $("#viz-origins").height();
 
-    function getVizHeight() {
-        vizHeight = $("#viz-origins").height();
-        return vizHeight;
+    function getDivHeight(id) {
+        if (id == "viz-origins") {
+            vizHeight = $("#viz-origins").height();
+            return vizHeight;
+        }
+        // else if (id == "div-timeline") {
+        //     timelineHeight = $("#div-timeline").height();
+        //     return timelineHeight;
+        // }
     }
 
     // ScrollMagic
     const controller = new ScrollMagic.Controller();
 
-    scene = new ScrollMagic.Scene({
+    // sceneEvent = new ScrollMagic.Scene({
+    //     triggerElement: "#trigger-event",
+    //     duration: getDivHeight("div-timeline")
+    // })
+    //     .setPin("#tt-event")
+    //     .addTo(controller);
+
+    sceneTimeline = new ScrollMagic.Scene({
         triggerElement: "#frame-origins",
-        duration: getVizHeight() - 2 * margin // scroll in px
+        duration: getDivHeight("viz-origins") - 2 * margin // scroll in px
     //     // offset: 50 // start this scene after scrolling for 50px
     })
     //     .setClassToggle("active")
@@ -402,7 +416,7 @@ $(document).ready(function() {
     // window resize
     $(window).resize(function() {
         vizHeight = $("#viz-origins").height();
-        scene.on("progress", function(e) {
+        sceneTimeline.on("progress", function(e) {
             $("#tt-year").text(Math.floor(e.progress * 60 + 1960));
             $(".label-yearspan").html((Math.floor(e.progress * 6) * 10 + 1961) + "&ndash;" + (Math.ceil(e.progress * 6) * 10 + 1960));
 
