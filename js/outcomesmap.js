@@ -66,21 +66,38 @@ outcomesConfig.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
     var mapChapter = document.createElement('div');
 
+    if (record.image) {
+        var image = new Image();
+
+        if (record.paddedImage == true)
+        {
+            image.className = "padded-image"
+
+        }
+        
+        image.src = record.image;
+        mapChapter.appendChild(image);
+
+        if (record.filter) {
+            var imageFilter = document.createElement("div");
+            imageFilter.id = 'scrolly-overlay'
+            mapChapter.appendChild(imageFilter);
+        }
+
+
+    }
+
     if (record.title) {
-        var title = document.createElement('h3');
+        var title = document.createElement('h2');
+        title.className = 'scrollytelling'
         title.innerText = record.title;
         mapChapter.appendChild(title);
     }
 
-    if (record.image) {
-        var image = new Image();
-        image.src = record.image;
-        mapChapter.appendChild(image);
-    }
 
     if (record.description) {
         var story = document.createElement('h3');
-        story.className = "scrollytelling"
+        story.className = "scrollytelling description"
         story.innerHTML = record.description;
         mapChapter.appendChild(story);
     }
@@ -98,6 +115,7 @@ outcomesConfig.chapters.forEach((record, idx) => {
         container.classList.add('hidden');
     }
     features.appendChild(container);
+
 });
 
 story.appendChild(features);

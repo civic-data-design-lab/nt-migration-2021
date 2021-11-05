@@ -24,52 +24,45 @@
 </head>
 
 <body>
-    <!-- container -->
-    <main class="">
-        <!-- container-fluid section  -->
-        <section class="chapter bk cost-img z5" id="closed">
-            <div class="gradient cost-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"cost")'>COST</h2>
-                <h1 class="upper white chapter-summary">MIGRATION<br>COSTS ADD TO<br>FINANCIAL<br>BURDEN</h1>
+    <div id="mobile-button">
+        <div id="hamburger-menu" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <h1 onclick='redirect_Page(this,"index.html")'>ABOUT</h1>
+            <h1 onclick='redirect_Page(this,"origins.html")'>ORIGINS</h1>
+            <h1 onclick='redirect_Page(this,"motivations.html")'>MOTIVATIONS</h1>
+            <h1 onclick='redirect_Page(this,"profiles.html")'>PROFILES</h1>
+            <h1 onclick='redirect_Page(this,"outcomes.html")'>OUTCOMES</h1>
+            <h1 onclick='redirect_Page(this,"cost.html")'>COST</h1>
+    </div>
+    </div>
+    <div id="wrapper">
+        <section class="chapter" id="closed">
+            <div class="bk about-img" onclick='redirect_Page(this,"index.html")'>
+                <div class="gradient about-g">
+                    <h2 class="chapter-title">ABOUT</h2>
+                    <h1 class="chapter-summary">Charting A New Regional Course of Action</h1>
+                    <br><br><br><br>
+                    <div class="section solid-white">
+                        <h1 class="chapter-summary" style="color: black;">World Food Program <br>MIT<br>
+                            Migration Policy Institute</h1>
+                    </div>
+                </div>
             </div>
         </section>
-
-        <section class="chapter bk outcomes-img z4" id="closed">
-            <div class="gradient outcomes-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"outcomes")'>OUTCOMES
-                </h2>
-                <h1 class="upper white chapter-summary">ONLY 57%<br>OF MIGRANTS<br>REACH THEIR<br>INTENDED<br>DESTINATION</h1>
+        <section class='chapter' id="open">
+            <div class="bk origins-img" onclick='redirect_Page(this,"origins.html")'>
+                <div class="gradient origins-g">
+                    <h2 class="chapter-title">ORIGINS</h2>
+                    <h1 class="chapter-summary">VIOLENCE, CLIMATE,<br>ECONOMICS,<br>AND
+                        POLICY<br>HISTORICALLY DRIVE EMIGRATION</h1>
+                </div>
             </div>
-
-        </section>
-
-        <section class="chapter bk profiles-img z3" id="closed">
-            <div class="gradient profiles-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"profiles")'>PROFILES
-                </h2>
-                <h1 class="upper white chapter-summary">HALF OF MIGRANTS<br>WORK IN THE<br>SAME OCCUPATION<br>AFTER RELOCATION</h1>
-            </div>
-        </section>
-
-        <section class="chapter bk motivations-img z2" id="closed">
-            <div class="gradient motivations-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"motivations")'>
-                    MOTIVATIONS</h2>
-                <h1 class="upper white chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
-            </div>
-
-        </section>
-
-        <section class="chapter bk origins-img z1" id="open">
-            <div class="gradient origins-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"origins")'>ORIGINS
-                </h2>
-                <h1 class="upper white chapter-summary">VIOLENCE, CLIMATE,<br>ECONOMICS,<br>AND POLICY<br>HISTORICALLY DRIVE EMIGRATION
-                </h1>
-            </div>
-
             <!-- PAGE CONTENT -->
-            <div class="solid-white inner-chapter">
+            <div class="content-block">
                 <div class="container p-5">
                     <!-- static event content -->
                     <div class="position-absolute top-0 end-0 col-4 m-5">
@@ -125,19 +118,44 @@
             </div>
         </section>
 
-        <section class="chapter bk about-img z0" id="closed">
-            <div class="gradient about-g">
-                <h2 class="upper white chapter-title" onclick='redirect_Page(this,"index")'>ABOUT</h2>
-                <h1 class="upper white chapter-summary">Charting A New Regional Course of Action</h1><br><br><br><br>
+        <section class='chapter' id="closed">
+            <div class="bk motivations-img" onclick='redirect_Page(this,"motivations.html")'>
+                <div class="gradient motivations-g">
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>MOTIVATIONS</h2>
+                    <h1 class="chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
+                </div>
             </div>
-
-
         </section>
 
-        <section class="website-background z-1">
+        <section class='chapter' id="closed">
+            <div class="bk profiles-img" onclick='redirect_Page(this,"profiles.html")'>
+                <div class="gradient profiles-g">
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>PROFILES</h2>
+                    <h1 class="chapter-summary">HALF OF MIGRANTS<br>WORK IN THE<br>SAME OCCUPATION<br>AFTER RELOCATION
+                    </h1>
+                </div>
+            </div>
         </section>
 
-    </main>
+        <section class='chapter' id="closed">
+            <div class="bk outcomes-img" onclick='redirect_Page(this,"outcomes.html")'>
+                <div class="gradient outcomes-g">
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>OUTCOMES</h2>
+                    <h1 class="chapter-summary">ONLY 57%<br>OF MIGRANTS<br>REACH THEIR<br>INTENDED<br>DESTINATION</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class='chapter' id="closed">
+            <div class="bk cost-img" onclick='redirect_Page(this,"cost.html")'>
+                <div class="gradient cost-g">
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>COST</h2>
+                    <h1 class="chapter-summary">MIGRATION<br>COSTS ADD TO<br>FINANCIAL<br>BURDEN</h1>
+                </div>
+            </div>
+        </section>
+    </div>
+
 
     <script type="text/javascript" src="./js/chapterClick.js"></script>
     <!-- <script type="text/javascript" src="./js/lightbox.js"></script> -->

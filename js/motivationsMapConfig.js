@@ -8,12 +8,12 @@ var motivationsConfig = {
         //DESTINATION 0
         {
             id: 'map-state-0',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
-            title: 'Second Title',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat enim commodi quia asperiores consequuntur minus laborum? Officiis ullam doloribus tempore necessitatibus aliquam voluptates consectetur reprehenderit nisi, recusandae, cupiditate, expedita perspiciatis earum totam itaque nemo fugiat? Ea, accusantium excepturi quia provident perspiciatis debitis vitae cupiditate molestiae cumque voluptate eligendi laudantium nulla aliquam modi corporis. Architecto, illo deserunt eveniet sequi ad dolorum delectus, necessitatibus corrupti libero tempore nobis accusantium ab consectetur perspiciatis ullam laborum sint consequatur praesentium tenetur, ipsam velit? Saepe esse, illo expedita rerum beatae ipsam architecto cum aliquid, qui repellat magnam culpa suscipit! Consectetur dolor iusto earum quisquam in corporis!',
+            title: '',
+            description:'Migration from Central America (Honduras, El Salvador and Guatemala) has dramatically increased in recent years.',
             location: {
-                center: [-87.0000000, 15.0000000], // initial map center in [lon, lat]
+                center: [-89.0000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: 4,
                 pitch: 0,
                 bearing: 0
@@ -22,17 +22,17 @@ var motivationsConfig = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
-        },
+            onChapterExit: [],
+                    },
 
         //DESTINATION 1
         {
             id: 'map-state-1',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             // title: 'Display Title',
             // image: './images/zebra.jpg',
-            description: 'ssssss.',
+            description: 'These migration trends have become a topic of political debate in the US because they receive the majority of migrants.',
             location: {
                 center: [-87.70000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: 7,
@@ -54,7 +54,8 @@ var motivationsConfig = {
                 //     layer: 'layer-name',
                 //     opacity: 0
                 // }
-            ]
+            ],
+            
 
 
 
@@ -64,11 +65,11 @@ var motivationsConfig = {
         //DESTINATION 2
         {
             id: 'map-state-2',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             // title: 'Display Title',
             // image: './images/zebra.jpg',
-            description: 'ssssss.',
+            description: 'Migration comes at a large expense to the migrants, many who do not want to leave their country. The root causes of what motivates these migrants must be identified.',
             location: {
                 center: [-87.70000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: 6.8,
@@ -90,7 +91,8 @@ var motivationsConfig = {
                 //     layer: 'layer-name',
                 //     opacity: 0
                 // }
-            ]
+            ],
+            
 
 
         },
@@ -98,11 +100,11 @@ var motivationsConfig = {
         //DESTINATION 3
         {
             id: 'map-state-3',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             // title: 'Display Title',
             // image: './images/zebra.jpg',
-            description: 'AAAAAAAAA.',
+            description: 'During June 2021, close to 5,000 households in Honduras, El Salvador and Guatemala were interview by the World Food Program +International Organization on Migration to better understand their condition.',
             location: {
                 center: [-87.70000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: 6.8,
@@ -124,7 +126,8 @@ var motivationsConfig = {
                 //     layer: 'layer-name',
                 //     opacity: 0
                 // }
-            ]
+            ],
+            
 
 
         },
@@ -132,7 +135,7 @@ var motivationsConfig = {
         //DESTINATION 4
         {
             id: 'map-state-4',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             // title: 'Display Title',
             // image: './images/zebra.jpg',
@@ -158,9 +161,8 @@ var motivationsConfig = {
                 //     layer: 'layer-name',
                 //     opacity: 0
                 // }
-            ]
-
-
+            ],
+            
         },
 
 

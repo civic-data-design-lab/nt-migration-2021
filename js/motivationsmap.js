@@ -43,21 +43,38 @@ motivationsConfig.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
     var mapChapter = document.createElement('div');
 
+    if (record.image) {
+        var image = new Image();
+
+        if (record.paddedImage == true)
+        {
+            image.className = "padded-image"
+
+        }
+        
+        image.src = record.image;
+        mapChapter.appendChild(image);
+
+        if (record.filter) {
+            var imageFilter = document.createElement("div");
+            imageFilter.id = 'scrolly-overlay'
+            mapChapter.appendChild(imageFilter);
+        }
+
+
+    }
+
     if (record.title) {
-        var title = document.createElement('h3');
+        var title = document.createElement('h2');
+        title.className = 'scrollytelling'
         title.innerText = record.title;
         mapChapter.appendChild(title);
     }
 
-    if (record.image) {
-        var image = new Image();
-        image.src = record.image;
-        mapChapter.appendChild(image);
-    }
 
     if (record.description) {
         var story = document.createElement('h3');
-        story.className = "scrollytelling"
+        story.className = "scrollytelling description"
         story.innerHTML = record.description;
         mapChapter.appendChild(story);
     }
@@ -274,12 +291,16 @@ const ntSurvey = new deck.MapboxLayer({
     data: 'data/mapbox/motivations/nt-survey-points.geojson',
     getPosition: p => p.geometry.coordinates,
     // getWeight: d => d[2],    
-    // cellSizePixels: 13,
-    cellSizePixels: 13,
+    cellSizePixels: 12,
+    // cellSizePixels: motivationsConfig.chapters[0].location.zoom,
     // cellMarginPixels: 0.1,
     colorRange: [255, 255, 255, 255],
 });
 
 map.on('load', () => {
     map.addLayer(ntSurvey);
+
+    // map.setPaintProperty(layer.value, 'fill-color', color);
+    map.setLayerZoomRange('nt-grid', 6, 12);
+    // map.setLayoutProperty('nt-grid', 'cellSizePixels', 1);
 });

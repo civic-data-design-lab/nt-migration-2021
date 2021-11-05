@@ -5,15 +5,41 @@ var outcomesConfig = {
 
     chapters: [
 
+        //DESTINATION -1
+        {
+            id: 'map-state--1',
+            alignment: 'left',
+            hidden: false,
+            title: 'Each line represents a story of external migration.',
+            image: '',
+            filter: '',
+            paddedImage: false,
+            description: 'in every story, there are challenges. Regardless of the mode of migration, there is sacrifice, endurance, and considerable risk along the way.',
+            location: {
+                center: [-87.0000000, 15.0000000], // initial map center in [lon, lat]
+                zoom: 6,
+                pitch: 65,
+                bearing: -35
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: true,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+
         //DESTINATION 0
         {
             id: 'map-state-0',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
-            title: 'Second Title',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat enim commodi quia asperiores consequuntur minus laborum? Officiis ullam doloribus tempore necessitatibus aliquam voluptates consectetur reprehenderit nisi, recusandae, cupiditate, expedita perspiciatis earum totam itaque nemo fugiat? Ea, accusantium excepturi quia provident perspiciatis debitis vitae cupiditate molestiae cumque voluptate eligendi laudantium nulla aliquam modi corporis. Architecto, illo deserunt eveniet sequi ad dolorum delectus, necessitatibus corrupti libero tempore nobis accusantium ab consectetur perspiciatis ullam laborum sint consequatur praesentium tenetur, ipsam velit? Saepe esse, illo expedita rerum beatae ipsam architecto cum aliquid, qui repellat magnam culpa suscipit! Consectetur dolor iusto earum quisquam in corporis!',
+            title: 'The majority of external migration from the Northern Triangle is to the United States.',
+            image: './img/tmp/outcomestoUS.png',
+            filter: '',
+            paddedImage: true,
+            description: '',
             location: {
-                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                center: [-95.0000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: 3.5,
                 pitch: 0,
                 bearing: 0
@@ -28,19 +54,21 @@ var outcomesConfig = {
         //DESTINATION 1
         {
             id: 'map-state-1',
-            alignment: 'right',
+            alignment: 'full',
             hidden: false,
-            // title: 'Display Title',
+            title: 'But only 57% of migrants reach their destination.',
             image: './img/outcomes/climbing.jpg',
-            description: '57% of migrants reach their destination',
+            filter: '',
+            paddedImage: false,
+            description: '',
             location: {
-                center: [-87.0000000, 15.0000000], // initial map center in [lon, lat]
-                zoom: 6,
-                pitch: 65,
-                bearing: -35
+                center: [-95.0000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: 3.5,
+                pitch: 0,
+                bearing: 0
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
             onChapterEnter: [
                 // {
@@ -64,11 +92,13 @@ var outcomesConfig = {
         //DESTINATION 2
         {
             id: 'map-state-2',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
-            title: 'Second Title',
-            image: './img/outcomes/climbing.jpg',
-            description: '57% of migrants reach their destination',
+            title: 'Northern Triangle emmigration into the U.S. clusters around opportunity.',
+            image: '',
+            filter: '',
+            paddedImage: false,
+            description: 'a staggering xxxx miles away.',
             location: {
                 center: [-85.0000000, 35.0000000], // initial map center in [lon, lat]
                 zoom: 4.7,
@@ -86,11 +116,13 @@ var outcomesConfig = {
         //DESTINATION 3
         {
             id: 'map-state-3',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: '',
             image: './img/outcomes/climbing.jpg',
-            description: '57% of migrants reach their destination',
+            filter: '',
+            paddedImage: false,
+            description: '57% of migrants reach their destination.',
             location: {
                 center: [-115.0000000, 35.0000000], // initial map center in [lon, lat]
                 zoom: 4.7,
@@ -105,15 +137,17 @@ var outcomesConfig = {
         },
 
 
-        
+
         //DESTINATION 4
         {
             id: 'map-state-4',
             alignment: 'fully',
             hidden: false,
-            title: 'Second Title',
+            title: 'Increased diaspora comes with additional risk',
             image: './img/outcomes/military.jpg',
-            description: '57% of migrants reach their destination',
+            filter: '',
+            paddedImage: false,
+            description: 'As the trend for external migration is only increasing in both distance and numbers, migrants are exposed to new risk factors.',
             location: {
                 center: [-90.0000000, 28.0000000], // initial map center in [lon, lat]
                 zoom: 3.75,
