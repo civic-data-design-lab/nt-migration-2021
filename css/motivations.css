@@ -87,6 +87,7 @@
 .modal-narrative .modal-content {
     color: #fff;
     background: none;
+    pointer-events: none;
 }
 .modal-narrative p {
     margin: 0px;
