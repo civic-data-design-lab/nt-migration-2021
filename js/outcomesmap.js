@@ -68,15 +68,19 @@ outcomesConfig.chapters.forEach((record, idx) => {
 
     if (record.image) {
         var image = new Image();
+        var imageContainer = document.createElement('div');
 
         if (record.paddedImage == true)
         {
             image.className = "padded-image"
 
         }
+
+        imageContainer.className = "ribbon-image"
         
         image.src = record.image;
-        mapChapter.appendChild(image);
+        mapChapter.appendChild(imageContainer);
+        imageContainer.appendChild(image)
 
         if (record.filter) {
             var imageFilter = document.createElement("div");
@@ -346,8 +350,8 @@ const ntCountries = new deck.MapboxLayer({
     getLineWidth: countriesLineWidth,
 
     // Interactive props
-    pickable: true,
-    autoHighlight: true,
+    // pickable: true,
+    // autoHighlight: true,
     highlightColor: SelectHighlightColor,
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 
@@ -366,8 +370,8 @@ const salvDestinations = new deck.MapboxLayer({
     getPointRadius: r => r.properties.Imm__tot_pop * 100,
     getFillColor: pointColor,
     // Interactive props
-    pickable: true,
-    autoHighlight: true,
+    // pickable: true,
+    // autoHighlight: true,
     highlightColor: SelectHighlightColor,
     getLineColor: circleBorder,
     getLineWidth: circleBorderWidth,
@@ -391,8 +395,8 @@ const guatDestinations = new deck.MapboxLayer({
     getPointRadius: r => r.properties.Imm__tot_pop * 100,
     getFillColor: pointColor,
     // Interactive props
-    pickable: true,
-    autoHighlight: true,
+    // pickable: true,
+    // autoHighlight: true,
     highlightColor: SelectHighlightColor,
     getLineColor: circleBorder,
     getLineWidth: circleBorderWidth,
@@ -415,8 +419,8 @@ const hondDestinations = new deck.MapboxLayer({
     getPointRadius: r => r.properties.Imm__tot_pop * 100,
     getFillColor: pointColor,
     // Interactive props
-    pickable: true,
-    autoHighlight: true,
+    // pickable: true,
+    // autoHighlight: true,
     highlightColor: SelectHighlightColor,
     getLineColor: circleBorder,
     getLineWidth: circleBorderWidth,

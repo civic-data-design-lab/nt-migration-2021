@@ -60,20 +60,6 @@ for (let i = 0; i < allChapters.length; i++) {
                 openChapters.id = "partial-open" //change opened pane to partially open
             }
 
-            // for (let i = 0; i < contentBlock.length; i++) {
-                
-               
-            //     contentBlock[i].id = "blur"
-                
-            // }
-
-            // if (map != null) {
-            //     map.style.filter = "grayscale(1) blur(10px)"
-            // }
-
-            // if (story != null) {
-            //     story.style.filter = "grayscale(1) blur(10px)"
-            // }
         }
 
         if ((allChapters[i].id == 'partial-open') || (allChapters[i].id == 'open')) {
@@ -82,19 +68,11 @@ for (let i = 0; i < allChapters.length; i++) {
 
             for (let i = 0; i < contentBlock.length; i++) {
 
-                
+
 
                 contentBlock[i].style.filter = ""
-                
+
             }
-
-            // if (map != null) {
-            //     map.style.filter = ""
-            // }
-
-            // if (story != null) {
-            //     story.style.filter = ""
-            // }
         }
     });
 
@@ -116,65 +94,19 @@ for (let i = 0; i < allChapters.length; i++) {
 
 }
 
-
-//scroll position to move chapter bars
-document.addEventListener('scroll', function (e) {
-
-    for (let i = 0; i < chapterTitles.length; i++) {
-
-        // console.log(window.scrollY)
-
-        // if ((allChapters[i].id != "open") & (allChapters[i].id != "partial-open")) {
-        //     allChapters[i].style.transform = "translateY(" + window.scrollY + "px)"
-        // }
-
-        // if ((allChapters[i].id == "open") || (allChapters[i].id == "partial-open")) {
-        //     chapterTitles[i].style.transform = "translateY(" + window.scrollY + "px)"
-        // }
-
-
-        // if (window.scrollY) { // < docHeight
-
-        //     if ((map != null)) { //& (window.scrollY > window.innerHeight)
-        //         mapContainer.style.transform = "translateY(" + window.scrollY + "px)"
-        //     }
-
-        // }
-
-    }
-});
-
-
-// // MOBILE MENU ENTER
-// hamburgerMenu.onclick = function (event) {
-
-//     if (mobileMenu != null)
-//     {
-//         mobileMenu.style.width = "100vw"
-//     }
-
-// }
-
-// // MOBILE MENU EXIT
-// mobileExit.onclick = function (event) {
-
-//     if (mobileMenu != null)
-//     {
-//         mobileMenu.style.width = ""
-//     }
-
-// }
-
-
 function toggleMenu(x) {
     x.classList.toggle("change");
-    mobileMenu.classList.toggle ("mobile-open")
+    mobileMenu.classList.toggle("mobile-open")
 
-    // if(wrapper.style.overflow = "hidden"){
-    //     wrapper.style.overflow = ""
-    // }
+}
 
-    // if(wrapper.style.overflow = ""){
-    //     wrapper.style.overflow = "hidden"
-    // }
-  }
+//Open main chapter on window leave
+document.addEventListener('mouseleave', function () {
+
+    var partialChapters = document.getElementById("partial-open")
+
+    if (partialChapters){
+        partialChapters.id = 'open'
+    }
+
+})

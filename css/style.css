@@ -516,11 +516,29 @@ section#open:hover .chapter-title {
 }
 
 .fully {
-    width: 60%;
+    width: 100%;
     margin: auto;
     
-    /* border: 3px solid green; */
+}
+
+.fully > div{
+    height: auto;
+    /* width: auto !important; */
+
+}
+
+.fully .ribbon-image{
+    height: 75vh;
+    overflow: hidden;
+}
+
+.ribbon-image img{
     /* height: auto; */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+
 }
 
 .outcomes-map-theme{
@@ -530,6 +548,7 @@ section#open:hover .chapter-title {
     /* color: #fafafa; */
     background-color: rgb(224, 135, 220,0.5);
     backdrop-filter: var(--blur-on);
+    /* height: auto !important; */
 }
 
 
@@ -541,6 +560,7 @@ section#open:hover .chapter-title {
     /* color: #fafafa; */
     background-color: rgba(33, 83, 245, 0.5);
     backdrop-filter: var(--blur-on);
+    /* height: auto !important; */
 
 }
 
@@ -567,9 +587,9 @@ section#open:hover .chapter-title {
 .step div {
 }
 
-.step img {
+/* .step img {
     width: 100%;
-}
+} */
 
 @media (max-width: 750px) {
 
