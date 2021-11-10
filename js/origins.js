@@ -11,10 +11,11 @@ let eventsData = [];
 // look up attributes
 let originsAttr = {};
 const countryAttr = {
-    "gtm": {"label": "Guatemala", "color": "#d11f63", "colorShade": "#9d174a", "colorShadeDarker": "#691032"},
-    "hnd": {"label": "Honduras", "color": "#eb4927", "colorShade": "#b0371d", "colorShadeDarker": "#762514"},
-    "slv": {"label": "El Salvador", "color": "#ea8928", "colorShade": "#b0671e", "colorShadeDarker": "#754514"},
-    "nt": {"label": "Northern countries in Central America", "colorShade": "#000"}
+    "gtm": {"label": "Guatemala", "color": "#d11f63", "colorShade": "#9d174a", "colorShadeDarker": "#691032", "background": "rgba(201, 31, 99, 0.7)"},
+    "hnd": {"label": "Honduras", "color": "#eb4927", "colorShade": "#b0371d", "colorShadeDarker": "#762514", "background": "rgba(235, 73, 39, 0.7)"},
+    "slv": {"label": "El Salvador", "color": "#ea8928", "colorShade": "#b0671e", "colorShadeDarker": "#754514", "background": "rgba(234, 139, 40, 0.7)"},
+    "nt": {"label": "Northern countries in Central America", "colorShade": "#000", "background": "linear-gradient(30deg, rgba(201, 31, 99, 0.7), rgba(235, 73, 39, 0.7), rgba(234, 139, 40, 0.7))"},
+    "hnd-slv": {"colorShade": "#000", "background": "linear-gradient(30deg, rgba(235, 73, 39, 0.7), rgba(234, 139, 40, 0.7))"}
 };
 const monthValue = {
     "January": 0,
@@ -34,32 +35,31 @@ const eventAttr = {
     1: {"x1": 357, "x2": 366},
     2: {"x1": 414, "x2": 446},
     3: {"x1": 371, "x2": 409},
-    4: {"x1": 416, "x2": 445},
-    5: {"x1": 370, "x2": 410},
-    6: {"x1": 352, "x2": 364},
-    7: {"x1": 411, "x2": 455},
-    8: {"x1": 409, "x2": 460},
-    9: {"x1": 340, "x2": 362},
-    10: {"x1": 368, "x2": 399},
-    11: {"x1": 269, "x2": 320},
-    12: {"x1": 195, "x2": 623},
-    13: {"x1": 359, "x2": 640},
-    14: {"x1": 155, "x2": 665},
-    15: {"x1": 347, "x2": 684},
-    16: {"x1": 135, "x2": 686},
-    17: {"x1": 228, "x2": 338},
-    18: {"x1": 220, "x2": 337},
-    19: {"x1": 216, "x2": 337},
-    20: {"x1": 210, "x2": 338},
-    21: {"x1": 209, "x2": 338},
-    22: {"x1": 343, "x2": 732},
-    23: {"x1": 74, "x2": 739},
-    24: {"x1": 72, "x2": 741},
-    25: {"x1": 56, "x2": 752},
-    26: {"x1": 44, "x2": 174},
-    27: {"x1": 38, "x2": 764},
-    28: {"x1": 34, "x2": 767},
-    29: {"x1": 34, "x2": 169}
+    4: {"x1": 370, "x2": 445},
+    5: {"x1": 352, "x2": 364},
+    6: {"x1": 411, "x2": 455},
+    7: {"x1": 409, "x2": 460},
+    8: {"x1": 340, "x2": 362},
+    9: {"x1": 368, "x2": 399},
+    10: {"x1": 269, "x2": 320},
+    11: {"x1": 195, "x2": 623},
+    12: {"x1": 359, "x2": 640},
+    13: {"x1": 155, "x2": 665},
+    14: {"x1": 347, "x2": 684},
+    15: {"x1": 135, "x2": 686},
+    16: {"x1": 228, "x2": 338},
+    17: {"x1": 220, "x2": 337},
+    18: {"x1": 216, "x2": 337},
+    19: {"x1": 210, "x2": 338},
+    20: {"x1": 209, "x2": 338},
+    21: {"x1": 343, "x2": 732},
+    22: {"x1": 74, "x2": 739},
+    23: {"x1": 72, "x2": 741},
+    24: {"x1": 56, "x2": 752},
+    25: {"x1": 44, "x2": 174},
+    26: {"x1": 38, "x2": 764},
+    27: {"x1": 34, "x2": 767},
+    28: {"x1": 34, "x2": 169}
 };
 
 // D3 CHART VARIABLES
@@ -79,6 +79,40 @@ const svgTimeline = d3.select("#frame-origins")
         .attr("viewBox", [0, 0, width, height]);
 
 // FUNCTIONS
+// update event
+function updateEvent(eventIndex) {
+    const eventTooltip = $("#tt-event");
+    const event = eventsData.filter(item => item.event_index == eventIndex)[0];
+
+    if (event.start_month != null) {
+        eventTooltip.find(".event-month").html(" " + event.start_month);
+    }
+    else {
+        eventTooltip.find(".event-month").empty();
+    }
+
+    if (event.end_year != null) {
+        eventTooltip.find(".event-end-year").html("&ndash;" + event.end_year);
+    }
+    else {
+        eventTooltip.find(".event-end-year").empty();
+    }
+
+    if (event.image != null) {
+        eventTooltip.find(".event-title").css({"color": "#000", "background": "none", "padding": "0px", "border-radius": "0px"});
+        eventTooltip.find(".event-img").css({"background": countryAttr[event.country].background, "display": "block"});
+        eventTooltip.find(".event-img>img").attr("src", "./img/origins/" + event.image);
+    }
+    else {
+        eventTooltip.find(".event-title").css({"color": "#fff", "background": countryAttr[event.country].background, "padding": "0.5rem", "border-radius": "0.5rem"});
+        eventTooltip.find(".event-img").css("display", "none");
+    }
+
+    eventTooltip.find(".event-year").html(event.start_year);
+    eventTooltip.find(".event-type").html(event.event_type);
+    eventTooltip.find(".event-title").html(event.event);
+    eventTooltip.find(".event-descr").html(event.description);
+};
 // plot timeline streamgraph
 function plotStreamgraph(data, svg, {
     x = ([, x]) => x, // given d in data, returns the (quantitative) x-value
@@ -159,7 +193,7 @@ function plotStreamgraph(data, svg, {
                 .duration(50)
                 .attr("opacity", l => {
                     return (l.country == Z[i]) ? 0.8
-                    :(l.country == "nt") ? 0.5
+                    :(l.country == "nt" || l.country == "hnd-slv") ? 0.5
                     : 0.3;
                 });
         })
@@ -172,7 +206,7 @@ function plotStreamgraph(data, svg, {
                 .transition()
                 .duration(50)
                 .attr("opacity", l => {
-                    return (l.country == "nt") ? 0.5
+                    return (l.country == "nt" || l.country == "hnd-slv") ? 0.5
                     : 0.8
                 })
         });
@@ -236,13 +270,25 @@ function plotEvents(data) {
             .attr("stroke", d => countryAttr[d.country].colorShade)
             .attr("stroke-width", 10)
             .attr("opacity", d => {
-                return (d.country == "nt") ? 0.5
+                return (d.country == "nt" || d.country == "hnd-slv") ? 0.5
                 : 0.8
             })
         .on("mouseover", function(event, d) {
             country = d.country;
+            updateEvent(d.event_index);
 
-            if (country != "nt") {
+            if (country == "hnd-slv") {
+                d3.selectAll(".stream")
+                    .transition()
+                    .duration(50)
+                    .attr("fill-opacity", 0.8)
+
+                d3.select(".stream.gtm")
+                    .transition()
+                    .duration(50)
+                    .attr("fill-opacity", 0.4)
+            }
+            else if (country != "nt") {
                 d3.selectAll(".stream")
                     .transition()
                     .duration(50)
@@ -257,18 +303,18 @@ function plotEvents(data) {
                 .transition()
                 .duration(50)
                 .attr("opacity", l => {
-                    return (l.country == "nt") ? 0.2
+                    return (l.country == "nt" || l.country == "hnd-slv") ? 0.2
                     : 0.3;
                 });
             d3.select(this)
                 .transition()
                 .duration(50)
                 .attr("opacity", d => {
-                    return (country == "nt") ? 0.6
+                    return (country == "nt" || country == "hnd-slv") ? 0.6
                     : 1
                 })
                 .attr("stroke", d => {
-                    return (country == "nt") ? countryAttr[d.country].colorShade
+                    return (country == "nt" || country == "hnd-slv") ? countryAttr[d.country].colorShade
                     : countryAttr[d.country].colorShadeDarker
                 });
         })
@@ -283,7 +329,7 @@ function plotEvents(data) {
                 .duration(50)
                 .attr("stroke", d => countryAttr[d.country].colorShade)
                 .attr("opacity", l => {
-                    return (l.country == "nt") ? 0.5
+                    return (l.country == "nt" || l.country == "hnd-slv") ? 0.5
                 : 0.8
                 })
         });
