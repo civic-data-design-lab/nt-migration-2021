@@ -45,15 +45,19 @@ motivationsConfig.chapters.forEach((record, idx) => {
 
     if (record.image) {
         var image = new Image();
+        var imageContainer = document.createElement('div');
 
-        if (record.paddedImage == true)
-        {
+        if (record.paddedImage == true) {
             image.className = "padded-image"
 
         }
-        
+
+
+        imageContainer.className = "ribbon-image"
+
         image.src = record.image;
-        mapChapter.appendChild(image);
+        mapChapter.appendChild(imageContainer);
+        imageContainer.appendChild(image)
 
         if (record.filter) {
             var imageFilter = document.createElement("div");
@@ -64,20 +68,41 @@ motivationsConfig.chapters.forEach((record, idx) => {
 
     }
 
-    if (record.title) {
-        var title = document.createElement('h2');
-        title.className = 'scrollytelling'
-        title.innerText = record.title;
-        mapChapter.appendChild(title);
+
+    // INJECT AND STYLE TEXT FOR HERO, NON IMAGE TEXT
+    if (record.title || record.title2 || record.description) {
+
+        let storyText = document.createElement('div');
+
+
+        if(!record.image){
+            storyText.className = 'scrollytelling-text'
+            mapChapter.appendChild(storyText)
+        }
+        if(record.image){
+            storyText.className = 'scrollytelling-caption'
+            mapChapter.appendChild(storyText)
+        }
+        
+        if (record.title) {
+            var title = document.createElement('h2');
+            title.className = 'scrollytelling'
+            title.innerText = record.title;
+            storyText.appendChild(title);
+        }
+
+        if (record.description) {
+            var story = document.createElement('h3');
+            story.className = "scrollytelling description"
+            story.innerHTML = record.description;
+            storyText.appendChild(story);
+        }
+
+
+
     }
 
 
-    if (record.description) {
-        var story = document.createElement('h3');
-        story.className = "scrollytelling description"
-        story.innerHTML = record.description;
-        mapChapter.appendChild(story);
-    }
 
     container.setAttribute('id', record.id);
     container.classList.add('step');

@@ -70,14 +70,14 @@ outcomesConfig.chapters.forEach((record, idx) => {
         var image = new Image();
         var imageContainer = document.createElement('div');
 
-        if (record.paddedImage == true)
-        {
+        if (record.paddedImage == true) {
             image.className = "padded-image"
 
         }
 
+
         imageContainer.className = "ribbon-image"
-        
+
         image.src = record.image;
         mapChapter.appendChild(imageContainer);
         imageContainer.appendChild(image)
@@ -91,20 +91,45 @@ outcomesConfig.chapters.forEach((record, idx) => {
 
     }
 
-    if (record.title) {
-        var title = document.createElement('h2');
-        title.className = 'scrollytelling'
-        title.innerText = record.title;
-        mapChapter.appendChild(title);
-    }
+    // INJECT AND STYLE TEXT FOR HERO, NON IMAGE TEXT
+    if (record.title || record.title2 || record.description) {
+
+        let storyText = document.createElement('div');
 
 
-    if (record.description) {
-        var story = document.createElement('h3');
-        story.className = "scrollytelling description"
-        story.innerHTML = record.description;
-        mapChapter.appendChild(story);
+        if(!record.image){
+            storyText.className = 'scrollytelling-text'
+            mapChapter.appendChild(storyText)
+        }
+        if(record.image){
+            storyText.className = 'scrollytelling-caption'
+            mapChapter.appendChild(storyText)
+        }
+        
+        if (record.title) {
+            var title = document.createElement('h2');
+            title.className = 'scrollytelling'
+            title.innerText = record.title;
+            storyText.appendChild(title);
+        }
+
+        if (record.title2) {
+            var title2 = document.createElement('h2');
+            title2.className = 'scrollytelling'
+            title2.innerText = record.title2;
+            storyText.appendChild(title2);
+        }
+
+        if (record.description) {
+            var story = document.createElement('h3');
+            story.className = "scrollytelling description"
+            story.innerHTML = record.description;
+            storyText.appendChild(story);
+        }
+
     }
+
+    
 
     container.setAttribute('id', record.id);
     container.classList.add('step');
