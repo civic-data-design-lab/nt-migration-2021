@@ -2,9 +2,9 @@
     width: 80%;
     left: 10%;
 }
-/* #frame-origins {
-    top: -50vh;
-} */
+#frame-origins {
+    margin-bottom: 45vh;
+}
 
 /* TOOLTIP */
 /* timeline tooltip */
@@ -12,10 +12,11 @@
     top: calc(50vh - 4px);
     max-height: 0px;
     z-index: 1;
+    pointer-events: none;
 }
 /* events tooltip */
-#tt-event .event-img {
-    background: rgba(235, 72, 39, 0.7);
+.event-img {
+    background: rgba(201, 31, 99, 0.7);
 }
 #tt-event .event-img img {
     filter: grayscale(1);
@@ -41,10 +42,11 @@
     position: absolute;
     display: block;
     height: 2px;
-    width: 3rem;
+    width: calc(45vw - 120px);
     top: calc(2rem - 1px);
-    left: 8rem;
+    left: calc(100% + 1rem);
     background-color: #000;
+    pointer-events: none;
 }
 #tt-migrants {
     /* top: calc(50vh + 2rem); */
