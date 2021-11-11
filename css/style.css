@@ -416,13 +416,17 @@ section#open:hover .chapter-title {
 .gradient {
     width: var(--open);
     height: 100vh;
-    backdrop-filter: var(--blur-off);
+    backdrop-filter: var(--blur-off); 
     pointer-events: none;
     transition: var(--transition-speed);
 }
 
 .chapter:hover .gradient {
     backdrop-filter: var(--blur-off);
+}
+
+#open .gradient.about-g {
+    backdrop-filter: none;
 }
 
 #open .about-g,

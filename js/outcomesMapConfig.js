@@ -29,7 +29,7 @@ var outcomesConfig = {
             id: 'map-state-0',
             alignment: 'full',
             hidden: false,
-            title: '1 in 4 Households Have Migrants',
+            title: '1 In 4 Households Have Migrants',
             image: './img/outcomes/family.jpeg',
             filter: '',
             paddedImage: false,
@@ -57,7 +57,7 @@ var outcomesConfig = {
             id: 'map-state-1',
             alignment: 'full',
             hidden: false,
-            title: 'The majority of migrants (89%) seek to migrate to the United States',
+            title: 'The Majority Of Migrants (89%) Seek To Migrate To The United States',
             image: '', //./img/tmp/outcomestoUS.png
             filter: '',
             paddedImage: '',
@@ -84,7 +84,7 @@ var outcomesConfig = {
             id: 'map-state-2',
             alignment: 'full',
             hidden: false,
-            title: '96% of Guatemalans Migrate to the United States',
+            title: '96% Of Guatemalans Migrate To The United States',
             image: '', 
             filter: '',
             paddedImage: false,
@@ -117,7 +117,7 @@ var outcomesConfig = {
             id: 'map-state-3',
             alignment: 'full',
             hidden: false,
-            title: '82% of Hondurans migrate to the United States',
+            title: '82% Of Hondurans Migrate To The United States',
             title2: '',
             image: '',
             filter: '',
@@ -146,7 +146,7 @@ var outcomesConfig = {
             id: 'map-state-4',
             alignment: 'full',
             hidden: false,
-            title: '94% of El-Salvadorians migrate to the United States',
+            title: '94% Of El-Salvadorians Migrate To The United States',
             image: '', //./img/outcomes/climbing.jpg
             filter: '',
             paddedImage: '',
@@ -175,7 +175,7 @@ var outcomesConfig = {
             id: 'map-state-5',
             alignment: 'full',
             hidden: false,
-            title: 'Just over half of migrants (57%) make it to their final destination', //Increased diaspora comes with additional risk
+            title: 'Just Over Half Of Migrants (57%) Make It To Their Final Destination', //Increased diaspora comes with additional risk
             image: './img/outcomes/farm.jpg',
             filter: '',
             paddedImage: false,
@@ -203,7 +203,7 @@ var outcomesConfig = {
             id: 'map-state-6',
             alignment: 'full',
             hidden: false,
-            title: 'Insert Chart here Insert Chart here Insert Chart here Insert Chart here Insert Chart here Insert Chart here', //Increased diaspora comes with additional risk
+            title: 'Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here', //Increased diaspora comes with additional risk
             image: '',
             filter: '',
             paddedImage: false,
@@ -231,7 +231,7 @@ var outcomesConfig = {
             id: 'map-state-7',
             alignment: 'full',
             hidden: false,
-            title: '33% of migrants are returned home', //Increased diaspora comes with additional risk
+            title: '33% Of Migrants Are Returned Home', //Increased diaspora comes with additional risk
             image: './img/outcomes/official.jpg', //
             filter: '',
             paddedImage: false,
@@ -259,7 +259,7 @@ var outcomesConfig = {
             id: 'map-state-8',
             alignment: 'full',
             hidden: false,
-            title: 'Migrants send remittances to provide for basic needs', //Increased diaspora comes with additional risk
+            title: 'Migrants Send Remittances To Provide For Basic Needs', //Increased diaspora comes with additional risk
             image: './img/outcomes/Honduran-migrants.jpg', //
             filter: '',
             paddedImage: false,
@@ -315,7 +315,7 @@ var outcomesConfig = {
             id: 'map-state-10',
             alignment: 'full',
             hidden: false,
-            title: 'This diaspora should invest in public works, and governments should match those funds',
+            title: 'This Diaspora Should Invest In Public Works, And Governments Should Match Those Funds',
             image: '',
             filter: '',
             paddedImage: false,
