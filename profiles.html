@@ -20,6 +20,9 @@
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="./css/pyramid.css" />
         <link rel="stylesheet" href="./css/sankey.css" />
+            <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
 
 
 		<script src="https://d3js.org/d3.v7.min.js"></script>
@@ -63,7 +66,7 @@
         <section class='chapter' id="closed">
             <div class="bk origins-img" onclick='redirect_Page(this,"origins.html")'>
                 <div class="gradient origins-g">
-                    <h2 class="chapter-title">ORIGINS</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>ORIGINS</h2>
                     <h1 class="chapter-summary">VIOLENCE, CLIMATE,<br>ECONOMICS,<br>AND
                         POLICY<br>HISTORICALLY DRIVE EMIGRATION</h1>
                 </div>
@@ -73,7 +76,7 @@
         <section class='chapter' id="closed">
             <div class="bk motivations-img" onclick='redirect_Page(this,"motivations.html")'>
                 <div class="gradient motivations-g">
-                    <h2 class="chapter-title">MOTIVATIONS</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>MOTIVATIONS</h2>
                     <h1 class="chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
                 </div>
             </div>
@@ -82,18 +85,26 @@
         <section class='chapter' id="open">
             <div class="bk profiles-img" onclick='redirect_Page(this,"profiles.html")'>
                 <div class="gradient profiles-g">
-                    <h2 class="chapter-title">PROFILES</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>PROFILES</h2>
                     <h1 class="chapter-summary">HALF OF MIGRANTS<br>WORK IN THE<br>SAME OCCUPATION<br>AFTER RELOCATION
                     </h1>
                 </div>
             </div>
             
-       <div class="content-block">
-    <h2> </h2>
-                <div class="container vh-500 row align-items-center p-5">
-                    <div class="row">
-                    
+
+            
+        <div class="content-block position-sticky bk profiles2-img" >        
+               <div class="gradient profiles-g">     
+                    <div class="container align-items-center">
+                     <div id="chart" class="vh-100"></div>
+</div> 
+               
+                                     </div>
+            </div>
+            
+<!-- 
      <div id="buttons-motivations" class="row mb-3">
+
   
                             <div class="col-2 px-0">
                                     <button type="button" id="all" class="button  btn btn-sm text-uppercase text-blue"
@@ -111,20 +122,69 @@
                                 </span>
                             </div>
                             
-                      <div id="chart" class="position-relative"></div>
-                                  <script type="text/javascript" src="./js/pyramidscript.js"></script>
-                                  </div>
-                                  </div>
-                                    <div class="container vh-1000 row align-items-center p-5">
-                    <div class="row">
+                            
+ -->
+    
 
-                      <div id="chartsank" class="position-relative"></div>
-                               </div>
-                                
+					 
+<div class=" step righty active ">  
+<div class="profile-map-theme scrolly-container">
+
+						<div class="scrollytelling-text"> 
+						<div class="forceLink1" id="#mapdiv2"><span></span></div>
+						<div class="forceLinka" ><span></span></div>    
+            		  <h2 class="scrollytelling" style="padding-right: 10px; padding-left: 10px">69% of Migrants are Male</h2> 
+            		 <h3 class="scrollytelling description" style="padding-right: 10px; padding-left: 10px"> What's driving this intention is largely economics, as 87% of households report being satisfied where they live, but desire to migrate for better economic conditions.</h3>
+            		  </div>            		                  
+  </div>   
+   <div class="col-4 vh-100"></div>
+   
+   
+  
+<!--   <div class=" step righty active ">   -->
+<div class=" profile-map-theme scrolly-container">
+						<div class="scrollytelling-text"> 
+						<div class="forceLink2"><span></span></div>
+						<div class="forceLinkb"><span></span></div>    
+            		  <h2 class="scrollytelling" style="padding-right: 10px; padding-left: 10px">Migration Leads to Family Separation</h2> 
+            		 <h3 class="scrollytelling description" style="padding-right: 10px; padding-left: 10px">13% of migrants are between 0 and 17 years of age. Many migrants leave their children with family and relatives because they don't want them to make the dangerous trip.</h3>
+            		  </div>            		                  
+  </div>       
+  
+    <div class="col-4 vh-100"></div>
+    
+    <div class=" profile-map-theme scrolly-container">
+						<div class="scrollytelling-text"> 
+<!-- 						<div class="forceLink2"><span></span></div>   --> 
+            		  <h2 class="scrollytelling" style="padding-right: 10px; padding-left: 10px">55% are in their Prime Working Age</h2> 
+            		 <h3 class="scrollytelling description" style="padding-right: 10px; padding-left: 10px">Migrants ranging from age 18 to 34 represented 55% of the respondents. This is a significant loss of productive workforce in home countries. </h3>
+            		 <div class="forceLink3"><span></span></div>
+						<div class="forceLinkc"><span></span></div>  
+            		  </div>            		                  
+  </div>     
+  
+                      
+                                  <script type="text/javascript" src="./js/pyramidscript.js"></script>
+<!-- 
                                   </div>
-                                  
-                                      
-                                  <script src="./js/sankeychart.js"></script>
+                                  </div>
+                                    <div class="container vh-1000 row align-items-center p-5 forceLink1">
+                    <div class="row">
+ -->
+
+                  <!--     <div id="chartsank" class="position-sticky"></div> -->
+                  
+          <!--                       <div class="forceLink1"><span></span></div> -->
+                 </div>  
+                    <div class="col-6 vh-100"></div>
+                   <div class="content-block position-sticky" >             
+              <div class="container align-items-center">
+                     <div id="chartsank" class="vh-100"></div>
+                        <div class="row">
+
+                    
+         <script type="text/javascript" src="./js/sankeychart.js"></script>
+
 
  
                <!-- tooltip template -->
@@ -152,15 +212,23 @@
             </div>
         </div>
     </div>
-          
-             </div>
+
+ 
+ <script>
+      new ScrollMagic.Scene({triggerElement: "#mapdiv2",
+       triggerHook:'onLeave'})
+      
+        .setClassToggle("#mapdiv1", "deactive")
+        .addTo(controller);
+        
+    </script>
             
         </section>
 
         <section class='chapter' id="closed">
             <div class="bk outcomes-img" onclick='redirect_Page(this,"outcomes.html")'>
                 <div class="gradient outcomes-g">
-                    <h2 class="chapter-title">OUTCOMES</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>OUTCOMES</h2>
                     <h1 class="chapter-summary">ONLY 57%<br>OF MIGRANTS<br>REACH THEIR<br>INTENDED<br>DESTINATION</h1>
                 </div>
             </div>
@@ -169,7 +237,7 @@
         <section class='chapter' id="closed">
             <div class="bk cost-img" onclick='redirect_Page(this,"cost.html")'>
                 <div class="gradient cost-g">
-                    <h2 class="chapter-title">COST</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>COST</h2>
                     <h1 class="chapter-summary">MIGRATION<br>COSTS ADD TO<br>FINANCIAL<br>BURDEN</h1>
                 </div>
             </div>
