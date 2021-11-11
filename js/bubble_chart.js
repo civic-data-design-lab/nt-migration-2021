@@ -5,8 +5,8 @@ const countryText = {
 };
 const pathwayAttr = {
     "regular": {"label": "Regular Pathway", "color": "#e23cad"},
-    "irrregular coyote": {"label": "Irregular Pathway with a Smuggler", "color": "#3ba7c9"},
-    "irregular on own, with caravan": {"label": "Irregular Pathway on their Own or with a Caravan", "color": "#1540c4"}
+    "irrregular coyote": {"label": "Irregular Pathway with a Smuggler", "color": "#662d91"},
+    "irregular on own, with caravan": {"label": "Irregular Pathway on their Own or with a Caravan", "color": "#faa41a"}
 };
 
 const financeText = {
@@ -18,6 +18,7 @@ function bubbleChart() {
 //   var height = 700;
 const width = 1346;
 const height = 800;
+const sqLen = 1;
 const sideWidth = 0;
   var padding = 2;
   var tooltip = floatingTooltip('gates_tooltip');
@@ -30,7 +31,7 @@ const sideWidth = 0;
   };
   
     var beeCenters = {
-    "all loans": { x: width / 6.3, y: 0 },
+    "all loans": { x: width / 5, y: 0 },
     "some loans": { x: width / 1.9, y:0 },
     "no loans": { x: 2.5 * (1 * width / 3), y:0 }
   };
@@ -42,9 +43,9 @@ var meansCenters = {
   };
   
   var yearsTitleX = {
-    "GUATEMALA": 250,
-    "HONDURAS": width - 650,
-    "EL SALVADOR": width - 250
+    "GUATEMALA": 250,  //  $1.2 Billion Migrants Spend to Migrate
+    "HONDURAS": width - 650,  // $450 Million Billion Migrants Spend to Migrate
+    "EL SALVADOR": width - 250   // {$520 Million Migrants Spend to Migrate}
   };
   
     var meansTitleX = {
@@ -59,6 +60,9 @@ var meansCenters = {
     "NO LOANS": width - 250
   };
   
+
+        
+        
   var forceStrength = 0.023;
 //   var svg = null;
 //   var bubbles = null;
@@ -70,7 +74,13 @@ var meansCenters = {
   
   var posScale = d3.scaleLinear().domain([20,22000]);
     posScale.range([0, height]);
-
+    
+  var posScaleMonths = d3.scaleLinear().domain([20,22000]);
+    posScale.range([0, height]);
+ 
+var posScaleRev = d3.scaleLinear().domain([22000,0]); 
+    posScaleRev.range([0, height]); 
+    
   var simulation = d3.forceSimulation()
     .velocityDecay(0.17)
     .force('collide', d3.forceCollide().radius(function(d) {
@@ -94,9 +104,9 @@ var meansCenters = {
 //     .on('tick', ticked);
 //   simulationB.stop();
 
-  var fillColor = d3.scaleOrdinal()
-    .domain(['low', 'medium', 'high'])
-    .range(['#3ba7c9', '#1540c4', '#e23cad']);
+//   var fillColor = d3.scaleOrdinal()
+//     .domain(['low', 'medium', 'high'])
+//     .range(['#3ba7c9', '#1540c4', '#e23cad']);
 
   function createNodes(rawData) {
 
@@ -138,7 +148,7 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
         
     svg = d3.select("#frame-motivations")
       .append('svg')
-      .attr("viewBox", [-(sideWidth), 0, width + (sideWidth), height])
+      .attr("viewBox", [-(sideWidth + sqLen), 0, width + (sideWidth + sqLen), height]);
 
 //   svg = d3.select(selector)
 //       .append('svg')
@@ -171,9 +181,29 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
     simulation.nodes(nodes);
 
     groupBubbles();
-  };
+  }
+  
+function axis() {
+d3.select("svg").append("svg").attr("class","axis")
+    .call(d3.axisRight(posScaleRev).ticks(5).tickFormat((d, i) => ['50 Months', '40 Months', '25 Months', '15 Months', '0 Months'][i]).tickSize(0))
+    .call(g => g.selectAll(".tick text")
+        .attr("x", 4)
+        .attr("dy", -5));
+    }
 
-  function ticked() {
+function removeaxis(){
+d3.select(".axis")
+	.style("opacity",0);
+	}
+	
+function updateaxis(){
+d3.select(".axis")
+	.style("opacity",1);
+	}
+	
+	
+
+function ticked() {
     bubbles
       .attr('cx', function (d) { return d.x; })
       .attr('cy', function (d) { return d.y; });
@@ -208,6 +238,9 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
       hideMeansTitles();
       hideFinanceTitles();
       showNullValues();
+      removeaxis();
+       removeaxis();
+    remAvRegAnn();
       
 
 
@@ -220,6 +253,9 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
     hideYearTitles();
     hideFinanceTitles();
    showMeansTitles();
+   removeaxis();
+    removeaxis();
+    remAvRegAnn();
 
     simulation.force('x', d3.forceX().strength(forceStrength).x(nodeMeansPos));
 	simulation.force('y', d3.forceY().strength(forceStrength).y(center.y));
@@ -230,6 +266,8 @@ function splitBubblesCountry() {
     hideMeansTitles();
     hideFinanceTitles();
     showYearTitles();
+    removeaxis();
+    remAvRegAnn();
     
   
 
@@ -239,6 +277,335 @@ function splitBubblesCountry() {
     simulation.alpha(1).restart();
   }
 
+const controller = new ScrollMagic.Controller();
+
+const scrollAppearUSDepartment = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink1",
+                                    triggerHook:'onLeave', 
+                                    duration: "500%",       
+                                  })
+                                  .on("enter",(e)=>{
+                                  addAllAnn(),
+                                  upAllAnn();
+                                 
+                                	})
+                                //   .addIndicators({name:"forceLink"})
+                                  .addTo(controller);
+
+const scrollUndoUSDepartment = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinka",
+                                   
+                                  })
+                                  .on("leave",(e)=>{
+                                  groupBubbles(),
+                                  remAllAnn();
+                                	})
+                                  .addTo(controller);
+                                  
+const scrollFromUSToGuatem = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink2",
+        							triggerHook:'onLeave',
+                                  })
+                                  .on("enter",(e)=>{
+                                  splitBubblesCountry(),
+                                  addGuatAnn(),
+                                  upGuatAnn(),
+                                   remAllAnn();
+                                  
+                                	})
+                                  .addTo(controller);
+
+const scrollUndoFromUSToGuatem = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinkb"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                  groupBubbles(),
+                                   remGuatAnn();
+                                  
+                                	})
+                                  .addTo(controller);
+                                  
+const scrollFromGuatToHon = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink3",
+        							triggerHook:'onLeave',
+                                  })
+                                  .on("enter",(e)=>{
+                    
+                                  addHonAnn(),
+                                  upHonAnn();                    
+                                	})
+                                  .addTo(controller);
+
+const scrollUndoFromGuatToHon = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinkc"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                   remHonAnn();
+                                  
+                                	})
+                                  .addTo(controller);
+                                  
+const scrollFromHonToSlv = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink4",
+        							triggerHook:'onLeave',
+                                  })
+                                  .on("enter",(e)=>{
+                              
+                                  addSlvAnn(),
+                                  upSlvAnn();
+                                  
+                                  
+                                	})
+                                  .addTo(controller);
+
+const scrollUndoFromHonToSlv = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinkd"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                   remSlvAnn();
+                                  
+                                	})
+                                  .addTo(controller);
+                                  
+                                  
+const scrollSplitMeans = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink5",
+        							triggerHook:'onLeave',
+                                  })
+                                  .on("enter",(e)=>{
+                                   splitBubbles(),
+                                   remHonAnn(),
+                                   remGuatAnn(),
+                                   remSlvAnn();
+                                	})
+//                                   .addIndicators({name:"forceLinke"})
+                                  .addTo(controller);
+
+const scrollUndoSplitMeans = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinke"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                  addGuatAnn(),
+                                  addSlvAnn(),
+                                  addHonAnn();
+                                  
+                                	})
+                               //    .addIndicators({name:"forceLink"})
+                                  .addTo(controller);  
+                                  
+const scrollHighlightIrrCoy = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink6",
+       								 triggerHook:'onLeave',
+                                  })
+                                  .on("enter",(e)=>{
+                             	  highlightIrreCoy();
+                                	})
+//                                   .addIndicators({name:"forceLinke"})
+                                  .addTo(controller);
+
+const scrollUndoHighlightIrrCoy = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinkf"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                  
+                                    fillColorN();
+                                	})
+                               //    .addIndicators({name:"forceLink"})
+                                  .addTo(controller); 
+                                  
+const scrollHighlightIrrOwn = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink7",
+       								 triggerHook:'onLeave',
+                                  })
+                                  .on("enter",(e)=>{
+                             	  highlightIrreOwn();
+                                	})
+//                                   .addIndicators({name:"forceLinke"})
+                                  .addTo(controller);
+
+const scrollUndoHighlightIrrOwn = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinkg"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                  
+                                   highlightIrreCoy();
+                                	})
+                               //    .addIndicators({name:"forceLink"})
+                                  .addTo(controller); 
+                                  
+const scrollHighlightReg = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink8",
+       								 triggerHook:'onLeave',
+                                  })
+                                  .on("enter",(e)=>{
+                             	  highlightRegular();
+                                	})
+//                                   .addIndicators({name:"forceLinke"})
+                                  .addTo(controller);
+
+const scrollUndoHighlighReg = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinkh"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                  
+                                   highlightReg();
+                                	})
+                               //    .addIndicators({name:"forceLink"})
+                                  .addTo(controller); 
+                                  
+const scrollBeeswarm = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink9",
+       								 triggerHook:'onLeave',
+                                  })
+                                  .on("enter",(e)=>{
+                                  fillColorN(),
+                                  axis(),
+                                  updateaxis();
+                             	 splitBubblesBee(),
+                             	 addAvICAnn(),
+                             	 upAvICAnn();
+                                	})
+//                                   .addIndicators({name:"forceLinke"})
+                                  .addTo(controller);
+
+const scrollUndoBeeswarm = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinki"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                  splitBubbles(),
+                                 removeaxis(),
+                                   highlightRegular(),
+                                   remAvICAnn();
+                                	})
+                               //    .addIndicators({name:"forceLink"})
+                                  .addTo(controller); 
+
+
+                                  
+const scrollLabelIrrOwn = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink10",
+       								 triggerHook:'onLeave',
+                                  })
+                                  .on("enter",(e)=>{
+                                  addAvIOAnn(),
+                                   remAvICAnn(),
+                                	upAvIOAnn();
+                                	})
+//                                   .addIndicators({name:"forceLinke"})
+                                  .addTo(controller);
+
+const scrollUndoLabelIrrOwn = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinkj"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                   remAvIOAnn();
+                                	})
+                               //    .addIndicators({name:"forceLink"})
+                                  .addTo(controller); 
+
+const scrollLabelReg = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink11",
+       								 triggerHook:'onLeave',
+                                  })
+                                  .on("enter",(e)=>{
+                                 addAvRegAnn(),
+                                	upAvRegAnn(),
+                                	remAvIOAnn();
+                                	})
+//                                   .addIndicators({name:"forceLinke"})
+                                  .addTo(controller);
+
+const scrollUndoLabelReg = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinkk"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                  splitBubblesBee(),
+                                  remAvRegAnn();
+                                	})
+                               //    .addIndicators({name:"forceLink"})
+                                  .addTo(controller); 
+
+
+
+
+
+
+// 
+// const scrollHighlightIrrOwn = new ScrollMagic.Scene({
+//                                     triggerElement:".forceLink4"
+//         
+//                                   })
+//                                   .on("enter",(e)=>{
+//                              	  highlightIrreOwn();
+//                                 	})
+//                                   .addIndicators({name:"forceLink"})
+//                                   .addTo(controller);
+// 
+// const scrollUndoHighlightIrrOwn = new ScrollMagic.Scene({
+//                                     triggerElement:".forceLinkd"
+//         
+//                                   })
+//                                   .on("leave",(e)=>{
+//                                    highlightIrreCoy();
+//                                   // fillColorN();
+//                                 	})
+//                                //    .addIndicators({name:"forceLink"})
+//                                   .addTo(controller);      
+//                                   
+// const scrollHighlightReg = new ScrollMagic.Scene({
+//                                     triggerElement:".forceLink5"
+//         
+//                                   })
+//                                   .on("enter",(e)=>{
+//                              	  highlightRegular();
+//                                 	})
+//                                   .addIndicators({name:"forceLink"})
+//                                   .addTo(controller);
+// 
+// const scrollUndoHighlightReg = new ScrollMagic.Scene({
+//                                     triggerElement:".forceLinke"
+//         
+//                                   })
+//                                   .on("leave",(e)=>{
+//                                    highlightIrreOwn();
+//                                   fillColorN();
+//                                 	})
+//                                //    .addIndicators({name:"forceLink"})
+//                                   .addTo(controller);                                   
+// 
+// const scrollSplitBee = new ScrollMagic.Scene({
+//                                     triggerElement:".forceLink6"
+//         
+//                                   })
+//                                   .on("enter",(e)=>{
+//                              	 splitBubblesBee();
+//                                 	})
+//                                   .addIndicators({name:"forceLink"})
+//                                   .addTo(controller);
+// 
+// const scrollUndoSplitBee = new ScrollMagic.Scene({
+//                                     triggerElement:".forceLinkf"
+//         
+//                                   })
+//                                   .on("leave",(e)=>{
+//                                    highlightRegular();
+//                                  splitBubbles();
+//                                 	})
+//                                //    .addIndicators({name:"forceLink"})
+//                                   .addTo(controller);                                   
+//                                   
+
+
     
   function splitBubblesBee() {
   	hideFinanceTitles();
@@ -246,6 +613,10 @@ function splitBubblesCountry() {
       hideMeansTitles();
       showFinanceTitles();
     hideNullValues();
+ //    remAvRegAnn();
+    updateaxis();
+   
+        
 
 	simulation.force('x', d3.forceX().strength(forceStrength).x(nodeBeePosb));
     simulation.force('y', d3.forceY().strength(.06).y(function(d){return height - posScale(d.value);}));
@@ -320,11 +691,11 @@ function showNullValues() {
       .attr('text-anchor', 'middle')
       .text(function (d) { return d; });
   }
-
+  
+  
   function showDetail(d) {
     // change outline to indicate hover state.
     d3.select(this).attr('stroke', 'black');
-
 
     $("#gates_tooltip").empty();
     const tooltipTemplate = $(".tooltip.template");
@@ -335,7 +706,7 @@ function showNullValues() {
     tooltipContent.find(".text-color").css("color", pathwayColor);
     tooltipContent.find(".label-cost").html("$" + addCommas(d.value));
     tooltipContent.find(".label-country").html(countryText[d.year]);
-    tooltipContent.find(".label-pathway").html(pathwayAttr[d.name].label);
+    tooltipContent.find(".label-pathway").html(pathwayAttr[d.name]).label;
 
     tooltipContent.children().appendTo("#gates_tooltip");
 
@@ -357,11 +728,11 @@ function showNullValues() {
    else if (displayName === 'country') 
       splitBubblesCountry();
       
-	else if (displayName === 'uncolor') 
-      changeColor();
+// 	else if (displayName === 'uncolor') 
+//       changeColor();
       
-    else if (displayName === 'colorb') 
-      meansColor();
+//     else if (displayName === 'colorb') 
+//       meansColor();
       
      else if (displayName === 'bee') 
       splitBubblesBee();  
@@ -373,6 +744,10 @@ function showNullValues() {
 
   return chart;
 }
+
+
+
+        
 
 
 var myBubbleChart = bubbleChart();
@@ -408,25 +783,37 @@ function setupButtons() {
     });
 }
 
-function changeColor(){
-  d3.selectAll("circle")
-    .transition()
-    .duration(2000)
-    .style('fill', function (d) { if (d.value <= 1) return "#fff" ;})
-    .style('stroke', function (d) { if (d.value <= 1) return "#662d91" ;})
-	.style('stroke-width', function (d) { if (d.value <= 1) return .9;})
-	.attr('fill', function (d) { if (d.value > 1) return "#662d91";});
+// function changeColor(){
+//   d3.selectAll("circle")
+//     .transition()
+//     .duration(2000)
+//     .style('fill', function (d) { if (d.value <= 1) return "#fff" ;})
+//     .style('stroke', function (d) { if (d.value <= 1) return "#662d91" ;})
+// 	.style('stroke-width', function (d) { if (d.value <= 1) return .9;})
+// 	.attr('fill', function (d) { if (d.value > 1) return "#662d91";});
 	      // .attr('stroke-width', .1)
 // 	.style("fill", function (d) { if (d.value > 1) return "#662d91" ;})
 //     .style("fill", function (d) { if (d.value <= 1) return "#fff" ;});
 //     .style("stroke-width",0);
-}
+// }
 
   var fillColor = d3.scaleOrdinal()
     .domain(['low', 'medium', 'high'])
-    .range(['#3ba7c9', '#1540c4', '#e23cad']);
+    .range(['#662d91', '#faa41a', '#e23cad']);
     
-function meansColor(){
+var highlightregular = d3.scaleOrdinal()
+    .domain(['low', 'medium', 'high'])
+    .range(['#c6acdd', '#f7d8aa', '#e23cad']); 
+    
+ var highlightirrcoy = d3.scaleOrdinal()
+    .domain(['low', 'medium', 'high'])
+    .range(['#662d91', '#f7d8aa', '#f29cd9']);    
+    
+    var highlightirrown = d3.scaleOrdinal()
+    .domain(['low', 'medium', 'high'])
+    .range(['#c6acdd', '#faa41a', '#f29cd9']);  
+    
+ function fillColorN(){
 d3.selectAll("circle")
     .transition()
     .duration(2000)
@@ -435,10 +822,49 @@ d3.selectAll("circle")
       .style('fill', function (d) { if (d.value <= 1) return "#fff";})
       .style('stroke', function (d) { if (d.value <= 1) return fillColor(d.name);})
       .style('stroke-width', function (d) { if (d.value <= 1) return .9;});
-      // .attr('stroke', function (d) { return d3.rgb(fillColor(d.name)).darker(); })
-//       .style('stroke-width', .1);
+//       .attr('stroke', function (d) { return d3.rgb(highlightirrcoy(d.name)).darker(); })
+      // .style('stroke-width', .1);
+}
+    
+    
+function highlightRegular(){
+d3.selectAll("circle")
+    .transition()
+    .duration(2000)
+
+      .attr('fill', function (d) { if (d.value > 1) return highlightregular(d.name);})
+      .style('fill', function (d) { if (d.value <= 1) return "#fff";})
+      .style('stroke', function (d) { if (d.value <= 1) return highlightregular(d.name);})
+      .style('stroke-width', function (d) { if (d.value <= 1) return .9;});
+//       .attr('stroke', function (d) { return d3.rgb(highlightirrcoy(d.name)).darker(); })
+      // .style('stroke-width', .1);
 }
 
+function highlightIrreCoy(){
+d3.selectAll("circle")
+    .transition()
+    .duration(2000)
+
+      .attr('fill', function (d) { if (d.value > 1) return highlightirrcoy(d.name);})
+      .style('fill', function (d) { if (d.value <= 1) return "#fff";})
+      .style('stroke', function (d) { if (d.value <= 1) return highlightirrcoy(d.name);})
+      .style('stroke-width', function (d) { if (d.value <= 1) return .9;});
+//       .attr('stroke', function (d) { return d3.rgb(highlightirrcoy(d.name)).darker(); })
+      // .style('stroke-width', .1);
+}
+
+function highlightIrreOwn(){
+d3.selectAll("circle")
+    .transition()
+    .duration(2000)
+
+      .attr('fill', function (d) { if (d.value > 1) return highlightirrown(d.name);})
+      .style('fill', function (d) { if (d.value <= 1) return "#fff";})
+      .style('stroke', function (d) { if (d.value <= 1) return highlightirrown(d.name);})
+      .style('stroke-width', function (d) { if (d.value <= 1) return .9;});
+//       .attr('stroke', function (d) { return d3.rgb(highlightirrcoy(d.name)).darker(); })
+      // .style('stroke-width', .1);
+}
 
 /*
  * Helper function to convert a number into a string
@@ -457,8 +883,297 @@ function addCommas(nStr) {
   return x1 + x2;
 }
 
+const type = d3.annotationCustomType(d3.annotationCalloutCircle, {
+  connector: { end: "arrow" }, note: {wrap: 370},
+});
+
+const annotations = [
+  {
+    note: { label: "Government Expenditure on Primary Education",
+    bgPadding: {"top":-10,"left":10,"right":10,"bottom":10},
+    title: "$1.3 Billion" },
+    x: 260,
+    y: 400,
+    dy: 300,
+    dx: -100,
+    subject: { radius: 255, radiusPadding: 10 },
+  },
+];
+const makeAnnotations = d3.annotation()
+  
+  //also can set and override in the note.padding property
+  //of the annotation object
+  .notePadding(10)
+  .type(type)
+  //accessors & accessorsInverse not needed
+  //if using x, y in annotations JSON
+
+  .annotations(annotations)
+
+function addGuatAnn() {
+d3.select("svg")
+  .append("g")
+  .attr('fill', "teal")
+  .attr("class", "annotation-group")  
+  .attr("font-size", "1em")
+  .call(makeAnnotations)
+  }
+  
+  function remGuatAnn(){
+d3.selectAll(".annotation-group").style("opacity",0);
+  }
+  
+function upGuatAnn(){
+d3.selectAll(".annotation-group").style("opacity",1);
+  }
+  
+
+const annotations2 = [
+  {
+    note: { label: "Government Expenditure on Primary Education",
+    bgPadding: {"top":-10,"left":10,"right":10,"bottom":10},
+    title: "$700 Million" },
+    x: 715,
+    y: 400,
+    dy: 300,
+    dx: -100,
+    subject: { radius: 185, radiusPadding: 10 },
+  },
+];
+const makeAnnotations2 = d3.annotation()
+  
+  //also can set and override in the note.padding property
+  //of the annotation object
+.notePadding(10)
+  .type(type)
+  //accessors & accessorsInverse not needed
+  //if using x, y in annotations JSON
+
+  .annotations(annotations2)
+
+function addHonAnn() {
+d3.select("svg")
+  .append("g")
+  .attr('fill', "teal")
+  .attr("class", "annotation-groupb")
+  .attr("font-size", "1em")
+  .call(makeAnnotations2)
+  }
+  function remHonAnn(){
+d3.selectAll(".annotation-groupb").style("opacity",0);
+  }
+  
+function upHonAnn(){
+d3.selectAll(".annotation-groupb").style("opacity",1);
+  }
+  
+  
+const annotations3 = [
+  {
+    note: { label: "Government Expenditure on Primary Education",
+//     bgPadding: {"top":-10,"left":10,"right":10,"bottom":10},
+    title: "$400 Million" },
+    x: 1120,
+    y: 400,
+    dy: 300,
+    dx: -100,
+    subject: { radius: 130, radiusPadding: 10 },
+  },
+];
+const makeAnnotations3 = d3.annotation()
+  
+  //also can set and override in the note.padding property
+.notePadding(10)
+  .type(type)
+  //accessors & accessorsInverse not needed
+  //if using x, y in annotations JSON
+
+  .annotations(annotations3)
+
+function addSlvAnn(){
+d3.select("svg")
+  .append("g")
+  .attr('fill', "teal")
+  .attr("class", "annotation-groupc")
+  .attr("font-size", "1em")
+  .style("opacity",1)
+  .call(makeAnnotations3);
+  }
+  
+function remSlvAnn(){
+d3.selectAll(".annotation-groupc").style("opacity",0);
+  }
+  
+function upSlvAnn(){
+d3.selectAll(".annotation-groupc").style("opacity",1);
+  }
+  
+  const annotations4 = [
+  {
+    note: { label: "spent by the U.S. Department of Homeland Security to apprehend El Salvadoreans, Guatemalans, and Hondurans at the Southwest Border",
+//     bgPadding: {"top":-10,"left":10,"right":10,"bottom":10},
+    title: "$2.9 Billion" },
+    x: 670,
+    y: 400,
+    dy: 250,
+    dx: 320,
+    subject: { radius: 390, radiusPadding: 10 },
+  },
+];
+const makeAnnotations4 = d3.annotation()
+  
+  //also can set and override in the note.padding property
+.notePadding(15)
+  .type(type)
+  //accessors & accessorsInverse not needed
+  //if using x, y in annotations JSON
+
+  .annotations(annotations4)
+
+function addAllAnn(){
+d3.select("svg")
+  .append("g")
+  .attr('fill', "teal")
+  .attr("class", "annotation-groupd")
+  .attr("font-size", "1em")
+  .style("opacity",1)
+  .call(makeAnnotations4);
+  }
+  
+function remAllAnn(){
+d3.selectAll(".annotation-groupd").style("opacity",0);
+  }
+  
+function upAllAnn(){
+d3.selectAll(".annotation-groupd").style("opacity",1);
+  }
+  
+ const type2 = d3.annotationCustomType(d3.annotationXYThreshold, {
+   note: {wrap: 300},
+//                 "lineType":"none",
+//                 "orientation": "top",
+//                 "align":"middle"}
+}); 
+  
+const annotations5 = [
+  {
+    note: { label: "On average takes 20 months for the Migrant to pay back the cost.",
+    title: "20 Months Debt Irregular Migration with Smuggler" },
+    subject: {
+              x1: 1500,
+              x2: 100 
+            },
+            y: 510,
+  }
+];
+const makeAnnotations5 = d3.annotation()
+  
+.notePadding(5)
+  .type(type2)
+  .annotations(annotations5)
+
+function addAvICAnn(){
+d3.select("svg")
+  .append("g")
+  .attr('fill', "#662d91")
+  .attr("class", "annotation-groupe")
+  .attr("font-size", "1em")
+  .style("opacity",1)
+  .call(makeAnnotations5);
+  d3.selectAll(".annotation text").attr("transform", "translate(770,0)");
+  }
+  
+function remAvICAnn(){
+d3.selectAll(".annotation-groupe").style("opacity",0);
+  }
+  
+function upAvICAnn(){
+d3.selectAll(".annotation-groupe").style("opacity",1);
+  }
+  
+  
+  const annotations6 = [
+  {
+    note: { label: "On average takes 7 months for the Migrant to pay back the cost.",
+    title: "7 Months Debt Irregular Migration on Your Own" },
+    subject: {
+              x1: 1500,
+              x2: 100 
+            },
+            y: 730,
+  }
+];
+
+const makeAnnotations7 = d3.annotation()
+  
+.notePadding(5)
+  .type(type2)
+  .annotations(annotations6)
+
+function addAvIOAnn(){
+d3.select("svg")
+  .append("g")
+  .attr('fill', "#faa41a")
+  .attr("class", "annotation-groupf")
+  .attr("font-size", "1em")
+  .style("opacity",1)
+  .call(makeAnnotations7);
+  d3.selectAll(".annotation text").attr("transform", "translate(770,-190)");
+  }
+  
+function remAvIOAnn(){
+d3.selectAll(".annotation-groupf").style("opacity",0);
+  }
+  
+function upAvIOAnn(){
+d3.selectAll(".annotation-groupf").style("opacity",1);
+  }
+  
+  
+  const annotations8 = [
+  {
+    note: { label: "On average takes 10 months for the Migrant to pay back the cost.",
+    title: "10 Months Debt Regular Migration" },
+    subject: {
+              x1: 1500,
+              x2: 100 
+            },
+            y: 650,
+  }
+];
+
+const makeAnnotations8 = d3.annotation()
+  
+.notePadding(5)
+  .type(type2)
+  .annotations(annotations8)
+
+function addAvRegAnn(){
+d3.select("svg")
+  .append("g")
+  .attr('fill', "#e23cad")
+  .attr("class", "annotation-groupg")
+  .attr("font-size", "1em")
+  .style("opacity",1)
+  .call(makeAnnotations8);
+  d3.selectAll(".annotation text").attr("transform", "translate(770,0)");
+  }
+  
+function remAvRegAnn(){
+d3.selectAll(".annotation-groupg").style("opacity",0);
+  }
+  
+function upAvRegAnn(){
+d3.selectAll(".annotation-groupg").style("opacity",1);
+  }
+
+
+
 // Load the data.
 d3.csv('data/dots_data2.csv', display);
 
 // setup the buttons.
 setupButtons();
+
+
+
