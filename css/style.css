@@ -565,6 +565,17 @@ section#open:hover .chapter-title {
     backdrop-filter: var(--blur-on);
 }
 
+.cost-map-theme{
+
+    /* border-radius: 1em; */
+    box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    /* color: #fafafa; */
+    background-color: rgb(102, 45, 145,0.5);
+    backdrop-filter: var(--blur-on);
+    /* height: auto !important; */
+}
+
 
 
 #scrolly-overlay{
