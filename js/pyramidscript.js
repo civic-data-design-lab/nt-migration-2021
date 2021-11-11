@@ -1,8 +1,8 @@
 // define variables for spacing, margins, etc.
 centreSpacing = 22; // spacing in between the male and female bars
 margin = { left: 10, right: 10, top: 80, bottom: 25 };
-const h = 700 - margin.top - margin.bottom;
-const w = 550 - margin.left - margin.right;
+const h = 900 - margin.top - margin.bottom;
+const w = 800 - margin.left - margin.right;
 
 // set up SVG
 var svg = d3
@@ -66,22 +66,24 @@ d3.csv("./data/dots_data3.csv").then(function (data) {
     .data(data)
     .enter()
     .append("rect")
+    .attr("class","pyramid")
     .attr("x", (d) => (w - centreSpacing) / 2 - x(d.females))
-    .attr("y", (d) => y(d.age))
+    .attr("y", (d) => y(d.age)+10)
     .attr("height", y.bandwidth())
     .attr("width", (d) => x(d.females))
-    .style("fill", "teal");
+    .style("fill", "#fff");
 
   // create bars for female population
   gF.selectAll("rect")
     .data(data)
     .enter()
     .append("rect")
+    .attr("class","pyramid")
     .attr("x", 0)
-    .attr("y", (d) => y(d.age))
+    .attr("y", (d) => y(d.age)+10)
     .attr("height", y.bandwidth())
     .attr("width", (d) => x(d.males))
-    .style("fill", "teal");
+    .style("fill", "#fff");
 
   // add labels for age groups in the centre of the chart
   gLabels
@@ -89,9 +91,11 @@ d3.csv("./data/dots_data3.csv").then(function (data) {
     .data(data)
     .enter()
     .append("text")
+    .attr("class","pyramid")
     .attr("x", centreSpacing / 2)
-    .attr("y", (d) => y(d.age) + y.bandwidth() / 2)
-    .style("font-size", 12)
+    .attr("y", (d) => y(d.age) + y.bandwidth() / 2 +10)
+    .style("font-size", 13)
+    .style("fill","#fff")
     .text((d, i) => (i != data.length - 1 ? (i % 5 == 0 ? d.age : "") : "90+"));
 
   // add an axis for female pop values
@@ -112,47 +116,144 @@ gLabels
   .append("text")
   .text("Age")
   .attr("x", centreSpacing / 2)
-  .attr("y", -30)
+  .attr("y", -25)
+  .attr("class","pyramid")
+    .style("font-size", 30)
+  .style("fill","#fff")
   .style("font-weight", "bold");
 
 // add Male/Female labels
 gF.append("text")
   .text("Male Migrants")
   .attr("x", (w - centreSpacing) / 2)
-  .attr("y", -30)
+  .attr("y", -25)
+  .attr("class","pyramid")
   .style("text-anchor", "end")
+  .style("fill","#fff")
+    .style("font-size", 30)
   .style("font-weight", "bold");
 gM.append("text")
   .text("Female Migrants")
   .attr("x", 0)
-  .attr("y", -30)
+  .attr("y", -25)
+  .attr("class","pyramid")
+  .style("font-size", 30)
   .style("text-anchor", "start")
+  .style("fill","#fff")
   .style("font-weight", "bold");
   
    function showDetail(d) {
     // change outline to indicate hover state.
 //     	d3.selectAll("rect").style('fill', function (d) { if (d.age >= 18) return "#b3e7e8";});
-		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('fill', function (d)  { if (d.age <= 17) {return "teal"} else if (d.age) {return "#b3e7e8"}});
+		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('opacity', function (d)  { if (d.age <= 17) {return "1"} else if (d.age) {return .5}});
   } 
   
      function showDetailb(d) {
     // change outline to indicate hover state.
 //     	d3.selectAll("rect").style('fill', function (d) { if (d.age >= 18) return "#b3e7e8";});
-		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('fill', function (d)  { if (d.age >= 18 && d.age <= 34 ) {return "teal"} else if (d.age) {return "#b3e7e8"}});
+		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('opacity', function (d)  { if (d.age >= 18 && d.age <= 34 ) {return "1"} else if (d.age) {return .5}});
   } 
   
        function showDetaila(d) {
     // change outline to indicate hover state.
 //     	d3.selectAll("rect").style('fill', function (d) { if (d.age >= 18) return "#b3e7e8";});
-		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('fill',"teal");
+		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('opacity',"1");
   } 
   
   function hideDetail(d) {
     // change outline to indicate hover state.
     
-		d3.select(this).style("fill", "#b3e7e8");
+		d3.selectAll('svg').style("fill", "#b3e7e8");
 		
 	 }
+	 
+  function hideDetailb(d) {
+    // change outline to indicate hover state.
+    
+		d3.selectAll(".rect,.pyramid").transition().duration(500).ease(d3.easeLinear).style('opacity',"0");
+		
+		
+	 }
+	 
+
+const controller = new ScrollMagic.Controller();
+
+const scrollHighlightFirstGroup = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink1",
+                                    triggerHook:'onLeave', 
+                                    duration: "200%"       
+                                  })
+                                  .on("enter",(e)=>{
+                                  showDetail();
+                                  
+                                 
+                                	})
+//                                   .addIndicators({name:"forceLink"})
+                                .setPin({pushFollowers: false})
+                                  .addTo(controller);
+
+const scrollUndoHighlightFirstGroup = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinka"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                  showDetaila();
+                                  
+                                	})
+                               //    .addIndicators({name:"forceLink"})
+                                  .addTo(controller);  
+
+const scrollHighlightSecondGroup = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink2",
+                                    triggerHook:'onLeave', 
+                                    duration: "200%"       
+                                  })
+                                  .on("enter",(e)=>{
+                                  showDetailb();
+                                  
+                                 
+                                	})
+//                                   .addIndicators({name:"forceLink"})
+                                .setPin({pushFollowers: false})
+                                  .addTo(controller);
+
+const scrollUndoHighlightSecondGroup = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinkb"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                  showDetaila();
+                                  
+                                	})
+                               //    .addIndicators({name:"forceLink"})
+                                  .addTo(controller); 
+                                  
+const scrollHideAll = new ScrollMagic.Scene({
+                                    triggerElement:".forceLink3",
+                                    triggerHook:'onLeave', 
+                                    duration: "200%"       
+                                  })
+                                  .on("enter",(e)=>{
+                                  hideDetailb();
+                                  
+                                 
+                                	})
+//                                   .addIndicators({name:"forceLink"})
+                                .setPin({pushFollowers: false})
+                                  .addTo(controller);
+
+const scrollUndoHideall = new ScrollMagic.Scene({
+                                    triggerElement:".forceLinkc"
+        
+                                  })
+                                  .on("leave",(e)=>{
+                                  showDetaila();
+                                  
+                                	})
+                               //    .addIndicators({name:"forceLink"})
+                                  .addTo(controller);   
+                                                                    
+                                  
 	 
 function setupButtons() {
   d3.select('#toolbar')
