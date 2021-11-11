@@ -26,11 +26,13 @@
     <link rel="stylesheet" href="css/bubble_chart.css">
     <script type="text/javascript" src="./js/tooltip.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js" integrity="sha512-iBAeBWWWFb8HqSBcrqcz98iIpuVH1la39dEYHtyQ/pGpeCQTQVvLJOWAuhv2Q7JSHp9k7hWA7sGxU3hHJe+tFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"
+        integrity="sha512-iBAeBWWWFb8HqSBcrqcz98iIpuVH1la39dEYHtyQ/pGpeCQTQVvLJOWAuhv2Q7JSHp9k7hWA7sGxU3hHJe+tFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-    
+
 
 
 </head>
@@ -43,12 +45,12 @@
             <div class="bar3"></div>
         </div>
         <div class="mobile-menu" id="mobile-menu">
-                <h1 onclick='redirect_Page(this,"index.html")'>ABOUT</h1>
-                <h1 onclick='redirect_Page(this,"origins.html")'>ORIGINS</h1>
-                <h1 onclick='redirect_Page(this,"motivations.html")'>MOTIVATIONS</h1>
-                <h1 onclick='redirect_Page(this,"profiles.html")'>PROFILES</h1>
-                <h1 onclick='redirect_Page(this,"outcomes.html")'>OUTCOMES</h1>
-                <h1 onclick='redirect_Page(this,"cost.html")'>COST</h1>
+            <h1 onclick='redirect_Page(this,"index.html")'>ABOUT</h1>
+            <h1 onclick='redirect_Page(this,"origins.html")'>ORIGINS</h1>
+            <h1 onclick='redirect_Page(this,"motivations.html")'>MOTIVATIONS</h1>
+            <h1 onclick='redirect_Page(this,"profiles.html")'>PROFILES</h1>
+            <h1 onclick='redirect_Page(this,"outcomes.html")'>OUTCOMES</h1>
+            <h1 onclick='redirect_Page(this,"cost.html")'>COST</h1>
         </div>
     </div>
     <div id="wrapper">
@@ -100,19 +102,19 @@
         </section>
 
         <section class='chapter' id="open">
+
             <div class="bk cost-img" onclick='redirect_Page(this,"cost.html")'>
                 <div class="gradient cost-g">
                     <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>COST</h2>
                     <h1 class="chapter-summary">MIGRATION<br>COSTS ADD TO<br>FINANCIAL<br>BURDEN</h1>
                 </div>
             </div>
-            <div class="content-block" >
-                    <div class="container align-items-center position-sticky">
-                     <div id="frame-motivations" class="vh-100"></div>
-                        <div class="row">
+            <div class="content-block">
+                <div class="container align-items-center position-sticky">
+                    <div id="frame-motivations" class="vh-100"></div>
+                    <div class="row">
 
-                            <div>
-    
+                        <div>
                             <!-- tooltip template -->
                             <div class="tooltip template">
                                 <div class="side-color"></div>
@@ -134,197 +136,225 @@
                             </div>
                         </div>
                     </div>
-                    <h2> </h2>
+                </div>
             </div>
-            </div>
-            
-         <div class="content-block">
-    <section class="scenes 1">      
-     <div class="container step1 fully active">       
-    <div  class="cost-map-theme scrolly-container">  
-						<div class="scrollytelling-text"> 
-            		  <h2 class="scrollytelling">Migrants Spent $2.2 Billion</h2> 
-            		 <h3 class="scrollytelling description">  to migrate from Central America to the United States in 2020.</h3>
-            		  </div>
-            		   <div class="forceLink1"><span></span></div>
-        			    <div class="forceLinka"><span></span></div>                    
-  </div>
-  </div>  
-  </section> 
-  
-  <div class="col-4 vh-100"></div>
 
-  
-  <section class="scenes 2">
-   <div class="container step fully active">       
-      <div  class="cost-map-theme scrolly-container">  
-						<div class= "ribbon-image" > 
-						<img src="./img/cost/90.jpg">
-					 </div>
-					 <div class="scrollytelling-text">
-            		  <h2 class="scrollytelling">US Department of Homeland Security spent $2.9 Billion</h2> 
-            		  <h3 class="scrollytelling description">in 2018 on apprehending El Salvadoreans, Guatemalans, and Hondurans at the Southwest Border.</h3>
-                        <div class="forceLink2"><span></span></div>
-        			    <div class="forceLinkb"><span></span></div>
- </div>
- </div>     
- </section>
- 
-<div class="col-4 vh-100">
- <div class="forceLink3"><span></span></div>
-<div class="forceLinkc"><span></span></div>
- </div>
+            <div class="content-block">
+                <section class="scenes 1">
+                    <div class="step1 fully active">
+                        <div class="scrolly-container-cost">
+                            <div class="scrollytelling-text">
+                                <h2 class="scrollytelling">Migrants Spent $2.2 Billion</h2>
+                                <h3 class="scrollytelling description"> to migrate from Central America to the United
+                                    States in 2020.</h3>
+                            </div>
+                            <div class="forceLink1"><span></span></div>
+                            <div class="forceLinka"><span></span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="col-4 vh-100"></div>
 
 
- 
- <div class="col-4 vh-100">
- <div class="forceLink4"><span></span></div>
-<div class="forceLinkd"><span></span></div>
- </div>
+                <section class="scenes 2">
+                    <div class="step fully active">
+                        <div class="scrolly-container-cost">
+                            <div class="ribbon-image">
+                                <img src="./img/cost/90.jpg">
+                            </div>
+                            <div class="scrollytelling-caption">
+                                <h2 class="scrollytelling">US Department of Homeland Security spent $2.9 Billion</h2>
+                                <h3 class="scrollytelling description">in 2018 on apprehending El Salvadoreans,
+                                    Guatemalans, and Hondurans at the Southwest Border.</h3>
+                                <div class="forceLink2"><span></span></div>
+                                <div class="forceLinkb"><span></span></div>
+                            </div>
+                        </div>
+                </section>
+
+                <div class="col-4 vh-100">
+                    <div class="forceLink3"><span></span></div>
+                    <div class="forceLinkc"><span></span></div>
+                </div>
 
 
- 
- <section class="scenes 3">
-    <div class="container step1 fully active">       
-      <div  class="cost-map-theme scrolly-container">  
-						<div class= "ribbon-image" > 
-						<img src="./img/cost/IMG-20210422-WA0010.jpg">
-					 </div>
-					  <div class="scrollytelling-text">
-            		  <h3 class="scrollytelling description">Collectively, migrants spend similar funds to migrate as their</h3>
-            		 <h2 class="scrollytelling">Governments Spend on Primary Education.</h2>
-            		  <div class="forceLink5"><span></span></div>
-        			    <div class="forceLinke"><span></span></div> 
- </div>
- </div>   
-  </section>
- <div class="col-4 vh-100"> </div>
- 
- <div class="container step1 fully active">       
-      <div  class="cost-map-theme scrolly-container">  
-						<div class= "ribbon-image" > 
-						<img src="./img/outcomes/climbing.jpg">
-					 </div>
-					  <div class="scrollytelling-text">
-					<h2 class="scrollytelling">Irregular Migration Cost are High in Risk and Finances</h2> 
-    				<h3 class="scrollytelling description">Roughly 90% of migrants to the US from El Salvador, Guatemala, and Honduras use Irregular Pathways to Migrate. These pathways are extremely dangerous as only 57% of migrants make it, with huge personal cost in debt and well-being.</h3>
- </div>
+
+                <div class="col-4 vh-100">
+                    <div class="forceLink4"><span></span></div>
+                    <div class="forceLinkd"><span></span></div>
+                </div>
+
+
+
+                <section class="scenes 3">
+                    <div class="step1 fully active">
+                        <div class="scrolly-container-cost">
+                            <div class="ribbon-image">
+                                <img src="./img/cost/IMG-20210422-WA0010.jpg">
+                            </div>
+                            <div class="scrollytelling-caption">
+                                <h3 class="scrollytelling description">Collectively, migrants spend similar funds to
+                                    migrate as their</h3>
+                                <h2 class="scrollytelling">Governments Spend on Primary Education.</h2>
+                                <div class="forceLink5"><span></span></div>
+                                <div class="forceLinke"><span></span></div>
+                            </div>
+                        </div>
+                </section>
+                <div class="col-4 vh-100"> </div>
+
+                <div class="step1 fully active">
+                    <div class="scrolly-container-cost">
+                        <div class="ribbon-image">
+                            <img src="./img/outcomes/climbing.jpg">
+                        </div>
+                        <div class="scrollytelling-caption">
+                            <h2 class="scrollytelling">Irregular Migration Cost are High in Risk and Finances</h2>
+                            <h3 class="scrollytelling description">Roughly 90% of migrants to the US from El Salvador,
+                                Guatemala, and Honduras use Irregular Pathways to Migrate. These pathways are extremely
+                                dangerous as only 57% of migrants make it, with huge personal cost in debt and
+                                well-being.</h3>
+                        </div>
                         <div class="forceLink6"><span></span></div>
-        			    <div class="forceLinkf"><span></span></div>
- </div>
- </div>     
-  <div class="col-4 vh-100"> </div>
- 
+                        <div class="forceLinkf"><span></span></div>
+                    </div>
+                </div>
 
-     <div class="container step1">       
-    <div  class="cost-map-theme scrolly-container">  
-						<div class="ribbon" > 
-						 <div class="scrollytelling-text">
-            		  <h2 class="scrollytelling">Migration with help of Smuggler is the Most Expensive and Most Common.</h2> 
-            		 <h3 class="scrollytelling description">Estimates show that it cost migrants close to $1.7 Billion to travel using a smuggler. Migrants use smugglers because they protect them on the trip, but often also use narcotraffic routes and bribes to get the migrants through government check-points.</h3>
-            		  </div>
-            		   <div class="forceLink7"><span></span></div>
-        			    <div class="forceLinkg"><span></span></div>                 
-  </div>
-  </div>  
-  
-    <div class="col-4 vh-100"> </div>
+                <div class="col-4 vh-100"> </div>
 
-<div class="container step1 fully active">       
-      <div  class="cost-map-theme scrolly-container">  
-						<div class= "ribbon-image" > 
-						<img src="./img/cost/Bestia.jpg">
-					 </div>
-					  <div class="scrollytelling-text">
-					<h2 class="scrollytelling">Migration on Your Own (often using Caravans) Costs Less</h2> 
-    				<h3 class="scrollytelling description">Migrants who choose to migrate on their own using Caravans (mostly from Honduras) spend less time to migrate as traveling in a group protects them from smugglers who would try to extort money from them.</h3>
- 					 </div>
- 					<div class="forceLink8"><span></span></div>
-        			    <div class="forceLinkh"><span></span></div>
- </div>
- </div>     
- 
- <div class="col-4 vh-100"> </div>
- 
- <div class="container step fully active">       
-      <div  class="cost-map-theme scrolly-container">  
-						<div class="ribbon" > 
-						<div class="scrollytelling-text">
-					<h2 class="scrollytelling">Regular Migration Pathways Reduces Costs</h2> 
-    				<h3 class="scrollytelling description">1 in 5 (19%) of migrants use regular migration pathways, including tourists, student, and farm-worker visas, which reduce cost for the migrants, but also help to reduce enforcement costs.</h3>
 
- </div>    
-  </div> 
-   </div>
-    </div> 
- 
- 
- <div class="container step1 fully active">       
-      <div  class="cost-map-theme scrolly-container">  
-						<div class= "ribbon-image" > 
-						<img src="./img/cost/cost6.jpg">
-					 </div>
-					 <div class="scrollytelling-text">
-					<h2 class="scrollytelling">Migrants Have Significant Debt</h2> 
-    				<h3 class="scrollytelling description">Migrants fund their journey using a diverse set of funding raising efforts, much of which comes from family and friends, but also some take out loans from the bank. This risk is taken knowing the high likelihood of being apprehended at the border.</h3>
+                <div class="step1 full active">
+                    <div class="scrolly-container-cost">
+                        <div class="ribbon">
+                            <div class="scrollytelling-text">
+                                <h2 class="scrollytelling">Migration with help of a Smuggler is the Most Expensive and
+                                    Most Common.</h2>
+                                <h3 class="scrollytelling description">Estimates show that it cost migrants close to
+                                    $1.7 Billion to travel using a smuggler. Migrants use smugglers because they protect
+                                    them on the trip, but often also use narcotraffic routes and bribes to get the
+                                    migrants through government check-points.</h3>
+                            </div>
+                            <div class="forceLink7"><span></span></div>
+                            <div class="forceLinkg"><span></span></div>
+                        </div>
+                    </div>
+                </div>
 
- </div>
- </div>     
-  </div>
- 
- 
-  <div class="col-4 vh-100">
- <div class="forceLink9"><span></span></div>
-<div class="forceLinij"><span></span></div>
- </div>
- 
- <div class="col-4 vh-100">
- <div class="forceLink10"><span></span></div>
-<div class="forceLinkj"><span></span></div>
- </div>
- 
-  <div class="col-4 vh-100">
- <div class="forceLink11"><span></span></div>
-<div class="forceLinkk"><span></span></div>
- </div>
+                <div class="col-4 vh-100"> </div>
 
- 
-  <div class="container step1 fully active">       
-      <div  class="cost-map-theme scrolly-container">  
-						<div class= "ribbon-image" > 
-						<img src="./img/outcomes/climbing.jpg">
-					 </div>
-					 <div class="scrollytelling-text">
-					<h2 class="scrollytelling">Expand Legal Pathways for Central Americans Interested in Migrating to the United States</h2> 
-    				<h3 class="scrollytelling description">Coordinated efforts to increase access to temporary employment visas, for example, could help meet the overwhelming demand for employment opportunities abroad. Shifting even a fraction of irregular migration to regular channels would decrease the estimated USD 1.7 billion that Central Americans spend annually on irregular migration with a smuggler   and instead increase state revenues—for instance, through reasonable application fees—which can then be invested in initiatives to address other drivers of irregular migration.</h3>
- </div>
-   </div> 
-    </div>
- <div class="col-4 vh-100"> </div>
-       <div id="toolbar">     
-       <div id="buttons-motivations" class="row mb-3 position-relative"> 
-        
-        					<div  class="col-4 px-0"> 
-                                    <button type="button" id="all"
-                                        class="button active btn btn-sm text-uppercase text-blue" data-bs-toggle="modal"
-                                        data-bs-target="#modal-motivs">Group Items</button>
-                                    </span>
-                                </div>
-                                <div  class="col-4 px-0">
-                                    <button type="button" id="year"
-                                        class="button btn btn-sm text-uppercase text-blue">Split by Migration Pathways</button>
-                                    </span>
-                                </div>
-                                <div  class="col-4 px-0">
-                                    <button type="button" id="country"
-                                        class="button btn btn-sm text-uppercase text-blue">Split by Country of Origin</button>
-                                    </span>
-                                </div>
-                                <div  class="col-12 px-0">
-                                    <button type="bee" id="bee" class="button btn btn-sm text-uppercase text-blue">Estimated Time to pay Debt</button>
-                                    </span>
-                                </div>
-<!-- 
+                <div class="step1 fully active">
+                    <div class="scrolly-container-cost">
+                        <div class="ribbon-image">
+                            <img src="./img/cost/Bestia.jpg">
+                        </div>
+                        <div class="scrollytelling-caption">
+                            <h2 class="scrollytelling">Migration on Your Own (often using Caravans) Costs Less</h2>
+                            <h3 class="scrollytelling description">Migrants who choose to migrate on their own using
+                                Caravans (mostly from Honduras) spend less time to migrate as traveling in a group
+                                protects them from smugglers who would try to extort money from them.</h3>
+                        </div>
+                        <div class="forceLink8"><span></span></div>
+                        <div class="forceLinkh"><span></span></div>
+                    </div>
+                </div>
+
+                <div class="col-4 vh-100"> </div>
+
+                <div class="step1 fully active">
+                    <div class="scrolly-container-cost">
+                        <div class="ribbon">
+                            <div class="scrollytelling-text">
+                                <h2 class="scrollytelling">Regular Migration Pathways Reduces Costs</h2>
+                                <h3 class="scrollytelling description">1 in 5 (19%) of migrants use regular
+                                    migration pathways, including tourists, student, and farm-worker visas, which
+                                    reduce cost for the migrants, but also help to reduce enforcement costs.</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4 vh-100"> </div>
+
+
+                <div class="step1 fully active">
+                    <div class="scrolly-container-cost">
+                        <div class="ribbon-image">
+                            <img src="./img/cost/cost6.jpg">
+                        </div>
+                        <div class="scrollytelling-caption">
+                            <h2 class="scrollytelling">Migrants Have Significant Debt</h2>
+                            <h3 class="scrollytelling description">Migrants fund their journey using a diverse set
+                                of funding raising efforts, much of which comes from family and friends, but also
+                                some take out loans from the bank. This risk is taken knowing the high likelihood of
+                                being apprehended at the border.</h3>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-4 vh-100">
+                    <div class="forceLink9"><span></span></div>
+                    <div class="forceLinij"><span></span></div>
+                </div>
+
+                <div class="col-4 vh-100">
+                    <div class="forceLink10"><span></span></div>
+                    <div class="forceLinkj"><span></span></div>
+                </div>
+
+                <div class="col-4 vh-100">
+                    <div class="forceLink11"><span></span></div>
+                    <div class="forceLinkk"><span></span></div>
+                </div>
+
+
+                <div class="step1 fully active">
+                    <div class="scrolly-container-cost">
+                        <div class="ribbon-image">
+                            <img src="./img/outcomes/climbing.jpg">
+                        </div>
+                        <div class="scrollytelling-caption">
+                            <h2 class="scrollytelling">Expand Legal Pathways for Central Americans Interested in
+                                Migrating to the United States</h2>
+                            <h3 class="scrollytelling description">Coordinated efforts to increase access to
+                                temporary employment visas, for example, could help meet the overwhelming demand for
+                                employment opportunities abroad. Shifting even a fraction of irregular migration to
+                                regular channels would decrease the estimated USD 1.7 billion that Central Americans
+                                spend annually on irregular migration with a smuggler and instead increase state
+                                revenues—for instance, through reasonable application fees—which can then be
+                                invested in initiatives to address other drivers of irregular migration.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 vh-100"> </div>
+                <div id="toolbar">
+                    <div id="buttons-motivations" class="row mb-3 position-relative">
+
+                        <div class="col-4 px-0">
+                            <button type="button" id="all" class="button active btn btn-sm text-uppercase text-blue"
+                                data-bs-toggle="modal" data-bs-target="#modal-motivs">Group Items</button>
+                            </span>
+                        </div>
+                        <div class="col-4 px-0">
+                            <button type="button" id="year" class="button btn btn-sm text-uppercase text-blue">Split
+                                by Migration Pathways</button>
+                            </span>
+                        </div>
+                        <div class="col-4 px-0">
+                            <button type="button" id="country" class="button btn btn-sm text-uppercase text-blue">Split
+                                by Country of
+                                Origin</button>
+                            </span>
+                        </div>
+                        <div class="col-12 px-0">
+                            <button type="bee" id="bee" class="button btn btn-sm text-uppercase text-blue">Estimated
+                                Time to pay Debt</button>
+                            </span>
+                        </div>
+                        <!-- 
                                  <div  class="col-3 px-0">
                                     <button type="bee" id="bee" class="button btn btn-sm text-uppercase text-blue">Estimated Time to pay Debt</button>
                                     </span>
@@ -338,36 +368,11 @@
                                     <button type="bee" id="bee" class="button btn btn-sm text-uppercase text-blue">By Pathways</button>
                                     </span>
                                 </div>  	
- -->
-        </div>
-    </div>
-    </div>
-	</section>
-	</div>
-    
-    
-    
-    
-    
-    
-    </section>
+                                -->
+                    </div>
+                </div>
 
-
-     <!-- 
-        <div class="modal-content">
-<div class="modal-body display-6 text-uppercase"><p>Migrants Spent $2.2 Billion
-to migrate from Central America to the United States in 2020.</p><p class="display-1"><strong></strong></p></div>
-
-                         </div>            
- -->
- 							
- 							
- 			
-                        
-                        
         </section>
-        
-        
     </div>
 
     <!-- narrative modal template -->
@@ -383,7 +388,7 @@ to migrate from Central America to the United States in 2020.</p><p class="displ
             </div>
         </div>
     </div>
-<!--     <script src = './js/scroller.js'></script> -->
+    <!--     <script src = './js/scroller.js'></script> -->
     <script type="text/javascript" src="./js/chapterClick.js"></script>
     <script type="text/javascript" src="./js/bubble_chart.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>

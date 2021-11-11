@@ -1,7 +1,7 @@
 var outcomesConfig = {
     style: 'mapbox://styles/mitcivicdata/ckuslqqrj0r7718mu0lg5pyuz',
     accessToken: 'pk.eyJ1IjoibWl0Y2l2aWNkYXRhIiwiYSI6ImNpbDQ0aGR0djN3MGl1bWtzaDZrajdzb28ifQ.quOF41LsLB5FdjnGLwbrrg',
-    theme: 'scrolly-container',
+    theme: 'scrolly-container-outcomes',
 
     chapters: [
 
@@ -71,11 +71,11 @@ var outcomesConfig = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 1,
-                //     duration: 5000
-                // }
+                {
+                    layer: 'salvArc',
+                    opacity: 0,
+                    duration: 5000
+                }
             ],
             onChapterExit: [
                 // {

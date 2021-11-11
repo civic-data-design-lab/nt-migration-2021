@@ -229,7 +229,7 @@ map.on('load', function () {
 
     map.addSource('worldmap', {
         'type': 'geojson',
-        'data': 'data/mapbox/basemaps/medium/world-medium.json',
+        'data': 'data/mapbox/basemaps/far/world-far.json',
         'generateId': true // This ensures that all features have unique IDs
     });
 
@@ -275,40 +275,6 @@ map.on('load', function () {
         },
     });
 });
-
-// Load NT-COUNTRIES SURVEY POINTS
-// map.on('load', function () {
-
-//     map.addSource('ntCountriesSurvey', {
-//         'type': 'geojson',
-//         'data': 'data/mapbox/motivations/nt-survey-points.geojson',
-//         'generateId': true // This ensures that all features have unique IDs
-//     });
-
-//     map.addLayer({
-//         id: 'ntCountriesSurveyViz',
-//         type: 'circle',
-//         source: 'ntCountriesSurvey',
-//         paint: {
-//             'circle-color': outcomeColorSolid,
-//             'circle-radius' : outcomeCircleMin
-
-//         },
-//     });
-
-// });
-
-// NT SCREEN GRID
-// const ntSurvey = new deck.MapboxLayer({
-//     id: 'nt-grid',
-//     type: deck.ScreenGridLayer,
-//     data: 'data/mapbox/motivations/COORDS-ONLY.json',
-//     getPosition: d => d,
-//     // getWeight: d => d[2],    
-//     cellSizePixels: 8,
-//     // cellMarginPixels: 0.1,
-//     colorRange: [255, 255, 255, 255],
-// });
 
 const ntSurvey = new deck.MapboxLayer({
     id: 'nt-grid',
