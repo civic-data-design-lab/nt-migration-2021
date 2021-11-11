@@ -18,20 +18,40 @@ a, a:visited, a:active {
   margin: auto;
 }
  */
+ 
+ .content-block1 {
+    position: -webkit-sticky;
+    /* for Safari */
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    width: var(--open);
+    pointer-events: none;
+    top: 0px;
+    height: auto;
+    filter: var(--filters-off);
+    transition: var(--transition-speed);
+    /* border: 3px solid red; */
+}
+
+.content-block1 * {
+    pointer-events: auto;
+}
 
 .button {
 	width: 100%;
     font-weight: 500;
-   	color: #3ba7c9;
+   	color: #662d91;
     background-color: #fff;
-    border: solid 2px #3ba7c9;
+    border: solid 2px #662d91;
     border-radius: 0px;
+
     /* box-shadow: 2px 2px 6px rgb(0 0 0 / 50%); */
 }
 
-.button.active {
-  background: #3ba7c9;
-  color: #fff;
+.button.active, .button:hover {
+    color: #fff;
+    background-color: #662d91;
 }
 
 
@@ -46,6 +66,7 @@ a, a:visited, a:active {
 
 #toolbar {
   margin-top: 0px;
+  margin-bottom: 20px
 }
 
 .year {
@@ -111,4 +132,47 @@ font-family: neue-haas-grotesk-text, sans-serif;
 
 .footer {
   text-align: center;
+}
+
+
+     .axis, .axis text {
+       fill: var(--line-chart-color);
+     }
+
+     .axis line, path {
+      stroke: var(--line-chart-color);
+     }
+
+     path {
+       fill: none;
+     }
+
+
+    .annotation path {
+      stroke: black;
+      stroke-width: .7px;
+      fill: none;
+    }
+
+    .annotation text {
+      fill: var(--annotation-badge-color);
+    }
+
+
+
+    .annotation-note-title, text.title {
+      font-weight: bold;
+      font-size: 2em;
+    }
+
+
+.tick text {
+	fill: black;
+      font-weight: bold;
+      font-size: 2em;
+    }
+.step1 {
+    padding-bottom: 0vh;
+    opacity: 1;
+    transition: 0.5s;
 }
