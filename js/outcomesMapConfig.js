@@ -1,3 +1,22 @@
+var aspectRatio = screen.width/screen.height;
+var farZoom;
+var closeZoom;
+var middleZoom;
+
+if (aspectRatio < 1){
+    closeZoom = Math.log(screen.width)/1.2;
+    middleZoom = Math.log(screen.width)/2.05;
+    farZoom = Math.log(screen.width)/2.9;
+
+}
+
+if (aspectRatio >= 1){
+    closeZoom = Math.log(screen.width)/1.2;
+    middleZoom = Math.log(screen.width)/1.65;
+    farZoom = Math.log(screen.width)/2.1;
+}
+
+
 var outcomesConfig = {
     style: 'mapbox://styles/mitcivicdata/ckuslqqrj0r7718mu0lg5pyuz',
     accessToken: 'pk.eyJ1IjoibWl0Y2l2aWNkYXRhIiwiYSI6ImNpbDQ0aGR0djN3MGl1bWtzaDZrajdzb28ifQ.quOF41LsLB5FdjnGLwbrrg',
@@ -16,16 +35,21 @@ var outcomesConfig = {
             paddedImage: false,
             description: '24% of households in Central America have someone who migrated in the last five years. All of these households receive remittances. The need to migrate is largely economic, caused by the externalities of violence, insecurity, and natural disasters.',
             location: {
-                center: [-87.0000000, 15.0000000], // initial map center in [lon, lat]
-                zoom: 6,
-                pitch: 65,
-                bearing: -35
+                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
+                pitch: 0,
+                bearing: 0
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [
+            ],
+            hideCountries: false,
+            showGuat:true,
+            showHond:true,
+            showSalv:true,
         },
 
         //DESTINATION 1
@@ -39,8 +63,8 @@ var outcomesConfig = {
             paddedImage: '',
             description: '',
             location: {
-                center: [-95.0000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: 3.5,
+                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
                 pitch: 0,
                 bearing: 0
             },
@@ -48,7 +72,11 @@ var outcomesConfig = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [],
+            hideCountries: true,
+            showGuat:true,
+            showHond:true,
+            showSalv:true,
         },
 
         //DESTINATION 2
@@ -62,8 +90,8 @@ var outcomesConfig = {
             paddedImage: false,
             description: '',
             location: {
-                center: [-95.0000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: 3.5,
+                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
                 pitch: 0,
                 bearing: 0
             },
@@ -71,18 +99,13 @@ var outcomesConfig = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
-                {
-                    layer: 'salvArc',
-                    opacity: 0,
-                    duration: 5000
-                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 0
-                // }
-            ]
+            ],
+            hideCountries: false,
+            showGuat:true,
+            showHond:false,
+            showSalv:false,
 
 
         },
@@ -102,7 +125,7 @@ var outcomesConfig = {
             description: '11% of Hondurans migrate to Spain',
             location: {
                 center: [-85.0000000, 35.0000000], // initial map center in [lon, lat]
-                zoom: 4.7,
+                zoom: middleZoom,
                 pitch: 45,
                 bearing: -35
             },
@@ -110,7 +133,11 @@ var outcomesConfig = {
             rotateAnimation: true,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [],
+            hideCountries: false,
+            showGuat:false,
+            showHond:true,
+            showSalv:false,
         },
 
 
@@ -126,7 +153,7 @@ var outcomesConfig = {
             description: '', //The rest are either caught, detained, or return home. Some are lost and never return.
             location: {
                 center: [-115.0000000, 35.0000000], // initial map center in [lon, lat]
-                zoom: 4.7,
+                zoom: middleZoom,
                 pitch: 45,
                 bearing: 25
             },
@@ -134,7 +161,11 @@ var outcomesConfig = {
             rotateAnimation: true,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [],
+            hideCountries: false,
+            showGuat:false,
+            showHond:false,
+            showSalv:true,
         },
 
 
@@ -150,16 +181,21 @@ var outcomesConfig = {
             paddedImage: false,
             description: 'Migrants work in similar industries as they did in their home countries. The United States economy depends on these migrants in industries that have labour shortages, such as agriculture, the restaurant industry, and domestic work. In 2018, nearly 74% of agriculture workers were migrants. The United States needs these migrants as much as they need us.',
             location: {
-                center: [-90.0000000, 28.0000000], // initial map center in [lon, lat]
-                zoom: 3.75,
-                pitch: 20,
+                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: middleZoom,
+                pitch: 0,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [],
+            hideCountries: false,
+            showGuat:true,
+            showHond:true,
+            showSalv:true,
+            
         },
 
         //DESTINATION 6
@@ -173,16 +209,21 @@ var outcomesConfig = {
             paddedImage: false,
             description: '',
             location: {
-                center: [-90.0000000, 28.0000000], // initial map center in [lon, lat]
-                zoom: 3.75,
-                pitch: 20,
+                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
+                pitch: 0,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [],
+            hideCountries: false,
+            showGuat:true,
+            showHond:true,
+            showSalv:true,
+            
         },
 
         //DESTINATION 6
@@ -196,16 +237,21 @@ var outcomesConfig = {
             paddedImage: false,
             description: 'This comes at a loss to the migrants who raise large funds and experience harrowing conditions to migrate. While both origin and destination countries benefit ecnomically from migration, the cost is largely borne by the migrants themselves.',
             location: {
-                center: [-90.0000000, 28.0000000], // initial map center in [lon, lat]
-                zoom: 3.75,
-                pitch: 20,
+                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
+                pitch: 0,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [],
+            hideCountries: false,
+            showGuat:true,
+            showHond:true,
+            showSalv:true,
+            
         },
 
         //DESTINATION 7
@@ -219,16 +265,21 @@ var outcomesConfig = {
             paddedImage: false,
             description: '29% of households reported regularly receiving remittances from abroad. These remittances provide a lifeline to meet subsistence costs and immediate expenses rather than a means to contribute to savings, personal investment or community projects, which are cited as catalysts for development. This lifeline is helpful for the origin countries which struggle to fund social services for their populations.',
             location: {
-                center: [-90.0000000, 28.0000000], // initial map center in [lon, lat]
-                zoom: 3.75,
-                pitch: 20,
+                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
+                pitch: 0,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [],
+            hideCountries: false,
+            showGuat:true,
+            showHond:true,
+            showSalv:true,
+            
         },
 
         //DESTINATION 8
@@ -242,16 +293,21 @@ var outcomesConfig = {
             paddedImage: false,
             description: '',
             location: {
-                center: [-90.0000000, 28.0000000], // initial map center in [lon, lat]
-                zoom: 3.75,
-                pitch: 20,
+                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
+                pitch: 0,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [],
+            hideCountries: false,
+            showGuat:true,
+            showHond:true,
+            showSalv:true,
+            
         },
 
         //DESTINATION 8
@@ -265,16 +321,21 @@ var outcomesConfig = {
             paddedImage: false,
             description: 'The diaspora should use their remittances to support more than basic needs. International organizations should consider diasporas as potential agents of economic development and governance. Creating incentives for members of a diaspora to invest in public works can magnify the reach of government efforts while simultaneously enriching transnational partnerships to improve governance, for example, by matching diaspora donation with transparent and accountable commitments from the national, departmental, and municipal governments.',
             location: {
-                center: [-90.0000000, 28.0000000], // initial map center in [lon, lat]
-                zoom: 3.75,
-                pitch: 20,
+                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
+                pitch: 0,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [],
+            hideCountries: false,
+            showGuat:true,
+            showHond:true,
+            showSalv:true,
+            
         },
 
 

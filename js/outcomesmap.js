@@ -27,7 +27,7 @@ var SelectHighlightColor = [255, 255, 255] //HIGHLIGHT ON HOVER OR CLICK
 //CIRCLES
 var pointScale = 1000 //SCALE OF POINTS
 var pointColor = [255, 255, 255, 255 * 0.5]
-var circleBorder = [255, 255, 255, 255]
+var circleBorder = [255, 255, 255, 0]
 var circleBorderWidth = 0
 
 //ARCLAYERS
@@ -36,7 +36,10 @@ var arcTargetColor = [255, 200, 245, 255 * 0.2]
 var arcWidth = 0.000003
 var arcHeight = 0.5
 var arcTilt = -45
-arcFilterMin = 21
+var arcFilterMin = 21
+
+//INACTIVE STATE
+var inactiveColor = [255, 255, 255, 0]
 
 function getLayerPaintType(layer) {
     var layerType = map.getLayer(layer).type;
@@ -97,15 +100,15 @@ outcomesConfig.chapters.forEach((record, idx) => {
         let storyText = document.createElement('div');
 
 
-        if(!record.image){
+        if (!record.image) {
             storyText.className = 'scrollytelling-text'
             mapChapter.appendChild(storyText)
         }
-        if(record.image){
+        if (record.image) {
             storyText.className = 'scrollytelling-caption'
             mapChapter.appendChild(storyText)
         }
-        
+
         if (record.title) {
             var title = document.createElement('h2');
             title.className = 'scrollytelling'
@@ -129,7 +132,7 @@ outcomesConfig.chapters.forEach((record, idx) => {
 
     }
 
-    
+
 
     container.setAttribute('id', record.id);
     container.classList.add('step');
@@ -206,6 +209,46 @@ map.on("load", function () {
             if (mapChapter.onChapterEnter.length > 0) {
                 mapChapter.onChapterEnter.forEach(setLayerOpacity);
             }
+
+            // SHOW GUAT LAYERS
+            if (mapChapter.showGuat && mapChapter.showGuat == true) {
+                guatArc.setProps({ getSourceColor: arcSourceColor })
+                guatArc.setProps({ getTargetColor: arcTargetColor })
+                guatDestinations.setProps({ getFillColor: pointColor })
+
+            }
+            else {
+                guatArc.setProps({ getSourceColor: inactiveColor })
+                guatArc.setProps({ getTargetColor: inactiveColor })
+                guatDestinations.setProps({ getFillColor: inactiveColor })
+            }
+
+            //SHOW HOND LAYERS
+            if (mapChapter.showHond && mapChapter.showHond == true) {
+                hondArc.setProps({ getSourceColor: arcSourceColor })
+                hondArc.setProps({ getTargetColor: arcTargetColor })
+                hondDestinations.setProps({ getFillColor: pointColor })
+
+            }
+            else {
+                hondArc.setProps({ getSourceColor: inactiveColor })
+                hondArc.setProps({ getTargetColor: inactiveColor })
+                hondDestinations.setProps({ getFillColor: inactiveColor })
+            }
+
+            //SHOW SALV LAYERS
+            if (mapChapter.showSalv && mapChapter.showSalv == true) {
+                salvArc.setProps({ getSourceColor: arcSourceColor })
+                salvArc.setProps({ getTargetColor: arcTargetColor })
+                salvDestinations.setProps({ getFillColor: pointColor })
+
+            }
+            else {
+                salvArc.setProps({ getSourceColor: inactiveColor })
+                salvArc.setProps({ getTargetColor: inactiveColor })
+                salvDestinations.setProps({ getFillColor: inactiveColor })
+            }
+
             if (mapChapter.callback) {
                 window[mapChapter.callback]();
             }
@@ -393,7 +436,7 @@ const salvDestinations = new deck.MapboxLayer({
     pointRadiusMinPixels: 2,
     pointRadiusScale: pointScale,
     getPointRadius: r => r.properties.Imm__tot_pop * 100,
-    getFillColor: pointColor,
+    getFillColor: inactiveColor,
     // Interactive props
     // pickable: true,
     // autoHighlight: true,
@@ -405,6 +448,7 @@ const salvDestinations = new deck.MapboxLayer({
         depthTest: false
     },
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
+
 })
 
 // US-GUAT CIRCLES
@@ -418,7 +462,7 @@ const guatDestinations = new deck.MapboxLayer({
     pointRadiusMinPixels: 2,
     pointRadiusScale: pointScale,
     getPointRadius: r => r.properties.Imm__tot_pop * 100,
-    getFillColor: pointColor,
+    getFillColor: inactiveColor,
     // Interactive props
     // pickable: true,
     // autoHighlight: true,
@@ -442,7 +486,7 @@ const hondDestinations = new deck.MapboxLayer({
     pointRadiusMinPixels: 2,
     pointRadiusScale: pointScale,
     getPointRadius: r => r.properties.Imm__tot_pop * 100,
-    getFillColor: pointColor,
+    getFillColor: inactiveColor,
     // Interactive props
     // pickable: true,
     // autoHighlight: true,
@@ -465,8 +509,8 @@ const salvArc = new deck.MapboxLayer({
     // Styles
     getSourcePosition: d => [d.properties.START_X, d.properties.START_Y],
     getTargetPosition: d => [d.properties.END_X, d.properties.END_Y],
-    getSourceColor: arcSourceColor,
-    getTargetColor: arcTargetColor,
+    getSourceColor: inactiveColor,
+    getTargetColor: inactiveColor,
     getWidth: w => Math.sqrt(w.properties.Round_total_MSA_population * arcWidth),
     getHeight: arcHeight,
     pickable: false,
@@ -485,8 +529,8 @@ const guatArc = new deck.MapboxLayer({
     // Styles
     getSourcePosition: d => [d.properties.START_X, d.properties.START_Y],
     getTargetPosition: d => [d.properties.END_X, d.properties.END_Y],
-    getSourceColor: arcSourceColor,
-    getTargetColor: arcTargetColor,
+    getSourceColor: inactiveColor,
+    getTargetColor: inactiveColor,
     getWidth: w => Math.sqrt(w.properties.Round_total_MSA_population * arcWidth),
     getHeight: arcHeight,
     pickable: false,
@@ -505,8 +549,8 @@ const hondArc = new deck.MapboxLayer({
     // Styles
     getSourcePosition: d => [d.properties.START_X, d.properties.START_Y],
     getTargetPosition: d => [d.properties.END_X, d.properties.END_Y],
-    getSourceColor: arcSourceColor,
-    getTargetColor: arcTargetColor,
+    getSourceColor: inactiveColor,
+    getTargetColor: inactiveColor,
     getWidth: w => Math.sqrt(w.properties.Round_total_MSA_population * arcWidth),
     getHeight: arcHeight,
     pickable: false,
@@ -519,10 +563,9 @@ const hondArc = new deck.MapboxLayer({
 
 
 
+
+
 map.on('load', () => {
-    // map.addLayer(worldMap);
-    // map.addLayer(statesMap);
-    // map.addLayer(ntCountries);
     map.addLayer(guatArc);
     map.addLayer(salvArc);
     map.addLayer(hondArc);
@@ -530,5 +573,50 @@ map.on('load', () => {
     map.addLayer(guatDestinations);
     map.addLayer(hondDestinations);
 
+    // hondArc.setProps({getSourceColor: [255, 0, 0, 255]});
+    // hondArc.setProps({getTargetColor: [255, 0, 0, 255]});
+
+
 });
 
+// const testDeck = new deck.DeckGL({
+//     gl: map.painter.context.gl,
+//     initialViewState: [{
+//         longitude: -122.123801,
+//         latitude: 37.893394,
+//         zoom: 10,
+//         maxZoom: 16,
+//         pitch: 0,
+//         bearing: 0
+//     }],
+//     layers: [
+//         new deck.ScatterplotLayer({
+//             id: 'my-scatterplot',
+//             data: [
+//                 {position: [-93, 17], size: 100}
+//             ],
+//             getPosition: d => d.position,
+//             getRadius: d => d.size,
+//             getFillColor: [255, 0, 0]
+//         })
+//     ]
+
+// });
+
+
+
+// map.addLayer(new deck.MapboxLayer({id: 'my-scatterplot', deck}));
+
+// deck.setProps({
+//     layers: [
+//         new deck.ScatterplotLayer({
+//             id: 'my-scatterplot',
+//             data: [
+//                 {position: [-74.5, 40], size: 100}
+//             ],
+//             getPosition: d => d.position,
+//             getRadius: d => d.size,
+//             getFillColor: [0, 0, 255]
+//         })
+//     ]
+// });

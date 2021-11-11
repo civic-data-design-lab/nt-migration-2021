@@ -15,6 +15,25 @@ var alignments = {
     'full': 'fully'
 }
 
+//MAP COLORS
+var countryFillColor = "#322DCD"
+var partialFillColor = "rgba(120,141,231,0.5)"
+var countryBoundaryColor = "rgba(255,255,255,0.3)"
+var borderWidth = 5
+var borderColor = 'rgba(255,255,255,1)'
+
+//MOTIVATION STYLE SETTINGS
+var pixelSize;
+
+if (aspectRatio < 1){
+    pixelSize = 6;
+}
+
+if (aspectRatio >= 1){
+    pixelSize = 12;
+}
+ 
+
 function getLayerPaintType(layer) {
     var layerType = map.getLayer(layer).type;
     return layerTypes[layerType];
@@ -209,19 +228,6 @@ map.on("load", function () {
 });
 
 
-//MAP COLORS
-var countryFillColor = "#322DCD"
-var partialFillColor = "rgba(120,141,231,0.5)"
-var countryBoundaryColor = "rgba(255,255,255,0.3)"
-var borderWidth = 5
-var borderColor = 'rgba(255,255,255,1)'
-
-// outcome destination styles
-var outcomeColor = 'rgba(235,235,255,0.5)'
-var outcomeColorSolid = 'rgba(235,235,255,1)'
-var outcomeLineWidth = 3
-var outcomeCircleMin = 2
-var outcomeCircleMax = 40
 
 
 // Load COUNTRY BOUNDARIES
@@ -282,7 +288,7 @@ const ntSurvey = new deck.MapboxLayer({
     data: 'data/mapbox/motivations/nt-survey-points.geojson',
     getPosition: p => p.geometry.coordinates,
     // getWeight: d => d[2],    
-    cellSizePixels: 12,
+    cellSizePixels: pixelSize, //12,
     // cellSizePixels: motivationsConfig.chapters[0].location.zoom,
     // cellMarginPixels: 0.1,
     colorRange: [255, 255, 255, 255],
@@ -292,6 +298,6 @@ map.on('load', () => {
     map.addLayer(ntSurvey);
 
     // map.setPaintProperty(layer.value, 'fill-color', color);
-    map.setLayerZoomRange('nt-grid', 6, 12);
+    map.setLayerZoomRange('nt-grid', 4, 15);
     // map.setLayoutProperty('nt-grid', 'cellSizePixels', 1);
 });
