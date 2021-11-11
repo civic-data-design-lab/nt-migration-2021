@@ -74,7 +74,33 @@ font-family: neue-haas-grotesk-text, sans-serif;
     background: #fff;
 }
 
+    #mapdiv1{
+          position: -webkit-sticky;
+          position: sticky;
+          top: -1px;
+          padding: 00px;
+          transition: opacity 0.8s;
+         -webkit-transition: opacity 0.8s;
+        }
 
+.deactive {
+              opacity:0;
+          }
+
+.profiles2-img {
+    z-index: -1;
+    background-image: url("../img/cost/IMG-20210422-WA0010.jpg");
+    content: '';
+    position: absolute;
+    width: var(--open);
+    height: var(--background-image-height);
+    /* filter: var(--blur-off);   */
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: rbga(255, 255, 255, 0);
+}
 
 /* .tooltip {
 	position: absolute;
@@ -116,8 +142,33 @@ font-family: neue-haas-grotesk-text, sans-serif;
 
 svg text {
 	font-family: neue-haas-grotesk-text, sans-serif;
+	color: #fff;
 	font-size: 18px;
 	dominant-baseline: central; /*vertically centers text on position*/
 	text-anchor: middle; /*horizontally centers text on position*/
 }
 
+.step1 {
+    padding-bottom: 0vh;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.content-block1 {
+    position: relative;
+    /* for Safari */
+    position: relative;
+    top: 0;
+    align-self: flex-start;
+    width: var(--open);
+    pointer-events: none;
+    top: 0px;
+    height: auto;
+    filter: var(--filters-off);
+    transition: var(--transition-speed);
+    /* border: 3px solid red; */
+}
+
+.content-block1 * {
+    pointer-events: auto;
+}
