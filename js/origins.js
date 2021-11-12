@@ -1,12 +1,24 @@
 // VARIABLES
 // data variables
 let keys = [];
-let yearsList = [];
+let decadesList = [];
 let countriesList = [];
 let originsData = [];
 
 let eventsKeys = [];
 let eventsData = [];
+
+// update on scroll
+let currentScrollPos = $("#open").scrollTop();
+let lastScrollPos = $("#open").scrollTop();
+let scrollDirection = "forward";
+let eventProgress = 0;
+let currentYear = 1960;
+let nextDecade = 1960;
+let currentDecade = 1960;
+let primaryEventsData = [];
+let primaryEventsDate = [];
+let currentEventIndex = 0;
 
 // look up attributes
 let originsAttr = {};
@@ -99,12 +111,12 @@ function updateEvent(eventIndex) {
     }
 
     if (event.image != null) {
-        eventTooltip.find(".event-title").css({"color": "#000", "background": "none", "padding": "0px", "border-radius": "0px"});
+        eventTooltip.find(".event-title").css({"color": "#000", "background": "none", "padding": "0px"});
         eventTooltip.find(".event-img").css({"background": countryAttr[event.country].background, "display": "block"});
         eventTooltip.find(".event-img>img").attr("src", "./img/origins/" + event.image);
     }
     else {
-        eventTooltip.find(".event-title").css({"color": "#fff", "background": countryAttr[event.country].background, "padding": "0.5rem", "border-radius": "0.5rem"});
+        eventTooltip.find(".event-title").css({"color": "#fff", "background": countryAttr[event.country].background, "padding": "0.5rem"});
         eventTooltip.find(".event-img").css("display", "none");
     }
 
@@ -113,6 +125,51 @@ function updateEvent(eventIndex) {
     eventTooltip.find(".event-title").html(event.event);
     eventTooltip.find(".event-descr").html(event.description);
 };
+// find closest event
+function findClosestPrimaryEventIndex(scrollYear) {
+    const closest = primaryEventsDate.reduce((a, b) => {
+        let aDiff = Math.abs(a - scrollYear);
+        let bDiff = Math.abs(b - scrollYear);
+
+        if (aDiff == bDiff) {
+            return a > b ? a : b;
+        }
+        else {
+            return aDiff > bDiff ? b : a;
+        }
+    });
+    primaryEventIndex = primaryEventsDate.indexOf(closest);
+    eventIndex = primaryEventsData[primaryEventIndex].event_index;
+    return eventIndex;
+};
+// highlight migrant count labels
+function highlightMigrantCounts(countryCode) {
+    if (countryCode == "nt") {
+        $(".label-total").animate({color:"#fff", backgroundColor:"#000"}, 100)
+            .animate({color:"#000",backgroundColor:"rgba(255,255,255,0)"},1000);
+
+        for (let i = 0; i < countriesList.length; i ++) {
+            country = countriesList[i];
+            countryId = "#label-" + country;
+
+            $(countryId + " .text-label").animate({color:"#fff", backgroundColor: countryAttr[country].color}, 100)
+                .animate({color: countryAttr[country].color,backgroundColor:"rgba(255,255,255,0)"},1000);
+        }
+    }
+    else if (countryCode == "hnd-slv") {
+        $("#label-hnd .text-label").animate({color:"#fff", backgroundColor: countryAttr["hnd"].color}, 100)
+            .animate({color: countryAttr["hnd"].color,backgroundColor:"rgba(255,255,255,0)"},1000);
+        $("#label-slv .text-label").animate({color:"#fff", backgroundColor: countryAttr["slv"].color}, 100)
+            .animate({color: countryAttr["slv"].color,backgroundColor:"rgba(255,255,255,0)"},1000);
+    }
+    else {
+        countryId = "#label-" + countryCode;
+
+        $(countryId + " .text-label").animate({color:"#fff", backgroundColor: countryAttr[country].color}, 100)
+            .animate({color: countryAttr[country].color,backgroundColor:"rgba(255,255,255,0)"},1000);
+    }
+}
+
 // plot timeline streamgraph
 function plotStreamgraph(data, svg, {
     x = ([, x]) => x, // given d in data, returns the (quantitative) x-value
@@ -276,6 +333,7 @@ function plotEvents(data) {
         .on("mouseover", function(event, d) {
             country = d.country;
             updateEvent(d.event_index);
+            highlightMigrantCounts(d.country);
 
             if (country == "hnd-slv") {
                 d3.selectAll(".stream")
@@ -351,12 +409,12 @@ d3.csv("./data/origins_migrants.csv", d3.autoType)
         const distinct = (value, index, self) => self.indexOf(value) === index;
 
         // map distinct years
-        yearsList = data.map(item => item.year).filter(distinct);
+        decadesList = data.map(item => item.year).filter(distinct);
         // map distinct countries
         countriesList = data.map(item => item.country).filter(distinct);
 
-        for (let y = 0; y < yearsList.length; y++) {
-            let year = yearsList[y];
+        for (let y = 0; y < decadesList.length; y++) {
+            let year = decadesList[y];
             originsAttr[year] = {};
 
             totalYear = data.filter(d => d.year == year).reduce((accumulator, value) => (accumulator + value.mig_stock), 0);
@@ -401,6 +459,18 @@ d3.csv("./data/origins_events.csv", d3.autoType)
             eventsData = data;
         }
 
+        if (!primaryEventsData.length) {
+            primaryEventsData = data.filter(item => item.priority == "primary");
+        }
+
+        if (!primaryEventsDate.length) {
+            primaryEventsDate = primaryEventsData.map(item => {
+                return (2019 <= item.start_year) ? item.start_year - 1 + monthValue[item.start_month]
+                : (item.start_month != null) ? item.start_year + monthValue[item.start_month]
+                : item.start_year;
+            });
+        }
+
         plotEvents(eventsData);
 
         console.log(eventsKeys);
@@ -415,6 +485,9 @@ $(document).ready(function() {
             vizHeight = $("#viz-origins").height();
             return vizHeight;
         }
+        else {
+            return $(id).height();
+        }
     }
 
     // ScrollMagic
@@ -428,20 +501,76 @@ $(document).ready(function() {
     //     .setClassToggle("active")
     //     // .setPin('#my-sticky-element') // pins the element for the the scene's duration
         .addTo(controller)
-        .on("progress", function(e) {
-            $("#tt-year").text(Math.floor(e.progress * 60 + 1960));
-            $(".label-yearspan").html((Math.floor(e.progress * 6) * 10 + 1961) + "&ndash;" + (Math.ceil(e.progress * 6) * 10 + 1960));
+        .on("update", function(e) {
+            currentScrollPos = $("#open").scrollTop();
 
-            year = Math.ceil(e.progress * 6) * 10 + 1960;
-            $(".label-total .label-mig").text(numberWithCommas(originsAttr[year].total_mig_stock));
+            // change scroll direction
+            if (lastScrollPos < currentScrollPos && scrollDirection != "forward") {
+                scrollDirection = "forward";
+                nextDecade = Math.ceil(eventProgress * 6) * 10 + 1960;
+                // console.log("change scroll direction, now forward");
+                // console.log(nextDecade);
+            }
+            else if (lastScrollPos > currentScrollPos && scrollDirection != "reverse") {
+                scrollDirection = "reverse";
+                nextDecade = Math.floor(eventProgress * 6) * 10 + 1960;
+                // console.log("change scroll direction, now reverse");
+                // console.log(nextDecade);
+            }
+            lastScrollPos = currentScrollPos;
+            // console.log(scrollDirection);
+            // console.log("current decade: " + currentDecade);
+            // console.log("next decade: " + nextDecade);
+            // console.log("current year: " + currentYear);
+        })
+        .on("progress", function(e) {
+            eventProgress = e.progress;
+            currentYear = Math.floor(e.progress * 60 + 1960);
+            currentDecade = Math.ceil(e.progress * 6) * 10 + 1960;
+            lastDecade = Math.floor(e.progress * 6) * 10 + 1960;
+        
+            $("#tt-year").text(currentYear);
+            $(".label-yearspan").html((lastDecade + 1) + "&ndash;" + currentDecade);
+
+            $(".label-total .label-mig").text(numberWithCommas(originsAttr[currentDecade].total_mig_stock));
 
             for (let i = 0; i < countriesList.length; i++) {
                 country = countriesList[i];
-                countryClass = ".label-" + country;
+                countryId = "#label-" + country;
 
-                $(countryClass + " .label-mig").text(numberWithCommas(originsAttr[year][country].mig_stock));
-                $(countryClass + " .label-pct").text(roundAccurately(originsAttr[year][country].pct_mig_pop * 100, 1).toFixed(1));
+                $(countryId + " .label-mig").text(numberWithCommas(originsAttr[currentDecade][country].mig_stock));
+                $(countryId + " .label-pct").text(roundAccurately(originsAttr[currentDecade][country].pct_mig_pop * 100, 1).toFixed(1));
             }
+
+            // every new decade
+            if (scrollDirection == "forward" && currentYear > nextDecade || scrollDirection == "reverse" && nextDecade > currentYear) {
+                highlightMigrantCounts("nt");
+                // $(".label-total").animate({color:"#fff", backgroundColor:"#000"}, 100)
+                //     .animate({color:"#000",backgroundColor:"rgba(255,255,255,0)"},1000);
+
+                // for (let i = 0; i < countriesList.length; i ++) {
+                //     country = countriesList[i];
+                //     countryId = "#label-" + country;
+
+                //     $(countryId + " .text-label").animate({color:"#fff", backgroundColor: countryAttr[country].color}, 100)
+                //         .animate({color: countryAttr[country].color,backgroundColor:"rgba(255,255,255,0)"},1000);
+                // }
+                if (scrollDirection == "forward") {
+                    nextDecade = currentDecade;
+                }
+                else if (scrollDirection == "reverse") {
+                    nextDecade = lastDecade;
+                }
+                // console.log(nextDecade);
+            }
+
+            // find closest event
+            closestEventIndex = findClosestPrimaryEventIndex(currentYear)
+            if (currentEventIndex != closestEventIndex) {
+                updateEvent(closestEventIndex);
+                currentEventIndex = closestEventIndex;
+            }
+            // console.log(findClosestPrimaryEventIndex(currentYear));
         })
         .on("start end", function(e) {
             $(".label-yearspan").html(e.type == "start" ? "1960" : "2011&ndash;2020")
@@ -451,18 +580,20 @@ $(document).ready(function() {
     $(window).resize(function() {
         vizHeight = $("#viz-origins").height();
         sceneTimeline.on("progress", function(e) {
-            $("#tt-year").text(Math.floor(e.progress * 60 + 1960));
-            $(".label-yearspan").html((Math.floor(e.progress * 6) * 10 + 1961) + "&ndash;" + (Math.ceil(e.progress * 6) * 10 + 1960));
+            currentYear = Math.floor(e.progress * 60 + 1960);
+            currentDecade = Math.ceil(e.progress * 6) * 10 + 1960;
 
-            year = Math.ceil(e.progress * 6) * 10 + 1960;
-            $(".label-total .label-mig").text(numberWithCommas(originsAttr[year].total_mig_stock));
+            $("#tt-year").text(currentYear);
+            $(".label-yearspan").html((Math.floor(e.progress * 6) * 10 + 1961) + "&ndash;" + currentDecade);
+
+            $(".label-total .label-mig").text(numberWithCommas(originsAttr[currentDecade].total_mig_stock));
 
             for (let i = 0; i < countriesList.length; i++) {
                 country = countriesList[i];
-                countryClass = ".label-" + country;
+                countryId = "#label-" + country;
 
-                $(countryClass + " .label-mig").text(numberWithCommas(originsAttr[year][country].mig_stock));
-                $(countryClass + " .label-pct").text(roundAccurately(originsAttr[year][country].pct_mig_pop * 100, 1).toFixed(1));
+                $(countryId + " .label-mig").text(numberWithCommas(originsAttr[currentDecade][country].mig_stock));
+                $(countryId + " .label-pct").text(roundAccurately(originsAttr[currentDecade][country].pct_mig_pop * 100, 1).toFixed(1));
             }
         })
         .refresh();

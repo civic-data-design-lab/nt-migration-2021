@@ -19,8 +19,9 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/origins.css">
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui-1.13.0.min.js"></script>
     <script type="text/javascript" src="./js/d3.v7.min.js"></script>
-    <script type="text/javascript" src="./js/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="./js/ScrollMagic-2.0.7.min.js"></script>
 </head>
 
 <body>
@@ -101,7 +102,7 @@
                                 <span class="label-mig">145,312</span> total migrants
                             </p>
                             <p class="pb-2 px-1 pt-1 text-sublabel">outside of Guatemala, Honduras, and El Salvador</p>
-                            <div class="label-gtm p-2 px-1">
+                            <div id="label-gtm" class="p-2 px-1">
                                 <p class="text-label">
                                     <span class="label-mig">33,173</span> Guatemalan migrants
                                 </p>
@@ -109,7 +110,7 @@
                                     <span class="label-pct">0.8</span>% of the population in Guatemala
                                 </p>
                             </div>
-                            <div class="label-hnd p-2 px-1">
+                            <div id="label-hnd" class="p-2 px-1">
                                 <p class="text-label">
                                     <span class="label-mig">47,559</span> Honduran migrants
                                 </p>
@@ -117,7 +118,7 @@
                                     <span class="label-pct">2.3</span>% of the population in Honduras
                                 </p>
                             </div>
-                            <div class="label-slv p-2 px-1">
+                            <div id="label-slv" class="p-2 px-1">
                                 <p class="text-label">
                                     <span class="label-mig">64,580</span> Salvadoran migrants
                                 </p>
