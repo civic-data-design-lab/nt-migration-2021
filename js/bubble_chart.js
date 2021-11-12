@@ -16,8 +16,8 @@ const financeText = {
 function bubbleChart() {
 //   var width = 1500;
 //   var height = 700;
-const width = 1346;
-const height = 800;
+const width = 1400;
+const height = 1000;
 const sqLen = 1;
 const sideWidth = 0;
   var padding = 2;
@@ -25,7 +25,7 @@ const sideWidth = 0;
   var center = { x: width / 2, y: height / 2 };
 
   var yearCenters = {
-    "GTM": { x: width / 5.5, y: height / 2 },
+    "GTM": { x: width / 5.4, y: height / 2 },
     "HND": { x: width / 1.9, y: height / 2 },
     "SLV": { x: 2.5 * (1 * width / 3), y: height / 2 }
   };
@@ -43,21 +43,57 @@ var meansCenters = {
   };
   
   var yearsTitleX = {
-    "GUATEMALA": 250,  //  $1.2 Billion Migrants Spend to Migrate
-    "HONDURAS": width - 650,  // $450 Million Billion Migrants Spend to Migrate
-    "EL SALVADOR": width - 250   // {$520 Million Migrants Spend to Migrate}
+    "Guatemala": 180,  //  $1.2 Billion Migrants Spend to Migrate
+    "Honduras": width / 2.2,  // $450 Million Billion Migrants Spend to Migrate
+    "El Salvador": width - 310   // {$520 Million Migrants Spend to Migrate}
   };
   
-    var meansTitleX = {
-    "REGULAR PATHWAY": 200,
-    "IRREGULAR PATHWAY": width - 390
+var yearsTitleX2 = {
+    "$1.2 Billion": 180,  //  $1.2 Billion Migrants Spend to Migrate
+    "$450 Million": width / 2.2,  // $450 Million Billion Migrants Spend to Migrate
+    "$520 Million": width - 310   // {$520 Million Migrants Spend to Migrate}
+  };
+  
+var yearsTitleX3 = {
+    "Migrants Spend to Migrate": 180,  //  $1.2 Billion Migrants Spend to Migrate
+    "Migrants Spend to Migrate ": width / 2.2,  // $450 Million Billion Migrants Spend to Migrate
+    "Migrants Spend to Migrate  ": width - 310   // {$520 Million Migrants Spend to Migrate}
+  };
+  
+var meansTitleX = {
+    "Regular Pathway": 120,
+    "Irregular Pathway": width - 490
    //  "Irregular Pathway": width - 250
   };
   
-    var financeTitleX = {
-    "ALL LOANS": 200,
-    "SOME LOANS": width - 650,
-    "NO LOANS": width - 250
+var meansTitleX2 = {
+    "$240 Million": 120,
+    "$2.2 Billion": width - 490
+   //  "Irregular Pathway": width - 250
+  };
+  
+var meansTitleX3 = {
+    "Migrants Spend to Migrate": 120,
+    "Migrants Spend to Migrate  ": width - 490
+   //  "Irregular Pathway": width - 250
+  };
+  
+ var financeTitleX = {
+    "56%": 50,
+    "7%": width - 720,
+    "36%": width - 320
+  };
+  
+   var financeTitleX2 = {
+    "Finance Migration ": 50,
+    "Finance Migration": width - 720,
+    "Finance Migration  ": width - 320
+  };
+  
+     var financeTitleX3 = {
+    "Entirely with Loans": 50,
+    "With Some Loans": width - 720,
+    "Whithout Loans": width - 320
   };
   
 
@@ -122,6 +158,7 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
         id: d.id,
         radius: radiusScale(+d.mig_ext_cost_total),
         value: +d.mig_ext_cost_total,
+        valuenull: d.nul,
         name: d.mig_ext_medio,
         // org: d.organization,
         group: d.mig_ext_finance,
@@ -146,7 +183,7 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
 //         .attr("id", "viz-motivations")
 //         .attr("viewBox", [-(sideWidth), 0, width + (sideWidth), height]);
         
-    svg = d3.select("#frame-motivations")
+    svg = d3.select("#frame-cost")
       .append('svg')
       .attr("viewBox", [-(sideWidth + sqLen), 0, width + (sideWidth + sqLen), height]);
 
@@ -185,19 +222,27 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
   
 function axis() {
 d3.select("svg").append("svg").attr("class","axis")
-    .call(d3.axisRight(posScaleRev).ticks(5).tickFormat((d, i) => ['50 Months', '40 Months', '25 Months', '15 Months', '0 Months'][i]).tickSize(0))
-    .call(g => g.selectAll(".tick text")
+    .call(d3.axisRight(posScaleRev).ticks(5).tickFormat((d, i) => ['50', '40', '25', '15', '0'][i]).tickSize(0))
+    .call(g => g.selectAll(".tick text").attr("class","axis")
         .attr("x", 4)
         .attr("dy", -5));
+d3.select("svg").append("svg")
+    .call(d3.axisRight(posScaleRev).ticks(5).tickFormat((d, i) => ['Months', 'Months', 'Months', 'Months', 'Months'][i]).tickSize(0))
+    .call(g => g.selectAll(".tick text").attr("class","axis2")
+        .attr("x", 4)
+        .attr("dy", 8));
+        
+        
+        
     }
 
 function removeaxis(){
-d3.select(".axis")
+d3.selectAll(".axis,.axis2")
 	.style("opacity",0);
 	}
 	
 function updateaxis(){
-d3.select(".axis")
+d3.selectAll(".axis,.axis2")
 	.style("opacity",1);
 	}
 	
@@ -455,7 +500,7 @@ const scrollUndoHighlighReg = new ScrollMagic.Scene({
                                   })
                                   .on("leave",(e)=>{
                                   
-                                   highlightReg();
+                                   highlightRegular();
                                 	})
                                //    .addIndicators({name:"forceLink"})
                                   .addTo(controller); 
@@ -614,27 +659,41 @@ const scrollUndoLabelReg = new ScrollMagic.Scene({
       showFinanceTitles();
     hideNullValues();
  //    remAvRegAnn();
+ 	fillColorN();
     updateaxis();
+
    
         
 
 	simulation.force('x', d3.forceX().strength(forceStrength).x(nodeBeePosb));
-    simulation.force('y', d3.forceY().strength(.06).y(function(d){return height - posScale(d.value);}));
+    simulation.force('y', d3.forceY().strength(.06).y(function(d){return height - posScale(d.valuenull);}));
 // 	simulation.filter(function(d){ return d.value <= 1; }).force('y', d3.forceY().strength(.06).y(5000));
 	
     simulation.alpha(1).restart();
   }
+  
+//  function splitBubblesBeeNull() { 
+//    d3.selectAll('circle').select(function(d){ if (d.value <= 1) return this;}).
+//     simulation.force('y', d3.forceY().strength(.06).y(-1000));
+//   
+//   
+// //   attr("transform", "translate(770,0)"
+// //   function (d) { if (d.value <= 1) return -770;
+// 
+// //   simulation.force('y', d3.forceY().strength(.06).y(function (d) { if (d.value <= 1) return -770;}));
+// //   simulation.alpha(1).restart();
+// }
 
   function hideYearTitles() {
-    svg.selectAll('.year').remove();
+    svg.selectAll('.year,.year2,.year3').remove();
   }
   
     function hideMeansTitles() {
-    svg.selectAll('.name').remove();
+    svg.selectAll('.means,.means2,.means3').remove();
   }
   
     function hideFinanceTitles() {
-    svg.selectAll('.group').remove();
+    svg.selectAll('.finance,.finance2,.finance3').remove();
   }
   
 function hideNullValues() {
@@ -659,37 +718,108 @@ function showNullValues() {
     years.enter().append('text')
       .attr('class', 'year')
       .attr('x', function (d) { return yearsTitleX[d]; })
-      .attr('y', 40)
-      .attr('text-anchor', 'middle')
+      .attr('y', 105)
+      .attr('text-anchor', 'start')
       .text(function (d) { return d; });
+      
+  var yearsData2 = d3.keys(yearsTitleX2);
+    var years2 = svg.selectAll('.name')
+      .data(yearsData2);
+
+    years2.enter().append('text')
+      .attr('class', 'year2')
+      .attr('x', function (d) { return yearsTitleX2[d]; })
+      .attr('y', 140)
+      .attr('text-anchor', 'start')
+      .text(function (d) { return d; });
+      
+      
+var yearsData3 = d3.keys(yearsTitleX3);
+    var years3 = svg.selectAll('.name')
+      .data(yearsData3);
+
+    years3.enter().append('text')
+      .attr('class', 'year3')
+      .attr('x', function (d) { return yearsTitleX3[d]; })
+      .attr('y', 160)
+      .attr('text-anchor', 'start')
+      .text(function (d) { return d; });      
   }
   
     function showMeansTitles() {
 
-    var yearsData = d3.keys(meansTitleX);
-    var years = svg.selectAll('.name')
-      .data(yearsData);
+    var nameData = d3.keys(meansTitleX);
+    var nameMeans = svg.selectAll('.name')
+      .data(nameData);
 
-    years.enter().append('text')
-      .attr('class', 'name')
+    nameMeans.enter().append('text')
+      .attr('class', 'means')
       .attr('x', function (d) { return meansTitleX[d]; })
-      .attr('y', 40)
-      .attr('text-anchor', 'middle')
+      .attr('y', 105)
+      .attr('text-anchor', 'start')
       .text(function (d) { return d; });
+      
+var nameData2 = d3.keys(meansTitleX2);
+    var nameMeans2 = svg.selectAll('.name')
+      .data(nameData2);
+
+    nameMeans2.enter().append('text')
+      .attr('class', 'means2')
+      .attr('x', function (d) { return meansTitleX2[d]; })
+      .attr('y', 140)
+      .attr('text-anchor', 'start')
+      .text(function (d) { return d; });   
+      
+var nameData3 = d3.keys(meansTitleX3);
+    var nameMeans3 = svg.selectAll('.name')
+      .data(nameData3);
+
+    nameMeans3.enter().append('text')
+      .attr('class', 'means3')
+      .attr('x', function (d) { return meansTitleX3[d]; })
+      .attr('y', 160)
+      .attr('text-anchor', 'start')
+      .text(function (d) { return d; });     
+      
   }
   
       function showFinanceTitles() {
 
-    var yearsData = d3.keys(financeTitleX);
-    var years = svg.selectAll('.name')
-      .data(yearsData);
+    var financeData = d3.keys(financeTitleX);
+    var finance = svg.selectAll('.name')
+      .data(financeData);
 
-    years.enter().append('text')
-      .attr('class', 'group')
+    finance.enter().append('text')
+      .attr('class', 'finance')
       .attr('x', function (d) { return financeTitleX[d]; })
-      .attr('y', 40)
-      .attr('text-anchor', 'middle')
+      .attr('y', 60)
+      .attr('text-anchor', 'start')
       .text(function (d) { return d; });
+      
+    var financeData2 = d3.keys(financeTitleX2);
+    var finance2 = svg.selectAll('.name')
+      .data(financeData2);
+
+    finance2.enter().append('text')
+      .attr('class', 'finance2')
+      .attr('x', function (d) { return financeTitleX2[d]; })
+      .attr('y', 80)
+      .attr('text-anchor', 'start')
+      .text(function (d) { return d; });
+      
+var financeData3 = d3.keys(financeTitleX3);
+    var finance3 = svg.selectAll('.name')
+      .data(financeData3);
+
+    finance3.enter().append('text')
+      .attr('class', 'finance3')
+      .attr('x', function (d) { return financeTitleX3[d]; })
+      .attr('y', 100)
+      .attr('text-anchor', 'start')
+      .text(function (d) { return d; });
+      
+
+
   }
   
   
@@ -803,15 +933,15 @@ function setupButtons() {
     
 var highlightregular = d3.scaleOrdinal()
     .domain(['low', 'medium', 'high'])
-    .range(['#c6acdd', '#f7d8aa', '#e23cad']); 
+    .range(['#e9d7f7', '#fff6e8', '#e23cad']); 
     
  var highlightirrcoy = d3.scaleOrdinal()
     .domain(['low', 'medium', 'high'])
-    .range(['#662d91', '#f7d8aa', '#f29cd9']);    
+    .range(['#662d91', '#fff6e8', '#ffdbf5']);    
     
     var highlightirrown = d3.scaleOrdinal()
     .domain(['low', 'medium', 'high'])
-    .range(['#c6acdd', '#faa41a', '#f29cd9']);  
+    .range(['#e9d7f7', '#faa41a', '#ffdbf5']);  
     
  function fillColorN(){
 d3.selectAll("circle")
@@ -913,7 +1043,7 @@ const makeAnnotations = d3.annotation()
 function addGuatAnn() {
 d3.select("svg")
   .append("g")
-  .attr('fill', "teal")
+  .attr('fill', "black")
   .attr("class", "annotation-group")  
   .attr("font-size", "1em")
   .call(makeAnnotations)
@@ -954,7 +1084,7 @@ const makeAnnotations2 = d3.annotation()
 function addHonAnn() {
 d3.select("svg")
   .append("g")
-  .attr('fill', "teal")
+  .attr('fill', "black")
   .attr("class", "annotation-groupb")
   .attr("font-size", "1em")
   .call(makeAnnotations2)
@@ -993,7 +1123,7 @@ const makeAnnotations3 = d3.annotation()
 function addSlvAnn(){
 d3.select("svg")
   .append("g")
-  .attr('fill', "teal")
+  .attr('fill', "black")
   .attr("class", "annotation-groupc")
   .attr("font-size", "1em")
   .style("opacity",1)
@@ -1033,7 +1163,7 @@ const makeAnnotations4 = d3.annotation()
 function addAllAnn(){
 d3.select("svg")
   .append("g")
-  .attr('fill', "teal")
+  .attr('fill', "black")
   .attr("class", "annotation-groupd")
   .attr("font-size", "1em")
   .style("opacity",1)
@@ -1063,7 +1193,7 @@ const annotations5 = [
               x1: 1500,
               x2: 100 
             },
-            y: 510,
+            y: 650,
   }
 ];
 const makeAnnotations5 = d3.annotation()
@@ -1080,7 +1210,7 @@ d3.select("svg")
   .attr("font-size", "1em")
   .style("opacity",1)
   .call(makeAnnotations5);
-  d3.selectAll(".annotation text").attr("transform", "translate(770,0)");
+  d3.selectAll(".annotation text").attr("transform", "translate(800,-123)");
   }
   
 function remAvICAnn(){
@@ -1100,7 +1230,7 @@ d3.selectAll(".annotation-groupe").style("opacity",1);
               x1: 1500,
               x2: 100 
             },
-            y: 730,
+            y: 870,
   }
 ];
 
@@ -1118,7 +1248,7 @@ d3.select("svg")
   .attr("font-size", "1em")
   .style("opacity",1)
   .call(makeAnnotations7);
-  d3.selectAll(".annotation text").attr("transform", "translate(770,-190)");
+  d3.selectAll(".annotation text").attr("transform", "translate(800,-123)");
   }
   
 function remAvIOAnn(){
@@ -1138,7 +1268,7 @@ d3.selectAll(".annotation-groupf").style("opacity",1);
               x1: 1500,
               x2: 100 
             },
-            y: 650,
+            y: 790,
   }
 ];
 
@@ -1156,7 +1286,7 @@ d3.select("svg")
   .attr("font-size", "1em")
   .style("opacity",1)
   .call(makeAnnotations8);
-  d3.selectAll(".annotation text").attr("transform", "translate(770,0)");
+  d3.selectAll(".annotation text").attr("transform", "translate(800,-82)");
   }
   
 function remAvRegAnn(){
