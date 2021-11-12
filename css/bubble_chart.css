@@ -65,34 +65,50 @@ a, a:visited, a:active {
  */
 
 #toolbar {
-  margin-top: 0px;
-  margin-bottom: 20px
+  margin-left: 7vh;
+  margin-right: 7vh;
 }
 
-.year {
+.year,.finance3,.means {
   font-family: neue-haas-grotesk-text, sans-serif;
-    font-weight: 1000;
+    font-weight: 700;
     font-style: normal;
-    font-size: 1.5em;
+    font-size: 1.2em;
     line-height: 1em;
 }
 
-.group {
- font-family: neue-haas-grotesk-text, sans-serif;
+.year2, .means2, .finance {
+  font-family: neue-haas-grotesk-text, sans-serif;
     font-weight: 1000;
     font-style: normal;
-    font-size: 1.5em;
+    font-size: 2em;
+    line-height: 1em;
+}
+
+.year3 .means3, .finance2{
+  font-family: neue-haas-grotesk-text, sans-serif;
+    font-style: normal;
+    font-size: 1em;
+}
+
+/* 
+.group {
+ font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.2em;
     line-height: 1em;
 }
 
 .name {
 font-family: neue-haas-grotesk-text, sans-serif;
-    font-weight: 1000;
+    font-weight: 700;
     font-style: normal;
-    font-size: 1.5em;
+    font-size: 1.2em;
     line-height: 1em;
     background: #fff;
 }
+ */
 
 
 
@@ -166,11 +182,17 @@ font-family: neue-haas-grotesk-text, sans-serif;
     }
 
 
-.tick text {
+.axis {
 	fill: black;
       font-weight: bold;
-      font-size: 2em;
+      font-size: 1em;
     }
+    
+.axis2 {
+      font-size: 1em;
+    }
+    
+    
 .step1 {
     padding: 0;
     margin: 0;
@@ -185,3 +207,26 @@ font-family: neue-haas-grotesk-text, sans-serif;
   mix-blend-mode: overlay;
 
 }
+
+.scrolly-container-cost2{
+    /* overflow: hidden; */
+    background-color: rgb(250, 164, 26,0.5);
+    backdrop-filter: var(--blur-on);
+}
+
+.scrolly-container-cost3{
+    /* overflow: hidden; */
+    background-color: rgb(226, 60, 173,0.5);
+    backdrop-filter: var(--blur-on);
+}
+
+.scenes {
+pointer-events: none;}
+
+.fully {
+pointer-events: none;}
+
+/* 
+.frame-cost {
+margin-top:3rem;}
+ */
