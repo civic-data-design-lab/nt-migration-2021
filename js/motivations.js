@@ -86,9 +86,9 @@ const cariAttr = {
 };
 
 const modalData = [
-    {"id": "modal-motivs", "html": "<p>Motivations range from violence to climate, but the primary motivation for migration is</p><p class='display-1'><strong>economics</strong></p>"},
-    {"id": "modal-income", "html": "<p>In contrast to other studies, household surveys showed that migrants come from</p><p class='display-1'>all income groups</p>"},
-    {"id": "modal-cari", "html": "<p>Households with migrants showed that</p><p class='display-1'>providing for basic needs</p><p>was a key motivation for migration</p>"}
+    {"id": "modal-motivs", "html": "<h2 class='scrollytelling'>The Primary Motivation for Migration is Economics</h2><h3 class='scrollytelling description'>Motivations for migration diversely range from violence to climate change related reasons. Family reunification was the second most common motivation for migrating amongst migrants surveyed in the last five years.</h3>"},
+    {"id": "modal-income", "html": "<h2 class='scrollytelling'>Migrants Come from All Income Groups</h2><h3 class='scrollytelling description'>In contrast to prior studies, which have generally found that households with more resources are more likely to be able to migrate, respondents in this survey from households with the lowest income level were nearly as likely to report that a member had migrated as those from households with mid- to high income levels.</h3>"},
+    {"id": "modal-cari", "html": "<h2 class='scrollytelling'>Providing for Basic Needs was a Key Motivation for Migration</h2><h3 class='scrollytelling description'>Individuals experiencing food insecurity were more likely (23 percent) to make concrete plans to migrate than those who were food secure (7 percent).</h3>"}
 ];
 
 // bootstrap tooltip popover
