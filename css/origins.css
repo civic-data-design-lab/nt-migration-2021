@@ -66,14 +66,26 @@
 #tt-migrants .text-sublabel, #tt-event .event-date {
     font-size: 0.7rem;
 }
-.label-gtm {
+#label-gtm {
     color: #d11f63;
 }
-.label-hnd {
+#label-hnd {
     color: #eb4927;
 }
-.label-slv {
+#label-slv {
     color: #ea8928;
+}
+#label-gtm.highlight {
+    color: #fff;
+    background-color: #d11f63;
+}
+#label-hnd.highlight {
+    color: #fff;
+    background-color: #eb4927;
+}
+#label-slv.highlight {
+    color: #fff;
+    background-color: #ea8928;
 }
 
 /* LABELS */
