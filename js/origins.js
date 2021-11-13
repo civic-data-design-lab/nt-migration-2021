@@ -165,8 +165,8 @@ function highlightMigrantCounts(countryCode) {
     else {
         countryId = "#label-" + countryCode;
 
-        $(countryId + " .text-label").animate({color:"#fff", backgroundColor: countryAttr[country].color}, 100)
-            .animate({color: countryAttr[country].color,backgroundColor:"rgba(255,255,255,0)"},1000);
+        $(countryId + " .text-label").animate({color:"#fff", backgroundColor: countryAttr[countryCode].color}, 100)
+            .animate({color: countryAttr[countryCode].color,backgroundColor:"rgba(255,255,255,0)"},1000);
     }
 }
 
@@ -237,6 +237,8 @@ function plotStreamgraph(data, svg, {
             .attr("fill", ([{i}]) => countryAttr[Z[i]].color)
             .attr("fill-opacity", 0.8)
         .on("mouseover", function(event, [{i}]) {
+            console.log(Z[i]);
+            highlightMigrantCounts(Z[i]);
             d3.selectAll(".stream")
                 .transition()
                 .duration(50)
