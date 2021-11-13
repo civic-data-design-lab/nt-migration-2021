@@ -34,7 +34,7 @@ var motivationsConfig = {
             alignment: 'full',
             hidden: false,
             title: 'The intention to migrate increased from 8% in 2019 to 15% in 2021',
-            image: './img/motivations/caravan.jpg',
+            image: './img/motivations/mot1.jpg',
             description: 'The intention to migrate is largely economics, caused by the externalities of violence, insecurity, and natural disasters.',
             location: {
                 center: [-87.700000, 15.0000000], // initial map center in [lon, lat]
