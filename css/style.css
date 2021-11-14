@@ -558,7 +558,8 @@ section#open:hover .chapter-title {
 
 .scrolly-container-outcomes{
     /* overflow: hidden; */
-    background-color: rgb(224, 135, 220,0.5);
+    /* background-color: rgb(224, 135, 220,0.5); */
+    background-color: rgb(226, 60, 173,0.75);
     backdrop-filter: var(--blur-on);
 }
 
