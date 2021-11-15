@@ -1,6 +1,14 @@
+/* NARRATIVE SCROLLYTELLING */
+#map-state-4 {
+    padding-bottom: 0px;
+}
+#map-state-7 {
+    height: 0px;
+}
+
 /* BUTTON */
 #buttons-motivations {
-    padding-left: calc(16.375% + 2px);
+    padding-left: calc(15.5% + 2px);
     padding-right: 2px;
 }
 .btn {

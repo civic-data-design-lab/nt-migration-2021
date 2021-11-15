@@ -33,9 +33,9 @@ var motivationsConfig = {
             id: 'map-state-1',
             alignment: 'full',
             hidden: false,
-            title: 'The intention to migrate increased from 8% in 2019 to 15% in 2021',
+            title: 'Intention to Migrate has Increased Significantly',
             image: './img/motivations/mot1.jpg',
-            description: 'The intention to migrate is largely economics, caused by the externalities of violence, insecurity, and natural disasters.',
+            description: 'Approximately four out of every ten households (43%) indicated a desire to migrate in 2021, compared to 8% in 2019. The intention to migrate is largely driven by economics and compounded by external violence, insecurity, and natural disasters.',
             location: {
                 center: [-87.700000, 15.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom,
@@ -72,8 +72,8 @@ var motivationsConfig = {
             id: 'map-state-2',
             alignment: 'full',
             hidden: false,
-            title: '',
-            description: 'Migration from Central America (Honduras, El Salvador and Guatemala) has dramatically increased in recent years.',
+            title: 'Migration Increases are Concerning to the U.S.',
+            description: 'Increases in migration hae generated concern in the U.S., who receive the majority of migrants from the northern countries in Central America.',
             location: {
                 center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom,
@@ -118,9 +118,9 @@ var motivationsConfig = {
             id: 'map-state-3',
             alignment: 'full',
             hidden: false,
-            // title: 'Display Title',
+            title: 'Migration has Large Costs for Migrants',
             // image: './images/zebra.jpg',
-            description: 'These migration trends have become a topic of political debate in the United States because they receive the majority of migrants.',
+            description: 'Migration comes at a large expense to the migrants, many of whom do not want to leave their country. Migrants often leave because they need to provide for their families and have limited social services to turn to for help.',
             location: {
                 center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: closeZoom,
@@ -152,9 +152,9 @@ var motivationsConfig = {
             id: 'map-state-4',
             alignment: 'full',
             hidden: false,
-            // title: 'Display Title',
+            title: 'Migrant Motivations are Complex',
             // image: './images/zebra.jpg',
-            description: 'Migration comes at a large expense to the migrants, many who do not want to leave their country. The root causes of what motivates these migrants must be identified.',
+            description: 'In order to understand the complex reasons for migration, close to 5,000 households in El Salvador, Guatemala, and Honduras were interviewed in June 2021 by the World Food Programme (WFP) and the International Organization for Migration (IOM) to better understand their conditions.',
             location: {
                 center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: closeZoom,
@@ -176,64 +176,64 @@ var motivationsConfig = {
         },
 
         //DESTINATION 5
-        {
-            id: 'map-state-5',
-            alignment: 'full',
-            hidden: false,
-            // title: 'Display Title',
-            // image: './images/zebra.jpg',
-            description: 'During June 2021, close to 5,000 households in Honduras, El Salvador and Guatemala were interview by the World Food Program +International Organization on Migration to better understand their condition.',
-            location: {
-                center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
-                zoom: closeZoom,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [
-            ],
-            onChapterExit: [
-                {
-                    layer: 'ntCountriesViz',
-                    opacity: 0,
-                },
-                {
-                    layer: 'ntCountriesVizLine',
-                    opacity: 0,
-                }
+        // {
+        //     id: 'map-state-5',
+        //     alignment: 'full',
+        //     hidden: false,
+        //     // title: 'Display Title',
+        //     // image: './images/zebra.jpg',
+        //     description: 'During June 2021, close to 5,000 households in Honduras, El Salvador and Guatemala were interview by the World Food Program +International Organization on Migration to better understand their condition.',
+        //     location: {
+        //         center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
+        //         zoom: closeZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [
+        //     ],
+        //     onChapterExit: [
+        //         {
+        //             layer: 'ntCountriesViz',
+        //             opacity: 0,
+        //         },
+        //         {
+        //             layer: 'ntCountriesVizLine',
+        //             opacity: 0,
+        //         }
 
-            ],
+        //     ],
 
 
 
-        },
+        // },
 
         //DESTINATION 6
-        {
-            id: 'map-state-6',
-            alignment: 'full',
-            hidden: false,
-            // title: 'Display Title',
-            // image: './images/zebra.jpg',
-            description: 'These are their motivations....',
-            location: {
-                center: [-89.2500000, 14.5000000], // initial map center in [lon, lat]
-                zoom: maxZoom,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [
-            ],
-            onChapterExit: [
+        // {
+        //     id: 'map-state-6',
+        //     alignment: 'full',
+        //     hidden: false,
+        //     // title: 'Display Title',
+        //     // image: './images/zebra.jpg',
+        //     description: 'These are their motivations....',
+        //     location: {
+        //         center: [-89.2500000, 14.5000000], // initial map center in [lon, lat]
+        //         zoom: maxZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [
+        //     ],
+        //     onChapterExit: [
 
-            ],
+        //     ],
 
-        },
+        // },
 
         //DESTINATION 7
         {
