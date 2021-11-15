@@ -1,18 +1,18 @@
 const narrativesData = [
     {
-        id: "state-1",
+        id: "ribbon-1",
         title: "Just Over Half of Migrants (57%) Reach their Destination",
         description: "Migrants work in similar industries as they did in their home countries. The U.S. economy depends on these migrants in industries that have labor shortages, such as agriculture, the restaurant industry, and domestic work. In 2018, migrants composed nearly 74% of agriculture workers&mdash;the U.S. needs these migrants as much as they need us.",
         image: "./img/outcomes/out2.jpg"
     },
     {
-        id: "state-2",
+        id: "ribbon-2",
         title: "One Third (33%) of Migrants Return Home",
         description: "While both origin and destination countries economically benefit from migration, the cost is largely borne by the migrants themselves. After experiencing harrowing conditions to migrate, involuntarily returning home comes at the additional loss of raising the large funds required to afford the journey.",
         image: "./img/outcomes/out3.jpg"
     },
     {
-        id: "state-3",
+        id: "ribbon-3",
         title: "Migrants Send Remittances Home to Provide for Basic Needs",
         description: "For the 29% of households that reported regularly receiving cash assistance from abroad, remittances provide a safety net that primarily help to meet subsistence costs and immediate living expenses. Remittances are rarely used (less than 5% reported) to contribute to savings or to invest in personal or community projects, which are often cited as catalysts for development."
     }
@@ -75,7 +75,7 @@ $(document).ready(function() {
     // ScrollMagic
     const controller = new ScrollMagic.Controller();
 
-    sceneTimeline = new ScrollMagic.Scene({
+    sceneReside = new ScrollMagic.Scene({
         triggerElement: "#frame-outcomes",
         duration: winHeight // scroll in px
     })
@@ -91,5 +91,15 @@ $(document).ready(function() {
             else {
                 $("#svg-outcomes #g-reside").fadeOut();
             }
+        })
+
+    sceneReturn = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll #ribbon-1 .trigger",
+        triggerHook: "onLeave",
+        duration: winHeight
+    })
+        .addTo(controller)
+        .on("leave", function(e) {
+            console.log("leave");
         })
 });
