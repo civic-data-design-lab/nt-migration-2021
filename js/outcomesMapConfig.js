@@ -171,116 +171,116 @@ var outcomesConfig = {
 
 
         //DESTINATION 5
-        {
-            id: 'map-state-5',
-            alignment: 'full',
-            hidden: false,
-            title: 'Just Over Half Of Migrants (57%) Make It To Their Final Destination', //Increased diaspora comes with additional risk
-            image: './img/outcomes/out2.jpg',
-            filter: '',
-            paddedImage: false,
-            description: 'Migrants work in similar industries as they did in their home countries. The United States economy depends on these migrants in industries that have labour shortages, such as agriculture, the restaurant industry, and domestic work. In 2018, nearly 74% of agriculture workers were migrants. The United States needs these migrants as much as they need us.',
-            location: {
-                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: middleZoom,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [],
-            onChapterExit: [],
-            hideCountries: false,
-            showGuat:true,
-            showHond:true,
-            showSalv:true,
+        // {
+        //     id: 'map-state-5',
+        //     alignment: 'full',
+        //     hidden: false,
+        //     title: 'Just Over Half Of Migrants (57%) Make It To Their Final Destination', //Increased diaspora comes with additional risk
+        //     image: './img/outcomes/out2.jpg',
+        //     filter: '',
+        //     paddedImage: false,
+        //     description: 'Migrants work in similar industries as they did in their home countries. The United States economy depends on these migrants in industries that have labour shortages, such as agriculture, the restaurant industry, and domestic work. In 2018, nearly 74% of agriculture workers were migrants. The United States needs these migrants as much as they need us.',
+        //     location: {
+        //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+        //         zoom: middleZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [],
+        //     onChapterExit: [],
+        //     hideCountries: false,
+        //     showGuat:true,
+        //     showHond:true,
+        //     showSalv:true,
             
-        },
+        // },
 
         //DESTINATION 6
-        {
-            id: 'map-state-6',
-            alignment: 'full',
-            hidden: false,
-            title: 'Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here', //Increased diaspora comes with additional risk
-            image: '',
-            filter: '',
-            paddedImage: false,
-            description: '',
-            location: {
-                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: farZoom,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [],
-            onChapterExit: [],
-            hideCountries: false,
-            showGuat:true,
-            showHond:true,
-            showSalv:true,
+        // {
+        //     id: 'map-state-6',
+        //     alignment: 'full',
+        //     hidden: false,
+        //     title: 'Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here', //Increased diaspora comes with additional risk
+        //     image: '',
+        //     filter: '',
+        //     paddedImage: false,
+        //     description: '',
+        //     location: {
+        //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+        //         zoom: farZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [],
+        //     onChapterExit: [],
+        //     hideCountries: false,
+        //     showGuat:true,
+        //     showHond:true,
+        //     showSalv:true,
             
-        },
+        // },
 
         //DESTINATION 6
-        {
-            id: 'map-state-7',
-            alignment: 'full',
-            hidden: false,
-            title: '33% Of Migrants Are Returned Home', //Increased diaspora comes with additional risk
-            image: './img/outcomes/out3.jpg', //
-            filter: '',
-            paddedImage: false,
-            description: 'This comes at a loss to the migrants who raise large funds and experience harrowing conditions to migrate. While both origin and destination countries benefit ecnomically from migration, the cost is largely borne by the migrants themselves.',
-            location: {
-                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: farZoom,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [],
-            onChapterExit: [],
-            hideCountries: false,
-            showGuat:true,
-            showHond:true,
-            showSalv:true,
+        // {
+        //     id: 'map-state-7',
+        //     alignment: 'full',
+        //     hidden: false,
+        //     title: '33% Of Migrants Are Returned Home', //Increased diaspora comes with additional risk
+        //     image: './img/outcomes/out3.jpg', //
+        //     filter: '',
+        //     paddedImage: false,
+        //     description: 'This comes at a loss to the migrants who raise large funds and experience harrowing conditions to migrate. While both origin and destination countries benefit ecnomically from migration, the cost is largely borne by the migrants themselves.',
+        //     location: {
+        //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+        //         zoom: farZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [],
+        //     onChapterExit: [],
+        //     hideCountries: false,
+        //     showGuat:true,
+        //     showHond:true,
+        //     showSalv:true,
             
-        },
+        // },
 
         //DESTINATION 7
-        {
-            id: 'map-state-8',
-            alignment: 'full',
-            hidden: false,
-            title: 'Migrants Send Remittances To Provide For Basic Needs', //Increased diaspora comes with additional risk
-            image: './img/outcomes/out4.jpg', //
-            filter: '',
-            paddedImage: false,
-            description: '29% of households reported regularly receiving remittances from abroad. These remittances provide a lifeline to meet subsistence costs and immediate expenses rather than a means to contribute to savings, personal investment or community projects, which are cited as catalysts for development. This lifeline is helpful for the origin countries which struggle to fund social services for their populations.',
-            location: {
-                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: farZoom,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [],
-            onChapterExit: [],
-            hideCountries: false,
-            showGuat:true,
-            showHond:true,
-            showSalv:true,
+        // {
+        //     id: 'map-state-8',
+        //     alignment: 'full',
+        //     hidden: false,
+        //     title: 'Migrants Send Remittances To Provide For Basic Needs', //Increased diaspora comes with additional risk
+        //     image: './img/outcomes/out4.jpg', //
+        //     filter: '',
+        //     paddedImage: false,
+        //     description: '29% of households reported regularly receiving remittances from abroad. These remittances provide a lifeline to meet subsistence costs and immediate expenses rather than a means to contribute to savings, personal investment or community projects, which are cited as catalysts for development. This lifeline is helpful for the origin countries which struggle to fund social services for their populations.',
+        //     location: {
+        //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+        //         zoom: farZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [],
+        //     onChapterExit: [],
+        //     hideCountries: false,
+        //     showGuat:true,
+        //     showHond:true,
+        //     showSalv:true,
             
-        },
+        // },
 
         //DESTINATION 8
         {

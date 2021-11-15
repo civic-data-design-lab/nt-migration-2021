@@ -556,11 +556,17 @@ section#open:hover .chapter-title {
     height: 100%;
 }
 
-.scrolly-container-outcomes{
+.scrolly-container-outcomes .ribbon-image {
     /* overflow: hidden; */
     /* background-color: rgb(224, 135, 220,0.5); */
-    background-color: rgb(226, 60, 173,0.75);
+    background-color: rgb(226, 60, 173, 0.5);
     backdrop-filter: var(--blur-on);
+}
+.scrolly-container-outcomes .scrollytelling-caption, 
+.scrolly-container-outcomes .scrollytelling-text {
+    background-color: rgb(226, 60, 173, 0.75);
+    backdrop-filter: var(--blur-on);
+}
 }
 
 .scrolly-container-motivations{
