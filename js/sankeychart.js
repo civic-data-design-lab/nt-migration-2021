@@ -6,13 +6,13 @@ const countryText = {
     "SLV": "El Salvador"
 };
 const occuAttr = {
-    "Agricultural production or labor": {"label": "Agriculture", "color": "#f28c77", "class": "agriculture"},
-    "Informal work": {"label": "Informal Work", "color": "#e2729c", "class": "informal"},
-    "Salaried employment": {"label": "Salaried Work", "color": "#ec84cb", "class": "salary"},
-    "Own business": {"label": "Own Business", "color": "#b470c8", "class": "business"},
-    "Domestic work": {"label": "Domestic Work", "color": "#d667ce", "class": "domestic"},
-    "Student (may or may not attend classes regularly)": {"label": "Student", "color": "#f28c77", "class": "student"},
-    "Unemployed": {"label": "Unemployed", "color": "#9e7ab9", "class": "unemployed"}
+    "Agricultural production or labor": {"label": "Agriculture", "color": "#f28c77", "class": "agriculture", "img": "prof7.jpg"},
+    "Informal work": {"label": "Informal Work", "color": "#e2729c", "class": "informal", "img": "prof6.jpg"},
+    "Salaried employment": {"label": "Salaried Work", "color": "#ec84cb", "class": "salary", "img": "prof10.jpg"},
+    "Own business": {"label": "Own Business", "color": "#b470c8", "class": "business", "img": "prof9.jpg"},
+    "Domestic work": {"label": "Domestic Work", "color": "#d667ce", "class": "domestic", "img": "prof5.jpg"},
+    "Student (may or may not attend classes regularly)": {"label": "Student", "color": "#f28c77", "class": "student", "img": "prof11.jpg"},
+    "Unemployed": {"label": "Unemployed", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"}
 };
 
 const occuAttrb = {
@@ -180,6 +180,17 @@ d3.csv("./data/sankey.csv").then(function(data) {
 
 // add in the nodes
    
+   
+   // change before tooltip img & text
+//                const updateSelectDiv(beforeOccupation);
+// 
+//                 function updateSelectDiv(beforeOccupation) {
+//                     const tooltip = $("#tt-select");
+//                     
+//                     tooltip.find("img").attr("src", "./img/profile/" + occuAttr[beforeOccupation].image);
+//                     tooltip.find(".event-title").html(occuAttr[beforeOccupation].label);
+//                     tooltip.find(".description").html(occuAttr[beforeOccupation].label);
+//                 }
 
 
 
@@ -314,7 +325,15 @@ function showDetail(d) {
 //     const eventTemplate = $(".event-img");
 //     callImages.eventTemplate.children().appendTo("#event-img");
     
-    
+         updateSelectDiv(occuAttr);
+
+                function updateSelectDiv(beforeOccupation) {
+                    const tooltip = $("#tt-select");
+                    
+                    tooltip.find("img").attr("src", "./img/profiles/" + occuAttr[d.source.name.split('-')[1]].img);
+                    tooltip.find(".occ-title").html(occuAttr[d.source.name.split('-')[1]].label);
+                    tooltip.find(".description").html(occuAttr[d.source.name.split('-')[1]].label);
+                }
       
     $("#gates_tooltip").empty();
     const tooltipTemplate = $(".tooltip.template");
