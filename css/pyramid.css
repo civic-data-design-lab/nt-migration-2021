@@ -195,11 +195,8 @@ font-family: neue-haas-grotesk-text, sans-serif;
     pointer-events: auto;
 }
 
-.profile-map-theme{
-    box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35);
-
-    background-color: rgb(59, 168, 201,0.5);
-    backdrop-filter: var(--blur-on);
+.profile-map-theme {
+    background-color: rgba(59, 168, 201, 0.75);
 }
 
 .profiles2-img {
@@ -277,11 +274,14 @@ font-family: neue-haas-grotesk-text, sans-serif;
     /* width: 100vw; */
 }
 
-.scrolly-container-profile{
+.scrolly-container-profile .ribbon-image {
     /* overflow: hidden; */
-     box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35);
-
-    background-color: rgb(59, 168, 201,0.5);
+    background-color: rgba(59, 168, 201, 0.5);
+    backdrop-filter: var(--blur-on);
+}
+.scrolly-container-profile .scrollytelling-caption, 
+.scrolly-container-profile .scrollytelling-text {
+    background-color: rgba(59, 168, 201, 0.75);
     backdrop-filter: var(--blur-on);
 }
 
