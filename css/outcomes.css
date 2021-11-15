@@ -13,3 +13,14 @@
 #g-return-vol-inv {
     display: none;
 }
+
+/* TEMPORARY DISPLAY FOR DRAFT */
+.mask {
+    display: none;
+}
+#mask-1, #mask-2 {
+    display: block;
+}
+#g-return, #g-return-vol-inv {
+    display: block;
+}
