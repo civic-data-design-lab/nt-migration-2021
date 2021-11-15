@@ -203,7 +203,7 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
       .style('stroke', function (d) { if (d.value <= 1) return fillColor(d.name);})
       .style('stroke-width', function (d) { if (d.value <= 1) return .9;})
       // .attr('stroke', function (d) { return d3.rgb(fillColor(d.name)).darker(); })
-      .attr('stroke-width', .1)
+      .attr('stroke-width', .4)
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
       
@@ -286,6 +286,7 @@ function ticked() {
       removeaxis();
        removeaxis();
     remAvRegAnn();
+
       
 
 
@@ -366,6 +367,7 @@ const scrollUndoFromUSToGuatem = new ScrollMagic.Scene({
                                   })
                                   .on("leave",(e)=>{
                                   groupBubbles(),
+                                  remAllAnn(),
                                    remGuatAnn();
                                   
                                 	})
@@ -378,6 +380,7 @@ const scrollFromGuatToHon = new ScrollMagic.Scene({
                                   .on("enter",(e)=>{
                     
                                   addHonAnn(),
+                                  remAllAnn(),
                                   upHonAnn();                    
                                 	})
                                   .addTo(controller);
@@ -387,6 +390,7 @@ const scrollUndoFromGuatToHon = new ScrollMagic.Scene({
         
                                   })
                                   .on("leave",(e)=>{
+                                  remAllAnn(),
                                    remHonAnn();
                                   
                                 	})
@@ -397,7 +401,7 @@ const scrollFromHonToSlv = new ScrollMagic.Scene({
         							triggerHook:'onLeave',
                                   })
                                   .on("enter",(e)=>{
-                              
+                              remAllAnn(),
                                   addSlvAnn(),
                                   upSlvAnn();
                                   
@@ -410,6 +414,7 @@ const scrollUndoFromHonToSlv = new ScrollMagic.Scene({
         
                                   })
                                   .on("leave",(e)=>{
+                                  remAllAnn(),
                                    remSlvAnn();
                                   
                                 	})
@@ -424,22 +429,24 @@ const scrollSplitMeans = new ScrollMagic.Scene({
                                    splitBubbles(),
                                    remHonAnn(),
                                    remGuatAnn(),
+                                   remAllAnn(),
                                    remSlvAnn();
                                 	})
-//                                   .addIndicators({name:"forceLinke"})
+                                  .addIndicators({name:"forceLink5"})
                                   .addTo(controller);
 
 const scrollUndoSplitMeans = new ScrollMagic.Scene({
                                     triggerElement:".forceLinke"
         
                                   })
-                                  .on("leave",(e)=>{
+                                  .on("enter",(e)=>{
                                   addGuatAnn(),
                                   addSlvAnn(),
+                                  remAllAnn(),
                                   addHonAnn();
                                   
                                 	})
-                               //    .addIndicators({name:"forceLink"})
+                                  .addIndicators({name:"forceLinke"})
                                   .addTo(controller);  
                                   
 const scrollHighlightIrrCoy = new ScrollMagic.Scene({
@@ -447,6 +454,7 @@ const scrollHighlightIrrCoy = new ScrollMagic.Scene({
        								 triggerHook:'onLeave',
                                   })
                                   .on("enter",(e)=>{
+                                  remAllAnn(),
                              	  highlightIrreCoy();
                                 	})
 //                                   .addIndicators({name:"forceLinke"})
@@ -457,6 +465,7 @@ const scrollUndoHighlightIrrCoy = new ScrollMagic.Scene({
         
                                   })
                                   .on("leave",(e)=>{
+                                  remAllAnn(),
                                   
                                     fillColorN();
                                 	})
@@ -468,6 +477,7 @@ const scrollHighlightIrrOwn = new ScrollMagic.Scene({
        								 triggerHook:'onLeave',
                                   })
                                   .on("enter",(e)=>{
+                                  remAllAnn(),
                              	  highlightIrreOwn();
                                 	})
 //                                   .addIndicators({name:"forceLinke"})
@@ -478,6 +488,7 @@ const scrollUndoHighlightIrrOwn = new ScrollMagic.Scene({
         
                                   })
                                   .on("leave",(e)=>{
+                                  remAllAnn(),
                                   
                                    highlightIrreCoy();
                                 	})
@@ -489,6 +500,7 @@ const scrollHighlightReg = new ScrollMagic.Scene({
        								 triggerHook:'onLeave',
                                   })
                                   .on("enter",(e)=>{
+                                  remAllAnn(),
                              	  highlightRegular();
                                 	})
 //                                   .addIndicators({name:"forceLinke"})
@@ -499,6 +511,7 @@ const scrollUndoHighlighReg = new ScrollMagic.Scene({
         
                                   })
                                   .on("leave",(e)=>{
+                                  remAllAnn(),
                                   
                                    highlightRegular();
                                 	})
@@ -510,6 +523,7 @@ const scrollBeeswarm = new ScrollMagic.Scene({
        								 triggerHook:'onLeave',
                                   })
                                   .on("enter",(e)=>{
+                                  remAllAnn(),
                                   fillColorN(),
                                   axis(),
                                   updateaxis();
@@ -526,6 +540,7 @@ const scrollUndoBeeswarm = new ScrollMagic.Scene({
                                   })
                                   .on("leave",(e)=>{
                                   splitBubbles(),
+                                  remAllAnn(),
                                  removeaxis(),
                                    highlightRegular(),
                                    remAvICAnn();
@@ -541,6 +556,7 @@ const scrollLabelIrrOwn = new ScrollMagic.Scene({
                                   })
                                   .on("enter",(e)=>{
                                   addAvIOAnn(),
+                                  remAllAnn(),
                                    remAvICAnn(),
                                 	upAvIOAnn();
                                 	})
@@ -552,6 +568,7 @@ const scrollUndoLabelIrrOwn = new ScrollMagic.Scene({
         
                                   })
                                   .on("leave",(e)=>{
+                                  remAllAnn(),
                                    remAvIOAnn();
                                 	})
                                //    .addIndicators({name:"forceLink"})
@@ -563,6 +580,7 @@ const scrollLabelReg = new ScrollMagic.Scene({
                                   })
                                   .on("enter",(e)=>{
                                  addAvRegAnn(),
+                                 remAllAnn(),
                                 	upAvRegAnn(),
                                 	remAvIOAnn();
                                 	})
@@ -574,6 +592,7 @@ const scrollUndoLabelReg = new ScrollMagic.Scene({
         
                                   })
                                   .on("leave",(e)=>{
+                                  remAllAnn(),
                                   splitBubblesBee(),
                                   remAvRegAnn();
                                 	})
@@ -817,15 +836,14 @@ var financeData3 = d3.keys(financeTitleX3);
       .attr('y', 100)
       .attr('text-anchor', 'start')
       .text(function (d) { return d; });
-      
-
-
   }
   
   
+
+  
   function showDetail(d) {
     // change outline to indicate hover state.
-    d3.select(this).attr('stroke', 'black');
+    d3.select(this).attr('stroke', 'black').style('stroke-width','2');
 
     $("#gates_tooltip").empty();
     const tooltipTemplate = $(".tooltip.template");
@@ -835,8 +853,9 @@ var financeData3 = d3.keys(financeTitleX3);
     tooltipContent.find(".side-color").css("background", pathwayColor);
     tooltipContent.find(".text-color").css("color", pathwayColor);
     tooltipContent.find(".label-cost").html("$" + addCommas(d.value));
-    tooltipContent.find(".label-country").html(countryText[d.year]);
-    tooltipContent.find(".label-pathway").html(pathwayAttr[d.name]).label;
+    tooltipContent.find('.label-cost').filter(function () { if (d.value <= 1) return this;}).html("Didn't Respond");
+    tooltipContent.find(".label-country").html(countryText[d.year].label);
+    tooltipContent.find(".label-pathway").html(pathwayAttr[d.name].label);
 
     tooltipContent.children().appendTo("#gates_tooltip");
 
@@ -846,7 +865,9 @@ var financeData3 = d3.keys(financeTitleX3);
 
   function hideDetail(d) {
     d3.select(this)
-      .attr('stroke', d3.rgb(fillColor(d.group)).darker());
+     .style('stroke', function (d) { if (d.value <= 1) return fillColor(d.name);})
+      .style('stroke-width', function (d) { if (d.value <= 1) return .9;})
+      .style('stroke-width',function (d) { if (d.value > 1) return 0;});
 
     tooltip.hideTooltip();
   }
@@ -974,7 +995,6 @@ function highlightIrreCoy(){
 d3.selectAll("circle")
     .transition()
     .duration(2000)
-
       .attr('fill', function (d) { if (d.value > 1) return highlightirrcoy(d.name);})
       .style('fill', function (d) { if (d.value <= 1) return "#fff";})
       .style('stroke', function (d) { if (d.value <= 1) return highlightirrcoy(d.name);})
@@ -1298,9 +1318,10 @@ d3.selectAll(".annotation-groupg").style("opacity",1);
   }
 
 
-
 // Load the data.
 d3.csv('data/dots_data2.csv', display);
+
+
 
 // setup the buttons.
 setupButtons();

@@ -1,15 +1,18 @@
 // define variables for spacing, margins, etc.
 centreSpacing = 22; // spacing in between the male and female bars
-margin = { left: 10, right: 10, top: 80, bottom: 25 };
-const h = 900 - margin.top - margin.bottom;
+margin = { left: 5, right: 10, top: 80, bottom: 110 };
+const h = 700 - margin.top - margin.bottom;
 const w = 800 - margin.left - margin.right;
+const sqLen = 1;
+const sideWidth = 0;
 
 // set up SVG
 var svg = d3
   .select("#chart")
   .append("svg")
-  .attr("width", w + margin.left + margin.right)
-  .attr("height", h + margin.top + margin.bottom);
+  .attr("viewBox", [-(sideWidth + sqLen), 0, w + (sideWidth + sqLen), h+ margin.bottom])
+//   .attr("width", w + margin.left + margin.right)
+//   .attr("height", h + margin.top + margin.bottom);
 
 // set up three g (group) elements to help position things and organise our chart
 // g element for the bars for the male population
@@ -94,7 +97,7 @@ d3.csv("./data/dots_data3.csv").then(function (data) {
     .attr("class","pyramid")
     .attr("x", centreSpacing / 2)
     .attr("y", (d) => y(d.age) + y.bandwidth() / 2 +10)
-    .style("font-size", 13)
+    .style("font-size", 10)
     .style("fill","#fff")
     .text((d, i) => (i != data.length - 1 ? (i % 5 == 0 ? d.age : "") : "90+"));
 
@@ -116,48 +119,62 @@ gLabels
   .append("text")
   .text("Age")
   .attr("x", centreSpacing / 2)
-  .attr("y", -25)
-  .attr("class","pyramid")
-    .style("font-size", 30)
+  .attr("y", -0)
   .style("fill","#fff")
-  .style("font-weight", "bold");
+  .style("font-size", 13)
+  .attr("class","pyramidage");
 
 // add Male/Female labels
 gF.append("text")
-  .text("Male Migrants")
-  .attr("x", (w - centreSpacing) / 2)
-  .attr("y", -25)
+  .text("Male")
+  .attr("x", (w - centreSpacing) / 3)
+  .attr("y", -20)
   .attr("class","pyramid")
-  .style("text-anchor", "end")
   .style("fill","#fff")
-    .style("font-size", 30)
-  .style("font-weight", "bold");
+  .style("text-anchor", "end");
 gM.append("text")
-  .text("Female Migrants")
-  .attr("x", 0)
-  .attr("y", -25)
-  .attr("class","pyramid")
-  .style("font-size", 30)
-  .style("text-anchor", "start")
+  .text("Female")
+  .attr("x", 100)
+  .attr("y", -20)
   .style("fill","#fff")
-  .style("font-weight", "bold");
+  .attr("class","pyramid")
+  .style("text-anchor", "start");
+  
+  gF.append("text")
+  .text("Migrants")
+  .attr("x", (w - centreSpacing) / 3)
+  .attr("y", -0)
+  .attr("class","pyramidmigrants")
+  .style("fill","#fff")
+  .style("text-anchor", "end");
+gM.append("text")
+  .text("Migrants")
+  .attr("x", 100)
+  .attr("y", -0)
+  .style("fill","#fff")
+  .attr("class","pyramidmigrants")
+  .style("text-anchor", "start");
+  
+  
+  
   
    function showDetail(d) {
     // change outline to indicate hover state.
 //     	d3.selectAll("rect").style('fill', function (d) { if (d.age >= 18) return "#b3e7e8";});
-		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('opacity', function (d)  { if (d.age <= 17) {return "1"} else if (d.age) {return .5}});
+		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('fill', function (d)  { if (d.age <= 17) {return "#e23cad"} else if (d.age) {return "#fff"}});
   } 
   
      function showDetailb(d) {
     // change outline to indicate hover state.
 //     	d3.selectAll("rect").style('fill', function (d) { if (d.age >= 18) return "#b3e7e8";});
-		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('opacity', function (d)  { if (d.age >= 18 && d.age <= 34 ) {return "1"} else if (d.age) {return .5}});
+		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('fill', function (d)  { if (d.age >= 18 && d.age <= 34 ) {return "#e23cad"} else if (d.age) {return "#fff"}});
+		
   } 
   
        function showDetaila(d) {
     // change outline to indicate hover state.
 //     	d3.selectAll("rect").style('fill', function (d) { if (d.age >= 18) return "#b3e7e8";});
-		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('opacity',"1");
+		d3.selectAll("rect").transition().duration(500).ease(d3.easeLinear).style('fill',"#fff");
   } 
   
   function hideDetail(d) {
@@ -170,7 +187,15 @@ gM.append("text")
   function hideDetailb(d) {
     // change outline to indicate hover state.
     
-		d3.selectAll(".rect,.pyramid").transition().duration(500).ease(d3.easeLinear).style('opacity',"0");
+		d3.selectAll(".rect,.pyramid,.pyramidage,.pyramidmigrants").transition().duration(500).ease(d3.easeLinear).style('opacity',"0");
+		
+		
+	 }
+	 
+	  function ShowText(d) {
+    // change outline to indicate hover state.
+    
+		d3.selectAll(".rect,.text,.pyramid,.pyramidage,.pyramidmigrants").transition().duration(500).ease(d3.easeLinear).style('opacity',"1");
 		
 		
 	 }
@@ -247,7 +272,8 @@ const scrollUndoHideall = new ScrollMagic.Scene({
         
                                   })
                                   .on("leave",(e)=>{
-                                  showDetaila();
+                                  ShowText();
+                                  // showDetaila();
                                   
                                 	})
                                //    .addIndicators({name:"forceLink"})
