@@ -6,3 +6,10 @@
     -o-mix-blend-mode: hard-light;
     mix-blend-mode: hard-light;
 }
+
+/* SVG ANIMATION */
+#g-reside,
+#g-return, 
+#g-return-vol-inv {
+    display: none;
+}
