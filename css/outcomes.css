@@ -1,0 +1,8 @@
+.scrolly-container-outcomes .ribbon-image img {
+    filter: grayscale(1);
+    -webkit-mix-blend-mode: hard-light;
+    -moz-mix-blend-mode: hard-light;
+    -ms-mix-blend-mode: hard-light;
+    -o-mix-blend-mode: hard-light;
+    mix-blend-mode: hard-light;
+}
