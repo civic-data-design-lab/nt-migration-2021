@@ -8,6 +8,8 @@
     src: url();
 }
 
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+
 a, a:visited, a:active {
   color: #fff;
 }
@@ -160,23 +162,27 @@ font-family: neue-haas-grotesk-text, sans-serif;
      }
 
      path {
+     pointer-events: none;
        fill: none;
      }
 
 
     .annotation path {
+    pointer-events: none;
       stroke: black;
       stroke-width: .7px;
       fill: none;
     }
 
     .annotation text {
+    pointer-events: none;
       fill: var(--annotation-badge-color);
     }
 
 
 
     .annotation-note-title, text.title {
+   pointer-events: none;
       font-weight: bold;
       font-size: 2em;
     }

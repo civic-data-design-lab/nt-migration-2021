@@ -89,7 +89,7 @@ font-family: neue-haas-grotesk-text, sans-serif;
 
 .profiles2-img {
     z-index: -1;
-    background-image: url("../img/cost/IMG-20210422-WA0010.jpg");
+    background-image: url("../img/profiles/prof1.jpg");
     content: '';
     position: absolute;
     width: var(--open);
@@ -140,12 +140,34 @@ font-family: neue-haas-grotesk-text, sans-serif;
   text-align: center;
 }
 
-svg text {
+.pyramid {
 	font-family: neue-haas-grotesk-text, sans-serif;
-	color: #fff;
-	font-size: 18px;
+	font-size: 2em;
 	dominant-baseline: central; /*vertically centers text on position*/
 	text-anchor: middle; /*horizontally centers text on position*/
+	 font-weight: 700;
+    font-style: normal;
+    font-size: 1.2em;
+}
+
+.pyramidage {
+	font-family: neue-haas-grotesk-text, sans-serif;
+	font-size: 2em;
+	dominant-baseline: central; /*vertically centers text on position*/
+	text-anchor: middle; /*horizontally centers text on position*/
+	 font-weight: 300;
+    font-style: normal;
+    font-size: 1.2em;
+}
+
+.pyramidmigrants {
+	font-family: neue-haas-grotesk-text, sans-serif;
+	font-size: 2em;
+	dominant-baseline: central; /*vertically centers text on position*/
+	text-anchor: middle; /*horizontally centers text on position*/
+	 font-weight: 300;
+    font-style: normal;
+    font-size: 1.2em;
 }
 
 .step1 {
@@ -171,4 +193,175 @@ svg text {
 
 .content-block1 * {
     pointer-events: auto;
+}
+
+.profile-map-theme{
+    box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35);
+
+    background-color: rgb(59, 168, 201,0.5);
+    backdrop-filter: var(--blur-on);
+}
+
+.profiles2-img {
+    z-index: -1;
+    background-image: url("../img/profiles/prof1.jpg");
+    content: '';
+    position: absolute;
+    width: var(--open);
+    height: var(--background-image-height);
+    /* filter: var(--blur-off);   */
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: rbga(255, 255, 255, 0);
+/* transition:  1s, opacity 1s linear; */
+}
+
+.profiles3-img {
+             z-index: -1;
+    background-image: url("../img/profiles/prof2.jpg");
+    content: '';
+    position: absolute;
+    width: var(--open);
+    height: var(--background-image-height);
+    /* filter: var(--blur-off);   */
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: rbga(255, 255, 255, 0);
+/*     transition:  1s, opacity 1s linear; */
+/* transition: visibility 0s 2s, opacity 2s linear; */
+          }
+          
+.profiles4-img {
+             z-index: -1;
+    background-image: url("../img/profiles/prof3.jpg");
+    content: '';
+    position: absolute;
+    width: var(--open);
+    height: var(--background-image-height);
+    /* filter: var(--blur-off);   */
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: rbga(255, 255, 255, 0);
+/*     transition:  1s, opacity 1s linear; */
+/* transition: visibility 0s 2s, opacity 2s linear; */
+          }
+          
+.profiles5-img {
+             z-index: -1;
+    background-image: url("../img/profiles/prof4.jpg");
+    content: '';
+    position: absolute;
+    width: var(--open);
+    height: var(--background-image-height);
+    /* filter: var(--blur-off);   */
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: rbga(255, 255, 255, 0);
+/*     transition:  1s, opacity 1s linear; */
+/* transition: visibility 0s 2s, opacity 2s linear; */
+          }
+
+.step1 {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0.5s;
+    /* width: 100vw; */
+}
+
+.scrolly-container-profile{
+    /* overflow: hidden; */
+     box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35);
+
+    background-color: rgb(59, 168, 201,0.5);
+    backdrop-filter: var(--blur-on);
+}
+
+.scrolly-container-profile-sankey{
+    /* overflow: hidden; */
+     box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.1);
+
+    background-color: rgb(255, 255, 255,0.4);
+
+}
+
+.occbef {
+	font-family: neue-haas-grotesk-text, sans-serif;
+	font-size: 2em;
+	dominant-baseline: central; /*vertically centers text on position*/
+	text-anchor: end; /*horizontally centers text on position*/
+	 font-weight: 100;
+    font-style: normal;
+    font-size: 2rem;
+    color:#fff !important;
+}
+
+.occaft
+
+{
+	font-family: neue-haas-grotesk-text, sans-serif;
+	font-size: 2em;
+	dominant-baseline: central; /*vertically centers text on position*/
+	text-anchor: start; /*horizontally centers text on position*/
+	 font-weight: 100;
+    font-style: normal;
+    font-size: 2em;
+    color:#fff ;
+}
+
+
+.occbefper
+
+{
+	font-family: neue-haas-grotesk-text, sans-serif;
+
+	dominant-baseline: central; /*vertically centers text on position*/
+	text-anchor: end; /*horizontally centers text on position*/
+	 font-weight: 700;
+  font-size: 3em;
+    color:#fff ;
+}
+
+.occaftper
+
+{
+	font-family: neue-haas-grotesk-text, sans-serif;
+	font-size: 3em;
+	dominant-baseline: central; /*vertically centers text on position*/
+	text-anchor: start; /*horizontally centers text on position*/
+	 font-weight: 700;
+    color:#fff ;
+}
+
+.sankey1{
+    color: white;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 2em;   
+    line-height: 1em;
+    /* margin-top: 1rem;
+    margin-bottom: 1rem; */
+    /* padding: var(--scrollytelling-padding); */
+    padding-left: calc(var(--scrollytelling-padding)*1.5);
+    padding-right: calc(var(--scrollytelling-padding)*1.5);
+
+}
+
+.sankey2{
+    color: white;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1.5em;   
+    line-height: 1em;
+    /* margin-top: 1rem;
+    margin-bottom: 1rem; */
+    /* padding: var(--scrollytelling-padding); */
 }
