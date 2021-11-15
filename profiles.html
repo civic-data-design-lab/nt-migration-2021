@@ -91,8 +91,8 @@
             
         <div class="content-block position-sticky bk profiles2-img" >        
                <div class="gradient profiles-g">     
-                    <div class="container align-items-center">
-                     <div id="chart" class="vh-100"></div>
+                    <div class="col-8 align-items-start vh-100">
+                     <div id="chart"></div>
 </div> 
                
                                      </div>
@@ -127,7 +127,7 @@
 <div class="profile-map-theme scrolly-container">
 
 						<div class="scrollytelling-text"> 
-						<div class="forceLink1" id="#mapdiv2"><span></span></div>
+						<div class="forceLink1"><span></span></div>
 						<div class="forceLinka" ><span></span></div>    
             		  <h2 class="scrollytelling" style="padding-right: 10px; padding-left: 10px">69% of Migrants are Male</h2> 
             		 <h3 class="scrollytelling description" style="padding-right: 10px; padding-left: 10px"> What's driving this intention is largely economics, as 87% of households report being satisfied where they live, but desire to migrate for better economic conditions.</h3>
@@ -136,7 +136,7 @@
    <div class="col-4 vh-100"></div>
    
    
-  
+  	<div id="#mapdiv"><span></span></div>
 <!--   <div class=" step righty active ">   -->
 <div class=" profile-map-theme scrolly-container">
 						<div class="scrollytelling-text"> 
@@ -161,6 +161,9 @@
   
                       
                                   <script type="text/javascript" src="./js/pyramidscript.js"></script>
+                                  
+
+
 <!-- 
                                   </div>
                                   </div>
@@ -172,13 +175,51 @@
                   
           <!--                       <div class="forceLink1"><span></span></div> -->
                  </div>  
-                    <div class="col-6 vh-100"></div>
-                   <div class="content-block position-sticky" >             
-              <div class="container align-items-center">
-                     <div id="chartsank" class="vh-100"></div>
-                        <div class="row">
+                 
+                          <div class="step1 full active">
+                    <div class="scrolly-container-profile">
+                        <div class="ribbon">
+                            <div class="scrollytelling-text">
+                                <h2 class="scrollytelling">Migration with help of a Smuggler is the Most Expensive and
+                                    Most Common.</h2>
+                                <h3 class="scrollytelling description">Estimates show that it cost migrants close to
+                                    $1.7 Billion to travel using a smuggler. Migrants use smugglers because they protect
+                                    them on the trip, but often also use narcotraffic routes and bribes to get the
+                                    migrants through government check-points.</h3>
+                            </div>
+                            <div class="forceLink4"><span></span></div>
+                           <!--  <div class="forceLinkd"><span></span></div> -->
+                        </div>
+                    </div>
+                </div>
+                 
+                 
+           
+                    <div class="col-1"></div>
+      <!--              <div class="content-block position-sticky" >   -->           
+    <!--           <div class="col-2 container vh-100"> -->
+                      <div class="container p-5 position-sticky vh-100"> 
 
-                    
+                      <div id="chartsank" class="col-7 position-realtive vh-80" style="background-color: #ffffff7a; padding-bottom:0rem;">
+                      <div class="container row" style="padding-bottom: 2rem;">
+                        <div class="col-5" style="padding-top:2rem; padding-left:-1rem; padding-right:1.5rem; margin-right:-3rem; margin-left:7rem;">
+                       <h2 class="sankey1 p-1"style="margin: 0;">Occupation Before</h2>
+                        <h2 class="sankey2">Migration</h2></div>
+                        <div class="col-5" style="padding-top:2rem; padding-left:0rem; padding-right:0rem; margin-right:-6rem; margin-left:0rem;">
+                       <h2 class="sankey1 p-1" style="margin: 0;">Occupation After</h2>
+                       <h2 class="sankey2">Migration</h2> </div>
+                     <div id="tt-select" class="position-absolute top-0 end-0 translate-bottom-y col-5 p-5">                         
+   <div class="event-img mb-2" style="background: rgba(235, 73, 39, 0.7); display: block;">
+                                <img class="w-100" src="./img/origins/03-honcoup.jpg">
+                            </div>
+                            <h3 class="event-title fw-bold" style="color: rgb(255, 255, 255); background: none; padding: 0px;">Agriculture</h3>
+                            <p class="event-descr" style="color: rgb(255, 255, 255);">A violent attempted coup in 1959 against the president who instituted progressive labor laws and agrarian reform policies preceded the military takeover by the right-wing National Party (PNH) in 1963. This shift in power initiated a two decades long military dictatorship.</p>
+                        </div>
+
+
+                   
+
+                        </div>
          <script type="text/javascript" src="./js/sankeychart.js"></script>
 
 
@@ -210,12 +251,26 @@
     </div>
 
  
- <script>
-      new ScrollMagic.Scene({triggerElement: "#mapdiv2",
-       triggerHook:'onLeave'})
+  <script>
+      new ScrollMagic.Scene({triggerElement: ".forceLink1",duration: '300%',triggerHook:'onLeave',
+       })
       
-        .setClassToggle("#mapdiv1", "deactive")
-        .addTo(controller);
+        .setClassToggle(".profiles2-img", "profiles3-img")
+        .addTo(controller);  
+        
+    new ScrollMagic.Scene({triggerElement: ".forceLink2",duration: '300%',triggerHook:'onLeave',
+       })
+      
+        .setClassToggle(".profiles2-img", "profiles4-img")
+        .addTo(controller);  
+        
+          new ScrollMagic.Scene({triggerElement: ".forceLink3",duration: '300%',triggerHook:'onLeave',
+       })
+      
+        .setClassToggle(".profiles2-img", "profiles5-img")
+        .addTo(controller);  
+        
+        
         
     </script>
             
