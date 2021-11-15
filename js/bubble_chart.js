@@ -79,19 +79,19 @@ var meansTitleX3 = {
   };
   
  var financeTitleX = {
-    "56%": 50,
+    "56%": 330,
     "7%": width - 720,
     "36%": width - 320
   };
   
    var financeTitleX2 = {
-    "Finance Migration ": 50,
+    "Finance Migration ": 330,
     "Finance Migration": width - 720,
     "Finance Migration  ": width - 320
   };
   
      var financeTitleX3 = {
-    "Entirely with Loans": 50,
+    "Entirely with Loans": 330,
     "With Some Loans": width - 720,
     "Whithout Loans": width - 320
   };
@@ -185,7 +185,7 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
         
     svg = d3.select("#frame-cost")
       .append('svg')
-      .attr("viewBox", [-(sideWidth + sqLen), 0, width + (sideWidth + sqLen), height]);
+      .attr("viewBox", [-(sideWidth + sqLen), 0, width + (sideWidth + sqLen), height + 20]);
 
 //   svg = d3.select(selector)
 //       .append('svg')
@@ -432,7 +432,7 @@ const scrollSplitMeans = new ScrollMagic.Scene({
                                    remAllAnn(),
                                    remSlvAnn();
                                 	})
-                                  .addIndicators({name:"forceLink5"})
+              //                     .addIndicators({name:"forceLink5"})
                                   .addTo(controller);
 
 const scrollUndoSplitMeans = new ScrollMagic.Scene({
@@ -446,7 +446,7 @@ const scrollUndoSplitMeans = new ScrollMagic.Scene({
                                   addHonAnn();
                                   
                                 	})
-                                  .addIndicators({name:"forceLinke"})
+//                                   .addIndicators({name:"forceLinke"})
                                   .addTo(controller);  
                                   
 const scrollHighlightIrrCoy = new ScrollMagic.Scene({
@@ -736,6 +736,11 @@ function showNullValues() {
 
     years.enter().append('text')
       .attr('class', 'year')
+      .transition()
+    .duration(1000)
+    .delay(function(d, i) {
+    return i * 75;
+  })
       .attr('x', function (d) { return yearsTitleX[d]; })
       .attr('y', 105)
       .attr('text-anchor', 'start')
@@ -746,6 +751,11 @@ function showNullValues() {
       .data(yearsData2);
 
     years2.enter().append('text')
+     .transition()
+    .duration(1000)
+    .delay(function(d, i) {
+    return i * 75;
+  })
       .attr('class', 'year2')
       .attr('x', function (d) { return yearsTitleX2[d]; })
       .attr('y', 140)
@@ -758,6 +768,11 @@ var yearsData3 = d3.keys(yearsTitleX3);
       .data(yearsData3);
 
     years3.enter().append('text')
+     .transition()
+    .duration(1000)
+    .delay(function(d, i) {
+    return i * 75;
+  })
       .attr('class', 'year3')
       .attr('x', function (d) { return yearsTitleX3[d]; })
       .attr('y', 160)
@@ -772,6 +787,11 @@ var yearsData3 = d3.keys(yearsTitleX3);
       .data(nameData);
 
     nameMeans.enter().append('text')
+     .transition()
+    .duration(1000)
+    .delay(function(d, i) {
+    return i * 75;
+  })
       .attr('class', 'means')
       .attr('x', function (d) { return meansTitleX[d]; })
       .attr('y', 105)
@@ -783,6 +803,11 @@ var nameData2 = d3.keys(meansTitleX2);
       .data(nameData2);
 
     nameMeans2.enter().append('text')
+     .transition()
+    .duration(1000)
+    .delay(function(d, i) {
+    return i * 75;
+  })
       .attr('class', 'means2')
       .attr('x', function (d) { return meansTitleX2[d]; })
       .attr('y', 140)
@@ -794,6 +819,11 @@ var nameData3 = d3.keys(meansTitleX3);
       .data(nameData3);
 
     nameMeans3.enter().append('text')
+     .transition()
+    .duration(1000)
+    .delay(function(d, i) {
+    return i * 75;
+  })
       .attr('class', 'means3')
       .attr('x', function (d) { return meansTitleX3[d]; })
       .attr('y', 160)
@@ -809,6 +839,11 @@ var nameData3 = d3.keys(meansTitleX3);
       .data(financeData);
 
     finance.enter().append('text')
+     .transition()
+    .duration(1000)
+    .delay(function(d, i) {
+    return i * 75;
+  })
       .attr('class', 'finance')
       .attr('x', function (d) { return financeTitleX[d]; })
       .attr('y', 60)
@@ -820,6 +855,11 @@ var nameData3 = d3.keys(meansTitleX3);
       .data(financeData2);
 
     finance2.enter().append('text')
+     .transition()
+    .duration(1000)
+    .delay(function(d, i) {
+    return i * 75;
+  })
       .attr('class', 'finance2')
       .attr('x', function (d) { return financeTitleX2[d]; })
       .attr('y', 80)
