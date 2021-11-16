@@ -203,7 +203,7 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
       .style('stroke', function (d) { if (d.value <= 1) return fillColor(d.name);})
       .style('stroke-width', function (d) { if (d.value <= 1) return .9;})
       // .attr('stroke', function (d) { return d3.rgb(fillColor(d.name)).darker(); })
-      .attr('stroke-width', .4)
+      .attr('stroke-width', .0)
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
       
@@ -212,7 +212,7 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
 
     bubbles.transition()
     .ease(d3.easeBounce)
-      .duration(1)
+      .duration(.5)
       .attr('r', function (d) { return d.radius; });
       
     simulation.nodes(nodes);
@@ -600,76 +600,6 @@ const scrollUndoLabelReg = new ScrollMagic.Scene({
                                   .addTo(controller); 
 
 
-
-
-
-
-// 
-// const scrollHighlightIrrOwn = new ScrollMagic.Scene({
-//                                     triggerElement:".forceLink4"
-//         
-//                                   })
-//                                   .on("enter",(e)=>{
-//                              	  highlightIrreOwn();
-//                                 	})
-//                                   .addIndicators({name:"forceLink"})
-//                                   .addTo(controller);
-// 
-// const scrollUndoHighlightIrrOwn = new ScrollMagic.Scene({
-//                                     triggerElement:".forceLinkd"
-//         
-//                                   })
-//                                   .on("leave",(e)=>{
-//                                    highlightIrreCoy();
-//                                   // fillColorN();
-//                                 	})
-//                                //    .addIndicators({name:"forceLink"})
-//                                   .addTo(controller);      
-//                                   
-// const scrollHighlightReg = new ScrollMagic.Scene({
-//                                     triggerElement:".forceLink5"
-//         
-//                                   })
-//                                   .on("enter",(e)=>{
-//                              	  highlightRegular();
-//                                 	})
-//                                   .addIndicators({name:"forceLink"})
-//                                   .addTo(controller);
-// 
-// const scrollUndoHighlightReg = new ScrollMagic.Scene({
-//                                     triggerElement:".forceLinke"
-//         
-//                                   })
-//                                   .on("leave",(e)=>{
-//                                    highlightIrreOwn();
-//                                   fillColorN();
-//                                 	})
-//                                //    .addIndicators({name:"forceLink"})
-//                                   .addTo(controller);                                   
-// 
-// const scrollSplitBee = new ScrollMagic.Scene({
-//                                     triggerElement:".forceLink6"
-//         
-//                                   })
-//                                   .on("enter",(e)=>{
-//                              	 splitBubblesBee();
-//                                 	})
-//                                   .addIndicators({name:"forceLink"})
-//                                   .addTo(controller);
-// 
-// const scrollUndoSplitBee = new ScrollMagic.Scene({
-//                                     triggerElement:".forceLinkf"
-//         
-//                                   })
-//                                   .on("leave",(e)=>{
-//                                    highlightRegular();
-//                                  splitBubbles();
-//                                 	})
-//                                //    .addIndicators({name:"forceLink"})
-//                                   .addTo(controller);                                   
-//                                   
-
-
     
   function splitBubblesBee() {
   	hideFinanceTitles();
@@ -871,6 +801,11 @@ var financeData3 = d3.keys(financeTitleX3);
       .data(financeData3);
 
     finance3.enter().append('text')
+       .transition()
+    .duration(1000)
+    .delay(function(d, i) {
+    return i * 75;
+  })
       .attr('class', 'finance3')
       .attr('x', function (d) { return financeTitleX3[d]; })
       .attr('y', 100)
@@ -1365,6 +1300,8 @@ d3.csv('data/dots_data2.csv', display);
 
 // setup the buttons.
 setupButtons();
+
+// function (d){ if (d.name === "irrregular coyote") return 0.04; else .023}
 
 
 
