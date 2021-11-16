@@ -69,6 +69,22 @@ h3 {
     color: black;
 }
 
+h4 {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 3em;
+    color: black;
+}
+
+h4 {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 2em;
+    color: black;
+}
+
 
 .text-orange {
     color: #EB4927;
