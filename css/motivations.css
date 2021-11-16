@@ -84,6 +84,11 @@
 #map-state-4 {
     padding-bottom: 0px;
 }
+#narrative-scroll, 
+#narrative-scroll .scenes,
+#narrative-scroll .scenes div {
+    pointer-events: none;
+}
 .scrolly-container-motivations .ribbon-image img {
     filter: grayscale(1);
     -webkit-mix-blend-mode: hard-light;
