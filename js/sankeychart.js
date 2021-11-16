@@ -56,11 +56,13 @@ var svg = d3.select("#chartsank").append("svg")
 
 // Set the sankey diagram properties
 var sankey = d3.sankey()
-    .nodeWidth(14)
+    .nodeWidth(19)
     .nodePadding(12)
     .size([width, height]);
 
 var path = sankey.links();
+
+const defs = svg.append('defs');
 
 // load the data
 d3.csv("./data/sankey.csv").then(function(data) {
@@ -117,7 +119,7 @@ d3.csv("./data/sankey.csv").then(function(data) {
       .style("stroke-width","2")
 //       .attr("d", path)
 //       .style("stroke-width", function(d) { return Math.max(1, d.dy); })
-      .sort(function(a, b) { return b.dy - a.dy; })
+      .sort((a, b) => b.dy - a.dy)
         // .on('mouseover', showDetail)
         .on('mouseover', function (event, d)  {
             showDetail(d);
@@ -131,13 +133,45 @@ d3.csv("./data/sankey.csv").then(function(data) {
                     .transition()
                   .ease(d3.easeLinear)
                     .duration(300)
-
+// 
+// .style('stroke', (d, i) => {
+//     console.log('d from gradient stroke func', d);
+// 
+//     // make unique gradient ids  
+//     const gradientID = `gradient${i}`;
+// 
+//     const startColor = occuAttr[d.source.name.split('-')[1]].color;
+//     const stopColor = occuAttrb[d.target.name].color;
+// 
+//     console.log('startColor', startColor);
+//     console.log('stopColor', stopColor);
+// 
+//     const linearGradient = defs.append('linearGradient')
+//         .attr('id', gradientID);
+// 
+//     linearGradient.selectAll('stop') 
+//       .data([                             
+//           {offset: '10%', color: startColor },      
+//           {offset: '90%', color: stopColor }    
+//         ])                  
+//       .enter().append('stop')
+//       .attr('offset', d => {
+//         console.log('d.offset', d.offset);
+//         return d.offset; 
+//       })   
+//       .attr('stop-color', d => {
+//         console.log('d.color', d.color);
+//         return d.color;
+//       });
+// 
+//     return `url(#${gradientID})`;
+//   });
                     // .style("stroke", function(l) {
                     //     return l.source.name === d.source.name ? color(d.source.name.replace(/ .*/, "")) : "#b3e7e8";
                     // });
                     
                     .style("stroke", sourceColor);
-                // select nodes with this class
+//                 // select nodes with this class
                 d3.selectAll(".source-" + sourceClass)
                     .transition()        
                     .duration(300)
@@ -152,6 +186,8 @@ d3.csv("./data/sankey.csv").then(function(data) {
                     .style("fill", sourceColorb);
                 d3.select(this)
                 .attr("stroke-width","2");
+                            // add gradient to links
+  
                //  d3.selectAll(".occbefper" + sourceClass)
 //                     .transition()        
 //                     .duration(300)
@@ -221,7 +257,7 @@ d3.csv("./data/sankey.csv").then(function(data) {
       .attr("width", sankey.nodeWidth())
      //  .style("fill", "#d11f63" )
    //    .style("stroke", "#fff")
-	.style("fill", "#3BA8B6");
+	.attr("fill", "#3BA8B6");
 
 // add in the title for the nodes
 //   node.append("text")
@@ -278,6 +314,16 @@ node.append("text")
             else {
                 return occuAttrc[d.name].label; 
             }
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
         })
       
 //       .style("font-size", "18px")
@@ -286,6 +332,9 @@ node.append("text")
       .classed("node target-", false)
       .attr("class","occaftper")
       .attr("text-anchor", "start");
+      
+      
+  
       
 
       
@@ -360,15 +409,8 @@ function showDetail(d) {
 //     d3.selectAll("text")       
 //     .style("fill", "#fff");
   }
-// the function for moving the nodes
-//   function dragmove(d) {
-//     d3.select(this).attr("transform", 
-//         "translate(" + d.x + "," + (
-//                 d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))
-//             ) + ")");
-//     sankey.relayout();
-//     link.attr("d", path);
-//   }
+
+
 
 
 });
