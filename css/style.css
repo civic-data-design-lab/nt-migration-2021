@@ -682,7 +682,7 @@ section#open:hover .chapter-title {
 }
 
 #story {
-    margin-bottom: 125vh;
+    /* margin-bottom: 125vh; */
     pointer-events: none;
     /* overflow: visible; */
     /* border: 3px solid tomato; */

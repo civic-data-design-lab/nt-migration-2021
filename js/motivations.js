@@ -37,59 +37,89 @@ const countryText = {
     "SLV": "El Salvador"
 };
 const motivAttr = {
-    "econ": {"label": "Economics", "color": "#1540c4", "responses": ['1', '2', '6', '7', '8'], 
-        "descr": "Livelihood-related factors, such as low wages, unemployment, and insufficient income to cover necessities were the primary motivation why migrants emigrated in the last five years.", "yPos": 1},
-    "reun":  {"label": "Reunification", "color": "#eb4927", "responses": ['12'], 
-        "descr": "Family reunification was the second most common reason that people sought to migrate. With males representing the majority of migrants, families face long-term separation as a repercussion of migration.", "yPos": 25},
-    "sec": {"label": "Security", "color": "#93278f", "responses": ['10', '11'], 
-        "descr": "Violence, crime, and corruption are also key drivers of migration. Homicide rates in El Salvador and Honduras remain among the highest in the world.", "yPos": 28},
-    "clim": {"label": "Climate", "color": "#00a99d", "responses": ['3', '4', '5'], 
-        "descr": "Worsening impacts of climate-related shocks, such as natural disasters and environmental degredation, affect people's livelihoods and compel them to leave their countries of origin.", "yPos": 31},
-    "oth":  {"label": "Other", "color": "#f1a650", "responses": ['9', '13', '14', '15', '16'], 
-        "descr": "Additional motivations for migrating include seeking healthcare or pursuing a better education.", "yPos": 33}
+    "econ": {label: "Economics", color: "#1540c4", responses: ['1', '2', '6', '7', '8'], 
+        descr: "Livelihood-related factors, such as low wages, unemployment, and insufficient income to cover necessities were the primary motivation why migrants emigrated in the last five years.", yPos: 1},
+    "reun":  {label: "Reunification", color: "#eb4927", responses: ['12'], 
+        descr: "Family reunification was the second most common reason that people sought to migrate. With males representing the majority of migrants, families face long-term separation as a repercussion of migration.", yPos: 25},
+    "sec": {label: "Security", color: "#93278f", responses: ['10', '11'], 
+        descr: "Violence, crime, and corruption are also key drivers of migration. Homicide rates in El Salvador and Honduras remain among the highest in the world.", yPos: 28},
+    "clim": {label: "Climate", color: "#00a99d", responses: ['3', '4', '5'], 
+        descr: "Worsening impacts of climate-related shocks, such as natural disasters and environmental degredation, affect people's livelihoods and compel them to leave their countries of origin.", yPos: 31},
+    "oth":  {label: "Other", color: "#f1a650", responses: ['9', '13', '14', '15', '16'], 
+        descr: "Additional motivations for migrating include seeking healthcare or pursuing a better education.", yPos: 33}
 };
 const motivDetailAttr = {
-    "1": {"label": "search for a better job", "category": "econ", "color": "#1540c4"},
-    "2": {"label": "unemployment", "category": "econ", "color": "#1540c4"},
-    "3": {"label": "deteriorated livelihood due to natural hazards", "category": "clim", "color": "#00a99d"},
-    "4": {"label": "direct impact from a natural hazard", "category": "clim", "color": "#00a99d"},
-    "5": {"label": "loss of land due to land use change", "category": "clim", "color": "#00a99d"},
-    "6": {"label": "lack of money for food", "category": "econ", "color": "#1540c4"},
-    "7": {"label": "lack of money for basic needs", "category": "econ", "color": "#1540c4"},
-    "8": {"label": "to send remittances", "category": "econ", "color": "#1540c4"},
-    "9": {"label": "education", "category": "oth", "color": "#f1a650"},
-    "10": {"label": "domestic violence", "category": "sec", "color": "#93278f"},
-    "11": {"label": "unsafety", "category": "sec", "color": "#93278f"},
-    "12": {"label": "family reunification", "category": "reun", "color": "#eb4927"},
-    "13": {"label": "cultural reasons", "category": "oth", "color": "#f1a650"},
-    "14": {"label": "health needs", "category": "oth", "color": "#f1a650"},
-    "15": {"label": "adventure or tourism", "category": "oth", "color": "#f1a650"},
-    "16": {"label": "other", "category": "oth", "color": "#f1a650"},
-    "99": {"label": "no response", "category": "oth", "color": "#777"}
+    "1": {label: "search for a better job", category: "econ", color: "#1540c4"},
+    "2": {label: "unemployment", category: "econ", color: "#1540c4"},
+    "3": {label: "deteriorated livelihood due to natural hazards", category: "clim", color: "#00a99d"},
+    "4": {label: "direct impact from a natural hazard", category: "clim", color: "#00a99d"},
+    "5": {label: "loss of land due to land use change", category: "clim", color: "#00a99d"},
+    "6": {label: "lack of money for food", category: "econ", color: "#1540c4"},
+    "7": {label: "lack of money for basic needs", category: "econ", color: "#1540c4"},
+    "8": {label: "to send remittances", category: "econ", color: "#1540c4"},
+    "9": {label: "education", category: "oth", color: "#f1a650"},
+    "10": {label: "domestic violence", category: "sec", color: "#93278f"},
+    "11": {label: "unsafety", category: "sec", color: "#93278f"},
+    "12": {label: "family reunification", category: "reun", color: "#eb4927"},
+    "13": {label: "cultural reasons", category: "oth", color: "#f1a650"},
+    "14": {label: "health needs", category: "oth", color: "#f1a650"},
+    "15": {label: "adventure or tourism", category: "oth", color: "#f1a650"},
+    "16": {label: "other", category: "oth", color: "#f1a650"},
+    "99": {label: "no response", category: "oth", color: "#777"}
 };
 const incomeAttr = {
-    1: {"label": "extremely low income", "range": "Less than $2.50", "yPos": 1},
-    2: {"label": "low income", "range": "$2.50&ndash;10.40", "yPos": 8},
-    3: {"label": "mid-low income", "range": "$10.40&ndash;37.40", "yPos": 15},
-    4: {"label": "mid income", "range": "$37.40&ndash;128.70", "yPos": 22},
-    5: {"label": "mid-high income", "range": "$128.70&ndash;436.50", "yPos": 33},
-    6: {"label": "high income", "range": "Greater than $436.50", "yPos": 37}
+    1: {label: "extremely low income", range: "Less than $2.50", yPos: 1},
+    2: {label: "low income", range: "$2.50&ndash;10.40", yPos: 8},
+    3: {label: "mid-low income", range: "$10.40&ndash;37.40", yPos: 15},
+    4: {label: "mid income", range: "$37.40&ndash;128.70", yPos: 22},
+    5: {label: "mid-high income", range: "$128.70&ndash;436.50", yPos: 33},
+    6: {label: "high income", range: "Greater than $436.50", yPos: 37}
 };
 const cariAttr = {
-    1: {"label": "food secure", "sideLabel": "food secure", 
-        "descr": "CARI classificaiton description", "yPos": 1},
-    2: {"label": "marginally food secure", "sideLabel": "marginally food secure", 
-        "descr": "CARI classificaiton description", "yPos": 16},
-    3: {"label": "moderately food insecure", "sideLabel": "moderately or severely food insecure", 
-        "descr": "CARI classificaiton description", "yPos": 30},
-    4: {"label": "severely food insecure"}
+    1: {label: "food secure", sideLabel: "food secure", 
+        descr: "CARI classificaiton description", yPos: 1},
+    2: {label: "marginally food secure", sideLabel: "marginally food secure", 
+        descr: "CARI classificaiton description", yPos: 16},
+    3: {label: "moderately food insecure", sideLabel: "moderately or severely food insecure", 
+        descr: "CARI classificaiton description", yPos: 30},
+    4: {label: "severely food insecure"}
 };
 
 const modalData = [
-    {"id": "modal-motivs", "html": "<h2 class='scrollytelling'>The Primary Motivation for Migration is Economics</h2><h3 class='scrollytelling description'>Motivations for migration diversely range from violence to climate change related reasons. Family reunification was the second most common motivation for migrating amongst migrants surveyed in the last five years.</h3>"},
-    {"id": "modal-income", "html": "<h2 class='scrollytelling'>Migrants Come from All Income Groups</h2><h3 class='scrollytelling description'>In contrast to prior studies, which have generally found that households with more resources are more likely to be able to migrate, respondents in this survey from households with the lowest income level were nearly as likely to report that a member had migrated as those from households with mid- to high income levels.</h3>"},
-    {"id": "modal-cari", "html": "<h2 class='scrollytelling'>Providing for Basic Needs was a Key Motivation for Migration</h2><h3 class='scrollytelling description'>Individuals experiencing food insecurity were more likely (23 percent) to make concrete plans to migrate than those who were food secure (7 percent).</h3>"}
+    {
+        id: "modal-motivs", 
+        html: "<h2 class='scrollytelling'>Migrants Want to Stay</h2><h3 class='scrollytelling description'>Despite a rising desire to migrate, only a fraction of the surveyed population plan to do so.The primary motivation for migration is largely driven by economics.</h3>"
+    },
+    {
+        id: "modal-income", 
+        html: "<h2 class='scrollytelling'>Migrants Come from All Income Groups</h2><h3 class='scrollytelling description'>Our data counters prior studies that say households with more resources are more likely to be able to migrate. This survey shows that migration occurs in all income levels.</h3>"
+    },
+    {
+        id: "modal-cari", 
+        html: "<h2 class='scrollytelling'>Providing for Basic Needs are Migrants' Main Motivation</h2><h3 class='scrollytelling description'>Households with migrants showed that their primary motivation to leave was driven by the need to provide for basic needs. Individuals experiencing food insecurity were more likely (23 percent) to make concrete plans to migrate than those who were food secure (7 percent).</h3>"
+    }
 ];
+
+// narrative text
+const narrativesData = [
+    {
+        id: "ribbon-1",
+        title: "Migrants Want to Stay",
+        description: "Despite a rising desire to migrate, only a fraction of the surveyed population plan to do so.The primary motivation for migration is largely driven by economics.",
+        image: "mot2.jpg"
+    },
+    {
+        id: "ribbon-2",
+        title: "Migrants Come from All Income Groups",
+        description: "Our data counters prior studies that say households with more resources are more likely to be able to migrate. This survey shows that migration occurs in all income levels."
+    },
+    {
+        id: "ribbon-3",
+        title: "Providing for Basic Needs are Migrants' Main Motivation",
+        description: "Households with migrants showed that their primary motivation to leave was driven by the need to provide for basic needs. Individuals experiencing food insecurity were more likely (23 percent) to make concrete plans to migrate than those who were food secure (7 percent).",
+        image: "mot4.jpg"
+    }
+]
 
 // bootstrap tooltip popover
 const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
@@ -1118,6 +1148,34 @@ function plotLabels(labelList, sortBy) {
             .attr("stroke", "#1540C4")
             .attr("stroke-width", 2)
 }
+
+// create narratives after migrant outcomes viz
+function createNarratives() {
+    const narrativeTemplate = $(".step.fully.active.template");
+    narrativesData.forEach((item) => {
+        const narrativeDiv = narrativeTemplate.clone();
+        
+        narrativeDiv.attr("id", narrativesData.id);
+        
+        if (item.hasOwnProperty("image")) {
+            narrativeDiv.find(".scrollytelling-text").remove();
+
+            narrativeDiv.find(".ribbon-image").attr("src", "./img/motivations/" + item.image);
+            narrativeDiv.find("h2.scrollytelling").html(item.title);
+            narrativeDiv.find("h3.description").html(item.description);
+        }
+        else {
+            narrativeDiv.find(".ribbon-image").remove();
+            narrativeDiv.find(".scrollytelling-caption").remove();
+
+            narrativeDiv.find("h2.scrollytelling").html(item.title);
+            narrativeDiv.find("h3.description").html(item.description);
+        }
+
+        narrativeDiv.removeClass("template").appendTo(narrativeTemplate.parent());
+    });
+};
+// createNarratives();
 
 $(".btn").on("click", function() {
     btnId = "#" + $(this).attr("id");

@@ -173,7 +173,7 @@ var motivationsConfig = {
 
 
 
-        },
+        }
 
         //DESTINATION 5
         // {
@@ -236,34 +236,34 @@ var motivationsConfig = {
         // },
 
         //DESTINATION 7
-        {
-            id: 'map-state-7',
-            alignment: 'full',
-            hidden: true,
-            // title: 'Display Title',
-            // image: './images/zebra.jpg',
-            description: 'These are their motivations....',
-            // extraSpacing: true,
-            location: {
-                center: [-89.2500000, 14.5000000], // initial map center in [lon, lat]
-                zoom: maxZoom,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [
-                {
+        // {
+        //     id: 'map-state-7',
+        //     alignment: 'full',
+        //     hidden: true,
+        //     // title: 'Display Title',
+        //     // image: './images/zebra.jpg',
+        //     description: 'These are their motivations....',
+        //     // extraSpacing: true,
+        //     location: {
+        //         center: [-89.2500000, 14.5000000], // initial map center in [lon, lat]
+        //         zoom: maxZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [
+        //         {
 
-                }
-            ],
-            onChapterExit: [
+        //         }
+        //     ],
+        //     onChapterExit: [
 
 
-            ],
+        //     ],
 
-        },
+        // },
 
 
     ]

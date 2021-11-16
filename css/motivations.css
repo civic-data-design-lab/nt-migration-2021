@@ -1,11 +1,3 @@
-/* NARRATIVE SCROLLYTELLING */
-#map-state-4 {
-    padding-bottom: 0px;
-}
-#map-state-7 {
-    height: 0px;
-}
-
 /* BUTTON */
 #buttons-motivations {
     padding-left: calc(15.5% + 2px);
@@ -88,6 +80,19 @@
     background-color: #1540C4;
 }
 
+/* SCROLLYTELLING */
+#map-state-4 {
+    padding-bottom: 0px;
+}
+.scrolly-container-motivations .ribbon-image img {
+    filter: grayscale(1);
+    -webkit-mix-blend-mode: hard-light;
+    -moz-mix-blend-mode: hard-light;
+    -ms-mix-blend-mode: hard-light;
+    -o-mix-blend-mode: hard-light;
+    mix-blend-mode: hard-light;
+}
+
 /* MODALS */
 .modal-narrative {
     background-color: none;
@@ -109,4 +114,35 @@
 }
 .modal-backdrop.show {
     opacity: 0.75;
+}
+
+/* RESPONSIVE OVERRIDES */
+.btn-sm {
+    font-size: 0.7rem;
+    height: 44px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .btn-sm {
+        height: auto;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .btn-sm {
+        font-size: 0.875rem;
+    }
+}
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    
 }
