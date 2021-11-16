@@ -103,18 +103,15 @@ const modalData = [
 // narrative text
 const narrativesData = [
     {
-        id: "ribbon-1",
         title: "Migrants Want to Stay",
         description: "Despite a rising desire to migrate, only a fraction of the surveyed population plan to do so.The primary motivation for migration is largely driven by economics.",
         image: "mot2.jpg"
     },
     {
-        id: "ribbon-2",
         title: "Migrants Come from All Income Groups",
         description: "Our data counters prior studies that say households with more resources are more likely to be able to migrate. This survey shows that migration occurs in all income levels."
     },
     {
-        id: "ribbon-3",
         title: "Providing for Basic Needs are Migrants' Main Motivation",
         description: "Households with migrants showed that their primary motivation to leave was driven by the need to provide for basic needs. Individuals experiencing food insecurity were more likely (23 percent) to make concrete plans to migrate than those who were food secure (7 percent).",
         image: "mot4.jpg"
@@ -1042,7 +1039,7 @@ function plotInitialGrid(data) {
 
 // plot initial squares grid
 function updatePlotSort(sortBy) {
-    motivSort = sortBy;
+    
     // squares
     svg.select(".g-sq")
         .selectAll("rect")
@@ -1152,10 +1149,10 @@ function plotLabels(labelList, sortBy) {
 // create narratives after migrant outcomes viz
 function createNarratives() {
     const narrativeTemplate = $(".step.fully.active.template");
-    narrativesData.forEach((item) => {
+    narrativesData.forEach((item, i) => {
         const narrativeDiv = narrativeTemplate.clone();
         
-        narrativeDiv.attr("id", narrativesData.id);
+        narrativeDiv.attr("id", "scene-" + i);
         
         if (item.hasOwnProperty("image")) {
             narrativeDiv.find(".scrollytelling-text").remove();
@@ -1175,7 +1172,24 @@ function createNarratives() {
         narrativeDiv.removeClass("template").appendTo(narrativeTemplate.parent());
     });
 };
-// createNarratives();
+
+function updateScene(sortBy) {
+    btnId = "#btn-" + sortBy;
+    labelsId = "#frame-motivations #labels-" + sortBy;
+
+    if (sortBy == "initial") {
+        $(".btn").removeClass("active");
+        $(".chart-labels").fadeOut(time/2);
+        updatePlotSort("initial");
+    }
+    else {
+        $(".btn").removeClass("active");
+        $(".chart-labels").fadeOut(time/2);
+        $(btnId).addClass("active");
+        $(labelsId).delay(time/2).fadeIn(time/2);
+        updatePlotSort(sortBy);
+    }
+}
 
 $(".btn").on("click", function() {
     btnId = "#" + $(this).attr("id");
@@ -1196,7 +1210,53 @@ $(".btn").on("click", function() {
     }
 });
 
+// create narratives
+createNarratives();
+
 $(document).ready(function() {
+    function getDivHeight(id) {
+        return $(id).height();
+    };
+
+    // ScrollMagic
+    const controller = new ScrollMagic.Controller();
+
+    const motivsScene0 = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll #scene-0",
+        duration: getDivHeight("#scene-0")
+    })
+        .addTo(controller)
+        .on("start", e => {
+            updateScene("initial");
+        })
+        .on("end", e => {
+            updateScene("motivs");
+        });
+
+    const motivsScene1 = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll #scene-1",
+        duration: getDivHeight("#scene-1")
+    })
+        .addTo(controller)
+        .on("start", e => {
+            updateScene("motivs");
+        })
+        .on("end", e => {
+            updateScene("income");
+        });
+
+    const motivsScene2 = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll #scene-2",
+        duration: getDivHeight("#scene-2")
+    })
+        .addTo(controller)
+        .on("start", e => {
+            updateScene("income");
+        })
+        .on("end", e => {
+            updateScene("cari");
+        });
+
     // bootstrap modal
     createModals();
     const modalMotivs = new bootstrap.Modal(document.getElementById('modal-motivs')),
