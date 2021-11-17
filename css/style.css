@@ -28,9 +28,7 @@
 }
 
 /*GENERAL HTML */
-html {
-    /* scroll-behavior: smooth; */
-}
+
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
@@ -549,8 +547,16 @@ section#open:hover .chapter-title {
 .fully {
     width: 100%;
     margin: auto;
-    
-    
+    /* border: 3px solid green; */
+    padding-top: 100vh;
+}
+
+.fully:first-of-type{
+    padding-top: 0vh !important;
+}
+
+.fully:last-of-type{
+    padding-top: 0vh !important;
 }
 
 .fully > div{
