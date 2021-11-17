@@ -226,6 +226,7 @@ h5 {
     text-transform: uppercase;
     pointer-events: none;
     transition: color var(--transition-speed);
+    font-size: 4em;
 }
 
 
