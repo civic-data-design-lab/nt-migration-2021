@@ -278,6 +278,7 @@ section#open:hover .chapter-title {
     padding: var(--start-padding);
     text-transform: uppercase;
     transition: var(--transition-speed);
+    font-size: 8em;
 }
 
 
