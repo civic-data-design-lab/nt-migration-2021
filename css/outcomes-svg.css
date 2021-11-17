@@ -30,7 +30,7 @@
     fill: #711e57;
 }
 
-.cls-20, .cls-21, .cls-29, .cls-9 {
+.cls-20, .cls-21, .cls-29, .cls-9, .cls-30, .cls-31, .cls-32 {
     fill: none;
 }
 
@@ -38,12 +38,27 @@
     stroke: #4d4d4d;
 }
 
-.cls-29, .cls-9 {
+.cls-29, .cls-9, .cls-30, .cls-31, .cls-32 {
     stroke-miterlimit: 10;
 }
 
 .cls-9 {
     stroke-width: 2px;
+}
+
+.cls-30 {
+    stroke: #fab43c;
+    stroke-width: 101px;
+}
+
+.cls-31 {
+    stroke: #e39342;
+    stroke-width: 21px;
+}
+
+.cls-32 {
+    stroke: #fff;
+    stroke-width: 31px;
 }
 
 .cls-10 {

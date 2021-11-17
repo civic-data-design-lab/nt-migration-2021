@@ -13,19 +13,37 @@
 }
 
 /* SVG ANIMATION */
+#svg-outcomes {
+    max-height: 100%;
+}
+.step#scene-0 {
+    padding-bottom: 250vh;
+}
+.step#scene-1 {
+    padding-bottom: 125vh;
+}
 #g-reside,
 #g-return, 
 #g-return-vol-inv {
     display: none;
 }
+#_1-reside-us.inactive .ribbon, 
+#_2-reside-other.inactive .ribbon,
+#_3-return-dest.inactive .ribbon, 
+#_4-return-other.inactive .ribbon,
+#_34-return-vol-inv.inactive .ribbon {
+    opacity: 0.4;
+    transition: all 0.3s ease-in-out;
+}
 
 /* TEMPORARY DISPLAY FOR DRAFT */
-.mask {
+/* .mask {
     display: none;
-}
-#mask-1, #mask-2 {
+} */
+/* #_3-return-dest .mask, 
+#_4-return-other .mask {
+    display: none;
+} */
+/* #g-return, #g-return-vol-inv {
     display: block;
-}
-#g-return, #g-return-vol-inv {
-    display: block;
-}
+} */
