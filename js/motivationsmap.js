@@ -62,30 +62,6 @@ motivationsConfig.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
     var mapChapter = document.createElement('div');
 
-    if (record.image) {
-        var image = new Image();
-        var imageContainer = document.createElement('div');
-
-        if (record.paddedImage == true) {
-            image.className = "padded-image"
-
-        }
-
-
-        imageContainer.className = "ribbon-image"
-
-        image.src = record.image;
-        mapChapter.appendChild(imageContainer);
-        imageContainer.appendChild(image)
-
-        if (record.filter) {
-            var imageFilter = document.createElement("div");
-            imageFilter.id = 'scrolly-overlay'
-            mapChapter.appendChild(imageFilter);
-        }
-
-
-    }
 
 
     // INJECT AND STYLE TEXT FOR HERO, NON IMAGE TEXT
@@ -117,6 +93,31 @@ motivationsConfig.chapters.forEach((record, idx) => {
             storyText.appendChild(story);
         }
 
+
+
+    }
+
+    if (record.image) {
+        var image = new Image();
+        var imageContainer = document.createElement('div');
+
+        if (record.paddedImage == true) {
+            image.className = "padded-image"
+
+        }
+
+
+        imageContainer.className = "ribbon-image"
+
+        image.src = record.image;
+        mapChapter.appendChild(imageContainer);
+        imageContainer.appendChild(image)
+
+        if (record.filter) {
+            var imageFilter = document.createElement("div");
+            imageFilter.id = 'scrolly-overlay'
+            mapChapter.appendChild(imageFilter);
+        }
 
 
     }

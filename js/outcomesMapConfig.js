@@ -47,9 +47,9 @@ var outcomesConfig = {
             onChapterExit: [
             ],
             hideCountries: false,
-            showGuat:true,
-            showHond:true,
-            showSalv:true,
+            showGuat:false,
+            showHond:false,
+            showSalv:false,
         },
 
         //DESTINATION 1
@@ -63,13 +63,13 @@ var outcomesConfig = {
             paddedImage: '',
             description: '',
             location: {
-                center: [-89.000000, 15.0000000], // initial map center in [lon, lat]
-                zoom: closeZoom,
-                pitch: 15,
-                bearing: -15
+                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
+                pitch: 30,
+                bearing: 0
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
@@ -90,13 +90,13 @@ var outcomesConfig = {
             paddedImage: false,
             description: '',
             location: {
-                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: farZoom,
-                pitch: 0,
-                bearing: 0
+                center: [-87.5000000, 14.0000000], // initial map center in [lon, lat]
+                zoom: closeZoom,
+                pitch: 30,
+                bearing: -30
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [
             ],
@@ -124,13 +124,13 @@ var outcomesConfig = {
             paddedImage: false,
             description: '11% of Hondurans migrate to Spain',
             location: {
-                center: [-90.5000000, 35.0000000], // initial map center in [lon, lat]
-                zoom: farZoom,
-                pitch: 50,
-                bearing: 30
+                center: [-87.5000000, 14.0000000], // initial map center in [lon, lat]
+                zoom: closeZoom,
+                pitch: 30,
+                bearing: -15
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
@@ -152,13 +152,13 @@ var outcomesConfig = {
             paddedImage: '',
             description: '', //The rest are either caught, detained, or return home. Some are lost and never return.
             location: {
-                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: farZoom,
-                pitch: 0,
+                center: [-87.5000000, 14.0000000], // initial map center in [lon, lat]
+                zoom: closeZoom,
+                pitch: 30,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
@@ -183,7 +183,7 @@ var outcomesConfig = {
         //     location: {
         //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
         //         zoom: middleZoom,
-        //         pitch: 0,
+        //         pitch: 30,
         //         bearing: 0
         //     },
         //     mapAnimation: 'flyTo',
@@ -211,7 +211,7 @@ var outcomesConfig = {
         //     location: {
         //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
         //         zoom: farZoom,
-        //         pitch: 0,
+        //         pitch: 30,
         //         bearing: 0
         //     },
         //     mapAnimation: 'flyTo',
@@ -239,7 +239,7 @@ var outcomesConfig = {
         //     location: {
         //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
         //         zoom: farZoom,
-        //         pitch: 0,
+        //         pitch: 30,
         //         bearing: 0
         //     },
         //     mapAnimation: 'flyTo',
@@ -267,7 +267,7 @@ var outcomesConfig = {
         //     location: {
         //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
         //         zoom: farZoom,
-        //         pitch: 0,
+        //         pitch: 30,
         //         bearing: 0
         //     },
         //     mapAnimation: 'flyTo',
@@ -293,9 +293,9 @@ var outcomesConfig = {
             paddedImage: false,
             description: '',
             location: {
-                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
-                pitch: 0,
+                pitch: 30,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
@@ -321,9 +321,9 @@ var outcomesConfig = {
             paddedImage: false,
             description: 'The diaspora should use their remittances to support more than basic needs. International organizations should consider diasporas as potential agents of economic development and governance. Creating incentives for members of a diaspora to invest in public works can magnify the reach of government efforts while simultaneously enriching transnational partnerships to improve governance, for example, by matching diaspora donation with transparent and accountable commitments from the national, departmental, and municipal governments.',
             location: {
-                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
-                pitch: 0,
+                pitch: 30,
                 bearing: 0
             },
             mapAnimation: 'flyTo',

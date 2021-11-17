@@ -39,7 +39,7 @@ var arcTilt = 0
 var arcFilterMin = 21
 
 //INACTIVE STATE
-var inactiveColor = [255, 255, 255, 10]
+var inactiveColor = [255, 255, 255, 0]
 
 function getLayerPaintType(layer) {
     var layerType = map.getLayer(layer).type;
@@ -69,30 +69,6 @@ outcomesConfig.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
     var mapChapter = document.createElement('div');
 
-    if (record.image) {
-        var image = new Image();
-        var imageContainer = document.createElement('div');
-
-        if (record.paddedImage == true) {
-            image.className = "padded-image"
-
-        }
-
-
-        imageContainer.className = "ribbon-image"
-
-        image.src = record.image;
-        mapChapter.appendChild(imageContainer);
-        imageContainer.appendChild(image)
-
-        if (record.filter) {
-            var imageFilter = document.createElement("div");
-            imageFilter.id = 'scrolly-overlay'
-            mapChapter.appendChild(imageFilter);
-        }
-
-
-    }
 
     // INJECT AND STYLE TEXT FOR HERO, NON IMAGE TEXT
     if (record.title || record.title2 || record.description) {
@@ -129,6 +105,30 @@ outcomesConfig.chapters.forEach((record, idx) => {
             story.innerHTML = record.description;
             storyText.appendChild(story);
         }
+
+    }
+    if (record.image) {
+        var image = new Image();
+        var imageContainer = document.createElement('div');
+
+        if (record.paddedImage == true) {
+            image.className = "padded-image"
+
+        }
+
+
+        imageContainer.className = "ribbon-image"
+
+        image.src = record.image;
+        mapChapter.appendChild(imageContainer);
+        imageContainer.appendChild(image)
+
+        if (record.filter) {
+            var imageFilter = document.createElement("div");
+            imageFilter.id = 'scrolly-overlay'
+            mapChapter.appendChild(imageFilter);
+        }
+
 
     }
 
@@ -212,41 +212,56 @@ map.on("load", function () {
 
             // SHOW GUAT LAYERS
             if (mapChapter.showGuat && mapChapter.showGuat == true) {
-                guatArc.setProps({ getSourceColor: arcSourceColor })
-                guatArc.setProps({ getTargetColor: arcTargetColor })
-                guatDestinations.setProps({ getFillColor: pointColor })
+                // guatArc.setProps({ getSourceColor: arcSourceColor })
+                // guatArc.setProps({ getTargetColor: arcTargetColor })
+                // guatDestinations.setProps({ getFillColor: pointColor })
+                fade(guatArc, 'guatArc', 255, true);
+                fade(guatDestinations, 'guatDestinations', 255, true);
 
             }
             else {
-                guatArc.setProps({ getSourceColor: inactiveColor })
-                guatArc.setProps({ getTargetColor: inactiveColor })
-                guatDestinations.setProps({ getFillColor: inactiveColor })
+                // guatArc.setProps({ getSourceColor: inactiveColor })
+                // guatArc.setProps({ getTargetColor: inactiveColor })
+                // guatDestinations.setProps({ getFillColor: inactiveColor })
+
+                fade(guatArc, 'guatArc', 255, false);
+                fade(guatDestinations, 'guatDestinations', 255, false);
             }
 
             //SHOW HOND LAYERS
             if (mapChapter.showHond && mapChapter.showHond == true) {
-                hondArc.setProps({ getSourceColor: arcSourceColor })
-                hondArc.setProps({ getTargetColor: arcTargetColor })
-                hondDestinations.setProps({ getFillColor: pointColor })
+                // hondArc.setProps({ getSourceColor: arcSourceColor })
+                // hondArc.setProps({ getTargetColor: arcTargetColor })
+                // hondDestinations.setProps({ getFillColor: pointColor })
+
+                fade(hondArc, 'hondArc', 255, true);
+                fade(hondDestinations, 'hondDestinations', 255, true);
 
             }
             else {
-                hondArc.setProps({ getSourceColor: inactiveColor })
-                hondArc.setProps({ getTargetColor: inactiveColor })
-                hondDestinations.setProps({ getFillColor: inactiveColor })
+                // hondArc.setProps({ getSourceColor: inactiveColor })
+                // hondArc.setProps({ getTargetColor: inactiveColor })
+                // hondDestinations.setProps({ getFillColor: inactiveColor })
+
+                fade(hondArc, 'hondArc', 255, false);
+                fade(hondDestinations, 'hondDestinations', 255, false);
             }
 
             //SHOW SALV LAYERS
             if (mapChapter.showSalv && mapChapter.showSalv == true) {
-                salvArc.setProps({ getSourceColor: arcSourceColor })
-                salvArc.setProps({ getTargetColor: arcTargetColor })
-                salvDestinations.setProps({ getFillColor: pointColor })
+                // salvArc.setProps({ getSourceColor: arcSourceColor })
+                // salvArc.setProps({ getTargetColor: arcTargetColor })
+                // salvDestinations.setProps({ getFillColor: pointColor })
+                fade(salvArc, 'salvArc', 255, true);
+                fade(salvDestinations, 'salvDestinations', 255, true);
 
             }
             else {
-                salvArc.setProps({ getSourceColor: inactiveColor })
-                salvArc.setProps({ getTargetColor: inactiveColor })
-                salvDestinations.setProps({ getFillColor: inactiveColor })
+                // salvArc.setProps({ getSourceColor: inactiveColor })
+                // salvArc.setProps({ getTargetColor: inactiveColor })
+                // salvDestinations.setProps({ getFillColor: inactiveColor })
+                fade(salvArc, 'salvArc', 255, false);
+                fade(salvDestinations, 'salvDestinations', 255, false);
             }
 
             if (mapChapter.callback) {
@@ -427,7 +442,7 @@ const ntCountries = new deck.MapboxLayer({
 
 // US-SALV CIRCLES
 const salvDestinations = new deck.MapboxLayer({
-    id: 'salv-Circles',
+    id: 'salvDestinations',
     type: deck.GeoJsonLayer,
     data: 'data/mapbox/outcomes/salv-destinations.json',
     // Styles
@@ -453,7 +468,7 @@ const salvDestinations = new deck.MapboxLayer({
 
 // US-GUAT CIRCLES
 const guatDestinations = new deck.MapboxLayer({
-    id: 'guat-Circles',
+    id: 'guatDestinations',
     type: deck.GeoJsonLayer,
     data: 'data/mapbox/outcomes/guat-destinations.json',
     // Styles
@@ -477,7 +492,7 @@ const guatDestinations = new deck.MapboxLayer({
 
 // US-GUAT CIRCLES
 const hondDestinations = new deck.MapboxLayer({
-    id: 'hond-Circles',
+    id: 'hondDestinations',
     type: deck.GeoJsonLayer,
     data: 'data/mapbox/outcomes/hond-destinations.json',
     // Styles
@@ -517,15 +532,15 @@ const salvArc = new deck.MapboxLayer({
     autoHighlight: false,
     highlightColor: SelectHighlightColor,
     getTilt: arcTilt,
-    transitions:{
-        getSourceColor: {
-            duration: 3000
-        },
-        getTargetColor: {
-            duration: 3000
-        },
+    // transitions: {
+    //     getSourceColor: {
+    //         duration: 3000
+    //     },
+    //     getTargetColor: {
+    //         duration: 3000
+    //     },
 
-    },
+    // },
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 });
 
@@ -546,15 +561,15 @@ const guatArc = new deck.MapboxLayer({
     autoHighlight: false,
     highlightColor: SelectHighlightColor,
     getTilt: arcTilt,
-    transitions:{
-        getSourceColor: {
-            duration: 3000
-        },
-        getTargetColor: {
-            duration: 3000
-        },
+    // transitions: {
+    //     getSourceColor: {
+    //         duration: 3000
+    //     },
+    //     getTargetColor: {
+    //         duration: 3000
+    //     },
 
-    },
+    // },
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 });
 
@@ -575,15 +590,15 @@ const hondArc = new deck.MapboxLayer({
     autoHighlight: false,
     highlightColor: SelectHighlightColor,
     getTilt: arcTilt,
-    transitions:{
-        getSourceColor: {
-            duration: 3000
-        },
-        getTargetColor: {
-            duration: 3000
-        },
+    // transitions: {
+    //     getSourceColor: {
+    //         duration: 3000
+    //     },
+    //     getTargetColor: {
+    //         duration: 3000
+    //     },
 
-    },
+    // },
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 });
 
@@ -600,52 +615,76 @@ map.on('load', () => {
     map.addLayer(guatDestinations);
     map.addLayer(hondDestinations);
 
-    // hondArc.setProps({getSourceColor: [255, 0, 0, 255]});
-    // hondArc.setProps({getTargetColor: [255, 0, 0, 255]});
-
-
 });
 
-// const testDeck = new deck.DeckGL({
-//     gl: map.painter.context.gl,
-//     initialViewState: [{
-//         longitude: -122.123801,
-//         latitude: 37.893394,
-//         zoom: 10,
-//         maxZoom: 16,
-//         pitch: 0,
-//         bearing: 0
-//     }],
-//     layers: [
-//         new deck.ScatterplotLayer({
-//             id: 'my-scatterplot',
-//             data: [
-//                 {position: [-93, 17], size: 100}
-//             ],
-//             getPosition: d => d.position,
-//             getRadius: d => d.size,
-//             getFillColor: [255, 0, 0]
-//         })
-//     ]
 
-// });
+function fade(prop, strProp, target, inOutBool) {
+    let countUp = 0;
+
+    setInterval(function () {
+        if (countUp < target) {
+            countUp++
+
+            if (prop.props.getSourceColor) {
+                var startColor = prop.props.getSourceColor
+
+                if (inOutBool == true) {
+                    if (map.getLayer(strProp) == null) {
+                        map.addLayer(prop)
+                    }
+
+                    // if arc
+                    if (prop.props.getSourceColor[3] < 100) {
+                        // console.log('bigger than 50')
+                        prop.setProps({ getSourceColor: [255, 158, 237, countUp * 0.8] })
+                        prop.setProps({ getTargetColor: [255, 200, 245, countUp * 0.8] })
+                    }
+
+                }
+
+                if (inOutBool == false) {
+
+                    if (startColor[3] > 10)
+                    {
+                        prop.setProps({ getSourceColor: [255, 158, 237, countDown] })
+                        prop.setProps({ getTargetColor: [255, 200, 245, countDown] })
+                    }
+                    countDown = target - countUp
+
+                    if (countDown <= 1) {
+                        if (map.getLayer(strProp) != null) {
+                            console.log('done')
+                            map.removeLayer(strProp)
+                        }
+
+                    }
+
+                }
+            }
+
+            if (prop.props.getFillColor) {
+                var startFill = prop.props.getFillColor
+
+                if (inOutBool == true) {
+                    // if fill
+                    prop.setProps({ getFillColor: [255, 255, 255, countUp * 0.5] })
+                }
+
+                if (inOutBool == false) {
+
+                    countDown = startFill[3] - countUp
+
+                    // if fill
+                    prop.setProps({ getFillColor: [255, 255, 255, countDown] })
+
+                }
+
+
+            }
+
+        }
+    }, 5);
+}
 
 
 
-// map.addLayer(new deck.MapboxLayer({id: 'my-scatterplot', deck}));
-
-// deck.setProps({
-//     layers: [
-//         new deck.ScatterplotLayer({
-//             id: 'my-scatterplot',
-//             data: [
-//                 {position: [-74.5, 40], size: 100}
-//             ],
-//             getPosition: d => d.position,
-//             getRadius: d => d.size,
-//             getFillColor: [0, 0, 255]
-//         })
-//     ]
-// });
-
-// setTimeout(() => {console.log("this is the third message")}, 1000);
