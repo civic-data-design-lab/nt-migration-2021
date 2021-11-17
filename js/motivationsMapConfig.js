@@ -1,21 +1,21 @@
-var aspectRatio = screen.width/screen.height;
+var aspectRatio = screen.width / screen.height;
 var farZoom;
 var closeZoom;
 var middleZoom;
 var maxZoom;
 
-if (aspectRatio < 1){
-    maxZoom = Math.log(screen.width)/1.125;
-    closeZoom = Math.log(screen.width)/1.3;
-    middleZoom = Math.log(screen.width)/1.7;
-    farZoom = Math.log(screen.width)/2.9;
+if (aspectRatio < 1) {
+    maxZoom = Math.log(screen.width) / 1.125;
+    closeZoom = Math.log(screen.width) / 1.3;
+    middleZoom = Math.log(screen.width) / 1.7;
+    farZoom = Math.log(screen.width) / 2.9;
 }
 
-if (aspectRatio >= 1){
-    maxZoom = Math.log(screen.width)/1.025;
-    closeZoom = Math.log(screen.width)/1.15;
-    middleZoom = Math.log(screen.width)/1.85;
-    farZoom = Math.log(screen.width)/2.1;
+if (aspectRatio >= 1) {
+    maxZoom = Math.log(screen.width) / 1.05;
+    closeZoom = Math.log(screen.width) / 1.15;
+    middleZoom = Math.log(screen.width) / 1.85;
+    farZoom = Math.log(screen.width) / 2.1;
 }
 
 
@@ -76,7 +76,7 @@ var motivationsConfig = {
             description: 'Increases in migration hae generated concern in the U.S., who receive the majority of migrants from the northern countries in Central America.',
             location: {
                 center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
-                zoom: middleZoom,
+                zoom: closeZoom,
                 pitch: 0,
                 bearing: 0
             },
@@ -95,12 +95,17 @@ var motivationsConfig = {
                 {
                     layer: 'ntCountriesVizLine',
                     opacity: 1,
+                },
+                                {
+                    layer: 'worldMapViz',
+                    opacity: 0,
                 }
+
             ],
             onChapterExit: [
                 {
                     layer: 'worldMapViz',
-                    opacity: 1,
+                    opacity: 0,
                 },
                 {
                     layer: 'ntCountriesViz',
@@ -122,8 +127,8 @@ var motivationsConfig = {
             // image: './images/zebra.jpg',
             description: 'Migration comes at a large expense to the migrants, many of whom do not want to leave their country. Migrants often leave because they need to provide for their families and have limited social services to turn to for help.',
             location: {
-                center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
-                zoom: closeZoom,
+                center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
+                zoom: maxZoom,
                 pitch: 0,
                 bearing: 0
             },
@@ -132,12 +137,18 @@ var motivationsConfig = {
             callback: '',
             onChapterEnter: [
                 {
-                    layer: 'worldMapViz',
+                    layer: 'ntCountriesViz',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ntCountriesVizLine',
                     opacity: 0,
                 }
 
             ],
             onChapterExit: [
+
+    
 
             ],
 
@@ -156,8 +167,8 @@ var motivationsConfig = {
             // image: './images/zebra.jpg',
             description: 'In order to understand the complex reasons for migration, close to 5,000 households in El Salvador, Guatemala, and Honduras were interviewed in June 2021 by the World Food Programme (WFP) and the International Organization for Migration (IOM) to better understand their conditions.',
             location: {
-                center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
-                zoom: closeZoom,
+                center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
+                zoom: maxZoom,
                 pitch: 0,
                 bearing: 0
             },
@@ -165,9 +176,11 @@ var motivationsConfig = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
+                
 
             ],
             onChapterExit: [
+
 
             ],
 

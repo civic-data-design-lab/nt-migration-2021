@@ -88,12 +88,14 @@ for (let i = 0; i < allChapters.length; i++) {
 
             allChapters[i].id = "open"
 
+            if (pageWrapper)
+            {
+                pageWrapper.style.pointerEvents = "none"
+            }
+
         }
 
-        if (pageWrapper)
-        {
-            pageWrapper.style.pointerEvents = "none"
-        }
+
 
     }
 
