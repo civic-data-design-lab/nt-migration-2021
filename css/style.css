@@ -77,11 +77,11 @@ h4 {
     color: black;
 }
 
-h4 {
+h5 {
     font-family: neue-haas-grotesk-text, sans-serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 2em;
+    font-size: 1.7em;
     color: black;
 }
 
@@ -698,7 +698,7 @@ section#open:hover .chapter-title {
 }
 
 #story {
-    margin-bottom: 125vh;
+    /* margin-bottom: 125vh; */
     pointer-events: none;
     /* overflow: visible; */
     /* border: 3px solid tomato; */
@@ -976,3 +976,12 @@ section#open:hover .chapter-title {
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {}
+
+
+.about-descr{
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    font-style: normal;
+    overflow: hidden;
+}
