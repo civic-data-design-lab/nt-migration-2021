@@ -31,15 +31,15 @@ var circleBorder = [255, 255, 255, 0]
 var circleBorderWidth = 0
 
 //ARCLAYERS
-var arcSourceColor = [255, 200, 245, 255]
+var arcSourceColor = [255, 158, 237, 255 * 0.8]
 var arcTargetColor = [255, 200, 245, 255 * 0.2]
 var arcWidth = 0.000003
 var arcHeight = 0.5
-var arcTilt = -45
+var arcTilt = 0
 var arcFilterMin = 21
 
 //INACTIVE STATE
-var inactiveColor = [255, 255, 255, 0]
+var inactiveColor = [255, 255, 255, 10]
 
 function getLayerPaintType(layer) {
     var layerType = map.getLayer(layer).type;
@@ -517,6 +517,15 @@ const salvArc = new deck.MapboxLayer({
     autoHighlight: false,
     highlightColor: SelectHighlightColor,
     getTilt: arcTilt,
+    transitions:{
+        getSourceColor: {
+            duration: 3000
+        },
+        getTargetColor: {
+            duration: 3000
+        },
+
+    },
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 });
 
@@ -537,6 +546,15 @@ const guatArc = new deck.MapboxLayer({
     autoHighlight: false,
     highlightColor: SelectHighlightColor,
     getTilt: arcTilt,
+    transitions:{
+        getSourceColor: {
+            duration: 3000
+        },
+        getTargetColor: {
+            duration: 3000
+        },
+
+    },
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 });
 
@@ -557,6 +575,15 @@ const hondArc = new deck.MapboxLayer({
     autoHighlight: false,
     highlightColor: SelectHighlightColor,
     getTilt: arcTilt,
+    transitions:{
+        getSourceColor: {
+            duration: 3000
+        },
+        getTargetColor: {
+            duration: 3000
+        },
+
+    },
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 });
 
@@ -620,3 +647,5 @@ map.on('load', () => {
 //         })
 //     ]
 // });
+
+// setTimeout(() => {console.log("this is the third message")}, 1000);

@@ -24,7 +24,7 @@ var outcomesConfig = {
 
     chapters: [
 
-        //DESTINATION -1
+        //DESTINATION 0
         {
             id: 'map-state-0',
             alignment: 'full',
@@ -63,13 +63,13 @@ var outcomesConfig = {
             paddedImage: '',
             description: '',
             location: {
-                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: farZoom,
-                pitch: 0,
-                bearing: 0
+                center: [-89.000000, 15.0000000], // initial map center in [lon, lat]
+                zoom: closeZoom,
+                pitch: 15,
+                bearing: -15
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
@@ -124,13 +124,13 @@ var outcomesConfig = {
             paddedImage: false,
             description: '11% of Hondurans migrate to Spain',
             location: {
-                center: [-85.0000000, 35.0000000], // initial map center in [lon, lat]
-                zoom: middleZoom,
-                pitch: 45,
-                bearing: -35
+                center: [-90.5000000, 35.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
+                pitch: 50,
+                bearing: 30
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
@@ -152,13 +152,13 @@ var outcomesConfig = {
             paddedImage: '',
             description: '', //The rest are either caught, detained, or return home. Some are lost and never return.
             location: {
-                center: [-115.0000000, 35.0000000], // initial map center in [lon, lat]
-                zoom: middleZoom,
-                pitch: 45,
-                bearing: 25
+                center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: farZoom,
+                pitch: 0,
+                bearing: 0
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
@@ -282,7 +282,7 @@ var outcomesConfig = {
             
         // },
 
-        //DESTINATION 8
+        //DESTINATION 9
         {
             id: 'map-state-9',
             alignment: 'full',
@@ -315,7 +315,7 @@ var outcomesConfig = {
             id: 'map-state-10',
             alignment: 'full',
             hidden: false,
-            title: 'This Diaspora Should Invest In Public Works, And Governments Should Match Those Funds',
+            title: 'This Diaspora Should Invest in Public Works, and Governments Should Match Those Funds',
             image: '',
             filter: '',
             paddedImage: false,

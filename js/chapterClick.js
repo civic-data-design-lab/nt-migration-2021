@@ -8,8 +8,8 @@ var docHeight = document.getElementById("wrapper").offsetHeight
 var contentBlock = document.getElementsByClassName("content-block")
 var hamburgerMenu = document.getElementById("hamburger-menu")
 var mobileMenu = document.getElementById("mobile-menu")
-var mobileExit = document.getElementById("mobile-exit")
-var mobileExit = document.getElementById("wrapper")
+var pageWrapper =  document.getElementById("wrapper")
+
 
 
 getComputedStyle(document.documentElement)
@@ -88,6 +88,11 @@ for (let i = 0; i < allChapters.length; i++) {
 
             allChapters[i].id = "open"
 
+        }
+
+        if (pageWrapper)
+        {
+            pageWrapper.style.pointerEvents = "none"
         }
 
     }
