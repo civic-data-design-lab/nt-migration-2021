@@ -221,7 +221,6 @@ map.on("load", function () {
             if (mapChapter.rotateAnimation) {
                 map.once('moveend', function () {
                     const rotateNumber = map.getBearing();
-                    console.log(rotateNumber)
                     const rotationAmount = 30
                     map.rotateTo(rotateNumber + rotationAmount, {
                         duration: 34000, easing: function (t) {
@@ -613,12 +612,13 @@ const hondArc = new deck.MapboxLayer({
 
 
 map.on('load', () => {
-    map.addLayer(guatArc);
-    map.addLayer(salvArc);
-    map.addLayer(hondArc);
+
     map.addLayer(salvDestinations);
     map.addLayer(guatDestinations);
     map.addLayer(hondDestinations);
+    map.addLayer(guatArc);
+    map.addLayer(salvArc);
+    map.addLayer(hondArc);
 
 });
 
@@ -630,7 +630,7 @@ function fade(prop, strProp, target, inOutBool) {
         if (countUp < target) {
             countUp++
 
-            if (prop.props.getSourceColor) {
+            if (prop.props.getSourceColor) {  //TRANSITIONS FOR ARCLAYER
                 var startColor = prop.props.getSourceColor
 
                 if (inOutBool == true) {
@@ -640,8 +640,8 @@ function fade(prop, strProp, target, inOutBool) {
 
                     // if arc
                     if (prop.props.getSourceColor[3] < 100) {
-                        prop.setProps({ getSourceColor: [255, 208, 232, countUp * 1] })
-                        prop.setProps({ getTargetColor: [255, 200, 245, countUp * 1] })
+                        prop.setProps({ getSourceColor: [255, 245, 245,countUp] })
+                        prop.setProps({ getTargetColor: [218, 107, 222, countUp] })
                     }
 
                 }
@@ -651,8 +651,8 @@ function fade(prop, strProp, target, inOutBool) {
 
                     if (startColor[3] > 1)
                     {
-                        prop.setProps({ getSourceColor: [255, 158, 237, countDown] })
-                        prop.setProps({ getTargetColor: [255, 200, 245, countDown] })
+                        prop.setProps({ getSourceColor: [255, 245, 245, countDown] })
+                        prop.setProps({ getTargetColor: [218, 107, 222, countDown] })
                     }
                    
 
@@ -667,20 +667,20 @@ function fade(prop, strProp, target, inOutBool) {
                 }
             }
 
-            if (prop.props.getFillColor) {
+            if (prop.props.getFillColor) { //TRANSITIONS FOR SCATTERPLOTS
                 var startFill = prop.props.getFillColor
 
                 if (inOutBool == true) {
                     // if fill
-                    prop.setProps({ getFillColor: [255, 255, 255, countUp * 0.5] })
+                    prop.setProps({ getFillColor: [218, 107, 222, countUp*0.8] })
                 }
 
                 if (inOutBool == false) {
 
-                    countDown = startFill[3] - countUp
+                    countDown = target - countUp
 
                     // if fill
-                    prop.setProps({ getFillColor: [255, 255, 255, countDown] })
+                    prop.setProps({ getFillColor: [255, 255, 255, countDown*0.8] })
 
                 }
 
