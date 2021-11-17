@@ -21,7 +21,7 @@ const occuAttrb = {
     "Salaried employment": {"label": "15%", "color": "#e23cad", "class": "salary"},
     "Own business": {"label": "6%", "color": "#881da8", "class": "business"},
     "Domestic work": {"label": "4%", "color": "#bf0eb2", "class": "domestic"},
-    "Student (may or may not attend classes regularly)": {"label": "20%", "color": "#e03448", "class": "student"},
+    "Student (may or may not attend classes regularly)": {"label": "12%", "color": "#e03448", "class": "student"},
     "Unemployed": {"label": "6%", "color": "#662d91", "class": "unemployed"}
 };
 
@@ -31,7 +31,7 @@ const occuAttrc = {
     "Salaried employment": {"label": "21%", "color": "#d11f63", "class": "salary"},
     "Own business": {"label": "5%", "color": "#e23cad", "class": "business"},
     "Domestic work": {"label": "6%", "color": "#bf0eb2", "class": "domestic"},
-    "Student (may or may not attend classes regularly)": {"label": "15%", "color": "#881da8", "class": "student"},
+    "Student (may or may not attend classes regularly)": {"label": "8%", "color": "#881da8", "class": "student"},
     "Unemployed": {"label": "5%", "color": "#662d91", "class": "unemployed"}
 };
 
@@ -278,7 +278,7 @@ node.append("text")
       .attr("text-anchor", "end")
       .attr("transform", null)
       .attr("class","occbef")
-      .style("fill","#fff")
+      .style("fill","#2C7D87")
       .classed("node source-", false)
       .text(function(d) { 
       
@@ -304,7 +304,7 @@ node.append("text")
       .attr("text-anchor", "end")
       .attr("transform", null)
       .attr("class","occbefper")
-      .style("fill","#fff")
+      .style("fill","#2C7D87")
       .classed("node source-", false)
       .text(function(d) { 
       

@@ -185,7 +185,10 @@ var maxAmount = d3.max(rawData, function (d) { return +d.mig_ext_cost_total; });
         
     svg = d3.select("#frame-cost")
       .append('svg')
-      .attr("viewBox", [-(sideWidth + sqLen), 0, width + (sideWidth + sqLen), height + 20]);
+      .attr("viewBox", [-(sideWidth + sqLen), 0, width + (sideWidth + sqLen), height + 20])
+      .classed("svg-content-responsive", true)
+      .classed("svg-container", true) 
+      .attr("preserveAspectRatio", "xMidYMid meet");
 
 //   svg = d3.select(selector)
 //       .append('svg')
