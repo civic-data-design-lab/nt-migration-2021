@@ -335,8 +335,8 @@ const dataset = d3.csv("./data/motivations.csv", d3.autoType)
         plotLabels(incomeSummaryData, "income");
         plotLabels(cariSummaryData.slice(0,-1), "cari");
 
-        console.log(keys);
-        console.log(motivationsData);
+        // console.log(keys);
+        // console.log(motivationsData);
     });
 
 // FUNCTIONS
@@ -1157,7 +1157,7 @@ function createNarratives() {
         if (item.hasOwnProperty("image")) {
             narrativeDiv.find(".scrollytelling-text").remove();
 
-            narrativeDiv.find(".ribbon-image").attr("src", "./img/motivations/" + item.image);
+            narrativeDiv.find(".ribbon-image img").attr("src", "./img/motivations/" + item.image);
             narrativeDiv.find("h2.scrollytelling").html(item.title);
             narrativeDiv.find("h3.description").html(item.description);
         }
@@ -1252,9 +1252,19 @@ $(document).ready(function() {
         .addTo(controller)
         .on("start", e => {
             updateScene("income");
+
+            // // update skip to viz shortcut button
+            $("#shortcut a").attr("class", "text-white");
+            $("#shortcut a").find("span").html("Skip to Visualization");
+            $("#shortcut a").find(".arrow").css("border-color", "#fff").removeClass("arrow-up");
         })
         .on("end", e => {
             updateScene("cari");
+
+            // // update skip to top shortcut button
+            $("#shortcut a").attr("class", "text-blue top");
+            $("#shortcut a").find("span").html("Back to Top");
+            $("#shortcut a").find(".arrow").css("border-color", "#1540C4").addClass("arrow-up");
         });
 
     // bootstrap modal

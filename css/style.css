@@ -86,32 +86,31 @@ h5 {
 }
 
 
-.text-orange {
+.text-orange, a.text-orange:hover {
     color: #EB4927;
 }
 
-.text-blue {
+.text-blue, a.text-blue:hover {
     color: #1540C4;
 }
 
-.text-teal {
+.text-teal, a.text-teal:hover {
     color: #3BA7C9;
 }
 
-.text-pink {
+.text-pink, a.text-pink:hover {
     color: #E23CAD;
 }
 
-.text-purple {
+.text-purple, a.text-purple:hover {
     color: #662D91;
 }
 
-.text-white {
+.text-white, a.text-white:hover {
     color: #fff;
 }
 
-
-.text-black {
+.text-black, a.text-black:hover {
     color: #000;
 }
 
@@ -170,6 +169,7 @@ h5 {
     flex: 0 0 var(--open);
     /* transition: var(--transition-speed); */
     filter: var(--filters-off);
+    scroll-behavior: smooth;
 }
 
 #wrapper>#partial-open {
@@ -327,6 +327,38 @@ section#open:hover .chapter-title {
 .solid-white {
     background: white;
     pointer-events: auto;
+}
+
+/* JUMP TO VIZ SHORT CUT */
+#shortcut {
+    top: calc(100vh - 3rem - 6px);
+    float: right;
+    height: 0;
+    z-index: 5;
+}
+#shortcut a {
+    text-decoration: none;
+}
+#shortcut a:hover {
+    cursor: pointer;
+}
+#shortcut span {
+    display: none;
+}
+i.arrow {
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	margin: -5px 0px 2px 20px;
+	padding: 2px;
+	transform: rotate(45deg);
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+}
+i.arrow-up {
+	transform: rotate(225deg);
+	margin: 5px 0px -8px 20px;
 }
 
 /* BACKGROUND IMAGES */
@@ -962,10 +994,12 @@ section#open:hover .chapter-title {
 
 }
 
-
 /* Small devices (landscape phones, 576px and up) */
-/* @media (min-width: 576px) {
-} */
+@media (min-width: 576px) {
+    #shortcut span {
+        display: inline;
+    }
+}
 
 /* Large devices (desktops, 992px and up) */
 /* X-Large devices (large desktops, 1200px and up) */

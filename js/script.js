@@ -73,6 +73,55 @@ $(window).resize(function() {
 	winWidth = $(window).width();
 });
 
+// chapter look up
+const chapterAttr = {
+    origins: {color: "orange", hex: "#EB4927"},
+    motivations: {color: "blue", hex: "#1540C4"},
+    profiles: {color: "teal", hex: "#3BA7C9"},
+    outcomes: {color: "pink", hex: "#E23CAD"},
+    cost: {color: "purple", hex: "#662D91"}
+};
+
+// smooth anchor # scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// skip to viz/top shortcut
+$("#shortcut a").on("click", function() {
+    let chapterName = $(document).attr("title").toLocaleLowerCase();
+    $(this).find(".arrow").toggleClass("arrow-up");
+
+    if(!$(this).hasClass("top")) {
+        document.querySelector("#open").scrollTop = document.querySelector("#open").scrollHeight;
+        $(this).attr("class", "text-" + chapterAttr[chapterName].color);
+        $(this).find(".arrow").css("border-color", chapterAttr[chapterName].hex);
+        $(this).find("span").html("Back to Top");
+        setTimeout(
+            function() {
+                $("#shortcut a").addClass("top");
+            },
+            50);
+    }
+    else {
+        document.querySelector("#open").scrollTop = 0;
+        $(this).attr("class", "text-white");
+        $(this).find(".arrow").css("border-color", "#fff");
+        $(this).find("span").html("Skip to Visualization");
+        setTimeout(
+            function() {
+                $("#shortcut a").removeClass("top");
+            },
+            50);
+    }
+});
+
 $(document).ready(function () {
     
 })

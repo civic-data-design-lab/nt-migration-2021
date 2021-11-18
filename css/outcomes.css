@@ -2,7 +2,6 @@
 #map-state-10 {
     padding-bottom: 0px;
 }
-
 .scrolly-container-outcomes .ribbon-image img {
     filter: grayscale(1);
     -webkit-mix-blend-mode: hard-light;
@@ -35,15 +34,3 @@
     opacity: 0.4;
     transition: all 0.3s ease-in-out;
 }
-
-/* TEMPORARY DISPLAY FOR DRAFT */
-/* .mask {
-    display: none;
-} */
-/* #_3-return-dest .mask, 
-#_4-return-other .mask {
-    display: none;
-} */
-/* #g-return, #g-return-vol-inv {
-    display: block;
-} */

@@ -88,7 +88,7 @@ function createNarratives() {
         if (item.hasOwnProperty("image")) {
             narrativeDiv.find(".scrollytelling-text").remove();
 
-            narrativeDiv.find(".ribbon-image").attr("src", "./img/outcomes/" + item.image);
+            narrativeDiv.find(".ribbon-image img").attr("src", "./img/outcomes/" + item.image);
             narrativeDiv.find("h2.scrollytelling").html(item.title);
             narrativeDiv.find("h3.description").html(item.description);
         }
@@ -146,16 +146,16 @@ $(document).ready(function() {
         duration: winHeight * 2.5 // scroll in px
     })
         .addTo(controller)
-        .on("start", function() {
-            $("#svg-outcomes #g-reside").fadeToggle();
-            $("#svg-outcomes #_1-reside-us .text").fadeToggle();
-            $("#svg-outcomes #_2-reside-other .text").fadeToggle();
-            $("#_1-reside-us").toggleClass("inactive");
-            $("#_2-reside-other").toggleClass("inactive");
-            returnDestPath.css("stroke-dashoffset", -returnDestLength);
-            returnOtherPath.css("stroke-dashoffset", returnOtherLength);
-            returnOtherMaskPath.css("stroke-dashoffset", 0);
-        })
+        // .on("start", function() {
+            // $("#svg-outcomes #g-reside").fadeToggle();
+            // $("#svg-outcomes #_1-reside-us .text").fadeToggle();
+            // $("#svg-outcomes #_2-reside-other .text").fadeToggle();
+            // $("#_1-reside-us").toggleClass("inactive");
+            // $("#_2-reside-other").toggleClass("inactive");
+            // returnDestPath.css("stroke-dashoffset", -returnDestLength);
+            // returnOtherPath.css("stroke-dashoffset", returnOtherLength);
+            // returnOtherMaskPath.css("stroke-dashoffset", 0);
+        // })
         .on("progress", function(e) {
             // console.log(e.progress * 250);
             
@@ -206,21 +206,27 @@ $(document).ready(function() {
         duration: winHeight * 1.5 // scroll in px
     })
         .addTo(controller)
-        .on("start", e => {
-            $("#svg-outcomes #g-return").fadeToggle();
-            $("#svg-outcomes #g-return-vol-inv").fadeToggle();
-            $("#svg-outcomes #_3-return-dest .text").fadeToggle();
-            $("#svg-outcomes #_4-return-other .text").fadeToggle();
-            $("#svg-outcomes #_34-return-vol-inv .text").fadeToggle();
-            $("#_3-return-dest").toggleClass("inactive");
-            $("#_4-return-other").toggleClass("inactive");
-            $("#_34-return-vol-inv").toggleClass("inactive");
-        })
+        // .on("start", e => {
+        //     $("#svg-outcomes #g-return").fadeToggle();
+        //     $("#svg-outcomes #g-return-vol-inv").fadeToggle();
+        //     $("#svg-outcomes #_3-return-dest .text").fadeToggle();
+        //     $("#svg-outcomes #_4-return-other .text").fadeToggle();
+        //     $("#svg-outcomes #_34-return-vol-inv .text").fadeToggle();
+        //     $("#_3-return-dest").toggleClass("inactive");
+        //     $("#_4-return-other").toggleClass("inactive");
+        //     $("#_34-return-vol-inv").toggleClass("inactive");
+        // })
         .on("progress", e => {
             // console.log(e.progress * 150);
             reveal5Transit.seek(e.progress * 150);
             reveal6Died.seek(e.progress * 150);
             reveal7Nsnr.seek(e.progress * 150);
+        })
+        .on("end", e => {
+            // update skip to viz shortcut button
+            $("#shortcut a").attr("class", "text-white");
+            $("#shortcut a").find("span").html("Skip to Visualization");
+            $("#shortcut a").find(".arrow").css("border-color", "#fff").removeClass("arrow-up");
         })
 
     const sceneAllOutcomes = new ScrollMagic.Scene({
@@ -229,55 +235,25 @@ $(document).ready(function() {
     })
         .addTo(controller)
         .on("start", e => {
-            $("#svg-outcomes #g-reside").fadeToggle();
-            $("#svg-outcomes #g-return").fadeToggle();
-            $("#svg-outcomes #g-return-vol-inv").fadeToggle();
+    //         $("#svg-outcomes #g-reside").fadeToggle();
+    //         $("#svg-outcomes #g-return").fadeToggle();
+    //         $("#svg-outcomes #g-return-vol-inv").fadeToggle();
 
-            $("#svg-outcomes #_1-reside-us .text").fadeToggle();
-            $("#svg-outcomes #_2-reside-other .text").fadeToggle();
-            $("#svg-outcomes #_3-return-dest .text").fadeToggle();
-            $("#svg-outcomes #_4-return-other .text").fadeToggle();
-            $("#svg-outcomes #_34-return-vol-inv .text").fadeToggle();
+    //         $("#svg-outcomes #_1-reside-us .text").fadeToggle();
+    //         $("#svg-outcomes #_2-reside-other .text").fadeToggle();
+    //         $("#svg-outcomes #_3-return-dest .text").fadeToggle();
+    //         $("#svg-outcomes #_4-return-other .text").fadeToggle();
+    //         $("#svg-outcomes #_34-return-vol-inv .text").fadeToggle();
 
-            $("#_1-reside-us").toggleClass("inactive");
-            $("#_2-reside-other").toggleClass("inactive");
-            $("#_3-return-dest").toggleClass("inactive");
-            $("#_4-return-other").toggleClass("inactive");
-            $("#_34-return-vol-inv").toggleClass("inactive");
+    //         $("#_1-reside-us").toggleClass("inactive");
+    //         $("#_2-reside-other").toggleClass("inactive");
+    //         $("#_3-return-dest").toggleClass("inactive");
+    //         $("#_4-return-other").toggleClass("inactive");
+    //         $("#_34-return-vol-inv").toggleClass("inactive");
 
-            // if (e.progress > 0) {
-            //     $("#svg-outcomes #g-reside").fadeIn();
-            //     $("#svg-outcomes #g-return").fadeIn();
-            //     $("#svg-outcomes #g-return-vol-inv").fadeIn();
-
-            //     $("#svg-outcomes #_1-reside-us .text").fadeIn();
-            //     $("#svg-outcomes #_2-reside-other .text").fadeIn();
-            //     $("#svg-outcomes #_3-return-dest .text").fadeIn();
-            //     $("#svg-outcomes #_4-return-other .text").fadeIn();
-            //     $("#svg-outcomes #_34-return-vol-inv .text").fadeIn();
-
-            //     $("#_1-reside-us").removeClass("inactive");
-            //     $("#_2-reside-other").removeClass("inactive");
-            //     $("#_3-return-dest").removeClass("inactive");
-            //     $("#_4-return-other").removeClass("inactive");
-            //     $("#_34-return-vol-inv").removeClass("inactive");
-            // }
-            // else {
-            //     $("#svg-outcomes #g-reside").fadeOut();
-            //     $("#svg-outcomes #g-return").fadeOut();
-            //     $("#svg-outcomes #g-return-vol-inv").fadeOut();
-
-            //     $("#svg-outcomes #_1-reside-us .text").fadeOut();
-            //     $("#svg-outcomes #_2-reside-other .text").fadeOut();
-            //     $("#svg-outcomes #_3-return-dest .text").fadeOut();
-            //     $("#svg-outcomes #_4-return-other .text").fadeOut();
-            //     $("#svg-outcomes #_34-return-vol-inv .text").fadeOut();
-
-            //     $("#_1-reside-us").addClass("inactive");
-            //     $("#_2-reside-other").addClass("inactive");
-            //     $("#_3-return-dest").addClass("inactive");
-            //     $("#_4-return-other").addClass("inactive");
-            //     $("#_34-return-vol-inv").addClass("inactive");
-            // }
+            // update skip to top shortcut button
+            $("#shortcut a").attr("class", "text-pink top");
+            $("#shortcut a").find("span").html("Back to Top");
+            $("#shortcut a").find(".arrow").css("border-color", "#E23CAD").addClass("arrow-up");
         })
 });
