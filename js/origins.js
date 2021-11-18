@@ -237,8 +237,8 @@ function plotStreamgraph(data, svg, {
             .attr("fill", ([{i}]) => countryAttr[Z[i]].color)
             .attr("fill-opacity", 0.8)
         .on("mouseover", function(event, [{i}]) {
-            console.log(Z[i]);
-            highlightMigrantCounts(Z[i]);
+            // console.log(Z[i]);
+            // highlightMigrantCounts(Z[i]);
             d3.selectAll(".stream")
                 .transition()
                 .duration(50)
@@ -335,7 +335,7 @@ function plotEvents(data) {
         .on("mouseover", function(event, d) {
             country = d.country;
             updateEvent(d.event_index);
-            highlightMigrantCounts(d.country);
+            // highlightMigrantCounts(d.country);
 
             if (country == "hnd-slv") {
                 d3.selectAll(".stream")
@@ -447,7 +447,7 @@ d3.csv("./data/origins_migrants.csv", d3.autoType)
         });
 
         // console.log(keys);
-        console.log(originsData);
+        // console.log(originsData);
     });
     
 // load csv event data and callback function
@@ -475,8 +475,8 @@ d3.csv("./data/origins_events.csv", d3.autoType)
 
         plotEvents(eventsData);
 
-        console.log(eventsKeys);
-        console.log(eventsData);
+        // console.log(eventsKeys);
+        // console.log(eventsData);
     });
 
 $(document).ready(function() {
