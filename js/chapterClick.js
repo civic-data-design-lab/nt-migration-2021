@@ -1,5 +1,5 @@
 var allChapters = document.getElementsByClassName("chapter")
-var chapterClass = document.getElementById("open").className
+// var chapterClass = document.getElementById("open").className
 var chapterTitles = document.getElementsByClassName("chapter-title")
 var openChapter = document.getElementById("open")
 var mapContainer = document.getElementById("map")
@@ -83,8 +83,12 @@ for (let i = 0; i < allChapters.length; i++) {
 
         if (allChapters[i].id != "open") {
 
-            openChapters.id = "closed"
-            openChapters.scrollTo({ top: 0, behavior: "smooth" });
+            if (openChapters)
+            {
+                openChapters.id = "closed"
+                openChapters.scrollTo({ top: 0, behavior: "smooth" });
+            }
+     
 
             allChapters[i].id = "open"
 

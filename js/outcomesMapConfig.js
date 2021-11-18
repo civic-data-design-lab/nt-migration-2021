@@ -36,13 +36,9 @@ var outcomesConfig = {
             filter: '',
             paddedImage: false,
             description: '24% of households in Central America have someone who migrated in the last five years. All of these households receive remittances. The need to migrate is largely economic, caused by the externalities of violence, insecurity, and natural disasters.',
-            mapLayer: '',
-            mappedTitle: "",
-            mappedDescription: '',
-            mappedLocations: '',
             location: {
-                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: farZoom,
+                center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
+                zoom: closeZoom,
                 pitch: 0,
                 bearing: 0
             },
@@ -52,16 +48,16 @@ var outcomesConfig = {
             onChapterEnter: [],
             onChapterExit: [
             ],
-            hideCountries: false,
             showGuat:true,
             showHond:true,
             showSalv:true,
+            fadePixels: true,
         },
 
         //DESTINATION 1
         {
             id: 'map-state-1',
-            alignment: 'full',
+            alignment: 'left',
             hidden: false,
             title: 'The Majority of Migrants (89%) Seek to Migrate to the United States',
             image: '', 
@@ -69,9 +65,6 @@ var outcomesConfig = {
             paddedImage: '',
             description: '',
             mapLayer: 'mappedText1',
-            mappedTitle: '',
-            mappedDescription: '',
-            mappedLocations: [-106.5000000, 10.0000000],
             location: {
                 center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
@@ -87,22 +80,19 @@ var outcomesConfig = {
             showGuat:true,
             showHond:false,
             showSalv:false,
+            fadePixels: '',
         },
 
         //DESTINATION 2
         {
             id: 'map-state-2',
-            alignment: 'full',
+            alignment: 'left',
             hidden: false,
             title: '96% of Guatemalans Migrate to the United States',
             image: '', 
             filter: '',
             paddedImage: false,
             description: '',
-            mapLayer: '',
-            mappedTitle: '',
-            mappedDescription: '',
-            mappedLocations: [-76.5000000, 15.0000000],
             location: {
                 center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom2,
@@ -116,10 +106,10 @@ var outcomesConfig = {
             ],
             onChapterExit: [
             ],
-            hideCountries: false,
             showGuat:false,
             showHond:true,
             showSalv:false,
+            fadePixels: '',
 
 
         },
@@ -129,18 +119,13 @@ var outcomesConfig = {
         //DESTINATION 3
         {
             id: 'map-state-3',
-            alignment: 'full',
+            alignment: 'left',
             hidden: false,
             title: '82% of Hondurans Migrate to the United States',
-            title2: '',
             image: '',
             filter: '',
             paddedImage: false,
-            description: '11% of Hondurans migrate to Spain',
-            mapLayer: '',
-            mappedTitle: '',
-            mappedDescription: '',
-            mappedLocations: [-96.5000000, 30.0000000],
+            description: '11% of Hondurans migrate to Spain.',
             location: {
                 center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom2,
@@ -152,27 +137,23 @@ var outcomesConfig = {
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
-            hideCountries: false,
             showGuat:false,
             showHond:false,
             showSalv:true,
+            fadePixels: '',
         },
 
 
         //DESTINATION 4
         {
             id: 'map-state-4',
-            alignment: 'full',
+            alignment: 'left',
             hidden: false,
             title: '94% of Salvadorans Migrate to the United States',
             image: '', 
             filter: '',
             paddedImage: '',
             description: '', 
-            mapLayer: '',
-            mappedTitle: '',
-            mappedDescription: '',
-            mappedLocations: [-96.5000000, 30.0000000],
             location: {
                 center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom2,
@@ -184,136 +165,22 @@ var outcomesConfig = {
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
-            hideCountries: false,
             showGuat:true,
             showHond:true,
             showSalv:true,
+            fadePixels: '',
         },
-
-
-
-        //DESTINATION 5
-        // {
-        //     id: 'map-state-5',
-        //     alignment: 'full',
-        //     hidden: false,
-        //     title: 'Just Over Half Of Migrants (57%) Make It To Their Final Destination', //Increased diaspora comes with additional risk
-        //     image: './img/outcomes/out2.jpg',
-        //     filter: '',
-        //     paddedImage: false,
-        //     description: 'Migrants work in similar industries as they did in their home countries. The United States economy depends on these migrants in industries that have labour shortages, such as agriculture, the restaurant industry, and domestic work. In 2018, nearly 74% of agriculture workers were migrants. The United States needs these migrants as much as they need us.',
-        //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
-        //         zoom: middleZoom,
-        //         pitch: 30,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [],
-        //     onChapterExit: [],
-        //     hideCountries: false,
-        //     showGuat:true,
-        //     showHond:true,
-        //     showSalv:true,
-            
-        // },
-
-        //DESTINATION 6
-        // {
-        //     id: 'map-state-6',
-        //     alignment: 'full',
-        //     hidden: false,
-        //     title: 'Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here Insert Chart Here', //Increased diaspora comes with additional risk
-        //     image: '',
-        //     filter: '',
-        //     paddedImage: false,
-        //     description: '',
-        //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
-        //         zoom: farZoom,
-        //         pitch: 30,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [],
-        //     onChapterExit: [],
-        //     hideCountries: false,
-        //     showGuat:true,
-        //     showHond:true,
-        //     showSalv:true,
-            
-        // },
-
-        //DESTINATION 6
-        // {
-        //     id: 'map-state-7',
-        //     alignment: 'full',
-        //     hidden: false,
-        //     title: '33% Of Migrants Are Returned Home', //Increased diaspora comes with additional risk
-        //     image: './img/outcomes/out3.jpg', //
-        //     filter: '',
-        //     paddedImage: false,
-        //     description: 'This comes at a loss to the migrants who raise large funds and experience harrowing conditions to migrate. While both origin and destination countries benefit ecnomically from migration, the cost is largely borne by the migrants themselves.',
-        //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
-        //         zoom: farZoom,
-        //         pitch: 30,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [],
-        //     onChapterExit: [],
-        //     hideCountries: false,
-        //     showGuat:true,
-        //     showHond:true,
-        //     showSalv:true,
-            
-        // },
-
-        //DESTINATION 7
-        // {
-        //     id: 'map-state-8',
-        //     alignment: 'full',
-        //     hidden: false,
-        //     title: 'Migrants Send Remittances To Provide For Basic Needs', //Increased diaspora comes with additional risk
-        //     image: './img/outcomes/out4.jpg', //
-        //     filter: '',
-        //     paddedImage: false,
-        //     description: '29% of households reported regularly receiving remittances from abroad. These remittances provide a lifeline to meet subsistence costs and immediate expenses rather than a means to contribute to savings, personal investment or community projects, which are cited as catalysts for development. This lifeline is helpful for the origin countries which struggle to fund social services for their populations.',
-        //         center: [-90.0000000, 30.0000000], // initial map center in [lon, lat]
-        //         zoom: farZoom,
-        //         pitch: 30,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [],
-        //     onChapterExit: [],
-        //     hideCountries: false,
-        //     showGuat:true,
-        //     showHond:true,
-        //     showSalv:true,
-            
-        // },
 
         //DESTINATION 9
         {
             id: 'map-state-9',
-            alignment: 'full',
+            alignment: 'left',
             hidden: true,
             title: '',
             image: '',
             filter: '',
             paddedImage: false,
             description: '',
-            mapLayer: '',
-            mappedTitle: "",
-            mappedDescription: '',
-            mappedLocations: [-96.5000000, 30.0000000],
             location: {
                 center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
@@ -325,10 +192,10 @@ var outcomesConfig = {
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
-            hideCountries: false,
             showGuat:true,
             showHond:true,
             showSalv:true,
+            fadePixels: '',
             
         },
 
@@ -342,10 +209,6 @@ var outcomesConfig = {
             filter: '',
             paddedImage: false,
             description: 'The diaspora should use their remittances to support more than basic needs. International organizations should consider diasporas as potential agents of economic development and governance. Creating incentives for members of a diaspora to invest in public works can magnify the reach of government efforts while simultaneously enriching transnational partnerships to improve governance, for example, by matching diaspora donation with transparent and accountable commitments from the national, departmental, and municipal governments.',
-            mapLayer: '',
-            mappedTitle: "",
-            mappedDescription: '',
-            mappedLocations: [-96.5000000, 30.0000000],
             location: {
                 center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
@@ -357,14 +220,12 @@ var outcomesConfig = {
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
-            hideCountries: false,
             showGuat:true,
             showHond:true,
             showSalv:true,
+            fadePixels: '',
             
         },
-
-
 
     ]
 };

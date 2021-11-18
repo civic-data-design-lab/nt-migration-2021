@@ -17,13 +17,16 @@ var alignments = {
 
 
 // SCALE ALIGNMENTS
+var pixelSize;
 var labelSize;
 
 if (aspectRatio < 1) {
+    pixelSize = 6;
     labelSize = 12
 }
 
 if (aspectRatio >= 1) {
+    pixelSize = 12;
     labelSize = 17
 }
 
@@ -106,13 +109,6 @@ outcomesConfig.chapters.forEach((record, idx) => {
             title.className = 'scrollytelling'
             title.innerText = record.title;
             storyText.appendChild(title);
-        }
-
-        if (record.title2) {
-            var title2 = document.createElement('h2');
-            title2.className = 'scrollytelling'
-            title2.innerText = record.title2;
-            storyText.appendChild(title2);
         }
 
         if (record.description) {
@@ -251,100 +247,42 @@ map.on("load", function () {
                 mapChapter.onChapterExit.forEach(setLayerOpacity);
             }
 
-            if (mapChapter.mappedTitle && mapChapter.mappedLocations) {
-
-                if (map.getLayer("mappedText")) {
-                    map.removeLayer('mappedText')
-                }
-
-                if (map.getLayer("mappedText") == null) {
-                    // TEXT DESCRIPTIONS
-                    const mappedText = new deck.MapboxLayer({
-                        id: 'mappedText',
-                        type: deck.TextLayer,
-                        data: [{ name: mapChapter.mappedTitle, coordinates: mapChapter.mappedLocations }],
-                        getPosition: d => d.coordinates,
-                        getText: d => d.name,
-                        getSize: labelSize + 8,
-                        // opacity: 0,
-                        sizeUnits: 'pixels',
-                        getTextAnchor: 'middle',
-                        getAlignmentBaseline: 'center',
-                        background: true,
-                        backgroundPadding: [6, 3],
-                        fontWeight: 1000,
-                        getColor: [209, 99, 173],
-                        fontFamily: 'neue-haas-grotesk-text, sans-serif',
-                        parameters: {
-                            depthTest: false
-                        },
-                    });
-
-                    console.log("empty")
-                    map.addLayer(mappedText)
-                }
-
-
-                // console.log("UYEEAA")
-                // var mapClass = mapChapter.mapLayer.replace(/['"]+/g, '');
-
-                // console.log(mapClass)
-
-                // map.addLayer(mapClass)
-
-                // fade(mapClass, mapChapter.mapLayerStr, 255, true);
+            if (mapChapter.fadePixels == true) {
+                fade(ntSurvey, 'ntSurvey', 150, true)
+            }
+            if ((mapChapter.fadePixels) && (mapChapter.fadePixels == false)) {
+                fade(ntSurvey, 'ntSurvey', 150, false)
             }
 
             // SHOW GUAT LAYERS
             if (mapChapter.showGuat && mapChapter.showGuat == true) {
-                // guatArc.setProps({ getSourceColor: arcSourceColor })
-                // guatArc.setProps({ getTargetColor: arcTargetColor })
-                // guatDestinations.setProps({ getFillColor: pointColor })
                 fade(guatArc, 'guatArc', 255, true);
                 fade(guatDestinations, 'guatDestinations', 255, true);
 
             }
             else {
-                // guatArc.setProps({ getSourceColor: inactiveColor })
-                // guatArc.setProps({ getTargetColor: inactiveColor })
-                // guatDestinations.setProps({ getFillColor: inactiveColor })
-
                 fade(guatArc, 'guatArc', 255, false);
                 fade(guatDestinations, 'guatDestinations', 255, false);
             }
 
             //SHOW HOND LAYERS
             if (mapChapter.showHond && mapChapter.showHond == true) {
-                // hondArc.setProps({ getSourceColor: arcSourceColor })
-                // hondArc.setProps({ getTargetColor: arcTargetColor })
-                // hondDestinations.setProps({ getFillColor: pointColor })
-
                 fade(hondArc, 'hondArc', 255, true);
                 fade(hondDestinations, 'hondDestinations', 255, true);
 
             }
             else {
-                // hondArc.setProps({ getSourceColor: inactiveColor })
-                // hondArc.setProps({ getTargetColor: inactiveColor })
-                // hondDestinations.setProps({ getFillColor: inactiveColor })
-
                 fade(hondArc, 'hondArc', 255, false);
                 fade(hondDestinations, 'hondDestinations', 255, false);
             }
 
             //SHOW SALV LAYERS
             if (mapChapter.showSalv && mapChapter.showSalv == true) {
-                // salvArc.setProps({ getSourceColor: arcSourceColor })
-                // salvArc.setProps({ getTargetColor: arcTargetColor })
-                // salvDestinations.setProps({ getFillColor: pointColor })
                 fade(salvArc, 'salvArc', 255, true);
                 fade(salvDestinations, 'salvDestinations', 255, true);
 
             }
             else {
-                // salvArc.setProps({ getSourceColor: inactiveColor })
-                // salvArc.setProps({ getTargetColor: inactiveColor })
-                // salvDestinations.setProps({ getFillColor: inactiveColor })
                 fade(salvArc, 'salvArc', 255, false);
                 fade(salvDestinations, 'salvDestinations', 255, false);
             }
@@ -485,7 +423,7 @@ const statesMap = new deck.MapboxLayer({
 const ntCountries = new deck.MapboxLayer({
     type: deck.GeoJsonLayer,
     id: 'nt-countries',
-    data: 'data/mapbox/basemaps/far/nt-countries-far.json',
+    data: 'data/mapbox/basemaps/close/nt-countries-close.json',
     // Styles
     filled: true,
     getFillColor: countriesFillColor,
@@ -662,24 +600,15 @@ const hondArc = new deck.MapboxLayer({
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 });
 
-// TEXT DESCRIPTIONS
-// const mappedText1 = new deck.MapboxLayer({
-//     id: 'mappedText1',
-//     type: deck.TextLayer,
-//     data: [{ name: 'The Majority of Migrants (89%) Seek to Migrate to the United States', coordinates: [-89.066233, 12.684638] }],
-//     getPosition: d => d.coordinates,
-//     getText: d => d.name,
-//     getSize: labelSize + 8,
-//     // opacity: 0,
-//     sizeUnits: 'pixels',
-//     getTextAnchor: 'middle',
-//     getAlignmentBaseline: 'center',
-//     background: true,
-//     backgroundPadding: [6, 3],
-//     fontWeight: 1000,
-//     getColor: [0, 110, 255],
-//     fontFamily: 'neue-haas-grotesk-text, sans-serif',
-// });
+// SURVEY GRID
+const ntSurvey = new deck.MapboxLayer({
+    id: 'ntSurvey',
+    type: deck.ScreenGridLayer,
+    data: 'data/mapbox/motivations/nt-survey-points.geojson',
+    getPosition: p => p.geometry.coordinates,
+    cellSizePixels: pixelSize,
+    colorRange: [255, 255, 255, 255],
+});
 
 
 
@@ -691,7 +620,9 @@ map.on('load', () => {
     map.addLayer(guatArc);
     map.addLayer(salvArc);
     map.addLayer(hondArc);
-    // map.addLayer(mappedText);
+    map.addLayer(ntSurvey);
+
+    // map.setLayerZoomRange('nt-grid', farZoom+1.5, closeZoom+1);
 
 });
 
@@ -703,20 +634,38 @@ function fade(prop, strProp, target, inOutBool) {
         if (countUp < target) {
             countUp++
 
-            
-            if (prop.props.getText) {
 
+            if (prop.props.cellSizePixels) {
 
                 if (inOutBool == true) {
-                    map.addLayer(strProp)
-                    var remapped = countUp / 255
-                    prop.setProps({ opacity: remapped });
+                    var negPixelRemapped = 1 - (countUp / target)
+                    prop.setProps({ opacity: negPixelRemapped })
+
+                    if (negPixelRemapped > 0.5) {
+                        prop.setProps({ cellSizePixels: pixelSize * negPixelRemapped })
+                    }
+
+                    if (prop.props.opacity == 0) {
+                        map.removeLayer(strProp)
+                    }
                 }
 
                 if (inOutBool == false) {
-                    var negRemapped = 1 - countUp / 255
-                    prop.setProps({ opacity: negRemapped });
+
+                    if (!map.getLayer(strProp))
+                    {
+                        map.addLayer(prop)                        
+                    }
+                    var PixelRemapped = countUp / target
+                    prop.setProps({ opacity: PixelRemapped })
+
+                    if (PixelRemapped > 0.5) {
+                        prop.setProps({ cellSizePixels: pixelSize * PixelRemapped })
+                    }
+
+
                 }
+
 
             }
 
@@ -765,12 +714,11 @@ function fade(prop, strProp, target, inOutBool) {
             }
 
             if (prop.props.getFillColor) { //TRANSITIONS FOR SCATTERPLOTS
-   
+
                 var opacityCircleFactor = 0.5
                 if (inOutBool == true) {
                     // if fill
                     if (prop.props.getFillColor[3] < (254 * opacityCircleFactor)) {
-                        console.log("its working!!!")
                         prop.setProps({ getFillColor: [255, 255, 255, countUp * opacityCircleFactor] })
                     }
 
@@ -783,7 +731,6 @@ function fade(prop, strProp, target, inOutBool) {
                     // if fill
                     // prop.setProps({ getFillColor: [255, 255, 255, countDown * 0.8] })
                     if (prop.props.getFillColor[3] > 0) {
-                        console.log("its working!!!")
                         prop.setProps({ getFillColor: [255, 255, 255, countDown * opacityCircleFactor] })
                     }
 

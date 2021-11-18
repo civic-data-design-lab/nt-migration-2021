@@ -33,7 +33,7 @@ var motivationsConfig = {
             id: 'map-state-1',
             alignment: 'full',
             hidden: false,
-            title: 'Intention to Migrate has Increased Significantly',
+            title: 'The Intention to Migrate has Increased Significantly',
             image: './img/motivations/mot1.jpg',
             description: 'Approximately four out of every ten households (43%) indicated a desire to migrate in 2021, compared to 8% in 2019. The intention to migrate is largely driven by economics and compounded by external violence, insecurity, and natural disasters.',
             location: {
@@ -96,7 +96,7 @@ var motivationsConfig = {
                     layer: 'ntCountriesVizLine',
                     opacity: 1,
                 },
-                                {
+                {
                     layer: 'worldMapViz',
                     opacity: 0,
                 }
@@ -171,7 +171,7 @@ var motivationsConfig = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
-                
+
 
             ],
             onChapterExit: [

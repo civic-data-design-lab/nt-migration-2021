@@ -231,13 +231,14 @@ h5 {
     position: absolute;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
     display: flex;
     height: 100vh;
     text-transform: uppercase;
     pointer-events: none;
     transition: color var(--transition-speed);
-    font-size: 4em;
+    font-size: 3em;
+    padding: 1em;
 }
 
 
@@ -290,7 +291,7 @@ section#open:hover .chapter-title {
     padding: var(--start-padding);
     text-transform: uppercase;
     transition: var(--transition-speed);
-    font-size: 8em;
+    font-size: 10em;
 }
 
 
@@ -781,9 +782,12 @@ i.arrow-up {
     /* margin-top: 1rem;
     margin-bottom: 1rem; */
     /* padding: var(--scrollytelling-padding); */
+
+}
+
+.fully .scrollytelling{
     padding-left: calc(var(--scrollytelling-padding)*1.5);
     padding-right: calc(var(--scrollytelling-padding)*1.5);
-
 }
 
 .scrollytelling-text{
