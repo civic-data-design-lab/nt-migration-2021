@@ -10,7 +10,9 @@ const sideWidth = 0;
 var svg = d3
   .select("#chart")
   .append("svg")
-  .attr("viewBox", [-(sideWidth + sqLen), 0, w + (sideWidth + sqLen), h+ margin.bottom])
+   .attr("preserveAspectRatio", "xMinYMin meet")
+  .classed("svg-content", true)
+  .attr("viewBox", [0, 0, w + (sideWidth + sqLen), h+ margin.bottom]);
 //   .attr("width", w + margin.left + margin.right)
 //   .attr("height", h + margin.top + margin.bottom);
 
@@ -154,10 +156,7 @@ gM.append("text")
   .style("fill","#fff")
   .attr("class","pyramidmigrants")
   .style("text-anchor", "start");
-  
-  
-  
-  
+    
    function showDetail(d) {
     // change outline to indicate hover state.
 //     	d3.selectAll("rect").style('fill', function (d) { if (d.age >= 18) return "#b3e7e8";});
@@ -303,3 +302,8 @@ function setupButtons() {
 }
     
     setupButtons();
+    
+    
+    
+    
+

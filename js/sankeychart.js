@@ -133,7 +133,7 @@ d3.csv("./data/sankey.csv").then(function(data) {
                     .transition()
                   .ease(d3.easeLinear)
                     .duration(300)
-// 
+
 // .style('stroke', (d, i) => {
 //     console.log('d from gradient stroke func', d);
 // 
@@ -143,35 +143,37 @@ d3.csv("./data/sankey.csv").then(function(data) {
 //     const startColor = occuAttr[d.source.name.split('-')[1]].color;
 //     const stopColor = occuAttrb[d.target.name].color;
 // 
-//     console.log('startColor', startColor);
-//     console.log('stopColor', stopColor);
+// //     console.log('startColor', startColor);
+// //     console.log('stopColor', stopColor);
 // 
-//     const linearGradient = defs.append('linearGradient')
+//     const linearGradient = defs.append('linearGradient').attr('gradientUnits', "userSpaceOnUse")
 //         .attr('id', gradientID);
 // 
 //     linearGradient.selectAll('stop') 
 //       .data([                             
-//           {offset: '10%', color: startColor },      
-//           {offset: '90%', color: stopColor }    
+//           {offset: '30%', color: startColor },      
+//           {offset: '70%', color: stopColor }    
 //         ])                  
 //       .enter().append('stop')
 //       .attr('offset', d => {
-//         console.log('d.offset', d.offset);
+// //         console.log('d.offset', d.offset);
 //         return d.offset; 
 //       })   
 //       .attr('stop-color', d => {
-//         console.log('d.color', d.color);
+// //         console.log('d.color', d.color);
 //         return d.color;
 //       });
 // 
 //     return `url(#${gradientID})`;
 //   });
-                    // .style("stroke", function(l) {
-                    //     return l.source.name === d.source.name ? color(d.source.name.replace(/ .*/, "")) : "#b3e7e8";
-                    // });
+//                     .style("stroke", function(l) {
+//                         return l.source.name === d.source.name ? color(d.source.name.replace(/ .*/, "")) : "#b3e7e8";
+//                     });
                     
-                    .style("stroke", sourceColor);
+                    .style("stroke", sourceColorb);
 //                 // select nodes with this class
+
+                 
                 d3.selectAll(".source-" + sourceClass)
                     .transition()        
                     .duration(300)
@@ -184,8 +186,17 @@ d3.csv("./data/sankey.csv").then(function(data) {
                     .style("stroke","#fff")
                     .style("stroke-width","2")
                     .style("fill", sourceColorb);
+                d3.selectAll(".occbefper")
+                    .transition()        
+                    .duration(300)
+                    .style("fill", sourceColor);
+                d3.selectAll(".occaftper" )
+                    .transition()        
+                    .duration(300)
+                    .style("fill", sourceColorb);
                 d3.select(this)
-                .attr("stroke-width","2");
+                .attr("stroke-width","5");
+
                             // add gradient to links
   
                //  d3.selectAll(".occbefper" + sourceClass)
@@ -205,7 +216,12 @@ d3.csv("./data/sankey.csv").then(function(data) {
             .duration(300)
              .style("stroke","#fff")
             .style("stroke-width","0")
-            .style("fill", "#3BA8B6");
+            .style("fill", "#3BA8B6")
+        d3.selectAll(".occaftper,.occbefper" )
+                    .transition()        
+                    .duration(300)
+                    .style("fill", "#2C7D87")
+            ;
         
         });
 // // add the link titles
@@ -272,6 +288,16 @@ d3.csv("./data/sankey.csv").then(function(data) {
 // 
 // });
 node.append("text")
+      .attr("class", function(d) {
+            if (d.name.startsWith('-')) {
+                sourceClass = occuAttr[d.name.split('-')[1]].class;
+                return "text source-" + sourceClass;
+            }
+            else {
+                sourceClass = occuAttr[d.name].class;
+                return "text target-" + sourceClass;
+            }
+      })
       .attr("x", function(d) { return d.x0 - 15; })
       .attr("y", function(d) { return d.y0 - 30 ; })
       .attr("dy", "1.45em")
@@ -279,7 +305,7 @@ node.append("text")
       .attr("transform", null)
       .attr("class","occbef")
       .style("fill","#2C7D87")
-      .classed("node source-", false)
+//       .classed("node source-", false)
       .text(function(d) { 
       
             if (d.name.startsWith('-')) {
@@ -289,11 +315,9 @@ node.append("text")
                 return occuAttr[d.name].label; 
             }
         })
-      
-//       .style("font-size", "18px")
     .filter(function(d) { return d.x0 > width / 2; })
       .attr("x",  + sankey.nodeWidth() + width)
-      .classed("node target-", false)
+//       .classed("node target-", false)
       .attr("class","occaft")
       .attr("text-anchor", "start");
       
@@ -305,7 +329,7 @@ node.append("text")
       .attr("transform", null)
       .attr("class","occbefper")
       .style("fill","#2C7D87")
-      .classed("node source-", false)
+//       .classed("node source-", false)
       .text(function(d) { 
       
             if (d.name.startsWith('-')) {

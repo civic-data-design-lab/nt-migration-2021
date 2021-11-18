@@ -4,9 +4,9 @@ const countryText = {
     "SLV": "El Salvador"
 };
 const pathwayAttr = {
-    "regular": {"label": "Regular Pathway", "color": "#e23cad"},
-    "irrregular coyote": {"label": "Irregular Pathway with a Smuggler", "color": "#662d91"},
-    "irregular on own, with caravan": {"label": "Irregular Pathway on their Own or with a Caravan", "color": "#faa41a"}
+    "regular": {"label": "Through a Regular Pathway", "color": "#e23cad"},
+    "irrregular coyote": {"label": "Using a Smuggler to Migrate", "color": "#662d91"},
+    "irregular on own, with caravan": {"label": "By their Own or with a Caravan", "color": "#faa41a"}
 };
 
 const financeText = {
@@ -68,7 +68,7 @@ var meansTitleX = {
   
 var meansTitleX2 = {
     "$240 Million": 120,
-    "$2.2 Billion": width - 490
+    "$1.7 Billion": width - 490
    //  "Irregular Pathway": width - 250
   };
   
@@ -334,8 +334,8 @@ const scrollAppearUSDepartment = new ScrollMagic.Scene({
                                     duration: "500%",       
                                   })
                                   .on("enter",(e)=>{
-                                  addAllAnn(),
-                                  upAllAnn();
+                                  addAllAnn();
+//                                   upAllAnn();
                                  
                                 	})
                                 //   .addIndicators({name:"forceLink"})
@@ -357,9 +357,10 @@ const scrollFromUSToGuatem = new ScrollMagic.Scene({
                                   })
                                   .on("enter",(e)=>{
                                   splitBubblesCountry(),
+                                   remAllAnn(),
                                   addGuatAnn(),
-                                  upGuatAnn(),
-                                   remAllAnn();
+                                  upGuatAnn();
+                      
                                   
                                 	})
                                   .addTo(controller);
@@ -439,14 +440,17 @@ const scrollSplitMeans = new ScrollMagic.Scene({
                                   .addTo(controller);
 
 const scrollUndoSplitMeans = new ScrollMagic.Scene({
-                                    triggerElement:".forceLinke"
+                                    triggerElement:".forceLinke",
+                                    triggerHook:'onEnter',
         
                                   })
-                                  .on("enter",(e)=>{
+                                  .on("leave",(e)=>{
+                                  splitBubblesCountry(),
                                   addGuatAnn(),
                                   addSlvAnn(),
                                   remAllAnn(),
-                                  addHonAnn();
+                                  addHonAnn(),
+                                  fillColorN();
                                   
                                 	})
 //                                   .addIndicators({name:"forceLinke"})
@@ -457,7 +461,7 @@ const scrollHighlightIrrCoy = new ScrollMagic.Scene({
        								 triggerHook:'onLeave',
                                   })
                                   .on("enter",(e)=>{
-                                  remAllAnn(),
+                             //      remAllAnn(),
                              	  highlightIrreCoy();
                                 	})
 //                                   .addIndicators({name:"forceLinke"})
@@ -468,7 +472,7 @@ const scrollUndoHighlightIrrCoy = new ScrollMagic.Scene({
         
                                   })
                                   .on("leave",(e)=>{
-                                  remAllAnn(),
+                  //                 remAllAnn(),
                                   
                                     fillColorN();
                                 	})
@@ -1015,166 +1019,135 @@ const type = d3.annotationCustomType(d3.annotationCalloutCircle, {
   connector: { end: "arrow" }, note: {wrap: 370},
 });
 
-const annotations = [
-  {
-    note: { label: "Government Expenditure on Primary Education",
-    bgPadding: {"top":-10,"left":10,"right":10,"bottom":10},
-    title: "$1.3 Billion" },
-    x: 260,
-    y: 500,
-    dy: 300,
-    dx: -100,
-    subject: { radius: 255, radiusPadding: 10 },
-  },
-];
-const makeAnnotations = d3.annotation()
-  
-  //also can set and override in the note.padding property
-  //of the annotation object
-  .notePadding(10)
-  .type(type)
-  //accessors & accessorsInverse not needed
-  //if using x, y in annotations JSON
-
-  .annotations(annotations)
-
-function addGuatAnn() {
-d3.select("svg")
-  .append("g")
-  .attr('fill', "black")
-  .attr("class", "annotation-group")  
-  .attr("font-size", "1em")
-  .call(makeAnnotations)
-  }
+function addGuatAnn(){ 
+		d3.select("svg")
+		.append("ellipse")
+		  .attr('class', "subject guat")
+			   .attr("cx", 260)
+			   .attr("cy", 500)
+			   .attr("rx", 255)
+			   .attr("ry", 255);
+		d3.select("svg")
+		.append('text')
+		  .attr('x', 170)
+		  .attr('y', 830)
+			.attr('class', "annotation-note-title  guat")
+		  .text("$1.3 Billion");
+		d3.select("svg")
+		.append('text')
+		  .attr('x', 170)
+		  .attr('y', 860)
+			.attr('class', "annotation-note-label  guat")	
+		  .text("Government of Guatemala Expenditure on Primary Education.")
+		  .call(wrap,290);
+		  }
   
   function remGuatAnn(){
-d3.selectAll(".annotation-group").style("opacity",0);
+d3.selectAll(".guat").remove();
   }
   
 function upGuatAnn(){
-d3.selectAll(".annotation-group").style("opacity",1);
+d3.selectAll(".guat").style("opacity",1);
   }
-  
 
-const annotations2 = [
-  {
-    note: { label: "Government Expenditure on Primary Education",
-    bgPadding: {"top":-10,"left":10,"right":10,"bottom":10},
-    title: "$700 Million" },
-    x: 730,
-    y: 500,
-    dy: 300,
-    dx: -100,
-    subject: { radius: 185, radiusPadding: 10 },
-  },
-];
-const makeAnnotations2 = d3.annotation()
-  
-  //also can set and override in the note.padding property
-  //of the annotation object
-.notePadding(10)
-  .type(type)
-  //accessors & accessorsInverse not needed
-  //if using x, y in annotations JSON
 
-  .annotations(annotations2)
-
-function addHonAnn() {
-d3.select("svg")
-  .append("g")
-  .attr('fill', "black")
-  .attr("class", "annotation-groupb")
-  .attr("font-size", "1em")
-  .call(makeAnnotations2)
-  }
+function addHonAnn() { 
+		d3.select("svg")
+		.append("ellipse")
+		  .attr('class', "subject hond")
+			   .attr("cx", 725)
+			   .attr("cy", 500)
+			   .attr("rx", 185)
+			   .attr("ry", 185);
+		d3.select("svg")
+		.append('text')
+		  .attr('x', 630)
+		  .attr('y', 830)
+			.attr('class', "annotation-note-title  hond")
+		  .text("$700 Million");
+		d3.select("svg")
+		.append('text')
+		  .attr('x', 630)
+		  .attr('y', 860)
+			.attr('class', "annotation-note-label  hond")	
+		  .text("Government of Honduras Expenditure on Primary Education.")
+		  .call(wrap,290);
+		  }
+		  
+		  
   function remHonAnn(){
-d3.selectAll(".annotation-groupb").style("opacity",0);
+d3.selectAll(".hond").remove();
   }
   
 function upHonAnn(){
-d3.selectAll(".annotation-groupb").style("opacity",1);
+d3.selectAll(".hond").style("opacity",1);
   }
-  
-  
-const annotations3 = [
-  {
-    note: { label: "Government Expenditure on Primary Education",
-//     bgPadding: {"top":-10,"left":10,"right":10,"bottom":10},
-    title: "$400 Million" },
-    x: 1170,
-    y: 500,
-    dy: 300,
-    dx: -100,
-    subject: { radius: 130, radiusPadding: 10 },
-  },
-];
-const makeAnnotations3 = d3.annotation()
-  
-  //also can set and override in the note.padding property
-.notePadding(10)
-  .type(type)
-  //accessors & accessorsInverse not needed
-  //if using x, y in annotations JSON
 
-  .annotations(annotations3)
 
-function addSlvAnn(){
-d3.select("svg")
-  .append("g")
-  .attr('fill', "black")
-  .attr("class", "annotation-groupc")
-  .attr("font-size", "1em")
-  .style("opacity",1)
-  .call(makeAnnotations3);
-  }
+function addSlvAnn(){ 
+		d3.select("svg")
+		.append("ellipse")
+		  .attr('class', "subject salv")
+			   .attr("cx", 1160)
+			   .attr("cy", 500)
+			   .attr("rx", 130)
+			   .attr("ry", 130);
+		d3.select("svg")
+		.append('text')
+		  .attr('x', 1090)
+		  .attr('y', 830)
+			.attr('class', "annotation-note-title  salv")
+		  .text("$400 Million");
+		d3.select("svg")
+		.append('text')
+		  .attr('x', 1090)
+		  .attr('y', 860)
+			.attr('class', "annotation-note-label  salv")	
+		  .text("Government of El Salvador Expenditure on Primary Education.")
+		  .call(wrap,250);
+		  }
   
 function remSlvAnn(){
-d3.selectAll(".annotation-groupc").style("opacity",0);
+d3.selectAll(".salv").remove();
   }
   
 function upSlvAnn(){
-d3.selectAll(".annotation-groupc").style("opacity",1);
+d3.selectAll(".salv").style("opacity",1);
   }
   
-  const annotations4 = [
-  {
-    note: { label: "spent by the U.S. Department of Homeland Security to apprehend El Salvadoreans, Guatemalans, and Hondurans at the Southwest Border",
-//     bgPadding: {"top":-10,"left":10,"right":10,"bottom":10},
-    title: "$2.9 Billion" },
-    x: 690,
-    y: 500,
-    dy: 250,
-    dx: 320,
-    subject: { radius: 390, radiusPadding: 10 },
-  },
-];
-const makeAnnotations4 = d3.annotation()
-  
-  //also can set and override in the note.padding property
-.notePadding(15)
-  .type(type)
-  //accessors & accessorsInverse not needed
-  //if using x, y in annotations JSON
-
-  .annotations(annotations4)
-
 function addAllAnn(){
 d3.select("svg")
-  .append("g")
-  .attr('fill', "black")
-  .attr("class", "annotation-groupd")
-  .attr("font-size", "1em")
-  .style("opacity",1)
-  .call(makeAnnotations4);
+.append("ellipse")
+  .attr('class', "subject allcirc")    
+       .attr("cx", 700)
+       .attr("cy", 500)
+       .attr("rx", 390)
+       .attr("ry", 390);
+d3.select("svg")
+.append('text')
+  .attr('x', 1150)
+  .attr('y', 830)
+	.attr('class', "annotation-note-title  allcirc")
+  .text("$2.9 Billion");
+d3.select("svg")
+.append('text')
+  .attr('x', 1150)
+  .attr('y', 860)
+	.attr('class', "annotation-note-label  allcirc")	
+  .text("spent by the U.S. Department of Homeland Security to apprehend El Salvadoreans, Guatemalans, and Hondurans at the Southwest Border.")
+  .call(wrap,250);
   }
   
 function remAllAnn(){
-d3.selectAll(".annotation-groupd").style("opacity",0);
-  }
-  
+d3.selectAll(".allcirc").remove();
+
+}
+
 function upAllAnn(){
-d3.selectAll(".annotation-groupd").style("opacity",1);
-  }
+d3.selectAll(".allcirc").remove();
+
+}
+  
   
  const type2 = d3.annotationCustomType(d3.annotationXYThreshold, {
    note: {wrap: 300},
@@ -1306,5 +1279,28 @@ setupButtons();
 
 // function (d){ if (d.name === "irrregular coyote") return 0.04; else .023}
 
-
+ function wrap(text, width) {
+    text.each(function() {
+        var text = d3.select(this),
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0, //<-- 0!
+        lineHeight = 1.2, // ems
+        x = text.attr("x"), //<-- include the x!
+        y = text.attr("y"),
+        dy = text.attr("dy") ? text.attr("dy") : 0; //<-- null check
+        tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+        while (word = words.pop()) {
+            line.push(word);
+            tspan.text(line.join(" "));
+            if (tspan.node().getComputedTextLength() > width) {
+                line.pop();
+                tspan.text(line.join(" "));
+                line = [word];
+                tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+            }
+        }
+    });
+}
 
