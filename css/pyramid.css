@@ -204,7 +204,8 @@ font-family: neue-haas-grotesk-text, sans-serif;
     background-image: url("../img/profiles/prof1.jpg");
     content: '';
     position: absolute;
-    width: var(--open);
+    width: auto;
+  /*   width: var(--open); */
     height: var(--background-image-height);
     /* filter: var(--blur-off);   */
     background-repeat: no-repeat;
@@ -220,7 +221,8 @@ font-family: neue-haas-grotesk-text, sans-serif;
     background-image: url("../img/profiles/prof2.jpg");
     content: '';
     position: absolute;
-    width: var(--open);
+    width: auto;
+  /*   width: var(--open); */
     height: var(--background-image-height);
     /* filter: var(--blur-off);   */
     background-repeat: no-repeat;
@@ -237,7 +239,8 @@ font-family: neue-haas-grotesk-text, sans-serif;
     background-image: url("../img/profiles/prof3.jpg");
     content: '';
     position: absolute;
-    width: var(--open);
+    width: auto;
+   /*  width: var(--open); */
     height: var(--background-image-height);
     /* filter: var(--blur-off);   */
     background-repeat: no-repeat;
@@ -254,7 +257,8 @@ font-family: neue-haas-grotesk-text, sans-serif;
     background-image: url("../img/profiles/prof4.jpg");
     content: '';
     position: absolute;
-    width: var(--open);
+    width: auto;
+   /*  width: var(--open); */
     height: var(--background-image-height);
     /* filter: var(--blur-off);   */
     background-repeat: no-repeat;
@@ -345,8 +349,8 @@ font-family: neue-haas-grotesk-text, sans-serif;
     color: #2C7D87;
     font-weight: bold;
     font-style: normal;
-    font-size: 2em;   
-    line-height: 1em;
+    font-size: 2rem;   
+    line-height: 1rem;
     /* margin-top: 1rem;
     margin-bottom: 1rem; */
     /* padding: var(--scrollytelling-padding); */
@@ -359,8 +363,8 @@ font-family: neue-haas-grotesk-text, sans-serif;
     color: #2C7D87;
     font-weight: 100;
     font-style: normal;
-    font-size: 1.5em;   
-    line-height: 1em;
+    font-size: 1.5rem;   
+    line-height: 1rem;
     /* margin-top: 1rem;
     margin-bottom: 1rem; */
     /* padding: var(--scrollytelling-padding); */
@@ -368,3 +372,20 @@ font-family: neue-haas-grotesk-text, sans-serif;
 
 .source-agriculture{
 color:#3BA8B6;}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    max-height: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+

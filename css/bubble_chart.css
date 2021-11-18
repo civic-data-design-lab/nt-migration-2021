@@ -140,14 +140,14 @@ font-family: neue-haas-grotesk-text, sans-serif;
   font-weight:bold;
 } */
 .tooltip {
-    min-width: 250px;
+    min-width: 360px;
 }
 .tooltip .label-country {
     line-height: 2em;
 }
 .tooltip .label-pathway {
     font-weight: 600;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 .footer {
@@ -160,13 +160,20 @@ font-family: neue-haas-grotesk-text, sans-serif;
      }
 
      .axis line, path {
+     fill:none;
       stroke: var(--line-chart-color);
      }
 
      path {
-     pointer-events: none;
-       fill: none;
+/*      pointer-events: none; */
+/*        fill: none; */
      }
+
+	.annotations-groupd {
+position:relative;
+z-index:-1000;}
+
+
 
 
     .annotation path {
@@ -175,6 +182,28 @@ font-family: neue-haas-grotesk-text, sans-serif;
       stroke-width: .7px;
       fill: none;
     }
+    
+.subject {
+    pointer-events: none;
+      stroke: black;
+      stroke-width: 3px;
+      border:solid;
+      fill: #662d91;
+      fill-opacity: .15;
+      mix-blend-mode: lighten;
+    }
+    
+/* 
+    .lined.thick{
+         border:solid 7px #41403E;
+      }
+ */
+    
+/* 
+    .annotation-note-content
+    {
+    width: 10px;}
+ */
 
     .annotation text {
     pointer-events: none;
@@ -187,6 +216,14 @@ font-family: neue-haas-grotesk-text, sans-serif;
    pointer-events: none;
       font-weight: bold;
       font-size: 2em;
+      inline-size: 150px;
+
+    }
+    
+    .annotation-note-label{
+   pointer-events: none;
+      font-size: 1rem;
+font-family: neue-haas-grotesk-text, sans-serif;
     }
 
 
