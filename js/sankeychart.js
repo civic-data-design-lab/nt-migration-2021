@@ -12,6 +12,7 @@ const occuAttr = {
     "Own business": {"label": "Own Business", "color": "#b470c8", "class": "business", "img": "prof9.jpg"},
     "Domestic work": {"label": "Domestic Work", "color": "#d667ce", "class": "domestic", "img": "prof5.jpg"},
     "Student (may or may not attend classes regularly)": {"label": "Student", "color": "#f28c77", "class": "student", "img": "prof11.jpg"},
+    "Other": {"label": "Other", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"},
     "Unemployed": {"label": "Unemployed", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"}
 };
 
@@ -22,6 +23,7 @@ const occuAttrb = {
     "Own business": {"label": "6%", "color": "#881da8", "class": "business"},
     "Domestic work": {"label": "4%", "color": "#bf0eb2", "class": "domestic"},
     "Student (may or may not attend classes regularly)": {"label": "12%", "color": "#e03448", "class": "student"},
+     "Other": {"label": "Other", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"},
     "Unemployed": {"label": "6%", "color": "#662d91", "class": "unemployed"}
 };
 
@@ -32,7 +34,20 @@ const occuAttrc = {
     "Own business": {"label": "5%", "color": "#e23cad", "class": "business"},
     "Domestic work": {"label": "6%", "color": "#bf0eb2", "class": "domestic"},
     "Student (may or may not attend classes regularly)": {"label": "8%", "color": "#881da8", "class": "student"},
+     "Other": {"label": "Other", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"},
     "Unemployed": {"label": "5%", "color": "#662d91", "class": "unemployed"}
+};
+
+// data sort order
+const motivOrder = {
+    "Agricultural production or labor": 0,
+    "Informal work": 1,
+    "Salaried employment": 2,
+    "Own business": 3,
+    "Domestic work": 4,
+    "Student (may or may not attend classes regularly)": 5,
+    "Other": 6,
+    "Unemployed": 7
 };
 
 // set the dimensions and margins of the graph
@@ -58,7 +73,8 @@ var svg = d3.select("#chartsank").append("svg")
 var sankey = d3.sankey()
     .nodeWidth(19)
     .nodePadding(12)
-    .size([width, height]);
+    .size([width, height])
+    .nodeSort(null);
 
 var path = sankey.links();
 
@@ -119,7 +135,7 @@ d3.csv("./data/sankey.csv").then(function(data) {
       .style("stroke-width","2")
 //       .attr("d", path)
 //       .style("stroke-width", function(d) { return Math.max(1, d.dy); })
-      .sort((a, b) => b.dy - a.dy)
+//       .sort((a, b) => b.dy - a.dy)
         // .on('mouseover', showDetail)
         .on('mouseover', function (event, d)  {
             showDetail(d);
@@ -252,7 +268,8 @@ d3.csv("./data/sankey.csv").then(function(data) {
 
   var node = svg.append("g").selectAll(".node")
       .data(graph.nodes)
-    .enter().append("g");
+    .enter().append("g")
+     .attr("transform", function (d) { return "translate(" + d.y + "," + d.x + ")"; });
      //  .attr("class", "node");
 
 // add the rectangles for the nodes
@@ -439,5 +456,21 @@ function showDetail(d) {
 
 });
 
-  
+
+// motivations index order
+// function sortCompare(a, z) {
+//     return (a == z) ? 0
+//     : (a < z) ? -1
+//     : 1;
+// }
+// 
+// 
+// sort by motivations
+//             if (!motivsIndex.rsp12.motivs) {
+//                 motivsSortData = data.sort((a, z) => {
+//                     const motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat], motivOrder[z.motiv_cat]);
+//                     
+//                     return motivCatIndex1;
+//                 });
+//   
   
