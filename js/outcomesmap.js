@@ -15,6 +15,19 @@ var alignments = {
     'full': 'fully'
 }
 
+
+// SCALE ALIGNMENTS
+var labelSize;
+
+if (aspectRatio < 1) {
+    labelSize = 12
+}
+
+if (aspectRatio >= 1) {
+    labelSize = 17
+}
+
+
 //MAP STYLE VARIABLES
 
 //BASEMAPS
@@ -213,7 +226,6 @@ map.on("load", function () {
                 mapChapter.onChapterEnter.forEach(setLayerOpacity);
             }
 
-           
 
             if (mapChapter.callback) {
                 window[mapChapter.callback]();
@@ -239,8 +251,52 @@ map.on("load", function () {
                 mapChapter.onChapterExit.forEach(setLayerOpacity);
             }
 
-             // SHOW GUAT LAYERS
-             if (mapChapter.showGuat && mapChapter.showGuat == true) {
+            if (mapChapter.mappedTitle && mapChapter.mappedLocations) {
+
+                if (map.getLayer("mappedText")) {
+                    map.removeLayer('mappedText')
+                }
+
+                if (map.getLayer("mappedText") == null) {
+                    // TEXT DESCRIPTIONS
+                    const mappedText = new deck.MapboxLayer({
+                        id: 'mappedText',
+                        type: deck.TextLayer,
+                        data: [{ name: mapChapter.mappedTitle, coordinates: mapChapter.mappedLocations }],
+                        getPosition: d => d.coordinates,
+                        getText: d => d.name,
+                        getSize: labelSize + 8,
+                        // opacity: 0,
+                        sizeUnits: 'pixels',
+                        getTextAnchor: 'middle',
+                        getAlignmentBaseline: 'center',
+                        background: true,
+                        backgroundPadding: [6, 3],
+                        fontWeight: 1000,
+                        getColor: [209, 99, 173],
+                        fontFamily: 'neue-haas-grotesk-text, sans-serif',
+                        parameters: {
+                            depthTest: false
+                        },
+                    });
+
+                    console.log("empty")
+                    map.addLayer(mappedText)
+                }
+
+
+                // console.log("UYEEAA")
+                // var mapClass = mapChapter.mapLayer.replace(/['"]+/g, '');
+
+                // console.log(mapClass)
+
+                // map.addLayer(mapClass)
+
+                // fade(mapClass, mapChapter.mapLayerStr, 255, true);
+            }
+
+            // SHOW GUAT LAYERS
+            if (mapChapter.showGuat && mapChapter.showGuat == true) {
                 // guatArc.setProps({ getSourceColor: arcSourceColor })
                 // guatArc.setProps({ getTargetColor: arcTargetColor })
                 // guatDestinations.setProps({ getFillColor: pointColor })
@@ -528,8 +584,8 @@ const salvArc = new deck.MapboxLayer({
     // Styles
     getSourcePosition: d => [d.properties.START_X, d.properties.START_Y],
     getTargetPosition: d => [d.properties.END_X, d.properties.END_Y],
-    getSourceColor: inactiveColor,
-    getTargetColor: inactiveColor,
+    getSourceColor: [182, 40, 187, 0],
+    getTargetColor: [255, 255, 255, 0],
     getWidth: w => Math.sqrt(w.properties.Round_total_MSA_population * arcWidth),
     getHeight: arcHeight,
     pickable: false,
@@ -557,8 +613,8 @@ const guatArc = new deck.MapboxLayer({
     // Styles
     getSourcePosition: d => [d.properties.START_X, d.properties.START_Y],
     getTargetPosition: d => [d.properties.END_X, d.properties.END_Y],
-    getSourceColor: inactiveColor,
-    getTargetColor: inactiveColor,
+    getSourceColor: [250, 180, 60, 0],
+    getTargetColor: [255, 255, 255, 0],
     getWidth: w => Math.sqrt(w.properties.Round_total_MSA_population * arcWidth),
     getHeight: arcHeight,
     pickable: false,
@@ -586,8 +642,8 @@ const hondArc = new deck.MapboxLayer({
     // Styles
     getSourcePosition: d => [d.properties.START_X, d.properties.START_Y],
     getTargetPosition: d => [d.properties.END_X, d.properties.END_Y],
-    getSourceColor: inactiveColor,
-    getTargetColor: inactiveColor,
+    getSourceColor: [59, 167, 201, 0],
+    getTargetColor: [255, 255, 255, 0],
     getWidth: w => Math.sqrt(w.properties.Round_total_MSA_population * arcWidth),
     getHeight: arcHeight,
     pickable: false,
@@ -606,8 +662,24 @@ const hondArc = new deck.MapboxLayer({
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 });
 
-
-
+// TEXT DESCRIPTIONS
+// const mappedText1 = new deck.MapboxLayer({
+//     id: 'mappedText1',
+//     type: deck.TextLayer,
+//     data: [{ name: 'The Majority of Migrants (89%) Seek to Migrate to the United States', coordinates: [-89.066233, 12.684638] }],
+//     getPosition: d => d.coordinates,
+//     getText: d => d.name,
+//     getSize: labelSize + 8,
+//     // opacity: 0,
+//     sizeUnits: 'pixels',
+//     getTextAnchor: 'middle',
+//     getAlignmentBaseline: 'center',
+//     background: true,
+//     backgroundPadding: [6, 3],
+//     fontWeight: 1000,
+//     getColor: [0, 110, 255],
+//     fontFamily: 'neue-haas-grotesk-text, sans-serif',
+// });
 
 
 
@@ -619,6 +691,7 @@ map.on('load', () => {
     map.addLayer(guatArc);
     map.addLayer(salvArc);
     map.addLayer(hondArc);
+    // map.addLayer(mappedText);
 
 });
 
@@ -630,6 +703,23 @@ function fade(prop, strProp, target, inOutBool) {
         if (countUp < target) {
             countUp++
 
+            
+            if (prop.props.getText) {
+
+
+                if (inOutBool == true) {
+                    map.addLayer(strProp)
+                    var remapped = countUp / 255
+                    prop.setProps({ opacity: remapped });
+                }
+
+                if (inOutBool == false) {
+                    var negRemapped = 1 - countUp / 255
+                    prop.setProps({ opacity: negRemapped });
+                }
+
+            }
+
             if (prop.props.getSourceColor) {  //TRANSITIONS FOR ARCLAYER
                 var startColor = prop.props.getSourceColor
 
@@ -639,9 +729,14 @@ function fade(prop, strProp, target, inOutBool) {
                     }
 
                     // if arc
-                    if (prop.props.getSourceColor[3] < 100) {
-                        prop.setProps({ getSourceColor: [255, 245, 245,countUp] })
-                        prop.setProps({ getTargetColor: [218, 107, 222, countUp] })
+                    var opacityFactor = 0.7
+                    if (prop.props.getSourceColor[3] < (255 * opacityFactor)) {
+
+                        currentColor = prop.props.getSourceColor
+                        currentColor[3] = countUp * opacityFactor
+
+                        prop.setProps({ getSourceColor: currentColor })
+                        prop.setProps({ getTargetColor: [255, 255, 255, countUp * 0.3] })
                     }
 
                 }
@@ -649,16 +744,18 @@ function fade(prop, strProp, target, inOutBool) {
                 if (inOutBool == false) {
                     countDown = target - countUp
 
-                    if (startColor[3] > 1)
-                    {
-                        prop.setProps({ getSourceColor: [255, 245, 245, countDown] })
-                        prop.setProps({ getTargetColor: [218, 107, 222, countDown] })
+                    if (startColor[3] > 1) {
+
+                        currentColor = prop.props.getSourceColor
+                        currentColor[3] = countDown
+
+                        prop.setProps({ getSourceColor: currentColor })
+                        prop.setProps({ getTargetColor: [255, 255, 255, countDown * 0.3] })
                     }
-                   
+
 
                     if (countDown <= 1) {
                         if (map.getLayer(strProp) != null) {
-                            console.log('done')
                             map.removeLayer(strProp)
                         }
 
@@ -668,11 +765,15 @@ function fade(prop, strProp, target, inOutBool) {
             }
 
             if (prop.props.getFillColor) { //TRANSITIONS FOR SCATTERPLOTS
-                var startFill = prop.props.getFillColor
-
+   
+                var opacityCircleFactor = 0.5
                 if (inOutBool == true) {
                     // if fill
-                    prop.setProps({ getFillColor: [218, 107, 222, countUp*0.8] })
+                    if (prop.props.getFillColor[3] < (254 * opacityCircleFactor)) {
+                        console.log("its working!!!")
+                        prop.setProps({ getFillColor: [255, 255, 255, countUp * opacityCircleFactor] })
+                    }
+
                 }
 
                 if (inOutBool == false) {
@@ -680,7 +781,12 @@ function fade(prop, strProp, target, inOutBool) {
                     countDown = target - countUp
 
                     // if fill
-                    prop.setProps({ getFillColor: [255, 255, 255, countDown*0.8] })
+                    // prop.setProps({ getFillColor: [255, 255, 255, countDown * 0.8] })
+                    if (prop.props.getFillColor[3] > 0) {
+                        console.log("its working!!!")
+                        prop.setProps({ getFillColor: [255, 255, 255, countDown * opacityCircleFactor] })
+                    }
+
 
                 }
 

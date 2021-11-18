@@ -191,8 +191,7 @@ var motivationsConfig = {
         //     // title: 'Display Title',
         //     // image: './images/zebra.jpg',
         //     description: 'During June 2021, close to 5,000 households in Honduras, El Salvador and Guatemala were interview by the World Food Program +International Organization on Migration to better understand their condition.',
-        //     location: {
-        //         center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
+        //        center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
         //         zoom: closeZoom,
         //         pitch: 0,
         //         bearing: 0
@@ -226,8 +225,7 @@ var motivationsConfig = {
         //     // title: 'Display Title',
         //     // image: './images/zebra.jpg',
         //     description: 'These are their motivations....',
-        //     location: {
-        //         center: [-89.2500000, 14.5000000], // initial map center in [lon, lat]
+        //        center: [-89.2500000, 14.5000000], // initial map center in [lon, lat]
         //         zoom: maxZoom,
         //         pitch: 0,
         //         bearing: 0
@@ -252,8 +250,7 @@ var motivationsConfig = {
         //     // image: './images/zebra.jpg',
         //     description: 'These are their motivations....',
         //     // extraSpacing: true,
-        //     location: {
-        //         center: [-89.2500000, 14.5000000], // initial map center in [lon, lat]
+        //        center: [-89.2500000, 14.5000000], // initial map center in [lon, lat]
         //         zoom: maxZoom,
         //         pitch: 0,
         //         bearing: 0

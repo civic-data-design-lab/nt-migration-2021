@@ -304,7 +304,7 @@ const countryLabels = new deck.MapboxLayer({
     data: [
         {name: 'Guatemala', coordinates: [-90.666233, 14.784638]},
         {name: 'Honduras', coordinates: [-86.066233, 14.884638]},
-        {name: 'El Salvador', coordinates: [-89.066233, 13.684638]}
+        {name: 'El Salvador', coordinates: [-89.066233, 13.684638]},
         ],
     getPosition: d => d.coordinates,
     getText: d => d.name,
@@ -319,11 +319,32 @@ const countryLabels = new deck.MapboxLayer({
     fontFamily: 'neue-haas-grotesk-text, sans-serif',
 });
 
+const dotDescription = new deck.MapboxLayer({
+    id: 'nt-dot-label',
+    type: deck.TextLayer,
+    data: [{name: 'Each cell represents a surveyed household.', coordinates: [-89.066233, 12.684638]}],
+    getPosition: d => d.coordinates,
+    getText: d => d.name,
+    getSize: labelSize + 8,
+    // opacity: 0,
+    sizeUnits: 'pixels',
+    getTextAnchor: 'middle',
+    getAlignmentBaseline: 'center',
+    background: true,
+    backgroundPadding: [6,3],
+    fontWeight: 1000,
+    getColor: [0,110,255],
+    fontFamily: 'neue-haas-grotesk-text, sans-serif',
+});
+
+
 
 map.on('load', () => {
     map.addLayer(ntSurvey);
     map.addLayer(countryLabels);
+    map.addLayer(dotDescription);
 
     map.setLayerZoomRange('nt-grid', farZoom+1.5, maxZoom+1);
     map.setLayerZoomRange('nt-country-labels', farZoom-1, closeZoom+0.25);
+    map.setLayerZoomRange('nt-dot-label', farZoom+1.5, maxZoom+1)
 });

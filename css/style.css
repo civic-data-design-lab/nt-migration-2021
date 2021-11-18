@@ -178,6 +178,16 @@ h5 {
     /* filter: var(--filters-off); */
 }
 
+#shortcut *{
+    transition: var(--transition-speed);
+}
+
+#partial-open #shortcut *{
+    color: rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0);
+    transition: var(--transition-speed);
+}
+
 
 #wrapper>#open:hover {
     flex: 0 0 var(--open);
