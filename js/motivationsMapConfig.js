@@ -124,7 +124,6 @@ var motivationsConfig = {
             alignment: 'full',
             hidden: false,
             title: 'Migration has Large Costs for Migrants',
-            // image: './images/zebra.jpg',
             description: 'Migration comes at a large expense to the migrants, many of whom do not want to leave their country. Migrants often leave because they need to provide for their families and have limited social services to turn to for help.',
             location: {
                 center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
@@ -147,9 +146,6 @@ var motivationsConfig = {
 
             ],
             onChapterExit: [
-
-    
-
             ],
 
 
@@ -164,7 +160,6 @@ var motivationsConfig = {
             alignment: 'full',
             hidden: false,
             title: 'Migrant Motivations are Complex',
-            // image: './images/zebra.jpg',
             description: 'In order to understand the complex reasons for migration, close to 5,000 households in El Salvador, Guatemala, and Honduras were interviewed in June 2021 by the World Food Programme (WFP) and the International Organization for Migration (IOM) to better understand their conditions.',
             location: {
                 center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]

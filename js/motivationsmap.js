@@ -24,13 +24,16 @@ var borderColor = 'rgba(255,255,255,1)'
 
 //MOTIVATION STYLE SETTINGS
 var pixelSize;
+var labelSize;
 
 if (aspectRatio < 1){
     pixelSize = 6;
+    labelSize = 12
 }
 
 if (aspectRatio >= 1){
     pixelSize = 12;
+    labelSize = 17
 }
  
 
@@ -295,10 +298,32 @@ const ntSurvey = new deck.MapboxLayer({
     colorRange: [255, 255, 255, 255],
 });
 
+const countryLabels = new deck.MapboxLayer({
+    id: 'nt-country-labels',
+    type: deck.TextLayer,
+    data: [
+        {name: 'Guatemala', coordinates: [-90.666233, 14.784638]},
+        {name: 'Honduras', coordinates: [-86.066233, 14.884638]},
+        {name: 'El Salvador', coordinates: [-89.066233, 13.684638]}
+        ],
+    getPosition: d => d.coordinates,
+    getText: d => d.name,
+    getSize: labelSize,
+    sizeUnits: 'pixels',
+    getTextAnchor: 'middle',
+    getAlignmentBaseline: 'center',
+    background: true,
+    backgroundPadding: [3,1],
+    fontWeight: 1000,
+    getColor: [0,110,255],
+    fontFamily: 'neue-haas-grotesk-text, sans-serif',
+});
+
+
 map.on('load', () => {
     map.addLayer(ntSurvey);
+    map.addLayer(countryLabels);
 
-    // map.setPaintProperty(layer.value, 'fill-color', color);
-    map.setLayerZoomRange('nt-grid', 4, 15);
-    // map.setLayoutProperty('nt-grid', 'cellSizePixels', 1);
+    map.setLayerZoomRange('nt-grid', farZoom+1.5, maxZoom+1);
+    map.setLayerZoomRange('nt-country-labels', farZoom-1, closeZoom+0.25);
 });
