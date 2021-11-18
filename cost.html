@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Ashley Louie & Niko McGlashan">
-    <title>Motivations</title>
+    <meta name="author" content="MIT Civic Data Design Lab: Alberto Meouchi, Ashley Louie, Niko McGlashan">
+    <title>Cost</title>
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/eqc7jzl.css">
@@ -102,7 +102,12 @@
         </section>
 
         <section class='chapter' id="open">
-
+            <div id="shortcut" class="position-sticky p-3">
+                <a class="text-white" href="#">
+                    <i id="arrow-jump" class="arrow"></i>
+                    <span class="ps-2 text-uppercase">Skip to visualization</span>
+                </a>
+            </div>
             <div class="bk cost-img" onclick='redirect_Page(this,"cost.html")'>
                 <div class="gradient cost-g">
                     <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>COST</h2>
@@ -332,7 +337,7 @@
                 </div>
 
 
-                <div class="step1 fully active" style="padding-bottom: 90vh;">
+                <div id="last-scene" class="step1 fully active" style="padding-bottom: 90vh;">
                     <div class="scrolly-container-cost">
                         <div class="ribbon-image">
                             <img src="./img/cost/cos6.jpg">
@@ -415,6 +420,7 @@
     <script type="text/javascript" src="./js/bubble_chart.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/cost.js"></script>
     <script>
 
 // d3.xml("circular.svg").mimeType("image/svg+xml").get(function(error, xml) {

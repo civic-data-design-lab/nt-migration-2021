@@ -93,7 +93,8 @@ h5 {
 }
 
 .text-teal, a.text-teal:hover {
-    color: #3BA7C9;
+    /* color: #3BA7C9; */ /* original teal color */
+    color: #2C8787; /* darker teal color to contrast */
 }
 
 .text-pink, a.text-pink:hover {

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Ashley Louie + Niko McGlashan">
+    <meta name="author" content="MIT Civic Data Design Lab: Alberto Meouchi, Ashley Louie, Niko McGlashan">
     <title>Profiles</title>
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -79,6 +79,12 @@
         </section>
 
         <section class='chapter' id="open">
+            <div id="shortcut" class="position-sticky p-3">
+                <a class="text-white" href="#">
+                    <i id="arrow-jump" class="arrow"></i>
+                    <span class="ps-2 text-uppercase">Skip to visualization</span>
+                </a>
+            </div>
             <div class="bk profiles-img" onclick='redirect_Page(this,"profiles.html")'>
                 <div class="gradient profiles-g">
                     <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>PROFILES</h2>
@@ -86,9 +92,6 @@
                     </h1>
                 </div>
             </div>
-            
-
-            
         <div class="content-block position-sticky bk profiles2-img" >        
                <div class="gradient profiles-g">  
                 <div class="container">
@@ -261,7 +264,7 @@
     <script type="text/javascript" src="./js/chapterClick.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
-
+    <script type="text/javascript" src="./js/profiles.js"></script>
 </body>
 
 </html>
