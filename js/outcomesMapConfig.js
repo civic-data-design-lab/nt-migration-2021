@@ -6,6 +6,7 @@ var middleZoom;
 if (aspectRatio < 1){
     closeZoom = Math.log(screen.width)/1.2;
     middleZoom = Math.log(screen.width)/2.05;
+    middleZoom2 = Math.log(screen.width)/2.5;
     farZoom = Math.log(screen.width)/2.9;
 
 }
@@ -13,6 +14,7 @@ if (aspectRatio < 1){
 if (aspectRatio >= 1){
     closeZoom = Math.log(screen.width)/1.2;
     middleZoom = Math.log(screen.width)/1.65;
+    middleZoom2 = Math.log(screen.width)/1.85;
     farZoom = Math.log(screen.width)/2.1;
 }
 
@@ -47,9 +49,9 @@ var outcomesConfig = {
             onChapterExit: [
             ],
             hideCountries: false,
-            showGuat:false,
-            showHond:false,
-            showSalv:false,
+            showGuat:true,
+            showHond:true,
+            showSalv:true,
         },
 
         //DESTINATION 1
@@ -65,18 +67,18 @@ var outcomesConfig = {
             location: {
                 center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
-                pitch: 30,
-                bearing: 0
+                pitch: 50,
+                bearing: -35
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
             hideCountries: true,
             showGuat:true,
-            showHond:true,
-            showSalv:true,
+            showHond:false,
+            showSalv:false,
         },
 
         //DESTINATION 2
@@ -90,10 +92,10 @@ var outcomesConfig = {
             paddedImage: false,
             description: '',
             location: {
-                center: [-87.5000000, 14.0000000], // initial map center in [lon, lat]
-                zoom: closeZoom,
-                pitch: 30,
-                bearing: -30
+                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: middleZoom2,
+                pitch: 50,
+                bearing: -15
             },
             mapAnimation: 'flyTo',
             rotateAnimation: true,
@@ -103,8 +105,8 @@ var outcomesConfig = {
             onChapterExit: [
             ],
             hideCountries: false,
-            showGuat:true,
-            showHond:false,
+            showGuat:false,
+            showHond:true,
             showSalv:false,
 
 
@@ -124,10 +126,10 @@ var outcomesConfig = {
             paddedImage: false,
             description: '11% of Hondurans migrate to Spain',
             location: {
-                center: [-87.5000000, 14.0000000], // initial map center in [lon, lat]
-                zoom: closeZoom,
-                pitch: 30,
-                bearing: -15
+                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: middleZoom2,
+                pitch: 50,
+                bearing: 15
             },
             mapAnimation: 'flyTo',
             rotateAnimation: true,
@@ -136,8 +138,8 @@ var outcomesConfig = {
             onChapterExit: [],
             hideCountries: false,
             showGuat:false,
-            showHond:true,
-            showSalv:false,
+            showHond:false,
+            showSalv:true,
         },
 
 
@@ -150,12 +152,12 @@ var outcomesConfig = {
             image: '', //./img/outcomes/climbing.jpg
             filter: '',
             paddedImage: '',
-            description: '', //The rest are either caught, detained, or return home. Some are lost and never return.
+            description: '', 
             location: {
-                center: [-87.5000000, 14.0000000], // initial map center in [lon, lat]
-                zoom: closeZoom,
-                pitch: 30,
-                bearing: 0
+                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                zoom: middleZoom2,
+                pitch: 60,
+                bearing: 35
             },
             mapAnimation: 'flyTo',
             rotateAnimation: true,
@@ -163,8 +165,8 @@ var outcomesConfig = {
             onChapterEnter: [],
             onChapterExit: [],
             hideCountries: false,
-            showGuat:false,
-            showHond:false,
+            showGuat:true,
+            showHond:true,
             showSalv:true,
         },
 
@@ -295,7 +297,7 @@ var outcomesConfig = {
             location: {
                 center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
-                pitch: 30,
+                pitch: 0,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
@@ -323,7 +325,7 @@ var outcomesConfig = {
             location: {
                 center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
-                pitch: 30,
+                pitch: 0,
                 bearing: 0
             },
             mapAnimation: 'flyTo',

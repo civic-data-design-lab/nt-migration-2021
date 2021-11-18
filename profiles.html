@@ -62,7 +62,7 @@
         <section class='chapter' id="closed">
             <div class="bk origins-img" onclick='redirect_Page(this,"origins.html")'>
                 <div class="gradient origins-g">
-                    <h2 class="chapter-title">ORIGINS</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>ORIGINS</h2>
                     <h1 class="chapter-summary">VIOLENCE, CLIMATE,<br>ECONOMICS,<br>AND
                         POLICY<br>HISTORICALLY DRIVE EMIGRATION</h1>
                 </div>
@@ -72,16 +72,16 @@
         <section class='chapter' id="closed">
             <div class="bk motivations-img" onclick='redirect_Page(this,"motivations.html")'>
                 <div class="gradient motivations-g">
-                    <h2 class="chapter-title">MOTIVATIONS</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>MOTIVATIONS</h2>
                     <h1 class="chapter-summary">FINANCIAL<br>INSECURITY<br>DRIVES<br>MIGRATION</h1>
                 </div>
             </div>
         </section>
 
         <section class='chapter' id="open">
-            <div class="bk profiles-img">
+            <div class="bk profiles-img" onclick='redirect_Page(this,"profiles.html")'>
                 <div class="gradient profiles-g">
-                    <h2 class="chapter-title">PROFILES</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>PROFILES</h2>
                     <h1 class="chapter-summary">HALF OF MIGRANTS<br>WORK IN THE<br>SAME OCCUPATION<br>AFTER RELOCATION
                     </h1>
                 </div>
@@ -90,37 +90,17 @@
 
             
         <div class="content-block position-sticky bk profiles2-img" >        
-               <div class="gradient profiles-g">     
-                    <div class="col-8 align-items-start vh-100">
-                     <div id="chart"></div>
+               <div class="gradient profiles-g">  
+                <div class="container">
+                     	<div class="row">   
+                    <div class="col-12 col-md-8 align-items-center">
+                     <div id="chart" class="svg-container"></div>
 </div> 
                
                                      </div>
             </div>
-            
-<!-- 
-     <div id="buttons-motivations" class="row mb-3">
-
-  
-                            <div class="col-2 px-0">
-                                    <button type="button" id="all" class="button  btn btn-sm text-uppercase text-blue"
-                                        data-bs-toggle="modal" data-bs-target="#modal-motivs" onclick="showDetaila()">All Ages</button>
-                                </span>
-                                 </div>
-                                 <div class="col-2 px-0">
-                                    <button type="button" id="year" class="button  btn btn-sm text-uppercase text-blue"
-                                      onclick="showDetail()" onclick=active  >0-17</button>
-                                </span>
-                            </div>
-                            <div class="col-2 px-0">
-                                    <button type="button" id="country" class="button  btn btn-sm text-uppercase text-blue"
-                                       onclick="showDetailb()" >18-34</button>
-                                </span>
-                            </div>
-                            
-                            
- -->
-    
+            </div>
+            </div>
 
 					 
 <div class=" step righty active ">  
@@ -134,9 +114,6 @@
             		  </div>            		                  
   </div>   
    <div class="col-4 vh-100"></div>
-   
-   
-  	<div id="#mapdiv"><span></span></div>
 <!--   <div class=" step righty active ">   -->
 <div class=" profile-map-theme scrolly-container">
 						<div class="scrollytelling-text"> 
@@ -161,19 +138,7 @@
   
                       
                                   <script type="text/javascript" src="./js/pyramidscript.js"></script>
-                                  
 
-
-<!-- 
-                                  </div>
-                                  </div>
-                                    <div class="container vh-1000 row align-items-center p-5 forceLink1">
-                    <div class="row">
- -->
-
-                  <!--     <div id="chartsank" class="position-sticky"></div> -->
-                  
-          <!--                       <div class="forceLink1"><span></span></div> -->
                  </div>  
                  
                           <div class="step1 full active">
@@ -198,14 +163,14 @@
                     <div class="col-1"></div>
       <!--              <div class="content-block position-sticky" >   -->           
     <!--           <div class="col-2 container vh-100"> -->
-                      <div class="container p-5 position-sticky vh-100"> 
+                      <div class="container p-5 position-sticky"> 
 
-                      <div id="chartsank" class="col-7 position-realtive vh-80" style="background-color: #ffffff7a; padding-bottom:0rem;">
+                      <div id="chartsank" class="col-7 col-md-7" style="background-color: #ffffff7a; padding-bottom:0rem;">
                       <div class="container row" style="padding-bottom: 2rem;">
-                        <div class="col-5" style="padding-top:2rem; padding-left:-1rem; padding-right:1.5rem; margin-right:-3rem; margin-left:7rem;">
+                        <div class="col-5 col-md-5" style="padding-top:2rem; padding-left:-1rem; padding-right:1.5rem; margin-right:-3rem; margin-left:7rem;">
                        <h2 class="sankey1 p-1"style="margin: 0;">Occupation Before</h2>
                         <h2 class="sankey2">Migration</h2></div>
-                        <div class="col-5" style="padding-top:2rem; padding-left:0rem; padding-right:0rem; margin-right:-6rem; margin-left:0rem;">
+                        <div class="col-5 col-md-5" style="padding-top:2rem; padding-left:0rem; padding-right:0rem; margin-right:-6rem; margin-left:0rem;">
                        <h2 class="sankey1 p-1" style="margin: 0;">Occupation After</h2>
                        <h2 class="sankey2">Migration</h2> </div>
                      <div id="tt-select" class="position-absolute top-0 end-0 translate-bottom-y col-5 p-5">                         
@@ -270,8 +235,6 @@
         .setClassToggle(".profiles2-img", "profiles5-img")
         .addTo(controller);  
         
-        
-        
     </script>
             
         </section>
@@ -279,7 +242,7 @@
         <section class='chapter' id="closed">
             <div class="bk outcomes-img" onclick='redirect_Page(this,"outcomes.html")'>
                 <div class="gradient outcomes-g">
-                    <h2 class="chapter-title">OUTCOMES</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>OUTCOMES</h2>
                     <h1 class="chapter-summary">ONLY 57%<br>OF MIGRANTS<br>REACH THEIR<br>INTENDED<br>DESTINATION</h1>
                 </div>
             </div>
@@ -288,7 +251,7 @@
         <section class='chapter' id="closed">
             <div class="bk cost-img" onclick='redirect_Page(this,"cost.html")'>
                 <div class="gradient cost-g">
-                    <h2 class="chapter-title">COST</h2>
+                    <h2 class="chapter-title" onclick='redirect_Page(this,"index")'>COST</h2>
                     <h1 class="chapter-summary">MIGRATION<br>COSTS ADD TO<br>FINANCIAL<br>BURDEN</h1>
                 </div>
             </div>

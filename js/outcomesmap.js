@@ -24,6 +24,9 @@ var countriesBorderColor = [255, 255, 255, 255]
 var countriesLineWidth = 20000
 var SelectHighlightColor = [255, 255, 255] //HIGHLIGHT ON HOVER OR CLICK
 
+document.getElementById("map").style.background = 'rgb(219,109,183)'
+
+
 //CIRCLES
 var pointScale = 1000 //SCALE OF POINTS
 var pointColor = [255, 255, 255, 255 * 0.5]
@@ -210,8 +213,34 @@ map.on("load", function () {
                 mapChapter.onChapterEnter.forEach(setLayerOpacity);
             }
 
-            // SHOW GUAT LAYERS
-            if (mapChapter.showGuat && mapChapter.showGuat == true) {
+           
+
+            if (mapChapter.callback) {
+                window[mapChapter.callback]();
+            }
+            if (mapChapter.rotateAnimation) {
+                map.once('moveend', function () {
+                    const rotateNumber = map.getBearing();
+                    const rotationAmount = 30
+                    map.rotateTo(rotateNumber + rotationAmount, {
+                        duration: 34000, easing: function (t) {
+                            return t;
+                        }
+                    });
+                });
+            }
+
+        })
+
+        .onStepExit(response => {
+            var mapChapter = outcomesConfig.chapters.find(chap => chap.id === response.element.id);
+            response.element.classList.remove('active');
+            if (mapChapter.onChapterExit.length > 0) {
+                mapChapter.onChapterExit.forEach(setLayerOpacity);
+            }
+
+             // SHOW GUAT LAYERS
+             if (mapChapter.showGuat && mapChapter.showGuat == true) {
                 // guatArc.setProps({ getSourceColor: arcSourceColor })
                 // guatArc.setProps({ getTargetColor: arcTargetColor })
                 // guatDestinations.setProps({ getFillColor: pointColor })
@@ -262,31 +291,6 @@ map.on("load", function () {
                 // salvDestinations.setProps({ getFillColor: inactiveColor })
                 fade(salvArc, 'salvArc', 255, false);
                 fade(salvDestinations, 'salvDestinations', 255, false);
-            }
-
-            if (mapChapter.callback) {
-                window[mapChapter.callback]();
-            }
-            if (mapChapter.rotateAnimation) {
-                map.once('moveend', function () {
-                    const rotateNumber = map.getBearing();
-                    const rotationAmount = 45
-                    var newRotation = map.getBearing();
-                    map.rotateTo(rotateNumber + rotationAmount, {
-                        duration: 34000, easing: function (t) {
-                            return t;
-                        }
-                    });
-                });
-            }
-
-        })
-
-        .onStepExit(response => {
-            var mapChapter = outcomesConfig.chapters.find(chap => chap.id === response.element.id);
-            response.element.classList.remove('active');
-            if (mapChapter.onChapterExit.length > 0) {
-                mapChapter.onChapterExit.forEach(setLayerOpacity);
             }
         });
 
@@ -608,12 +612,13 @@ const hondArc = new deck.MapboxLayer({
 
 
 map.on('load', () => {
-    map.addLayer(guatArc);
-    map.addLayer(salvArc);
-    map.addLayer(hondArc);
+
     map.addLayer(salvDestinations);
     map.addLayer(guatDestinations);
     map.addLayer(hondDestinations);
+    map.addLayer(guatArc);
+    map.addLayer(salvArc);
+    map.addLayer(hondArc);
 
 });
 
@@ -625,7 +630,7 @@ function fade(prop, strProp, target, inOutBool) {
         if (countUp < target) {
             countUp++
 
-            if (prop.props.getSourceColor) {
+            if (prop.props.getSourceColor) {  //TRANSITIONS FOR ARCLAYER
                 var startColor = prop.props.getSourceColor
 
                 if (inOutBool == true) {
@@ -635,21 +640,21 @@ function fade(prop, strProp, target, inOutBool) {
 
                     // if arc
                     if (prop.props.getSourceColor[3] < 100) {
-                        // console.log('bigger than 50')
-                        prop.setProps({ getSourceColor: [255, 158, 237, countUp * 0.8] })
-                        prop.setProps({ getTargetColor: [255, 200, 245, countUp * 0.8] })
+                        prop.setProps({ getSourceColor: [255, 245, 245,countUp] })
+                        prop.setProps({ getTargetColor: [218, 107, 222, countUp] })
                     }
 
                 }
 
                 if (inOutBool == false) {
-
-                    if (startColor[3] > 10)
-                    {
-                        prop.setProps({ getSourceColor: [255, 158, 237, countDown] })
-                        prop.setProps({ getTargetColor: [255, 200, 245, countDown] })
-                    }
                     countDown = target - countUp
+
+                    if (startColor[3] > 1)
+                    {
+                        prop.setProps({ getSourceColor: [255, 245, 245, countDown] })
+                        prop.setProps({ getTargetColor: [218, 107, 222, countDown] })
+                    }
+                   
 
                     if (countDown <= 1) {
                         if (map.getLayer(strProp) != null) {
@@ -662,20 +667,20 @@ function fade(prop, strProp, target, inOutBool) {
                 }
             }
 
-            if (prop.props.getFillColor) {
+            if (prop.props.getFillColor) { //TRANSITIONS FOR SCATTERPLOTS
                 var startFill = prop.props.getFillColor
 
                 if (inOutBool == true) {
                     // if fill
-                    prop.setProps({ getFillColor: [255, 255, 255, countUp * 0.5] })
+                    prop.setProps({ getFillColor: [218, 107, 222, countUp*0.8] })
                 }
 
                 if (inOutBool == false) {
 
-                    countDown = startFill[3] - countUp
+                    countDown = target - countUp
 
                     // if fill
-                    prop.setProps({ getFillColor: [255, 255, 255, countDown] })
+                    prop.setProps({ getFillColor: [255, 255, 255, countDown*0.8] })
 
                 }
 

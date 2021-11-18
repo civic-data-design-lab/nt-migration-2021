@@ -28,9 +28,7 @@
 }
 
 /*GENERAL HTML */
-html {
-    /* scroll-behavior: smooth; */
-}
+
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
@@ -228,6 +226,7 @@ h5 {
     text-transform: uppercase;
     pointer-events: none;
     transition: color var(--transition-speed);
+    font-size: 4em;
 }
 
 
@@ -280,6 +279,7 @@ section#open:hover .chapter-title {
     padding: var(--start-padding);
     text-transform: uppercase;
     transition: var(--transition-speed);
+    font-size: 8em;
 }
 
 
@@ -581,8 +581,16 @@ i.arrow-up {
 .fully {
     width: 100%;
     margin: auto;
-    
-    
+    /* border: 3px solid green; */
+    padding-top: 100vh;
+}
+
+.fully:first-of-type{
+    padding-top: 0vh !important;
+}
+
+.fully:last-of-type{
+    padding-top: 0vh !important;
 }
 
 .fully > div{
@@ -777,8 +785,8 @@ i.arrow-up {
 }
 
 .description{
-    font-weight: 500;
-    font-size: 2em; 
+    font-weight: 300;
+    font-size: 1.5em; 
     margin-top: 1em; 
 }
 
