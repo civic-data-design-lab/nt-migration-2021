@@ -820,6 +820,10 @@ i.arrow-up {
 
 @media(max-width: 576px) {
 
+    .chapter-summary{
+        font-size: 3.25em;
+    }
+
     #mobile-button {
         position: absolute;
         flex-direction: column;
