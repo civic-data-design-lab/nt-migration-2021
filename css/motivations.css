@@ -151,3 +151,11 @@
 @media (min-width: 1400px) {
     
 }
+
+/* wide aspect ratio */
+@media (min-aspect-ratio: 16/9) {
+    #viz-col {
+        margin: auto;
+        max-width: 150vh;
+    }
+}
