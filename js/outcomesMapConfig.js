@@ -4,10 +4,24 @@ var closeZoom;
 var middleZoom;
 
 if (aspectRatio < 1){
-    closeZoom = Math.log(screen.width)/1.3;
-    middleZoom = Math.log(screen.width)/2.05;
-    middleZoom2 = Math.log(screen.width)/2.5;
-    farZoom = Math.log(screen.width)/2.9;
+
+    if (screen.width < 760)
+    {
+        closeZoom = Math.log(screen.width)/1.3;
+        middleZoom = Math.log(screen.width)/2.05;
+        middleZoom2 = Math.log(screen.width)/2.5;
+        farZoom = Math.log(screen.width)/2.9;
+    }
+    else
+    {
+        closeZoom = Math.log(screen.width)/1.2;
+        middleZoom = Math.log(screen.width)/1.5;
+        middleZoom2 = Math.log(screen.width)/2;
+        farZoom = Math.log(screen.width)/2.1;
+     
+
+    }
+
 
 }
 

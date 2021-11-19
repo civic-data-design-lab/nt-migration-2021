@@ -22,6 +22,7 @@ var labelSize;
 var responsiveBorderWidth
 
 if (aspectRatio < 1) {
+
     pixelSize = 6;
     labelSize = 12
     responsiveBorderWidth = 3
@@ -43,7 +44,7 @@ var countriesBorderColor = [255, 255, 255, 255]
 // var countriesLineWidth = 20000
 var SelectHighlightColor = [255, 255, 255] //HIGHLIGHT ON HOVER OR CLICK
 
-document.getElementById("map").style.background = 'rgb(219,109,183)'
+document.getElementById("map").style.background = 'rgb(209, 99, 173)'
 
 
 //CIRCLES
@@ -58,7 +59,7 @@ var arcTargetColor = [255, 200, 245, 255 * 0.2]
 var arcWidth = 0.000003
 var arcHeight = 0.5
 var arcTilt = 0
-var arcFilterMin = 21
+var arcFilterMin = 40
 
 //INACTIVE STATE
 var inactiveColor = [255, 255, 255, 0]
@@ -450,7 +451,7 @@ const salvDestinations = new deck.MapboxLayer({
     pointType: 'circle',
     filled: true,
     pointRadiusMinPixels: 2,
-    pointRadiusScale: pointScale,
+    pointRadiusScale: 0,
     getPointRadius: r => r.properties.Imm__tot_pop * 100,
     getFillColor: inactiveColor,
     // Interactive props
@@ -458,7 +459,7 @@ const salvDestinations = new deck.MapboxLayer({
     // autoHighlight: true,
     // highlightColor: SelectHighlightColor,
     lineWidthUnits: 'pixels',
-    getLineColor:  [182, 40, 187, 255],
+    getLineColor: [182, 40, 187, 255],
     getLineWidth: circleBorderWidth,
     polygonOffset: 10,
     parameters: {
@@ -477,7 +478,7 @@ const guatDestinations = new deck.MapboxLayer({
     pointType: 'circle',
     filled: true,
     pointRadiusMinPixels: 2,
-    pointRadiusScale: pointScale,
+    pointRadiusScale: 0,
     getPointRadius: r => r.properties.Imm__tot_pop * 100,
     getFillColor: inactiveColor,
     // Interactive props
@@ -502,7 +503,7 @@ const hondDestinations = new deck.MapboxLayer({
     pointType: 'circle',
     filled: true,
     pointRadiusMinPixels: 2,
-    pointRadiusScale: pointScale,
+    pointRadiusScale: 0,
     getPointRadius: r => r.properties.Imm__tot_pop * 100,
     getFillColor: inactiveColor,
     // Interactive props
@@ -621,10 +622,10 @@ const countryLabels = new deck.MapboxLayer({
     id: 'nt-country-labels',
     type: deck.TextLayer,
     data: [
-        {name: 'Guatemala', coordinates: [-90.666233, 14.784638]},
-        {name: 'Honduras', coordinates: [-86.066233, 14.884638]},
-        {name: 'El Salvador', coordinates: [-89.066233, 13.684638]},
-        ],
+        { name: 'Guatemala', coordinates: [-90.666233, 14.784638] },
+        { name: 'Honduras', coordinates: [-86.066233, 14.884638] },
+        { name: 'El Salvador', coordinates: [-89.066233, 13.684638] },
+    ],
     getPosition: d => d.coordinates,
     getText: d => d.name,
     getSize: labelSize,
@@ -632,7 +633,7 @@ const countryLabels = new deck.MapboxLayer({
     getTextAnchor: 'middle',
     getAlignmentBaseline: 'center',
     background: true,
-    backgroundPadding: [3,1],
+    backgroundPadding: [3, 1],
     fontWeight: 1000,
     getColor: [209, 99, 173],
     fontFamily: 'neue-haas-grotesk-text, sans-serif',
@@ -650,8 +651,8 @@ map.on('load', () => {
     map.addLayer(guatArc);
     map.addLayer(salvArc);
     map.addLayer(hondArc);
-    
-    map.setLayerZoomRange('nt-country-labels', middleZoom, closeZoom+0.25);
+
+    map.setLayerZoomRange('nt-country-labels', middleZoom, closeZoom + 0.25);
 
 });
 
@@ -681,9 +682,8 @@ function fade(prop, strProp, target, inOutBool) {
 
                 if (inOutBool == false) {
 
-                    if (!map.getLayer(strProp))
-                    {
-                        map.addLayer(prop)                        
+                    if (!map.getLayer(strProp)) {
+                        map.addLayer(prop)
                     }
                     var PixelRemapped = countUp / target
                     prop.setProps({ opacity: PixelRemapped })
@@ -706,12 +706,15 @@ function fade(prop, strProp, target, inOutBool) {
                         map.addLayer(prop)
                     }
 
+
                     // if arc
                     var opacityFactor = 0.7
                     if (prop.props.getSourceColor[3] < (255 * opacityFactor)) {
 
                         currentColor = prop.props.getSourceColor
                         currentColor[3] = countUp * opacityFactor
+                        // currentColor[3] = 255
+
 
                         prop.setProps({ getSourceColor: currentColor })
                         prop.setProps({ getTargetColor: [255, 255, 255, countUp * 0.3] })
@@ -748,16 +751,8 @@ function fade(prop, strProp, target, inOutBool) {
                 if (inOutBool == true) {
                     // if fill
 
-                    let currentLineColor = prop.props.getLineColor
-                    // console.log(currentColor)
-                    // currentColor[3] = countUp * opacityCircleFactor
-
-                    var currentLineWidth = prop.props.getLineWidth
-                    
-
-
-                    var newLineWidth = circleBorderWidth*(countUp/target)
-                    var growingRadius = pointScale * (countUp/target)
+                    var newLineWidth = circleBorderWidth * (countUp / target)
+                    var growingRadius = pointScale * (countUp / target)
 
                     if (prop.props.getFillColor[3] < (254 * opacityCircleFactor)) {
                         prop.setProps({ getFillColor: [255, 255, 255, countUp * opacityCircleFactor] })
@@ -772,10 +767,9 @@ function fade(prop, strProp, target, inOutBool) {
                     countDown = target - countUp
 
                     currentLineColor = prop.props.getLineColor
-                    currentColor[3] = countDown * opacityCircleFactor
 
-                    var shrinkRadius = pointScale - (pointScale*(countUp/target))
-                    var newLineWidth = circleBorderWidth-(circleBorderWidth*(target/countUp+0.01))
+                    var shrinkRadius = pointScale - (pointScale * (countUp / target))
+                    var newLineWidth = circleBorderWidth - (circleBorderWidth * (target / countUp + 0.01))
 
                     // if fill
                     // prop.setProps({ getFillColor: [255, 255, 255, countDown * 0.8] })

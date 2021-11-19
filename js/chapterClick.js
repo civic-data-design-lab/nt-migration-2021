@@ -111,6 +111,12 @@ for (let i = 0; i < allChapters.length; i++) {
 
 }
 
+if (screen.width < 1400 && indexPage.length > 0){
+
+    toggleMenu(hamburgerMenu)
+    hamburgerMenu.style.display = 'none'
+    hamburgerMenu.style.pointerEvents = 'none'
+}
 
 function toggleMenu(x) {
     x.classList.toggle("change");

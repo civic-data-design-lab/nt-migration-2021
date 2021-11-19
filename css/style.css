@@ -628,7 +628,7 @@ i.arrow-up {
 
 .fully>div {
     height: auto;
-    box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35);
+    /* box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35); */
     /* width: auto !important; */
 
 }
@@ -742,7 +742,7 @@ i.arrow-up {
     width: 100%;
 } */
 
-@media (max-width: 750px) {
+@media (max-width: 770px) {
 
     .centered,
     .lefty,
@@ -848,22 +848,12 @@ i.arrow-up {
 
     }
 
-
-}
-
-
-/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
-/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
-/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
-
-@media(max-width: 576px) {
-
     .scrollytelling {
-        font-size: 1.75em;
+        font-size: 2em;
     }
 
     .description {
-        font-size: 1em;
+        font-size: 1.5em;
     }
 
 
@@ -873,8 +863,9 @@ i.arrow-up {
     }
 
     .chapter-title {
-        font-size: 3em;
+        font-size: 6em;
     }
+
 
     #mobile-button {
         position: absolute;
@@ -1066,6 +1057,33 @@ i.arrow-up {
         font-size: 1.25rem;
     }
 
+
+
+
+}
+
+
+/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
+/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
+/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
+
+@media(max-width: 576px) {
+
+    .chapter-title {
+        font-size: 3em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+}
+
+@media(max-width: 375px) {
+
+    h1{
+        font-size: 2.5em;
+    }
 
 }
 
