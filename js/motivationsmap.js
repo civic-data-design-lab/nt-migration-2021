@@ -143,6 +143,7 @@ motivationsConfig.chapters.forEach((record, idx) => {
         container.classList.add('hidden');
     }
     features.appendChild(container);
+
 });
 
 story.appendChild(features);
@@ -322,33 +323,35 @@ const countryLabels = new deck.MapboxLayer({
     fontFamily: 'neue-haas-grotesk-text, sans-serif',
 });
 
-const dotDescription = new deck.MapboxLayer({
-    id: 'nt-dot-label',
-    type: deck.TextLayer,
-    data: [{name: 'Each cell represents a surveyed household.', coordinates: descriptionLocation}],
-    getPosition: d => d.coordinates,
-    getText: d => d.name,
-    getSize: labelSize + 8,
-    // opacity: 0,
-    sizeUnits: 'pixels',
-    getTextAnchor: 'middle',
-    getAlignmentBaseline: 'center',
-    background: true,
-    backgroundPadding: [6,3],
-    fontWeight: 1000,
-    getColor: [0,110,255],
-    maxWidth: screen.width*2,
-    fontFamily: 'neue-haas-grotesk-text, sans-serif',
-});
+// const dotDescription = new deck.MapboxLayer({
+//     id: 'nt-dot-label',
+//     type: deck.TextLayer,
+//     data: [{name: 'Each cell represents a surveyed household.', coordinates: descriptionLocation}],
+//     getPosition: d => d.coordinates,
+//     getText: d => d.name,
+//     getSize: labelSize + 8,
+//     // opacity: 0,
+//     sizeUnits: 'pixels',
+//     getTextAnchor: 'middle',
+//     getAlignmentBaseline: 'center',
+//     background: true,
+//     backgroundPadding: [6,3],
+//     fontWeight: 1000,
+//     getColor: [0,110,255],
+//     maxWidth: screen.width*2,
+//     fontFamily: 'neue-haas-grotesk-text, sans-serif',
+// });
 
 
 
 map.on('load', () => {
     map.addLayer(ntSurvey);
     map.addLayer(countryLabels);
-    map.addLayer(dotDescription);
+    // map.addLayer(dotDescription);
 
-    map.setLayerZoomRange('nt-grid', farZoom+1.5, maxZoom+1);
-    map.setLayerZoomRange('nt-country-labels', farZoom-1, closeZoom+0.25);
-    map.setLayerZoomRange('nt-dot-label', farZoom+1.5, maxZoom+1)
+    map.setLayerZoomRange('nt-grid', middleZoom+0.5, maxZoom+1);
+    map.setLayerZoomRange('nt-country-labels', middleZoom-1, closeZoom+0.25);
+    // map.setLayerZoomRange('nt-dot-label', farZoom+1.5, maxZoom+1)
 });
+
+document.getElementById('map-state-1').style.paddingBottom = "75vh"
