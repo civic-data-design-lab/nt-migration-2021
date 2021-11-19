@@ -282,17 +282,24 @@ pointer-events: none;}
 margin-top:3rem;}
  */
  
- .svg-container {
+ /* .svg-container {
     display: inline-block;
     position: relative;
     width: 100%;
     padding-bottom: 100%;
     vertical-align: top;
     overflow: hidden;
-}
-.svg-content {
+} */
+/* .svg-content {
     display: inline-block;
     position: absolute;
     top: 0;
     left: 0;
+} */
+
+@media (min-aspect-ratio: 16/9) {
+    #frame-cost {
+        margin: auto;
+        max-width: 120vh;
+    }
 }
