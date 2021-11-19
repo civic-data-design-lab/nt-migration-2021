@@ -694,6 +694,21 @@ i.arrow-up {
     backdrop-filter: var(--blur-on);
 }
 
+.scrollytelling-caption .footnote, 
+.scrollytelling-text .footnote {
+    max-width: 80%;
+    font-size: 0.6rem;
+    bottom: 5%;
+}
+.scrollytelling-caption .footnote a, 
+.scrollytelling-text .footnote a {
+    text-decoration: none;
+}
+.scrollytelling-caption .footnote a:hover, 
+.scrollytelling-text .footnote a:hover {
+    text-decoration: underline;
+}
+
 /* 
 .outcomes-map-theme{
     background-color: rgb(224, 135, 220,0.5);
