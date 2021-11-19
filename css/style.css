@@ -836,7 +836,7 @@ i.arrow-up {
 }
 
 .scrollytelling-caption {
-    padding: calc(var(--scrollytelling-padding));
+    padding: calc(var(--scrollytelling-padding)/4);
 
 }
 
@@ -857,6 +857,11 @@ i.arrow-up {
 /*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
 /*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
 @media (max-width: 1400px) {
+
+    
+.scrollytelling-caption {
+    padding: calc(var(--scrollytelling-padding)/2);
+}
 
     h1 {
         font-size: 3em;
