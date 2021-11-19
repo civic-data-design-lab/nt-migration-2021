@@ -836,7 +836,7 @@ i.arrow-up {
 }
 
 .scrollytelling-caption {
-    padding: calc(var(--scrollytelling-padding)/4);
+    padding: calc(var(--scrollytelling-padding)/3);
 
 }
 
