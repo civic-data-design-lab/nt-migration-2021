@@ -237,6 +237,13 @@ z-index:-1000;}
       font-size: 1rem;
 font-family: neue-haas-grotesk-text, sans-serif;
     }
+    
+        .annotation-note-medium{
+   pointer-events: none;
+   font-weight: 600;
+      font-size: 1rem;
+font-family: neue-haas-grotesk-text, sans-serif;
+    }
 
 
 .axis {
