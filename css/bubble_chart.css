@@ -154,6 +154,12 @@ font-family: neue-haas-grotesk-text, sans-serif;
   text-align: center;
 }
 
+.tooltip .text-label-onemigrant {
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1rem;
+}
+
 
      .axis, .axis text {
        fill: var(--line-chart-color);
