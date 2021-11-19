@@ -11,26 +11,20 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 41,10,GTM,Huehuetenango,irrregular coyote,3,11700,all loans,United States of America,"Not yet, it is in transit to the destination country",,11700
 41,11,GTM,Huehuetenango,irrregular coyote,3,11700,all loans,United States of America,"Not yet, it is in transit to the destination country",,11700
 43,12,GTM,Huehuetenango,irrregular coyote,3,7800,all loans,United States of America,"Not yet, it is in transit to the destination country",,7800
-46,13,HND,Cortes,regular,2,1066,all loans,Spain,"Yes, you reside in the destination country",,1066
-47,14,HND,Cortes,regular,2,1312,all loans,Spain,"Yes, you reside in the destination country",,1312
-47,15,HND,Cortes,regular,2,1312,all loans,Spain,"Yes, you reside in the destination country",,1312
 49,16,HND,Cortes,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 50,17,GTM,Huehuetenango,irrregular coyote,3,3900,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,3900
 50,18,GTM,Huehuetenango,irrregular coyote,3,3900,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,3900
 52,19,GTM,Huehuetenango,irrregular coyote,1,3000,all loans,United States of America,"Yes, you reside in the destination country",,3000
 53,20,GTM,Huehuetenango,irrregular coyote,,1,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
-56,21,GTM,Huehuetenango,irrregular coyote,3,4550,all loans,United States of America,NS / NR,,4550
+56,21,GTM,Huehuetenango,irrregular coyote,3,4550,all loans,United States of America,,,4550
 63,22,HND,Cortes,"irregular on own, with caravan",,1,no loans,United States of America,"No, but he resided in another country and was returned",For violence or insecurity,50000
 69,23,HND,Cortes,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 69,24,HND,Cortes,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 71,25,HND,Cortes,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-71,26,HND,Cortes,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
-72,27,HND,Cortes,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
 78,28,HND,Cortes,irrregular coyote,2,6150,all loans,United States of America,"Yes, you reside in the destination country",,6150
 78,29,HND,Cortes,irrregular coyote,2,6150,all loans,United States of America,"Yes, you reside in the destination country",,6150
 80,30,HND,Cortes,irrregular coyote,,1,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 88,31,HND,Cortes,"irregular on own, with caravan",2,410,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,410
-91,32,GTM,San Marcos,irrregular coyote,3,455,all loans,Canada,NS / NR,,455
 95,33,HND,Cortes,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 95,34,HND,Cortes,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 96,35,HND,Cortes,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -41,7 +35,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 108,40,GTM,San Marcos,irrregular coyote,3,10.4,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,10.4
 111,41,GTM,San Marcos,irrregular coyote,3,7540,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,7540
 115,42,HND,Cortes,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-119,43,HND,Cortes,"irregular on own, with caravan",,1,all loans,Belize,"Yes, you reside in the destination country",,50000
 120,44,HND,Cortes,"irregular on own, with caravan",2,410,no loans,United States of America,"Yes, you reside in the destination country",,410
 122,45,HND,Cortes,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 122,46,HND,Cortes,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
@@ -67,19 +60,15 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 214,66,GTM,San Marcos,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 214,67,GTM,San Marcos,irrregular coyote,3,650,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,650
 217,68,GTM,San Marcos,"irregular on own, with caravan",3,2860,no loans,United States of America,"Yes, you reside in the destination country",,2860
-218,69,GTM,San Marcos,regular,3,780,no loans,Mexico,"Yes, you reside in the destination country",,780
-218,70,GTM,San Marcos,regular,,1,all loans,Mexico,"Yes, but was returned to the country of origin",Other,50000
-224,71,GTM,San Marcos,"irregular on own, with caravan",,1,no loans,Mexico,"Yes, you reside in the destination country",,50000
 225,72,GTM,San Marcos,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 225,73,GTM,San Marcos,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 229,74,GTM,Huehuetenango,irrregular coyote,3,11700,all loans,United States of America,"Yes, you reside in the destination country",,11700
 230,75,GTM,Huehuetenango,irrregular coyote,3,4550,all loans,United States of America,"Yes, you reside in the destination country",,4550
 243,76,GTM,Chiquimula,irrregular coyote,3,7800,some loans,United States of America,"Yes, you reside in the destination country",,7800
 245,77,GTM,Chiquimula,"irregular on own, with caravan",3,1040,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,1040
-249,78,GTM,Chiquimula,regular,1,1750,no loans,United States of America,NS / NR,,1750
+249,78,GTM,Chiquimula,regular,1,1750,no loans,United States of America,,,1750
 250,79,GTM,Chiquimula,irrregular coyote,3,9100,no loans,United States of America,"Yes, you reside in the destination country",,9100
 250,80,GTM,Chiquimula,irrregular coyote,3,10400,all loans,United States of America,"Yes, you reside in the destination country",,10400
-250,81,GTM,Chiquimula,regular,3,3640,all loans,Spain,"Yes, you reside in the destination country",,3640
 250,82,GTM,Chiquimula,"irregular on own, with caravan",3,3900,all loans,United States of America,"Yes, you reside in the destination country",,3900
 250,83,GTM,Chiquimula,regular,3,3900,all loans,United States of America,"Yes, you reside in the destination country",,3900
 258,84,GTM,San Marcos,irrregular coyote,3,20800,all loans,United States of America,"Yes, you reside in the destination country",,20800
@@ -87,7 +76,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 268,86,GTM,San Marcos,irrregular coyote,3,10.4,some loans,United States of America,"Yes, you reside in the destination country",,10.4
 269,87,GTM,San Marcos,"irregular on own, with caravan",3,117,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,117
 278,88,GTM,San Marcos,"irregular on own, with caravan",3,9100,all loans,United States of America,"Yes, you reside in the destination country",,9100
-279,89,GTM,San Marcos,regular,3,26,no loans,Mexico,"Yes, you reside in the destination country",,26
 280,90,GTM,San Marcos,irrregular coyote,3,2470,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,2470
 286,91,GTM,San Marcos,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 286,92,GTM,San Marcos,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -110,7 +98,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 337,109,HND,Cortes,irrregular coyote,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 342,110,HND,Cortes,irrregular coyote,1,8000,all loans,United States of America,"Yes, you reside in the destination country",,8000
 346,111,HND,Cortes,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-351,112,HND,Cortes,"irregular on own, with caravan",2,451,no loans,United States of America,"No, but he resided in another country and was returned",NS / NR,451
+351,112,HND,Cortes,"irregular on own, with caravan",2,451,no loans,United States of America,"No, but he resided in another country and was returned",,451
 355,113,HND,Cortes,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 355,114,HND,Cortes,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 359,115,HND,Cortes,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -136,7 +124,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 411,135,GTM,Chiquimula,irrregular coyote,3,10504,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,10504
 416,136,GTM,Chiquimula,irrregular coyote,3,15600,all loans,United States of America,"Yes, you reside in the destination country",,15600
 418,137,GTM,Chiquimula,"irregular on own, with caravan",,1,all loans,United States of America,"No, but he resided in another country and was returned",By voluntary decision: other,50000
-422,138,GTM,Chiquimula,irrregular coyote,3,5850,all loans,United States of America,NS / NR,,5850
+422,138,GTM,Chiquimula,irrregular coyote,3,5850,all loans,United States of America,,,5850
 425,139,GTM,San Marcos,"irregular on own, with caravan",3,6.5,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,6.5
 427,140,GTM,San Marcos,irrregular coyote,3,13000,all loans,United States of America,"Yes, you reside in the destination country",,13000
 429,141,HND,Cortes,"irregular on own, with caravan",2,246,all loans,United States of America,"Yes, you reside in the destination country",,246
@@ -150,15 +138,12 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 442,149,HND,Cortes,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 443,150,HND,Cortes,irrregular coyote,2,7380,all loans,United States of America,"Yes, you reside in the destination country",,7380
 443,151,HND,Cortes,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-445,152,HND,Cortes,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
-445,153,HND,Cortes,regular,,1,all loans,Spain,NS / NR,,50000
-448,154,HND,Cortes,"irregular on own, with caravan",,1,no loans,Mexico,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 450,155,GTM,Huehuetenango,irrregular coyote,1,5000,no loans,United States of America,"Yes, you reside in the destination country",,5000
 451,156,GTM,Huehuetenango,regular,3,5850,all loans,United States of America,"Yes, you reside in the destination country",,5850
 453,157,GTM,Huehuetenango,regular,3,260,no loans,United States of America,"Yes, you reside in the destination country",,260
 454,158,GTM,Huehuetenango,irrregular coyote,3,4550,some loans,United States of America,"Yes, you reside in the destination country",,4550
 456,159,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-457,160,GTM,Huehuetenango,irrregular coyote,,1,some loans,United States of America,NS / NR,,50000
+457,160,GTM,Huehuetenango,irrregular coyote,,1,some loans,United States of America,,,50000
 458,161,GTM,San Marcos,irrregular coyote,3,5200,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,5200
 469,162,GTM,San Marcos,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 474,163,GTM,Chiquimula,irrregular coyote,3,13.91,all loans,United States of America,"Yes, you reside in the destination country",,13.91
@@ -181,12 +166,8 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 526,180,GTM,Huehuetenango,irrregular coyote,3,3250,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,3250
 527,181,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 532,182,GTM,San Marcos,irrregular coyote,3,9100,all loans,United States of America,"Yes, you reside in the destination country",,9100
-535,183,HND,Cortes,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
-535,184,HND,Cortes,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
 543,185,GTM,San Marcos,irrregular coyote,3,10.4,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,10.4
 546,186,GTM,San Marcos,irrregular coyote,3,11700,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,11700
-552,187,HND,Cortes,"irregular on own, with caravan",,1,no loans,Mexico,"Yes, you reside in the destination country",,50000
-552,188,HND,Cortes,"irregular on own, with caravan",,1,all loans,Mexico,"Yes, you reside in the destination country",,50000
 556,189,GTM,Huehuetenango,irrregular coyote,3,9750,all loans,United States of America,"Yes, you reside in the destination country",,9750
 556,190,GTM,Huehuetenango,irrregular coyote,3,10400,all loans,United States of America,"Yes, you reside in the destination country",,10400
 558,191,GTM,Huehuetenango,irrregular coyote,3,3250,all loans,United States of America,"Yes, you reside in the destination country",,3250
@@ -194,9 +175,8 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 568,193,GTM,Huehuetenango,"irregular on own, with caravan",,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 569,194,GTM,Huehuetenango,"irregular on own, with caravan",3,1300,all loans,United States of America,"Not yet, it is in transit to the destination country",,1300
 569,195,GTM,Huehuetenango,"irregular on own, with caravan",3,11700,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,11700
-573,196,GTM,Huehuetenango,"irregular on own, with caravan",1,1200,all loans,United States of America,NS / NR,,1200
+573,196,GTM,Huehuetenango,"irregular on own, with caravan",1,1200,all loans,United States of America,,,1200
 575,197,GTM,Huehuetenango,"irregular on own, with caravan",3,3250,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,3250
-577,198,GTM,Huehuetenango,"irregular on own, with caravan",3,104,no loans,Mexico,"Yes, you reside in the destination country",,104
 578,199,GTM,Huehuetenango,"irregular on own, with caravan",3,3250,some loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,3250
 578,200,GTM,Huehuetenango,"irregular on own, with caravan",3,1040,some loans,United States of America,"Yes, but was returned to the country of origin",Due to insufficient financial resources,1040
 578,201,GTM,Huehuetenango,"irregular on own, with caravan",3,9750,some loans,United States of America,"Not yet, it is in transit to the destination country",,9750
@@ -232,7 +212,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 655,231,GTM,San Marcos,irrregular coyote,3,25350,all loans,United States of America,"Yes, you reside in the destination country",,25350
 655,232,GTM,San Marcos,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 660,233,GTM,Chiquimula,regular,3,650,all loans,United States of America,"Yes, you reside in the destination country",,650
-665,234,GTM,Chiquimula,regular,,1,no loans,United States of America,NS / NR,,50000
+665,234,GTM,Chiquimula,regular,,1,no loans,United States of America,,,50000
 669,235,GTM,Chiquimula,"irregular on own, with caravan",3,6500,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,6500
 672,236,GTM,Chiquimula,irrregular coyote,3,10400,all loans,United States of America,"Yes, you reside in the destination country",,10400
 674,237,GTM,Huehuetenango,irrregular coyote,3,11050,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,11050
@@ -276,23 +256,18 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 810,275,GTM,Chiquimula,irrregular coyote,3,11700,all loans,United States of America,"Yes, you reside in the destination country",,11700
 816,276,GTM,Chiquimula,irrregular coyote,3,780,some loans,United States of America,"Yes, you reside in the destination country",,780
 820,277,GTM,Chiquimula,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-821,278,HND,Cortes,regular,2,2460,all loans,Spain,"Yes, you reside in the destination country",,2460
 832,279,GTM,San Marcos,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 833,280,GTM,San Marcos,irrregular coyote,3,7800,all loans,United States of America,"Yes, you reside in the destination country",,7800
 842,281,GTM,San Marcos,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 850,282,GTM,San Marcos,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 853,283,GTM,San Marcos,irrregular coyote,3,3250,all loans,United States of America,"Yes, you reside in the destination country",,3250
 855,284,GTM,San Marcos,irrregular coyote,3,3250,no loans,United States of America,"Not yet, it is in transit to the destination country",,3250
-856,285,HND,Cortes,"irregular on own, with caravan",,1,some loans,United States of America,NS / NR,,50000
-856,286,HND,Cortes,regular,2,2460,some loans,Spain,"Yes, you reside in the destination country",,2460
+856,285,HND,Cortes,"irregular on own, with caravan",,1,some loans,United States of America,,,50000
 858,287,HND,Cortes,irrregular coyote,1,3000,no loans,United States of America,"Yes, you reside in the destination country",,3000
 858,288,HND,Cortes,irrregular coyote,1,3000,no loans,United States of America,"Yes, you reside in the destination country",,3000
-859,289,HND,Cortes,regular,,1,no loans,Nicaragua,"No, but he resided in another country and was returned",By voluntary decision: other,50000
-862,290,HND,Cortes,irrregular coyote,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
 864,291,HND,Cortes,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 865,292,HND,Cortes,regular,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 868,293,HND,Cortes,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-868,294,HND,Cortes,regular,2,9020,all loans,Spain,"Yes, you reside in the destination country",,9020
 878,295,GTM,San Marcos,irrregular coyote,3,13000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,13000
 880,296,GTM,San Marcos,irrregular coyote,3,11700,all loans,United States of America,"Yes, you reside in the destination country",,11700
 880,297,GTM,San Marcos,irrregular coyote,3,11700,all loans,United States of America,"Yes, you reside in the destination country",,11700
@@ -301,11 +276,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 897,300,GTM,Chiquimula,regular,3,455,no loans,United States of America,"Yes, but was returned to the country of origin",Other,455
 897,301,GTM,Chiquimula,regular,3,455,no loans,United States of America,"Yes, but was returned to the country of origin",Other,455
 897,302,GTM,Chiquimula,regular,3,455,no loans,United States of America,"Yes, but was returned to the country of origin",Other,455
-897,303,GTM,Chiquimula,irrregular coyote,,1,no loans,Other,NS / NR,,50000
-897,304,GTM,Chiquimula,regular,,1,all loans,Other,NS / NR,,50000
-897,305,GTM,Chiquimula,irrregular coyote,,1,no loans,NS / NR,NS / NR,,50000
-900,306,GTM,Chiquimula,"irregular on own, with caravan",3,1300,no loans,Other,"Yes, but was returned to the country of origin",Due to insufficient financial resources,1300
-900,307,GTM,Chiquimula,"irregular on own, with caravan",3,1300,no loans,Other,"Yes, but was returned to the country of origin",Due to insufficient financial resources,1300
 902,308,GTM,Chiquimula,"irregular on own, with caravan",3,6500,all loans,United States of America,"Yes, you reside in the destination country",,6500
 914,309,HND,Cortes,irrregular coyote,1,13000,no loans,United States of America,"Yes, you reside in the destination country",,13000
 916,310,HND,Cortes,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: start business,50000
@@ -317,7 +287,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 953,316,HND,Yoro,irrregular coyote,1,5000,all loans,United States of America,"Yes, you reside in the destination country",,5000
 959,317,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 969,318,SLV,Usulutan,irrregular coyote,1,5000,all loans,United States of America,"Yes, you reside in the destination country",,5000
-975,319,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
+975,319,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,,,50000
 977,320,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 979,321,SLV,Usulutan,irrregular coyote,1,4000,all loans,United States of America,"Yes, you reside in the destination country",,4000
 979,322,SLV,Usulutan,irrregular coyote,1,4000,all loans,United States of America,"Yes, you reside in the destination country",,4000
@@ -368,7 +338,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1030,367,SLV,Usulutan,irrregular coyote,1,3000,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,3000
 1032,368,SLV,Usulutan,irrregular coyote,1,6000,some loans,United States of America,"Yes, you reside in the destination country",,6000
 1033,369,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-1033,370,SLV,Usulutan,regular,,1,no loans,Canada,"Yes, you reside in the destination country",,50000
 1034,371,SLV,Usulutan,irrregular coyote,1,9000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,9000
 1036,372,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 1037,373,SLV,Usulutan,irrregular coyote,1,5000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,5000
@@ -377,7 +346,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1039,376,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1046,377,SLV,Usulutan,irrregular coyote,1,6600,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,6600
 1048,378,SLV,Usulutan,"irregular on own, with caravan",1,300,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,300
-1052,379,SLV,Usulutan,irrregular coyote,1,7000,all loans,United States of America,NS / NR,,7000
+1052,379,SLV,Usulutan,irrregular coyote,1,7000,all loans,United States of America,,,7000
 1055,380,SLV,Usulutan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 1059,381,HND,Yoro,irrregular coyote,1,11000,some loans,United States of America,"Yes, you reside in the destination country",,11000
 1061,382,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -392,8 +361,8 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1069,391,SLV,Usulutan,irrregular coyote,1,7000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,7000
 1070,392,SLV,Usulutan,irrregular coyote,1,6000,all loans,United States of America,"Yes, you reside in the destination country",,6000
 1074,393,SLV,Usulutan,irrregular coyote,1,4500,no loans,United States of America,"Yes, you reside in the destination country",,4500
-1074,394,SLV,Usulutan,irrregular coyote,1,13000,all loans,United States of America,NS / NR,,13000
-1080,395,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,NS / NR,,50000
+1074,394,SLV,Usulutan,irrregular coyote,1,13000,all loans,United States of America,,,13000
+1080,395,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,,,50000
 1081,396,HND,Yoro,irrregular coyote,1,10500,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,10500
 1083,397,SLV,Usulutan,irrregular coyote,1,7000,all loans,United States of America,"Yes, you reside in the destination country",,7000
 1083,398,SLV,Usulutan,irrregular coyote,1,7000,no loans,United States of America,"Yes, you reside in the destination country",,7000
@@ -403,12 +372,10 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1098,402,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1106,403,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1106,404,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
-1108,405,HND,Yoro,"irregular on own, with caravan",,1,all loans,Mexico,"Yes, you reside in the destination country",,50000
 1112,406,GTM,San Marcos,irrregular coyote,3,3250,all loans,United States of America,"Yes, you reside in the destination country",,3250
 1112,407,GTM,San Marcos,irrregular coyote,3,3250,all loans,United States of America,"Yes, you reside in the destination country",,3250
 1112,408,GTM,San Marcos,irrregular coyote,3,3900,all loans,United States of America,"Yes, you reside in the destination country",,3900
 1113,409,GTM,San Marcos,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-1115,410,HND,Yoro,regular,,1,no loans,Mexico,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 1116,411,HND,Yoro,"irregular on own, with caravan",,1,some loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 1118,412,HND,Yoro,"irregular on own, with caravan",2,1681,no loans,United States of America,"Yes, you reside in the destination country",,1681
 1120,413,HND,Yoro,"irregular on own, with caravan",1,2500,some loans,United States of America,"Yes, you reside in the destination country",,2500
@@ -430,7 +397,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1164,429,HND,Cortes,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1173,430,GTM,Chiquimula,irrregular coyote,3,10400,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,10400
 1174,431,GTM,Chiquimula,irrregular coyote,3,2600,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,2600
-1178,432,GTM,Chiquimula,irrregular coyote,,1,all loans,United States of America,NS / NR,,50000
+1178,432,GTM,Chiquimula,irrregular coyote,,1,all loans,United States of America,,,50000
 1178,433,GTM,Chiquimula,irrregular coyote,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Other,50000
 1185,434,HND,Yoro,regular,2,820,some loans,United States of America,"Yes, you reside in the destination country",,820
 1191,435,GTM,San Marcos,irrregular coyote,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
@@ -439,7 +406,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1202,438,HND,Cortes,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 1204,439,GTM,Huehuetenango,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1208,440,GTM,Huehuetenango,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-1210,441,HND,Yoro,regular,,1,all loans,Other,"Yes, you reside in the destination country",,50000
 1214,442,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 1214,443,GTM,Huehuetenango,irrregular coyote,3,1300,all loans,United States of America,"Yes, you reside in the destination country",,1300
 1219,444,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -458,7 +424,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1278,457,GTM,Chiquimula,irrregular coyote,3,9100,all loans,United States of America,"Yes, you reside in the destination country",,9100
 1282,458,GTM,Huehuetenango,irrregular coyote,3,1950,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,1950
 1288,459,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-1291,460,HND,Yoro,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
 1296,461,GTM,Huehuetenango,irrregular coyote,3,11310,all loans,United States of America,"Yes, you reside in the destination country",,11310
 1297,462,GTM,Huehuetenango,irrregular coyote,3,2990,all loans,United States of America,"Yes, you reside in the destination country",,2990
 1298,463,GTM,Huehuetenango,irrregular coyote,3,2990,all loans,United States of America,"Yes, you reside in the destination country",,2990
@@ -476,7 +441,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1335,475,SLV,Usulutan,irrregular coyote,1,5600,all loans,United States of America,"Yes, you reside in the destination country",,5600
 1335,476,SLV,Usulutan,irrregular coyote,1,5000,all loans,United States of America,"Yes, you reside in the destination country",,5000
 1341,477,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-1341,478,SLV,Usulutan,regular,,1,no loans,United States of America,NS / NR,,50000
+1341,478,SLV,Usulutan,regular,,1,no loans,United States of America,,,50000
 1343,479,SLV,Usulutan,irrregular coyote,1,10000,no loans,United States of America,"Yes, you reside in the destination country",,10000
 1343,480,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1344,481,SLV,Usulutan,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -490,13 +455,12 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1358,489,SLV,Usulutan,irrregular coyote,1,5000,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,5000
 1358,490,SLV,Usulutan,irrregular coyote,1,5000,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,5000
 1358,491,SLV,Usulutan,irrregular coyote,1,6000,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,6000
-1358,492,SLV,Usulutan,irrregular coyote,,1,no loans,NS / NR,NS / NR,,50000
 1359,493,SLV,Usulutan,irrregular coyote,1,7000,all loans,United States of America,"Yes, you reside in the destination country",,7000
 1359,494,SLV,Usulutan,irrregular coyote,1,7000,all loans,United States of America,"Yes, you reside in the destination country",,7000
 1361,495,SLV,Usulutan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 1363,496,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1363,497,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-1364,498,SLV,Usulutan,regular,,1,no loans,United States of America,NS / NR,,50000
+1364,498,SLV,Usulutan,regular,,1,no loans,United States of America,,,50000
 1371,499,SLV,Usulutan,irrregular coyote,1,10500,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,10500
 1371,500,SLV,Usulutan,regular,,1,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 1381,501,SLV,Usulutan,irrregular coyote,1,9000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,9000
@@ -508,7 +472,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1398,507,SLV,Usulutan,regular,,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 1398,508,SLV,Usulutan,"irregular on own, with caravan",,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 1398,509,SLV,Usulutan,"irregular on own, with caravan",,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
-1400,510,SLV,Usulutan,regular,,1,no loans,United States of America,NS / NR,,50000
+1400,510,SLV,Usulutan,regular,,1,no loans,United States of America,,,50000
 1402,511,SLV,Usulutan,irrregular coyote,1,3000,no loans,United States of America,"Yes, you reside in the destination country",,3000
 1406,512,SLV,Usulutan,regular,1,1800,no loans,United States of America,"Yes, you reside in the destination country",,1800
 1407,513,SLV,Usulutan,irrregular coyote,1,11000,all loans,United States of America,"Yes, you reside in the destination country",,11000
@@ -528,11 +492,9 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1417,527,SLV,Usulutan,irrregular coyote,1,5000,all loans,United States of America,"Yes, you reside in the destination country",,5000
 1418,528,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1418,529,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-1421,530,SLV,Usulutan,regular,,1,no loans,Canada,"Yes, you reside in the destination country",,50000
 1422,531,SLV,Usulutan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-1422,532,SLV,Usulutan,regular,,1,no loans,United States of America,NS / NR,,50000
-1422,533,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
-1425,534,SLV,Usulutan,regular,,1,all loans,Honduras,"Yes, you reside in the destination country",,50000
+1422,532,SLV,Usulutan,regular,,1,no loans,United States of America,,,50000
+1422,533,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,,,50000
 1426,535,SLV,Usulutan,irrregular coyote,1,3000,no loans,United States of America,"Yes, you reside in the destination country",,3000
 1426,536,SLV,Usulutan,irrregular coyote,1,3000,no loans,United States of America,"Yes, you reside in the destination country",,3000
 1427,537,SLV,Usulutan,irrregular coyote,1,8000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,8000
@@ -540,7 +502,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1428,539,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 1428,540,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 1429,541,SLV,Usulutan,irrregular coyote,1,8000,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,8000
-1433,542,SLV,Usulutan,"irregular on own, with caravan",,1,no loans,United States of America,NS / NR,,50000
+1433,542,SLV,Usulutan,"irregular on own, with caravan",,1,no loans,United States of America,,,50000
 1441,543,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 1443,544,SLV,Usulutan,regular,1,3500,all loans,United States of America,"Yes, you reside in the destination country",,3500
 1447,545,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -552,9 +514,9 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1461,551,HND,Yoro,irrregular coyote,2,5125,all loans,United States of America,"Yes, you reside in the destination country",,5125
 1461,552,HND,Yoro,irrregular coyote,2,5125,all loans,United States of America,"Yes, you reside in the destination country",,5125
 1465,553,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-1469,554,SLV,Usulutan,"irregular on own, with caravan",1,100,no loans,United States of America,NS / NR,,100
+1469,554,SLV,Usulutan,"irregular on own, with caravan",1,100,no loans,United States of America,,,100
 1473,555,SLV,Usulutan,irrregular coyote,1,4000,some loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,4000
-1476,556,SLV,Usulutan,regular,,1,no loans,United States of America,NS / NR,,50000
+1476,556,SLV,Usulutan,regular,,1,no loans,United States of America,,,50000
 1477,557,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1477,558,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1478,559,SLV,Usulutan,irrregular coyote,1,3000,no loans,United States of America,"Yes, you reside in the destination country",,3000
@@ -566,11 +528,11 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1488,565,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to insufficient financial resources,50000
 1489,566,SLV,Usulutan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 1491,567,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-1493,568,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
+1493,568,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,,,50000
 1493,569,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 1494,570,SLV,Usulutan,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 1495,571,SLV,Usulutan,irrregular coyote,,1,some loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-1503,572,SLV,Usulutan,regular,,1,all loans,United States of America,NS / NR,,50000
+1503,572,SLV,Usulutan,regular,,1,all loans,United States of America,,,50000
 1504,573,SLV,Usulutan,regular,1,1400,all loans,United States of America,"Yes, you reside in the destination country",,1400
 1505,574,GTM,San Marcos,irrregular coyote,3,14950,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,14950
 1510,575,SLV,Usulutan,irrregular coyote,1,3000,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,3000
@@ -585,7 +547,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1542,584,HND,Cortes,"irregular on own, with caravan",2,410,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,410
 1545,585,GTM,San Marcos,irrregular coyote,3,6500,all loans,United States of America,"Yes, you reside in the destination country",,6500
 1546,586,GTM,San Marcos,irrregular coyote,3,9750,all loans,United States of America,"Yes, you reside in the destination country",,9750
-1550,587,GTM,San Marcos,regular,3,26,no loans,Mexico,"Yes, you reside in the destination country",,26
 1555,588,GTM,San Marcos,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1564,589,GTM,Chiquimula,regular,3,468,no loans,United States of America,"Yes, you reside in the destination country",,468
 1569,590,GTM,Chiquimula,irrregular coyote,3,2990,all loans,United States of America,"Yes, you reside in the destination country",,2990
@@ -615,7 +576,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1655,614,GTM,Huehuetenango,irrregular coyote,3,3900,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,3900
 1655,615,GTM,Huehuetenango,"irregular on own, with caravan",3,1300,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,1300
 1655,616,GTM,Huehuetenango,"irregular on own, with caravan",3,3900,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,3900
-1656,617,GTM,Huehuetenango,regular,,1,all loans,Mexico,"Yes, you reside in the destination country",,50000
 1660,618,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1660,619,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1660,620,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -653,7 +613,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1744,652,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1749,653,SLV,Usulutan,irrregular coyote,,1,some loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 1749,654,SLV,Usulutan,"irregular on own, with caravan",1,1700,all loans,United States of America,"Yes, you reside in the destination country",,1700
-1761,655,SLV,Usulutan,"irregular on own, with caravan",1,1000,some loans,United States of America,NS / NR,,1000
+1761,655,SLV,Usulutan,"irregular on own, with caravan",1,1000,some loans,United States of America,,,1000
 1763,656,SLV,Usulutan,irrregular coyote,1,12000,some loans,United States of America,"Yes, you reside in the destination country",,12000
 1764,657,SLV,Usulutan,"irregular on own, with caravan",1,2500,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,2500
 1764,658,SLV,Usulutan,"irregular on own, with caravan",1,2500,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,2500
@@ -674,11 +634,9 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1799,673,SLV,Usulutan,irrregular coyote,1,7000,some loans,United States of America,"Yes, you reside in the destination country",,7000
 1800,674,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 1800,675,SLV,Usulutan,"irregular on own, with caravan",1,300,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,300
-1803,676,SLV,Usulutan,irrregular coyote,,1,some loans,NS / NR,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
-1804,677,SLV,Usulutan,"irregular on own, with caravan",,1,no loans,United States of America,NS / NR,,50000
+1804,677,SLV,Usulutan,"irregular on own, with caravan",,1,no loans,United States of America,,,50000
 1820,678,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 1824,679,HND,Yoro,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-1824,680,HND,Yoro,"irregular on own, with caravan",,1,all loans,Spain,"Yes, you reside in the destination country",,50000
 1825,681,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1825,682,HND,Yoro,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1825,683,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -692,11 +650,11 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1848,691,HND,Yoro,"irregular on own, with caravan",,1,some loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 1857,692,GTM,Chiquimula,regular,3,1820,all loans,United States of America,"Yes, you reside in the destination country",,1820
 1859,693,GTM,Chiquimula,irrregular coyote,3,13000,all loans,United States of America,"Yes, you reside in the destination country",,13000
-1861,694,GTM,Chiquimula,regular,,1,no loans,United States of America,NS / NR,,50000
-1861,695,GTM,Chiquimula,regular,,1,no loans,United States of America,NS / NR,,50000
-1863,696,GTM,Chiquimula,regular,,1,no loans,United States of America,NS / NR,,50000
-1863,697,GTM,Chiquimula,regular,,1,no loans,United States of America,NS / NR,,50000
-1864,698,GTM,Chiquimula,regular,,1,no loans,United States of America,NS / NR,,50000
+1861,694,GTM,Chiquimula,regular,,1,no loans,United States of America,,,50000
+1861,695,GTM,Chiquimula,regular,,1,no loans,United States of America,,,50000
+1863,696,GTM,Chiquimula,regular,,1,no loans,United States of America,,,50000
+1863,697,GTM,Chiquimula,regular,,1,no loans,United States of America,,,50000
+1864,698,GTM,Chiquimula,regular,,1,no loans,United States of America,,,50000
 1875,699,GTM,San Marcos,irrregular coyote,3,13000,some loans,United States of America,"Not yet, it is in transit to the destination country",,13000
 1885,700,GTM,Chiquimula,irrregular coyote,3,6500,all loans,United States of America,"Yes, you reside in the destination country",,6500
 1891,701,GTM,Chiquimula,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -718,7 +676,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1951,717,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1951,718,GTM,Huehuetenango,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1951,719,GTM,Huehuetenango,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-1951,720,GTM,Huehuetenango,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
+1951,720,GTM,Huehuetenango,irrregular coyote,,1,no loans,United States of America,,,50000
 1952,721,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1958,722,GTM,Huehuetenango,"irregular on own, with caravan",3,1040,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,1040
 1959,723,GTM,Huehuetenango,"irregular on own, with caravan",3,1625,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,1625
@@ -731,22 +689,18 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1973,730,GTM,Huehuetenango,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1973,731,GTM,Huehuetenango,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1974,732,GTM,Huehuetenango,irrregular coyote,3,11050,all loans,United States of America,"Yes, you reside in the destination country",,11050
-1977,733,HND,Yoro,regular,2,1640,no loans,Spain,"Yes, you reside in the destination country",,1640
-1977,734,HND,Yoro,regular,2,1640,no loans,Spain,"Yes, you reside in the destination country",,1640
 1982,735,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 1982,736,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 1983,737,HND,Yoro,irrregular coyote,,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 1986,738,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1986,739,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1986,740,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-1987,741,HND,Choluteca,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
+1987,741,HND,Choluteca,irrregular coyote,,1,no loans,United States of America,,,50000
 1990,742,HND,Yoro,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1990,743,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1990,744,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 1990,745,HND,Yoro,irrregular coyote,,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
-1990,746,HND,Yoro,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
-1991,747,HND,Yoro,"irregular on own, with caravan",,1,no loans,Mexico,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-1993,748,HND,Choluteca,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
+1993,748,HND,Choluteca,irrregular coyote,,1,no loans,United States of America,,,50000
 1996,749,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1996,750,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 1996,751,SLV,Usulutan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -755,7 +709,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 1998,754,HND,Choluteca,irrregular coyote,1,6000,some loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,6000
 2000,755,SLV,Ahuachapan,irrregular coyote,1,6000,some loans,United States of America,"Yes, you reside in the destination country",,6000
 2001,756,SLV,Ahuachapan,regular,,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
-2007,757,HND,Yoro,irrregular coyote,,1,all loans,United States of America,NS / NR,,50000
+2007,757,HND,Yoro,irrregular coyote,,1,all loans,United States of America,,,50000
 2013,758,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 2017,759,HND,Yoro,"irregular on own, with caravan",2,615,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,615
 2019,760,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
@@ -764,50 +718,40 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2035,763,SLV,Ahuachapan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 2036,764,SLV,Ahuachapan,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 2038,765,SLV,Usulutan,regular,1,2000,some loans,United States of America,"Yes, you reside in the destination country",,2000
-2047,766,SLV,Usulutan,regular,1,1500,no loans,United States of America,NS / NR,,1500
+2047,766,SLV,Usulutan,regular,1,1500,no loans,United States of America,,,1500
 2049,767,SLV,Usulutan,irrregular coyote,1,12000,all loans,United States of America,"Yes, you reside in the destination country",,12000
 2053,768,SLV,Usulutan,irrregular coyote,1,1500,all loans,United States of America,"Yes, you reside in the destination country",,1500
 2053,769,SLV,Usulutan,irrregular coyote,1,1500,all loans,United States of America,"Yes, you reside in the destination country",,1500
 2053,770,SLV,Usulutan,irrregular coyote,1,1500,all loans,United States of America,"Yes, you reside in the destination country",,1500
 2053,771,SLV,Usulutan,irrregular coyote,1,1500,all loans,United States of America,"Yes, you reside in the destination country",,1500
 2060,772,SLV,Ahuachapan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-2066,773,SLV,Ahuachapan,"irregular on own, with caravan",,1,no loans,Guatemala,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 2078,774,SLV,Ahuachapan,"irregular on own, with caravan",1,500,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,500
 2084,775,SLV,Ahuachapan,"irregular on own, with caravan",1,500,no loans,United States of America,"Yes, but was returned to the country of origin",Due to insufficient financial resources,500
-2088,776,SLV,Ahuachapan,regular,1,250,all loans,Belize,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,250
-2098,777,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,NS / NR,,50000
-2098,778,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,NS / NR,,50000
+2098,777,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,,,50000
+2098,778,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,,,50000
 2099,779,HND,Yoro,irrregular coyote,1,4500,all loans,United States of America,"Yes, you reside in the destination country",,4500
 2099,780,HND,Yoro,irrregular coyote,1,5000,all loans,United States of America,"Yes, you reside in the destination country",,5000
 2101,781,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 2104,782,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 2105,783,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 2108,784,HND,Yoro,"irregular on own, with caravan",1,7000,all loans,United States of America,"Not yet, it is in transit to the destination country",,7000
-2111,785,HND,Yoro,"irregular on own, with caravan",,1,all loans,Mexico,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 2111,786,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 2113,787,SLV,Ahuachapan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: compensation,50000
 2116,788,SLV,Ahuachapan,irrregular coyote,1,9000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,9000
 2119,789,SLV,Ahuachapan,"irregular on own, with caravan",,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
-2122,790,SLV,Ahuachapan,regular,,1,no loans,Honduras,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,50000
-2138,791,SLV,Ahuachapan,regular,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
 2149,792,SLV,Ahuachapan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Other,50000
 2149,793,SLV,Ahuachapan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Other,50000
-2156,794,SLV,Ahuachapan,regular,,1,some loans,Spain,"Yes, you reside in the destination country",,50000
-2167,795,SLV,Ahuachapan,"irregular on own, with caravan",,1,no loans,Belize,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,50000
-2176,796,HND,Choluteca,regular,2,1640,all loans,Spain,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,1640
 2187,797,SLV,Ahuachapan,"irregular on own, with caravan",1,25,no loans,United States of America,"No, but he resided in another country and was returned",Due to insufficient financial resources,25
-2189,798,HND,Choluteca,regular,2,12.3,no loans,Honduras,"No, but he resided in another country and was returned",Due to insufficient financial resources,12.3
 2201,799,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: start business,50000
 2201,800,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: start business,50000
 2206,801,HND,Yoro,"irregular on own, with caravan",1,6000,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,6000
 2212,802,HND,Choluteca,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-2221,803,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,NS / NR,,50000
-2226,804,HND,Choluteca,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
+2221,803,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,,,50000
+2226,804,HND,Choluteca,irrregular coyote,,1,no loans,United States of America,,,50000
 2228,805,HND,Choluteca,"irregular on own, with caravan",,1,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 2230,806,HND,Choluteca,irrregular coyote,2,7380,all loans,United States of America,"Yes, you reside in the destination country",,7380
 2232,807,HND,Yoro,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 2232,808,HND,Yoro,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-2235,809,HND,Yoro,regular,2,3895,no loans,Spain,"Yes, you reside in the destination country",,3895
 2242,810,HND,Choluteca,"irregular on own, with caravan",2,10250,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,10250
 2243,811,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 2243,812,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
@@ -819,7 +763,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2248,818,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2249,819,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 2249,820,HND,Yoro,regular,,1,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
-2250,821,HND,Yoro,regular,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
 2252,822,HND,Yoro,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 2252,823,HND,Yoro,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 2253,824,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -827,7 +770,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2254,826,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 2255,827,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2255,828,HND,Yoro,regular,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
-2256,829,HND,Yoro,"irregular on own, with caravan",2,2050,no loans,Spain,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,2050
 2257,830,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2258,831,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 2258,832,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -839,25 +781,17 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2260,838,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 2260,839,HND,Yoro,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2260,840,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-2260,841,HND,Yoro,"irregular on own, with caravan",,1,all loans,Mexico,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,50000
 2261,842,HND,Yoro,irrregular coyote,1,6000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,6000
-2261,843,HND,Yoro,regular,2,1886,no loans,Spain,"Yes, you reside in the destination country",,1886
-2264,844,HND,Choluteca,"irregular on own, with caravan",,1,all loans,Honduras,"Yes, you reside in the destination country",,50000
 2268,845,HND,Choluteca,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Other,50000
 2277,846,GTM,San Marcos,irrregular coyote,3,11050,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,11050
 2280,847,GTM,San Marcos,irrregular coyote,3,11050,all loans,United States of America,"Not yet, it is in transit to the destination country",,11050
 2284,848,HND,Choluteca,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-2291,849,HND,Choluteca,regular,2,828.2,some loans,Panama,"Yes, you reside in the destination country",,828.2
-2292,850,HND,Choluteca,regular,,1,no loans,Panama,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
-2293,851,HND,Choluteca,regular,2,164,some loans,Costa Rica,"Yes, but was returned to the country of origin",By voluntary decision: other,164
-2293,852,HND,Choluteca,regular,,1,no loans,United States of America,NS / NR,,50000
+2293,852,HND,Choluteca,regular,,1,no loans,United States of America,,,50000
 2303,853,HND,Choluteca,"irregular on own, with caravan",2,82,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,82
 2303,854,HND,Choluteca,"irregular on own, with caravan",2,82,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,82
 2313,855,GTM,Alta Verapaz,irrregular coyote,3,6500,all loans,United States of America,"Yes, you reside in the destination country",,6500
 2330,856,GTM,Alta Verapaz,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
-2336,857,HND,Yoro,regular,,1,no loans,Mexico,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 2378,858,HND,Yoro,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-2378,859,HND,Yoro,regular,2,1435,no loans,Spain,"Yes, you reside in the destination country",,1435
 2382,860,HND,Yoro,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2382,861,HND,Yoro,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2382,862,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
@@ -873,15 +807,14 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2400,872,GTM,Alta Verapaz,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 2403,873,GTM,Alta Verapaz,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 2406,874,HND,Yoro,irrregular coyote,2,12300,all loans,United States of America,"Yes, you reside in the destination country",,12300
-2412,875,GTM,Alta Verapaz,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
+2412,875,GTM,Alta Verapaz,irrregular coyote,,1,no loans,United States of America,,,50000
 2417,876,HND,Choluteca,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 2417,877,HND,Choluteca,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2420,878,HND,Cortes,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 2425,879,GTM,Chiquimula,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 2430,880,GTM,Chiquimula,irrregular coyote,3,6500,some loans,United States of America,"Yes, you reside in the destination country",,6500
-2439,881,HND,Yoro,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
+2439,881,HND,Yoro,irrregular coyote,,1,no loans,United States of America,,,50000
 2440,882,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-2451,883,GTM,Alta Verapaz,regular,,1,no loans,Mexico,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 2454,884,GTM,Alta Verapaz,irrregular coyote,3,3900,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,3900
 2472,885,GTM,Huehuetenango,irrregular coyote,3,5720,all loans,United States of America,"Yes, you reside in the destination country",,5720
 2474,886,GTM,Huehuetenango,irrregular coyote,3,11050,all loans,United States of America,"Yes, you reside in the destination country",,11050
@@ -895,15 +828,10 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2479,894,GTM,Huehuetenango,irrregular coyote,3,7800,all loans,United States of America,"Yes, you reside in the destination country",,7800
 2479,895,GTM,Huehuetenango,irrregular coyote,3,7800,all loans,United States of America,"Yes, you reside in the destination country",,7800
 2479,896,GTM,Huehuetenango,irrregular coyote,3,7800,all loans,United States of America,"Yes, you reside in the destination country",,7800
-2488,897,HND,Choluteca,regular,,1,some loans,Spain,"Yes, you reside in the destination country",,50000
-2488,898,HND,Choluteca,regular,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
 2488,899,HND,Choluteca,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-2491,900,HND,Choluteca,regular,,1,all loans,Nicaragua,"Yes, you reside in the destination country",,50000
 2493,901,GTM,Huehuetenango,"irregular on own, with caravan",3,39,no loans,United States of America,"Not yet, it is in transit to the destination country",,39
 2494,902,GTM,Huehuetenango,irrregular coyote,3,13000,all loans,United States of America,"Yes, you reside in the destination country",,13000
 2500,903,GTM,Huehuetenango,"irregular on own, with caravan",3,1950,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,1950
-2502,904,HND,Choluteca,regular,2,1435,no loans,Spain,"Yes, you reside in the destination country",,1435
-2506,905,HND,Yoro,"irregular on own, with caravan",,1,all loans,Mexico,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 2507,906,HND,Yoro,irrregular coyote,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 2511,907,HND,Yoro,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2512,908,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
@@ -929,9 +857,8 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2577,928,HND,Yoro,irrregular coyote,1,12000,no loans,United States of America,"Yes, you reside in the destination country",,12000
 2581,929,SLV,Ahuachapan,irrregular coyote,1,700,some loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,700
 2595,930,SLV,Ahuachapan,"irregular on own, with caravan",1,120,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,120
-2596,931,SLV,Ahuachapan,regular,,1,no loans,Guatemala,"Yes, you reside in the destination country",,50000
 2599,932,SLV,Ahuachapan,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-2601,933,SLV,Ahuachapan,"irregular on own, with caravan",,1,no loans,United States of America,NS / NR,,50000
+2601,933,SLV,Ahuachapan,"irregular on own, with caravan",,1,no loans,United States of America,,,50000
 2607,934,SLV,Ahuachapan,irrregular coyote,1,8000,all loans,United States of America,"Yes, you reside in the destination country",,8000
 2628,935,SLV,Ahuachapan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: retirement,50000
 2629,936,SLV,Ahuachapan,regular,1,800,no loans,United States of America,"Yes, you reside in the destination country",,800
@@ -939,9 +866,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2641,938,SLV,Ahuachapan,regular,1,1500,no loans,United States of America,"No, but he resided in another country and was returned",By voluntary decision: other,1500
 2651,939,HND,Choluteca,"irregular on own, with caravan",,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 2651,940,HND,Choluteca,"irregular on own, with caravan",,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
-2652,941,HND,Choluteca,regular,2,1230,some loans,Spain,"Yes, you reside in the destination country",,1230
-2656,942,SLV,Ahuachapan,regular,1,900,no loans,Canada,"Yes, you reside in the destination country",,900
-2662,943,SLV,Ahuachapan,regular,1,1500,all loans,Spain,"Yes, but was returned to the country of origin",By voluntary decision: start business,1500
 2664,944,SLV,Ahuachapan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2664,945,SLV,Ahuachapan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 2664,946,SLV,Ahuachapan,irrregular coyote,,1,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
@@ -949,9 +873,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2668,948,SLV,Ahuachapan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 2693,949,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 2693,950,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-2704,951,SLV,Ahuachapan,regular,,1,no loans,Guatemala,"Yes, but was returned to the country of origin",Due to insufficient financial resources,50000
-2704,952,SLV,Ahuachapan,"irregular on own, with caravan",,1,no loans,Guatemala,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
-2704,953,SLV,Ahuachapan,"irregular on own, with caravan",,1,no loans,Guatemala,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 2711,954,SLV,Ahuachapan,"irregular on own, with caravan",1,200,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,200
 2719,955,SLV,Ahuachapan,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to illness or accident,50000
 2730,956,HND,Choluteca,irrregular coyote,1,14,all loans,United States of America,"Yes, you reside in the destination country",,14
@@ -959,12 +880,10 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2742,958,SLV,Usulutan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2752,959,HND,Choluteca,irrregular coyote,1,4000,all loans,United States of America,"Yes, you reside in the destination country",,4000
 2753,960,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
-2759,961,HND,Choluteca,irrregular coyote,,1,all loans,United States of America,NS / NR,,50000
+2759,961,HND,Choluteca,irrregular coyote,,1,all loans,United States of America,,,50000
 2767,962,SLV,Ahuachapan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2767,963,SLV,Ahuachapan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-2774,964,HND,Choluteca,irrregular coyote,,1,no loans,Canada,NS / NR,,50000
 2779,965,SLV,Ahuachapan,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-2782,966,HND,Choluteca,regular,,1,no loans,Canada,"Yes, you reside in the destination country",,50000
 2786,967,SLV,Ahuachapan,irrregular coyote,1,12000,all loans,United States of America,"Yes, you reside in the destination country",,12000
 2787,968,SLV,Ahuachapan,irrregular coyote,1,5000,all loans,United States of America,"Yes, you reside in the destination country",,5000
 2793,969,SLV,Ahuachapan,irrregular coyote,1,12000,all loans,United States of America,"Yes, you reside in the destination country",,12000
@@ -981,11 +900,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2812,980,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 2812,981,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 2814,982,HND,Choluteca,irrregular coyote,1,500,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,500
-2814,983,HND,Choluteca,regular,2,164,all loans,Costa Rica,"Yes, but was returned to the country of origin",By voluntary decision: other,164
 2816,984,HND,Choluteca,"irregular on own, with caravan",2,615,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,615
-2817,985,HND,Choluteca,regular,2,902,all loans,Panama,"Yes, you reside in the destination country",,902
-2817,986,HND,Choluteca,regular,2,902,all loans,Panama,"Yes, you reside in the destination country",,902
-2819,987,HND,Choluteca,regular,2,20.5,no loans,Nicaragua,"Yes, but was returned to the country of origin",By voluntary decision: other,20.5
 2821,988,HND,Choluteca,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Other,50000
 2826,989,GTM,Huehuetenango,irrregular coyote,3,11050,all loans,United States of America,"Yes, you reside in the destination country",,11050
 2826,990,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -993,7 +908,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2827,992,GTM,Huehuetenango,irrregular coyote,3,7800,all loans,United States of America,"Yes, you reside in the destination country",,7800
 2830,993,HND,Cortes,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 2832,994,HND,Cortes,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-2843,995,GTM,Alta Verapaz,"irregular on own, with caravan",3,195,no loans,Mexico,"Yes, but was returned to the country of origin",By voluntary decision: other,195
 2844,996,GTM,Alta Verapaz,irrregular coyote,3,6240,all loans,United States of America,"Yes, you reside in the destination country",,6240
 2844,997,GTM,Alta Verapaz,irrregular coyote,3,7800,all loans,United States of America,"Yes, you reside in the destination country",,7800
 2849,998,GTM,San Marcos,irrregular coyote,3,11700,all loans,United States of America,"Yes, you reside in the destination country",,11700
@@ -1014,10 +928,8 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2911,1013,HND,Choluteca,regular,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Other,50000
 2911,1014,HND,Choluteca,regular,,1,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 2913,1015,HND,Choluteca,regular,2,615,no loans,United States of America,"Yes, but was returned to the country of origin",Due to insufficient financial resources,615
-2920,1016,GTM,Alta Verapaz,regular,,1,all loans,Other,"Yes, but was returned to the country of origin",By voluntary decision: retirement,50000
 2922,1017,GTM,San Marcos,"irregular on own, with caravan",3,11050,all loans,United States of America,"Yes, you reside in the destination country",,11050
 2927,1018,GTM,Alta Verapaz,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
-2933,1019,GTM,Alta Verapaz,regular,3,3250,no loans,Italy,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,3250
 2935,1020,GTM,Alta Verapaz,irrregular coyote,3,29250,all loans,United States of America,"Yes, you reside in the destination country",,29250
 2935,1021,GTM,Alta Verapaz,irrregular coyote,3,10400,all loans,United States of America,"Yes, you reside in the destination country",,10400
 2941,1022,GTM,Huehuetenango,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -1032,26 +944,20 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 2974,1031,HND,Choluteca,irrregular coyote,1,7000,some loans,United States of America,"No, he passed away / disappeared on the way",,7000
 2977,1032,HND,Cortes,regular,1,500,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,500
 2977,1033,HND,Cortes,regular,1,0,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,0
-2981,1034,HND,Choluteca,regular,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
-2994,1035,HND,Choluteca,irrregular coyote,,1,no loans,NS / NR,NS / NR,,50000
 2996,1036,HND,Choluteca,irrregular coyote,,1,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 2998,1037,HND,Choluteca,regular,1,1700,all loans,United States of America,"Yes, you reside in the destination country",,1700
 3001,1038,GTM,Chiquimula,irrregular coyote,3,5200,all loans,United States of America,"Yes, you reside in the destination country",,5200
 3002,1039,GTM,Chiquimula,irrregular coyote,3,6500,all loans,United States of America,"Yes, you reside in the destination country",,6500
 3012,1040,GTM,Chiquimula,irrregular coyote,3,11050,all loans,United States of America,"Yes, you reside in the destination country",,11050
 3016,1041,HND,Choluteca,irrregular coyote,1,5000,all loans,United States of America,"Yes, you reside in the destination country",,5000
-3020,1042,HND,Choluteca,irrregular coyote,2,4.1,no loans,Nicaragua,"Yes, you reside in the destination country",,4.1
 3034,1043,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,50000
 3042,1044,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-3045,1045,HND,Francisco Morazan,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
+3045,1045,HND,Francisco Morazan,irrregular coyote,,1,no loans,United States of America,,,50000
 3051,1046,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 3054,1047,HND,Choluteca,"irregular on own, with caravan",2,533,all loans,United States of America,"Yes, you reside in the destination country",,533
-3055,1048,HND,Choluteca,"irregular on own, with caravan",,1,no loans,The Savior,"Yes, you reside in the destination country",,50000
 3055,1049,HND,Choluteca,"irregular on own, with caravan",2,82,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,82
 3065,1050,GTM,Alta Verapaz,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
-3067,1051,HND,Choluteca,regular,,1,no loans,Nicaragua,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
-3069,1052,HND,Choluteca,regular,2,2.46,no loans,Nicaragua,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,2.46
-3073,1053,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,NS / NR,,50000
+3073,1053,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,,,50000
 3075,1054,HND,Francisco Morazan,regular,2,4510,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,4510
 3076,1055,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 3086,1056,GTM,Alta Verapaz,irrregular coyote,3,7800,all loans,United States of America,"Yes, you reside in the destination country",,7800
@@ -1068,7 +974,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3116,1067,GTM,Chiquimula,regular,3,455,no loans,United States of America,"Yes, you reside in the destination country",,455
 3125,1068,GTM,Chiquimula,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 3127,1069,HND,Francisco Morazan,"irregular on own, with caravan",2,205,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,205
-3137,1070,HND,Francisco Morazan,"irregular on own, with caravan",2,123,no loans,Mexico,"No, but he resided in another country and was returned",By voluntary decision: other,123
 3138,1071,HND,Francisco Morazan,"irregular on own, with caravan",2,143.5,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,143.5
 3139,1072,HND,Francisco Morazan,irrregular coyote,2,2050,some loans,United States of America,"No, but he resided in another country and was returned",By voluntary decision: other,2050
 3140,1073,HND,Francisco Morazan,"irregular on own, with caravan",2,287,some loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,287
@@ -1080,13 +985,8 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3163,1079,GTM,Alta Verapaz,irrregular coyote,3,3900,no loans,United States of America,"Yes, you reside in the destination country",,3900
 3163,1080,GTM,Alta Verapaz,irrregular coyote,3,3900,no loans,United States of America,"Yes, you reside in the destination country",,3900
 3165,1081,GTM,Alta Verapaz,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-3166,1082,HND,Francisco Morazan,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
-3166,1083,HND,Francisco Morazan,regular,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
 3169,1084,HND,Francisco Morazan,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 3170,1085,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-3172,1086,GTM,Alta Verapaz,regular,3,19.5,no loans,Mexico,"Yes, you reside in the destination country",,19.5
-3172,1087,GTM,Alta Verapaz,regular,3,19.5,no loans,Mexico,"Yes, you reside in the destination country",,19.5
-3179,1088,GTM,Alta Verapaz,irrregular coyote,,1,all loans,NS / NR,"Yes, you reside in the destination country",,50000
 3180,1089,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 3180,1090,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 3181,1091,HND,Yoro,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -1096,11 +996,9 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3187,1095,HND,Choluteca,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 3187,1096,HND,Choluteca,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 3188,1097,HND,Choluteca,"irregular on own, with caravan",2,2050,all loans,United States of America,"Yes, you reside in the destination country",,2050
-3192,1098,HND,Choluteca,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
 3194,1099,GTM,San Marcos,irrregular coyote,3,11050,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,11050
 3196,1100,GTM,San Marcos,irrregular coyote,3,11700,all loans,United States of America,"Yes, died / disappeared in the destination country",,11700
 3204,1101,HND,Yoro,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-3209,1102,HND,Choluteca,regular,2,1496.5,some loans,Spain,"Yes, you reside in the destination country",,1496.5
 3211,1103,HND,Choluteca,"irregular on own, with caravan",2,82,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,82
 3211,1104,HND,Choluteca,"irregular on own, with caravan",2,82,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,82
 3220,1105,GTM,Alta Verapaz,irrregular coyote,3,10400,all loans,United States of America,"Yes, you reside in the destination country",,10400
@@ -1117,13 +1015,9 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3272,1116,GTM,Alta Verapaz,irrregular coyote,3,6500,all loans,United States of America,"Yes, you reside in the destination country",,6500
 3273,1117,GTM,Alta Verapaz,irrregular coyote,3,15.6,some loans,United States of America,"Yes, you reside in the destination country",,15.6
 3274,1118,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-3278,1119,HND,Francisco Morazan,regular,2,615,all loans,Spain,"Yes, you reside in the destination country",,615
-3278,1120,HND,Francisco Morazan,regular,2,820,all loans,Spain,"Yes, you reside in the destination country",,820
-3284,1121,HND,Francisco Morazan,regular,,1,some loans,Spain,"Yes, you reside in the destination country",,50000
 3292,1122,GTM,Chiquimula,irrregular coyote,1,8000,all loans,United States of America,"Yes, you reside in the destination country",,8000
 3298,1123,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 3298,1124,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-3300,1125,HND,Francisco Morazan,irrregular coyote,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
 3305,1126,HND,Yoro,irrregular coyote,1,5000,all loans,United States of America,"Yes, you reside in the destination country",,5000
 3312,1127,GTM,Chiquimula,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 3314,1128,GTM,Chiquimula,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
@@ -1142,9 +1036,8 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3341,1141,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 3341,1142,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 3353,1143,SLV,Ahuachapan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-3360,1144,SLV,Ahuachapan,"irregular on own, with caravan",1,7000,all loans,United States of America,NS / NR,,7000
+3360,1144,SLV,Ahuachapan,"irregular on own, with caravan",1,7000,all loans,United States of America,,,7000
 3361,1145,SLV,Ahuachapan,irrregular coyote,1,6000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,6000
-3362,1146,SLV,Ahuachapan,irrregular coyote,,1,all loans,Mexico,"Yes, you reside in the destination country",,50000
 3362,1147,SLV,Ahuachapan,irrregular coyote,1,6000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,6000
 3368,1148,SLV,Ahuachapan,irrregular coyote,1,9000,no loans,United States of America,"Yes, you reside in the destination country",,9000
 3368,1149,SLV,Ahuachapan,irrregular coyote,1,10000,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,10000
@@ -1153,11 +1046,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3391,1152,GTM,Alta Verapaz,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 3392,1153,GTM,Alta Verapaz,irrregular coyote,3,202.15,all loans,United States of America,"Yes, you reside in the destination country",,202.15
 3393,1154,GTM,Alta Verapaz,regular,3,5850,all loans,United States of America,"Yes, you reside in the destination country",,5850
-3396,1155,GTM,Alta Verapaz,"irregular on own, with caravan",,1,no loans,Mexico,"No, but he resided in another country and was returned",By voluntary decision: other,50000
-3402,1156,GTM,Alta Verapaz,regular,3,39,no loans,Mexico,"Yes, you reside in the destination country",,39
-3402,1157,GTM,Alta Verapaz,regular,3,39,no loans,Mexico,"Yes, you reside in the destination country",,39
-3402,1158,GTM,Alta Verapaz,regular,3,39,no loans,Mexico,"Yes, you reside in the destination country",,39
-3402,1159,GTM,Alta Verapaz,regular,3,39,no loans,Mexico,"Yes, you reside in the destination country",,39
 3415,1160,SLV,Ahuachapan,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 3421,1161,SLV,Ahuachapan,"irregular on own, with caravan",1,3000,some loans,United States of America,"Yes, you reside in the destination country",,3000
 3439,1162,SLV,Ahuachapan,irrregular coyote,1,8000,all loans,United States of America,"Yes, you reside in the destination country",,8000
@@ -1172,16 +1060,14 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3449,1171,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 3450,1172,HND,Yoro,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to insufficient financial resources,50000
 3453,1173,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-3459,1174,SLV,Ahuachapan,irrregular coyote,1,5000,all loans,United States of America,NS / NR,,5000
+3459,1174,SLV,Ahuachapan,irrregular coyote,1,5000,all loans,United States of America,,,5000
 3460,1175,SLV,Ahuachapan,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 3461,1176,SLV,Ahuachapan,irrregular coyote,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 3464,1177,SLV,Ahuachapan,irrregular coyote,,1,all loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 3468,1178,SLV,Ahuachapan,"irregular on own, with caravan",1,3000,no loans,United States of America,"Yes, you reside in the destination country",,3000
 3468,1179,SLV,Ahuachapan,"irregular on own, with caravan",1,3000,no loans,United States of America,"Yes, you reside in the destination country",,3000
 3480,1180,HND,Choluteca,regular,1,1200,some loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,1200
-3480,1181,HND,Choluteca,regular,,1,no loans,The Savior,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 3497,1182,HND,Choluteca,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-3507,1183,HND,Francisco Morazan,regular,2,2132,all loans,Spain,"Yes, you reside in the destination country",,2132
 3509,1184,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"No, he passed away / disappeared on the way",,50000
 3510,1185,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 3511,1186,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
@@ -1189,23 +1075,16 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3513,1188,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 3514,1189,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 3534,1190,HND,Francisco Morazan,"irregular on own, with caravan",,1,all loans,United States of America,"No, he passed away / disappeared on the way",,50000
-3537,1191,HND,Francisco Morazan,regular,2,1640,all loans,Italy,NS / NR,,1640
-3542,1192,HND,Francisco Morazan,regular,2,4920,all loans,Spain,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,4920
 3545,1193,SLV,Ahuachapan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 3549,1194,SLV,Ahuachapan,irrregular coyote,1,13000,all loans,United States of America,"Yes, you reside in the destination country",,13000
 3552,1195,SLV,Ahuachapan,irrregular coyote,1,8000,all loans,United States of America,"Yes, you reside in the destination country",,8000
 3569,1196,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 3588,1197,GTM,Chiquimula,irrregular coyote,3,10660,all loans,United States of America,"Yes, you reside in the destination country",,10660
 3590,1198,GTM,Chiquimula,irrregular coyote,3,10530,all loans,United States of America,"Yes, you reside in the destination country",,10530
-3594,1199,HND,Francisco Morazan,regular,,1,all loans,United States of America,NS / NR,,50000
-3598,1200,HND,Francisco Morazan,regular,2,4100,all loans,Spain,"Yes, you reside in the destination country",,4100
-3605,1201,HND,Francisco Morazan,regular,2,1435,all loans,Spain,"Yes, you reside in the destination country",,1435
+3594,1199,HND,Francisco Morazan,regular,,1,all loans,United States of America,,,50000
 3613,1202,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-3614,1203,HND,Francisco Morazan,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
 3615,1204,HND,Francisco Morazan,"irregular on own, with caravan",2,205,some loans,United States of America,"Yes, but was returned to the country of origin",For violence or insecurity,205
 3618,1205,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-3618,1206,HND,Francisco Morazan,regular,,1,some loans,Spain,"Yes, you reside in the destination country",,50000
-3618,1207,HND,Francisco Morazan,"irregular on own, with caravan",,1,some loans,Spain,"Yes, you reside in the destination country",,50000
 3621,1208,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 3623,1209,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 3624,1210,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
@@ -1220,7 +1099,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3680,1219,GTM,Alta Verapaz,irrregular coyote,3,23.4,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,23.4
 3685,1220,GTM,Alta Verapaz,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 3692,1221,HND,Francisco Morazan,irrregular coyote,2,6150,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,6150
-3692,1222,HND,Francisco Morazan,regular,2,3690,no loans,Spain,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,3690
 3693,1223,HND,Francisco Morazan,"irregular on own, with caravan",2,1435,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,1435
 3693,1224,HND,Francisco Morazan,regular,1,1500,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,1500
 3693,1225,HND,Francisco Morazan,regular,1,1500,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: start business,1500
@@ -1255,8 +1133,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3771,1254,HND,Francisco Morazan,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 3774,1255,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 3778,1256,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,"No, but he resided in another country and was returned",Due to insufficient financial resources,50000
-3779,1257,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,Mexico,"Yes, you reside in the destination country",,50000
-3779,1258,HND,Francisco Morazan,"irregular on own, with caravan",,1,all loans,Mexico,"Yes, you reside in the destination country",,50000
 3798,1259,SLV,Cabanas,irrregular coyote,1,14000,all loans,United States of America,"Yes, you reside in the destination country",,14000
 3798,1260,SLV,Cabanas,irrregular coyote,1,14000,all loans,United States of America,"Yes, you reside in the destination country",,14000
 3799,1261,SLV,Cabanas,irrregular coyote,1,9000,all loans,United States of America,"Yes, you reside in the destination country",,9000
@@ -1274,11 +1150,10 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3869,1273,SLV,Cabanas,irrregular coyote,1,9000,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,9000
 3869,1274,SLV,Cabanas,irrregular coyote,1,9000,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,9000
 3871,1275,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-3885,1276,HND,Francisco Morazan,regular,2,4100,all loans,United States of America,NS / NR,,4100
-3885,1277,HND,Francisco Morazan,regular,2,4100,all loans,United States of America,NS / NR,,4100
+3885,1276,HND,Francisco Morazan,regular,2,4100,all loans,United States of America,,,4100
+3885,1277,HND,Francisco Morazan,regular,2,4100,all loans,United States of America,,,4100
 3890,1278,SLV,Cabanas,irrregular coyote,1,14000,all loans,United States of America,"Yes, you reside in the destination country",,14000
 3890,1279,SLV,Cabanas,irrregular coyote,1,19000,all loans,United States of America,"Yes, you reside in the destination country",,19000
-3895,1280,HND,Francisco Morazan,regular,1,2100,no loans,Other,"Yes, you reside in the destination country",,2100
 3896,1281,SLV,Cabanas,regular,1,600,no loans,United States of America,"Yes, you reside in the destination country",,600
 3899,1282,SLV,Cabanas,irrregular coyote,1,15000,all loans,United States of America,"Not yet, it is in transit to the destination country",,15000
 3906,1283,SLV,Cabanas,irrregular coyote,1,10000,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,10000
@@ -1289,13 +1164,11 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3921,1288,SLV,Cabanas,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 3922,1289,SLV,Cabanas,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,50000
 3924,1290,SLV,Cabanas,irrregular coyote,1,4000,no loans,United States of America,"Yes, you reside in the destination country",,4000
-3928,1291,SLV,Cabanas,regular,1,900,no loans,United States of America,NS / NR,,900
+3928,1291,SLV,Cabanas,regular,1,900,no loans,United States of America,,,900
 3931,1292,SLV,Cabanas,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 3932,1293,SLV,Cabanas,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-3933,1294,SLV,Cabanas,regular,1,1000,all loans,Mexico,"Yes, you reside in the destination country",,1000
 3935,1295,HND,Choluteca,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 3935,1296,HND,Choluteca,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-3935,1297,HND,Choluteca,regular,,1,all loans,Honduras,"Yes, you reside in the destination country",,50000
 3939,1298,HND,Choluteca,irrregular coyote,1,6000,all loans,United States of America,"Yes, you reside in the destination country",,6000
 3939,1299,HND,Choluteca,irrregular coyote,1,6000,all loans,United States of America,"Yes, you reside in the destination country",,6000
 3940,1300,HND,Choluteca,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -1309,8 +1182,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 3960,1308,HND,Francisco Morazan,irrregular coyote,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 3965,1309,HND,Choluteca,irrregular coyote,1,400,all loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,400
 3977,1310,SLV,Ahuachapan,"irregular on own, with caravan",1,15000,all loans,United States of America,"Yes, you reside in the destination country",,15000
-3985,1311,HND,Yoro,regular,,1,no loans,Other,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
-3993,1312,HND,Francisco Morazan,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
 3994,1313,HND,Yoro,irrregular coyote,1,7000,all loans,United States of America,"Yes, you reside in the destination country",,7000
 4008,1314,SLV,Cabanas,regular,1,1000,no loans,United States of America,"Not yet, it is in transit to the destination country",,1000
 4009,1315,SLV,Cabanas,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,50000
@@ -1326,9 +1197,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4028,1325,SLV,Cabanas,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4030,1326,HND,Francisco Morazan,irrregular coyote,1,40000,all loans,United States of America,"Yes, you reside in the destination country",,40000
 4030,1327,HND,Francisco Morazan,regular,1,40000,no loans,United States of America,"Yes, you reside in the destination country",,40000
-4033,1328,HND,Choluteca,regular,1,3000,all loans,UK,"Yes, you reside in the destination country",,3000
-4033,1329,HND,Choluteca,regular,1,3000,all loans,UK,"Yes, you reside in the destination country",,3000
-4033,1330,HND,Choluteca,regular,1,3000,all loans,UK,"Yes, you reside in the destination country",,3000
 4041,1331,GTM,Alta Verapaz,irrregular coyote,3,5200,some loans,United States of America,"Yes, you reside in the destination country",,5200
 4048,1332,GTM,Alta Verapaz,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4049,1333,GTM,Alta Verapaz,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -1344,8 +1212,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4076,1343,GTM,Alta Verapaz,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to illness or accident,50000
 4080,1344,HND,Francisco Morazan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4080,1345,HND,Francisco Morazan,irrregular coyote,2,8200,all loans,United States of America,"Yes, you reside in the destination country",,8200
-4081,1346,HND,Francisco Morazan,regular,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
-4082,1347,HND,Francisco Morazan,regular,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
 4083,1348,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4083,1349,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4084,1350,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
@@ -1366,11 +1232,9 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4101,1365,HND,Francisco Morazan,"irregular on own, with caravan",2,143.5,no loans,United States of America,"Yes, you reside in the destination country",,143.5
 4106,1366,GTM,Alta Verapaz,irrregular coyote,3,4810,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,4810
 4108,1367,GTM,Alta Verapaz,irrregular coyote,3,7150,all loans,United States of America,"Yes, you reside in the destination country",,7150
-4110,1368,GTM,Alta Verapaz,irrregular coyote,,1,all loans,NS / NR,"Yes, you reside in the destination country",,50000
 4111,1369,GTM,Alta Verapaz,irrregular coyote,3,6240,all loans,United States of America,"Yes, you reside in the destination country",,6240
 4113,1370,HND,Yoro,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 4115,1371,GTM,Alta Verapaz,irrregular coyote,3,3250,no loans,United States of America,"Yes, you reside in the destination country",,3250
-4121,1372,HND,Francisco Morazan,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
 4124,1373,HND,Yoro,irrregular coyote,1,7000,some loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,7000
 4126,1374,HND,Yoro,"irregular on own, with caravan",1,7000,all loans,United States of America,"Yes, you reside in the destination country",,7000
 4137,1375,GTM,Chiquimula,irrregular coyote,3,4.55,all loans,United States of America,"Not yet, it is in transit to the destination country",,4.55
@@ -1378,22 +1242,17 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4142,1377,GTM,Chiquimula,irrregular coyote,3,11050,all loans,United States of America,"Yes, you reside in the destination country",,11050
 4147,1378,GTM,Chiquimula,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4154,1379,GTM,Chiquimula,irrregular coyote,3,7.8,some loans,United States of America,"Yes, you reside in the destination country",,7.8
-4157,1380,HND,Francisco Morazan,regular,2,4100,all loans,Spain,"Yes, you reside in the destination country",,4100
 4164,1381,HND,Francisco Morazan,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 4166,1382,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-4170,1383,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,The Savior,"Yes, you reside in the destination country",,50000
-4170,1384,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,The Savior,"Yes, you reside in the destination country",,50000
-4172,1385,HND,Francisco Morazan,"irregular on own, with caravan",1,70000,all loans,Spain,"Yes, you reside in the destination country",,70000
 4178,1386,HND,Francisco Morazan,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
-4184,1387,HND,Francisco Morazan,"irregular on own, with caravan",2,102.5,no loans,United States of America,NS / NR,,102.5
+4184,1387,HND,Francisco Morazan,"irregular on own, with caravan",2,102.5,no loans,United States of America,,,102.5
 4188,1388,HND,Francisco Morazan,"irregular on own, with caravan",2,94.3,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,94.3
 4189,1389,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 4190,1390,HND,Francisco Morazan,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4190,1391,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
-4201,1392,SLV,Cabanas,regular,,1,no loans,United States of America,NS / NR,,50000
-4201,1393,SLV,Cabanas,regular,,1,no loans,United States of America,NS / NR,,50000
+4201,1392,SLV,Cabanas,regular,,1,no loans,United States of America,,,50000
+4201,1393,SLV,Cabanas,regular,,1,no loans,United States of America,,,50000
 4204,1394,SLV,Cabanas,irrregular coyote,1,14000,all loans,United States of America,"Yes, you reside in the destination country",,14000
-4206,1395,SLV,Cabanas,regular,1,1200,all loans,Italy,"Yes, you reside in the destination country",,1200
 4207,1396,SLV,Cabanas,irrregular coyote,1,15000,some loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,15000
 4218,1397,SLV,Cabanas,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4226,1398,SLV,Cabanas,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -1401,8 +1260,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4227,1400,SLV,Cabanas,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4228,1401,SLV,Cabanas,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4231,1402,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-4231,1403,HND,Francisco Morazan,regular,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
-4233,1404,HND,Francisco Morazan,regular,,1,no loans,United States of America,NS / NR,,50000
+4233,1404,HND,Francisco Morazan,regular,,1,no loans,United States of America,,,50000
 4234,1405,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 4237,1406,SLV,Cabanas,irrregular coyote,1,6000,all loans,United States of America,"Yes, you reside in the destination country",,6000
 4237,1407,SLV,Cabanas,irrregular coyote,1,6000,all loans,United States of America,"Yes, you reside in the destination country",,6000
@@ -1448,10 +1306,9 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4335,1447,SLV,Cabanas,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4340,1448,SLV,Cabanas,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4350,1449,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
-4351,1450,HND,Choluteca,regular,2,2870,some loans,Spain,"Yes, you reside in the destination country",,2870
 4352,1451,HND,Choluteca,irrregular coyote,1,6000,no loans,United States of America,"Not yet, it is in transit to the destination country",,6000
 4353,1452,HND,Francisco Morazan,irrregular coyote,,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
-4357,1453,HND,Francisco Morazan,irrregular coyote,,1,no loans,United States of America,NS / NR,,50000
+4357,1453,HND,Francisco Morazan,irrregular coyote,,1,no loans,United States of America,,,50000
 4363,1454,SLV,Cabanas,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 4364,1455,SLV,Cabanas,irrregular coyote,1,2000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,2000
 4365,1456,SLV,Cabanas,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -1465,10 +1322,8 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4375,1464,SLV,Cabanas,irrregular coyote,,1,some loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,50000
 4376,1465,SLV,Cabanas,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4388,1466,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-4390,1467,HND,Francisco Morazan,"irregular on own, with caravan",,1,some loans,Spain,"Yes, you reside in the destination country",,50000
 4390,1468,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 4391,1469,HND,Francisco Morazan,regular,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-4392,1470,HND,Francisco Morazan,regular,,1,no loans,Spain,"Yes, you reside in the destination country",,50000
 4396,1471,GTM,Alta Verapaz,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4401,1472,GTM,Alta Verapaz,irrregular coyote,3,8710,some loans,United States of America,"Yes, you reside in the destination country",,8710
 4403,1473,GTM,Alta Verapaz,irrregular coyote,3,15.6,all loans,United States of America,"Yes, you reside in the destination country",,15.6
@@ -1477,25 +1332,16 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4424,1476,HND,Francisco Morazan,"irregular on own, with caravan",1,1000,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,1000
 4428,1477,HND,Francisco Morazan,"irregular on own, with caravan",2,410,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,410
 4429,1478,HND,Francisco Morazan,"irregular on own, with caravan",2,205,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,205
-4432,1479,HND,Francisco Morazan,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
-4432,1480,HND,Francisco Morazan,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
-4432,1481,HND,Francisco Morazan,regular,,1,all loans,Spain,"Yes, but was returned to the country of origin",Other,50000
 4434,1482,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-4436,1483,HND,Francisco Morazan,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
 4438,1484,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4443,1485,HND,Francisco Morazan,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,50000
 4449,1486,GTM,Alta Verapaz,irrregular coyote,3,4550,some loans,United States of America,"Yes, you reside in the destination country",,4550
 4449,1487,GTM,Alta Verapaz,irrregular coyote,3,4550,some loans,United States of America,"Yes, you reside in the destination country",,4550
 4449,1488,GTM,Alta Verapaz,irrregular coyote,3,10400,some loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,10400
-4456,1489,GTM,Alta Verapaz,regular,,1,no loans,Belize,"Yes, you reside in the destination country",,50000
-4463,1490,HND,Francisco Morazan,regular,2,2870,all loans,Spain,"Yes, you reside in the destination country",,2870
 4464,1491,HND,Francisco Morazan,irrregular coyote,2,2050,some loans,United States of America,"Yes, you reside in the destination country",,2050
-4464,1492,HND,Francisco Morazan,regular,2,2870,all loans,Spain,"Yes, you reside in the destination country",,2870
 4480,1493,SLV,San Salvador,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4489,1494,SLV,San Salvador,irrregular coyote,1,11000,all loans,United States of America,"Yes, you reside in the destination country",,11000
 4489,1495,SLV,San Salvador,irrregular coyote,1,12000,all loans,United States of America,"Yes, you reside in the destination country",,12000
-4499,1496,SLV,San Salvador,regular,,1,all loans,Guatemala,NS / NR,,50000
-4508,1497,SLV,San Salvador,regular,1,300,no loans,Costa Rica,"Yes, you reside in the destination country",,300
 4510,1498,SLV,Cabanas,irrregular coyote,1,6000,no loans,United States of America,"Yes, you reside in the destination country",,6000
 4515,1499,SLV,San Salvador,regular,1,5000,all loans,United States of America,"Yes, you reside in the destination country",,5000
 4521,1500,SLV,Cabanas,irrregular coyote,1,12000,no loans,United States of America,"Yes, you reside in the destination country",,12000
@@ -1516,8 +1362,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4569,1515,SLV,Cabanas,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 4569,1516,SLV,Cabanas,irrregular coyote,,1,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 4573,1517,SLV,Cabanas,irrregular coyote,1,6000,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,6000
-4578,1518,SLV,San Salvador,regular,,1,no loans,United States of America,NS / NR,,50000
-4581,1519,SLV,San Salvador,regular,,1,no loans,Costa Rica,"Yes, but was returned to the country of origin",NS / NR,50000
+4578,1518,SLV,San Salvador,regular,,1,no loans,United States of America,,,50000
 4588,1520,SLV,San Salvador,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 4592,1521,SLV,San Salvador,irrregular coyote,1,350,no loans,United States of America,"Yes, but was returned to the country of origin",Other,350
 4596,1522,SLV,San Salvador,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: start business,50000
@@ -1534,9 +1379,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4626,1533,SLV,Cabanas,irrregular coyote,1,12000,all loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,12000
 4627,1534,SLV,Cabanas,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4627,1535,SLV,Cabanas,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-4630,1536,HND,Francisco Morazan,regular,,1,all loans,Spain,NS / NR,,50000
-4630,1537,HND,Francisco Morazan,"irregular on own, with caravan",,1,all loans,Spain,NS / NR,,50000
-4630,1538,HND,Francisco Morazan,"irregular on own, with caravan",,1,all loans,Spain,NS / NR,,50000
 4632,1539,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
 4635,1540,HND,Francisco Morazan,"irregular on own, with caravan",,1,no loans,United States of America,"Not yet, it is in transit to the destination country",,50000
 4637,1541,HND,Francisco Morazan,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
@@ -1551,7 +1393,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4672,1550,GTM,Alta Verapaz,irrregular coyote,3,4810,all loans,United States of America,"Yes, you reside in the destination country",,4810
 4684,1551,GTM,Alta Verapaz,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4694,1552,GTM,Alta Verapaz,irrregular coyote,3,5200,some loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,5200
-4696,1553,SLV,San Salvador,regular,1,1800,some loans,Italy,"Yes, you reside in the destination country",,1800
 4699,1554,SLV,San Salvador,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4703,1555,SLV,San Salvador,irrregular coyote,1,4000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,4000
 4703,1556,SLV,San Salvador,irrregular coyote,1,4000,all loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,4000
@@ -1563,8 +1404,7 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4718,1562,SLV,San Salvador,irrregular coyote,1,500,all loans,United States of America,"No, but he resided in another country and was returned",By voluntary decision: other,500
 4718,1563,SLV,San Salvador,irrregular coyote,1,500,all loans,United States of America,"No, but he resided in another country and was returned",By voluntary decision: other,500
 4718,1564,SLV,San Salvador,irrregular coyote,1,500,all loans,United States of America,"No, but he resided in another country and was returned",By voluntary decision: other,500
-4719,1565,SLV,San Salvador,regular,1,1000,all loans,Spain,"Yes, you reside in the destination country",,1000
-4723,1566,SLV,San Salvador,"irregular on own, with caravan",,1,no loans,United States of America,NS / NR,,50000
+4723,1566,SLV,San Salvador,"irregular on own, with caravan",,1,no loans,United States of America,,,50000
 4725,1567,SLV,San Salvador,regular,1,800,all loans,United States of America,"Yes, you reside in the destination country",,800
 4726,1568,GTM,Alta Verapaz,irrregular coyote,3,3640,no loans,United States of America,"Yes, you reside in the destination country",,3640
 4726,1569,GTM,Alta Verapaz,irrregular coyote,3,3640,all loans,United States of America,"Yes, you reside in the destination country",,3640
@@ -1576,8 +1416,6 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4751,1575,SLV,San Salvador,irrregular coyote,,1,all loans,United States of America,"No, but he resided in another country and was returned",By voluntary decision: other,50000
 4758,1576,SLV,San Salvador,"irregular on own, with caravan",1,200,all loans,United States of America,"No, he passed away / disappeared on the way",,200
 4773,1577,SLV,San Salvador,regular,,1,all loans,United States of America,"No, he passed away / disappeared on the way",,50000
-4775,1578,SLV,San Salvador,"irregular on own, with caravan",1,400,all loans,Costa Rica,"Yes, but was returned to the country of origin",By voluntary decision: other,400
-4775,1579,SLV,San Salvador,"irregular on own, with caravan",1,400,all loans,Costa Rica,"Yes, but was returned to the country of origin",By voluntary decision: other,400
 4780,1580,SLV,San Salvador,regular,1,600,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: family reunification,600
 4787,1581,SLV,San Salvador,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4803,1582,SLV,San Salvador,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
@@ -1593,22 +1431,14 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4856,1592,SLV,San Salvador,"irregular on own, with caravan",,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
 4857,1593,SLV,San Salvador,regular,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4864,1594,SLV,San Salvador,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
-4867,1595,SLV,San Salvador,regular,1,2000,all loans,Other,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,2000
 4876,1596,SLV,San Salvador,irrregular coyote,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4876,1597,SLV,San Salvador,regular,,1,no loans,United States of America,"Yes, you reside in the destination country",,50000
 4876,1598,SLV,San Salvador,regular,1,2000,all loans,United States of America,"Yes, you reside in the destination country",,2000
 4878,1599,SLV,San Salvador,regular,1,600,no loans,United States of America,"Yes, but was returned to the country of origin",Other,600
-4879,1600,SLV,San Salvador,regular,1,3000,no loans,Italy,"Yes, you reside in the destination country",,3000
 4885,1601,SLV,San Salvador,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 4885,1602,SLV,San Salvador,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
-4887,1603,SLV,San Salvador,regular,,1,all loans,Panama,"Yes, you reside in the destination country",,50000
-4887,1604,SLV,San Salvador,regular,,1,no loans,Panama,"Yes, you reside in the destination country",,50000
-4887,1605,SLV,San Salvador,regular,,1,no loans,Panama,"Yes, you reside in the destination country",,50000
-4903,1606,SLV,San Salvador,regular,1,5000,all loans,Spain,"Yes, you reside in the destination country",,5000
-4908,1607,SLV,San Salvador,regular,1,2400,some loans,Italy,"Yes, but was returned to the country of origin",By voluntary decision: other,2400
 4912,1608,SLV,San Salvador,regular,,1,no loans,United States of America,"Yes, but was returned to the country of origin",By voluntary decision: other,50000
 4916,1609,SLV,San Salvador,irrregular coyote,,1,some loans,United States of America,"Yes, you reside in the destination country",,50000
-4942,1610,SLV,San Salvador,regular,1,1200,no loans,Spain,"Yes, you reside in the destination country",,1200
 4945,1611,SLV,San Salvador,irrregular coyote,1,6000,no loans,United States of America,"No, but he resided in another country and was returned",Due to expulsion from authorities or involuntarily,6000
 4957,1612,SLV,San Salvador,regular,1,8000,no loans,United States of America,"Yes, you reside in the destination country",,8000
 4957,1613,SLV,San Salvador,regular,1,8000,no loans,United States of America,"Yes, you reside in the destination country",,8000
@@ -1621,5 +1451,4 @@ rsp_id,ID,country,departamento,mig_ext_medio,mig_ext_cost_currency,mig_ext_cost_
 4975,1620,SLV,San Salvador,irrregular coyote,,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4982,1621,HND,Choluteca,"irregular on own, with caravan",,1,all loans,United States of America,"Yes, you reside in the destination country",,50000
 4983,1622,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
-4983,1623,HND,Choluteca,regular,,1,all loans,Spain,"Yes, you reside in the destination country",,50000
 4983,1624,HND,Choluteca,"irregular on own, with caravan",,1,no loans,United States of America,"Yes, but was returned to the country of origin",Due to expulsion from authorities or involuntarily,50000
