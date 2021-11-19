@@ -93,7 +93,7 @@ var meansTitleX3 = {
      var financeTitleX3 = {
     "Entirely with Loans": 330,
     "With Some Loans": width - 720,
-    "Whithout Loans": width - 320
+    "Without Loans": width - 320
   };
   
 
@@ -680,6 +680,7 @@ function showNullValues() {
     return i * 75;
   })
       .attr('x', function (d) { return yearsTitleX[d]; })
+//       .attr('y', function (d) { if (yearsTitleX[d] === "Guatemala") {return 160}; })
       .attr('y', 105)
       .attr('text-anchor', 'start')
       .text(function (d) { return d; });
@@ -1028,21 +1029,35 @@ function addGuatAnn(){
 			   .attr("cy", 500)
 			   .attr("rx", 255)
 			   .attr("ry", 255);
+	d3.select("svg")
+		.append('text')
+		  .attr('x', 170)
+		  .attr('y', 800)
+			.attr('class', "annotation-note-medium  guat")	
+		  .text("Government Spent")
+		  .style("fill","#6c757d");
 		d3.select("svg")
 		.append('text')
 		  .attr('x', 170)
-		  .attr('y', 830)
+		  .attr('y', 837)
 			.attr('class', "annotation-note-title  guat")
 			.style("fill","#6c757d")
 		  .text("$1.3 Billion");
 		d3.select("svg")
 		.append('text')
 		  .attr('x', 170)
-		  .attr('y', 860)
-			.attr('class', "annotation-note-label  guat")	
-		  .text("Government of Guatemala Expenditure on Primary Education.")
+		  .attr('y', 863)
+		.attr('class', "annotation-note-medium  guat")	
+		  .text("on Primary Education")
 		  .style("fill","#6c757d")
 		  .call(wrap,290);
+		  d3.select("svg")
+		.append('text')
+		  .attr('x', 170)
+		  .attr('y', 900)
+			.attr('class', "annotation-note-title  guat")
+			.style("fill","#6c757d")
+		  .text("Guatemala");
 		  }
   
   function remGuatAnn(){
@@ -1062,21 +1077,36 @@ function addHonAnn() {
 			   .attr("cy", 500)
 			   .attr("rx", 200)
 			   .attr("ry", 200);
+	d3.select("svg")
+		.append('text')
+		  .attr('x', 630)
+		  .attr('y', 800)
+			.attr('class', "annotation-note-medium  hond")	
+		  .text("Government Spent")
+		  .style("fill","#6c757d");	   
 		d3.select("svg")
 		.append('text')
 		  .attr('x', 630)
-		  .attr('y', 830)
+		  .attr('y', 837)
 			.attr('class', "annotation-note-title  hond")
 			.style("fill","#6c757d")
 		  .text("$700 Million");
 		d3.select("svg")
 		.append('text')
 		  .attr('x', 630)
-		  .attr('y', 860)
-			.attr('class', "annotation-note-label  hond")
-			.style("fill","#6c757d")	
-		  .text("Government of Honduras Expenditure on Primary Education.")
+		  .attr('y', 863)
+		.attr('class', "annotation-note-medium  hond")	
+		  .text("on Primary Education")
+		  .style("fill","#6c757d")
 		  .call(wrap,290);
+		  		d3.select("svg")
+		.append('text')
+		  .attr('x', 630)
+		  .attr('y', 900)
+			.attr('class', "annotation-note-title  hond")
+			.style("fill","#6c757d")
+		  .text("Honduras");
+
 		  }
 		  
 		  
@@ -1100,18 +1130,32 @@ function addSlvAnn(){
 		d3.select("svg")
 		.append('text')
 		  .attr('x', 1090)
-		  .attr('y', 830)
+		  .attr('y', 800)
+			.attr('class', "annotation-note-medium  salv")	
+		  .text("Government Spent")
+		  .style("fill","#6c757d");	 	   
+		d3.select("svg")
+		.append('text')
+		  .attr('x', 1090)
+		  .attr('y', 837)
 			.attr('class', "annotation-note-title  salv")
 			.style("fill","#6c757d")
 		  .text("$400 Million");
 		d3.select("svg")
 		.append('text')
 		  .attr('x', 1090)
-		  .attr('y', 860)
-			.attr('class', "annotation-note-label  salv")
-			.style("fill","#6c757d")	
-		  .text("Government of El Salvador Expenditure on Primary Education.")
+		  .attr('y', 863)
+		.attr('class', "annotation-note-medium  salv")	
+		  .text("on Primary Education")
+		  .style("fill","#6c757d")
 		  .call(wrap,290);
+		  		d3.select("svg")
+		.append('text')
+		  .attr('x', 1090)
+		  .attr('y', 900)
+			.attr('class', "annotation-note-title  salv")
+			.style("fill","#6c757d")
+		  .text("El Salvador");
 		  }
   
 function remSlvAnn(){
