@@ -931,21 +931,21 @@ function setupButtons() {
 //     .style("stroke-width",0);
 // }
 
-  var fillColor = d3.scaleOrdinal()
-    .domain(['low', 'medium', 'high'])
-    .range(['#662d91', '#faa41a', '#e23cad']);
-    
-var highlightregular = d3.scaleOrdinal()
-    .domain(['low', 'medium', 'high'])
-    .range(['#e9d7f7', '#fff6e8', '#e23cad']); 
+ var fillColor = d3.scaleOrdinal()
+    .domain(['irrregular coyote', 'irregular on own, with caravan', 'regular'])
+    .range(['#662d91', '#faa41a', '#e23cad']);   
     
  var highlightirrcoy = d3.scaleOrdinal()
-    .domain(['low', 'medium', 'high'])
+    .domain(['irrregular coyote', 'irregular on own, with caravan', 'regular'])
     .range(['#662d91', '#fff6e8', '#ffdbf5']);    
     
-    var highlightirrown = d3.scaleOrdinal()
-    .domain(['low', 'medium', 'high'])
-    .range(['#e9d7f7', '#faa41a', '#ffdbf5']);  
+var highlightirrown = d3.scaleOrdinal()
+    .domain(['irrregular coyote', 'irregular on own, with caravan', 'regular'])
+    .range(['#e9d7f7', '#faa41a', '#ffdbf5']); 
+    
+var highlightregular = d3.scaleOrdinal()
+    .domain(['irrregular coyote', 'irregular on own, with caravan', 'regular'])
+    .range(['#e9d7f7', '#fff6e8', '#e23cad']);   
     
  function fillColorN(){
 d3.selectAll("circle")
