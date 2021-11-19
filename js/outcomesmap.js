@@ -19,15 +19,18 @@ var alignments = {
 // SCALE ALIGNMENTS
 var pixelSize;
 var labelSize;
+var responsiveBorderWidth
 
 if (aspectRatio < 1) {
     pixelSize = 6;
     labelSize = 12
+    responsiveBorderWidth = 3
 }
 
 if (aspectRatio >= 1) {
     pixelSize = 12;
     labelSize = 17
+    responsiveBorderWidth = 5
 }
 
 
@@ -37,7 +40,7 @@ if (aspectRatio >= 1) {
 var landColor = [219, 109, 183] //GEOGRAPHIC LAND COLOR
 var countriesFillColor = [231, 120, 194, 255] //FILL COLOR OF NOTHERN TRIANGLE COUNTRIES
 var countriesBorderColor = [255, 255, 255, 255]
-var countriesLineWidth = 20000
+// var countriesLineWidth = 20000
 var SelectHighlightColor = [255, 255, 255] //HIGHLIGHT ON HOVER OR CLICK
 
 document.getElementById("map").style.background = 'rgb(219,109,183)'
@@ -47,7 +50,7 @@ document.getElementById("map").style.background = 'rgb(219,109,183)'
 var pointScale = 1000 //SCALE OF POINTS
 var pointColor = [255, 255, 255, 255 * 0.5]
 var circleBorder = [255, 255, 255, 0]
-var circleBorderWidth = 0
+var circleBorderWidth = 3
 
 //ARCLAYERS
 var arcSourceColor = [255, 158, 237, 255 * 0.8]
@@ -353,7 +356,7 @@ map.on('load', function () {
         type: 'line',
         source: 'states',
         paint: {
-            'line-width': borderWidth,
+            'line-width': responsiveBorderWidth,
             'line-color': borderColor
         },
     });
@@ -365,7 +368,7 @@ map.on('load', function () {
 
     map.addSource('ntCountries', {
         'type': 'geojson',
-        'data': 'data/mapbox/basemaps/far/nt-countries-far.json',
+        'data': 'data/mapbox/basemaps/close/nt-countries-close.json',
         'generateId': true // This ensures that all features have unique IDs
     });
 
@@ -384,7 +387,7 @@ map.on('load', function () {
         type: 'line',
         source: 'ntCountries',
         paint: {
-            'line-width': borderWidth,
+            'line-width': responsiveBorderWidth,
             'line-color': borderColor
         },
     });
@@ -405,38 +408,38 @@ const worldMap = new deck.MapboxLayer({
 
 
 // STATES
-const statesMap = new deck.MapboxLayer({
-    type: deck.GeoJsonLayer,
-    id: 'us-states',
-    data: 'data/mapbox/basemaps/far/states-far.geojson',
-    // Styles
-    filled: true,
-    getFillColor: countriesFillColor,
-    getLineColor: countriesBorderColor,
-    getLineWidth: countriesLineWidth,
+// const statesMap = new deck.MapboxLayer({
+//     type: deck.GeoJsonLayer,
+//     id: 'us-states',
+//     data: 'data/mapbox/basemaps/far/states-far.geojson',
+//     // Styles
+//     filled: true,
+//     getFillColor: countriesFillColor,
+//     getLineColor: countriesBorderColor,
+//     getLineWidth: countriesLineWidth,
 
 
-})
+// })
 
 
 // NT COUNTRIES
-const ntCountries = new deck.MapboxLayer({
-    type: deck.GeoJsonLayer,
-    id: 'nt-countries',
-    data: 'data/mapbox/basemaps/close/nt-countries-close.json',
-    // Styles
-    filled: true,
-    getFillColor: countriesFillColor,
-    getLineColor: countriesBorderColor,
-    getLineWidth: countriesLineWidth,
+// const ntCountries = new deck.MapboxLayer({
+//     type: deck.GeoJsonLayer,
+//     id: 'nt-countries',
+//     data: 'data/mapbox/basemaps/close/nt-countries-close.json',
+//     // Styles
+//     filled: true,
+//     getFillColor: countriesFillColor,
+//     getLineColor: countriesBorderColor,
+//     getLineWidth: countriesLineWidth,
 
-    // Interactive props
-    // pickable: true,
-    // autoHighlight: true,
-    highlightColor: SelectHighlightColor,
-    onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
+//     // Interactive props
+//     // pickable: true,
+//     // autoHighlight: true,
+//     highlightColor: SelectHighlightColor,
+//     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 
-})
+// })
 
 // US-SALV CIRCLES
 const salvDestinations = new deck.MapboxLayer({
@@ -453,8 +456,9 @@ const salvDestinations = new deck.MapboxLayer({
     // Interactive props
     // pickable: true,
     // autoHighlight: true,
-    highlightColor: SelectHighlightColor,
-    getLineColor: circleBorder,
+    // highlightColor: SelectHighlightColor,
+    lineWidthUnits: 'pixels',
+    getLineColor:  [182, 40, 187, 255],
     getLineWidth: circleBorderWidth,
     polygonOffset: 10,
     parameters: {
@@ -479,8 +483,9 @@ const guatDestinations = new deck.MapboxLayer({
     // Interactive props
     // pickable: true,
     // autoHighlight: true,
-    highlightColor: SelectHighlightColor,
-    getLineColor: circleBorder,
+    // highlightColor: SelectHighlightColor,
+    lineWidthUnits: 'pixels',
+    getLineColor: [250, 180, 60, 255],
     getLineWidth: circleBorderWidth,
     parameters: {
         depthTest: false
@@ -488,7 +493,7 @@ const guatDestinations = new deck.MapboxLayer({
     onClick: info => info.object && alert(`${info.object.properties.Origin__tooltip_} to ${info.object.properties.Metro} (Population: ${info.object.properties.Round_immigrants})`)
 })
 
-// US-GUAT CIRCLES
+// US-HOND CIRCLES
 const hondDestinations = new deck.MapboxLayer({
     id: 'hondDestinations',
     type: deck.GeoJsonLayer,
@@ -503,8 +508,9 @@ const hondDestinations = new deck.MapboxLayer({
     // Interactive props
     // pickable: true,
     // autoHighlight: true,
-    highlightColor: SelectHighlightColor,
-    getLineColor: circleBorder,
+    // highlightColor: SelectHighlightColor,
+    lineWidthUnits: 'pixels',
+    getLineColor: [59, 167, 201, 255],
     getLineWidth: circleBorderWidth,
     parameters: {
         depthTest: false
@@ -610,19 +616,42 @@ const ntSurvey = new deck.MapboxLayer({
     colorRange: [255, 255, 255, 255],
 });
 
+// COUNTRY LABELS
+const countryLabels = new deck.MapboxLayer({
+    id: 'nt-country-labels',
+    type: deck.TextLayer,
+    data: [
+        {name: 'Guatemala', coordinates: [-90.666233, 14.784638]},
+        {name: 'Honduras', coordinates: [-86.066233, 14.884638]},
+        {name: 'El Salvador', coordinates: [-89.066233, 13.684638]},
+        ],
+    getPosition: d => d.coordinates,
+    getText: d => d.name,
+    getSize: labelSize,
+    sizeUnits: 'pixels',
+    getTextAnchor: 'middle',
+    getAlignmentBaseline: 'center',
+    background: true,
+    backgroundPadding: [3,1],
+    fontWeight: 1000,
+    getColor: [209, 99, 173],
+    fontFamily: 'neue-haas-grotesk-text, sans-serif',
+});
+
+
 
 
 map.on('load', () => {
-
+    map.addLayer(ntSurvey);
+    map.addLayer(countryLabels);
     map.addLayer(salvDestinations);
     map.addLayer(guatDestinations);
     map.addLayer(hondDestinations);
     map.addLayer(guatArc);
     map.addLayer(salvArc);
     map.addLayer(hondArc);
-    map.addLayer(ntSurvey);
-
-    // map.setLayerZoomRange('nt-grid', farZoom+1.5, closeZoom+1);
+    
+    map.setLayerZoomRange('nt-country-labels', middleZoom, closeZoom+0.25);
 
 });
 
@@ -718,8 +747,22 @@ function fade(prop, strProp, target, inOutBool) {
                 var opacityCircleFactor = 0.5
                 if (inOutBool == true) {
                     // if fill
+
+                    let currentLineColor = prop.props.getLineColor
+                    // console.log(currentColor)
+                    // currentColor[3] = countUp * opacityCircleFactor
+
+                    var currentLineWidth = prop.props.getLineWidth
+                    
+
+
+                    var newLineWidth = circleBorderWidth*(countUp/target)
+                    var growingRadius = pointScale * (countUp/target)
+
                     if (prop.props.getFillColor[3] < (254 * opacityCircleFactor)) {
                         prop.setProps({ getFillColor: [255, 255, 255, countUp * opacityCircleFactor] })
+                        prop.setProps({ getLineWidth: newLineWidth })
+                        prop.setProps({ pointRadiusScale: growingRadius })
                     }
 
                 }
@@ -728,10 +771,18 @@ function fade(prop, strProp, target, inOutBool) {
 
                     countDown = target - countUp
 
+                    currentLineColor = prop.props.getLineColor
+                    currentColor[3] = countDown * opacityCircleFactor
+
+                    var shrinkRadius = pointScale - (pointScale*(countUp/target))
+                    var newLineWidth = circleBorderWidth-(circleBorderWidth*(target/countUp+0.01))
+
                     // if fill
                     // prop.setProps({ getFillColor: [255, 255, 255, countDown * 0.8] })
                     if (prop.props.getFillColor[3] > 0) {
                         prop.setProps({ getFillColor: [255, 255, 255, countDown * opacityCircleFactor] })
+                        prop.setProps({ getLineWidth: newLineWidth })
+                        prop.setProps({ pointRadiusScale: shrinkRadius })
                     }
 
 

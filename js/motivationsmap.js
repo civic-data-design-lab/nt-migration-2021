@@ -25,15 +25,18 @@ var borderColor = 'rgba(255,255,255,1)'
 //MOTIVATION STYLE SETTINGS
 var pixelSize;
 var labelSize;
+var descriptionLocation
 
 if (aspectRatio < 1){
     pixelSize = 6;
     labelSize = 12
+    descriptionLocation = [-89.066233, 19.684638]
 }
 
 if (aspectRatio >= 1){
     pixelSize = 12;
     labelSize = 17
+    descriptionLocation = [-89.066233, 12.684638]
 }
  
 
@@ -322,7 +325,7 @@ const countryLabels = new deck.MapboxLayer({
 const dotDescription = new deck.MapboxLayer({
     id: 'nt-dot-label',
     type: deck.TextLayer,
-    data: [{name: 'Each cell represents a surveyed household.', coordinates: [-89.066233, 12.684638]}],
+    data: [{name: 'Each cell represents a surveyed household.', coordinates: descriptionLocation}],
     getPosition: d => d.coordinates,
     getText: d => d.name,
     getSize: labelSize + 8,
@@ -334,6 +337,7 @@ const dotDescription = new deck.MapboxLayer({
     backgroundPadding: [6,3],
     fontWeight: 1000,
     getColor: [0,110,255],
+    maxWidth: screen.width*2,
     fontFamily: 'neue-haas-grotesk-text, sans-serif',
 });
 

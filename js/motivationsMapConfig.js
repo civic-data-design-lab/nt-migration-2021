@@ -162,7 +162,7 @@ var motivationsConfig = {
             title: 'Migrant Motivations are Complex',
             description: 'In order to understand the complex reasons for migration, close to 5,000 households in El Salvador, Guatemala, and Honduras were interviewed in June 2021 by the World Food Programme (WFP) and the International Organization for Migration (IOM) to better understand their conditions.',
             location: {
-                center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
+                center: [-89.2000000, 15.5000000], // initial map center in [lon, lat]
                 zoom: maxZoom,
                 pitch: 0,
                 bearing: 0
@@ -182,94 +182,6 @@ var motivationsConfig = {
 
 
         }
-
-        //DESTINATION 5
-        // {
-        //     id: 'map-state-5',
-        //     alignment: 'full',
-        //     hidden: false,
-        //     // title: 'Display Title',
-        //     // image: './images/zebra.jpg',
-        //     description: 'During June 2021, close to 5,000 households in Honduras, El Salvador and Guatemala were interview by the World Food Program +International Organization on Migration to better understand their condition.',
-        //        center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
-        //         zoom: closeZoom,
-        //         pitch: 0,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [
-        //     ],
-        //     onChapterExit: [
-        //         {
-        //             layer: 'ntCountriesViz',
-        //             opacity: 0,
-        //         },
-        //         {
-        //             layer: 'ntCountriesVizLine',
-        //             opacity: 0,
-        //         }
-
-        //     ],
-
-
-
-        // },
-
-        //DESTINATION 6
-        // {
-        //     id: 'map-state-6',
-        //     alignment: 'full',
-        //     hidden: false,
-        //     // title: 'Display Title',
-        //     // image: './images/zebra.jpg',
-        //     description: 'These are their motivations....',
-        //        center: [-89.2500000, 14.5000000], // initial map center in [lon, lat]
-        //         zoom: maxZoom,
-        //         pitch: 0,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [
-        //     ],
-        //     onChapterExit: [
-
-        //     ],
-
-        // },
-
-        //DESTINATION 7
-        // {
-        //     id: 'map-state-7',
-        //     alignment: 'full',
-        //     hidden: true,
-        //     // title: 'Display Title',
-        //     // image: './images/zebra.jpg',
-        //     description: 'These are their motivations....',
-        //     // extraSpacing: true,
-        //        center: [-89.2500000, 14.5000000], // initial map center in [lon, lat]
-        //         zoom: maxZoom,
-        //         pitch: 0,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [
-        //         {
-
-        //         }
-        //     ],
-        //     onChapterExit: [
-
-
-        //     ],
-
-        // },
-
 
     ]
 };

@@ -9,7 +9,7 @@ var contentBlock = document.getElementsByClassName("content-block")
 var hamburgerMenu = document.getElementById("hamburger-menu")
 var mobileMenu = document.getElementById("mobile-menu")
 var pageWrapper =  document.getElementById("wrapper")
-
+var indexPage = document.getElementsByClassName("index-page")
 
 
 getComputedStyle(document.documentElement)
@@ -92,18 +92,25 @@ for (let i = 0; i < allChapters.length; i++) {
 
             allChapters[i].id = "open"
 
+
             if (pageWrapper)
             {
                 pageWrapper.style.pointerEvents = "none"
+
+                if (indexPage)
+                {
+                    pageWrapper.classList.remove("index-page")
+                }
+    
             }
 
         }
 
 
-
     }
 
 }
+
 
 function toggleMenu(x) {
     x.classList.toggle("change");

@@ -79,7 +79,7 @@ const reveal7Nsnr = anime({
 
 // create narratives after migrant outcomes viz
 function createNarratives() {
-    const narrativeTemplate = $(".step.fully.active.template");
+    const narrativeTemplate = $(".step.lefty.active.template");
     narrativesData.forEach((item, i) => {
         const narrativeDiv = narrativeTemplate.clone();
         
@@ -103,6 +103,7 @@ function createNarratives() {
         narrativeDiv.find(".trigger").attr("id", "trigger-" + i);
         narrativeDiv.removeClass("template").appendTo(narrativeTemplate.parent());
     });
+
 };
 createNarratives();
 

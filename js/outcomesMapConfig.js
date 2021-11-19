@@ -4,7 +4,7 @@ var closeZoom;
 var middleZoom;
 
 if (aspectRatio < 1){
-    closeZoom = Math.log(screen.width)/1.2;
+    closeZoom = Math.log(screen.width)/1.3;
     middleZoom = Math.log(screen.width)/2.05;
     middleZoom2 = Math.log(screen.width)/2.5;
     farZoom = Math.log(screen.width)/2.9;
@@ -37,7 +37,7 @@ var outcomesConfig = {
             paddedImage: false,
             description: '24% of households in Central America have someone who migrated in the last five years. All of these households receive remittances. The need to migrate is largely economic, caused by the externalities of violence, insecurity, and natural disasters.',
             location: {
-                center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
+                center: [-88.000000, 14.5000000], // initial map center in [lon, lat]
                 zoom: closeZoom,
                 pitch: 0,
                 bearing: 0
@@ -66,7 +66,7 @@ var outcomesConfig = {
             description: '',
             mapLayer: 'mappedText1',
             location: {
-                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                center: [-88.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
                 pitch: 50,
                 bearing: -35
@@ -94,7 +94,7 @@ var outcomesConfig = {
             paddedImage: false,
             description: '',
             location: {
-                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                center: [-93.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom2,
                 pitch: 50,
                 bearing: -15
@@ -127,7 +127,7 @@ var outcomesConfig = {
             paddedImage: false,
             description: '11% of Hondurans migrate to Spain.',
             location: {
-                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                center: [-93.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom2,
                 pitch: 50,
                 bearing: 15
@@ -155,7 +155,7 @@ var outcomesConfig = {
             paddedImage: '',
             description: '', 
             location: {
-                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                center: [-100.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom2,
                 pitch: 60,
                 bearing: 35
@@ -182,7 +182,7 @@ var outcomesConfig = {
             paddedImage: false,
             description: '',
             location: {
-                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                center: [-97.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
                 pitch: 0,
                 bearing: 0
@@ -210,7 +210,7 @@ var outcomesConfig = {
             paddedImage: false,
             description: 'The diaspora should use their remittances to support more than basic needs. International organizations should consider diasporas as potential agents of economic development and governance. Creating incentives for members of a diaspora to invest in public works can magnify the reach of government efforts while simultaneously enriching transnational partnerships to improve governance, for example, by matching diaspora donation with transparent and accountable commitments from the national, departmental, and municipal governments.',
             location: {
-                center: [-96.5000000, 30.0000000], // initial map center in [lon, lat]
+                center: [-97.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
                 pitch: 0,
                 bearing: 0
