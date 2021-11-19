@@ -6,7 +6,7 @@ const countryText = {
 const pathwayAttr = {
     "regular": {"label": "Through a Regular Pathway", "color": "#e23cad"},
     "irrregular coyote": {"label": "Using a Smuggler to Migrate", "color": "#662d91"},
-    "irregular on own, with caravan": {"label": "By their Own or with a Caravan", "color": "#faa41a"}
+    "irregular on own, with caravan": {"label": "Migrating on their Own or with a Caravan", "color": "#faa41a"}
 };
 
 const financeText = {
