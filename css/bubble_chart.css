@@ -47,15 +47,19 @@ a, a:visited, a:active {
     background-color: #fff;
     border: solid 2px #662d91;
     border-radius: 0px;
-
     /* box-shadow: 2px 2px 6px rgb(0 0 0 / 50%); */
 }
-
 .button.active, .button:hover {
     color: #fff;
     background-color: #662d91;
 }
-
+.btn#year {
+    border-left: none;
+    border-right: none;
+}
+.btn#country {
+    border-right: 0px;
+}
 
 /* 
 #vis {
@@ -296,7 +300,38 @@ margin-top:3rem;}
     top: 0;
     left: 0;
 } */
+/* RESPONSIVE OVERRIDES */
+.btn-sm {
+    font-size: 0.7rem;
+    height: 60px;
+}
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .btn-sm {
+        height: 44px;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .btn-sm {
+        height: 54px;
+        font-size: 0.875rem;
+    }
+}
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    
+}
+/* wide aspect ratio */
 @media (min-aspect-ratio: 16/9) {
     #frame-cost {
         margin: auto;
