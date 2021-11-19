@@ -55,9 +55,9 @@ var yearsTitleX2 = {
   };
   
 var yearsTitleX3 = {
-    "Migrants Spend to Migrate": 180,  //  $1.2 Billion Migrants Spend to Migrate
-    "Migrants Spend to Migrate ": width / 2.2,  // $450 Million Billion Migrants Spend to Migrate
-    "Migrants Spend to Migrate  ": width - 310   // {$520 Million Migrants Spend to Migrate}
+    "Migrating from Guatemala": 180,  //  $1.2 Billion Migrants Spend to Migrate
+    "Migrating from Honduras": width / 2.2,  // $450 Million Billion Migrants Spend to Migrate
+    "Migrating from El Salvador": width - 310   // {$520 Million Migrants Spend to Migrate}
   };
   
 var meansTitleX = {
@@ -68,7 +68,7 @@ var meansTitleX = {
   
 var meansTitleX2 = {
     "$240 Million": 120,
-    "$1.7 Billion": width - 490
+    "$2.0 Billion": width - 490
    //  "Irregular Pathway": width - 250
   };
   
@@ -80,7 +80,7 @@ var meansTitleX3 = {
   
  var financeTitleX = {
     "56%": 330,
-    "7%": width - 720,
+    "8%": width - 720,
     "36%": width - 320
   };
   
@@ -1033,6 +1033,7 @@ function addGuatAnn(){
 		  .attr('x', 170)
 		  .attr('y', 830)
 			.attr('class', "annotation-note-title  guat")
+			.style("fill","#6c757d")
 		  .text("$1.3 Billion");
 		d3.select("svg")
 		.append('text')
@@ -1040,6 +1041,7 @@ function addGuatAnn(){
 		  .attr('y', 860)
 			.attr('class', "annotation-note-label  guat")	
 		  .text("Government of Guatemala Expenditure on Primary Education.")
+		  .style("fill","#6c757d")
 		  .call(wrap,290);
 		  }
   
@@ -1065,12 +1067,14 @@ function addHonAnn() {
 		  .attr('x', 630)
 		  .attr('y', 830)
 			.attr('class', "annotation-note-title  hond")
+			.style("fill","#6c757d")
 		  .text("$700 Million");
 		d3.select("svg")
 		.append('text')
 		  .attr('x', 630)
 		  .attr('y', 860)
-			.attr('class', "annotation-note-label  hond")	
+			.attr('class', "annotation-note-label  hond")
+			.style("fill","#6c757d")	
 		  .text("Government of Honduras Expenditure on Primary Education.")
 		  .call(wrap,290);
 		  }
@@ -1098,12 +1102,14 @@ function addSlvAnn(){
 		  .attr('x', 1090)
 		  .attr('y', 830)
 			.attr('class', "annotation-note-title  salv")
+			.style("fill","#6c757d")
 		  .text("$400 Million");
 		d3.select("svg")
 		.append('text')
 		  .attr('x', 1090)
 		  .attr('y', 860)
-			.attr('class', "annotation-note-label  salv")	
+			.attr('class', "annotation-note-label  salv")
+			.style("fill","#6c757d")	
 		  .text("Government of El Salvador Expenditure on Primary Education.")
 		  .call(wrap,290);
 		  }
