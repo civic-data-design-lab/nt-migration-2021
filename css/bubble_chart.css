@@ -83,6 +83,7 @@ a, a:visited, a:active {
 
 .year2, .means2, .finance {
   font-family: neue-haas-grotesk-text, sans-serif;
+  
     font-weight: 1000;
     font-style: normal;
     font-size: 2em;
@@ -192,9 +193,9 @@ z-index:-1000;}
 .subject {
     pointer-events: none;
       stroke: black;
-      stroke-width: 3px;
+      stroke-width: 1px;
       border:solid;
-      fill: #662d91;
+      fill: "#6c757d";
       fill-opacity: .15;
       mix-blend-mode: lighten;
     }
@@ -221,6 +222,7 @@ z-index:-1000;}
     .annotation-note-title, text.title {
    pointer-events: none;
       font-weight: bold;
+
       font-size: 2em;
       inline-size: 150px;
 
