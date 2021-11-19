@@ -50,8 +50,8 @@ var meansCenters = {
   
 var yearsTitleX2 = {
     "$1.2 Billion": 180,  //  $1.2 Billion Migrants Spend to Migrate
-    "$450 Million": width / 2.2,  // $450 Million Billion Migrants Spend to Migrate
-    "$520 Million": width - 310   // {$520 Million Migrants Spend to Migrate}
+    "$520 Million": width / 2.2,  // $450 Million Billion Migrants Spend to Migrate
+    "$450 Million": width - 310   // {$520 Million Migrants Spend to Migrate}
   };
   
 var yearsTitleX3 = {
@@ -837,7 +837,7 @@ var financeData3 = d3.keys(financeTitleX3);
     tooltipContent.find(".text-color").css("color", pathwayColor);
     tooltipContent.find(".label-cost").html("$" + addCommas(d.value));
     tooltipContent.find('.label-cost').filter(function () { if (d.value <= 1) return this;}).html("Didn't Respond");
-    tooltipContent.find(".label-country").html(countryText[d.year].label);
+    tooltipContent.find(".label-country").html(countryText[d.year]);
     tooltipContent.find(".label-pathway").html(pathwayAttr[d.name].label);
 
     tooltipContent.children().appendTo("#gates_tooltip");
@@ -1056,10 +1056,10 @@ function addHonAnn() {
 		d3.select("svg")
 		.append("ellipse")
 		  .attr('class', "subject hond")
-			   .attr("cx", 725)
+			   .attr("cx", 730)
 			   .attr("cy", 500)
-			   .attr("rx", 185)
-			   .attr("ry", 185);
+			   .attr("rx", 200)
+			   .attr("ry", 200);
 		d3.select("svg")
 		.append('text')
 		  .attr('x', 630)
@@ -1089,10 +1089,10 @@ function addSlvAnn(){
 		d3.select("svg")
 		.append("ellipse")
 		  .attr('class', "subject salv")
-			   .attr("cx", 1160)
+			   .attr("cx", 1170)
 			   .attr("cy", 500)
-			   .attr("rx", 130)
-			   .attr("ry", 130);
+			   .attr("rx", 170)
+			   .attr("ry", 170);
 		d3.select("svg")
 		.append('text')
 		  .attr('x', 1090)
