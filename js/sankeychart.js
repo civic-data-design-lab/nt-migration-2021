@@ -18,23 +18,23 @@ const occuAttr = {
 
 const occuAttrb = {
     "Agricultural production or labor": {"label": "28%", "color": "#eb4927", "class": "agriculture"},
-    "Informal work": {"label": "22%", "color": "#d11f63", "class": "informal"},
+    "Informal work": {"label": "21%", "color": "#d11f63", "class": "informal"},
     "Salaried employment": {"label": "15%", "color": "#e23cad", "class": "salary"},
     "Own business": {"label": "6%", "color": "#881da8", "class": "business"},
-    "Domestic work": {"label": "4%", "color": "#bf0eb2", "class": "domestic"},
-    "Student (may or may not attend classes regularly)": {"label": "12%", "color": "#e03448", "class": "student"},
-     "Other": {"label": "Other", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"},
+    "Domestic work": {"label": "10%", "color": "#bf0eb2", "class": "domestic"},
+    "Student (may or may not attend classes regularly)": {"label": "13%", "color": "#e03448", "class": "student"},
+     "Other": {"label": "2%", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"},
     "Unemployed": {"label": "6%", "color": "#662d91", "class": "unemployed"}
 };
 
 const occuAttrc = {
     "Agricultural production or labor": {"label": "17%", "color": "#eb4927", "class": "agriculture"},
-    "Informal work": {"label": "30%", "color": "#e03448", "class": "informal"},
-    "Salaried employment": {"label": "21%", "color": "#d11f63", "class": "salary"},
-    "Own business": {"label": "5%", "color": "#e23cad", "class": "business"},
-    "Domestic work": {"label": "6%", "color": "#bf0eb2", "class": "domestic"},
-    "Student (may or may not attend classes regularly)": {"label": "8%", "color": "#881da8", "class": "student"},
-     "Other": {"label": "Other", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"},
+    "Informal work": {"label": "28%", "color": "#e03448", "class": "informal"},
+    "Salaried employment": {"label": "20%", "color": "#d11f63", "class": "salary"},
+    "Own business": {"label": "7%", "color": "#e23cad", "class": "business"},
+    "Domestic work": {"label": "13%", "color": "#bf0eb2", "class": "domestic"},
+    "Student (may or may not attend classes regularly)": {"label": "7%", "color": "#881da8", "class": "student"},
+     "Other": {"label": "3%", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"},
     "Unemployed": {"label": "5%", "color": "#662d91", "class": "unemployed"}
 };
 
@@ -71,8 +71,8 @@ var svg = d3.select("#chartsank").append("svg")
 
 // Set the sankey diagram properties
 var sankey = d3.sankey()
-    .nodeWidth(19)
-    .nodePadding(12)
+    .nodeWidth(80)
+    .nodePadding(4)
     .size([width, height])
     .nodeSort(null);
 
