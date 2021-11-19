@@ -1105,7 +1105,7 @@ function addSlvAnn(){
 		  .attr('y', 860)
 			.attr('class', "annotation-note-label  salv")	
 		  .text("Government of El Salvador Expenditure on Primary Education.")
-		  .call(wrap,250);
+		  .call(wrap,290);
 		  }
   
 function remSlvAnn(){
