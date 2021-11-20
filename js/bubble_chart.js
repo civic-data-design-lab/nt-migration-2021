@@ -647,7 +647,7 @@ const scrollUndoLabelReg = new ScrollMagic.Scene({
                                   .on("leave",(e)=>{
                                   remAllAnn(),
                                   splitBubblesBee(),
-                                  addFinanceLabel(),
+                                  remFinanceLabel(),
                                   remAvRegAnn();
                                 	})
                                //    .addIndicators({name:"forceLink"})
