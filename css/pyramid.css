@@ -350,12 +350,14 @@ font-family: neue-haas-grotesk-text, sans-serif;
     font-weight: bold;
     font-style: normal;
     font-size: 2rem;   
-    line-height: 1rem;
+    line-height: 2rem;
     /* margin-top: 1rem;
     margin-bottom: 1rem; */
     /* padding: var(--scrollytelling-padding); */
+/* 
     padding-left: calc(var(--scrollytelling-padding)*1.5);
     padding-right: calc(var(--scrollytelling-padding)*1.5);
+ */
 
 }
 
@@ -367,7 +369,7 @@ font-family: neue-haas-grotesk-text, sans-serif;
     line-height: 1rem;
     /* margin-top: 1rem;
     margin-bottom: 1rem; */
-    /* padding: var(--scrollytelling-padding); */
+    padding-top: .5rem;
 }
 
 .source-agriculture{

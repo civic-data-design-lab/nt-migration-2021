@@ -21,6 +21,8 @@ a, a:visited, a:active {
 }
  */
  
+
+ 
  .content-block1 {
     position: -webkit-sticky;
     /* for Safari */
@@ -94,11 +96,21 @@ a, a:visited, a:active {
     line-height: 1em;
 }
 
-.year3 .means3, .finance2{
+.means3, .finance2{
   font-family: neue-haas-grotesk-text, sans-serif;
     font-style: normal;
     font-size: 1em;
 }
+
+.year3 {
+ 	background-color: black !important;
+  	font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 700;
+    display: inline;
+    font-size: 2rem;
+    opacity: 1;
+}
+
 
 /* 
 .group {
