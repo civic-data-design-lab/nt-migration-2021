@@ -634,6 +634,7 @@ const scrollLabelReg = new ScrollMagic.Scene({
                                   .on("enter",(e)=>{
                                  addAvRegAnn(),
                                  remAllAnn(),
+					 remFinanceLabel(),
                                 	upAvRegAnn(),
                                 	remAvIOAnn();
                                 	})
@@ -647,7 +648,7 @@ const scrollUndoLabelReg = new ScrollMagic.Scene({
                                   .on("leave",(e)=>{
                                   remAllAnn(),
                                   splitBubblesBee(),
-                                  remFinanceLabel(),
+                                  addFinanceLabel(),
                                   remAvRegAnn();
                                 	})
                                //    .addIndicators({name:"forceLink"})
