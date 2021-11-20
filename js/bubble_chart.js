@@ -290,7 +290,7 @@ function ticked() {
       removeaxis();
        removeaxis();
     remAvRegAnn();
-
+    remFinanceLabel();
       
 
 
@@ -306,6 +306,7 @@ function ticked() {
    removeaxis();
     removeaxis();
     remAvRegAnn();
+   remFinanceLabel();
 
     simulation.force('x', d3.forceX().strength(forceStrength).x(nodeMeansPos));
 	simulation.force('y', d3.forceY().strength(forceStrength).y(center.y));
@@ -318,6 +319,7 @@ function splitBubblesCountry() {
     showYearTitles();
     removeaxis();
     remAvRegAnn();
+    remFinanceLabel();
     
   
 
