@@ -12,7 +12,7 @@ const occuAttr = {
     "Own business": {"label": "Own Business", "color": "#b470c8", "class": "business", "img": "prof9.jpg"},
     "Domestic work": {"label": "Domestic Work", "color": "#d667ce", "class": "domestic", "img": "prof5.jpg"},
     "Student (may or may not attend classes regularly)": {"label": "Student", "color": "#f28c77", "class": "student", "img": "prof11.jpg"},
-    "Other": {"label": "Other", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"},
+    "Other": {"label": "Other", "color": "#9e7ab9", "class": "other", "img": "prof8.jpg"},
     "Unemployed": {"label": "Unemployed", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"}
 };
 
@@ -23,7 +23,7 @@ const occuAttrb = {
     "Own business": {"label": "6%", "color": "#881da8", "class": "business"},
     "Domestic work": {"label": "10%", "color": "#bf0eb2", "class": "domestic"},
     "Student (may or may not attend classes regularly)": {"label": "13%", "color": "#e03448", "class": "student"},
-     "Other": {"label": "2%", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"},
+     "Other": {"label": "2%", "color": "#9e7ab9", "class": "other", "img": "prof8.jpg"},
     "Unemployed": {"label": "6%", "color": "#662d91", "class": "unemployed"}
 };
 
@@ -34,7 +34,7 @@ const occuAttrc = {
     "Own business": {"label": "7%", "color": "#e23cad", "class": "business"},
     "Domestic work": {"label": "13%", "color": "#bf0eb2", "class": "domestic"},
     "Student (may or may not attend classes regularly)": {"label": "7%", "color": "#881da8", "class": "student"},
-     "Other": {"label": "3%", "color": "#9e7ab9", "class": "unemployed", "img": "prof8.jpg"},
+     "Other": {"label": "3%", "color": "#9e7ab9", "class": "other", "img": "prof8.jpg"},
     "Unemployed": {"label": "5%", "color": "#662d91", "class": "unemployed"}
 };
 
@@ -51,7 +51,7 @@ const motivOrder = {
 };
 
 // set the dimensions and margins of the graph
-var margin = {top: 30, right: 300, bottom: 100, left: 290},
+var margin = {top: 30, right: 300, bottom: 20, left: 290},
     width = 700 ,
     height = 1300;  
     const sqLen1 = 90;
@@ -71,8 +71,8 @@ var svg = d3.select("#chartsank").append("svg")
 
 // Set the sankey diagram properties
 var sankey = d3.sankey()
-    .nodeWidth(80)
-    .nodePadding(4)
+    .nodeWidth(30)
+    .nodePadding(23)
     .size([width, height])
     .nodeSort(null);
 
@@ -162,13 +162,13 @@ d3.csv("./data/sankey.csv").then(function(data) {
 // //     console.log('startColor', startColor);
 // //     console.log('stopColor', stopColor);
 // 
-//     const linearGradient = defs.append('linearGradient').attr('gradientUnits', "userSpaceOnUse")
+//     const linearGradient = defs.append('linearGradient')
 //         .attr('id', gradientID);
 // 
 //     linearGradient.selectAll('stop') 
 //       .data([                             
-//           {offset: '30%', color: startColor },      
-//           {offset: '70%', color: stopColor }    
+//           {offset: '90%', color: startColor },      
+//           {offset: '10', color: stopColor }    
 //         ])                  
 //       .enter().append('stop')
 //       .attr('offset', d => {
@@ -202,11 +202,11 @@ d3.csv("./data/sankey.csv").then(function(data) {
                     .style("stroke","#fff")
                     .style("stroke-width","2")
                     .style("fill", sourceColorb);
-                d3.selectAll(".occbefper")
+                d3.selectAll(".source-" + sourceClass)
                     .transition()        
                     .duration(300)
                     .style("fill", sourceColor);
-                d3.selectAll(".occaftper" )
+                d3.selectAll(".target-" + sourceClassb)
                     .transition()        
                     .duration(300)
                     .style("fill", sourceColorb);
@@ -268,8 +268,8 @@ d3.csv("./data/sankey.csv").then(function(data) {
 
   var node = svg.append("g").selectAll(".node")
       .data(graph.nodes)
-    .enter().append("g")
-     .attr("transform", function (d) { return "translate(" + d.y + "," + d.x + ")"; });
+    .enter().append("g");
+//      .attr("transform", function (d) { return "translate(" + d.y + "," + d.x + ")"; });
      //  .attr("class", "node");
 
 // add the rectangles for the nodes
@@ -315,14 +315,14 @@ node.append("text")
                 return "text target-" + sourceClass;
             }
       })
-      .attr("x", function(d) { return d.x0 - 15; })
+      .attr("x", function(d) { return d.x0 - 35; })
       .attr("y", function(d) { return d.y0 - 30 ; })
       .attr("dy", "1.45em")
       .attr("text-anchor", "end")
       .attr("transform", null)
       .attr("class","occbef")
       .style("fill","#2C7D87")
-//       .classed("node source-", false)
+//       .classed("node source-", true)
       .text(function(d) { 
       
             if (d.name.startsWith('-')) {
@@ -334,12 +334,12 @@ node.append("text")
         })
     .filter(function(d) { return d.x0 > width / 2; })
       .attr("x",  + sankey.nodeWidth() + width)
-//       .classed("node target-", false)
+//       .classed("node target-", true)
       .attr("class","occaft")
       .attr("text-anchor", "start");
       
 node.append("text")
-      .attr("x", function(d) { return d.x0 - 15; })
+      .attr("x", function(d) { return d.x0 - 35; })
       .attr("y", function(d) { return d.y0 - 14 ; })
       .attr("dy", "1.45em")
       .attr("text-anchor", "end")
@@ -356,16 +356,13 @@ node.append("text")
                 return occuAttrc[d.name].label; 
             }
             
-
-            
-            
-            
-            
-            
-            
-            
+// d3.selectAll(".occbef")
+// .style("fill", "red");    
             
         })
+        
+
+
       
 //       .style("font-size", "18px")
     .filter(function(d) { return d.x0 > width / 2; })
@@ -375,7 +372,9 @@ node.append("text")
       .attr("text-anchor", "start");
       
       
-  
+
+    
+// .attr("transform", "translate (0,25)");
       
 
       
@@ -450,8 +449,6 @@ function showDetail(d) {
 //     d3.selectAll("text")       
 //     .style("fill", "#fff");
   }
-
-
 
 
 });
