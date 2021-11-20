@@ -83,6 +83,12 @@ h5 {
     color: black;
 }
 
+a {
+    pointer-events: auto;
+}
+a:hover {
+    cursor: pointer;
+}
 
 .text-orange,
 a.text-orange:hover {
