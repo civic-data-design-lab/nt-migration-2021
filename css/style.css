@@ -629,7 +629,7 @@ i.arrow-up {
 }
 
 .fully:last-of-type {
-    padding-top: 0vh !important;
+    /* padding-top: 0vh !important; */
 }
 
 .fully>div {

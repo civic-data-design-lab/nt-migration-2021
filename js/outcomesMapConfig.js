@@ -186,32 +186,32 @@ var outcomesConfig = {
         },
 
         //DESTINATION 9
-        {
-            id: 'map-state-9',
-            alignment: 'left',
-            hidden: true,
-            title: '',
-            image: '',
-            filter: '',
-            paddedImage: false,
-            description: '',
-            location: {
-                center: [-97.000000, 30.0000000], // initial map center in [lon, lat]
-                zoom: farZoom,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [],
-            onChapterExit: [],
-            showGuat:true,
-            showHond:true,
-            showSalv:true,
-            fadePixels: '',
+        // {
+        //     id: 'map-state-9',
+        //     alignment: 'left',
+        //     hidden: true,
+        //     title: '',
+        //     image: '',
+        //     filter: '',
+        //     paddedImage: false,
+        //     description: '',
+        //     location: {
+        //         center: [-97.000000, 30.0000000], // initial map center in [lon, lat]
+        //         zoom: farZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [],
+        //     onChapterExit: [],
+        //     showGuat:true,
+        //     showHond:true,
+        //     showSalv:true,
+        //     fadePixels: '',
             
-        },
+        // },
 
         //DESTINATION 8
         {

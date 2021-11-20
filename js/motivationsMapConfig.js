@@ -131,8 +131,8 @@ var motivationsConfig = {
             image: './img/outcomes/out3.jpg',
             description: 'Increases in migration have generated concern in the U.S., who receives the majority of migrants from the northern countries in Central America.',
             location: {
-                center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
-                zoom: maxZoom,
+                center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
+                zoom: closeZoom,
                 pitch: 0,
                 bearing: 0
             },
@@ -156,14 +156,6 @@ var motivationsConfig = {
                     layer: 'worldMapViz',
                     opacity: 0,
                 },
-                {
-                    layer: 'ntCountriesViz',
-                    opacity: 0,
-                },
-                {
-                    layer: 'ntCountriesVizLine',
-                    opacity: 0,
-                }
 
 
             ],
@@ -174,23 +166,57 @@ var motivationsConfig = {
                 },
                 {
                     layer: 'ntCountriesViz',
-                    opacity: 1,
+                    opacity: 0,
                 },
                 {
                     layer: 'ntCountriesVizLine',
-                    opacity: 1,
+                    opacity: 0,
                 },
-                
+
             ],
         },
 
+        // //DESTINATION 4
+        // {
+        //     id: 'map-state-4',
+        //     alignment: 'full',
+        //     hidden: false,
+        //     title: '',
+        //     image: '',
+        //     description: '',
+        //     location: {
+        //         center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
+        //         zoom: maxZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [
+        //         {
+        //             layer: 'ntCountriesViz',
+        //             opacity: 0,
+        //         },
+        //         {
+        //             layer: 'ntCountriesVizLine',
+        //             opacity: 0,
+        //         }
+
+        //     ],
+        //     onChapterExit: [
+        //     ],
+
+        // },
+        
         //DESTINATION 4
         {
             id: 'map-state-4',
             alignment: 'full',
             hidden: false,
-            title: 'Migration has Large Costs for Migrants',
-            description: 'Migration comes at a large expense to the migrants, many of whom do not want to leave their country. Migrants often leave because they need to provide for their families and have limited social services to turn to for help.',
+            title: 'Migrants Want to Stay',
+            image: './img/motivations/mot2.jpg',
+            description: 'Despite a rising desire to migrate, only a fraction of the surveyed population plan to do so.The primary motivation for migration is largely driven by economics.',
             location: {
                 center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
                 zoom: maxZoom,
@@ -214,40 +240,8 @@ var motivationsConfig = {
             onChapterExit: [
             ],
 
-
-
-
-
         },
 
-        //DESTINATION 5
-        // {
-        //     id: 'map-state-5',
-        //     alignment: 'full',
-        //     hidden: false,
-        //     title: 'Migrant Motivations are Complex',
-        //     description: 'In order to understand the complex reasons for migration, close to 5,000 households in El Salvador, Guatemala, and Honduras were interviewed in June 2021 by the World Food Programme (WFP) and the International Organization for Migration (IOM) to better understand their conditions.',
-        //     location: {
-        //         center: [-89.2000000, 15.5000000], // initial map center in [lon, lat]
-        //         zoom: maxZoom,
-        //         pitch: 0,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [
-
-
-        //     ],
-        //     onChapterExit: [
-
-
-        //     ],
-
-
-
-        // }
 
     ]
 };
