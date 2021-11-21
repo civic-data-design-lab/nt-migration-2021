@@ -85,15 +85,15 @@ var meansTitleX3 = {
   };
   
    var financeTitleX2 = {
-    "Finance Migration ": 330,
-    "Finance Migration": width - 720,
-    "Finance Migration  ": width - 320
+    "Financed Migration ": 330,
+    "Financed Migration": width - 720,
+    "Financed Migration  ": width - 320
   };
   
      var financeTitleX3 = {
     "Entirely with Loans": 330,
-    "With Some Loans": width - 720,
-    "Without Loans": width - 320
+    "with Some Loans": width - 720,
+    "without Loans": width - 320
   };
   
 
@@ -723,11 +723,16 @@ function showNullValues() {
 
     years.enter().append('text')
       .attr('class', 'year')
-      .transition()
-    .duration(1000)
-    .delay(function(d, i) {
-    return i * 75;
-  })
+//       .transition()
+//       .duration(500)
+//       .style('opacity','0')
+//       .transition()
+// //       .ease(d3.easeLinear)
+//     .duration(500)
+    .style('opacity','1')
+//     .delay(function(d, i) {
+//     return i * 75;
+//   })
       .attr('x', function (d) { return yearsTitleX[d]; })
 //       .attr('y', function (d) { if (yearsTitleX[d] === "Guatemala") {return 160}; })
       .attr('y', 105)
@@ -739,11 +744,12 @@ function showNullValues() {
       .data(yearsData2);
 
     years2.enter().append('text')
-     .transition()
-    .duration(1000)
-    .delay(function(d, i) {
-    return i * 75;
-  })
+//      .transition()
+//       .ease(d3.easeLinear)
+//     .duration(1000)
+//     .delay(function(d, i) {
+//     return i * 75;
+//   })
       .attr('class', 'year2')
       .attr('x', function (d) { return yearsTitleX2[d]; })
       .attr('y', 140)
@@ -795,11 +801,11 @@ years3.enter().append('text')
       .data(nameData);
 
     nameMeans.enter().append('text')
-     .transition()
-    .duration(1000)
-    .delay(function(d, i) {
-    return i * 75;
-  })
+//      .transition()
+//     .duration(1000)
+//     .delay(function(d, i) {
+//     return i * 75;
+//   })
       .attr('class', 'means')
       .attr('x', function (d) { return meansTitleX[d]; })
       .attr('y', 110)
@@ -811,11 +817,11 @@ var nameData2 = d3.keys(meansTitleX2);
       .data(nameData2);
 
     nameMeans2.enter().append('text')
-     .transition()
-    .duration(1000)
-    .delay(function(d, i) {
-    return i * 75;
-  })
+//      .transition()
+//     .duration(1000)
+//     .delay(function(d, i) {
+//     return i * 75;
+//   })
       .attr('class', 'means2')
       .attr('x', function (d) { return meansTitleX2[d]; })
       .attr('y', 140)
@@ -827,11 +833,11 @@ var nameData3 = d3.keys(meansTitleX3);
       .data(nameData3);
 
     nameMeans3.enter().append('text')
-     .transition()
-    .duration(1000)
-    .delay(function(d, i) {
-    return i * 75;
-  })
+//      .transition()
+//     .duration(1000)
+//     .delay(function(d, i) {
+//     return i * 75;
+//   })
       .attr('class', 'means3')
       .attr('x', function (d) { return meansTitleX3[d]; })
       .attr('y', 160)
@@ -847,11 +853,11 @@ var nameData3 = d3.keys(meansTitleX3);
       .data(financeData);
 
     finance.enter().append('text')
-     .transition()
-    .duration(1000)
-    .delay(function(d, i) {
-    return i * 75;
-  })
+//      .transition()
+//     .duration(1000)
+//     .delay(function(d, i) {
+//     return i * 75;
+//   })
       .attr('class', 'finance')
       .attr('x', function (d) { return financeTitleX[d]; })
       .attr('y', 60)
@@ -863,11 +869,11 @@ var nameData3 = d3.keys(meansTitleX3);
       .data(financeData2);
 
     finance2.enter().append('text')
-     .transition()
-    .duration(1000)
-    .delay(function(d, i) {
-    return i * 75;
-  })
+//      .transition()
+//     .duration(1000)
+//     .delay(function(d, i) {
+//     return i * 75;
+//   })
       .attr('class', 'finance2')
       .attr('x', function (d) { return financeTitleX2[d]; })
       .attr('y', 80)
@@ -879,11 +885,11 @@ var financeData3 = d3.keys(financeTitleX3);
       .data(financeData3);
 
     finance3.enter().append('text')
-       .transition()
-    .duration(1000)
-    .delay(function(d, i) {
-    return i * 75;
-  })
+//        .transition()
+//     .duration(1000)
+//     .delay(function(d, i) {
+//     return i * 75;
+//   })
       .attr('class', 'finance3')
       .attr('x', function (d) { return financeTitleX3[d]; })
       .attr('y', 100)
@@ -919,8 +925,8 @@ var financeData3 = d3.keys(financeTitleX3);
   function hideDetail(d) {
     d3.select(this)
      .style('stroke', function (d) { if (d.value <= 1) return fillColor(d.name);})
-      .style('stroke-width', function (d) { if (d.value <= 1) return .9;})
-      .style('stroke-width',function (d) { if (d.value > 1) return 0;});
+      .style('stroke-width', function (d) { if (d.value <= 1) return .9;});
+//       .style('stroke-width',function (d) { if (d.value > 1) return 0;});
 
     tooltip.hideTooltip();
   }
@@ -1324,7 +1330,7 @@ d3.selectAll(".annotation-groupe").style("opacity",1);
   const annotations6 = [
   {
     note: { label: "On average takes 7 months for the Migrant to pay back the cost.",
-    title: "7 Months Debt Irregular Migration on Your Own" },
+    title: "7 Months Debt Irregular Migration on One's Own" },
     subject: {
               x1: 1500,
               x2: 100 
@@ -1488,9 +1494,9 @@ function addReg(){
 d3.select("svg")
 .append('text')
   .attr('x', 5)
-  .attr('y', 15)
-.attr('class', "annotation-note-label  totlabcost")	
-  .text("Total Spent by Migrants from Central America in 2020, Collectively, to Migrate to the U.S.");
+  .attr('y', 25)
+.attr('class', "annotation-note-title  totlabcost")	
+  .text("Estimated Annual Spending by Migrants Traveling to the U.S. from Central America in 2021");
   }
   
 function remTotalLabelCost(){
@@ -1500,18 +1506,18 @@ function upTotalLabelCost(){
 d3.select("svg")
 .append('text')
   .attr('x', 5)
-  .attr('y', 15)
+  .attr('y', 25)
 
-	.attr('class', "annotation-note-label  totlabcost")	
-  .text("Total Spent by Migrants from Central America in 2020, Collectively, to Migrate to the U.S.");
+	.attr('class', "annotation-note-title  totlabcost")	
+  .text("Estimated Annual Spending by Migrants Traveling to the U.S. from Central America in 2021");
   }
 
  function addFinanceLabel(){
 d3.select("svg")
 .append('text')
   .attr('x', 5)
-  .attr('y', 15)
-.attr('class', "annotation-note-label  finlabcost")	
+  .attr('y', 25)
+.attr('class', "annotation-note-title  finlabcost")	
   .text("Financing Migration to the U.S.");
   }
   
@@ -1522,9 +1528,9 @@ function upFinanceLabelt(){
 d3.select("svg")
 .append('text')
   .attr('x', 5)
-  .attr('y', 15)
+  .attr('y', 25)
 
-	.attr('class', "annotation-note-label  finlabcost")	
+	.attr('class', "annotation-note-title  finlabcost")	
   .text("Financing Migration to the U.S.");
   }
  

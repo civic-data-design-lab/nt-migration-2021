@@ -716,6 +716,7 @@ i.arrow-up {
     text-decoration: underline;
 }
 
+
 /* 
 .outcomes-map-theme{
     background-color: rgb(224, 135, 220,0.5);
@@ -841,10 +842,20 @@ i.arrow-up {
     padding: var(--scrollytelling-padding);
 }
 
-.scrollytelling-caption {
+.fully .scrollytelling-caption {
     padding: calc(var(--scrollytelling-padding)/3);
+    position: absolute;
+    transform: translateY(-50vh);
+    backdrop-filter: none;
+
 
 }
+
+.lefty .scrollytelling-caption{
+    padding: calc(var(--scrollytelling-padding)/3);
+    /* border: 3px solid red; */
+}
+
 
 .description {
     font-weight: 300;

@@ -1,7 +1,7 @@
 const narrativesData = [
     {
-        title: "Just Over Half of Migrants (57%) Reach their Destination",
-        description: "Migrants work in similar industries as they did in their home countries. The U.S. economy depends on these migrants in industries that have labor shortages, such as agriculture, the restaurant industry, and domestic work. In 2018, migrants composed nearly 74% of agriculture workers&mdash;the U.S. needs these migrants as much as they need us.",
+        title: "Just Over Half of Migrants (57%) Reside in Their Destination",
+        description: "The U.S. economy depends on these migrants in industries that have labor shortages, such as agriculture, the restaurant industry, and domestic work. Foreign-born workers composed 73% of all U.S. hired crop labor workers in U.S. fiscal year 2016, and about half of all hired crop workers were unauthorized immigrants.",
         image: "out2.jpg"
     },
     {

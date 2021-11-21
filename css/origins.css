@@ -26,6 +26,11 @@
     -o-mix-blend-mode: hard-light;
     mix-blend-mode: hard-light;
 }
+#tt-event .event-title,
+#tt-event .event-descr {
+    background: rgba(255, 255, 255, 0.4);
+}
+/* migrant counter tooltip */
 #tt-year, #tt-migrants {
     background-color: rgba(255, 255, 255, 0.6);
 }
