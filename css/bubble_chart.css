@@ -302,6 +302,10 @@ pointer-events: none;}
 .fully {
 pointer-events: none;}
 
+.fully .scrollytelling-text{
+  text-align: center;
+}
+
 /* 
 .frame-cost {
 margin-top:3rem;}
