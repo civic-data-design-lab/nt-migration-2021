@@ -111,12 +111,12 @@ function updateEvent(eventIndex) {
     }
 
     if (event.image != null) {
-        eventTooltip.find(".event-title").css({"color": "#000", "background": "none", "padding": "0px"});
+        eventTooltip.find(".event-title").css({"color": "#000", "background": "rgba(255, 255, 255, 0.4)"});
         eventTooltip.find(".event-img").css({"background": countryAttr[event.country].background, "display": "block"});
         eventTooltip.find(".event-img>img").attr("src", "./img/origins/" + event.image);
     }
     else {
-        eventTooltip.find(".event-title").css({"color": "#fff", "background": countryAttr[event.country].background, "padding": "0.5rem"});
+        eventTooltip.find(".event-title").css({"color": "#fff", "background": countryAttr[event.country].background});
         eventTooltip.find(".event-img").css("display", "none");
     }
 
