@@ -38,15 +38,15 @@ const countryText = {
 };
 const motivAttr = {
     "econ": {label: "Economics", color: "#1540c4", responses: ['1', '2', '6', '7', '8'], 
-        descr: "Livelihood-related factors, such as low wages, unemployment, and insufficient income to cover necessities were the primary motivation why migrants emigrated in the last five years.", yPos: 1},
+        descr: "Responses for economic motivations to migrate included: search for a better job, salary, or working conditions; unemployment; lack of money to cover basic needs (such as health, education, housing, clothing, services); and to send remittances.", yPosSide: 1, xPosLegend: 0},
     "reun":  {label: "Reunification", color: "#eb4927", responses: ['12'], 
-        descr: "Family reunification was the second most common reason that people sought to migrate. With males representing the majority of migrants, families face long-term separation as a repercussion of migration.", yPos: 25},
+        descr: "Family reunification was the only response in this category.", yPosSide: 25, xPosLegend: 8},
     "sec": {label: "Security", color: "#93278f", responses: ['10', '11'], 
-        descr: "Violence, crime, and corruption are also key drivers of migration. Homicide rates in El Salvador and Honduras remain among the highest in the world.", yPos: 28},
+        descr: "Responses for security motivations to migrate included: unsafety or domestic violence.", yPosSide: 28, xPosLegend: 18},
     "clim": {label: "Climate", color: "#00a99d", responses: ['3', '4', '5'], 
-        descr: "Worsening impacts of climate-related shocks, such as natural disasters and environmental degredation, affect people's livelihoods and compel them to leave their countries of origin.", yPos: 31},
+        descr: "Responses for climate motivations to migrate included: direct impact from a natural hazard, deterioration of livelihoods due to natural hazards (such as floods, droughts, volcanic eruptions, hurricanes, plagues) or the loss of land due to land use changes.", yPosSide: 31, xPosLegend: 25},
     "oth":  {label: "Other", color: "#f1a650", responses: ['9', '13', '14', '15', '16'], 
-        descr: "Additional motivations for migrating include seeking healthcare or pursuing a better education.", yPos: 33}
+        descr: "Responses for climate motivations to migrate included: education, for cultural reasons or customs, for health-related reasons (such as treatments, surgeries, medical consultations, or medicines), for tourism, other reasons not listed, and responses that did not respond or reported not knowing.", yPosSide: 33, xPosLegend: 32}
 };
 const motivDetailAttr = {
     "1": {label: "search for a better job", category: "econ", color: "#1540c4"},
@@ -68,22 +68,30 @@ const motivDetailAttr = {
     "99": {label: "no response", category: "oth", color: "#777"}
 };
 const incomeAttr = {
-    1: {label: "extremely low income", range: "Less than $2.50", yPos: 1},
-    2: {label: "low income", range: "$2.50&ndash;10.40", yPos: 8},
-    3: {label: "mid-low income", range: "$10.40&ndash;37.40", yPos: 15},
-    4: {label: "mid income", range: "$37.40&ndash;128.70", yPos: 22},
-    5: {label: "mid-high income", range: "$128.70&ndash;436.50", yPos: 33},
-    6: {label: "high income", range: "Greater than $436.50", yPos: 37}
+    1: {label: "extremely low income", range: "Less than $2.50", yPosSide: 1},
+    2: {label: "low income", range: "$2.50&ndash;10.40", yPosSide: 8},
+    3: {label: "mid-low income", range: "$10.40&ndash;37.40", yPosSide: 15},
+    4: {label: "mid income", range: "$37.40&ndash;128.70", yPosSide: 22},
+    5: {label: "mid-high income", range: "$128.70&ndash;436.50", yPosSide: 33},
+    6: {label: "high income", range: "Greater than $436.50", yPosSide: 37}
 };
 const cariAttr = {
     1: {label: "food secure", sideLabel: "food secure", 
-        descr: "CARI classificaiton description", yPos: 1},
+        descr: "Households are able to meet essential food and non-food necessities without engaging in atypical coping strategies.", yPosSide: 1},
     2: {label: "marginally food secure", sideLabel: "marginally food secure", 
-        descr: "CARI classificaiton description", yPos: 16},
+        descr: "Househods have minimally adequate food consumption without engaging in irreversible coping strategies; some may be unable to afford some essential non-food related expenditures.", yPosSide: 16},
     3: {label: "moderately food insecure", sideLabel: "moderately or severely food insecure", 
-        descr: "CARI classificaiton description", yPos: 30},
+        descr: "Moderately food insecure households have significant food consumption gaps or are only marginally able to meet minimum food needs with irreversible coping strategies. Severely food insecure households have extreme food consumption gaps or have extreme loss of livelihood assets that will lead to food consumption gaps or worse.", yPosSide: 30},
     4: {label: "severely food insecure"}
 };
+
+const legendSplit = {
+    nx: 38,
+    ny: 38,
+    colorCat1: "econ",
+    colorCat2: "reun",
+    label: "selected multiple motivations"
+}
 
 const modalData = [
     {
@@ -103,11 +111,6 @@ const modalData = [
 // narrative text
 const narrativesData = [
     {
-        title: "Migrants Want to Stay",
-        description: "Despite a rising desire to migrate, only a fraction of the surveyed population plan to do so.The primary motivation for migration is largely driven by economics.",
-        image: "mot2.jpg"
-    },
-    {
         title: "Migrants Come from All Income Groups",
         description: "Our data counters prior studies that say households with more resources are more likely to be able to migrate. This survey shows that migration occurs in all income levels."
     },
@@ -126,7 +129,7 @@ const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 // D3 CHART VARIABLES
 const width = 1346;
-const height = 900;
+const height = 942;
 const sideWidth = 200;
 
 // animation time
@@ -477,23 +480,17 @@ function sideTooltipHtml(d) {
     var tooltipTemplate = $(".tooltip-side.template");
     var tooltip = tooltipTemplate.clone();
 
-    if (motivSort == "income") {
-        tooltip.find(".text-range").css("display", "inline");
-        tooltip.find(".label-descr").css("display", "none");
-        tooltip.find(".label-group").html(incomeAttr[d.group].label);
-        tooltip.find(".label-range").html(incomeAttr[d.group].range);
+    if (motivSort == "motivs") {
+        tooltip.find(".label-group").html(motivAttr[d.group].label);
+        tooltip.find(".label-descr").html(motivAttr[d.group].descr);
     }
-    else {
-        tooltip.find(".text-range").css("display", "none");
-        tooltip.find(".label-descr").css("display", "block");
-        if (motivSort == "motivs") {
-            tooltip.find(".label-group").html(motivAttr[d.group].label);
-            tooltip.find(".label-descr").html(motivAttr[d.group].descr);
-        }
-        else if (motivSort == "cari") {
-            tooltip.find(".label-group").html(cariAttr[d.group].sideLabel);
-            tooltip.find(".label-descr").html(cariAttr[d.group].descr);
-        }
+    else if (motivSort == "income") {
+        tooltip.find(".label-group").html(incomeAttr[d.group].label);
+        tooltip.find(".label-descr").html("Monthly Household Income per Capita:<br><b>" + incomeAttr[d.group].range + "</b>");
+    }
+    else if (motivSort == "cari") {
+        tooltip.find(".label-group").html(cariAttr[d.group].sideLabel);
+        tooltip.find(".label-descr").html(cariAttr[d.group].descr);
     }
     tooltip.find(".label-group-pct").html(d.pct);
 
@@ -948,93 +945,168 @@ function plotInitialGrid(data) {
             divMotivs.style("display", "none");
         });
         
-        // triangle top-right for 2 responses
-        svg.append("g")
-                .attr("class", "g-tri-tr")
-            .selectAll("path")
-            .data(data.filter(item => item.motiv_cat.endsWith('2')))
-            .enter()
-            .append("path")
-                .attr("id", d => "tri-tr-" + d.rsp_id2)
-                .attr("class", "tri-tr")
-                .attr("d", d => trianglePath(d, "initial", "topRight"))
-                .attr("fill", d => {
-                    const motiv1 = d.mig_ext_motivo.split(' ')[0];
-                    const motivCat1 = d.motiv_cat.split('-')[0];
-                    const motivCat2 = d.motiv_cat.split('-')[1];
-                    if (motivDetailAttr[motiv1].category == motivCat1) {
-                        return motivAttr[motivCat2].color;
-                    }
-                    else {
-                        return motivAttr[motivCat1].color;
-                    }
-                })
-                .attr("stroke", "#fff")
-                .attr("stroke-width", gap)
-            .on("mouseover", function(event, d) {
-                tooltipHtml(d, "tri-tr");
-                divMotivs.style("display", "block");
+    // triangle top-right for 2 responses
+    svg.append("g")
+            .attr("class", "g-tri-tr")
+        .selectAll("path")
+        .data(data.filter(item => item.motiv_cat.endsWith('2')))
+        .enter()
+        .append("path")
+            .attr("id", d => "tri-tr-" + d.rsp_id2)
+            .attr("class", "tri-tr")
+            .attr("d", d => trianglePath(d, "initial", "topRight"))
+            .attr("fill", d => {
+                const motiv1 = d.mig_ext_motivo.split(' ')[0];
+                const motivCat1 = d.motiv_cat.split('-')[0];
+                const motivCat2 = d.motiv_cat.split('-')[1];
+                if (motivDetailAttr[motiv1].category == motivCat1) {
+                    return motivAttr[motivCat2].color;
+                }
+                else {
+                    return motivAttr[motivCat1].color;
+                }
             })
-            .on("mousemove", function(event) {
-                divMotivsOnMousemove(event);
-            })
-            .on("mouseout", function() {
-                divMotivs.style("display", "none");
-            });
+            .attr("stroke", "#fff")
+            .attr("stroke-width", gap)
+        .on("mouseover", function(event, d) {
+            tooltipHtml(d, "tri-tr");
+            divMotivs.style("display", "block");
+        })
+        .on("mousemove", function(event) {
+            divMotivsOnMousemove(event);
+        })
+        .on("mouseout", function() {
+            divMotivs.style("display", "none");
+        });
 
-        // triangle top for 3 responses
-        svg.append("g")
-                .attr("class", "g-tri-t")
-            .selectAll("path")
-            .data(data.filter(item => item.motiv_cat.endsWith('3')))
-            .enter()
-            .append("path")
-                .attr("id", d => "tri-t-" + d.rsp_id2)
-                .attr("class", "tri-t")
-                .attr("d", d => trianglePath(d, "initial", "top"))
-                .attr("fill", d => {
-                    const motiv2 = d.mig_ext_motivo.split(' ')[1];
-                    return motivDetailAttr[motiv2].color;
-                })
-                .attr("stroke", "#fff")
-                .attr("stroke-width", gap)
-            .on("mouseover", function(event, d) {
-                tooltipHtml(d, "tri-t");
-                divMotivs.style("display", "block");
+    // triangle top for 3 responses
+    svg.append("g")
+            .attr("class", "g-tri-t")
+        .selectAll("path")
+        .data(data.filter(item => item.motiv_cat.endsWith('3')))
+        .enter()
+        .append("path")
+            .attr("id", d => "tri-t-" + d.rsp_id2)
+            .attr("class", "tri-t")
+            .attr("d", d => trianglePath(d, "initial", "top"))
+            .attr("fill", d => {
+                const motiv2 = d.mig_ext_motivo.split(' ')[1];
+                return motivDetailAttr[motiv2].color;
             })
-            .on("mousemove", function(event) {
-                divMotivsOnMousemove(event);
-            })
-            .on("mouseout", function() {
-                divMotivs.style("display", "none");
-            });
+            .attr("stroke", "#fff")
+            .attr("stroke-width", gap)
+        .on("mouseover", function(event, d) {
+            tooltipHtml(d, "tri-t");
+            divMotivs.style("display", "block");
+        })
+        .on("mousemove", function(event) {
+            divMotivsOnMousemove(event);
+        })
+        .on("mouseout", function() {
+            divMotivs.style("display", "none");
+        });
 
-        // triangle right for 3 responses
-        svg.append("g")
-                .attr("class", "g-tri-r")
-            .selectAll("path")
-            .data(data.filter(item => item.motiv_cat.endsWith('3')))
-            .enter()
-            .append("path")
-                .attr("id", d => "tri-r-" + d.rsp_id2)
-                .attr("class", "tri-r")
-                .attr("d", d => trianglePath(d, "initial", "right"))
-                .attr("fill", d => {
-                    const motiv3 = d.mig_ext_motivo.split(' ')[2];
-                    return motivDetailAttr[motiv3].color;
-                })
-                .attr("stroke", "#fff")
-                .attr("stroke-width", gap)
-            .on("mouseover", function(event, d) {
-                tooltipHtml(d, "tri-r");
-                divMotivs.style("display", "block");
+    // triangle right for 3 responses
+    svg.append("g")
+            .attr("class", "g-tri-r")
+        .selectAll("path")
+        .data(data.filter(item => item.motiv_cat.endsWith('3')))
+        .enter()
+        .append("path")
+            .attr("id", d => "tri-r-" + d.rsp_id2)
+            .attr("class", "tri-r")
+            .attr("d", d => trianglePath(d, "initial", "right"))
+            .attr("fill", d => {
+                const motiv3 = d.mig_ext_motivo.split(' ')[2];
+                return motivDetailAttr[motiv3].color;
             })
-            .on("mousemove", function(event) {
-                divMotivsOnMousemove(event);
-            })
-            .on("mouseout", function() {
-                divMotivs.style("display", "none");
-            });
+            .attr("stroke", "#fff")
+            .attr("stroke-width", gap)
+        .on("mouseover", function(event, d) {
+            tooltipHtml(d, "tri-r");
+            divMotivs.style("display", "block");
+        })
+        .on("mousemove", function(event) {
+            divMotivsOnMousemove(event);
+        })
+        .on("mouseout", function() {
+            divMotivs.style("display", "none");
+        });
+
+    // motivations categories legend
+    const legend = svg.append("g")
+        .attr("class", "legend")
+    
+    // legend squares
+    legend.append("g")
+            .attr("class", "legend-sq")
+        .selectAll("rect")
+        .data(motivsList)
+        .enter()
+        .append("rect")
+            .attr("x", d => scale(motivAttr[d].xPosLegend))
+            .attr("y", scale(38)) // row number (1624/numPerRow + 9)
+            .attr("width", sqLen)
+            .attr("height", sqLen)
+            .attr("fill", d => motivAttr[d].color)
+            .attr("stroke", "#fff")
+            .attr("stroke-width", gap);
+
+    // legend text
+    legend.append("g")
+            .attr("class", "legend-text")
+        .selectAll("text")
+        .data(motivsList)
+        .enter()
+        .append("text")
+        .attr("x", d => scale(motivAttr[d].xPosLegend + 1.25))
+        .attr("y", scale(38 + 1))
+        .attr("dy", "-0.125em")
+        .attr("text-anchor", "start")
+        .attr("fill", d => motivAttr[d].color)
+        .text(d => motivAttr[d].label.toUpperCase());
+
+    // text for split
+    legend.append("g")
+            .attr("class", "legend-text")
+        .selectAll("text")
+        .data([legendSplit])
+        .enter()
+        .append("text")
+        .attr("x", d => scale(d.nx + 1.25))
+        .attr("y", d => scale(d.ny + 1))
+        .attr("dy", "-0.125em")
+        .attr("text-anchor", "start")
+        .attr("fill", "#777")
+        .text(d => d.label.toUpperCase());
+
+    // legend bottom-left triangle
+    legend.append("g")
+            .attr("class", "legend-tri-bl")
+        .selectAll("path")
+        .data([legendSplit])
+        .enter()
+        .append("path")
+        .attr("d", d => {
+            return "M " + scale(d.nx) + " " + scale(d.ny) + " L " + scale(d.nx) + " " + (scale(d.ny) + sqLen) + " L " + (scale(d.nx) + sqLen) + " " + (scale(d.ny) + sqLen) + " Z";
+        })
+        .attr("fill", d => motivAttr[d.colorCat1].color)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", gap);
+
+    // legend bottom-left triangle
+    legend.append("g")
+            .attr("class", "legend-tri-tr")
+        .selectAll("path")
+        .data([legendSplit])
+        .enter()
+        .append("path")
+        .attr("d", d => {
+            return "M " + scale(d.nx) + " " + scale(d.ny) + " L " + (scale(d.nx) + sqLen) + " " + scale(d.ny) + " L " + (scale(d.nx) + sqLen) + " " + (scale(d.ny) + sqLen) + " Z";
+        })
+        .attr("fill", d => motivAttr[d.colorCat2].color)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", gap);
 };
 
 // plot initial squares grid
@@ -1093,9 +1165,9 @@ function plotLabels(labelList, sortBy) {
             .attr("id", d => "text-" + d.group)
             .attr("x", d => -sqLen)
             .attr("y", d => {
-                return (labelList.length == 5) ? scale(motivAttr[d.group].yPos)
-                : (labelList.length == 6) ? scale(incomeAttr[d.group].yPos)
-                : (labelList.length == 3) ? scale(cariAttr[d.group].yPos)
+                return (labelList.length == 5) ? scale(motivAttr[d.group].yPosSide)
+                : (labelList.length == 6) ? scale(incomeAttr[d.group].yPosSide)
+                : (labelList.length == 3) ? scale(cariAttr[d.group].yPosSide)
                 : null;
             })
             .attr("dy", "-0.125em")
@@ -1110,9 +1182,9 @@ function plotLabels(labelList, sortBy) {
             .on("mouseover", function(event, d) {
                 sideTooltipHtml(d);
                 divSide.style("top", (divHtml) => {
-                    return (labelList.length == 5) ? ((scale(motivAttr[d.group].yPos) - sqLen/2)/height * 100) + "%"
-                    : (labelList.length == 6) ? ((scale(incomeAttr[d.group].yPos) - sqLen/2)/height * 100) + "%"
-                    : (labelList.length == 3) ? ((scale(cariAttr[d.group].yPos) - sqLen/2)/height * 100) + "%"
+                    return (labelList.length == 5) ? ((scale(motivAttr[d.group].yPosSide) - sqLen/2)/height * 100) + "%"
+                    : (labelList.length == 6) ? ((scale(incomeAttr[d.group].yPosSide) - sqLen/2)/height * 100) + "%"
+                    : (labelList.length == 3) ? ((scale(cariAttr[d.group].yPosSide) - sqLen/2)/height * 100) + "%"
                     : null;
                     })
                     .style("left", ((sideWidth + sqLen/2)/width * 100) + "%")
@@ -1131,15 +1203,15 @@ function plotLabels(labelList, sortBy) {
             .attr("x1", -(sideWidth + sqLen))
             .attr("x2", -sqLen)
             .attr("y1", d => {
-                return (labelList.length == 5) ? scale(motivAttr[d.group].yPos) - 1.5 * sqLen
-                : (labelList.length == 6) ? scale(incomeAttr[d.group].yPos) - 1.5 * sqLen
-                : (labelList.length == 3) ? scale(cariAttr[d.group].yPos) - 1.5 * sqLen
+                return (labelList.length == 5) ? scale(motivAttr[d.group].yPosSide) - 1.5 * sqLen
+                : (labelList.length == 6) ? scale(incomeAttr[d.group].yPosSide) - 1.5 * sqLen
+                : (labelList.length == 3) ? scale(cariAttr[d.group].yPosSide) - 1.5 * sqLen
                 : null;
             })
             .attr("y2", d => {
-                return (labelList.length == 5) ? scale(motivAttr[d.group].yPos) - 1.5 * sqLen
-                : (labelList.length == 6) ? scale(incomeAttr[d.group].yPos) - 1.5 * sqLen
-                : (labelList.length == 3) ? scale(cariAttr[d.group].yPos) - 1.5 * sqLen
+                return (labelList.length == 5) ? scale(motivAttr[d.group].yPosSide) - 1.5 * sqLen
+                : (labelList.length == 6) ? scale(incomeAttr[d.group].yPosSide) - 1.5 * sqLen
+                : (labelList.length == 3) ? scale(cariAttr[d.group].yPosSide) - 1.5 * sqLen
                 : null;
             })
             .attr("stroke", "#1540C4")
@@ -1174,6 +1246,7 @@ function createNarratives() {
 };
 
 function updateScene(sortBy) {
+    motivSort = sortBy;
     btnId = "#btn-" + sortBy;
     labelsId = "#frame-motivations #labels-" + sortBy;
 
@@ -1194,6 +1267,7 @@ function updateScene(sortBy) {
 $(".btn").on("click", function() {
     btnId = "#" + $(this).attr("id");
     sortBy = $(this).attr("id").slice(4);
+    motivSort = sortBy;
     labelsId = "#frame-motivations #labels-" + sortBy;
 
     if ($(btnId).hasClass("active")) {
@@ -1221,9 +1295,9 @@ $(document).ready(function() {
     // ScrollMagic
     const controller = new ScrollMagic.Controller();
 
-    const motivsScene0 = new ScrollMagic.Scene({
-        triggerElement: "#narrative-scroll #scene-0",
-        duration: getDivHeight("#scene-0")
+    const motivsSceneStart = new ScrollMagic.Scene({
+        triggerElement: "#motivations",
+        duration: winHeight/2
     })
         .addTo(controller)
         .on("start", e => {
@@ -1233,24 +1307,27 @@ $(document).ready(function() {
             updateScene("motivs");
         });
 
-    const motivsScene1 = new ScrollMagic.Scene({
-        triggerElement: "#narrative-scroll #scene-1",
-        duration: getDivHeight("#scene-1")
+    const motivsScene0 = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll #scene-0",
+        duration: getDivHeight("#scene-0") + winHeight/2
     })
         .addTo(controller)
         .on("start", e => {
+            // console.log("start income");
             updateScene("motivs");
         })
         .on("end", e => {
+            // console.log("end income");
             updateScene("income");
-        });
+        })
 
-    const motivsScene2 = new ScrollMagic.Scene({
-        triggerElement: "#narrative-scroll #scene-2",
-        duration: getDivHeight("#scene-2")
+    const motivsScene1 = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll #scene-1",
+        duration: getDivHeight("#scene-1") + winHeight/5*2
     })
         .addTo(controller)
         .on("start", e => {
+            // console.log("start cari");
             updateScene("income");
 
             // // update skip to viz shortcut button
@@ -1259,6 +1336,7 @@ $(document).ready(function() {
             $("#shortcut a").find(".arrow").css("border-color", "#fff").removeClass("arrow-up");
         })
         .on("end", e => {
+            // console.log("end cari");
             updateScene("cari");
 
             // // update skip to top shortcut button

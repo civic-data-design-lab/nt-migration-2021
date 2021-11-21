@@ -37,7 +37,7 @@ var motivationsConfig = {
             id: 'map-state-1',
             alignment: 'full',
             hidden: false,
-            title: 'The Intention to Migrate has Increased Significantly',
+            title: 'Intentions to Migrate have Increased Significantly',
             image: './img/motivations/mot1.jpg',
             description: 'Approximately four out of every ten households (43%) indicated a desire to migrate in 2021, compared to 8% in 2019. The intention to migrate is largely driven by economics and compounded by external violence, insecurity, and natural disasters.',
             location: {
@@ -76,8 +76,8 @@ var motivationsConfig = {
             id: 'map-state-2',
             alignment: 'right',
             hidden: false,
-            title: '5000 Households Were Surveyed.',
-            description: 'In June 2021 nearly 5,000 households in 12 departments across  Guatemala, El Salvador and Honduras were surveyed by  the UN World Food Programme (WFP) and international and civil-society partners to understand these factors and the emerging needs of migrant and non-migrant communities in countries of origin. This was complimented by a nationally representative online survey with more than 6,000 individual responses. Each cell represents a survey location.',
+            title: '5,000 Households were Surveyed',
+            description: 'In April and May 2021, nearly 5,000 households in 12 departments across El Salvador, Guatemala, and Honduras were surveyed by the UN World Food Programme (WFP) and international and civil-society partners to understand the emerging needs of migrant and non-migrant communities in the countries of origin. This was complimented by a nationally representative online survey with more than 6,000 individual responses. Each square cell represents a survey location.',
             location: {
                 center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: closeZoom,
@@ -129,7 +129,7 @@ var motivationsConfig = {
             hidden: false,
             title: 'Migration Increases are Concerning to the U.S.',
             image: './img/outcomes/out3.jpg',
-            description: 'Increases in migration have generated concern in the U.S., who receives the majority of migrants from the northern countries in Central America.',
+            description: 'Increases in migration have generated concern in the U.S., which receives the majority of migrants from El Salvador, Guatemala, and Honduras.',
             location: {
                 center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
                 zoom: closeZoom,
@@ -216,7 +216,7 @@ var motivationsConfig = {
             hidden: false,
             title: 'Migrants Want to Stay',
             image: './img/motivations/mot2.jpg',
-            description: 'Despite a rising desire to migrate, only a fraction of the surveyed population plan to do so.The primary motivation for migration is largely driven by economics.',
+            description: 'Despite a rising desire to migrate, only a fraction of the surveyed population plan to do so. The primary motivation for migration is largely driven by economics.',
             location: {
                 center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
                 zoom: maxZoom,
