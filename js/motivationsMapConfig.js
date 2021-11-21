@@ -102,14 +102,14 @@ var motivationsConfig = {
                 },
                 {
                     layer: 'worldMapViz',
-                    opacity: 0,
+                    opacity: 1,
                 }
 
             ],
             onChapterExit: [
                 {
                     layer: 'worldMapViz',
-                    opacity: 0,
+                    opacity: 1,
                 },
                 {
                     layer: 'ntCountriesViz',
