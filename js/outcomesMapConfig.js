@@ -49,7 +49,7 @@ var outcomesConfig = {
             image: './img/outcomes/out1.jpg',
             filter: '',
             paddedImage: false,
-            description: '24% of households in Central America have someone who migrated in the last five years. All of these households receive remittances. The need to migrate is largely economic, caused by the externalities of violence, insecurity, and natural disasters.',
+            description: '24% of households in El Salvador, Guatemala, and Honduras have a member who migrated in the last five years. Most of these households receive remittances. The need to migrate is largely economic, caused by the externalities of violence, insecurity, and natural disasters.',
             location: {
                 center: [-88.000000, 14.5000000], // initial map center in [lon, lat]
                 zoom: closeZoom,
@@ -73,7 +73,7 @@ var outcomesConfig = {
             id: 'map-state-1',
             alignment: 'left',
             hidden: false,
-            title: 'The Majority of Migrants (89%) Seek to Migrate to the United States',
+            title: 'The Majority of Recent Migrants Reported (89%) Sought to Migrate to the United States',
             image: '', 
             filter: '',
             paddedImage: '',
@@ -102,7 +102,7 @@ var outcomesConfig = {
             id: 'map-state-2',
             alignment: 'left',
             hidden: false,
-            title: '96% of Guatemalans Migrate to the United States',
+            title: '96% of Guatemalans Migrants Journeyed to the United States',
             image: '', 
             filter: '',
             paddedImage: false,
@@ -135,11 +135,11 @@ var outcomesConfig = {
             id: 'map-state-3',
             alignment: 'left',
             hidden: false,
-            title: '82% of Hondurans Migrate to the United States',
+            title: '82% of Honduran Migrants Journeyed to the United States',
             image: '',
             filter: '',
             paddedImage: false,
-            description: '11% of Hondurans migrate to Spain.',
+            description: '11% of recently reported Honduran migrants journeyed to Spain.',
             location: {
                 center: [-93.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom2,
@@ -163,7 +163,7 @@ var outcomesConfig = {
             id: 'map-state-4',
             alignment: 'left',
             hidden: false,
-            title: '94% of Salvadorans Migrate to the United States',
+            title: '94% of Salvadoran Migrants Journeyed to the United States',
             image: '', 
             filter: '',
             paddedImage: '',
@@ -218,11 +218,11 @@ var outcomesConfig = {
             id: 'map-state-10',
             alignment: 'full',
             hidden: false,
-            title: 'This Diaspora Should Invest in Public Works, and Governments Should Match Those Funds',
+            title: 'This Diaspora Should Invest in Public Works, and Governments Should Match These Funds',
             image: '',
             filter: '',
             paddedImage: false,
-            description: 'The diaspora should use their remittances to support more than basic needs. International organizations should consider diasporas as potential agents of economic development and governance. Creating incentives for members of a diaspora to invest in public works can magnify the reach of government efforts while simultaneously enriching transnational partnerships to improve governance, for example, by matching diaspora donation with transparent and accountable commitments from the national, departmental, and municipal governments.',
+            description: 'Creating incentives for members of a diaspora to invest in public works can magnify the reach of government efforts while simultaneously enriching transnational partnerships to improve governance, for example, by matching diaspora donations with transparent and accountable commitments from the national, departmental, and municipal governments.',
             location: {
                 center: [-97.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
