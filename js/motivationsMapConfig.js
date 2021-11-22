@@ -154,7 +154,7 @@ var motivationsConfig = {
                 },
                 {
                     layer: 'worldMapViz',
-                    opacity: 0,
+                    opacity: 1,
                 },
 
 
@@ -162,15 +162,15 @@ var motivationsConfig = {
             onChapterExit: [
                 {
                     layer: 'worldMapViz',
-                    opacity: 0,
+                    opacity: 1,
                 },
                 {
                     layer: 'ntCountriesViz',
-                    opacity: 0,
+                    opacity: 1,
                 },
                 {
                     layer: 'ntCountriesVizLine',
-                    opacity: 0,
+                    opacity: 1,
                 },
 
             ],
@@ -218,8 +218,8 @@ var motivationsConfig = {
             image: './img/motivations/mot2.jpg',
             description: 'Despite a rising desire to migrate, only a fraction of the surveyed population plan to do so. The primary motivation for migration is largely driven by economics.',
             location: {
-                center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
-                zoom: maxZoom,
+                center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
+                zoom: closeZoom,
                 pitch: 0,
                 bearing: 0
             },
@@ -229,11 +229,11 @@ var motivationsConfig = {
             onChapterEnter: [
                 {
                     layer: 'ntCountriesViz',
-                    opacity: 0,
+                    opacity: 1,
                 },
                 {
                     layer: 'ntCountriesVizLine',
-                    opacity: 0,
+                    opacity: 1,
                 }
 
             ],
