@@ -711,16 +711,16 @@ i.arrow-up {
 .fully .scrollytelling-caption .footnote, 
 .fully .scrollytelling-text .footnote {
     bottom: 5%;
-    padding-left: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
-    padding-right: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
+    padding-left: calc(var(--scrollytelling-padding)/3);
+    padding-right: calc(var(--scrollytelling-padding)/3);
 }
 .lefty .scrollytelling-caption .footnote,
 .lefty .scrollytelling-text .footnote,
 .righty .scrollytelling-caption .footnote,
 .righty .scrollytelling-text .footnote {
-    bottom: calc(var(--scrollytelling-padding)/3);
-    padding-left: calc(var(--scrollytelling-padding)/3);
-    padding-right: calc(var(--scrollytelling-padding)/3)
+    bottom: calc(var(--scrollytelling-padding)/2);
+    padding-left: calc(var(--scrollytelling-padding));
+    padding-right: calc(var(--scrollytelling-padding))
 }
 
 .scrollytelling-caption .footnote a,
@@ -1208,7 +1208,13 @@ i.arrow-up {
 @media (min-width: 1200px) {}
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {}
+@media (min-width: 1400px) {
+    .fully .scrollytelling-caption .footnote, 
+    .fully .scrollytelling-text .footnote {
+        padding-left: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
+        padding-right: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
+    }
+}
 
 
 .about-descr {

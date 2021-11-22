@@ -12,7 +12,7 @@ const narrativesData = [
     },
     {
         title: "Migrants Send Remittances Home to Provide for Basic Needs",
-        description: "For the 29% of households that reported regularly receiving cash assistance from abroad, remittances provide a safety net that primarily help to meet subsistence costs and immediate living expenses. Remittances are rarely used (less than 5% reported) to contribute to savings or to invest in personal or community projects, which are often cited as catalysts for development."
+        description: "For the 29% of households that reported regularly receiving cash assistance from abroad, remittances provide a safety net that primarily help to meet subsistence costs and immediate living expenses. Remittances were rarely used (less than 5% reported) to contribute to savings or to invest in personal or community projects, which are often cited as catalysts for development."
     }
 ];
 
