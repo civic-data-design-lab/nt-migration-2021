@@ -73,8 +73,8 @@ var meansTitleX2 = {
   };
   
 var meansTitleX3 = {
-    "Migrants Spend to Migrate": 120,
-    "Migrants Spend to Migrate  ": width - 490
+    "Migrants Spent to Migrate": 120,
+    "Migrants Spent to Migrate  ": width - 490
    //  "Irregular Pathway": width - 250
   };
   
@@ -1268,7 +1268,7 @@ d3.select("svg")
   .attr('x', 1070)
   .attr('y', 860)
 	.attr('class', "annotation-note-label  allcirc")	
-  .text("spent by the U.S. Department of Homeland Security to apprehend El Salvadoreans, Guatemalans, and Hondurans at the Southwest Border.")
+  .text("spent by the U.S. Department of Homeland Security to apprehend El Salvadorans, Guatemalans, and Hondurans at the Southwest Border.")
   .call(wrap,250);
   }
   
@@ -1496,7 +1496,7 @@ d3.select("svg")
   .attr('x', 5)
   .attr('y', 25)
 .attr('class', "annotation-note-title  totlabcost")	
-  .text("Estimated Annual Spending by Migrants Traveling to the U.S. from Central America in 2021");
+  .text("Estimated Annual Spending in 2021 by Migrants Traveling to the U.S. from Central America");
   }
   
 function remTotalLabelCost(){
@@ -1509,7 +1509,7 @@ d3.select("svg")
   .attr('y', 25)
 
 	.attr('class', "annotation-note-title  totlabcost")	
-  .text("Estimated Annual Spending by Migrants Traveling to the U.S. from Central America in 2021");
+  .text("Estimated Annual Spending in 2021 by Migrants Traveling to the U.S. from Central America");
   }
 
  function addFinanceLabel(){
