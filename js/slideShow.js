@@ -2,11 +2,11 @@ var mobile = document.getElementById("mobile-button")
 var myIndex = 0;
 
 var images = [
-    "../img/Headers/about.jpg",
-    "../img/Headers/origins.jpg",
-    "../img/Headers/motivations.jpg",
-    "../img/Headers/profiles.jpg",
-    "../img/Headers/outcomes.jpg",
+    "./img/Headers/about.jpg",
+    "./img/Headers/origins.jpg",
+    "./img/Headers/motivations.jpg",
+    "./img/Headers/profiles.jpg",
+    "./img/Headers/outcomes.jpg",
     
 ]
 const slidesContainer = document.createElement('div');
