@@ -265,8 +265,8 @@ function plotStreamgraph(data, svg, {
                 .transition()
                 .duration(50)
                 .attr("opacity", l => {
-                    return (l.country == "nt" || l.country == "hnd-slv") ? 0.5
-                    : 0.8
+                    return (l.country == "nt" || l.country == "hnd-slv") ? 0.2
+                    : 0.6
                 })
         });
 
@@ -329,8 +329,8 @@ function plotEvents(data) {
             .attr("stroke", d => countryAttr[d.country].colorShade)
             .attr("stroke-width", 10)
             .attr("opacity", d => {
-                return (d.country == "nt" || d.country == "hnd-slv") ? 0.5
-                : 0.8
+                return (d.country == "nt" || d.country == "hnd-slv") ? 0.2
+                : 0.6
             })
         .on("mouseover", function(event, d) {
             country = d.country;
@@ -389,8 +389,8 @@ function plotEvents(data) {
                 .duration(50)
                 .attr("stroke", d => countryAttr[d.country].colorShade)
                 .attr("opacity", l => {
-                    return (l.country == "nt" || l.country == "hnd-slv") ? 0.5
-                : 0.8
+                    return (l.country == "nt" || l.country == "hnd-slv") ? 0.2
+                : 0.6
                 })
         });
 }
