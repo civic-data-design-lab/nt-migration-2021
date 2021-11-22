@@ -104,7 +104,7 @@ const modalData = [
     },
     {
         id: "modal-cari", 
-        html: "<h2 class='scrollytelling'>Providing for Basic Needs are Migrants' Main Motivation</h2><h3 class='scrollytelling description'>Households with migrants showed that their primary motivation to leave was driven by the need to provide for basic needs. Individuals experiencing food insecurity were more likely (23 percent) to make concrete plans to migrate than those who were food secure (7 percent).</h3>"
+        html: "<h2 class='scrollytelling'>Providing for Basic Needs are Migrants' Main Motivation</h2><h3 class='scrollytelling description'>Households with migrants showed that their primary motivation to leave was driven by the need to provide for basic needs. Individuals experiencing food insecurity were more likely (23%) to make concrete plans to migrate than those who were food secure (7%).</h3>"
     }
 ];
 
