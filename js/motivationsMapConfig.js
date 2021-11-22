@@ -127,7 +127,7 @@ var motivationsConfig = {
             id: 'map-state-3',
             alignment: 'full',
             hidden: false,
-            title: 'Migration Increases are Concerning to the U.S.',
+            title: 'Migration Increase is Concerning',
             image: './img/outcomes/out3.jpg',
             description: 'Increases in migration have generated concern in the U.S., which receives the majority of migrants from El Salvador, Guatemala, and Honduras.',
             location: {
