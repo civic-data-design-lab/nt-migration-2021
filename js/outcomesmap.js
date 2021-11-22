@@ -48,15 +48,15 @@ document.getElementById("map").style.background = 'rgb(209, 99, 173)'
 
 
 //CIRCLES
-var pointScale = 1000 //SCALE OF POINTS
+var pointScale = 350 //SCALE OF POINTS
 var pointColor = [255, 255, 255, 255 * 0.5]
 var circleBorder = [255, 255, 255, 0]
-var circleBorderWidth = 3
+var circleBorderWidth = 2
 
 //ARCLAYERS
 var arcSourceColor = [255, 158, 237, 255 * 0.8]
 var arcTargetColor = [255, 200, 245, 255 * 0.2]
-var arcWidth = 0.000003
+var arcWidth = 0.0000015
 var arcHeight = 0.5
 var arcTilt = 0
 var arcFilterMin = 40
