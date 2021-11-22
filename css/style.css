@@ -844,7 +844,7 @@ i.arrow-up {
 
 .fully .scrollytelling-caption {
     padding: calc(var(--scrollytelling-padding)/3);
-    position: absolute;
+    /* position: absolute; */
     transform: translateY(-50vh);
     backdrop-filter: none;
 
@@ -852,7 +852,12 @@ i.arrow-up {
 }
 
 .lefty .scrollytelling-caption{
-    padding: calc(var(--scrollytelling-padding)/3);
+    padding: calc(var(--scrollytelling-padding));
+    /* border: 3px solid red; */
+}
+
+.righty .scrollytelling-caption{
+    padding: calc(var(--scrollytelling-padding));
     /* border: 3px solid red; */
 }
 
