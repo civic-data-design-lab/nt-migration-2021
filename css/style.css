@@ -703,9 +703,23 @@ i.arrow-up {
 
 .scrollytelling-caption .footnote, 
 .scrollytelling-text .footnote {
-    max-width: 80%;
+    width: 100%;
+    left: 0px;
     font-size: 0.6rem;
+}
+.fully .scrollytelling-caption .footnote, 
+.fully .scrollytelling-text .footnote {
     bottom: 5%;
+    padding-left: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
+    padding-right: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
+}
+.lefty .scrollytelling-caption .footnote,
+.lefty .scrollytelling-text .footnote,
+.righty .scrollytelling-caption .footnote,
+.righty .scrollytelling-text .footnote {
+    bottom: calc(var(--scrollytelling-padding)/3);
+    padding-left: calc(var(--scrollytelling-padding)/3);
+    padding-right: calc(var(--scrollytelling-padding)/3)
 }
 .scrollytelling-caption .footnote a, 
 .scrollytelling-text .footnote a {

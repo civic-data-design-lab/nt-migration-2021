@@ -2,7 +2,8 @@ const narrativesData = [
     {
         title: "Just Over Half of Migrants (57%) Reside in Their Destination",
         description: "The U.S. economy depends on these migrants in industries that have labor shortages, such as agriculture, the restaurant industry, and domestic work. Foreign-born workers composed 73% of all U.S. hired crop labor workers in U.S. fiscal year 2016, and about half of all hired crop workers were unauthorized immigrants.",
-        image: "out2.jpg"
+        image: "out2.jpg",
+        footnote: "*&emsp;USDOL. <span class='fs-italic'>Demographic and Employment Characteristics, Table 1.</span>, FY 2015-2016. <a class='text-white' href='https://www.dol.gov/agencies/eta/national-agricultural-workers-survey/research/data-tables' target='_blank'>[external reference]</a>"
     },
     {
         title: "One Third (33%) of Migrants Return Home",
@@ -98,6 +99,14 @@ function createNarratives() {
 
             narrativeDiv.find("h2.scrollytelling").html(item.title);
             narrativeDiv.find("h3.description").html(item.description);
+        }
+
+        if (item.hasOwnProperty("footnote")) {
+            narrativeDiv.find(".footnote").html(item.footnote);
+            narrativeDiv.find("h3.description").addClass("mb-5");
+        }
+        else {
+            narrativeDiv.find(".footnote").remove();
         }
 
         narrativeDiv.find(".trigger").attr("id", "trigger-" + i);
