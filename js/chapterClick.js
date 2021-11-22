@@ -10,6 +10,7 @@ var hamburgerMenu = document.getElementById("hamburger-menu")
 var mobileMenu = document.getElementById("mobile-menu")
 var pageWrapper =  document.getElementById("wrapper")
 var indexPage = document.getElementsByClassName("index-page")
+var screenDimensions = screen.width / screen.height;
 
 
 getComputedStyle(document.documentElement)
@@ -34,15 +35,23 @@ for (let i = 0; i < allChapters.length; i++) {
 
 //Delayed Redirect
 let redirect_Page = (ele, link) => {
-
-    let tID = setTimeout(function () {
-
-        // redirect page.
+    
+    if ((screen.width < 1400 || screenDimensions < 1) && indexPage.length > 0){
         window.location.href = link;
+        window.clearTimeout(tID);
+    }
 
-        window.clearTimeout(tID);		// clear time out.
+    else{
+        let tID = setTimeout(function () {
 
-    }, 1000);	// call function after 5000 milliseconds or 5 seconds
+            // redirect page.
+            window.location.href = link;
+    
+            window.clearTimeout(tID);		// clear time out.
+    
+        }, 1000);	// call function after 5000 milliseconds or 5 seconds
+    }
+
 }
 
 
@@ -111,11 +120,12 @@ for (let i = 0; i < allChapters.length; i++) {
 
 }
 
-if (screen.width < 1400 && indexPage.length > 0){
+
+
+if ((screen.width < 1400 || screenDimensions < 1) && indexPage.length > 0){
 
     toggleMenu(hamburgerMenu)
-    hamburgerMenu.style.display = 'none'
-    hamburgerMenu.style.pointerEvents = 'none'
+    
 }
 
 function toggleMenu(x) {
