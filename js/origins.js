@@ -250,11 +250,12 @@ function plotStreamgraph(data, svg, {
             d3.selectAll(".event")
                 .transition()
                 .duration(50)
-                .attr("opacity", l => {
-                    return (l.country == Z[i]) ? 0.8
-                    :(l.country == "nt" || l.country == "hnd-slv") ? 0.5
-                    : 0.3;
-                });
+                .attr("opacity", 0.5);
+                // .attr("opacity", l => {
+                //     return (l.country == Z[i]) ? 0.8
+                //     :(l.country == "nt" || l.country == "hnd-slv") ? 0.5
+                //     : 0.3;
+                // });
         })
         .on("mouseout", function() {
             d3.selectAll(".stream")
@@ -264,10 +265,11 @@ function plotStreamgraph(data, svg, {
             d3.selectAll(".event")
                 .transition()
                 .duration(50)
-                .attr("opacity", l => {
-                    return (l.country == "nt" || l.country == "hnd-slv") ? 0.2
-                    : 0.6
-                })
+                .attr("opacity", 0.3);
+                // .attr("opacity", l => {
+                //     return (l.country == "nt" || l.country == "hnd-slv") ? 0.2
+                //     : 0.6
+                // })
         });
 
         // axis
@@ -326,12 +328,14 @@ function plotEvents(data) {
                 : (d.start_month != null) ? yScale(d.start_year + monthValue[d.start_month])
                 : yScale(d.start_year);
             })
-            .attr("stroke", d => countryAttr[d.country].colorShade)
-            .attr("stroke-width", 10)
-            .attr("opacity", d => {
-                return (d.country == "nt" || d.country == "hnd-slv") ? 0.2
-                : 0.6
-            })
+            // .attr("stroke", d => countryAttr[d.country].colorShade)
+            .attr("stroke", "#fff")
+            .attr("stroke-width", 5)
+            .attr("opacity", 0.3)
+            // .attr("opacity", d => {
+            //     return (d.country == "nt" || d.country == "hnd-slv") ? 0.2
+            //     : 0.6
+            // })
         .on("mouseover", function(event, d) {
             country = d.country;
             updateEvent(d.event_index);
@@ -359,24 +363,25 @@ function plotEvents(data) {
                     .duration(50)
                     .attr("fill-opacity", 0.8)
             };
-            d3.selectAll(".event")
-                .transition()
-                .duration(50)
-                .attr("opacity", l => {
-                    return (l.country == "nt" || l.country == "hnd-slv") ? 0.2
-                    : 0.3;
-                });
+            // d3.selectAll(".event")
+            //     .transition()
+            //     .duration(50)
+                // .attr("opacity", l => {
+                //     return (l.country == "nt" || l.country == "hnd-slv") ? 0.2
+                //     : 0.3;
+                // });
             d3.select(this)
                 .transition()
                 .duration(50)
-                .attr("opacity", d => {
-                    return (country == "nt" || country == "hnd-slv") ? 0.6
-                    : 1
-                })
-                .attr("stroke", d => {
-                    return (country == "nt" || country == "hnd-slv") ? countryAttr[d.country].colorShade
-                    : countryAttr[d.country].colorShadeDarker
-                });
+                .attr("opacity", 0.7);
+                // .attr("opacity", d => {
+                //     return (country == "nt" || country == "hnd-slv") ? 0.6
+                //     : 1
+                // })
+                // .attr("stroke", d => {
+                //     return (country == "nt" || country == "hnd-slv") ? countryAttr[d.country].colorShade
+                //     : countryAttr[d.country].colorShadeDarker
+                // });
         })
         .on("mouseout", function() {
             d3.selectAll(".stream")
@@ -387,11 +392,12 @@ function plotEvents(data) {
             d3.selectAll(".event")
                 .transition()
                 .duration(50)
-                .attr("stroke", d => countryAttr[d.country].colorShade)
-                .attr("opacity", l => {
-                    return (l.country == "nt" || l.country == "hnd-slv") ? 0.2
-                : 0.6
-                })
+                .attr("opacity", 0.3)
+                // .attr("stroke", d => countryAttr[d.country].colorShade)
+                // .attr("opacity", l => {
+                //     return (l.country == "nt" || l.country == "hnd-slv") ? 0.2
+                // : 0.6
+                // })
         });
 }
 
