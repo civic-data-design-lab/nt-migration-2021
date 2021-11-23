@@ -711,8 +711,8 @@ i.arrow-up {
 .fully .scrollytelling-caption .footnote, 
 .fully .scrollytelling-text .footnote {
     bottom: 5%;
-    padding-left: calc(var(--scrollytelling-padding)/3);
-    padding-right: calc(var(--scrollytelling-padding)/3);
+    padding-left: calc(var(--scrollytelling-padding));
+    padding-right: calc(var(--scrollytelling-padding));
 }
 .lefty .scrollytelling-caption .footnote,
 .lefty .scrollytelling-text .footnote,
@@ -1209,14 +1209,23 @@ i.arrow-up {
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
+    
+}
+
+@media (min-width: 770px) {
+    .fully .scrollytelling-caption .footnote, 
+    .fully .scrollytelling-text .footnote {
+        padding-left: calc(var(--scrollytelling-padding)*2.25);
+        padding-right: calc(var(--scrollytelling-padding)*2.25);
+    }
+}
+@media (min-width: 1400px) {
     .fully .scrollytelling-caption .footnote, 
     .fully .scrollytelling-text .footnote {
         padding-left: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
         padding-right: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
     }
 }
-
-
 .about-descr {
     font-family: neue-haas-grotesk-text, sans-serif;
     font-weight: 400;
