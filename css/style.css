@@ -18,8 +18,8 @@
     --transition-speed: 1s ease-in-out;
     --open: 85vw;
     --closed: 2vw;
-    --partial-open: 35vw;
-    --partial-closed: 35vw;
+    --partial-open: 50vw;
+    --partial-closed: 40vw;
     --blur-on: grayscale(1) blur(10px);
     --blur-off: grayscale(1) blur(0px);
     --filters-off: grayscale(0) blur(0px);
@@ -243,6 +243,7 @@ a.text-black:hover {
 
 .chapter#closed {
     overflow: hidden;
+    cursor: pointer;
 }
 
 
