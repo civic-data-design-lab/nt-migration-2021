@@ -233,6 +233,7 @@ a.text-black:hover {
     position: sticky;
     top: 0;
     align-self: flex-start;
+    transform: translateZ(0);
     -webkit-transform: translateZ(0);
     overflow-x: hidden;
     /* overflow-y: auto; */
@@ -295,15 +296,6 @@ a.text-black:hover {
 
 section:hover .chapter {
     height: auto;
-}
-
-
-
-section#open:hover .chapter-title {
-    /* color: rgba(0, 0, 0, 0);
-    background: rgba(0, 0, 0, 0);
-    transition: var(--transition-speed);
-    width: var(--open); */
 }
 
 .chapter-summary {
@@ -642,9 +634,6 @@ i.arrow-up {
     padding-top: 0vh !important;
 }
 
-.fully:last-of-type {
-    /* padding-top: 0vh !important; */
-}
 
 .fully>div {
     height: auto;
@@ -886,6 +875,10 @@ i.arrow-up {
 
 .fully .scrollytelling-caption {
     padding: calc(var(--scrollytelling-padding)/3);
+    -webkit-transform: translateY(-50vh);
+    -moz-transform: translateY(-50vh);
+    -ms-transform: translateY(-50vh);
+    -o-transform: translateY(-50vh);
     transform: translateY(-50vh);
     -webkit-backdrop-filter: var(--blur-off);
     -moz-backdrop-filter: var(--blur-off);
@@ -941,7 +934,7 @@ i.arrow-up {
         -ms-backdrop-filter: var(--blur-off);
         -o-backdrop-filter: var(--blur-off);
         backdrop-filter: var(--blur-off);
-        
+
         background: rgba(0, 0, 0, 0.397) !important;
         border: 1px solid white;
     }
@@ -962,8 +955,11 @@ i.arrow-up {
         /* background-position: center; */
         overflow: hidden;
         transition: var(--transition-speed);
+        -webkit-transform: translateX(-25%);
+        -moz-transform: translateX(-25%);
+        -ms-transform: translateX(-25%);
+        -o-transform: translateX(-25%);
         transform: translateX(-25%);
-
     }
 
     .index-page .mobile-menu>* {
@@ -1204,11 +1200,12 @@ i.arrow-up {
     }
 
 
-    .fully h2 {
+    .fully h2, .lefty h2, .righty h2 {
         font-size: 2rem;
+
     }
 
-    .fully h3 {
+    .fully h3, .lefty h3, .righty h3 {
         font-size: 1.25rem;
     }
 
