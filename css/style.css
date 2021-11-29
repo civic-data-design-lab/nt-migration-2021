@@ -357,13 +357,12 @@ section:hover .chapter {
 
 /* JUMP TO VIZ SHORT CUT */
 #shortcut {
-    /* top: calc(100vh - 3rem - 6px); */
-    top: calc(100vh - 3rem - 6px - (5% + 1.5rem));
-    /* bottom: 5%; */
+    top: calc(100vh - 3rem - 6px);
     float: right;
     height: 0;
     z-index: 5;
 }
+
 
 #shortcut a {
     text-decoration: none;
@@ -916,12 +915,14 @@ i.arrow-up {
     display: none;
 }
 
-/* Medium devices (tablets, 768px and up) */
-/*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
-/*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
-/*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
-@media (max-width: 770px) {
 
+/* SELECTOR FOR TOUCH INPUT DEVICES */ /* SELECTOR FOR TOUCH INPUT DEVICES *//* SELECTOR FOR TOUCH INPUT DEVICES */
+/* SELECTOR FOR TOUCH INPUT DEVICES */ /* SELECTOR FOR TOUCH INPUT DEVICES *//* SELECTOR FOR TOUCH INPUT DEVICES */
+/* SELECTOR FOR TOUCH INPUT DEVICES */ /* SELECTOR FOR TOUCH INPUT DEVICES *//* SELECTOR FOR TOUCH INPUT DEVICES */
+/* SELECTOR FOR TOUCH INPUT DEVICES */ /* SELECTOR FOR TOUCH INPUT DEVICES *//* SELECTOR FOR TOUCH INPUT DEVICES */
+@media (hover: none) {
+
+    
     .index-page .mobile-menu>* {
         color: white;
         transition: var(--transition-speed);
@@ -936,7 +937,6 @@ i.arrow-up {
         -ms-backdrop-filter: var(--blur-off);
         -o-backdrop-filter: var(--blur-off);
         backdrop-filter: var(--blur-off);
-
         background: rgba(0, 0, 0, 0.397) !important;
         border: 1px solid white;
     }
@@ -1080,80 +1080,7 @@ i.arrow-up {
         font-size: 1.25rem;
     }
 
-
-
-
-}
-
-
-/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
-/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
-/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
-
-@media(max-width: 576px) {
-
-    .chapter-title {
-        font-size: 3em;
-    }
-
-    .description {
-        font-size: 1em;
-    }
-
-}
-
-@media(max-width: 375px) {
-
-    h1 {
-        font-size: 2.5em;
-    }
-
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    #shortcut span {
-        display: inline;
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {}
-
-@media (min-width: 770px) {
-
-    .fully .scrollytelling-caption .footnote,
-    .fully .scrollytelling-text .footnote {
-        padding-left: calc(var(--scrollytelling-padding)*2.25);
-        padding-right: calc(var(--scrollytelling-padding)*2.25);
-    }
-}
-
-@media (min-width: 1400px) {
-
-    .fully .scrollytelling-caption .footnote,
-    .fully .scrollytelling-text .footnote {
-        padding-left: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
-        padding-right: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
-    }
-}
-
-.about-descr {
-    font-family: neue-haas-grotesk-text, sans-serif;
-    font-weight: 400;
-    font-size: 1.2em;
-    font-style: normal;
-    overflow: hidden;
-}
-
-@media (orientation: landscape) {}
-
-/* SELECTOR FOR TOUCH INPUT DEVICES */
-@media (hover: none) {
+    /* ABOVE WAS MOVED FROM IPAD DIMENSIONS */
 
     #mobile-button {
         position: absolute;
@@ -1173,8 +1100,8 @@ i.arrow-up {
 
     #hamburger-menu {
         position: absolute;
-        bottom: 5%;
-        padding: 1.5em;
+        bottom: 8%;
+        padding: 1em;
         z-index: 10;
     }
 
@@ -1271,10 +1198,96 @@ i.arrow-up {
         border: 1px solid rgba(0, 0, 0, 0);
     }
 
+    #shortcut {
+        top: calc(100vh - 3rem - 6px - (5% + 1em));
+    }
+    
+
     i.arrow{
         -webkit-box-shadow: 1px 1px 0px 1px black;
         -moz-box-shadow: 1px 1px 0px 1px black;
         box-shadow: 1px 1px 0px 1px black;
     }
  
+}
+
+/* Medium devices (tablets, 768px and up) */
+/*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
+/*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
+/*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
+@media (max-width: 770px) {
+
+
+
+
+
+}
+
+
+/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
+/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
+/*IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE IPHONE*/
+
+@media(max-width: 576px) {
+
+    #hamburger-menu {
+        bottom: 5%;
+    }
+
+    .chapter-title {
+        font-size: 3em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+}
+
+@media(max-width: 375px) {
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    #shortcut span {
+        display: inline;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
+
+@media (min-width: 770px) {
+
+    .fully .scrollytelling-caption .footnote,
+    .fully .scrollytelling-text .footnote {
+        padding-left: calc(var(--scrollytelling-padding)*2.25);
+        padding-right: calc(var(--scrollytelling-padding)*2.25);
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .fully .scrollytelling-caption .footnote,
+    .fully .scrollytelling-text .footnote {
+        padding-left: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
+        padding-right: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
+    }
+}
+
+.about-descr {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    font-style: normal;
+    overflow: hidden;
 }
