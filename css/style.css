@@ -357,7 +357,9 @@ section:hover .chapter {
 
 /* JUMP TO VIZ SHORT CUT */
 #shortcut {
-    top: calc(100vh - 3rem - 6px);
+    /* top: calc(100vh - 3rem - 6px); */
+    top: calc(100vh - 3rem - 6px - (5% + 1.5rem));
+    /* bottom: 5%; */
     float: right;
     height: 0;
     z-index: 5;
@@ -998,138 +1000,7 @@ i.arrow-up {
     }
 
 
-    #mobile-button {
-        position: absolute;
-        flex-direction: column;
-        display: flex;
-        z-index: 5;
-        height: 100vh;
-        width: 100vw;
-        pointer-events: none;
 
-    }
-
-    #mobile-button>* {
-        pointer-events: auto;
-
-    }
-
-    #hamburger-menu {
-        position: absolute;
-        bottom: 0%;
-        padding: 1.5em;
-        z-index: 10;
-        /* display: inline-block; */
-
-    }
-
-    .mobile-menu {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        height: 100vh;
-        z-index: 5;
-        -webkit-backdrop-filter: var(--filters-off);
-        -moz-backdrop-filter: var(--filters-off);
-        -ms-backdrop-filter: var(--filters-off);
-        -o-backdrop-filter: var(--filters-off);
-        backdrop-filter: var(--filters-off);
-        overflow: hidden;
-        transition: var(--transition-speed);
-        pointer-events: none !important;
-
-
-    }
-
-
-    .mobile-menu>* {
-        color: rgba(0, 0, 0, 0);
-        padding: 0.5em;
-        transition: var(--transition-speed);
-
-    }
-
-
-
-    .mobile-open {
-        position: fixed;
-        width: 100vw;
-        -webkit-backdrop-filter: var(--blur-on);
-        -moz-backdrop-filter: var(--blur-on);
-        -ms-backdrop-filter: var(--blur-on);
-        -o-backdrop-filter: var(--blur-on);
-        backdrop-filter: var(--blur-on);
-        visibility: visible;
-        pointer-events: auto !important;
-        transition: var(--transition-speed);
-        background: rgba(0, 0, 0, 0.178);
-
-    }
-
-    .index-page .mobile-open {
-        background: none;
-        -webkit-backdrop-filter: var(--blur-off);
-        -moz-backdrop-filter: var(--blur-off);
-        -ms-backdrop-filter: var(--blur-off);
-        -o-backdrop-filter: var(--blur-off);
-        backdrop-filter: var(--blur-off);
-        background: rgba(0, 0, 0, 0.397);
-        border: 2px solid white;
-    }
-
-
-
-    .mobile-open>* {
-        color: white;
-        transition: var(--transition-speed);
-
-    }
-
-    /* .mobile-open *:hover {
-        color: white;
-        transition: var(--transition-speed);
-    } */
-
-
-
-    #mobile-exit {
-        position: absolute;
-        bottom: 0%;
-        /* left: 6vw; */
-        padding: 1em;
-        font-size: 3em;
-    }
-
-
-    .bar1,
-    .bar2,
-    .bar3 {
-        width: 35px;
-        height: 5px;
-        background-color: rgba(255, 255, 255, 1);
-        margin: 6px 0;
-        transition: 0.4s;
-        border: 1px solid rgba(0, 0, 0, 0.5);
-    }
-
-    .change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
-        background-color: rgba(255, 255, 255, 1);
-        border: 1px solid rgba(0, 0, 0, 0);
-    }
-
-    .change .bar2 {
-        opacity: 0;
-    }
-
-    .change .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
-        transform: rotate(45deg) translate(-8px, -8px);
-        background-color: rgba(255, 255, 255, 1);
-        border: 1px solid rgba(0, 0, 0, 0);
-    }
 
     #wrapper {
         display: flex;
@@ -1277,4 +1148,133 @@ i.arrow-up {
     font-size: 1.2em;
     font-style: normal;
     overflow: hidden;
+}
+
+@media (orientation: landscape) {}
+
+/* SELECTOR FOR TOUCH INPUT DEVICES */
+@media (hover: none) {
+
+    #mobile-button {
+        position: absolute;
+        flex-direction: column;
+        display: flex;
+        z-index: 5;
+        height: 100vh;
+        width: 100vw;
+        pointer-events: none;
+
+    }
+
+    #mobile-button>* {
+        pointer-events: auto;
+
+    }
+
+    #hamburger-menu {
+        position: absolute;
+        bottom: 5%;
+        padding: 1.5em;
+        z-index: 10;
+    }
+
+    .mobile-menu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        z-index: 5;
+        -webkit-backdrop-filter: var(--filters-off);
+        -moz-backdrop-filter: var(--filters-off);
+        -ms-backdrop-filter: var(--filters-off);
+        -o-backdrop-filter: var(--filters-off);
+        backdrop-filter: var(--filters-off);
+        overflow: hidden;
+        transition: var(--transition-speed);
+        pointer-events: none !important;
+    }
+
+    .mobile-menu>* {
+        color: rgba(0, 0, 0, 0);
+        padding: 0.5em;
+        transition: var(--transition-speed);
+
+    }
+
+    .mobile-open {
+        position: fixed;
+        width: 100vw;
+        -webkit-backdrop-filter: var(--blur-on);
+        -moz-backdrop-filter: var(--blur-on);
+        -ms-backdrop-filter: var(--blur-on);
+        -o-backdrop-filter: var(--blur-on);
+        backdrop-filter: var(--blur-on);
+        visibility: visible;
+        pointer-events: auto !important;
+        transition: var(--transition-speed);
+        background: rgba(0, 0, 0, 0.178);
+
+    }
+
+    .index-page .mobile-open {
+        background: none;
+        -webkit-backdrop-filter: var(--blur-off);
+        -moz-backdrop-filter: var(--blur-off);
+        -ms-backdrop-filter: var(--blur-off);
+        -o-backdrop-filter: var(--blur-off);
+        backdrop-filter: var(--blur-off);
+        background: rgba(0, 0, 0, 0.397);
+        border: 2px solid white;
+    }
+
+    .mobile-open>* {
+        color: white;
+        transition: var(--transition-speed);
+
+    }
+
+    #mobile-exit {
+        position: absolute;
+        bottom: 0%;
+        padding: 1em;
+        font-size: 3em;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 30px;
+        height: 4px;
+        background-color: rgba(255, 255, 255, 1);
+        margin: 6px 0;
+        transition: 0.4s;
+        border: 1px solid rgba(0, 0, 0, 255);
+        /* backdrop-filter: invert(70%); */
+    }
+
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+        background-color: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(0, 0, 0, 0);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+        background-color: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(0, 0, 0, 0);
+    }
+
+    i.arrow{
+        -webkit-box-shadow: 1px 1px 0px 1px black;
+        -moz-box-shadow: 1px 1px 0px 1px black;
+        box-shadow: 1px 1px 0px 1px black;
+    }
+ 
 }
