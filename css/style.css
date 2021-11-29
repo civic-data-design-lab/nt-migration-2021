@@ -229,7 +229,6 @@ a.text-black:hover {
 
 /* DECORATION, COLOR, CASE */
 .chapter {
-    position: -webkit-sticky;
     /* for Safari */
     position: sticky;
     top: 0;
@@ -338,7 +337,6 @@ section#open:hover .chapter-title {
 
 
 .content-block {
-    position: -webkit-sticky;
     /* for Safari */
     position: sticky;
     top: 0;
@@ -505,16 +503,30 @@ i.arrow-up {
 .gradient {
     width: var(--open);
     height: 100vh;
+
+    -webkit-backdrop-filter: var(--blur-off);
+    -moz-backdrop-filter: var(--blur-off);
+    -ms-backdrop-filter: var(--blur-off);
+    -o-backdrop-filter: var(--blur-off);
     backdrop-filter: var(--blur-off);
+
     pointer-events: none;
     transition: var(--transition-speed);
 }
 
 .chapter:hover .gradient {
+    -webkit-backdrop-filter: var(--blur-off);
+    -moz-backdrop-filter: var(--blur-off);
+    -ms-backdrop-filter: var(--blur-off);
+    -o-backdrop-filter: var(--blur-off);
     backdrop-filter: var(--blur-off);
 }
 
 #open .gradient.about-g {
+    -webkit-backdrop-filter: none;
+    -moz-backdrop-filter: none;
+    -ms-backdrop-filter: none;
+    -o-backdrop-filter: none;
     backdrop-filter: none;
 }
 
@@ -658,23 +670,40 @@ i.arrow-up {
     /* overflow: hidden; */
     /* background-color: rgba(33, 83, 245, 0.5); */
     background-color: rgba(21, 64, 196, 0.5);
+
+    -webkit-backdrop-filter: var(--blur-on);
+    -moz-backdrop-filter: var(--blur-on);
+    -ms-backdrop-filter: var(--blur-on);
+    -o-backdrop-filter: var(--blur-on);
     backdrop-filter: var(--blur-on);
 }
 
 .scrolly-container-motivations .scrollytelling-caption,
 .scrolly-container-motivations .scrollytelling-text {
     background-color: rgba(21, 64, 196, 0.75);
+    -webkit-backdrop-filter: var(--blur-on);
+    -moz-backdrop-filter: var(--blur-on);
+    -ms-backdrop-filter: var(--blur-on);
+    -o-backdrop-filter: var(--blur-on);
     backdrop-filter: var(--blur-on);
 }
 
 .scrolly-container-profile .ribbon-image {
     background-color: rgba(59, 168, 201, 0.5);
+    -webkit-backdrop-filter: var(--blur-on);
+    -moz-backdrop-filter: var(--blur-on);
+    -ms-backdrop-filter: var(--blur-on);
+    -o-backdrop-filter: var(--blur-on);
     backdrop-filter: var(--blur-on);
 }
 
 .scrolly-container-profile .scrollytelling-caption,
 .scrolly-container-profile .scrollytelling-text {
     background-color: rgba(59, 168, 201, 0.75);
+    -webkit-backdrop-filter: var(--blur-on);
+    -moz-backdrop-filter: var(--blur-on);
+    -ms-backdrop-filter: var(--blur-on);
+    -o-backdrop-filter: var(--blur-on);
     backdrop-filter: var(--blur-on);
 }
 
@@ -682,24 +711,40 @@ i.arrow-up {
     /* overflow: hidden; */
     /* background-color: rgb(224, 135, 220,0.5); */
     background-color: rgba(226, 60, 173, 0.5);
+    -webkit-backdrop-filter: var(--blur-on);
+    -moz-backdrop-filter: var(--blur-on);
+    -ms-backdrop-filter: var(--blur-on);
+    -o-backdrop-filter: var(--blur-on);
     backdrop-filter: var(--blur-on);
 }
 
 .scrolly-container-outcomes .scrollytelling-caption,
 .scrolly-container-outcomes .scrollytelling-text {
     background-color: rgba(226, 60, 173, 0.75);
+    -webkit-backdrop-filter: var(--blur-on);
+    -moz-backdrop-filter: var(--blur-on);
+    -ms-backdrop-filter: var(--blur-on);
+    -o-backdrop-filter: var(--blur-on);
     backdrop-filter: var(--blur-on);
 }
 
 .scrolly-container-cost .ribbon-image {
     /* overflow: hidden; */
     background-color: rgba(102, 45, 145, 0.5);
+    -webkit-backdrop-filter: var(--blur-on);
+    -moz-backdrop-filter: var(--blur-on);
+    -ms-backdrop-filter: var(--blur-on);
+    -o-backdrop-filter: var(--blur-on);
     backdrop-filter: var(--blur-on);
 }
 
 .scrolly-container-cost .scrollytelling-caption,
 .scrolly-container-cost .scrollytelling-text {
     background-color: rgba(102, 45, 145, 0.75);
+    -webkit-backdrop-filter: var(--blur-on);
+    -moz-backdrop-filter: var(--blur-on);
+    -ms-backdrop-filter: var(--blur-on);
+    -o-backdrop-filter: var(--blur-on);
     backdrop-filter: var(--blur-on);
 }
 
@@ -709,12 +754,14 @@ i.arrow-up {
     left: 0px;
     font-size: 0.6rem;
 }
-.fully .scrollytelling-caption .footnote, 
+
+.fully .scrollytelling-caption .footnote,
 .fully .scrollytelling-text .footnote {
     bottom: 5%;
     padding-left: calc(var(--scrollytelling-padding));
     padding-right: calc(var(--scrollytelling-padding));
 }
+
 .lefty .scrollytelling-caption .footnote,
 .lefty .scrollytelling-text .footnote,
 .righty .scrollytelling-caption .footnote,
@@ -733,28 +780,6 @@ i.arrow-up {
 .scrollytelling-text .footnote a:hover {
     text-decoration: underline;
 }
-
-
-/* 
-.outcomes-map-theme{
-    background-color: rgb(224, 135, 220,0.5);
-    backdrop-filter: var(--blur-on);
-
-}
-
-
-.motivations-map-theme {
-
-    background-color: rgba(33, 83, 245, 0.5);
-    backdrop-filter: var(--blur-on);
-}
-
-.cost-map-theme{
-    box-shadow: 0.25rem 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.35);
-
-    background-color: rgb(102, 45, 145,0.5);
-    backdrop-filter: var(--blur-on);
-} */
 
 
 
@@ -801,7 +826,6 @@ i.arrow-up {
 }
 
 #map {
-    position: -webkit-sticky;
     /* for Safari */
     position: sticky;
     top: 0;
@@ -863,6 +887,10 @@ i.arrow-up {
 .fully .scrollytelling-caption {
     padding: calc(var(--scrollytelling-padding)/3);
     transform: translateY(-50vh);
+    -webkit-backdrop-filter: var(--blur-off);
+    -moz-backdrop-filter: var(--blur-off);
+    -ms-backdrop-filter: var(--blur-off);
+    -o-backdrop-filter: var(--blur-off);
     backdrop-filter: var(--blur-off);
 
 
@@ -899,7 +927,7 @@ i.arrow-up {
 /*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
 @media (max-width: 770px) {
 
-   .index-page .mobile-menu>*{
+    .index-page .mobile-menu>* {
         color: white;
         transition: var(--transition-speed);
         pointer-events: auto;
@@ -908,13 +936,18 @@ i.arrow-up {
 
     .index-page .mobile-open {
         background: none;
+        -webkit-backdrop-filter: var(--blur-off);
+        -moz-backdrop-filter: var(--blur-off);
+        -ms-backdrop-filter: var(--blur-off);
+        -o-backdrop-filter: var(--blur-off);
         backdrop-filter: var(--blur-off);
+        
         background: rgba(0, 0, 0, 0.397) !important;
         border: 1px solid white;
     }
 
 
-    .index-page #hamburger-menu{
+    .index-page #hamburger-menu {
         display: none !important;
     }
 
@@ -1001,6 +1034,10 @@ i.arrow-up {
         width: 100vw;
         height: 100vh;
         z-index: 5;
+        -webkit-backdrop-filter: var(--filters-off);
+        -moz-backdrop-filter: var(--filters-off);
+        -ms-backdrop-filter: var(--filters-off);
+        -o-backdrop-filter: var(--filters-off);
         backdrop-filter: var(--filters-off);
         overflow: hidden;
         transition: var(--transition-speed);
@@ -1022,6 +1059,10 @@ i.arrow-up {
     .mobile-open {
         position: fixed;
         width: 100vw;
+        -webkit-backdrop-filter: var(--blur-on);
+        -moz-backdrop-filter: var(--blur-on);
+        -ms-backdrop-filter: var(--blur-on);
+        -o-backdrop-filter: var(--blur-on);
         backdrop-filter: var(--blur-on);
         visibility: visible;
         pointer-events: auto !important;
@@ -1032,6 +1073,10 @@ i.arrow-up {
 
     .index-page .mobile-open {
         background: none;
+        -webkit-backdrop-filter: var(--blur-off);
+        -moz-backdrop-filter: var(--blur-off);
+        -ms-backdrop-filter: var(--blur-off);
+        -o-backdrop-filter: var(--blur-off);
         backdrop-filter: var(--blur-off);
         background: rgba(0, 0, 0, 0.397);
         border: 2px solid white;
@@ -1209,24 +1254,26 @@ i.arrow-up {
 @media (min-width: 1200px) {}
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-    
-}
+@media (min-width: 1400px) {}
 
 @media (min-width: 770px) {
-    .fully .scrollytelling-caption .footnote, 
+
+    .fully .scrollytelling-caption .footnote,
     .fully .scrollytelling-text .footnote {
         padding-left: calc(var(--scrollytelling-padding)*2.25);
         padding-right: calc(var(--scrollytelling-padding)*2.25);
     }
 }
+
 @media (min-width: 1400px) {
-    .fully .scrollytelling-caption .footnote, 
+
+    .fully .scrollytelling-caption .footnote,
     .fully .scrollytelling-text .footnote {
         padding-left: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
         padding-right: calc(var(--scrollytelling-padding)*1.5 + var(--scrollytelling-padding)/3);
     }
 }
+
 .about-descr {
     font-family: neue-haas-grotesk-text, sans-serif;
     font-weight: 400;
