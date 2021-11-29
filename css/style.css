@@ -1100,7 +1100,7 @@ i.arrow-up {
 
     #hamburger-menu {
         position: absolute;
-        bottom: 8%;
+        bottom: 18%;
         padding: 1em;
         z-index: 10;
     }
@@ -1199,7 +1199,7 @@ i.arrow-up {
     }
 
     #shortcut {
-        top: calc(100vh - 3rem - 6px - (5% + 1em));
+        top: calc(100vh - 3rem - 6px - (15% + 1em));
     }
     
 
@@ -1231,7 +1231,7 @@ i.arrow-up {
 @media(max-width: 576px) {
 
     #hamburger-menu {
-        bottom: 5%;
+        bottom: 15%;
     }
 
     .chapter-title {
