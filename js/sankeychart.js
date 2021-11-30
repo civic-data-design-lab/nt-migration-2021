@@ -190,26 +190,39 @@ d3.csv("./data/sankey.csv").then(function(data) {
 //                 // select nodes with this class
 
                  
+//                 d3.selectAll(".source-" + sourceClass)
+//                     .transition()        
+//                     .duration(300)
+//                     .style("stroke","#fff")
+//                     .style("stroke-width","2")
+//                     .style("fill", sourceColor);
+//                 d3.selectAll(".target-" + sourceClassb)
+//                     .transition()
+//                     .duration(300)
+//                     .style("stroke","#fff")
+//                     .style("stroke-width","2")
+//                     .style("fill", sourceColorb);
                 d3.selectAll(".source-" + sourceClass)
                     .transition()        
                     .duration(300)
-                    .style("stroke","#fff")
-                    .style("stroke-width","2")
-                    .style("fill", sourceColor);
-                d3.selectAll(".target-" + sourceClassb)
-                    .transition()
-                    .duration(300)
-                    .style("stroke","#fff")
-                    .style("stroke-width","2")
-                    .style("fill", sourceColorb);
-                d3.selectAll(".source-" + sourceClass)
-                    .transition()        
-                    .duration(300)
                     .style("fill", sourceColor);
                 d3.selectAll(".target-" + sourceClassb)
                     .transition()        
                     .duration(300)
                     .style("fill", sourceColorb);
+            	d3.selectAll(".occ-title")
+                    .transition()        
+                    .duration(300)
+                    .style("color", sourceColorb);
+                d3.selectAll(".occbefper" )
+                    .transition()        
+                    .duration(300)
+                    .style("fill", sourceColor);
+                d3.selectAll(".occaftper" )
+                    .transition()        
+                    .duration(300)
+                    .style("fill", sourceColorb);
+
                 d3.select(this)
                 .attr("stroke-width","5");
 
