@@ -286,7 +286,7 @@ font-family: neue-haas-grotesk-text, sans-serif;
 
 .scrolly-container-cost2{
     /* overflow: hidden; */
-    background-color: rgb(250, 164, 26,0.5);
+    background-color: rgb(250, 164, 26,0.6);
     backdrop-filter: var(--blur-on);
 }
 
