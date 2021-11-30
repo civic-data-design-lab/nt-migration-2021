@@ -9,17 +9,19 @@ var images = [
     "./img/Headers/outcomes.jpg",
     
 ]
+
+
 const slidesContainer = document.createElement('div');
 slidesContainer.className = 'mySlides'
 mobile.appendChild(slidesContainer);
 
 
 for (let i = 0; i < images.length; i++) {
-    const slideImage = new Image();
+
     slidesContainer.className = 'slideShow'
-    slideImage.src = images[i];
-    slideImage.className = 'mySlides mobile-backdrop'
-    slidesContainer.appendChild(slideImage)
+    const slideDiv = document.createElement("div");
+    slideDiv.className = 'mySlides mobile-backdrop' + [i]
+    slidesContainer.appendChild(slideDiv)
 
 }
 

@@ -175,39 +175,6 @@ var motivationsConfig = {
 
             ],
         },
-
-        // //DESTINATION 4
-        // {
-        //     id: 'map-state-4',
-        //     alignment: 'full',
-        //     hidden: false,
-        //     title: '',
-        //     image: '',
-        //     description: '',
-        //     location: {
-        //         center: [-89.2000000, 14.5000000], // initial map center in [lon, lat]
-        //         zoom: maxZoom,
-        //         pitch: 0,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [
-        //         {
-        //             layer: 'ntCountriesViz',
-        //             opacity: 0,
-        //         },
-        //         {
-        //             layer: 'ntCountriesVizLine',
-        //             opacity: 0,
-        //         }
-
-        //     ],
-        //     onChapterExit: [
-        //     ],
-
-        // },
         
         //DESTINATION 4
         {

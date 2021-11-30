@@ -119,7 +119,7 @@ outcomesConfig.chapters.forEach((record, idx) => {
 
 
     // INJECT AND STYLE TEXT FOR HERO, NON IMAGE TEXT
-    if (record.title || record.title2 || record.description) {
+    if (record.title || record.description || record.footnote) {
 
         let storyText = document.createElement('div');
 
@@ -145,6 +145,20 @@ outcomesConfig.chapters.forEach((record, idx) => {
             story.className = "scrollytelling description"
             story.innerHTML = record.description;
             storyText.appendChild(story);
+        }
+
+        if (record.footnote){
+            const footy = document.createElement('span')
+            footy.className = 'scrollytelling new-footer'
+            footy.innerHTML = '* ' + record.footnote + ' '; 
+            storyText.appendChild(footy)
+
+            const footyLink = document.createElement('a')
+            footyLink.className = 'scrollytelling new-footer'
+            footyLink.innerHTML = '[external reference]';
+            footyLink.setAttribute('href', record.footnoteLink)
+            footyLink.style.pointerEvents = 'auto'
+            footy.appendChild(footyLink)
         }
 
     }

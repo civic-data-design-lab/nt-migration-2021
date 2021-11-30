@@ -857,13 +857,13 @@ i.arrow-up {
     color: white;
     font-weight: bold;
     font-style: normal;
-    font-size: 2.5em;
+    font-size: 2.2em;
     line-height: 1em;
     /* margin-top: 1rem;
     margin-bottom: 1rem; */
     /* padding: var(--scrollytelling-padding); */
-
 }
+
 
 .fully .scrollytelling {
     padding-left: calc(var(--scrollytelling-padding)*1.5);
@@ -903,8 +903,23 @@ i.arrow-up {
 
 .description {
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-top: 1em;
+}
+
+
+.new-footer{
+    font-weight: 10;
+    font-size: 0.7rem;
+    padding-top: 2vh;
+    text-decoration: none;
+    color: white !important;
+    /* display: inline-block;
+    width: 50%; */
+}
+
+.new-footer:hover a{
+    text-decoration: underline;
 }
 
 .hidden {
@@ -920,7 +935,7 @@ i.arrow-up {
 /* SELECTOR FOR TOUCH INPUT DEVICES */ /* SELECTOR FOR TOUCH INPUT DEVICES *//* SELECTOR FOR TOUCH INPUT DEVICES */
 /* SELECTOR FOR TOUCH INPUT DEVICES */ /* SELECTOR FOR TOUCH INPUT DEVICES *//* SELECTOR FOR TOUCH INPUT DEVICES */
 /* SELECTOR FOR TOUCH INPUT DEVICES */ /* SELECTOR FOR TOUCH INPUT DEVICES *//* SELECTOR FOR TOUCH INPUT DEVICES */
-@media (hover: none) {
+@media (hover: none), (max-width: 850px) {
 
     
     .index-page .mobile-menu>* {
@@ -951,18 +966,56 @@ i.arrow-up {
         display: block;
     }
 
-    .mobile-backdrop {
+    .mySlides{
         height: 100vh;
-        /* background-size: cover; */
-        /* background-position: center; */
+        width: 100vw;
+        /* border: 3px solid red; */
+        background-size: cover;
         overflow: hidden;
         transition: var(--transition-speed);
-        -webkit-transform: translateX(-25%);
+        /* -webkit-transform: translateX(-25%);
         -moz-transform: translateX(-25%);
         -ms-transform: translateX(-25%);
         -o-transform: translateX(-25%);
-        transform: translateX(-25%);
+        transform: translateX(-25%); */
+
     }
+
+    .mobile-backdrop0 {
+        background-image: url("../img/Headers/about.jpg");
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .mobile-backdrop1 {
+        background-image: url("../img/Headers/origins.jpg");
+        background-size: cover;
+        background-position: center;
+        
+    }
+
+    .mobile-backdrop2 {
+        background-image: url("../img/Headers/motivations.jpg");
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .mobile-backdrop3 {
+        background-image: url("../img/Headers/profiles.jpg");
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .mobile-backdrop4 {
+        background-image: url("../img/Headers/outcomes.jpg");
+        background-size: cover;
+        background-position: center;
+
+    }
+
 
     .index-page .mobile-menu>* {
         display: flex !important;
@@ -989,6 +1042,12 @@ i.arrow-up {
         font-size: 1.5em;
     }
 
+    .new-footer{
+        font-weight: 1;
+        font-size: 0.6rem;
+        padding-top: 1vh;
+
+    }
 
     .fully .scrollytelling {
         padding-left: calc(var(--scrollytelling-padding)/100);
@@ -1120,11 +1179,13 @@ i.arrow-up {
         overflow: hidden;
         transition: var(--transition-speed);
         pointer-events: none !important;
+        padding-bottom: 25%;
+        
     }
 
     .mobile-menu>* {
         color: rgba(0, 0, 0, 0);
-        padding: 0.5em;
+        padding: 1vh;
         transition: var(--transition-speed);
 
     }
@@ -1172,17 +1233,17 @@ i.arrow-up {
     .bar2,
     .bar3 {
         width: 30px;
-        height: 4px;
+        height: 3px;
         background-color: rgba(255, 255, 255, 1);
         margin: 6px 0;
         transition: 0.4s;
-        border: 1px solid rgba(0, 0, 0, 255);
+        outline: 1px solid rgba(0, 0, 0, 255);
         /* backdrop-filter: invert(70%); */
     }
 
     .change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
+        -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+        transform: rotate(-45deg) translate(-4px, 4px);
         background-color: rgba(255, 255, 255, 1);
         border: 1px solid rgba(0, 0, 0, 0);
     }
@@ -1215,10 +1276,15 @@ i.arrow-up {
 /*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
 /*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
 /*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
-@media (max-width: 770px) {
+@media (max-width: 1025px) {
 
+    #hamburger-menu {
+        bottom: 5%;
+    }
 
-
+    #shortcut {
+        top: calc(100vh - 3rem - 6px - (3%));
+    }
 
 
 }
@@ -1230,9 +1296,6 @@ i.arrow-up {
 
 @media(max-width: 576px) {
 
-    #hamburger-menu {
-        bottom: 15%;
-    }
 
     .chapter-title {
         font-size: 3em;

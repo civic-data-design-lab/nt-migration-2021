@@ -50,6 +50,7 @@ var outcomesConfig = {
             filter: '',
             paddedImage: false,
             description: '24% of households in El Salvador, Guatemala, and Honduras have a member who migrated in the last five years. Most of these households receive remittances. The need to migrate is largely economic, caused by the externalities of violence, insecurity, and natural disasters.',
+            footnote:'',
             location: {
                 center: [-88.000000, 14.5000000], // initial map center in [lon, lat]
                 zoom: closeZoom,
@@ -78,6 +79,8 @@ var outcomesConfig = {
             filter: '',
             paddedImage: '',
             description: '',
+            footnote:'Map Data: MPI. U.S. Immigrant Population by Metropolitan Area, Table 1, FY 2015-2019.',
+            footnoteLink: 'https://www.migrationpolicy.org/programs/data-hub/charts/us-immigrant-population-metropolitan-area?width=850&height=850&iframe=true',
             mapLayer: 'mappedText1',
             location: {
                 center: [-88.000000, 30.0000000], // initial map center in [lon, lat]
@@ -107,6 +110,7 @@ var outcomesConfig = {
             filter: '',
             paddedImage: false,
             description: '',
+            footnote:'',
             location: {
                 center: [-93.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom2,
@@ -140,6 +144,7 @@ var outcomesConfig = {
             filter: '',
             paddedImage: false,
             description: '11% of recently reported Honduran migrants journeyed to Spain.',
+            footnote:'',
             location: {
                 center: [-93.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom2,
@@ -168,6 +173,7 @@ var outcomesConfig = {
             filter: '',
             paddedImage: '',
             description: '', 
+            footnote:'',
             location: {
                 center: [-100.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: middleZoom2,
@@ -185,34 +191,6 @@ var outcomesConfig = {
             fadePixels: '',
         },
 
-        //DESTINATION 9
-        // {
-        //     id: 'map-state-9',
-        //     alignment: 'left',
-        //     hidden: true,
-        //     title: '',
-        //     image: '',
-        //     filter: '',
-        //     paddedImage: false,
-        //     description: '',
-        //     location: {
-        //         center: [-97.000000, 30.0000000], // initial map center in [lon, lat]
-        //         zoom: farZoom,
-        //         pitch: 0,
-        //         bearing: 0
-        //     },
-        //     mapAnimation: 'flyTo',
-        //     rotateAnimation: false,
-        //     callback: '',
-        //     onChapterEnter: [],
-        //     onChapterExit: [],
-        //     showGuat:true,
-        //     showHond:true,
-        //     showSalv:true,
-        //     fadePixels: '',
-            
-        // },
-
         //DESTINATION 8
         {
             id: 'map-state-10',
@@ -223,6 +201,7 @@ var outcomesConfig = {
             filter: '',
             paddedImage: false,
             description: 'Creating incentives for members of a diaspora to invest in public works can magnify the reach of government efforts while simultaneously enriching transnational partnerships to improve governance, for example, by matching diaspora donations with transparent and accountable commitments from the national, departmental, and municipal governments.',
+            footnote:'',
             location: {
                 center: [-97.000000, 30.0000000], // initial map center in [lon, lat]
                 zoom: farZoom,
