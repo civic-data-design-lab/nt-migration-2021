@@ -540,13 +540,13 @@ $(document).ready(function() {
             $("#tt-year").text(currentYear);
             $(".label-yearspan").html((lastDecade + 1) + "&ndash;" + currentDecade);
 
-            $(".label-total .label-mig").text(numberWithCommas(originsAttr[currentDecade].total_mig_stock));
+            $(".label-total .label-mig").text(numberWithCommas(roundLargeFigures(originsAttr[currentDecade].total_mig_stock, 2)));
 
             for (let i = 0; i < countriesList.length; i++) {
                 country = countriesList[i];
                 countryId = "#label-" + country;
 
-                $(countryId + " .label-mig").text(numberWithCommas(originsAttr[currentDecade][country].mig_stock));
+                $(countryId + " .label-mig").text(numberWithCommas(roundLargeFigures(originsAttr[currentDecade][country].mig_stock, 2)));
                 $(countryId + " .label-pct").text(roundAccurately(originsAttr[currentDecade][country].pct_mig_pop * 100, 1).toFixed(1));
             }
 
@@ -594,13 +594,13 @@ $(document).ready(function() {
             $("#tt-year").text(currentYear);
             $(".label-yearspan").html((Math.floor(e.progress * 6) * 10 + 1961) + "&ndash;" + currentDecade);
 
-            $(".label-total .label-mig").text(numberWithCommas(originsAttr[currentDecade].total_mig_stock));
+            $(".label-total .label-mig").text(numberWithCommas(roundLargeFigures(originsAttr[currentDecade].total_mig_stock, 2)));
 
             for (let i = 0; i < countriesList.length; i++) {
                 country = countriesList[i];
                 countryId = "#label-" + country;
 
-                $(countryId + " .label-mig").text(numberWithCommas(originsAttr[currentDecade][country].mig_stock));
+                $(countryId + " .label-mig").text(numberWithCommas(roundLargeFigures(originsAttr[currentDecade][country].mig_stock, 2)));
                 $(countryId + " .label-pct").text(roundAccurately(originsAttr[currentDecade][country].pct_mig_pop * 100, 1).toFixed(1));
             }
         })

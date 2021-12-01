@@ -22,6 +22,12 @@ function roundAccurately(number, decimalPlaces) {
 	return Number(Math.round(number + "e" + decimalPlaces) + "e-" + decimalPlaces);	
 };
 
+// round large figures with 000s
+function roundLargeFigures(number, leadingFigures) {
+    digitPlace = 10 ** (String(number).length - leadingFigures);
+    return Math.round(number / digitPlace) * digitPlace;
+};
+
 // convert number to string with commas
 function numberWithCommas(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
