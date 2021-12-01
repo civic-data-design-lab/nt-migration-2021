@@ -1276,7 +1276,7 @@ i.arrow-up {
 /*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
 /*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
 /*IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD  IPAD */
-@media (max-width: 1025px) {
+@media (min-width: 850px) and (max-width: 1025px) {
 
     #hamburger-menu {
         bottom: 5%;
