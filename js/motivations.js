@@ -162,12 +162,11 @@ const svg = d3.select("#frame-motivations")
         .attr("viewBox", [-(sideWidth + sqLen), 0, width + (sideWidth + sqLen), height]);
 
 // define tooltip
-const divMotivs = d3.select("body").append("div")
+const divMotivs = d3.select("#viz-col").append("div")
     .attr("id", "tt-motivs")
-    .attr("class", "tooltip")
-    .style("display", "none")
+    .attr("class", "tooltip mb-5 mb-md-0")
     .style("z-index", "10")
-    .text("info");
+    .html("<div class='side-color' style='background: rgb(21, 64, 196);'></div><p>Motivation for Migrating</p><h3 class='text-color' style='color: rgb(21, 64, 196);'><span class='label-motiv-pct'>87</span>% <span class='label-motiv text-uppercase'>Economic</span></h3><br><span class='text-hh text-color'>of <span class='label-hh'>surveyed</span> households</span><div class='row mt-1'><div class='col-left'><p>Reason for Migrating</p><span class='label-motiv-detail text-label' style='color: rgb(21, 64, 196);'>Search for a better job, unemplpoyment, lack of money to buy food</span></div><div class='col-right'><p>Origin Country</p><span class='label-country text-label'>Guatemala</span></div></div>");
 const divSide = d3.select("#frame-motivations").append("div")
     .attr("id", "tt-side")
     .attr("class", "tooltip-side p-2")
@@ -452,27 +451,33 @@ function tooltipHtml(d, shape) {
 }
 // tooltip position on mousemove
 function divMotivsOnMousemove(event) {
-    divMotivs
-    .style("top", (divHtml) => {
-        var divY = event.pageY;
-        var ttHeight = $("#tt-motivs").outerHeight();
-        var divHeight = $("#viz-motivations").height();
+    if (winWidth > 768) {
+        divMotivs
+        .style("top", (divHtml) => {
+            var divY = event.pageY;
+            var ttHeight = $("#tt-motivs").outerHeight();
+            var divHeight = $("#viz-motivations").height();
 
-        if ((divY + ttHeight + 60) > winHeight) {
-            divY = divY - ttHeight - 15;
-        };
-        return (divY + 10) + "px"
-    })
-    .style("left", (divHtml) => {
-        var divX = event.pageX;
-        var ttWidth = $("#tt-motivs").outerWidth();
-        var divWidth = $("#viz-motivations").width();
+            if ((divY + ttHeight + 60) > winHeight) {
+                divY = divY - ttHeight - 15;
+            };
+            return (divY + 10) + "px"
+        })
+        .style("left", (divHtml) => {
+            var divX = event.pageX;
+            var ttWidth = $("#tt-motivs").outerWidth();
+            var divWidth = $("#viz-motivations").width();
 
-        if ((divX + ttWidth + 60) > winWidth) {
-            divX = divX - ttWidth - 15;
-        };
-        return (divX + 10) + "px"
-    })
+            if ((divX + ttWidth) > divWidth) {
+                divX = divX - ttWidth - 15;
+            };
+            return (divX + 10) + "px"
+        })
+    }
+    else {
+        divMotivs.style("top", "1rem")
+            .style("left", "57%");
+    }
 }
 // side tooltip
 function sideTooltipHtml(d) {
@@ -915,7 +920,9 @@ function plotInitialGrid(data) {
             divMotivsOnMousemove(event);
         })
         .on("mouseout", function() {
-            divMotivs.style("display", "none");
+            if (winWidth > 768) {
+                divMotivs.style("display", "none");
+            }
         });
 
     // triangle bottom-left
@@ -942,7 +949,9 @@ function plotInitialGrid(data) {
             divMotivsOnMousemove(event);
         })
         .on("mouseout", function() {
-            divMotivs.style("display", "none");
+            if (winWidth > 768) {
+                divMotivs.style("display", "none");
+            }
         });
         
     // triangle top-right for 2 responses
@@ -976,7 +985,9 @@ function plotInitialGrid(data) {
             divMotivsOnMousemove(event);
         })
         .on("mouseout", function() {
-            divMotivs.style("display", "none");
+            if (winWidth > 768) {
+                divMotivs.style("display", "none");
+            }
         });
 
     // triangle top for 3 responses
@@ -1003,7 +1014,9 @@ function plotInitialGrid(data) {
             divMotivsOnMousemove(event);
         })
         .on("mouseout", function() {
-            divMotivs.style("display", "none");
+            if (winWidth > 768) {
+                divMotivs.style("display", "none");
+            }
         });
 
     // triangle right for 3 responses
@@ -1030,7 +1043,9 @@ function plotInitialGrid(data) {
             divMotivsOnMousemove(event);
         })
         .on("mouseout", function() {
-            divMotivs.style("display", "none");
+            if (winWidth > 768) {
+                divMotivs.style("display", "none");
+            }
         });
 
     // motivations categories legend
@@ -1267,15 +1282,16 @@ function updateScene(sortBy) {
 $(".btn").on("click", function() {
     btnId = "#" + $(this).attr("id");
     sortBy = $(this).attr("id").slice(4);
-    motivSort = sortBy;
     labelsId = "#frame-motivations #labels-" + sortBy;
 
     if ($(btnId).hasClass("active")) {
+        motivSort = "initial";
         $(btnId).removeClass("active");
         $(labelsId).fadeOut(time/2);
         updatePlotSort("initial");
     }
     else {
+        motivSort = sortBy;
         $(".btn").removeClass("active");
         $(".chart-labels").fadeOut(time/2);
         $(btnId).addClass("active");
@@ -1287,6 +1303,7 @@ $(".btn").on("click", function() {
 // create narratives
 createNarratives();
 
+// document ready
 $(document).ready(function() {
     function getDivHeight(id) {
         return $(id).height();
@@ -1365,4 +1382,14 @@ $(document).ready(function() {
         $(this).addClass("visited");
     }
     })
+})
+
+// window resize
+$(window).resize(function() {
+    if (winWidth > 768) {
+        divMotivs.style("display", "none");
+    }
+    else {
+        divMotivs.style("display", "block");
+    }
 })
