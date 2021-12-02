@@ -126,11 +126,22 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-
+    #tt-year {
+        width: 100px;
+    }
+    #tt-year::after {
+        width: calc(95vw - 100px);
+    }
+    #tt-migrants {
+        width: 330px;
+    }
+    .label-yearspan, .label-total {
+        display: inline-block;
+    }
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .text-sublabel, 
+    .label-yearspan, .label-total, .text-sublabel, 
     #label-gtm, #label-hnd, #label-slv {
         display: block;
     }
