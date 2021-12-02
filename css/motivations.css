@@ -62,8 +62,18 @@
 
 /* TOOLTIP */
 .tooltip {
-    min-width: 310px;
-    max-width: 380px;
+    position: relative;
+    width: 85%;
+    top: 1rem;
+    left: 57%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.tooltip .side-color {
+    background-color: #1540C4;
 }
 .tooltip .text-hh {
     font-size: 1rem;
@@ -146,8 +156,22 @@
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    /* #viz-content {
+        align-items: center;
+    } */
     .btn-sm {
         height: auto;
+    }
+    .tooltip {
+        position: absolute;
+        min-width: 310px;
+        max-width: 380px;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+        display: none;
     }
 }
 /* Large devices (desktops, 992px and up) */
