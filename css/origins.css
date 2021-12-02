@@ -127,13 +127,18 @@
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     #tt-year {
-        width: 100px;
+        width: 105px;
     }
     #tt-year::after {
-        width: calc(95vw - 100px);
+        width: calc(95vw - 105px);
     }
     #tt-migrants {
-        width: 330px;
+        width: 340px;
+        -webkit-transform: translate(105px, calc(-50% - 4.5rem));
+        -moz-transform: translate(105px, calc(-50% - 4.5rem));
+        -ms-transform: translate(105px, calc(-50% - 4.5rem));
+        -o-transform: translate(105px, calc(-50% - 4.5rem));
+        transform: translate(105px, calc(-50% - 4.5rem));
     }
     .label-yearspan, .label-total {
         display: inline-block;
