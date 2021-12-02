@@ -18,6 +18,15 @@
 .event-img {
     background: rgba(201, 31, 99, 0.7);
 }
+#tt-event {
+    top: 2rem;
+    height: calc(50vh - 10rem);
+    overflow: scroll;
+}
+#tt-event .event-img {
+    position: absolute;
+    z-index: -1;
+}
 #tt-event .event-img img {
     filter: grayscale(1);
     -webkit-mix-blend-mode: hard-light;
@@ -31,11 +40,12 @@
     background: rgba(255, 255, 255, 0.4);
 }
 /* migrant counter tooltip */
-#tt-year, #tt-migrants {
+#tt-year {
     background-color: rgba(255, 255, 255, 0.6);
 }
 #tt-year {
     display: inline-block;
+    width: 105px;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -47,7 +57,7 @@
     position: absolute;
     display: block;
     height: 2px;
-    width: calc(45vw - 120px);
+    width: calc(95vw - 110px);
     top: calc(2rem - 1px);
     left: calc(100% + 1rem);
     background-color: #000;
@@ -56,11 +66,11 @@
 #tt-migrants {
     /* top: calc(50vh + 2rem); */
     width: 330px;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
+    -webkit-transform: translate(calc(105px + 1rem), calc(-50% - 4.5rem));
+    -moz-transform: translate(calc(105px + 1rem), calc(-50% - 4.5rem));
+    -ms-transform: translate(calc(105px + 1rem), calc(-50% - 4.5rem));
+    -o-transform: translate(calc(105px + 1rem), calc(-50% - 4.5rem));
+    transform: translate(calc(105px + 1rem), calc(-50% - 4.5rem));
 }
 #tt-migrants div {
     border-top: solid 1px #777;
@@ -126,11 +136,35 @@
     }
     #tt-migrants {
         width: 300px;
-        -webkit-transform: translateY(0%);
-        -moz-transform: translateY(0%);
-        -ms-transform: translateY(0%);
-        -o-transform: translateY(0%);
-        transform: translateY(0%);
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    #tt-event {
+        top: 0;
+        right: 0;
+        height: auto;
+        max-height: calc(100vh - 2rem);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    #tt-event .event-img {
+        position: relative;
+        z-index: auto;
+    }
+    #tt-year {
+        width: 110px;
+    }
+    #tt-year::after {
+        width: calc(45vw - 120px);
+    }
+    #tt-migrants {
+        background-color: rgba(255, 255, 255, 0.6);
     }
 }
 /* Large devices (desktops, 992px and up) */
