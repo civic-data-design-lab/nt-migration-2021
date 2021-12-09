@@ -67,7 +67,7 @@ const svgSankey = d3.select("#chartsank").append("svg")
 //     .attr("transform", 
 //           "translate(" + margin.left + "," + margin.top + ")");
 
-const tooltip = floatingTooltip('gates_tooltip');
+const tooltip = floatingTooltip('chartsank');
 
 // Set the sankey diagram properties
 var sankey = d3.sankey()

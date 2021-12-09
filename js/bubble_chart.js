@@ -21,7 +21,7 @@ const height = 1000;
 const sqLen = 1;
 const sideWidth = 0;
   var padding = 2;
-  var tooltip = floatingTooltip('gates_tooltip');
+  var tooltip = floatingTooltip('viz-col');
   var center = { x: width / 2, y: height / 2 };
 
   var yearCenters = {
@@ -927,7 +927,7 @@ var financeData3 = d3.keys(financeTitleX3);
     tooltipContent.children().appendTo("#gates_tooltip");
 
     // tooltip.showTooltip(content, d3.event);
-    tooltip.showTooltip(d3.event);
+    tooltip.showTooltip(event);
   }
 
   function hideDetail(d) {
