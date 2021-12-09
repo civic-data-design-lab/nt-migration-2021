@@ -98,9 +98,6 @@ a, a:visited, a:active {
   stroke-opacity: .7;
 }
 
-.tooltip {
-    min-width: 330px;
-}
 .tooltip .line-divide {
     height: 1px;
     width: 100%;
