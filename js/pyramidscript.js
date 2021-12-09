@@ -12,7 +12,7 @@ var svg = d3
   .append("svg")
    .attr("preserveAspectRatio", "xMinYMin meet")
   .classed("svg-content", true)
-  .attr("viewBox", [0, 0, w + (sideWidth + sqLen), h+ margin.bottom]);
+  .attr("viewBox", [100, 0, w + (sideWidth + sqLen - 100), h+ margin.bottom]);
 //   .attr("width", w + margin.left + margin.right)
 //   .attr("height", h + margin.top + margin.bottom);
 

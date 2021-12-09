@@ -1,0 +1,76 @@
+#chartsank svg {
+    max-height: calc(100vh - 300px);
+}
+.sankey1 {
+    color: #2C7D87;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.3rem;   
+}
+.sankey2{
+    color: #2C7D87;
+    font-weight: 100;
+    font-style: normal;
+    font-size: .8rem;   
+    line-height: 1rem;
+}
+#tt-select {
+    display: none;
+}
+.tooltip {
+    position: relative;
+    width: calc(100% - 80px);
+    top: 1rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 1;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .sankey1 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    .sankey2 {
+        font-size: 1.5rem;
+    }
+    #chartsank svg {
+        max-height: calc(100vh - 200px);
+    }
+    #tt-select {
+        display: block;
+    }
+    .tooltip {
+        position: absolute;
+        /* min-width: 310px;
+        max-width: 380px; */
+        min-width: 250px;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 0;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    
+}
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    
+}

@@ -7,19 +7,34 @@
 function floatingTooltip(tooltipId) {
   // Local variable to hold tooltip div for
   // manipulation in other functions.
-  var tt = d3.select('body')
-    .append('div')
-    .attr('class', 'tooltip')
-    .attr('id', tooltipId)
-    .style('pointer-events', 'none');
+    if (tooltipId == "gates_tooltip") {
+        var tt = d3.select('#chartsank')
+            .append('div')
+            .attr('class', 'tooltip')
+            .attr('id', tooltipId)
+            .style('pointer-events', 'none')
+            .html("<div class='side-color' style='background: linear-gradient(rgb(242, 140, 119), rgb(235, 73, 39));'></div><div class='row'><div class='col'><p>Occupation Before Migration</p><span class='label-before text-color-before text-label' style='color: rgb(242, 140, 119);'>Agriculture</span></div><div class='col'><p>Origin Country</p><span class='label-origin text-label'>Honduras</span></div></div><div class='line-divide mt-2 mb-2'></div><div class='row'><div class='col'><p>Occupation After Migration</p><span class='label-after text-color-after text-label' style='color: rgb(235, 73, 39);'>Agriculture</span></div><div class='col'><p>Destination Country</p><span class='label-dest text-label'>United States</span></div></div></div>");
+        
+        // if () {
 
+        // }
+    }
+    else {
+        var tt = d3.select('body')
+            .append('div')
+            .attr('class', 'tooltip')
+            .attr('id', tooltipId)
+            .style('pointer-events', 'none');
+
+            // Initially it is hidden.
+            hideTooltip();
+    }
   // Set a width if it is provided.
 //   if (width) {
 //     tt.style('width', width);
 //   }
 
-  // Initially it is hidden.
-  hideTooltip();
+  
 
   /*
    * Display tooltip with provided content.
@@ -73,9 +88,17 @@ function floatingTooltip(tooltipId) {
       tttop = curY + yOffset;
     }
 
-    tt
-      .style('top', tttop + 'px')
-      .style('left', ttleft + 'px');
+    if (winWidth > 768) {
+        tt
+            .style('top', tttop + 'px')
+            .style('left', ttleft + 'px');
+    }
+    else {
+        tt
+            .style('top', '0px')
+            .style('left', '0px');
+    }
+    
   }
 
   return {

@@ -1,5 +1,3 @@
-var tooltip = floatingTooltip('gates_tooltip');
-
 const countryText = {
     "GTM": "Guatemala",
     "HND": "Honduras",
@@ -63,11 +61,13 @@ var formatNumber = d3.format(",.0f"), // zero decimal places
   //   color = d3.scaleOrdinal(d3.schemeCategory10);
   
 // append the svg object to the body of the page
-var svg = d3.select("#chartsank").append("svg")
+const svgSankey = d3.select("#chartsank").append("svg")
     .attr("viewBox", [-(sideWidths + sqLen1), 0, width + (sideWidths + sqLen1)+ margin.left , height+margin.bottom+margin.top]);
 //   .append("g")
 //     .attr("transform", 
 //           "translate(" + margin.left + "," + margin.top + ")");
+
+const tooltip = floatingTooltip('gates_tooltip');
 
 // Set the sankey diagram properties
 var sankey = d3.sankey()
@@ -78,7 +78,7 @@ var sankey = d3.sankey()
 
 var path = sankey.links();
 
-const defs = svg.append('defs');
+const defs = svgSankey.append('defs');
 
 // load the data
 d3.csv("./data/sankey.csv").then(function(data) {
@@ -122,7 +122,7 @@ d3.csv("./data/sankey.csv").then(function(data) {
   graph = sankey(sankeydata);
 
 // add in the links
-   var link = svg.append("g").selectAll(".link")
+   var link = svgSankey.append("g").selectAll(".link")
       .data(graph.links)
     .enter().append("path")
     .attr("d", d3.sankeyLinkHorizontal())
@@ -138,7 +138,7 @@ d3.csv("./data/sankey.csv").then(function(data) {
 //       .sort((a, b) => b.dy - a.dy)
         // .on('mouseover', showDetail)
         .on('mouseover', function (event, d)  {
-            showDetail(d);
+                showDetail(d);
                 sourceClass = occuAttr[d.source.name.split('-')[1]].class;
                 sourceColor = occuAttr[d.source.name.split('-')[1]].color
                  sourceClassb = occuAttrb[d.target.name].class;
@@ -235,7 +235,9 @@ d3.csv("./data/sankey.csv").then(function(data) {
                  
         })
       .on('mouseout', function(event, d) {
-          hideDetail(d);
+            if (winWidth > 768) {
+                hideDetail(d);
+            } 
           link.transition()
            .ease(d3.easeLinear)
             .duration(300)
@@ -279,7 +281,7 @@ d3.csv("./data/sankey.csv").then(function(data) {
 
 
 
-  var node = svg.append("g").selectAll(".node")
+  var node = svgSankey.append("g").selectAll(".node")
       .data(graph.nodes)
     .enter().append("g");
 //      .attr("transform", function (d) { return "translate(" + d.y + "," + d.x + ")"; });
@@ -427,15 +429,15 @@ function showDetail(d) {
 //     const eventTemplate = $(".event-img");
 //     callImages.eventTemplate.children().appendTo("#event-img");
     
-         updateSelectDiv(occuAttr);
+    updateSelectDiv(occuAttr);
 
-                function updateSelectDiv(beforeOccupation) {
-                    const tooltip = $("#tt-select");
-                    
-                    tooltip.find("img").attr("src", "./img/profiles/" + occuAttr[d.source.name.split('-')[1]].img);
-                    tooltip.find(".occ-title").html(occuAttr[d.source.name.split('-')[1]].label);
-                    tooltip.find(".description").html(occuAttr[d.source.name.split('-')[1]].label);
-                }
+    function updateSelectDiv(beforeOccupation) {
+        const tooltip = $("#tt-select");
+        
+        tooltip.find("img").attr("src", "./img/profiles/" + occuAttr[d.source.name.split('-')[1]].img);
+        tooltip.find(".occ-title").html(occuAttr[d.source.name.split('-')[1]].label);
+        tooltip.find(".description").html(occuAttr[d.source.name.split('-')[1]].label);
+    }
       
     $("#gates_tooltip").empty();
     const tooltipTemplate = $(".tooltip.template");
@@ -453,8 +455,13 @@ function showDetail(d) {
 
     tooltipContent.children().appendTo("#gates_tooltip");
 
-    // tooltip.showTooltip(content, d3.event);
-    tooltip.showTooltip(event);
+    // responsive screenwidths
+    if (winWidth > 768) {
+        tooltip.showTooltip(event);
+    }
+    else {
+        $("#gates_tooltip").css({'opacity': 1.0, 'top': '1rem', 'left': '50%'});
+    }
   } 
 
   function hideDetail(d) {  		
@@ -466,21 +473,12 @@ function showDetail(d) {
 
 });
 
-
-// motivations index order
-// function sortCompare(a, z) {
-//     return (a == z) ? 0
-//     : (a < z) ? -1
-//     : 1;
-// }
-// 
-// 
-// sort by motivations
-//             if (!motivsIndex.rsp12.motivs) {
-//                 motivsSortData = data.sort((a, z) => {
-//                     const motivCatIndex1 = sortCompare(motivOrder[a.motiv_cat], motivOrder[z.motiv_cat]);
-//                     
-//                     return motivCatIndex1;
-//                 });
-//   
-  
+// window resize
+$(window).resize(function() {
+    if (winWidth > 768) {
+        $("#gates_tooltip").css('opacity', 0.0);
+    }
+    else {
+        $("#gates_tooltip").css({'opacity': 1.0, 'top': '1rem', 'left': '50%'});
+    }
+})

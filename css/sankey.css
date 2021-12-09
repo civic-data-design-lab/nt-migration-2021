@@ -63,9 +63,6 @@ a, a:visited, a:active {
 .tooltip .name {
   font-weight:bold;
 } */
-.tooltip {
-    min-width: 250px;
-}
 .tooltip .label-country {
     line-height: 2em;
 }

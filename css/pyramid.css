@@ -349,47 +349,6 @@ font-family: neue-haas-grotesk-text, sans-serif;
     color:#fff ;
 }
 
-.sankey1{
-    color: #2C7D87;
-    font-weight: bold;
-    font-style: normal;
-    font-size: 1.3rem;   
-    line-height: 2rem;
-    /* margin-top: 1rem;
-    margin-bottom: 1rem; */
-    /* padding: var(--scrollytelling-padding); */
-/* 
-    padding-left: calc(var(--scrollytelling-padding)*1.5);
-    padding-right: calc(var(--scrollytelling-padding)*1.5);
- */
-
-}
-
-@media (min-width: 768px) {
-  .sankey1 {
-    font-size: 2rem;
-  }
-}
-
-
-
-.sankey2{
-    color: #2C7D87;
-    font-weight: 100;
-    font-style: normal;
-    font-size: .8rem;   
-    line-height: 1rem;
-    /* margin-top: 1rem;
-    margin-bottom: 1rem; */
-    padding-top: .5rem;
-}
-
-@media (min-width: 768px) {
-  .sankey2 {
-    font-size: 1.5rem;
-  }
-}
-
 .source-agriculture{
 color:#3BA8B6;}
 
