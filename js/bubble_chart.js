@@ -926,17 +926,24 @@ var financeData3 = d3.keys(financeTitleX3);
 
     tooltipContent.children().appendTo("#gates_tooltip");
 
-    // tooltip.showTooltip(content, d3.event);
-    tooltip.showTooltip(event);
+    // responsive screenwidths
+    if (winWidth > 768) {
+        tooltip.showTooltip(event);
+    }
+    else {
+        $("#gates_tooltip").css({'opacity': 1.0, 'top': '1rem', 'left': '50%'});
+    }
   }
 
-  function hideDetail(d) {
+function hideDetail(d) {
     d3.select(this)
      .style('stroke', function (d) { if (d.value <= 1) return fillColor(d.name);})
       .style('stroke-width', function (d) { if (d.value <= 1) return .9;});
 //       .style('stroke-width',function (d) { if (d.value > 1) return 0;});
 
-    tooltip.hideTooltip();
+    if (winWidth > 768) {
+        tooltip.hideTooltip();
+    }
   }
 
   chart.toggleDisplay = function (displayName) {
@@ -1579,3 +1586,13 @@ setupButtons();
     });
 }
 
+
+// window resize
+$(window).resize(function() {
+    if (winWidth > 768) {
+        $("#gates_tooltip").css('opacity', 0.0);
+    }
+    else {
+        $("#gates_tooltip").css({'opacity': 1.0, 'top': '1rem', 'left': '50%'});
+    }
+});

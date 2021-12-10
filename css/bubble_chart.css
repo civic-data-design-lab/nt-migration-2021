@@ -33,6 +33,11 @@ a, a:visited, a:active {
     pointer-events: auto;
 }
 
+#frame-cost svg {
+    display: block;
+    margin: auto;
+}
+
 #toolbar {
     opacity: 0;
     pointer-events: none;
@@ -150,7 +155,18 @@ font-family: neue-haas-grotesk-text, sans-serif;
   font-weight:bold;
 } */
 .tooltip {
-    min-width: 360px;
+    position: relative;
+    width: 85%;
+    min-width: 355px;
+    max-width: 460px;
+    top: 1rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 1;
 }
 .tooltip .label-country {
     line-height: 2em;
@@ -333,6 +349,16 @@ margin-top:3rem;}
     .btn-sm {
         height: 44px;
     }
+    .tooltip {
+        position: absolute;
+        max-width: 360px;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 0;
+    }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -348,6 +374,21 @@ margin-top:3rem;}
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
     
+}
+/* portrait aspect ratio */
+@media (max-aspect-ratio: 1/1) {
+    #frame-cost svg {
+        max-height: calc(100vh - 300px);
+    }
+}
+/* portrait aspect ratio */
+@media (min-aspect-ratio: 1/1) {
+    #frame-cost svg {
+        max-height: calc(100vh - 100px);
+    }
+    #toolbar {
+        margin-top: 0.5rem!important;
+    }
 }
 /* wide aspect ratio */
 @media (min-aspect-ratio: 16/9) {

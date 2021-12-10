@@ -22,10 +22,8 @@ function floatingTooltip(divId) {
             .append('div')
             .attr('class', 'tooltip')
             .attr('id', "gates_tooltip")
-            .style('pointer-events', 'none');
-
-            // Initially it is hidden.
-            hideTooltip();
+            .style('pointer-events', 'none')
+            .html("<div class='side-color' style='background: rgb(102, 45, 145);'></div><div class='row mb-1'><div class='col-7'><p class='text-label-onemigrant'>ONE MIGRANT</p><p>From <span class='label-country text-label'>El Salvador</span> Spent</p></div><div class='col-5'><h3 class='label-cost text-color' style='color: rgb(102, 45, 145);'>$9,000</h3></div></div><h3 class='label-pathway text-color' style='color: rgb(102, 45, 145);'>Using a Smuggler to Migrate</h3>");
     }
     else {
         var tt = d3.select('body')
@@ -103,8 +101,8 @@ function floatingTooltip(divId) {
     }
     else {
         tt
-            .style('top', '0px')
-            .style('left', '0px');
+            .style('top', '1rem')
+            .style('left', '50%');
     }
     
   }
