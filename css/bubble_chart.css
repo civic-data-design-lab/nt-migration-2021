@@ -13,17 +13,8 @@
 a, a:visited, a:active {
   color: #fff;
 }
-
-/* 
-.container {
-  max-width: 1600px;
-  margin: auto;
-}
- */
  
-
- 
- .content-block1 {
+.content-block1 {
     position: -webkit-sticky;
     /* for Safari */
     position: sticky;
@@ -42,6 +33,15 @@ a, a:visited, a:active {
     pointer-events: auto;
 }
 
+#toolbar {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s linear;
+}
+#toolbar.active {
+    opacity: 1;
+    pointer-events: auto;
+}
 .button {
 	width: 100%;
     font-weight: 500;
@@ -71,13 +71,6 @@ a, a:visited, a:active {
   margin-bottom: 10px;
 }
  */
-
-#toolbar {
-  margin-left: 7vh;
-  margin-right: 7vh;
-  
-  
-}
 
 .year,.finance3,.means {
   font-family: neue-haas-grotesk-text, sans-serif;

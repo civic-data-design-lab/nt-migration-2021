@@ -111,29 +111,47 @@
             <div class="content-block">
                 <div class="container position-sticky">
                     <div class="row vh-100 px-lg-5 align-items-center">
-                        <div id="viz-col" class="col">
+                        <div id="viz-col" class="col mb-5">
+                            <!-- frame for d3 visualization -->
                             <div id="frame-cost" class="frame-cost"></div>
-                            <div class="row">
-                                <div>
-                                    <!-- tooltip template -->
-                                    <div class="tooltip template">
-                                        <div class="side-color"></div>
-                                        <div class="row mb-1">
-                                            <div class="col-7">
-                                                <p class="text-label-onemigrant">ONE MIGRANT</p>
-                                            <p>From <span class="label-country text-label">El Salvador</span> Spent</p> 
-                                            </div>
-                                            <div class="col-5">                  
-                                                <h3 class="label-cost text-color">$8,500</h3>
-                                            </div>
-                                        </div>
-                                        <h3 class="label-pathway text-color">Irregular Pathway on One's Own or with a Caravan</h3>
+                            <!-- div for buttons -->
+                            <div id="toolbar" class="row position-relative mt-5 mt-md-3 mt-lg-5 mb-md-5 mb-lg-0 px-2">
+                                <div class="col-3 px-0">
+                                    <button type="button" id="all" class="button btn btn-sm text-uppercase text-blue"
+                                        data-bs-toggle="modal" data-bs-target="#modal-motivs">Group Items</button>
+                                    </span>
+                                </div>
+                                <div class="col-3 px-0">
+                                    <button type="button" id="year" class="button btn btn-sm text-uppercase text-blue">Split
+                                        by Migration Pathways</button>
+                                    </span>
+                                </div>
+                                <div class="col-3 px-0">
+                                    <button type="button" id="country" class="button btn btn-sm text-uppercase text-blue">Split
+                                        by Country of
+                                        Origin</button>
+                                    </span>
+                                </div>
+                                <div class="col-3 px-0">
+                                    <button type="bee" id="bee" class="button active btn btn-sm text-uppercase text-blue">Estimated
+                                        Time to pay Debt</button>
+                                    </span>
+                                </div>
+                            </div>
+            
+                            <!-- tooltip template -->
+                            <div class="tooltip template">
+                                <div class="side-color"></div>
+                                <div class="row mb-1">
+                                    <div class="col-7">
+                                        <p class="text-label-onemigrant">ONE MIGRANT</p>
+                                    <p>From <span class="label-country text-label">El Salvador</span> Spent</p> 
                                     </div>
-                                    <div class="footer">
-                                        <p></p>
-                                        <strong></strong>
+                                    <div class="col-5">                  
+                                        <h3 class="label-cost text-color">$8,500</h3>
                                     </div>
                                 </div>
+                                <h3 class="label-pathway text-color">Irregular Pathway on One's Own or with a Caravan</h3>
                             </div>
                         </div><!-- close col -->
                     </div><!-- close row -->
@@ -365,34 +383,6 @@
                     </div>
                 </div>
                 <div class="col-1 vh-90"> </div>
-                 
-                <div id="toolbar">
-                    <div id="buttons-motivations" class="row position-relative" style="padding: 3rem;">
-
-                        <div class="col-3 px-0">
-                            <button type="button" id="all" class="button active btn btn-sm text-uppercase text-blue"
-                                data-bs-toggle="modal" data-bs-target="#modal-motivs">Group Items</button>
-                            </span>
-                        </div>
-                        <div class="col-3 px-0">
-                            <button type="button" id="year" class="button btn btn-sm text-uppercase text-blue">Split
-                                by Migration Pathways</button>
-                            </span>
-                        </div>
-                        <div class="col-3 px-0">
-                            <button type="button" id="country" class="button btn btn-sm text-uppercase text-blue">Split
-                                by Country of
-                                Origin</button>
-                            </span>
-                        </div>
-                        <div class="col-3 px-0">
-                            <button type="bee" id="bee" class="button btn btn-sm text-uppercase text-blue">Estimated
-                                Time to pay Debt</button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
         </section>
 
         <section class='chapter' id="closed">
