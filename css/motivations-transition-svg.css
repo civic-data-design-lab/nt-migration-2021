@@ -1,3 +1,4 @@
+/* initial map layout */
 .cls-1 {
     fill: #0070ff;
 }
@@ -20,4 +21,30 @@
 .cls-4 {
     stroke: #322DCD;
     stroke-width: 2px;
+}
+
+/* final colorful grid */
+.cls-6 {
+    fill: #eb4927;
+}
+
+.cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+    stroke: #fff;
+    stroke-width: 4px;
+}
+
+.cls-7 {
+    fill: #f1a650;
+}
+
+.cls-8 {
+    fill: #93278f;
+}
+
+.cls-9 {
+    fill: #1540c4;
+}
+
+.cls-10 {
+    fill: #00a99d;
 }

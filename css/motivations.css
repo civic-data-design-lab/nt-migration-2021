@@ -1,3 +1,15 @@
+/* SVG TRANSITION ANIMATION */
+#transition {
+    background-color: #0070ff;
+    display: none;
+}
+.cell rect {
+    transition: linear 0.3s all;
+}
+.grid-color {
+    display: none;
+}
+
 /* BUTTON */
 #buttons-motivations {
     padding-left: calc(15.5% + 2px);

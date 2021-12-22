@@ -1,4 +1,7 @@
 // VARIABLES
+// svg animation transition
+let transitionTime = 1000;
+
 // data variables
 let keys = [];
 let motivationsData = [];
@@ -154,6 +157,84 @@ const numPerCol = {
         3: 3
     }
 }
+
+// select svg transition
+const lengthMap = 12;
+const lengthGrid = 24;
+const strokeWidthMap = "2px";
+const strokeWidthGrid = "4px";
+const svgTransition = d3.select("#transition svg");
+
+// define svg transition map rectangles
+svgTransition.select("#sq")
+    .selectAll("rect")
+        .data(positionMapSq)
+        .enter()
+        .append("rect")
+            .attr("width", lengthMap)
+            .attr("height", lengthMap)
+            .attr("x", d => d.x)
+            .attr("y", d => d.y)
+            .attr("stroke", "#322DCD")
+            .attr("stroke-width", strokeWidthMap)
+            .attr("fill", "#fff");
+
+svgTransition.select("#tri-overlay")
+    .selectAll("rect")
+        .data(positionMapTri)
+        .enter()
+        .append("rect")
+            .attr("width", lengthMap)
+            .attr("height", lengthMap)
+            .attr("x", d => d.x)
+            .attr("y", d => d.y)
+            .attr("stroke", "#322DCD")
+            .attr("stroke-width", strokeWidthMap)
+            .attr("fill", "#fff");
+
+const svgTransRect = svgTransition.selectAll(".cell")
+    .selectAll("rect");
+
+// update svg transition rectangles
+function updateTransLayout(layout) {
+    if (layout == "map") {
+        dataSq = positionMapSq;
+        dataTri = positionMapTri;
+        length = lengthMap;
+        strokeWidth = strokeWidthMap;
+    }
+    else if (layout == "grid") {
+        dataSq = positionGridSq;
+        dataTri = positionGridTri;
+        length = lengthGrid;
+        strokeWidth = strokeWidthGrid;
+    }
+    svgTransition.select("#sq")
+        .selectAll("rect")
+            .data(dataSq)
+            // .enter()
+            // .append("rect")
+            .transition()
+                .duration(transitionTime * 1.5)
+                .attr("width", length)
+                .attr("height", length)
+                .attr("x", d => d.x)
+                .attr("y", d => d.y)
+                .attr("stroke-width", strokeWidth);
+
+    svgTransition.select("#tri-overlay")
+        .selectAll("rect")
+            .data(dataTri)
+            // .enter()
+            // .append("rect")
+            .transition()
+                .duration(transitionTime * 1.5)
+                .attr("width", length)
+                .attr("height", length)
+                .attr("x", d => d.x)
+                .attr("y", d => d.y)
+                .attr("stroke-width", strokeWidth);
+};
 
 // define svg
 const svg = d3.select("#frame-motivations")
@@ -1311,6 +1392,92 @@ $(document).ready(function() {
 
     // ScrollMagic
     const controller = new ScrollMagic.Controller();
+
+    const transitionScene = new ScrollMagic.Scene({
+        triggerElement: "#story #features #map-state-3 .scrolly-container-motivations .ribbon-image",
+        duration: getDivHeight("#story #features #map-state-3 .scrolly-container-motivations .ribbon-image") + winHeight*1.5
+    })
+        .addTo(controller)
+        .on("progress", e => {
+            console.log(e.progress);
+
+            if (e.progress <= 0.17) {
+                $("#transition").fadeOut();
+            }
+            else {
+                $("#transition").fadeIn();
+            }
+
+            if (e.progress <= 0.55) {
+                $("#map-outline").fadeIn(transitionTime);
+                $("#labels").fadeIn(transitionTime);
+            }
+            else {
+                $("#map-outline").fadeOut(transitionTime);
+                $("#labels").fadeOut(transitionTime);
+            }
+
+            if (e.progress <= 0.65) {
+                updateTransLayout("map");
+            }
+            else {
+                updateTransLayout("grid");
+            }
+
+            if (e.progress <= 0.75) {
+                svgTransition.select("#background")
+                    .select("rect")
+                    .transition()
+                        .duration(transitionTime)
+                        .attr("fill", "#0070ff");
+
+                svgTransRect
+                    .attr("fill", "#fff");
+            }
+            else {
+                svgTransition.select("#background")
+                    .select("rect")
+                    .transition()
+                        .duration(transitionTime)
+                        .attr("fill", "#fff");
+
+                svgTransRect
+                    .attr("fill", "#ddd");
+            }
+
+            if (e.progress <= 0.85) {
+                $(".cell").fadeIn(transitionTime);
+                $(".grid-color").fadeOut(transitionTime);
+            }
+            else {
+                $(".grid-color").fadeIn(transitionTime);
+                $(".cell").fadeOut(transitionTime);
+            }
+
+            // square stroke changing multiple times
+            if (e.progress <= 0.55) {
+                svgTransRect
+                    .attr("stroke", "#322DCD");
+            }
+            else if (e.progress > 0.55 && e.progress <= 0.75) {
+                svgTransRect
+                    .attr("stroke", "#0070ff");
+            }
+            else {
+                svgTransRect
+                    .attr("stroke", "#fff");
+            }
+        });
+
+    const transitionSceneEnd = new ScrollMagic.Scene({
+        triggerElement: "#story #features #map-state-4 .scrolly-container-motivations .scrollytelling-caption",
+        duration: getDivHeight("#story #features #map-state-4 .scrolly-container-motivations .scrollytelling-caption")
+    })
+        .addTo(controller)
+        .on("end", e => {
+            // console.log("scene end");
+            $(".grid-color").fadeToggle(0);
+        })
 
     const motivsSceneStart = new ScrollMagic.Scene({
         triggerElement: "#motivations",
