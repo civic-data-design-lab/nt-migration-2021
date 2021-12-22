@@ -13,7 +13,7 @@ The Central American Migration website was designed and developed by [MIT Civic 
 * [anime v3.2.1](https://animejs.com/) :film_strip:
 * [Bootstrap v4.1.3 & Popper v3](https://getbootstrap.com/) :iphone: :computer: :desktop_computer:
 * [D3 v7 & v4](https://d3js.org/) :sparkles:
-* [Deck GL v8.6.0](https://deck.gl/) :eart_americas:
+* [Deck GL v8.6.0](https://deck.gl/) :earth_americas:
 * [JQuery v3.6.0](https://jquery.com/)
 * [JQuery UI v1.13.0](https://jqueryui.com/)
 * [Scrollama v2.0.0](https://github.com/russellgoldenberg/scrollama) :llama:
