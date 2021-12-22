@@ -1,6 +1,7 @@
 // VARIABLES
 // svg animation transition
 let transitionTime = 1000;
+let scrollDirection = "forward";
 
 // data variables
 let keys = [];
@@ -1419,9 +1420,11 @@ $(document).ready(function() {
 
             if (e.progress <= 0.65) {
                 updateTransLayout("map");
+                $("#transition svg").addClass("mt-3 mt-md-4");
             }
             else {
                 updateTransLayout("grid");
+                $("#transition svg").removeClass("mt-3 mt-md-4");
             }
 
             if (e.progress <= 0.75) {

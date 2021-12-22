@@ -1,28 +1,36 @@
-var aspectRatio = screen.width / screen.height;
+// var aspectRatio = screen.width / screen.height;
+let aspectRatio = winWidth / winHeight;
 var farZoom;
 var closeZoom;
 var middleZoom;
 var maxZoom;
 
-if (aspectRatio < 1) {
-    if (screen.width < 760) {
-        maxZoom = Math.log(screen.width) / 1.125;
-        closeZoom = Math.log(screen.width) / 1.3;
-        middleZoom = Math.log(screen.width) / 1.7;
+function updateZoom() {
+    if (aspectRatio < 1) {
+        if (winWidth < 760) {
+            maxZoom = Math.log(winWidth) / 1.125;
+            closeZoom = Math.log(winWidth) / 1.24;
+            middleZoom = Math.log(winWidth) / 1.7;
+        }
+        else {
+            maxZoom = Math.log(winWidth) / 1.1;
+            closeZoom = Math.log(winWidth) / 1.185;
+            middleZoom = Math.log(winWidth) / 1.5;
+        }
     }
-    else {
-        maxZoom = Math.log(screen.width) / 1.1;
-        closeZoom = Math.log(screen.width) / 1.2;
-        middleZoom = Math.log(screen.width) / 1.5;
+    
+    if (aspectRatio >= 1) {
+        maxZoom = Math.log(winWidth) / 1.05;
+        closeZoom = Math.log(winWidth) / 1.225;
+        middleZoom = Math.log(winWidth) / 1.85;
     }
-}
+};
 
-if (aspectRatio >= 1) {
-    maxZoom = Math.log(screen.width) / 1.05;
-    closeZoom = Math.log(screen.width) / 1.15;
-    middleZoom = Math.log(screen.width) / 1.85;
-}
+updateZoom();
 
+$(window).resize(function() {
+	aspectRatio = winWidth / winHeight;
+});
 
 
 var motivationsConfig = {
