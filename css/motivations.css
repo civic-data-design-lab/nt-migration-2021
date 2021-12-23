@@ -3,7 +3,7 @@
     background-color: #0070ff;
     display: none;
 }
-.cell rect {
+#transition, .cell rect {
     transition: linear 0.3s all;
 }
 .grid-color {

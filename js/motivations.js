@@ -1,6 +1,8 @@
 // VARIABLES
 // svg animation transition
 let transitionTime = 1000;
+let currentScrollPos = $("#open").scrollTop();
+let lastScrollPos = $("#open").scrollTop();
 let scrollDirection = "forward";
 
 // data variables
@@ -1394,13 +1396,35 @@ $(document).ready(function() {
     // ScrollMagic
     const controller = new ScrollMagic.Controller();
 
+    const scrollScene = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll",
+        duration: getDivHeight("#narrative-scroll")
+    })
+        .addTo(controller)
+        .on("progress", e => {
+            currentScrollPos = $("#open").scrollTop();
+            // console.log(e.progress);
+
+            // change scroll direction
+            if (lastScrollPos < currentScrollPos && scrollDirection != "forward") {
+                scrollDirection = "forward";
+                // console.log("change scroll direction, now forward");
+            }
+            else if (lastScrollPos > currentScrollPos && scrollDirection != "reverse") {
+                scrollDirection = "reverse";
+                // console.log("change scroll direction, now reverse");
+            }
+            lastScrollPos = currentScrollPos;
+            // console.log(scrollDirection);
+        })
+
     const transitionScene = new ScrollMagic.Scene({
         triggerElement: "#story #features #map-state-3 .scrolly-container-motivations .ribbon-image",
         duration: getDivHeight("#story #features #map-state-3 .scrolly-container-motivations .ribbon-image") + winHeight*1.5
     })
         .addTo(controller)
         .on("progress", e => {
-            console.log(e.progress);
+            // console.log(e.progress);
 
             if (e.progress <= 0.17) {
                 $("#transition").fadeOut();
@@ -1428,6 +1452,8 @@ $(document).ready(function() {
             }
 
             if (e.progress <= 0.75) {
+                $("#transition").css("background-color", "#0070ff");
+
                 svgTransition.select("#background")
                     .select("rect")
                     .transition()
@@ -1438,6 +1464,8 @@ $(document).ready(function() {
                     .attr("fill", "#fff");
             }
             else {
+                $("#transition").css("background-color", "#fff");
+
                 svgTransition.select("#background")
                     .select("rect")
                     .transition()
@@ -1478,7 +1506,6 @@ $(document).ready(function() {
     })
         .addTo(controller)
         .on("end", e => {
-            // console.log("scene end");
             $(".grid-color").fadeToggle(0);
         })
 
@@ -1491,7 +1518,9 @@ $(document).ready(function() {
             updateScene("initial");
         })
         .on("end", e => {
-            updateScene("motivs");
+            if (scrollDirection == "forward") {
+                updateScene("motivs");
+            }
         });
 
     const motivsScene0 = new ScrollMagic.Scene({
@@ -1500,12 +1529,14 @@ $(document).ready(function() {
     })
         .addTo(controller)
         .on("start", e => {
-            // console.log("start income");
-            updateScene("motivs");
+            if (scrollDirection == "reverse") {
+                updateScene("motivs");
+            }
         })
         .on("end", e => {
-            // console.log("end income");
-            updateScene("income");
+            if (scrollDirection == "forward") {
+                updateScene("income");
+            }
         })
 
     const motivsScene1 = new ScrollMagic.Scene({
@@ -1514,8 +1545,9 @@ $(document).ready(function() {
     })
         .addTo(controller)
         .on("start", e => {
-            // console.log("start cari");
-            updateScene("income");
+            if (scrollDirection == "reverse") {
+                updateScene("income");
+            }
 
             // // update skip to viz shortcut button
             $("#shortcut a").attr("class", "text-white");
