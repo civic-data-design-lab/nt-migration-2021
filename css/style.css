@@ -198,7 +198,17 @@ a.text-black:hover {
     transition: var(--transition-speed);
 }
 
+#shortcutlan * {
+    transition: var(--transition-speed);
+}
+
 #partial-open #shortcut * {
+    color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+    transition: var(--transition-speed);
+}
+
+#partial-open #shortcutlan * {
     color: rgba(255, 255, 255, 0);
     border-color: rgba(255, 255, 255, 0);
     transition: var(--transition-speed);
@@ -363,8 +373,19 @@ section:hover .chapter {
     z-index: 5;
 }
 
+#shortcutlan {
+    top: calc(100vh - 3rem - 6px);
+    float: right;
+    height: 0;
+    z-index: 5;
+}
+
 
 #shortcut a {
+    text-decoration: none;
+}
+
+#shortcutlan a {
     text-decoration: none;
 }
 
