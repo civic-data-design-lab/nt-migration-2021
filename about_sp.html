@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Ashley Louie + Niko McGlashan">
+    <title>Trazando un Nuevo Rumbo Regional</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/eqc7jzl.css">
+
+    <!-- CAVEAT FONT REGULAR 400 and 600 SEMIBOLD-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="mobile-button">
+        <div id="hamburger-menu" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            
+            <h1 onclick='redirect_Page(this,"origins_sp.html")'>ORÍGENES</h1>
+            <h1 onclick='redirect_Page(this,"motivations_sp.html")'>MOTIVACIONES</h1>
+            <h1 onclick='redirect_Page(this,"profiles_sp.html")'>PERFILES</h1>
+            <h1 onclick='redirect_Page(this,"outcomes_sp.html")'>CONCECUENCIAS</h1>
+            <h1 onclick='redirect_Page(this,"cost_sp.html")'>COSTOS</h1>
+            <h1 onclick='redirect_Page(this,"about_sp.html")'>ACERCA</h1>
+        </div>
+    </div>
+    <div id="wrapper">
+     
+        <section class='chapter' id="closed">
+            <div class="bk origins-img" onclick='redirect_Page(this,"origins_sp.html")'>
+                <div class="gradient origins-g">
+                    <h2 class="chapter-title">LA VIOLENCIA, EL CLIMA,<br>LA INSEGURIDAD ALIMENTARIA,<br>Y LAS POLÍTICAS PÚBLICAS<br>HAN IMPULSADO LA MIGRACIÓN HISTORICAMENTE</h2>
+                    <!--<h1 class="chapter-summary">ORIGINS</h1>-->
+                </div>
+            </div>
+        </section>
+
+        <section class='chapter' id="closed">
+            <div class="bk motivations-img" onclick='redirect_Page(this,"motivations_sp.html")'>
+                <div class="gradient motivations-g">
+                    <h2 class="chapter-title">LA INSEGURIDAD<br>FINANCIERA<br>IMPULSA<br>LA MIGRACIÓN</h2>
+                    <!--<h1 class="chapter-summary">MOTIVATIONS</h1>-->
+                </div>
+            </div>
+        </section>
+
+        <section class='chapter' id="closed">
+            <div class="bk profiles-img" onclick='redirect_Page(this,"profiles_sp.html")'>
+                <div class="gradient profiles-g">
+                    <h2 class="chapter-title">LA MITAD DE LOS MIGRANTES<br>TRABAJAN EN LA<br>MISMA OCUPACIÓN<br>EN SU DESTINO FINAL</h2>
+                    <!--<h1 class="chapter-summary">PROFILES</h1>-->
+                </div>
+            </div>
+        </section>
+
+        <section class='chapter' id="closed">
+            <div class="bk outcomes-img" onclick='redirect_Page(this,"outcomes_sp.html")'>
+                <div class="gradient outcomes-g">
+                    <h2 class="chapter-title">SÓLO UN 57%<br>DE LOS MIGRANTES<br>RESIDEN EN EL<br>DESTINO<br>DESEADO</h2>
+                    <!--<h1 class="chapter-summary">OUTCOMES</h1>-->
+                </div>
+            </div>
+        </section>
+
+        <section class='chapter' id="closed">
+            <div class="bk cost-img" onclick='redirect_Page(this,"cost_sp.html")'>
+                <div class="gradient cost-g">
+                    <h2 class="chapter-title">LOS COSTOS DE<br>MIGRACIÓN<br>REPRESENTAN UNA<br>CARGA FINANCIERA<br>ADICIONAL</h2>
+                    <!--<h1 class="chapter-summary">COST</h1>-->
+                </div>
+            </div>
+        </section>
+        <section class="chapter" id="open">
+        <div id="shortcutlan" class="position-fixed p-4" style="top: 90vh;font-size: 1.4rem;font-weight: 700;">
+       <a href="about.html"><span  class="text-uppercase text-white">ENGLISH</span></a><span class="text-uppercase text-white"> | </span><a href="about_sp.html"><span class="text-uppercase text-white"><u>ESPAÑOL</u></span></a>
+       </div>
+            <div class="bk about-img"> 
+                <div class="gradient about-g">
+                    <h2 class="chapter-title">TRAZANDO UN <br>NUEVO RUMBO<br>REGIONAL
+                    <h1 class="chapter-summary">ACERCA</h1>
+                    <div id="shortcut" class="position-fixed p-3">
+             <span class="text-white ps-2 text-uppercase">Desplázate Hacia Abajo para Saber Más</span>
+            </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-12 fs-3"
+                                style=" padding-right: 3rem;padding-left: 1.5rem;padding-top: 3rem;">
+                                <h3 class="about-title fw-bold">ACERCA</h3>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-12 col-md-6" style=" padding-right: 3rem;padding-left: 1.5rem;">
+                                    <h2 class="about-title fs-1 fw-bold">Trazando un Nuevo Rumbo Regional</h2>
+                                    <h3 class="about-title fs-4 fw-normal">Las Complejas Motivaciones y cos Costos de la Migración Centroamericana</h3>
+                                </div>
+                                <div class="col-12 col-md-6 mt-3 mt-md-0" style=" padding-right: 3rem;padding-left: 1.5rem;">
+                                    <h3 class="about-title fs-4 fw-normal">Descarga el <a class="fw-bold text-black" href="./assets/mpi-wfp-mit_migration-motivations-costs_final.pdf" target="_blank">Reporte Completo</a></h3>
+                                    <h3 class="about-title fs-4 fw-normal">Descarga el <a class="fw-bold text-black" href="./assets/mpi-wfp-mit_migration-motivations-costs_exec-sum-eng_final.pdf" target="_blank">Resumen Ejecutivo</a></h3>
+                                    <h3 class="about-title fs-4 fw-normal">Consulta el <a class="fw-bold text-black" href="https://www.wfp.org/news/report-stemming-rising-migration-central-america-calls-tackling-immediate-needs-and-root" target="_blank">Comunicado de Prensa</a></h3>
+                                    <h3 class="about-title fs-4 fw-normal">Ver la <a class="fw-bold text-black" href="https://us02web.zoom.us/rec/play/4Bjx1ZuEHte8uupjz_nMJGxfOKWdKLm8nZDbdw_IZkzj_sVEqtf9JkdsF1Lx1hKAwMf194_ygNcxnV5d.gWoG07H6y-v9IOTZ?continueMode=true&_x_zm_rtaid=7we2Qi3wQp-eMKwky8V17A.1638310511433.530d472f7f23b3e06eddab6ed9023491&_x_zm_rhtaid=6" target="_blank">Presentación de Apertura</a> <span class="fs-6"></span></h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6"
+                                    style=" padding-right: 3rem;padding-left: 1.5rem;padding-top: 1.5rem;padding-bottom: 3rem;">
+                                    <h5 class="about-title fw-bold pt-5">Hallazgos Clave del Proyecto</h5>
+                                    <p class="about-descr pt-3"><b> 1&ensp;|&ensp;</b>El deseo de los centroamericanos de migrar a otros países está incrementando, pero solo una fracción de las personas entrevistadas planeaban migrar y estaban preparadas para hacerlo.</p>
+                                    <p class="about-descr"><b> 2&ensp;|&ensp;</b>La violencia, la inseguridad y los desastres naturales han sido durante mucho tiempo complejos desencadenantes de la migración, pero los principales motivos del deseo de los encuestados de emigrar eran factores económicos.</p>
+                                    <p class="about-descr"><b> 3&ensp;|&ensp;</b>Los lazos familiares y las percepciones positivas sobre la seguridad y el sentido de pertenencia eran las principales razones por las cuales los centroamericanos decidían no migrar.</p>
+                                    <p class="about-descr"><b> 4&ensp;|&ensp;</b>La probabilidad de que las familias tengan un miembro que ha emigrado durante los últimos cinco años era similar para las familias de todos los niveles de ingresos.</p>
+                                    <p class="about-descr"><b> 5&ensp;|&ensp;</b>La mayoría de las personas migrantes, pero no todos, recurrían a canales irregulares para migrar, y un tercio había regresado de manera voluntaria o involuntaria a su país de origen.</p>
+                                    <p class="about-descr"><b> 6&ensp;|&ensp;</b>Aunque los factores económicos eran los principales motivos del deseo de emigrar, había diferencias notables entre departamentos de El Salvador, Guatemala y Honduras.</p>
+                                    <p class="about-descr"><b> 7&ensp;|&ensp;</b>Las personas encuestadas citaron que el costo de la contratación de traficantes o coyotes no solo era mucho mayor que el costo de los mecanismos regulares, sino que también representaba la mayor parte del total del costo anual de la migración. </p>
+                                    <p class="about-descr"><b> 8&ensp;|&ensp;</b>El volumen de las remesas varió según el país, pero representó un medio importante de supervivencia para todos los hogares.</p>
+                                </div>
+                                <div class="col-12 col-md-6"
+                                    style=" padding-right: 3rem;padding-left: 1.5rem;padding-bottom: 3rem;">
+                                    <h5 class="about-title fw-bold" style="padding-top:4.5rem">Consideraciones para los Formuladores de Políticas Públicas</h5>
+                                    <p class="about-descr pt-3"><b> 1&ensp;|&ensp;</b>Ampliar los programas nacionales de protección social y estimular las inversiones para aumentar las oportunidades económicas, erradicar el hambre y aliviar la pobreza de las poblaciones en riesgo de El Salvador, Guatemala y Honduras. </p>
+                                    <p class="about-descr"><b> 2&ensp;|&ensp;</b>Adaptar las iniciativas en marcha de desarrollo económico e inversión a las condiciones a nivel municipal, con mecanismos robustos de monitoreo y parámetros de evaluación.</p>
+                                    <p class="about-descr"><b> 3&ensp;|&ensp;</b>Crear incentivos y oportunidades para que los integrantes de las diásporas inviertan en el desarrollo de comunidades locales y se conviertan en agentes de cambio en su país de origen o en el país de sus antepasados.</p>
+                                    <p class="about-descr"><b> 4&ensp;|&ensp;</b>Incorporar, en estrategias más amplias de gestión de las migraciones, programas e iniciativas que pongan de relieve las condiciones positivas que dan a la gente la opción de buscar oportunidades en su país.</p>
+                                    <p class="about-descr"><b> 5&ensp;|&ensp;</b>Ampliar las vías legales para los centroamericanos que estén interesados en migrar a Estados Unidos y a otros países de destino a fin de reorientar la migración de canales irregulares a canales regulares.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col px-3">
+                                <h5 class="about-title px-2 fw-bold">Resumen del Proyecto</h5>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col-6 col-12 col-md-6" style="padding-right: 3rem;padding-left: 1.5rem;padding-bottom: 3rem;">
+                                <p class="about-descr">El movimiento de centroamericanos hacia Estados Unidos, en el cual influyen toda una gama de factores de atracción y expulsión, ha configurado la situación migratoria en la región durante décadas. Sin embargo, los cambios de los últimos cinco años en el volumen y en las características de las personas que se desplazan han atraído una atención sin precedentes de los gobiernos de la región que están tratando de reducir la migración irregular. Este sitio web visualiza lof hallazgos principales del reporte &mdash;<b>Trazando un Nuevo Rumbo Regional: Las Complejas Motivaciones y los Costos de la Migración Centroamericana</b>&mdash;hecho en colaboración entre el <a class="text-black" href="https://civicdatadesignlab.mit.edu/" target="_blank">MIT Civic Data Design Lab</a>, <a class="text-black" href="https://www.wfp.org/" target="_blank">UN World Food Programme (WFP)</a>, y el <a class="text-black" href="https://www.migrationpolicy.org/" target="_blank">Migration Policy Institute (MPI)</a>.</p>
+                                <p class="about-descr">Los hallazgos clave se basan principalmente en datos únicos de encuestas de hogares, recopilados por el World Food Programme (WFP) de las Naciones Unidas y socios internacionales y de la sociedad civil. Entre abril y mayo de 2021, el equipo realizó entrevistas en casi 5,000 hogares en 300 comunidades en los siguientes 12 departamentos: Ahuachapán, Cabañas, San Salvador y Usulután en El Salvador; Alta Verapaz, Huehuetenango, San Marcos y Chiquimula en Guatemala; y Choluteca, Cortés, Francisco Morazán y Yoro en Honduras (<a class="text-black" href="./motivations">ver mapa</a>). La encuesta preguntó a los encuestados sobre sus condiciones de vida, intenciones de migrar y las características sociodemográficas de los miembros del hogar que habían migrado, entre algunas otras preguntas relacionadas.</p>
+                            </div>
+                            <div class="col-6 col-12 col-md-6" style="padding-right: 3rem;padding-left: 1.5rem;padding-bottom: 3rem;">
+                                <p class="about-descr">La Patrulla Fronteriza de Estados Unidos registró alrededor de 1,8 millones de encuentros con personas migrantes de El Salvador, Guatemala y Honduras en la frontera entre Estados Unidos y México entre los ejercicios fiscales 2017 y 2021. En cuatro de los últimos cinco años fiscales, los encuentros con personas migrantes de esos tres países excedieron los encuentros de personas migrantes mexicanos. Desde 2018 también se han producido en la región movimientos masivos mayores y más frecuentes, incluso con una gran proporción de familias y menores no acompañados que, en su mayoría, se dirigían a Estados Unidos, motivados por la búsqueda de oportunidades de empleo, la reunificación familiar y la necesidad de protección humanitaria.</p>
+                                <p class="about-descr">Al mismo tiempo, varios países, desde Panamá hasta Canadá, han demostrado un renovado interés político en abordar de manera colaborativa las causas estructurales de la migración y el desplazamiento. Esto ha llevado a la propuesta de marcos regionales para promover la migración segura, ordenada y regular con la finalidad de beneficiar a las personas migrantes y a las comunidades de origen y de destino por igual y contribuir al mismo tiempo al desarrollo sostenible, de manera tal que la migración sea una opción, pero no el último recurso para escapar de condiciones adversas. Si se pudiera aprovechar este interés y convertirlo en acción, los gobiernos de la región tendrían una oportunidad singular y oportuna para pasar de una estrategia centrada en la aplicación de control migratorio a un sistema multifacético de gestión de las migraciones basado en la cooperación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-6"
+                                style="padding-right: 1.5rem;padding-left: 1.5rem;padding-bottom: 3rem;">
+                                <h5 class="about-title fw-bold">Agradecimientos</h5>
+                                <p class="about-descr pt-3">Annette Castillo, Johanna Costanza, Carlos Martinez, Adriana Moreno, Luis Penutt, Hector Roca, Claudia Saenz, Francesco Stompanato, Andrea Vega, Programa de Sistemas de Información para la Resiliencia en Seguridad Alimentaria y Nutricional del Sistema de Integración Centroamericana, (PROGRESAN-SICA) Oxfam, Acción contra el Hambre, WeWorld-GVC. Autoridades locales y nacionales de El Salvador, Guatemala y Honduras, lo que permitió llegar a 300 comunidades. A las 5,000 familias que dieron la bienvenida a los encuestadores y compartieron ideas sobre las experiencias de migración en sus hogares. Este proyecto no podría haber sido posible sin ellos.</h3>
+                                <div style="padding-top:2.5rem"> </div>
+                                <h5 class="about-title fw-bold">Autores del Reporte</h5>
+                                <p class="about-descr pt-3">Ariel G. Ruiz Soto (MPI), Rossella Bottone (WFP), Jaret
+                                    Waters (MPI), Sarah Williams (MIT), Ashley Louie (MIT), Yuehan Wang (MIT)</h3>
+                                <div style="padding-top:1.5rem"> </div>
+
+                                <h5 class="about-title fw-bold">Investigadores del Civic Data Design Lab</h5>
+                                <p class="about-descr pt-3">Sarah Williams, Director<br> Ashley Louie, Líder de Proyecto<br> Octavie Berendschot, Carlos Centeno, Victor Chau, Zoe Kuhlken, Alberto
+                                    Meouchi, Niko McGlashan, Yuehan Wang</h3>
+                                <div style="padding-top:1.5rem "> </div>
+                                <h5 class="about-title fw-bold">Diseño y Desarrollo Web<br>por Civic Data Design
+                                    Lab</h5>
+                                <p class="about-descr pt-3">Sarah Williams, Ashley Louie, Alberto Meouchi, Niko
+                                    McGlashan, Octavie Berendschot, Yuehan Wang</h3>
+                                <div class="row pt-5">
+                                    <div class="col-6 col-md-4 "> <a href="https://civicdatadesignlab.mit.edu/"
+                                            target="_blank" style="pointer-events: all; "><img class="img-fluid "
+                                                src="./img/about/mit.jpg"></a></div>
+                                    <div class="col-6 col-md-4"><a href="https://www.wfp.org/" target="_blank"
+                                            style="pointer-events: all;"><img
+                                                class="img-fluid center-block vertical-align: middle;"
+                                                src="./img/about/wfp.png"></a></div>
+                                    <div class="col-6 col-md-4"><a href="https://www.migrationpolicy.org/"
+                                            target="_blank" style="pointer-events: all;"><img
+                                                class="img-fluid center-block" src="./img/about/mpi.png"></a></div>
+                                    <div class="row pt-3">
+                                        <div class="col-6 col-md-3"><a href="https://www.iadb.org/" target="_blank"
+                                                style="pointer-events: all;"><img class="img-fluid center-block"
+                                                    src="./img/about/idb.png"></a></div>
+                                        <div class="col-6 col-md-3"> <a href=" http://www.oas.org/en/default.asp/"
+                                            target="_blank" style="pointer-events: all;"><img
+                                                class="img-fluid center-block" src="./img/about/oas.png"
+                                                style="max-height: 60%;"></a></div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                         <div class="col-12 col-md-6"
+                                style="padding-right: 1.5rem;padding-left: 1.5rem;padding-bottom: 3rem;">
+
+                                <h5 class="about-title fw-bold">Imágenes</h5>
+                                <p class="about-descr pt-3">Todas las imágenes son cortesía de WFP, excepto las siguientes, que se muestran en la sección de Origines.</h3>
+                                <p class="about-descr mb-0"><i><li>Exhumation in the Ixil Triangle in Guatemala.</i> Fuente: CAFCA Archive.</h3></li>
+                                <p class="about-descr mb-0"><i><li>Maximiliano Hernández Martínez.</i> Fuente: EDH Archive.</h3></li>
+                                <p class="about-descr mb-0"><i><li>Guatemalan Civil War.</i> Fuente: Telesur Archive.</h3></li>
+                                <p class="about-descr mb-0"><i><li>Guerrilla Soldier.</i> Fuente: Loyola University Chicago Collection.</h3></li>
+                                <p class="about-descr mb-0"><i><li>A man walks along the U.S.-Mexico border wall.</i> Fuente: Getty Images.</h3></li>
+                                 <p class="about-descr mb-0"><i><li>El Niño Phenomenon in Central America.</i> Fuente: END Archive.</h3></li>
+                                 <p class="about-descr mb-0"><i><li>A group of migrants of Central American origin waits on the railway line.</i> Fuente: iStock/Getty Images.</h3></li>
+                                
+                                    </div>
+                                </div>  
+                                          
+        </section>
+    </div>
+
+    <script type="text/javascript" src="./js/chapterClick.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+
+</body>
+
+</html>
