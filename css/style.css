@@ -304,6 +304,53 @@ a.text-black:hover {
 }
 
 
+.chapter-prompt {
+    top: calc(100vh - 3rem - 6px);
+    float: right;
+    text-align: right;
+    height: 0;
+    z-index: 5;
+    color: rgba(255, 255, 255, 0);
+    pointer-events: none;
+    transition: color var(--transition-speed);
+}
+
+.chapter#open .chapter-prompt {
+    color: white;
+}
+
+.chapter#partial-open .chapter-prompt {
+    color: white;
+}
+
+.chapter#closed .chapter-prompt {
+    position: relative;
+    width: var(--partial-open);
+    height: 100%;
+}
+
+.chapter#open .chapter-prompt {
+    width: var(--partial-open);
+}
+
+.chapter#partial-open .chapter-prompt {
+    width: var(--partial-open);
+}
+
+.chapter#closed .chapter-prompt {
+    width: var(--partial-closed);
+    color: rgba(255, 255, 255, 0);
+}
+
+.chapter#closed:hover .chapter-prompt {
+    color: white;
+}
+
+.chapter-prompt span {
+    display: none;
+}
+
+
 section:hover .chapter {
     height: auto;
 }
@@ -373,6 +420,13 @@ section:hover .chapter {
     z-index: 5;
 }
 
+#shortcutscr {
+    top: calc(100vh - 3rem - 6px);
+    float: right;
+    height: 0;
+    z-index: 5;
+}
+
 #shortcutlan {
     top: calc(100vh - 3rem - 6px);
     float: right;
@@ -394,6 +448,10 @@ section:hover .chapter {
 }
 
 #shortcut span {
+    display: none;
+}
+
+#shortcutscr span {
     display: none;
 }
 
@@ -1283,7 +1341,14 @@ i.arrow-up {
     #shortcut {
         top: calc(100vh - 3rem - 6px - (15% + 1em));
     }
-    
+
+    #shortcutscr {
+        top: calc(100vh - 3rem - 6px - (15% + 1em));
+    }
+
+    .chapter-prompt {
+        top: calc(100vh - 3rem - 6px - (15% + 1em));
+    }
 
     i.arrow{
         -webkit-box-shadow: 1px 1px 0px 1px black;
@@ -1307,6 +1372,9 @@ i.arrow-up {
         top: calc(100vh - 3rem - 6px - (3%));
     }
 
+    #shortcutscr {
+        top: calc(100vh - 3rem - 6px - (3%));
+    }
 
 }
 
@@ -1342,6 +1410,14 @@ i.arrow-up {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     #shortcut span {
+        display: inline;
+    }
+
+    #shortcutscr span {
+        display: inline;
+    }
+
+    .chapter-prompt span {
         display: inline;
     }
     /* #about-img-credits {
