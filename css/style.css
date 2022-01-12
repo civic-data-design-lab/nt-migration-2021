@@ -198,11 +198,21 @@ a.text-black:hover {
     transition: var(--transition-speed);
 }
 
+#shortcutscr * {
+    transition: var(--transition-speed);
+}
+
 #shortcutlan * {
     transition: var(--transition-speed);
 }
 
 #partial-open #shortcut * {
+    color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+    transition: var(--transition-speed);
+}
+
+#partial-open #shortcutscr * {
     color: rgba(255, 255, 255, 0);
     border-color: rgba(255, 255, 255, 0);
     transition: var(--transition-speed);
@@ -413,10 +423,25 @@ section:hover .chapter {
 }
 
 /* JUMP TO VIZ SHORT CUT */
+
 #shortcut {
     top: calc(100vh - 3rem - 6px);
     float: right;
     height: 0;
+    z-index: 5;
+}
+
+#shortcutscr-container-noskip {
+    bottom: 20px;
+    right: 0;
+    float: right;
+    z-index: 5;
+}
+
+#shortcutscr-container {
+    bottom: 50px;
+    right: 0;
+    float: right;
     z-index: 5;
 }
 
@@ -425,6 +450,7 @@ section:hover .chapter {
     float: right;
     height: 0;
     z-index: 5;
+    pointer-events: none;
 }
 
 #shortcutlan {
