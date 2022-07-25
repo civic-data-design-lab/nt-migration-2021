@@ -41,43 +41,43 @@ var motivationsConfig = {
     chapters: [
 
         //DESTINATION 0
-        {
-            id: 'map-state-1',
-            alignment: 'full',
-            hidden: false,
-            title: 'Intentions to Migrate have Increased Significantly',
-            image: './img/motivations/mot1.jpg',
-            description: 'Approximately four out of every ten households (43%) indicated a desire to migrate in 2021, compared to 8% in 2019. The intention to migrate is largely driven by economics and compounded by external violence, insecurity, and natural disasters.',
-            location: {
-                center: [-87.700000, 15.0000000], // initial map center in [lon, lat]
-                zoom: middleZoom,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [
-                {
-                    layer: 'worldMapViz',
-                    opacity: 1,
-                },
-                {
-                    layer: 'ntCountriesViz',
-                    opacity: 1,
-                },
-                {
-                    layer: 'ntCountriesVizLine',
-                    opacity: 1,
-                }
-            ],
-            onChapterExit: [
-                {
-                    layer: 'worldMapViz',
-                    opacity: 1,
-                }
-            ],
-        },
+        // {
+        //     id: 'map-state-1',
+        //     alignment: 'full',
+        //     hidden: false,
+        //     title: 'Intentions to Migrate have Increased Significantly',
+        //     image: './img/motivations/mot1.jpg',
+        //     description: 'Approximately four out of every ten households (43%) indicated a desire to migrate in 2021, compared to 8% in 2019. The intention to migrate is largely driven by economics and compounded by external violence, insecurity, and natural disasters.',
+        //     location: {
+        //         center: [-87.700000, 15.0000000], // initial map center in [lon, lat]
+        //         zoom: middleZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [
+        //         {
+        //             layer: 'worldMapViz',
+        //             opacity: 1,
+        //         },
+        //         {
+        //             layer: 'ntCountriesViz',
+        //             opacity: 1,
+        //         },
+        //         {
+        //             layer: 'ntCountriesVizLine',
+        //             opacity: 1,
+        //         }
+        //     ],
+        //     onChapterExit: [
+        //         {
+        //             layer: 'worldMapViz',
+        //             opacity: 1,
+        //         }
+        //     ],
+        // },
 
         //DESTINATION 2
         {
@@ -88,7 +88,7 @@ var motivationsConfig = {
             description: 'In April and May 2021, nearly 5,000 households in 12 departments across El Salvador, Guatemala, and Honduras were surveyed by the UN World Food Programme (WFP) and international and civil-society partners to understand the emerging needs of migrant and non-migrant communities in the countries of origin. This was complimented by a nationally representative online survey with more than 6,000 individual responses. Each square cell represents a survey location.',
             location: {
                 center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
-                zoom: closeZoom,
+                zoom: middleZoom,
                 pitch: 0,
                 bearing: 0
             },

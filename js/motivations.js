@@ -205,12 +205,14 @@ function updateTransLayout(layout) {
         dataTri = positionMapTri;
         length = lengthMap;
         strokeWidth = strokeWidthMap;
+        stroke = "#322DCD";
     }
     else if (layout == "grid") {
         dataSq = positionGridSq;
         dataTri = positionGridTri;
         length = lengthGrid;
         strokeWidth = strokeWidthGrid;
+        stroke = "#0070ff";
     }
     svgTransition.select("#sq")
         .selectAll("rect")
@@ -223,7 +225,8 @@ function updateTransLayout(layout) {
                 .attr("height", length)
                 .attr("x", d => d.x)
                 .attr("y", d => d.y)
-                .attr("stroke-width", strokeWidth);
+                .attr("stroke-width", strokeWidth)
+                .attr("stroke", stroke);
 
     svgTransition.select("#tri-overlay")
         .selectAll("rect")
@@ -236,7 +239,8 @@ function updateTransLayout(layout) {
                 .attr("height", length)
                 .attr("x", d => d.x)
                 .attr("y", d => d.y)
-                .attr("stroke-width", strokeWidth);
+                .attr("stroke-width", strokeWidth)
+                .attr("stroke", stroke);
 };
 
 // define svg
@@ -1418,22 +1422,15 @@ $(document).ready(function() {
             // console.log(scrollDirection);
         })
 
-    const transitionScene = new ScrollMagic.Scene({
-        triggerElement: "#story #features #map-state-3 .scrolly-container-motivations .ribbon-image",
-        duration: getDivHeight("#story #features #map-state-3 .scrolly-container-motivations .ribbon-image") + winHeight*1.5
+    const transitionScene2 = new ScrollMagic.Scene({
+        triggerElement: "#story #features #map-state-2 .scrolly-container-motivations .scrollytelling-text",
+        duration: getDivHeight("#story #features #map-state-2 .scrolly-container-motivations .scrollytelling-text") + winHeight
     })
         .addTo(controller)
         .on("progress", e => {
-            // console.log(e.progress);
+            // console.log("map-state-2 " + e.progress);
 
-            if (e.progress <= 0.17) {
-                $("#transition").fadeOut();
-            }
-            else {
-                $("#transition").fadeIn();
-            }
-
-            if (e.progress <= 0.55) {
+            if (e.progress <= 0.3) {
                 $("#map-outline").fadeIn(transitionTime);
                 $("#labels").fadeIn(transitionTime);
             }
@@ -1442,7 +1439,7 @@ $(document).ready(function() {
                 $("#labels").fadeOut(transitionTime);
             }
 
-            if (e.progress <= 0.65) {
+            if (e.progress <= 0.7) {
                 updateTransLayout("map");
                 $("#transition svg").addClass("mt-3 mt-md-4");
             }
@@ -1450,8 +1447,17 @@ $(document).ready(function() {
                 updateTransLayout("grid");
                 $("#transition svg").removeClass("mt-3 mt-md-4");
             }
+        })
 
-            if (e.progress <= 0.75) {
+    const transitionScene3 = new ScrollMagic.Scene({
+        triggerElement: "#story #features #map-state-3 .scrolly-container-motivations .ribbon-image",
+        duration: getDivHeight("#story #features #map-state-3 .scrolly-container-motivations .ribbon-image") + winHeight*1.5
+    })
+        .addTo(controller)
+        .on("progress", e => {
+            // console.log(e.progress);
+
+            if (e.progress <= 0.3) {
                 $("#transition").css("background-color", "#0070ff");
 
                 svgTransition.select("#background")
@@ -1461,7 +1467,8 @@ $(document).ready(function() {
                         .attr("fill", "#0070ff");
 
                 svgTransRect
-                    .attr("fill", "#fff");
+                    .attr("fill", "#fff")
+                    .attr("stroke", "#0070ff");
             }
             else {
                 $("#transition").css("background-color", "#fff");
@@ -1473,30 +1480,17 @@ $(document).ready(function() {
                         .attr("fill", "#fff");
 
                 svgTransRect
-                    .attr("fill", "#ddd");
+                    .attr("fill", "#ddd")
+                    .attr("stroke", "#fff");;
             }
 
-            if (e.progress <= 0.85) {
+            if (e.progress <= 0.7) {
                 $(".cell").fadeIn(transitionTime);
                 $(".grid-color").fadeOut(transitionTime);
             }
             else {
                 $(".grid-color").fadeIn(transitionTime);
                 $(".cell").fadeOut(transitionTime);
-            }
-
-            // square stroke changing multiple times
-            if (e.progress <= 0.55) {
-                svgTransRect
-                    .attr("stroke", "#322DCD");
-            }
-            else if (e.progress > 0.55 && e.progress <= 0.75) {
-                svgTransRect
-                    .attr("stroke", "#0070ff");
-            }
-            else {
-                svgTransRect
-                    .attr("stroke", "#fff");
             }
         });
 

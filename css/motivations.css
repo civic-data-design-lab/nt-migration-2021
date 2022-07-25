@@ -1,7 +1,12 @@
+#map-state-1 {
+    height: 75vh;
+}
+
 /* SVG TRANSITION ANIMATION */
 #transition {
     background-color: #0070ff;
-    display: none;
+    overflow-y: hidden;
+    /* display: none; */
 }
 #transition, .cell rect {
     transition: linear 0.3s all;
