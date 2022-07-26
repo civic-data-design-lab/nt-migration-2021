@@ -33,43 +33,43 @@ var motivationsConfig = {
     chapters: [
 
         //DESTINATION 0
-        {
-            id: 'map-state-1',
-            alignment: 'full',
-            hidden: false,
-            title: 'Las Intenciones de Migrar han Aumentado Significativamente',
-            image: './img/motivations/mot1.jpg',
-            description: 'Aproximadamente cuatro de cada diez hogares (43%) indicaron un deseo de migrar en 2021, en comparación con el 8% en 2019. La intención de migrar está impulsada en gran medida por la economía y agravada por la violencia externa, la inseguridad y los desastres naturales.',
-            location: {
-                center: [-87.700000, 15.0000000], // initial map center in [lon, lat]
-                zoom: middleZoom,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [
-                {
-                    layer: 'worldMapViz',
-                    opacity: 1,
-                },
-                {
-                    layer: 'ntCountriesViz',
-                    opacity: 1,
-                },
-                {
-                    layer: 'ntCountriesVizLine',
-                    opacity: 1,
-                }
-            ],
-            onChapterExit: [
-                {
-                    layer: 'worldMapViz',
-                    opacity: 1,
-                }
-            ],
-        },
+        // {
+        //     id: 'map-state-1',
+        //     alignment: 'full',
+        //     hidden: false,
+        //     title: 'Las Intenciones de Migrar han Aumentado Significativamente',
+        //     image: './img/motivations/mot1.jpg',
+        //     description: 'Aproximadamente cuatro de cada diez hogares (43%) indicaron un deseo de migrar en 2021, en comparación con el 8% en 2019. La intención de migrar está impulsada en gran medida por la economía y agravada por la violencia externa, la inseguridad y los desastres naturales.',
+        //     location: {
+        //         center: [-87.700000, 15.0000000], // initial map center in [lon, lat]
+        //         zoom: middleZoom,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     mapAnimation: 'flyTo',
+        //     rotateAnimation: false,
+        //     callback: '',
+        //     onChapterEnter: [
+        //         {
+        //             layer: 'worldMapViz',
+        //             opacity: 1,
+        //         },
+        //         {
+        //             layer: 'ntCountriesViz',
+        //             opacity: 1,
+        //         },
+        //         {
+        //             layer: 'ntCountriesVizLine',
+        //             opacity: 1,
+        //         }
+        //     ],
+        //     onChapterExit: [
+        //         {
+        //             layer: 'worldMapViz',
+        //             opacity: 1,
+        //         }
+        //     ],
+        // },
 
         //DESTINATION 2
         {
@@ -80,7 +80,7 @@ var motivationsConfig = {
             description: 'En abril y mayo de 2021, el World Food Programme de las Naciones Unidas (WFP) y socios internacionales y de la sociedad civil encuestaron a casi 5,000 hogares en 12 departamentos de El Salvador, Guatemala y Honduras para entender las necesidades emergentes de las comunidades migrantes y no migrantes en los países de origen. Esta encuesta fue complementada por una encuesta adicional en línea a nivel nacional con más de 6,000 respuestas individuales. Cada cuadrado representa una ubicación de la encuesta.',
             location: {
                 center: [-87.7000000, 15.0000000], // initial map center in [lon, lat]
-                zoom: closeZoom,
+                zoom: middleZoom,
                 pitch: 0,
                 bearing: 0
             },
