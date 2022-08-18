@@ -1477,24 +1477,16 @@ $(document).ready(function() {
     })
         .addTo(controller)
         .on("progress", e => {
-            // console.log("transition div " + e.progress);
+            console.log("transition div " + e.progress);
 
             // fade out map background
             if (e.progress <= 0.2) {
                 $("#map-outline").fadeIn(transitionTime);
                 $("#labels").fadeIn(transitionTime);
-                svgTransition.select("#sq").selectAll("rect")
-                    .attr("stroke", "#322DCD");
-                svgTransition.select("#tri-overlay").selectAll("rect")
-                    .attr("stroke", "#322DCD");
             }
             else {
                 $("#map-outline").fadeOut(transitionTime);
                 $("#labels").fadeOut(transitionTime);
-                svgTransition.select("#sq").selectAll("rect")
-                    .attr("stroke", "#0070ff");
-                svgTransition.select("#tri-overlay").selectAll("rect")
-                    .attr("stroke", "#0070ff");
             }
 
             // rearrange squares to grid
@@ -1519,9 +1511,7 @@ $(document).ready(function() {
                         .duration(transitionTime)
                         .attr("fill", "#0070ff");
 
-                svgTransRect
-                    .attr("fill", "#fff")
-                    .attr("stroke", "#0070ff");
+                svgTransRect.attr("fill", "#fff");
             }
             else {
                 $("#motivs-content").css("background-color", "#fff");
@@ -1532,9 +1522,7 @@ $(document).ready(function() {
                         .duration(transitionTime)
                         .attr("fill", "#fff");
 
-                svgTransRect
-                    .attr("fill", "#ddd")
-                    .attr("stroke", "#fff");;
+                svgTransRect.attr("fill", "#ddd");
             }
 
             // fade to colored squares and visualization
@@ -1545,6 +1533,17 @@ $(document).ready(function() {
             else {
                 $("#motivations").fadeIn(transitionTime);
                 $(".cell").fadeOut(transitionTime);
+            }
+
+            // color outline of squares
+            if (e.progress <= 0.2) {
+                svgTransRect.attr("stroke", "#322DCD");
+            }
+            else if (e.progress <= 0.7) {
+                svgTransRect.attr("stroke", "#0070ff");
+            }
+            else {
+                svgTransRect.attr("stroke", "#fff");
             }
         });
 

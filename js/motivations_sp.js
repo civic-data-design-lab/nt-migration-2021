@@ -117,13 +117,26 @@ const modalData = [
 // narrative text
 const narrativesData = [
     {
+        title: 'Se Encuestaron 5,000 Hogares',
+        description: 'En abril y mayo de 2021, el World Food Programme de las Naciones Unidas (WFP) y socios internacionales y de la sociedad civil encuestaron a casi 5,000 hogares en 12 departamentos de El Salvador, Guatemala y Honduras para entender las necesidades emergentes de las comunidades migrantes y no migrantes en los países de origen. Esta encuesta fue complementada por una encuesta adicional en línea a nivel nacional con más de 6,000 respuestas individuales. Cada cuadrado representa una ubicación de la encuesta.',
+        alignment: "right"
+    },
+    {
+        title: 'Las Migrantes Quieren Quedarse',
+        description: 'A pesar del creciente deseo de migrar, solo una fracción de la población encuestada planea hacerlo. La principal motivación para la migración está impulsada en gran medida por la economía.',
+        image: 'mot2.jpg',
+        alignment: "full"
+    },
+    {
         title: "Los Migrantes Vienen de Todos los Niveles de Ingresos",
-        description: "Nuestros datos contrastan con estudios previos que indicaban que los hogares con más recursos tienen más probabilidades de poder migrar. Esta encuesta mostró que la migración ocurre desde todos los niveles de ingresos."
+        description: "Nuestros datos contrastan con estudios previos que indicaban que los hogares con más recursos tienen más probabilidades de poder migrar. Esta encuesta mostró que la migración ocurre desde todos los niveles de ingresos.",
+        alignment: "full"
     },
     {
         title: "Proveer de Necesidades Básicas es la Principal Motivación de los Migrantes",
         description: "Los hogares con migrantes demostraron que su principal motivación para irse fue impulsada por la necesidad de satisfacer las necesidades básicas. Las personas que experimentaban inseguridad alimentaria tenían más probabilidades (23%) de hacer planes concretos para migrar que aquellas que tenían seguridad alimentaria (7%).",
-        image: "mot4.jpg"
+        image: "mot4.jpg",
+        alignment: "full"
     }
 ]
 
@@ -205,14 +218,12 @@ function updateTransLayout(layout) {
         dataTri = positionMapTri;
         length = lengthMap;
         strokeWidth = strokeWidthMap;
-        stroke = "#322DCD";
     }
     else if (layout == "grid") {
         dataSq = positionGridSq;
         dataTri = positionGridTri;
         length = lengthGrid;
         strokeWidth = strokeWidthGrid;
-        stroke = "#0070ff";
     }
     svgTransition.select("#sq")
         .selectAll("rect")
@@ -225,8 +236,7 @@ function updateTransLayout(layout) {
                 .attr("height", length)
                 .attr("x", d => d.x)
                 .attr("y", d => d.y)
-                .attr("stroke-width", strokeWidth)
-                .attr("stroke", stroke);
+                .attr("stroke-width", strokeWidth);
 
     svgTransition.select("#tri-overlay")
         .selectAll("rect")
@@ -239,8 +249,7 @@ function updateTransLayout(layout) {
                 .attr("height", length)
                 .attr("x", d => d.x)
                 .attr("y", d => d.y)
-                .attr("stroke-width", strokeWidth)
-                .attr("stroke", stroke);
+                .attr("stroke-width", strokeWidth);
 };
 
 // define svg
@@ -1323,11 +1332,12 @@ function plotLabels(labelList, sortBy) {
 
 // create narratives after migrant outcomes viz
 function createNarratives() {
-    const narrativeTemplate = $(".step.fully.active.template");
+    const narrativeTemplate = $(".step.active.template");
     narrativesData.forEach((item, i) => {
         const narrativeDiv = narrativeTemplate.clone();
         
         narrativeDiv.attr("id", "scene-" + i);
+        narrativeDiv.addClass(item.alignment + "y");
         
         if (item.hasOwnProperty("image")) {
             narrativeDiv.find(".scrollytelling-text").remove();
@@ -1347,6 +1357,23 @@ function createNarratives() {
         narrativeDiv.removeClass("template").appendTo(narrativeTemplate.parent());
     });
 };
+
+// update scroll direction
+function updateScrollDirection() {
+    currentScrollPos = $("#open").scrollTop();
+
+    // change scroll direction
+    if (lastScrollPos < currentScrollPos && scrollDirection != "forward") {
+        scrollDirection = "forward";
+        // console.log("change scroll direction, now forward");
+    }
+    else if (lastScrollPos > currentScrollPos && scrollDirection != "reverse") {
+        scrollDirection = "reverse";
+        // console.log("change scroll direction, now reverse");
+    }
+    lastScrollPos = currentScrollPos;
+    // console.log(scrollDirection);
+}
 
 function updateScene(sortBy) {
     motivSort = sortBy;
@@ -1406,31 +1433,54 @@ $(document).ready(function() {
     })
         .addTo(controller)
         .on("progress", e => {
-            currentScrollPos = $("#open").scrollTop();
             // console.log(e.progress);
+            updateScrollDirection();
+        });
 
-            // change scroll direction
-            if (lastScrollPos < currentScrollPos && scrollDirection != "forward") {
-                scrollDirection = "forward";
-                // console.log("change scroll direction, now forward");
+    const transitionSceneStart = new ScrollMagic.Scene({
+        triggerElement: "#transition",
+        duration: winHeight/2
+    })
+        .addTo(controller)
+        .on("start", e => {
+            updateScrollDirection();
+            if (scrollDirection == "forward") {
+                // console.log("start transition");
+                let cellsSq = $("#sq.cell").children();
+                let cellsTri = $("#tri-overlay.cell").children();
+                for (let i = 0; i < cellsSq.length; i++) {
+                    $(cellsSq[i]).delay(3 * transitionTime * Math.random()).fadeIn(3 * transitionTime * Math.random());
+                }
+                for (let i = 0; i < cellsTri.length; i++) {
+                    $(cellsTri[i]).delay(3 * transitionTime * Math.random()).fadeIn(3 * transitionTime * Math.random());
+                }
             }
-            else if (lastScrollPos > currentScrollPos && scrollDirection != "reverse") {
-                scrollDirection = "reverse";
-                // console.log("change scroll direction, now reverse");
-            }
-            lastScrollPos = currentScrollPos;
-            // console.log(scrollDirection);
         })
+        .on("end", e => {
+            updateScrollDirection();
+            if (scrollDirection == "reverse") {
+                // console.log("end transition");
+                let cellsSq = $("#sq.cell").children();
+                let cellsTri = $("#tri-overlay.cell").children();
+                for (let i = 0; i < cellsSq.length; i++) {
+                    $(cellsSq[i]).fadeOut(3 * transitionTime * Math.random());
+                }
+                for (let i = 0; i < cellsTri.length; i++) {
+                    $(cellsTri[i]).fadeOut(3 * transitionTime * Math.random());
+                }                
+            }
+        });
 
-    const transitionScene2 = new ScrollMagic.Scene({
-        triggerElement: "#story #features #map-state-2 .scrolly-container-motivations .scrollytelling-text",
-        duration: getDivHeight("#story #features #map-state-2 .scrolly-container-motivations .scrollytelling-text") + winHeight
+    const transitionScene0 = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll #scene-0",
+        duration: getDivHeight("#narrative-scroll #scene-0") + 2.5 * winHeight
     })
         .addTo(controller)
         .on("progress", e => {
-            // console.log(e.progress);
+            console.log("transition div " + e.progress);
 
-            if (e.progress <= 0.3) {
+            // fade out map background
+            if (e.progress <= 0.2) {
                 $("#map-outline").fadeIn(transitionTime);
                 $("#labels").fadeIn(transitionTime);
             }
@@ -1439,26 +1489,21 @@ $(document).ready(function() {
                 $("#labels").fadeOut(transitionTime);
             }
 
-            if (e.progress <= 0.7) {
+            // rearrange squares to grid
+            if (e.progress <= 0.5) {
+                $("#transition .row").removeClass("px-xl-5");
                 updateTransLayout("map");
                 $("#transition svg").addClass("mt-3 mt-md-4");
             }
             else {
+                $("#transition .row").addClass("px-xl-5");
                 updateTransLayout("grid");
                 $("#transition svg").removeClass("mt-3 mt-md-4");
             }
-        })
-
-        const transitionScene3 = new ScrollMagic.Scene({
-            triggerElement: "#story #features #map-state-3 .scrolly-container-motivations .ribbon-image",
-            duration: getDivHeight("#story #features #map-state-3 .scrolly-container-motivations .ribbon-image") + winHeight*1.5
-        })
-            .addTo(controller)
-            .on("progress", e => {
-                // console.log(e.progress);    
-
-            if (e.progress <= 0.3) {
-                $("#transition").css("background-color", "#0070ff");
+        
+            // fade to grey squares white background
+            if (e.progress <= 0.7) {
+                $("#motivs-content").css("background-color", "#0070ff");
 
                 svgTransition.select("#background")
                     .select("rect")
@@ -1466,12 +1511,10 @@ $(document).ready(function() {
                         .duration(transitionTime)
                         .attr("fill", "#0070ff");
 
-                svgTransRect
-                    .attr("fill", "#fff")
-                    .attr("stroke", "#0070ff");
+                svgTransRect.attr("fill", "#fff");
             }
             else {
-                $("#transition").css("background-color", "#fff");
+                $("#motivs-content").css("background-color", "#fff");
 
                 svgTransition.select("#background")
                     .select("rect")
@@ -1479,33 +1522,34 @@ $(document).ready(function() {
                         .duration(transitionTime)
                         .attr("fill", "#fff");
 
-                svgTransRect
-                    .attr("fill", "#ddd")
-                    .attr("stroke", "#fff");
+                svgTransRect.attr("fill", "#ddd");
             }
 
-            if (e.progress <= 0.7) {
+            // fade to colored squares and visualization
+            if (e.progress <= 0.8) {
                 $(".cell").fadeIn(transitionTime);
-                $(".grid-color").fadeOut(transitionTime);
+                $("#motivations").fadeOut(transitionTime);
             }
             else {
-                $(".grid-color").fadeIn(transitionTime);
+                $("#motivations").fadeIn(transitionTime);
                 $(".cell").fadeOut(transitionTime);
+            }
+
+            // color outline of squares
+            if (e.progress <= 0.2) {
+                svgTransRect.attr("stroke", "#322DCD");
+            }
+            else if (e.progress <= 0.7) {
+                svgTransRect.attr("stroke", "#0070ff");
+            }
+            else {
+                svgTransRect.attr("stroke", "#fff");
             }
         });
 
-    const transitionSceneEnd = new ScrollMagic.Scene({
-        triggerElement: "#story #features #map-state-4 .scrolly-container-motivations .scrollytelling-caption",
-        duration: getDivHeight("#story #features #map-state-4 .scrolly-container-motivations .scrollytelling-caption")
-    })
-        .addTo(controller)
-        .on("end", e => {
-            $(".grid-color").fadeToggle(0);
-        })
-
-    const motivsSceneStart = new ScrollMagic.Scene({
-        triggerElement: "#motivations",
-        duration: winHeight/2
+    const motivsScene1 = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll #scene-1",
+        duration: getDivHeight("#scene-1") + winHeight/2
     })
         .addTo(controller)
         .on("start", e => {
@@ -1517,9 +1561,9 @@ $(document).ready(function() {
             }
         });
 
-    const motivsScene0 = new ScrollMagic.Scene({
-        triggerElement: "#narrative-scroll #scene-0",
-        duration: getDivHeight("#scene-0") + winHeight/2
+    const motivsScene2 = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll #scene-2",
+        duration: getDivHeight("#scene-2") + winHeight/2
     })
         .addTo(controller)
         .on("start", e => {
@@ -1533,9 +1577,9 @@ $(document).ready(function() {
             }
         })
 
-    const motivsScene1 = new ScrollMagic.Scene({
-        triggerElement: "#narrative-scroll #scene-1",
-        duration: getDivHeight("#scene-1") + winHeight/5*2
+    const motivsScene3 = new ScrollMagic.Scene({
+        triggerElement: "#narrative-scroll #scene-3",
+        duration: getDivHeight("#scene-3") + winHeight/5*2
     })
         .addTo(controller)
         .on("start", e => {
@@ -1563,6 +1607,10 @@ $(document).ready(function() {
     const modalMotivs = new bootstrap.Modal(document.getElementById('modal-motivs')),
         modalIncome = new bootstrap.Modal(document.getElementById('modal-income')),
         modalCari = new bootstrap.Modal(document.getElementById('modal-cari'));
+
+    // set up transition visibility
+    $(".cell rect").fadeOut();
+    $("#motivations").fadeOut();
 
     $(".btn").on("click", function() {
         if (!$(btnId).hasClass("visited")) {
