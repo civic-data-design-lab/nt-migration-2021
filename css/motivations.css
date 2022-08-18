@@ -1,9 +1,29 @@
+/* SCROLLYTELLING */
 #map-state-1 {
     height: 75vh;
 }
+#scene-0 {
+    padding-bottom: 300vh;
+}
+#scene-0, #scene-1, #scene-2, #scene-3 {
+    padding-top: 0px;
+}
+#narrative-scroll, 
+#narrative-scroll .scenes,
+#narrative-scroll .scenes div {
+    pointer-events: none;
+}
+.scrolly-container-motivations .ribbon-image img {
+    filter: grayscale(1);
+    -webkit-mix-blend-mode: hard-light;
+    -moz-mix-blend-mode: hard-light;
+    -ms-mix-blend-mode: hard-light;
+    -o-mix-blend-mode: hard-light;
+    mix-blend-mode: hard-light;
+}
 
 /* SVG TRANSITION ANIMATION */
-#transition {
+#motivs-content {
     background-color: #0070ff;
     overflow-y: hidden;
     /* display: none; */
@@ -117,27 +137,6 @@
     background-color: #1540C4;
 }
 
-/* SCROLLYTELLING */
-#map-state-4 {
-    padding-bottom: 0px;
-}
-#scene-0, #scene-1 {
-    padding-top: 0px;
-}
-#narrative-scroll, 
-#narrative-scroll .scenes,
-#narrative-scroll .scenes div {
-    pointer-events: none;
-}
-.scrolly-container-motivations .ribbon-image img {
-    filter: grayscale(1);
-    -webkit-mix-blend-mode: hard-light;
-    -moz-mix-blend-mode: hard-light;
-    -ms-mix-blend-mode: hard-light;
-    -o-mix-blend-mode: hard-light;
-    mix-blend-mode: hard-light;
-}
-
 /* MODALS */
 .modal-narrative {
     background-color: none;
@@ -173,7 +172,7 @@
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    /* #viz-content {
+    /* #motivs-content {
         align-items: center;
     } */
     .btn-sm {
